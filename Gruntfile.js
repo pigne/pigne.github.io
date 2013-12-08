@@ -396,7 +396,7 @@ module.exports = function(grunt) {
         pub_years:publications_years,
         assemble: {
             options:{
-               helpers: ['./sorted-each-helper-module.js'],
+               helpers: ['./src/helpers/sorted-each-helper-module.js'],
             },
             build: {
                 options: {
