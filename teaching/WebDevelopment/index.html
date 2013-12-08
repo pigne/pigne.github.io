@@ -1,0 +1,427 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>testYP | Web Development</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="../../styles/7dc8a9e6.main.css"/>
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <header>
+            <div class="container">
+
+			<h3 class="pull-left "><a href="/">Yoann Pigné</a></h3>
+			<ul class="nav nav-pills  pull-right">
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li><a href="../../projects/index.html">Projects </a></li>
+					
+				
+					
+				
+					
+						<li><a href="../../publications/index.html">Publications </a></li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li><a href="../../contact/index.html">Contact </a></li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li><a href="../index.html">Teaching </a></li>
+					
+				
+					
+				
+					
+						<li><a href="../../these/index.html">Ph.D. </a></li>
+					
+				
+			</ul>
+
+	</div>
+
+        </header>
+        <div class="main">
+            
+
+<div class="page-info row">
+
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Web Development <small></small></h1>
+        
+            <ul class="text-right list-unstyled">
+                
+                <li>Basic tools, protocols, standards and technologies.</li>
+                
+                <li>Main Languages: JavaScript, HTML, CSS</li>
+                
+                <li>Client-side and Server-side Web Frameworks.</li>
+                
+                <li>Lecture for Master 2 - IDOD.</li>
+                
+            </ul>
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            
+
+
+
+
+
+
+<div class=""id="chart" data-color="type"></div>
+<p id="option_panel">
+  Distance:
+    <input type="range" name="distance_range" value="50" id="distance_range" min=1 max=100 step=5>
+    <br>
+   <!--  <input type="submit" name="Start" value="Start" id="start_graph"> -->
+</p>
+<style type="text/css" media="screen">
+
+.node {
+    background-color: white;
+}
+.node:hover {
+    cursor: pointer;
+}
+.link {
+    stroke:#bbb;
+    stroke-opacity: .6;
+    fill: none;
+}
+#chart {
+    z-index:-1;
+}
+</style>
+
+ <script src="../../scripts/93ca70a7.graph_outline.js"></script>
+<script type="text/javascript" charset="utf-8">
+//document.getElementById('start_graph').addEventListener('click', function(e) {
+    var e = document.getElementById('chart');
+    var w = e.parentElement.scrollWidth -65;
+    var options = {
+        'width': w,
+        'height': w/1.3,
+        'area': '#chart',
+        't': '#color_type_selector',
+        'range': '#distance_range'
+    };
+    graph_outline(options);
+    //$(this).hide();
+//});
+    </script>
+
+<div class="row">
+	<div class="col-md-12">
+		<h2>Outline</h2>
+		<div class="panel-group" id="accordion">
+		
+			
+		
+			
+		
+			
+		
+			
+				<div class="panel panel-default">
+					<div class="panel-heading active">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
+              		<h3 class="panel-title" >1 - Prerequisite <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
+					</a>
+					</div>
+					<div id="collapse1" class="in accordion-body" style="height: auto;">
+              			<div class="panel-body">
+							<ul class="">
+							
+								<li class="">Text editor</li>
+							
+								<li class="">Navigator</li>
+							
+								<li class="">Code Interpreter</li>
+							
+								<li class="">Code Quality Control</li>
+							
+							</ul>
+							<p class="text-right bottom-right"><a href="prerequisite.html" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
+						</div>
+  		          	</div>
+          		</div>
+			
+		
+			
+		
+			
+		
+			
+				<div class="panel panel-default">
+					<div class="panel-heading active">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
+              		<h3 class="panel-title" >2 - JavaScript Basics <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
+					</a>
+					</div>
+					<div id="collapse2" class="in accordion-body" style="height: auto;">
+              			<div class="panel-body">
+							<ul class="">
+							
+								<li class="">Syntax</li>
+							
+								<li class="">Objects</li>
+							
+								<li class="">Functions</li>
+							
+								<li class="">Inheritance</li>
+							
+								<li class="">Arrays</li>
+							
+								<li class="">Regexp</li>
+							
+								<li class="">JSON</li>
+							
+							</ul>
+							<p class="text-right bottom-right"><a href="js-basics.html" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
+						</div>
+  		          	</div>
+          		</div>
+			
+		
+			
+		
+			
+				<div class="panel panel-default">
+					<div class="panel-heading active">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+              		<h3 class="panel-title" >3 - Html5 Basics <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
+					</a>
+					</div>
+					<div id="collapse3" class="in accordion-body" style="height: auto;">
+              			<div class="panel-body">
+							<ul class="">
+							
+								<li class="">Markup</li>
+							
+								<li class="">The DOM API</li>
+							
+								<li class="">Events</li>
+							
+								<li class="">Asynchronous  Communication (AJAX)</li>
+							
+							</ul>
+							<p class="text-right bottom-right"><a href="html5-basics.html" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
+						</div>
+  		          	</div>
+          		</div>
+			
+		
+			
+				<div class="panel panel-default">
+					<div class="panel-heading active">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
+              		<h3 class="panel-title" >4 - CSS Basics <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
+					</a>
+					</div>
+					<div id="collapse4" class="in accordion-body" style="height: auto;">
+              			<div class="panel-body">
+							<ul class="">
+							
+								<li class="">Selectors</li>
+							
+								<li class="">@font-face</li>
+							
+								<li class="">transform / transition</li>
+							
+								<li class="">CSS pre processors (SASS, LESS)</li>
+							
+							</ul>
+							<p class="text-right bottom-right"><a href="css-basics.html" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
+						</div>
+  		          	</div>
+          		</div>
+			
+		
+			
+				<div class="panel panel-default">
+					<div class="panel-heading active">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
+              		<h3 class="panel-title" >5 - JQuery <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
+					</a>
+					</div>
+					<div id="collapse5" class="in accordion-body" style="height: auto;">
+              			<div class="panel-body">
+							<ul class="">
+							
+								<li class="">Browser Agnostic DOM Manipulation</li>
+							
+								<li class="">By John Resig</li>
+							
+							</ul>
+							<p class="text-right bottom-right"><a href="jquery.html" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
+						</div>
+  		          	</div>
+          		</div>
+			
+		
+			
+				<div class="panel panel-default">
+					<div class="panel-heading active">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse6">
+              		<h3 class="panel-title" >6 - Dynamic graphical data (SVG) <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
+					</a>
+					</div>
+					<div id="collapse6" class="in accordion-body" style="height: auto;">
+              			<div class="panel-body">
+							<ul class="">
+							
+								<li class="">Scalable Vector Graphics (SVG)</li>
+							
+								<li class="">D3.js</li>
+							
+							</ul>
+							<p class="text-right bottom-right"><a href="svg-basics.html" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
+						</div>
+  		          	</div>
+          		</div>
+			
+		
+			
+				<div class="panel panel-default">
+					<div class="panel-heading active">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse7">
+              		<h3 class="panel-title" >7 - Web Frameworks <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
+					</a>
+					</div>
+					<div id="collapse7" class="in accordion-body" style="height: auto;">
+              			<div class="panel-body">
+							<ul class="">
+							
+								<li class="">Client-Side Frameworks</li>
+							
+								<li class="">Knockout</li>
+							
+								<li class="">Server-Side Frameworks</li>
+							
+								<li class="">Express</li>
+							
+								<li class="">NoSQL DataBases</li>
+							
+								<li class="">CouchDB</li>
+							
+							</ul>
+							<p class="text-right bottom-right"><a href="frameworks-basics.html" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
+						</div>
+  		          	</div>
+          		</div>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+		</div>
+	</div>
+</div>
+
+        </div>
+    </div>
+</div>
+
+        </div>
+        <footer>
+            <div class="container">
+	<p>&copy; Yoann Pigné 2013</p>
+</div>
+
+        </footer>
+
+
+        <script src="../../scripts/dbd26eaf.vendor.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <script src="../../scripts/65af7fc9.main.js"></script>
+
+        <script src="../../scripts/20bdd8fe.plugins.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

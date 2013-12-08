@@ -1,0 +1,751 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Web Frameworks</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
+
+		
+		<link rel="stylesheet" href="../../styles/lecture-utilities.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../../bower_components/highlightjs/styles/dark.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+                document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <style>
+        	.reveal .slides {
+				text-align: left;
+			}
+			.reveal dt {
+				font-weight: bold;
+			}
+			.reveal dd {
+				margin-left:1em;
+			}
+			.reveal input {
+				font-size: inherit;
+			}
+			.reveal .slides>section {
+				/*border:1px solid black;*/
+			}
+			.reveal pre {
+				display: block;
+				position: relative;
+				width: 90%;
+				/*margin: 0;*/
+				text-align: left;
+				font-size: .75em;
+				font-family: monospace;
+				line-height: 1.2em;
+				word-wrap: break-word;
+				box-shadow: 0 0 6px rgba(0,0,0,.3);
+
+			}
+			.reveal pre code {
+				max-height: 600px;
+			}
+			.reveal ul, .reveal dl{
+				margin-bottom: .5em ;
+			}
+			#back{
+				position:absolute;
+				z-index:100;
+				right:5px;
+				top:5px;
+			}
+			#back>a {
+				font-size: larger;
+				text-decoration: none;
+				color:gray;
+
+			}
+			#back>a:hover {
+				text-decoration: none;
+			}
+			#back>a:hover:after{
+				content: "Back to Outline"
+			}
+
+        </style>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+	<div id="back"><a href=".">&#8630;</a></div>
+    <div class="reveal">
+    	<div class="slides">
+		<!-- ==== SLIDE ==== -->
+		<section id="home">
+			<h1>Web Frameworks</h1>
+
+			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
+			
+			<li class="x2"><em>Client-Side Frameworks</em></li>
+		
+			<li class="x2"><em>Knockout</em></li>
+		
+			<li class="x2"><em>Server-Side Frameworks</em></li>
+		
+			<li class="x2"><em>Express</em></li>
+		
+			<li class="x2"><em>NoSQL DataBases</em></li>
+		
+			<li class="x2"><em>CouchDB</em></li>
+		
+		</ul>
+		<p class="x2 bottom-right">
+		            Le Havre University
+		            <br>
+		            <em>Yoann Pigné</em>
+		            <br>2013
+		        </p>
+		</section>
+
+    	
+
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks">
+            <h2>Web Frameworks</h2>
+            <p>
+                Web development is getting dominated by the MVC (Model View Controller) design pattern. Both on the server and client side.
+            </p>
+            <h3>Server-Side Web Frameworks</h3>
+            <p></p>
+            <h3>Client-Side Web Frameworks</h3>
+            <p></p>
+            <h3>Databases</h3>
+            <p></p>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks_ServerSide">
+            <h2>Server-Side Web Frameworks</h2>
+            many frameworks in many (all?) languages
+            <div class="twocols">
+                <ul class="first">
+                    <li>Java
+                        <ul>
+                            <li>JavaServer Faces (Oracle)</li>
+                            <li>Spring MVC</li>
+                            <li>Struts 2</li>
+                            <li>Stripes</li>
+                            <li>Wicket (Apache)</li>
+                            <li>GWT (Google)</li>
+                        </ul>
+                    </li>
+                    <li>PHP
+                        <ul>
+                            <li>Zend Framework (IBM)</li>
+                            <li>CakePHP (Open Source)</li>
+                            <li>...</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="second">
+                    <li>Python
+                        <ul>
+                            <li>Django (&hearts;)</li>
+                            <li>web2py</li>
+                            <li>Zope</li>
+                        </ul>
+                    </li>
+                    <li>Ruby
+                        <ul>
+                            <li>Ruby on Rails</li>
+                        </ul>
+                    </li>
+                    <li>JavaScript (node.js)
+                        <ul>
+                            <li>Express</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="ExpressJs">
+        <h2>Express.js <small>The JavaScript Server Side Framework</small></h2>
+        <p>A minimalist Web framework for node.</p>
+        <pre class="prettyprint lang-js">
+<code class="javascript">var express = require('express');
+var app = express();
+app.get('/hello.txt', function(req, res){
+  res.send('Hello World');
+});
+app.listen(3000);</code></pre>
+<p>Install with npm: <code>npm install express</code></p>
+<p><a href="http://expressjs.com/">http://expressjs.com/</a></p>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="ExpressJsRoutes">
+        <h3>Routes</h3>
+        <p>In a Web App each resource is accessed through one unique request (URI)</p>
+        <p>Requests are actions on elements or collections (get, create, modify, delete)</p>
+        <p>Close to the REST (Representational State Transfer)</p>
+        <p>Express link URIs to actions through REST verbs (<code>GET, PUT, POST, DELETE</code>)</p>
+        <pre class="prettyprint lang-js">
+<code class="javascript">app.get('/advert/:id?', function(req, res) {
+    res.send('You asked for advert' + req.param('id'));
+})
+.get('/search', function(req, res) { //search?q=something+fun
+    console.log('the search query is: ' + req.query.q); // req.param('q')
+})
+.post('/advert', function(req, res){ // with the bodyParser() middleware
+    req.body.advertTittle
+})
+.delete('/advert/:id?', function(req, res) {
+    // remove entry req.param('id') from database
+});
+        </code></pre>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="ExpressJsTemplates">
+        <h3>templates</h3>
+        <ul><li>Templates allow the dynamic creation on html5 pages.</li>
+        <li>Templates use a special language with variables (user data) loops and conditions</li>
+        <li>Templates are stored in the <code>views/</code> folder of the App and are called from a route.</li></ul>
+        <p>Templating in node with Jade: <a href="http://jade-lang.com/">http://jade-lang.com/</a></p>
+        <pre class=" prettyprint lang-js">
+<code class="javascript">// in /app.js
+app.set('view engine', 'jade');
+var users = [{id:1, name:'Tom'},
+            {id:2, name:'Max'}];
+app.get('/user/:id?', function(req, res){
+  res.render('hello_user', _.filter(users, {id:req.param('id')[0]);
+});</code></pre>
+        <div class="twocols">
+        <pre class="first prettyprint lang-html nowatermark">
+<code class="scss">// in /views/hello_user.jade
+.user
+  h2 Hello #{name}!
+        </code></pre>
+        <pre class="second prettyprint lang-html">
+<code class="html">&lt;div class=&quot;user&quot;&gt;
+    &lt;h2&gt;Hello Max!&lt;/h2&gt;
+&lt;/div&gt;
+        </code></pre>
+        </section>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="ExpressJsMiddleware">
+        <h3>Middlewares</h3>
+        <ul><li>Extra features given to the application. They are executed at each request.</li>
+        <li> Executed sequentially. The <strong>order</strong> is very <strong>important</strong>. </li>
+        <li>They use 4 parameters:
+        <ul>
+            <li><code>err</code>: the error messages</li>
+            <li><code>req</code>: the user request object</li>
+            <li><code>res</code>: the response object to be sent back</li>
+            <li><code>next</code>: a callback to the next middleware to call </li>
+        </ul></li>
+        <li>Middlewares are configured with the <code>use()</code> function.</li>
+        <li>logger, csrf, compression, authentication, bodyParser(forms), json, cookies, sessions, static, ...</li></ul>
+
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="ExpressJsMiddlewareUsages">
+        <h3>Example Middleware configuration</h3>
+<pre class=" prettyprint lang-js">
+<code class="javascript">app.use(express.logger()) // logging, always first
+.use(express.static(__dirname + '/public')) // static files in folder /public
+.use(express.favicon(__dirname + '/public/favicon.ico')) // favicon
+.use(express.cookieParser())
+.use(express.session())
+.use(express.methodOverride()) // allow REST 'delete' and 'put'
+.use(express.bodyParser()) // parse forms
+.use(express.csrf()) // Cross-Site Request Forgery
+.use(app.router) // the routes defines with RESTmethods are executed here
+.use(express.errorHandler()); // errors at the end
+</code></pre>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks_DataBases">
+            <h2>DataBases</h2>
+            <p>Of course classical relational DBMS hold for web apps, but NoSQL type DBMS become useful in case of:</p>
+            <ul>
+                <li>loosely structured (few or no foreign keys),</li>
+                <li>no need to JOIN tables,</li>
+                <li>Big Data.</li>
+            </ul>
+
+            <p>Famous projects:</p>
+            <div class="twocols">
+                <ul class="first">
+                    <li>Project Voldemort, used by LinkedIn</li>
+                    <li>Cassandra Project, by Apache, formally used by Facebook</li>
+                    <li>Dynamo, by Amazon</li>
+                    <li>HBase, by Apache Hadoop, used by Facebook</li>
+                </ul>
+                <ul class="second">
+                    <li>BigTable, by Google</li>
+                    <li>CouchDB (JSON store), by Apache</li>
+                    <li>MongoDB (BSON store)</li>
+                </ul>
+            </div>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks_CouchDB">
+            <h2>CouchDB
+                <small>by Apache</small>
+            </h2>
+            <ul>
+                <li>Documents are stored in JSON
+                    <pre class=" x-4 prettyprint lang-json">
+<code class="json">{
+   "_id": "REF160",
+   "_rev": "5-fb635c95134a3c9c69ce79c4d56832f4",
+   "title": "My new house in the city",
+   "text": "&lt;h2&gt;Great new house&lt;/h2&gt;",
+   "plot_id": "-628141",
+   "available_date": "2012-12-14",
+   "high_priority": false,
+   "surface_area": 230
+}
+</code></pre>
+                </li>
+                <li>MapReduce is done in JavaScript</li>
+                <li>API interface is in HTTP
+                    <table>
+                        <tr>
+                            <td>Ask for information</td>
+                            <td>
+                                <pre><code class="bash">curl http://127.0.0.1:5984/</code></pre>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>Create a DB</td>
+                            <td>
+                                <pre><code class="bash">curl -X PUT http://127.0.0.1:5984/adverts</code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Add a doc</td>
+                            <td><pre class=" x-3 nowatermark prettyprint lang-json"><code class="bash">curl -X POST -H "Content-Type: application/json" --data \
+'{ "_id": "REF160", "title": "My new house in the city", "plot_id": "-628141"}' \
+http://127.0.0.1:5984/adverts</code></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+
+
+
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks_CouchDB_utils">
+            <h2>CouchDB
+                <small>utils...</small>
+            </h2>
+
+            <h3>A web interface to manage the database</h3>
+            <p class="text_center">
+                <a href="http://localhost:5984/_utils">http://localhost:5984/_utils</a>
+            </p>
+            <h3>Let's plug it to Node.js</h3>
+            Try it in node console:
+            <pre class=" x-3 prettyprint lang-js ">
+<code class="javascript">var cradle = require('cradle');
+var db = new(cradle.Connection)().database('real-estate-adverts')
+db.save('REF160', {
+        title: 'My new house in the city',
+        plot_id: '-628141'
+    }, function (err, res) {
+      if (err) {
+          // Handle error
+      } else {
+          // Handle success
+      }
+    }
+);
+db.get('REF160', function (err, doc) {
+      doc.title; // 'My new house in the city'
+});
+</code></pre>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="SERVER_SIDE_APP_LAB_SESSION">
+        <h2>Lab Session - Server Side App</h2>
+        <ul>
+        <li>We want to create a Web App where it is possible to:</li>
+        <ul>
+            <li>get a list of existing adverts,</li>
+            <li>create a real estate adverts,</li>
+            <li>modify an existing advert,</li>
+            <li>delete an advert.</li>
+        </ul>
+        <li>Each advert has (previously defined) fields and is linked to a "building" in the svg map. When creating or modifying an advert, one need to be able to specify this building by clicking on the map.</li>
+        <li>Adverts are stored in a CouchDB database.</li>
+        <li>Express.js is used as a server side framework.</li>
+        <li>html pages are generated based on Jade templates on the server.</li>
+        <li>Optionally, common security patterns are implemented: authentication, CSRF, https</li>
+        </ul>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks_ClientSide">
+            <h2>Client-Side Web Frameworks</h2>
+            <p>Obviously in JavaScript... actually not only</p>
+            <ul>
+                <li>Backbone.js (Most popular)</li>
+                <li>Cappuccino (in its own language Objective-J, tries to emulate Apple's Cocoa style)</li>
+                <li>Knockout.js (MVVM design pattern)</li>
+                <li>Javascript MVC</li>
+                <li>Angular.js (Google)</li>
+                <li>Ember.js</li>
+                <li>Batman.js</li>
+                <li>GWT (google)</li>
+                <li>...</li>
+            </ul>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Knockout_js">
+            <h2>Client-Side Web Frameworks</h2>
+            <h3>Let's try Knockout.js</h3>
+            <p>Follow all the tutorials to learn knockout at : <a href="http://learn.knockoutjs.com/">http://learn.knockoutjs.com/</a>
+            </p>
+            <ul>
+                <li>Introduction
+                </li>
+                <li>Working with Lists and Collections
+                </li>
+                <li>
+                    Single page applications
+                </li>
+
+                <li>
+                    Creating custom bindings
+
+                </li>
+
+                <li>
+                    Loading and saving data
+
+                </li>
+            </ul>
+
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Knockout_js_RealEstate">
+            <h2>Knockout.js for our RealEstate app</h2>
+            <p>We are dealing with a list of adverts. So we need a ViewModel for each advert and a general ViewModel to manage the list.</p>
+            <pre class=" x-4 prettyprint lang-html">
+<code class="javascript">&lt;!-- in public/index.html --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/js/RealEstate.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+            The advert ViewModel:
+            <pre class="x-4 prettyprint lang-js">
+<code class="javascript">/* in public/js/RealEstate.js */
+
+var RealEstate = RealEstate || {};
+
+RealEstate.Advert = function(data) {
+  var self = this;
+  self._id = data._id || "";
+  self._rev = data._rev || "";
+  self.title = ko.observable(data.title || "");
+  // ...
+}
+
+// override the toJSON method so that we send only the interesting attributes to the server
+RealEstate.Advert.prototype.toJSON = function() {
+    var copy = ko.toJS(this); //easy way to get a clean copy
+    delete copy.isSelected; //remove an extra property
+    // ...
+    return copy; //return the copy to be serialized
+};
+
+</code></pre>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Knockout_js_RealEstate2">
+            <h3>The advert list ViewModel</h3>
+            <pre class="prettyprint lang-js">
+<code class="javascript">/* in public/js/RealEstate.js */
+
+RealEstate.AdvertsViewModel = function() {
+  var self = this;
+  self.adverts = ko.observableArray([]);
+  self.nb_adverts = ko.computed(function() {
+    return ko.utils.arrayFilter(self.adverts(), function(advert) {
+      !advert._destroy ; }
+    ).length;
+  });
+  self.selectedAdvert = ko.observable("");
+  self.save = function(){
+    $.post("/adverts", {"adverts":ko.toJSON(self.adverts())},
+        function(returnedData) {
+          console.log(returnedData);
+    });
+  };
+  // ...
+};
+</code></pre>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Knockout_js_RealEstate3">
+            <h3>Start the app</h3>
+            <pre class="prettyprint lang-js">
+<code class="javascript">/* in public/js/RealEstate.js */
+// ...
+
+// start the app
+// console.log("Starting the app");
+RealEstate.viewModel = new RealEstate.AdvertsViewModel();
+ko.applyBindings(RealEstate.viewModel);
+
+// get the data from the server
+// console.log("get the data from the server");
+$.get("/adverts", function(data){
+  var ads_tab = JSON.parse(data);
+  for (var i = ads_tab.length - 1; i >= 0; i--) {
+    RealEstate.viewModel.adverts.push(new RealEstate.Advert(ads_tab[i]));
+    //console.log(ads_tab[i]);
+  }
+});
+</code></pre>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="KO_RE_selected">
+            <h2>Show and Select Adverts...</h2>
+            <pre class="prettyprint lang-html">
+<code class="html">&lt;!-- in public/index.html --&gt;
+&lt;div class=&quot;sidebar-nav&quot;&gt;
+  &lt;ul class=&quot;nav nav-list&quot; data-bind=&quot;foreach: adverts()&quot;&gt;
+    &lt;li data-bind=&quot;attr: { class: _id == $parent.selectedAdvert()._id ?
+                                          &#039;active&#039; :&#039;&#039; }&quot;&gt;
+      &lt;a href=&quot;#&quot; data-bind=&quot;click: $parent.selectedAdvert ,
+                                          text: _id&quot;&gt;&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CLIENT_SIDE_APP_LAB_SESSION">
+        <h2>Lab Session - Client-Side App</h2>
+        <p class="x2">We want to create a  Client-Side, Single page  version of the Real Estate Web App.</p>
+        <ul>
+        <li>We use Knockout.js as a Web framework on the client.</li>
+        <li>The server does  not provide html pages anymore (except for the index).</li>
+        <li>On the server, Express.js is used to:
+        <ul><li>
+            serve static content (index.html, js files, images, styles),
+        </li>
+        <li>
+            give access to the database (create/remove/modify/get adverts),
+        </li>
+        <li>
+            manage security, encryption, cookies.
+        </li></ul></li>
+        <li>The communication between the client and the server is ensured through AJAX requests.</li>
+        <li>Data is transported as JSON objects.</li>
+
+
+
+
+      </ul>
+        </section>
+        <!-- /.step -->
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="CLIENT_SIDE_APP_LAB_SESSION2">
+        <h2>Lab Session - Client-Side App</h2>
+<h3>Client-Side features</h3>
+<ul>
+  <li>Adverts are linked to their plot (<code>plot_id</code>).</li>
+  <li>The Advert form (created earlier) is used to populate the <strong>Advert Details</strong> tab in <code>index.html</code>.</li>
+  <li>Maintain a list of modified advert before the user saves the modifications.</li>
+  <li>When the user saves, all the modified adverts ans new adverts are sent to the server. </li>
+  <li>Allow adverts deletion.</li>
+  <li>Allow the creation of new adverts.</li>
+  <li>Handle pictures associated to <b>each</b> advert.</li>
+</ul>
+
+<h3>Deadline</h3>
+<p>
+  <b>Send the full project on the  Eureka platform by November 17th 2013 (firm deadline).</b>
+</p>
+
+        </section>
+        <!-- /.step -->
+
+    	</div>
+	</div>
+       <script src="../../bower_components/reveal.js/lib/js/head.min.js"></script>
+       <script src="../../bower_components/reveal.js/js/reveal.min.js"></script>
+
+        <script>
+			    (function() {
+			        var list = document.querySelectorAll('*[data-src]');
+			        for (var i = 0; i < list.length; i++) {
+			            var p = document.createElement('p')
+			            var a = document.createElement('a')
+			            var img = document.createElement('img')
+			            a.setAttribute('href', list[i].getAttribute('data-src'))
+			            img.setAttribute('src', '/images/codepen.png')
+			            img.setAttribute('alt', 'codepen')
+			            p.setAttribute('class', 'codepen')
+			            a.appendChild(img)
+			            p.appendChild(a)
+			            list[i].appendChild(p)
+			        }
+			    })();
+                // Full list of configuration options available here:
+                // https://github.com/hakimel/reveal.js#configuration
+                Reveal.initialize({
+
+					    width: 1400,
+					    height: 1050,
+
+					    // Factor of the display size that should remain empty around the content
+					    margin: 0.05,
+
+					    minScale: 0.1,
+    					maxScale: 2.0,
+
+                        // Optional libraries used to extend on reveal.js
+                        dependencies: [
+                                { src: '../../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                { src: '../../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '../../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '../../bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                { src: '../../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                                { src: '../../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                        ],
+						// Display controls in the bottom right corner
+						controls: true,
+
+						// Display a presentation progress bar
+						progress: true,
+
+						// Display the page number of the current slide
+						slideNumber: false,
+
+						// Push each slide change to the browser history
+						history: true,
+
+						// Enable keyboard shortcuts for navigation
+						keyboard: true,
+
+						// Enable the slide overview mode
+						overview: true,
+
+						// Vertical centering of slides
+						center: true,
+
+						// Enables touch navigation on devices with touch input
+						touch: true,
+
+						// Loop the presentation
+						loop: false,
+
+						// Change the presentation direction to be RTL
+						rtl: false,
+
+						// Turns fragments on and off globally
+						fragments: true,
+
+						// Flags if the presentation is running in an embedded mode,
+						// i.e. contained within a limited portion of the screen
+						embedded: false,
+
+						// Number of milliseconds between automatically proceeding to the
+						// next slide, disabled when set to 0, this value can be overwritten
+						// by using a data-autoslide attribute on your slides
+						autoSlide: 0,
+
+						// Stop auto-sliding after user input
+						autoSlideStoppable: true,
+
+						// Enable slide navigation via mouse wheel
+						mouseWheel: false,
+
+						// Hides the address bar on mobile devices
+						hideAddressBar: true,
+
+						// Opens links in an iframe preview overlay
+						previewLinks: false,
+
+						// Transition style
+						transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+						// Transition speed
+						transitionSpeed: 'fast', // default/fast/slow
+
+						// Transition style for full page slide backgrounds
+						backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+						// Number of slides away from the current that are visible
+						viewDistance: 3,
+
+						// Parallax background image
+						parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+						// Parallax background size
+						parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                });
+
+        </script>
+
+
+</body>
+</html>

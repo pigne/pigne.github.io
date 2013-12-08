@@ -1,0 +1,1008 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CSS Basics</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
+
+		
+		<link rel="stylesheet" href="../../styles/lecture-utilities.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../../bower_components/highlightjs/styles/dark.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+                document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <style>
+        	.reveal .slides {
+				text-align: left;
+			}
+			.reveal dt {
+				font-weight: bold;
+			}
+			.reveal dd {
+				margin-left:1em;
+			}
+			.reveal input {
+				font-size: inherit;
+			}
+			.reveal .slides>section {
+				/*border:1px solid black;*/
+			}
+			.reveal pre {
+				display: block;
+				position: relative;
+				width: 90%;
+				/*margin: 0;*/
+				text-align: left;
+				font-size: .75em;
+				font-family: monospace;
+				line-height: 1.2em;
+				word-wrap: break-word;
+				box-shadow: 0 0 6px rgba(0,0,0,.3);
+
+			}
+			.reveal pre code {
+				max-height: 600px;
+			}
+			.reveal ul, .reveal dl{
+				margin-bottom: .5em ;
+			}
+			#back{
+				position:absolute;
+				z-index:100;
+				right:5px;
+				top:5px;
+			}
+			#back>a {
+				font-size: larger;
+				text-decoration: none;
+				color:gray;
+
+			}
+			#back>a:hover {
+				text-decoration: none;
+			}
+			#back>a:hover:after{
+				content: "Back to Outline"
+			}
+
+        </style>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+	<div id="back"><a href=".">&#8630;</a></div>
+    <div class="reveal">
+    	<div class="slides">
+		<!-- ==== SLIDE ==== -->
+		<section id="home">
+			<h1>CSS Basics</h1>
+
+			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
+			
+			<li class="x2"><em>Selectors</em></li>
+		
+			<li class="x2"><em>@font-face</em></li>
+		
+			<li class="x2"><em>transform / transition</em></li>
+		
+			<li class="x2"><em>CSS pre processors (SASS, LESS)</em></li>
+		
+		</ul>
+		<p class="x2 bottom-right">
+		            Le Havre University
+		            <br>
+		            <em>Yoann Pigné</em>
+		            <br>2013
+		        </p>
+		</section>
+
+    	
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS">
+            <h2>Cascading Style Sheets (CSS)</h2>
+            <p>Describe the presentation of a document written in HTML or XML (including XHTML, SVG, ...)
+            </p>
+            <ul>
+                <li>CSS1: fisrt level of the norm. Obsolete.</li>
+                <li>CSS2.1: recommended level.</li>
+                <li>CSS3: new modular approach. Many new features.</li>
+            </ul>
+            <h3>Basic building blocks</h3>
+            <ul>
+                <li>The <b>property</b>: a name that identifies a visible feature (color, position, decoration).</li>
+                <li>The <b>value</b>: a description of how the property should be painted.</li>
+                <li>Coments :
+                    <code class="prettyprint lang-css">/* multiline-only c-style comments */</code>
+                </li>
+            </ul>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Syntaxe">
+            <h3>CSS Declarations</h3>
+            <p>A declaration assigns a value to a property. The property and the value are separated by a
+                <code>:</code>.</p>
+            <pre class="prettyprint lang-css ">
+<code class="css">color : blue
+</code></pre>
+            <h3>CSS Declarations Blocks</h3>
+            <p>Declarations are grouped in blocks. A block opens with a
+                <code>{</code> and closes with a
+                <code>}</code>. Decalrations are separated with a
+                <code>;</code>.</p>
+            <pre class="prettyprint lang-css ">
+<code class="css">{
+  color : darkblue ;
+  background-color : #EFF4F5
+}</code></pre>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Syntaxe2">
+            <h3>CSS Selectors</h3>
+            <p>Style blocks may apply to a subset of the DOM not to all the elements of the page. A selector is a condition statement that match a selection of elements.</p>
+            <pre class="prettyprint lang-css ">
+<code class="css">#mainmenu, div.menu > ul , nav ul</code></pre>
+            <ul>
+                <li>
+                    Selection can be based on ids (
+                    <code class="prettyprint lang-css">#myId</code>), classes (
+                    <code class="prettyprint lang-css">.myClass</code>) tags (
+                    <code class="prettyprint lang-css">div</code>), pseudo-classes (
+                    <code class="prettyprint lang-css">a:hover</code>), attributes (
+                    <code class="prettyprint lang-css">p[hidden="true"]</code>), or with general selectors(
+                    <code class="prettyprint lang-css">*[hidden="true"]</code>).</li>
+                <li>
+                    Search by inheritance is done strictly (direct descendant of) with
+                    <code>&gt;</code> or loosely (some descendant of) with a space.</li>
+            </ul>
+            <h3>CSS Rulesets (or Rules)</h3>
+            <p>A ruleset is the combination of a selector with a block of declarations, where matched elements are applied the declarations in the block.
+            </p>
+            <pre class="prettyprint lang-css ">
+<code class="css">#mainmenu, div.menu > ul , nav ul {
+  color : darkblue ;
+  background-color : #EFF4F5
+}
+</code></pre>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Syntaxe3">
+            <h3>At-Rules</h3>
+            <p>Statements that start with an at sign
+                <code>@</code> followed by an identifier. Then the rest of the statement is up to the next
+                <code>;</code>(if no block) or the end of a block
+                <code>}</code>(if there is a block). The syntaxe of the rest may differ for each at-rule.</p>
+            <pre class="prettyprint lang-css ">
+<code class="css">@charset "UTF-8";  // Set the encoding of the style sheet to UTF-8
+@import url("fineprint.css"); // Import rules from another file
+@font-face {
+  font-family: MyHelvetica;
+  src: local("Helvetica Neue Bold"),
+  local("HelveticaNeue-Bold"),
+  url(MgOpenModernaBold.ttf);
+  font-weight: bold;
+}
+</code></pre>
+
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Specificity">
+            <h2>Specificity</h2>
+            <p>The order the navigator chooses to use to select the good rules for the elements.</p>
+            <p>Order of specificity (by less specific to highly specific):</p>
+            <ul>
+                <li>Universal selectors</li>
+                <li>Type selectors</li>
+                <li>Class selectors</li>
+                <li>Attributes selectors</li>
+                <li>Pseudo-classes</li>
+                <li>ID selectors</li>
+                <li>Inline style</li>
+            </ul>
+            <h3>The !important exception</h3>
+            <p>When
+                <code>!important</code> is added at the end of a declaration, this one overwrites all the others made in the CSS for this property with these elements.</p>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_BoxModel">
+            <h2>Box Model</h2>
+            <p>Each element is represented as a 4-parts box model.</p>
+            <div class="twocols">
+
+                <ul class="first">
+                    <li>The <b>content</b>: controlled with
+                        <code class="prettyprint lang-css">width, min-width, max-width, height, min-height, max-height</code>
+                    </li>
+                    <li>The <b>padding</b>: controlled with
+                        <code class="prettyprint lang-css">padding-top, padding-right, padding-bottom, padding-left</code>
+                    </li>
+                    <li>The <b>border</b>: controlled with
+                        <code class="prettyprint lang-css">border-width</code>
+                    </li>
+                    <li>The <b>margin</b>: controlled with
+                        <code class="prettyprint lang-css">margin-top, margin-right, margin-bottom, margin-left</code>
+                    </li>
+                </ul>
+                <p class="second text_center">
+                    <img src="./images/boxmodel.png" alt="Box Model" style="width:100%; text-align:center">
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Position">
+            <h2>The
+                <code>position</code> property</h2>
+            <p>define how a block should be position in regard to the others with properties such as
+                <code>top</code>,
+                <code>left</code>,
+                <code>right</code> and
+                <code>bottom</code>.
+            </p>
+            <div class="twocols">
+                <dl class="first">
+                    <dt>
+                        <code>static</code>
+                    </dt>
+                    <dd>Normal behavior.</dd>
+                    <dt>
+                        <code>relative</code>
+                    </dt>
+                    <dd>Position relative to initial position in the flow. Leave a gap at original position.</dd>
+                    <dt>
+                        <code>absolute</code>
+                    </dt>
+                    <dd>Specified position relative to its closest positioned ancestor or to the containing block. Do not leave space for the element.
+                    </dd>
+                    <dt>
+                        <code>fixed</code>
+                    </dt>
+                    <dd>
+                        Specified position relative to the screen's viewport. Do not leave space for the element.
+                    </dd>
+                </dl>
+                <p class="second text_center"  data-src="http://codepen.io/pigne/pen/kJpxb" >
+                    <img src="./images/relative-positioning.png" alt="relative" style="width:100%">
+                    <br>
+                    <img src="./images/absolute-positioning.png" alt="relative" style="width:100%">
+                    <br>
+                    <img src="./images/fixed-1.png" alt="relative" style="width:45%">
+                    <img src="./images/fixed-2.png" alt="relative" style="width:45%">
+                </p>
+            </div>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_MediaQueries">
+        <h2>Media Queries</h2>
+        <p>Limit the stylesheet's scope with media types and other properties</p>
+        <pre class="prettyprint lang-css">
+<code class="css">@media media-types | media-features {
+    /* media-specific rules */
+}
+</code></pre>
+        <h3>media types <small>CSS 2.1</small></h3>
+<pre class="prettyprint lang-css nowatermark" ><code class="css">all speech braille handheld print projection screen tty tv embossed</code></pre>
+        <h3>Media Features <small>CSS 3</small></h3>
+        <pre class="prettyprint lang-css prewrap nowatermark" ><code class="css wrap">height min-height max-height device-width min-device-width max-device-width device-height min-device-height max-device-height aspect-ratio min-aspect-ratio max-aspect-ratio device-aspect-ratio min-device-aspect-ratio max-device-aspect-ratio color min-color max-color color-index min-color-index max-color-index monochrome min-monochrome max-monochrome resolution min-resolution max-resolution scan grid</code></pre>
+		</section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_MediaQueries2">
+<h3>logical operators <small>CSS 3</small></h3>
+<pre><code>'and' ',' 'not' 'only'</code></pre>
+        <h3>Examples</h3>
+<pre class="prettyprint lang-css">
+<code class="css">&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;example.css&quot; /&gt;
+&lt;style&gt;
+@media (max-width: 500px), handheld and (orientation: portrait) {
+  aside.ads {
+    display: none;
+  }
+}
+@media only print and (max-device-width:800px) {
+ body {
+ background-color:white;
+ color:black
+ }
+}
+&lt;/style&gt;
+</code></pre>
+</section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Mozilla">
+            <p class="text_center">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <a href="https://developer.mozilla.org/en-US/docs/CSS">https://developer.mozilla.org/en-US/docs/CSS</a>
+            </p>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_VendorPrefix">
+            <h2>New/Experimental features</h2>
+            <ul>
+                <li>
+                    <code>transition</code>: change value of a property with a smooth animation</li>
+                <li>
+                    <code>transform</code>: apply 2D transformations to elements</li>
+                <li>
+                    <code>animations</code>: define animation of elements</li>
+            </ul>
+            <h3>Vendor Prefixes</h3>
+            Browser consider some properties with a prefix when standards are not stabilized and the feature's behavior may change, or when the implementation of a feature is not stabilized in the browser. The code and the syntax may change.
+            <pre class="prettyprint lang-css">
+<code class="css">selector {
+  -webkit-property : value;
+  -moz-property : value;
+  -ms-property : value;
+  -o-property : value;
+  property : value;
+}
+</code></pre>
+            check needed prefixes on <a href="http://caniuse.com/">http://caniuse.com/</a> or use <a href="https://github.com/ai/autoprefixer">Autoprefixer</a>.
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Transition">
+            <h2>CSS
+                <code>transition</code> properties</h2>
+            <p>
+                Permit a smooth transition between an old and a new value of a CSS property. CSS properties are changed by :
+            </p>
+            <ul>
+
+                <li>pseudo classes :
+                    <code>:hover</code>,
+                    <code>:focus</code>,
+                    <code>:active</code>
+                </li>
+                <li>adding/removing a class to an element via JavaScript</li>
+                <li>dynamic styling via JavaScript:
+                    <code class="prettyprint lang-js">document.getElementById("d").style.color = "orange";</code>
+                </li>
+
+            </ul>
+            4 properties:
+            <dl>
+                <dt>
+                    <code>transition-property</code>
+                </dt>
+                <dd>List of CSS properties to transform.</dd>
+                <dt>
+                    <code>transition-duration</code>
+                </dt>
+                <dd>Duration of the smooth effect.</dd>
+                <dt>
+                    <code>transition-timing-function</code>(optional)</dt>
+                <dd>Transition function (acceleration, trajectory, deceleration).</dd>
+                <dt>
+                    <code>transition-delay</code>(optional)</dt>
+                <dd>Duration to wait for before starting the transition.</dd>
+            </dl>
+
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_TransitionExample">
+            <h3>A transition example</h3>
+            <pre class="prettyprint lang-css">
+<code class="css">#test_transition:hover {
+  transition-property: font-size, background-color, color;
+  transition-duration: 2s, 2s, 8s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  font-size:2em;
+  background-color: #333;
+  color:#eee;
+}
+</code></pre>
+            <style type="text/css">
+            #test_transition:hover {
+                -webkit-transition-property: font-size, background-color, color;
+                -webkit-transition-duration: 2s, 2s, 8s;
+                -webkit-transition-timing-function: ease;
+                -webkit-transition-delay: 0s;
+                font-size:2em;
+                background-color: #333;
+                color:#eee;
+            }
+            </style>
+            <a id="test_transition" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  </a>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_TransitionExample2">
+            <h3>A transition example... with all the vendor prefixes</h3>
+            <pre class="x-3 prettyprint lang-css">
+<code class="css">#test_transition:hover {
+  -webkit-transition-property: font-size, background-color, color;
+  -webkit-transition-duration: 2s, 2s, 8s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0s;
+  -moz-transition-property: font-size, background-color, color;
+  -moz-transition-duration: 2s, 2s, 8s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
+  -ms-transition-property: font-size, background-color, color;
+  -ms-transition-duration: 2s, 2s, 8s;
+  -ms-transition-timing-function: ease;
+  -ms-transition-delay: 0s;
+  -o-transition-property: font-size, background-color, color;
+  -o-transition-duration: 2s, 2s, 8s;
+  -o-transition-timing-function: ease;
+  -o-transition-delay: 0s;
+  transition-property: font-size, background-color, color;
+  transition-duration: 2s, 2s, 8s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  font-size:2em;
+  background-color: #333;
+  color:#eee;
+}
+</code></pre>
+            Actually, http://caniuse.com/ says
+            <code>-ms</code> was never needed for
+            <code>transition</code>.
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_TransitionShortVersion">
+            <h2>Short notation may help</h2>
+            <pre class="prettyprint lang-css"><code class="css">selecteur {
+transition:
+        property
+        duration
+        timing-function
+        delay;
+}</code></pre>
+            with several properties:
+            <pre class="prettyprint lang-css">
+<code>transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+</code></pre>
+            with vendor prefix:
+            <pre class="prettyprint lang-css">
+<code class="css">-webkit-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+-moz-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+-ms-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+-o-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+</code></pre>
+        </section>
+
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Transform">
+            <h2>The CSS
+                <code>transform</code> property</h2>
+            <p>Move HTML elements on the X and Y axis.</p>
+            <p>2 properties:</p>
+            <ul>
+                <li>
+                    <code>transform</code>: defines the list of function that generate the transformation
+                    <pre class="prettyprint lang-css">
+<code class="css">transform : function1(value1)
+            function2(value2)
+            function3(value3);
+</code></pre>
+                </li>
+                <li>
+                    <code>transform-origin</code> defines the origin point (x,y) relative to the top left corner of the element, from which the transform function while be computed
+                    <pre class="prettyprint lang-css">
+<code class="css">transform-origin: 50% 50%;
+transform-origin: top 0 left 0;
+</code></pre>
+    </li>
+  </ul>
+<p>Transforms need vendor prefixes.</p>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="CSS_Transform2">
+  <h2>The CSS <code>transform</code>   property</h2>
+  <pre class="prettyprint lang-css">
+<code class="css">#transform_test {
+transform-origin: 50% 50%;
+transform:  scale(1.2)
+            rotate(15deg)
+            translate(100px, 0px);
+}</code></pre>
+                    <div style="position:relative;">
+                        <div style="position:absolute; top:50px; left:100px; width:200px; height:200px; border: dashed 3px  #333;">
+                        </div>
+                        <style type="text/css">
+                        #transform_test {
+                            position:absolute;
+                            top:50px;
+                            left:100px;
+                            width:200px;
+                            height:200px;
+                            background-color:#333;
+                            opacity:0.3;
+                            -webkit-transform-origin: 50% 50%;
+                            -webkit-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                            -moz-transform-origin: 50% 50%;
+                            -moz-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                            -o-transform-origin: 50% 50%;
+                            -o-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                            -ms-transform-origin: 50% 50%;
+                            -ms-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                            transform-origin: 50% 50%;
+                            transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                            border: solid 3px #333;
+                        }
+                        </style>
+                        <div id="transform_test">
+                        </div>
+                    </div>
+
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Transform3">
+            <h2>Mixing
+                <code>transform</code> and
+                <code>transition</code>
+            </h2>
+            <pre class="prettyprint lang-css" data-src="http://codepen.io/pigne/pen/tIfrc">
+<code class="css">#transform_test:hover {
+  transition-property: transform, background-color;
+  transition-duration: 2s;
+  background-color: red;
+  transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+}</code></pre>
+
+            <div style="position:relative;">
+                <div style="position:absolute; top:50px; left:100px; width:200px; height:200px; border: dashed 3px  #333;">
+                </div>
+                <style type="text/css">
+                #transform_test {
+                    position:absolute;
+                    top:50px;
+                    left:100px;
+                    width:200px;
+                    height:200px;
+                    background-color:#333;
+                    opacity:0.3;
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                    -moz-transform-origin: 50% 50%;
+                    -moz-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                    -o-transform-origin: 50% 50%;
+                    -o-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                    -ms-transform-origin: 50% 50%;
+                    -ms-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                    transform-origin: 50% 50%;
+                    transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                    border: solid 3px #333;
+                }
+                #transform_test:hover {
+                    -webkit-transition-property: transform, background-color;
+                    -webkit-transition-duration: 2s;
+                    -moz-transition-property: transform, background-color;
+                    -moz-transition-duration: 2s;
+                    -o-transition-property: transform, background-color;
+                    -o-transition-duration: 2s;
+                    transition-property: transform, background-color;
+                    transition-duration: 2s;
+                    background-color: red;
+                    -webkit-transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+                    -moz-transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+                    -ms-transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+                    -o-transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+                    transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+                }
+                </style>
+                <div id="transform_test">
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Animation">
+            <h2>More control with CSS
+                <code>animation</code>
+            </h2>
+			<p>
+            Animation define property values at key moments of the animation (
+            <code>keyframes</code>). Animation can be repeated.</p>
+
+            <ul>
+                <li>animation-name</li>
+                <li>animation-duration</li>
+                <li>animation-iteration-count</li>
+                <li>animation-direction</li>
+                <li>animation-timing-function</li>
+                <li>animation-delay</li>
+                <li>animation-fill-mode
+                    <ul>
+                        <li>forwards</li>
+                        <li>backwards</li>
+                        <li>both</li>
+                        <li>none</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_AnimationExample">
+            <h2>CSS
+                <code>animation</code> Example</h2>
+
+            <div class="threecols">
+                <pre class=" x-3 firstsecond prettyprint lang-css" data-src="http://codepen.io/pigne/pen/ErgGL">
+<code class="css">#animation_test {
+  height: 200px;
+  width: 200px;
+  border: 1px solid rgba(0,0,0,0.1);
+  position:relative;
+  border-radius: 50%;
+  animation: rainbow 15s 15 linear;
+}
+@keyframes rainbow {
+  0% {background-color: #FF0000;}
+  10% {background-color: #FF8000;}
+  20% {background-color: #FFFF00;}
+  30% {background-color: #80FF00;}
+  40% {background-color: #00FF00;}
+  50% {background-color: #00FF80;}
+  60% {background-color: #00FFFF;}
+  70% {background-color: #0080FF;}
+  80% {background-color: #0000FF;}
+  90% {background-color: #8000FF;}
+  100% {background-color: #FF0080;}
+}
+</code></pre>
+                <style type="text/css">
+#animation_test {
+    height: 200px;
+    width: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    background-color: #FF0000;
+    border-radius: 50%;
+}
+
+#animation_test:hover {
+    -webkit-animation: rainbow 15s 15 linear;
+    animation: rainbow 15s 15 linear;
+}
+
+@-webkit-keyframes rainbow {
+    0% {
+        background-color: #FF0000;
+    }
+
+    10% {
+        background-color: #FF8000;
+    }
+
+    20% {
+        background-color: #FFFF00;
+    }
+
+    30% {
+        background-color: #80FF00;
+    }
+
+    40% {
+        background-color: #00FF00;
+    }
+
+    50% {
+        background-color: #00FF80;
+    }
+
+    60% {
+        background-color: #00FFFF;
+    }
+
+    70% {
+        background-color: #0080FF;
+    }
+
+    80% {
+        background-color: #0000FF;
+    }
+
+    90% {
+        background-color: #8000FF;
+    }
+
+    100% {
+        background-color: #FF0080;
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-color: #FF0000;
+    }
+
+    10% {
+        background-color: #FF8000;
+    }
+
+    20% {
+        background-color: #FFFF00;
+    }
+
+    30% {
+        background-color: #80FF00;
+    }
+
+    40% {
+        background-color: #00FF00;
+    }
+
+    50% {
+        background-color: #00FF80;
+    }
+
+    60% {
+        background-color: #00FFFF;
+    }
+
+    70% {
+        background-color: #0080FF;
+    }
+
+    80% {
+        background-color: #0000FF;
+    }
+
+    90% {
+        background-color: #8000FF;
+    }
+
+    100% {
+        background-color: #FF0080;
+    }
+}
+                </style>
+                <div id="animation_test" class="third" ></div>
+            </div>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Preprocessors">
+        <h2>CSS Pre-processors <small>Dynamic CSS</small></h2>
+        <ul><li>CSS is a limited description language (no variables, no function, no inheritance, no arithmetic)</li>
+        <li>Numerous pre-processing tool give new functionalities to css: new languages
+        <ul><li><a href="http://lesscss.org/">LESS</a> (used in Bootstrap)</li>
+        <li><a href="http://sass-lang.com/">SASS</a></li>
+        <li><a href="http://learnboost.github.io/stylus/">Stylus</a></li>
+        <li>...</li></ul></li>
+       </ul>
+       </section>
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Preprocessors2">
+
+        <h3>LESS' Main features</h3>
+            <ul><li>
+                <b>Variables</b>: values used in various declarations like themed colors, default values for various sizes (border, padding, margin, spaces, ...)
+                <pre class="prettyprint lang-css">
+<code class="css">@main-theme-color-bg: #428bca;
+body{
+    background-color: @main-theme-color-bg;
+}</code></pre>
+            </li>
+            <li><b>Mixins</b>: inherit properties of a class into another declaration block.
+            <pre class="prettyprint lang-css">
+<code class="css">.general_stuff{
+    /* ... */
+}
+#special_item {
+    .general_stuff;
+    /* ... */
+}</code></pre></li>
+</ul>
+</section>
+   <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Preprocessors3">
+     <ul>
+            <li><b>Nested Rules</b>: more expressive inheritance and shorter code
+            <pre class="prettyprint lang-css">
+<code class="css">#menu {
+    h1 {
+        /* ... */
+    }
+    ul{
+        /* ... */
+    }
+}</code></pre>
+            </li>
+       <li><b>Mixins with parameters</b>
+            <pre class="prettyprint lang-css">
+<code class="css">.big-font (@size: 18px) {
+    font-size: @size;
+    font-weight: 700;
+}
+.important {
+    .big-font;
+}
+#more-important {
+    .big-font(25px);
+}
+</code></pre>
+       </li>
+       </ul></section>
+          <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Preprocessors4">
+     <ul>
+      <li><b>Functions and Operations</b>: used within parenthesis</li></ul>
+            <pre class="prettyprint lang-css">
+<code class="css">width : (@default-width * 1.3);
+color : darken(@default-color, 3%);
+background-color: desaturate(@default-color, 10%);
+            </code></pre>
+
+        </section>
+
+
+    	</div>
+	</div>
+       <script src="../../bower_components/reveal.js/lib/js/head.min.js"></script>
+       <script src="../../bower_components/reveal.js/js/reveal.min.js"></script>
+
+        <script>
+			    (function() {
+			        var list = document.querySelectorAll('*[data-src]');
+			        for (var i = 0; i < list.length; i++) {
+			            var p = document.createElement('p')
+			            var a = document.createElement('a')
+			            var img = document.createElement('img')
+			            a.setAttribute('href', list[i].getAttribute('data-src'))
+			            img.setAttribute('src', '/images/codepen.png')
+			            img.setAttribute('alt', 'codepen')
+			            p.setAttribute('class', 'codepen')
+			            a.appendChild(img)
+			            p.appendChild(a)
+			            list[i].appendChild(p)
+			        }
+			    })();
+                // Full list of configuration options available here:
+                // https://github.com/hakimel/reveal.js#configuration
+                Reveal.initialize({
+
+					    width: 1400,
+					    height: 1050,
+
+					    // Factor of the display size that should remain empty around the content
+					    margin: 0.05,
+
+					    minScale: 0.1,
+    					maxScale: 2.0,
+
+                        // Optional libraries used to extend on reveal.js
+                        dependencies: [
+                                { src: '../../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                { src: '../../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '../../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '../../bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                { src: '../../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                                { src: '../../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                        ],
+						// Display controls in the bottom right corner
+						controls: true,
+
+						// Display a presentation progress bar
+						progress: true,
+
+						// Display the page number of the current slide
+						slideNumber: false,
+
+						// Push each slide change to the browser history
+						history: true,
+
+						// Enable keyboard shortcuts for navigation
+						keyboard: true,
+
+						// Enable the slide overview mode
+						overview: true,
+
+						// Vertical centering of slides
+						center: true,
+
+						// Enables touch navigation on devices with touch input
+						touch: true,
+
+						// Loop the presentation
+						loop: false,
+
+						// Change the presentation direction to be RTL
+						rtl: false,
+
+						// Turns fragments on and off globally
+						fragments: true,
+
+						// Flags if the presentation is running in an embedded mode,
+						// i.e. contained within a limited portion of the screen
+						embedded: false,
+
+						// Number of milliseconds between automatically proceeding to the
+						// next slide, disabled when set to 0, this value can be overwritten
+						// by using a data-autoslide attribute on your slides
+						autoSlide: 0,
+
+						// Stop auto-sliding after user input
+						autoSlideStoppable: true,
+
+						// Enable slide navigation via mouse wheel
+						mouseWheel: false,
+
+						// Hides the address bar on mobile devices
+						hideAddressBar: true,
+
+						// Opens links in an iframe preview overlay
+						previewLinks: false,
+
+						// Transition style
+						transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+						// Transition speed
+						transitionSpeed: 'fast', // default/fast/slow
+
+						// Transition style for full page slide backgrounds
+						backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+						// Number of slides away from the current that are visible
+						viewDistance: 3,
+
+						// Parallax background image
+						parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+						// Parallax background size
+						parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                });
+
+        </script>
+
+
+</body>
+</html>

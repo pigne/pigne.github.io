@@ -1,0 +1,1706 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>JavaScript Basics</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
+
+		
+		<link rel="stylesheet" href="../../styles/lecture-utilities.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../../bower_components/highlightjs/styles/dark.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+                document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <style>
+        	.reveal .slides {
+				text-align: left;
+			}
+			.reveal dt {
+				font-weight: bold;
+			}
+			.reveal dd {
+				margin-left:1em;
+			}
+			.reveal input {
+				font-size: inherit;
+			}
+			.reveal .slides>section {
+				/*border:1px solid black;*/
+			}
+			.reveal pre {
+				display: block;
+				position: relative;
+				width: 90%;
+				/*margin: 0;*/
+				text-align: left;
+				font-size: .75em;
+				font-family: monospace;
+				line-height: 1.2em;
+				word-wrap: break-word;
+				box-shadow: 0 0 6px rgba(0,0,0,.3);
+
+			}
+			.reveal pre code {
+				max-height: 600px;
+			}
+			.reveal ul, .reveal dl{
+				margin-bottom: .5em ;
+			}
+			#back{
+				position:absolute;
+				z-index:100;
+				right:5px;
+				top:5px;
+			}
+			#back>a {
+				font-size: larger;
+				text-decoration: none;
+				color:gray;
+
+			}
+			#back>a:hover {
+				text-decoration: none;
+			}
+			#back>a:hover:after{
+				content: "Back to Outline"
+			}
+
+        </style>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+	<div id="back"><a href=".">&#8630;</a></div>
+    <div class="reveal">
+    	<div class="slides">
+		<!-- ==== SLIDE ==== -->
+		<section id="home">
+			<h1>JavaScript Basics</h1>
+
+			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
+			
+			<li class="x2"><em>Syntax</em></li>
+		
+			<li class="x2"><em>Objects</em></li>
+		
+			<li class="x2"><em>Functions</em></li>
+		
+			<li class="x2"><em>Inheritance</em></li>
+		
+			<li class="x2"><em>Arrays</em></li>
+		
+			<li class="x2"><em>Regexp</em></li>
+		
+			<li class="x2"><em>JSON</em></li>
+		
+		</ul>
+		<p class="x2 bottom-right">
+		            Le Havre University
+		            <br>
+		            <em>Yoann Pigné</em>
+		            <br>2013
+		        </p>
+		</section>
+
+    	
+
+<!-- ======================== -->
+<!-- = 1. JAVASCRIPT BASICS = -->
+<!-- ======================== -->
+
+<section class="step" id="JS_History">
+    <h2>Javascript in a Nutshell</h2>
+    <ul>
+        <li>By Brendan Eich @ Netscape, 1995.</li>
+        <li>The name comes from a cooperation with Sun Microsystems (nothing to do with Java).</li>
+        <li>Standardized by ECMA (ECMAScript Language Specification).</li>
+        <li>Interpreted language.</li>
+        <li>Dynamic typing.</li>
+        <li>Object Oriented language based on Prototypes.</li>
+        <li>Functionnal language with nested functions and closures.</li>
+    </ul>
+</section>
+
+<!-- ==== 1.1 JAVASCRIPT SYNTAX ==== -->
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Syntax">
+    <h2>Syntax
+        <small>a C-based syntax with lots of idioms borrowed from java</small>
+    </h2>
+    <h3>Variables Declaration</h3>
+    <div class="twocols">
+        <pre class="prettyprint lang-js nowatermark first"><code>var i = 0;</code></pre>        <pre class="prettyprint lang-js nowatermark second"><code>var i=0, j=i+1, k;</code></pre>    </div>
+    <h3>Comments</h3>
+    <div class="twocols">
+        <pre class="prettyprint lang-js nowatermark first"><code>/* multi-line
+comment */</code></pre>
+        <pre class="prettyprint lang-js nowatermark second"><code>// single line comment</code></pre>    </div>
+    <h3>Names</h3>
+    <p>
+        One letter or underscore optionally followed by one or more letters, digits, underscores.
+    </p>
+    <h3>Reserved Words
+        <small>most are not used</small>
+    </h3>
+    <pre style='white-space : pre-wrap;' class="prettyprint  x-2"><tt>abstract boolean break byte case catch char class const continue debugger default delete do double else enum export extends false final finally float for function goto if implements import in instanceof int interface long native new null package private protected public return short static super switch synchronized this throw throws  transient true try typeof var volatile void while with</tt></code></pre>
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Numbers">
+    <h2>Numbers</h2>
+    <ul>
+        <li>an integer part
+            <code class="prettyprint lang-js">123</code>
+        </li>
+        <li>followed by an optional fraction part
+            <code class="prettyprint lang-js">123.456</code>
+        </li>
+        <li>followed by an optional exponent part
+            <code class="prettyprint lang-js">123.456e+7</code>
+        </li>
+    </ul>
+    <h3>Format</h3>
+    <ul>
+        <li>64 bits floats (Java doubles)</li>
+        <li>No integers,
+            <code class="prettyprint lang-js">1</code> is the same value as
+            <code class="prettyprint lang-js">1.0</code>.</li>
+        <li>Arithmetic is not exact, (
+            <code class="prettyprint lang-js">0.1 + 0.2 !== 0.3</code>) as in all programming languages.
+        </li>
+    </ul>
+    <h3>NaN</h3>
+    <ul>
+        <li>
+            <code class="prettyprint lang-js">NaN</code> is a value that results from an operation producing abnormal arithmetic result.</li>
+        <li>
+            <code class="prettyprint lang-js">isNaN(number)</code> can spot NaNs.</li>
+    </ul>
+</section>
+<section class="step" id="JS_Numbers2">
+    <h2>Numbers</h2>
+    <h3>Infinity</h3>
+    <p><code class="prettyprint lang-js">Infinity > 1.79769313486231570e+308</code></p>
+    <h3>Utility Function</h3>
+    Utility functions and constants are available through the
+    <code class="prettyprint lang-js">Math</code> object.
+    <pre class="prettyprint lang-js"><code>Math.floor(3.45); // 3
+Math.random();  // 0.22312605078332126
+Math.PI; // 3.141592653589793
+Math.sin(Math.PI/2); // 1
+</code></pre>
+    <h3>Parse strings</h3>
+    <code class="prettyprint lang-js">parseInt(string, base)</code>
+    <pre class="prettyprint lang-js"><code>parseInt("345€", 10); // 345
+parseInt("$345", 10); // 'undefined'
+parseInt("8"); // 8
+parseInt("08"); // 0 -> leading 0 is understood as octal base
+parseInt("08", 10); // 8 -> always give the base!!!
+</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Strings">
+    <h2>Strings
+        <small>immutable objects</small>
+    </h2>
+    <h3>String literals</h3>
+    <ul>
+        <li>Written between single or double quotes (
+            <code class="prettyprint lang-js">'this string'</code>,
+            <code class="prettyprint lang-js">"that string"</code>).</li>
+        <li>The empty string
+            <code class="prettyprint lang-js">""</code> is allowed (0 characters).</li>
+        <li>No
+            <code>char</code> type. We use one-character strings (
+            <code class="prettyprint lang-js">"a"</code>).</li>
+    </ul>
+    <h3>Escaped Characters</h3>
+    <ul>
+        <li>
+            <code class="prettyprint lang-js">\</code>(backslash) escapes characters.</li>
+        <li>
+            <code class="prettyprint lang-js">"\\ \" \' \n \/ \t \b \f \r \u0065"</code>
+        </li>
+    </ul>
+    <h3>Unicode</h3>
+    <ul>
+        <li>Strings are 16 bits unicode characters.</li>
+        <li>
+            <code class="prettyprint lang-js">"\u004A \u0053 \u062D \u0F1C \u3FEF \u0DF4" === "J S ح ༜ 㿯 ෴"</code>
+        </li>
+        <li>Characters above
+            <code class="prettyprint  lang-js">'\uFFFF'</code> need 2 JS characters.</li>
+    </ul>
+</section>
+
+<section class="step" id="JS_Strings2">
+    <h2>Strings</h2>
+    <h3>Concatenation</h3>
+    <ul>
+        <li>The
+            <code class="prettyprint lang-js">+</code> operator has 2 function:
+            <strong>
+                <em>concatenation</em>
+            </strong> of strings and
+            <strong>
+                <em>addition</em>
+            </strong> of numbers.</li>
+        <li>
+            <code class="prettyprint lang-js">"J" + "S" === "JS"</code>
+        </li>
+        <li>If the 2 operands are numbers, then addition, else concatenation.</li>
+        <li>
+            <code class="prettyprint lang-js">"HTML" + 10 / 2 === "HTML5"</code>
+        </li>
+    </ul>
+    <h3>Length</h3>
+    <ul>
+        <li>String objects have a
+            <code class="prettyprint lang-js">length</code> property (number of 16 bits unicode characters in the string).</li>
+        <li>
+            <code class="prettyprint lang-js">"€\u5555ñ".length === 3</code>
+        </li>
+        <li>
+            <code class="prettyprint lang-js">"€\u5555ñ" === '€啕ñ'</code>
+        </li>
+    </ul>
+</section>
+<section class="step" id="JS_Strings3">
+    <h2>Strings</h2>
+    <h3>Methods</h3>
+    <ul>
+        <li>The
+            <code class="prettyprint lang-js">String</code> pseudo-class has methods.</li>
+        <li>Since strings are immutable, methods are static and only return new objects (no modification).</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>var s = "ok/ko";
+var s1 = s;
+s += "/ok"; // 'ok/ko/ok' but strings are immutable, so s is a new object.
+s1; // 'ok/ko' The original object remains unchanged.
+
+s1.toUpperCase(); // 'OK/KO'
+s1.split('/'); // [ 'ok', 'ko' ]
+s1.replace('/', ' ≠ '); // 'ok ≠ ko'
+"one,    two   ,  three".split(/\s*,\s*/); // [ 'one', 'two', 'three' ]
+String.fromCharCode(74, 83) // "JS"</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Statements">
+    <h2>Statements
+        <small>C-style block statements</small>
+    </h2>
+    <div class="twocols">
+        <div class="first">
+            <strong>if/else</strong>
+            <pre class="prettyprint lang-js nowatermark"><code>if (expression) {
+    // statements;
+} else if (expression) {
+    // statements;
+}</code></pre>
+        </div>
+        <div class="second">
+            <strong>for</strong>
+            <pre class="prettyprint lang-js nowatermark"><code>var i; // at beginning of function
+// ...
+for (i = 0; i &lt; 10; i += 1) {
+    // statements;
+}
+for (i in obj) {
+    // statements;
+}</code></pre>
+        </div>
+    </div>
+    <div class="twocols">
+        <div class="first">
+            <strong>while</strong>
+            <pre class="prettyprint lang-js nowatermark"><code>var i; // at beginning of function
+// ...
+i = 0;
+while (i &lt; 10) {
+    // statements;
+}</code></pre>
+        </div>
+        <div class="second">
+            <strong>switch</strong>
+            <pre class="prettyprint lang-js nowatermark"><code>switch (expression) {
+    case expression:
+        // statements;
+        break;
+    default:
+        // statements;
+}</code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Expressions">
+    <h2>Expressions
+        <small>literals, names, operators and other expressions</small>
+    </h2>
+    <h3>Operators precedence</h3>
+    <table border="0" class="center">
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">. [] ()</code>
+            </td>
+            <td>Refinement and invocation</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">delete new typeof - + !</code>
+            </td>
+            <td>Unary operators</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">* / %</code>
+            </td>
+            <td>Multiplication, division, modulo</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">+ -</code>
+            </td>
+            <td>Addition (or string concatenation), subtraction</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">&lt;= &lt; &gt;= &gt;</code>
+            </td>
+            <td>Inequalities</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">=== !==</code>
+            </td>
+            <td>Equality</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">&amp;&amp;</code>
+            </td>
+            <td>Logical AND</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">||</code>
+            </td>
+            <td>Logical OR</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">?:</code>
+            </td>
+            <td>Ternary operator</td>
+        </tr>
+    </table>
+    <p></p>
+    <div class="twocols">
+        <div class="first">
+            <em>
+                <strong>Refinement</strong>
+            </em>
+            <pre class="prettyprint lang-js nowatermark"><code>object.property;
+object['property'];</code></pre>
+        </div>
+        <div class="second">
+            <strong>
+                <em>Invocation</em>
+            </strong>
+            <pre class="prettyprint lang-js nowatermark"><code>my_function(param1, param2);</code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Literals">
+    <h2>Literals</h2>
+    <div class="twocols">
+        <div class="first">
+            <h3>Objects</h3>
+            <pre class="prettyprint lang-js nowatermark"><code>{
+    property1: 'value1',
+    my_property: true,
+    "% of value": 23
+}</code></pre>
+        </div>
+        <div class="second">
+            <h3>Arrays</h3>
+            <pre class="prettyprint lang-js nowatermark"><code class="javascript">["a", 'b', 'c', 3, true, my_obj]</code></pre>
+        </div>
+    </div>
+
+    <h3>Regexp
+        <small>borrowed from Perl</small>
+    </h3>
+    <pre class="prettyprint lang-js nowatermark" style="white-space : pre-wrap;"><code class="javascript">/^[a-zA-Z_][a-zA-Z_0-9]*$/ // recognizes javascript 'names'</code></pre>
+    <div class=twocols>
+        <div class="first">
+            <h3>Functions</h3>
+            <pre class="first prettyprint lang-js nowatermark" style="white-space : pre-wrap;"><code class="javascript">function my_function(p1, p2) {
+    // var statements;
+    // statements
+}</code></pre>
+        </div>
+        <div class="second">
+            <h3>Anonymous Functions</h3>
+            <pre class="prettyprint lang-js nowatermark" style="white-space : pre-wrap;"><code class="javascript">some_function(p1, p2, function(){
+    // var statements;
+    // statements;
+});</code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_StrictMode">
+    <h2>Strict Mode</h2>
+    <ul>
+        <li>A restricted variant of JS defined in EcmaScript 5</li>
+        <li>Per-function activation. Never use "strict mode" on global scope!
+            <pre class="prettyprint lang-js"><code class="javascript">function myFunction(){
+"use strict";
+// instructions...
+}</code></pre>
+        </li>
+
+
+        <li>Some silent errors become throw errors
+            <pre class="prettyprint lang-js"><code class="javascript">forgotTheVar = 17; // throws a ReferenceError
+delete Object.prototype; // throws a TypeError
+var o = { p: 1, p: 2 }; // !!! syntax error
+function sum(a, a, c){ /* ... */ }// !!! syntax error
+var sum = 015; // !!! syntax error</code></pre>
+        </li>
+        </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_StrictMode2">
+    <h2>Strict Mode</h2>
+
+        <ul>
+        <li>Some dangerous or slow structures are forbidden
+            <pre class="prettyprint lang-js"><code>"use strict";
+var o = { x:17 };
+with (o) { console.log(x); } // !!! syntax error
+
+var x = 17;
+var evalX = eval("'use strict'; var x = 42; x");
+x === 17;  // true
+evalX === 42; // true</code></pre>
+        </li>
+        <li>Use of restricted words raises errors (<code>class, enum, export, extends, import, super</code>)</li>
+    </ul>
+</section>
+
+<!-- ==== 1.2 JAVASCRIPT OBJECTS ==== -->
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Objects">
+    <h2>Objects</h2>
+    <ul>
+        <li>Numbers, strings, booleans,
+            <code class="prettyprint lang-js">null</code> and
+            <code class="prettyprint lang-js">undefined</code> are simple and
+            <strong>
+                immutable
+            </strong> types.</li>
+        <li>All other values are
+            <strong>
+                objects
+            </strong>.</li>
+        <li>Objects are
+            <strong>
+                mutable
+            </strong> dictionaries (Java's hashtables, Python's dicts).</li>
+        <li>An object is a container for
+            <strong>
+                properties
+            </strong>.</li>
+        <li>A property has a
+            <strong>
+                name
+            </strong> and a
+            <em>
+                <strong>value</strong>
+            </em>.</li>
+        <li>A name of a property can be any string (quotes are optional if name matches
+            <code class="prettyprint lang-js">/^[a-zA-Z_][a-zA-Z_0-9]*$/</code>).</li>
+        <li>A value of a property can be any JS value except for
+            <code class="prettyprint lang-js">undefined</code>.</li>
+    </ul>
+    <div class="threecols">
+        <div class="first">
+            <strong>
+                <em>Object Literal</em>
+            </strong>
+            <pre class="prettyprint lang-js nowatermark"><code>var w = {
+"°C": 27,
+humidity: "80%",
+place: "Le Havre"
+}</code></pre>
+        </div>
+        <div class="second">
+            <strong>
+                <em>Access to properties</em>
+            </strong>
+            <pre class="prettyprint lang-js nowatermark"><code>w['°C']; //27
+w.humidity; //"80%"
+w.pressure; //'undefined'
+w.pressure = 1030;
+w.place = "Nice";</code></pre>
+        </div>
+        <div class="third">
+            <strong>
+                <em>Objects are passed by reference</em>
+            </strong>
+            <pre class="prettyprint lang-js nowatermark"><code>var w2 = w;
+w['°C']=34;
+w2['°C']; // 34</code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Prototype">
+    <h2>Prototype</h2>
+    <ul>
+        <li>Every object inherits properties from a prototype object.</li>
+        <li>Object literals are linked to
+            <code class="prettyprint lang-js">Object.prototype</code>.</li>
+        <li>New objects can have any object as a prototype.</li>
+        <li>Accessing an object's property is a recursive search into the
+            <em>prototype chain</em>.</li>
+        <li>Recursively, all objects inherit from
+            <code class="prettyprint lang-js">Object.prototype</code>.</li>
+    </ul>
+    <p></p>
+    <div class="twocols">
+        <pre class="prettyprint lang-js first"><code>var o = {
+    "a": 0,
+    "b": false
+};
+Object.prototype.ok = function() {
+    return "That's OK!"
+};
+Object.prototype.not_ok = "Not OK.";
+o.ok(); // "That's OK!"
+o.not_ok; // "Not OK."
+</code></pre>
+        <ul class="second x-2">
+            <li>object
+                <code data-jm>o</code>
+                <ul>
+                    <li>properties
+                        <code class="prettyprint lang-js">{"a":0, "b":false}</code>
+                    </li>
+                    <li>prototype
+                        <code class="prettyprint lang-js">Object.prototype</code>
+                        <ul>
+                            <li>properties
+                                <code class="prettyprint lang-js">{
+                                    <span>ok: [Function], not_ok: 'Not OK.'</span>}</code>
+                            </li>
+                            <li>prototype
+                                <code class="prettyprint lang-js">undefined</code>
+                                <ul>
+                                    <li>...</li>
+                                    <li>...</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Constructor_Function">
+    <h2>Creation of New Objects</h2>
+    <p>Several technics allow the creation of new objects. The most common uses
+        <strong>
+            <em>Constructor Functions</em>
+        </strong> and the
+        <strong>
+            <em>new</em>
+        </strong> operator.</p>
+    <h3>Constructor Functions</h3>
+    <ul>
+        <li>Like an ordinary function, with a capital first Letter name (convention)</li>
+        <li>The function body describes properties of the new objects it can create (referred to with
+            <code>this</code>)</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>function Point() {
+    this.x = 0;
+    this.y = 0;
+    this.toString = function() {
+        return "("+ this.x + ", " + this.y + ")";
+    };
+}</code></pre>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="The_new_Operator">
+    <h2>The
+        <code>new</code> operator</h2>
+    <ul>
+        <li>Creates new objects with a
+            <em>
+                <strong>Constructor Function</strong>
+            </em> as their prototype.</li>
+        <li>Gives newly created objects properties referred to by
+            <code>this</code> in the
+            <em>
+                <strong>CF</strong>
+            </em>.</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>var p1 = new Point();
+p1; // { x: 0, y: 0, toString: [Function] } </code></pre>
+    <ul>
+        <li>Changing an object's properties does not change its prototype object.</li>
+        <li>Changing properties on an object used as a prototype will affect the corresponding objects.</li>
+    </ul>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Properties">
+    <h2>Dealing with properties of an object</h2>
+    <ul>
+        <li>One use the
+            <em>for in</em> statement to iterate through properties.
+            <pre class="prettyprint lang-js"><code>var prop;
+for (prop in p1){
+    console.log(prop+" : "+p1[prop]);
+}</code></pre>
+        </li>
+        <li>the for in loop may bring properties inherited from the prototype chain.
+            <code class="prettyprint lang-js">hasOwnProperty</code> filter only properties (not function) belonging to that object.
+            <pre class="prettyprint lang-js"><code>for(var prop in options) {
+    if(options.hasOwnProperty(prop) &amp;&amp; this.hasOwnProperty(prop)) {
+        this[prop] = options[prop];
+    }
+}</code></pre>
+        </li>
+        <li>Delete a property from an object. Cannot affect properties from the prototype.
+            <pre class="prettyprint lang-js"><code>delete p1.x; // true
+p1.x; // undefined</code></pre>
+        </li>
+    </ul>
+</section>
+
+
+<!-- ==== 1.3 JAVASCRIPT FUNCTIONS ==== -->
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Functions">
+    <h2>Functions
+        <small>borrowed from Scheme</small>
+    </h2>
+    <ul>
+        <li>Functions are objects.</li>
+        <li>Functions are linked to
+            <code class="prettyprint lang-js">Function.prototype</code>(which is itself linked to
+            <code class="prettyprint lang-js">Object.prototype</code>).</li>
+        <li>Functions have a
+            <code class="prettyprint lang-js">prototype</code> property,
+            <strong>different</strong> from the
+            <em>prototype link</em>.
+            <ul>
+                <li>Used by
+                    <em>Constructor Functions</em> to define newly created objects' prototype.</li>
+                <li>Nothing differentiates
+                    <em>CF</em> from
+                    <em>non-CF</em> so all functions have it.</li>
+            </ul>
+        </li>
+
+        <li>Functions have a link to the object which invokes them:
+            <code class="prettyprint lang-js">this</code>.</li>
+    </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Func_Arguments">
+    <h2>Functions' arguments</h2>
+    <ul>
+        <li>No error is raised when parameters do not match defined arguments. The hidden object
+            <code>arguments</code> holds the given parameters.
+            <pre class="prettyprint lang-js"><code>function f(a) {
+    for (var i = 0; i &lt; arguments.length; i++) {
+        console.log(i + "=>" + arguments[i]);
+    }
+}
+f("ok",false) //  0=>ok
+//  1=>false</code></pre>
+        </li>
+        <li>Argument lists' order can be tricky to handle. We use objects to identify parameters.</li>
+        <pre class="prettyprint lang-js"><code>var obj1 = new Object1( w, h, c, o, s);
+var obj2 = new Object2({
+    width : w,
+    height : h,
+    color: c,
+    opacity: o,
+    shadow: s
+});</code></pre>
+        </li>
+    </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Func_Methods">
+    <h2>Functions used as
+        <em>Methods</em>
+    </h2>
+    <ul>
+        <li>When belonging to an object
+            <em>and</em> being invoked by this object, functions are
+            <em>methods</em>.</li>
+
+        <li>the parameter
+            <code>this</code> refers to the object that owns the method.</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>var p1 = {
+    x: 10,
+    y: 10,
+    toString: function() { /* definition of a method */
+        return "(" + this.x + ", " + this.y + ")";
+    }
+};
+// invocation of 'toString' as a method
+p1.toString(); // "(10, 10)"</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Func_Functions">
+    <h2>Functions used as
+        <em>Functions</em>
+    </h2>
+    <ul>
+        <li>If not bounded to an object, functions are bounded to the
+            <em>global scope</em>.</li>
+        <li>This refers to the global scope and not to the calling context.</li>
+    </ul>
+
+    <pre class="prettyprint lang-js"><code>var my_name_is = "global";
+function f() {
+    var my_name_is = "local to f()";
+    function print_name() {
+        console.log(this.my_name_is);
+    }
+    print_name();
+}
+f(); // global</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Func_Constructors">
+    <h2>Functions used as
+        <em>Constructors</em>
+    </h2>
+    <ul>
+        <li>
+            <code class="prettyprint lang-js">this</code> is meant to refer to the
+            <em>new</em> object.</li>
+        <li>First letter uppercase convention.</li>
+        <li>
+            <code class="prettyprint lang-js">prototype</code> property is used to initialize the new object's prototype link.</li>
+        <li>If no
+            <code class="prettyprint lang-js">return</code> statement or if the function doesn't return an object, then
+            <code class="prettyprint lang-js">this</code> is automatically returned.</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>function Point(x, y) {
+    this.x = x || 0;
+    this.y = y || 0;
+}
+Point.prototype.toString = function() {
+    return "("+ this.x + ", " + this.y + ")";
+};
+var p = new Point();</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Func_Apply">
+    <h2>Functions invoked with
+        <code class="prettyprint lang-js">apply</code>
+    </h2>
+    <ul>
+        <li>Since functions are objects, they can have methods.</li>
+        <li>The
+            <code class="prettyprint lang-js">apply</code> method belongs to
+            <code class="prettyprint lang-js">Function</code>.</li>
+        <li>
+            <code>apply</code> invokes the function with a given context (
+            <code class="prettyprint lang-js">this</code>).</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code class="javascript">var weirdo = {
+    x: "\u03B1",
+    y: "\u03B2"
+}
+Point.prototype.toString.apply(weirdo); // '(α, β)'
+p.toString.apply(weirdo); // '(α, β)'
+</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Exceptions">
+    <h2>Exceptions</h2>
+    <ul>
+        <li>Exceptions are meant to interrupt abnormally behaving programs.</li>
+        <li>Exceptions are thrown with the
+            <code class="prettyprint lang-js">throw</code> statement.</li>
+        <li>Exceptions are catch with the
+            <code class="prettyprint lang-js">try / catch</code> statements.</li>
+    </ul>
+    <pre class="firstsecond prettyprint lang-js"><code class="javascript">function Point(x, y) {
+    if ((typeof x !== 'undefined' &amp;&amp; typeof x !== 'number')
+    || (typeof y !== 'undefined'  &amp;&amp; typeof y !== 'number')) {
+    throw { name: 'TypeError', message: "'Point' needs numbers" };
+    }
+    // ...
+}
+(function() {
+    try {
+        var weirdo = new Point("\u03B1", 0);
+    } catch (e) {
+        console.log(e.name + ': ' + e.message);
+    }
+})(); // TypeError: 'Point' needs numbers</code></pre>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Augment">
+    <h2>Augmenting default types</h2>
+    <ul>
+        <li>Preexisting objects also have a prototype link that can be accessed.</li>
+        <li>The String pseudo-class can be augmented</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>String.prototype.trim = function() {
+    return this.replace(/^\s*|\s*$/, '');
+};
+
+" Ok then     ".trim(); // 'Ok then'
+
+Number.prototype.integer = function() {
+    return Math[this >= 0 ? 'floor' : 'ceil'](this);
+};
+
+(2.34).integer(); // 2
+(-Math.PI).integer(); // -3</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Recursion">
+    <h2>Recursion</h2>
+    <ul>
+        <li>Possible but slow.</li>
+        <li>No
+            <em>tail</em> optimization for self calling functions.</li>
+    </ul>
+    <!-- http://jsfiddle.net/Yoann/u9MKW/ -->
+    <pre data-src="http://codepen.io/pigne/pen/edLBE" class="prettyprint lang-js"><code class="javascript">function fib(n) {
+    if (n &lt;= 2) {
+        return 1;
+    }
+    return fib(n - 1) + fib(n - 2);
+}</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Scope">
+    <h2>Scope</h2>
+    <p>
+        <li>Although being a block-based syntax language, JS does
+            <strong>not</strong> have block scope. Javascript has
+            <em>function scope</em>.</li>
+        <li>Function get access to the context (surrounding variables) they are defined within.</li>
+    </ul>
+    <pre class="prettyprint lang-js" data-src="http://codepen.io/pigne/pen/LhHEo"><code class="javascript">function f () {
+    var a = 10, b = 2;
+    function f2() {
+        var b = 20, c = 2;
+        // a : 10,  b : 20,  c : 2
+    }
+    f2();
+    // a : 10,  b : 2,  'c' exists but is undefined
+    if (a > 0) {
+        var c = 34;
+        b = 25;
+        // a : 10, b : 25, c : 34
+    }
+    // a : 10, b : 25, c : 34
+}
+f();</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_IIFE">
+<h2>IIFE <small>Immediately Invoked Function Expressions</small></h2>
+<p>Use immediately invoked function expressions to prevent polluting the global scope. </p>
+    <pre class="prettyprint lang-js"><code  class="javascript">var a = 1;
+(function(){
+    var a = 0
+    console.log(a); // 0
+})();
+console.log(a); // 1</code></pre>
+
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Closure">
+    <h2>Closure</h2>
+    <ul>
+        <li>Functions have access to the variables and parameters of the function that defined them.</li>
+        <li>An inner function may live longer than its outer function.</li>
+    </ul>
+    <div class="twocols">
+        <pre class="prettyprint lang-js first"><code>function f_outer() {
+    function f_inner() {
+        return "Inner function";
+    }
+    return f_inner;
+}</code></pre>
+        <pre class="prettyprint lang-js second"><code>var f = f_outer(); // f_inner
+f(); // "Inner function"</code></pre>
+    </div>
+    <ul>
+        <li>Inner functions encapsulate states of outer functions for a latter invocation.</li>
+    </ul>
+    <div class="twocols">
+        <pre class="prettyprint lang-js first"><code>function increment() {
+    var counter = 0;
+    return function() {
+        counter = counter + 1;
+        return counter;
+    };
+}</code></pre>
+        <pre class="prettyprint lang-js second"><code>var my_increment = increment();
+my_increment(); // 1
+my_increment(); // 2
+my_increment(); // 3
+my_increment(); // 4</code></pre>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_hide_singletons">
+    <h2>Closure to hide singletons</h2>
+    <pre class="prettyprint lang-js" data-src="http://codepen.io/pigne/pen/HtqjF"><code class="javascript">function html_to_md() {
+    var tokens = {
+        "p": "\n",
+        "/p": "\n",
+        "h1": "#",
+        // ...
+    };
+    return function(html) {
+        return html.replace(/&lt;([^&lt;&gt;]+)>/g, function(a, b) {
+            var t = tokens[b];
+            console.log(t);
+            return typeof t === 'string' ? t : a;
+        });
+    };
+}
+var parse = html_to_md();
+parse("&lt;h1&gt;My Title&lt;/h1&gt;&lt;h2&gt;Subtitle&lt;...");
+// #My Title#\n ##Subtitle##...</code></pre>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Private_Vars">
+    <h2>Closure to make safe objects</h2>
+    <ul>
+        <li>By default, objects properties are always visible and writable.</li>
+        <li>Inner Functions and closure can create objects with "private" members.</li>
+    </ul>
+    <div class="twocols">
+        <pre class="first prettyprint lang-js" data-src="http://codepen.io/pigne/pen/DsEnA"><code class="javascript">function createPoint() {
+    var x = 0;
+    var y = 0;
+    // ...
+    return {
+        getX: function() {
+            return x;
+        },
+        setX: function(new_x) {
+            check_number(new_x);
+            x = new_x;
+        },
+        // ...
+    };
+}</code></pre>
+        <pre class="second prettyprint lang-js" data-src="http://codepen.io/pigne/pen/DsEnA"><code class="javascript">var p = createPoint();
+// new object without 'new' operator
+
+p.x; // 'undefined'
+p.getX(); // 0
+p.setY(-12);
+p.toString(); // "(0, -12)"
+</code></pre>
+    </div>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Modules">
+    <h2>Closure to make modules</h2>
+    <pre class="second prettyprint lang-js" data-src="http://codepen.io/pigne/pen/BEcGI"><code>var prop;
+(function(global) {
+    global.MY_MODULE = global.MY_MODULE || {};
+    // private API
+    function hidden_function() {
+        console.log("You called a hidden function.");
+    }
+    // public API
+    global.MY_MODULE.publicFunction = function() {
+        console.log("Public function calling a hidden one...");
+        hidden_function();
+    };
+})(this);
+
+for (prop in MY_MODULE) {
+    console.log(prop);
+}
+MY_MODULE.publicFunction(); // Public function calling a hidden one...
+// You called an hidden function.</code></pre>
+</section>
+
+<!-- ==== 1.4 JAVASCRIPT Inheritance ==== -->
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Classical_Inheritance">
+    <h2>Objects &amp; Inheritance <small>Classical Pattern</small></h2>
+    <ul>
+    <li>Pros: It's the classical way to do. Easy to read and understand. </li>
+    <li>Cons:
+    <ul>
+        <li>Manipulating
+            <em>Constructor Functions</em> and
+            <code class="prettyprint  lang-js">new</code> operator is risky.</li>
+        <li>All members are public.</li>
+        <li>Problem with parameters.</li>
+    </ul>
+    </li>
+    </ul>
+    <pre class="second prettyprint lang-js" data-src="http://codepen.io/pigne/pen/fkczG"><code>var p,
+    Point3D = function() {
+        this.z = 0;
+    };
+Point3D.prototype = new Point();
+Point3D.prototype.toString = function() {
+    return "(" + this.x + ", " + this.y + ", " + this.z + ")";
+};
+p = new Point3D();
+p.x = p.y = p.z = -3;
+p.toString(); // '(-1, -2, -3)';</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Differential_inheritance">
+    <h2>Objects &amp; Inheritance <small>Differential Pattern</small></h2>
+    <ul>
+        <li>Create new object from existing one.</li>
+        <li>Specify differences from base object.</li>
+        <li>Pros: can hide
+            <em>Constructor Functions</em> and
+            <code class="prettyprint  lang-js">new</code> operators.</li>
+        <li>Cons: objects are linked (if base object changes then inherited objects change too).</li>
+    </ul>
+    <pre class="second prettyprint lang-js" data-src="http://codepen.io/pigne/pen/tLHFA"><code class="javascript">function createObject(base) {     // Utility function to
+    function F() {};                // create objects with
+    F.prototype = base;             // 'base' as a prototype.
+    return new F();
+}
+var point = { x: 0, y: 0 },       // A 'base' object.
+p3d = createObject(point);        // New object with 'point' as its prototype.
+p3d.z = 0;                        // Differences from 'point'.
+p3d.toString = function() {
+    return "(" + this.x + ", " + this.y + ", " + this.z + ")";
+};
+p3d.toString(); // "(0, 0, 0)"</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Functional_creation">
+    <h2>Objects &amp; Inheritance <small>Functional Pattern</small></h2>
+    <ul>
+        <li>Some classical function returns new objects with
+            <em>public methods</em> in it.</li>
+        <li>
+            <em>Public methods</em> access hidden attributes thanks to closure.</li>
+        <li>That function is called as a regular function (no
+            <code class="prettyprint lang-js">new</code> operator).</li>
+    </ul>
+    <pre class="prettyprint lang-js" data-src="http://codepen.io/pigne/pen/EajDd">
+<code class="javascript">var createPoint = function(attributes) {
+    attributes = attributes || {};
+    attributes.x = attributes.x || 0; // Hidden attributes, given as parameters.
+    attributes.y = attributes.y || 0;
+    // ...
+    var point = {}; // The new object to be returned.
+
+    point.toString = function() { // public methods accessing hidden parameters.
+        return "(" + attributes.x + ", " + attributes.y + ")";
+    };
+    // ...
+    return point; // return the newly created object.
+};
+var p1 = createPoint({ x: -1, y: -4 });</code></pre>
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Functional_inheritance">
+    <h2>Objects &amp; Inheritance <small>Functional Pattern</small></h2>
+    Inheritance is simply done by:
+    <ul>
+        <li>using a create function into another,</li>
+        <li>sharing the attributes to initialize to new object.</li>
+    </ul>
+    <pre class="prettyprint lang-js" data-src="http://codepen.io/pigne/pen/EajDd"><code class="javascript">var createPoint3D = function(attributes) {
+    attributes = attributes || {};
+    attributes.z = attributes.z || 0;
+    var point3D = createPoint(attributes); // create a new object from upper hierarchy
+
+    point3D.toString = function() {
+        return "(" + attributes.x + ", " + attributes.y + ", " + attributes.z + ")";
+    };
+    // ...
+    return point3D;
+};
+var p3d = createPoint3D({ x: -3, y: -3, z: -4 });</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Functional_Code_Reuse">
+    <h2>Objects &amp; Inheritance <small>Functional Pattern</small></h2>
+    <p>Code reuse or access to
+    <em>super</em> members can be done with the
+    <code class="prettyprint lang-js">apply</code> invocation pattern.</p>
+    <pre class="prettyprint lang-js" data-src="http://codepen.io/pigne/pen/EajDd"><code>var createAugmentedPoint3D = function(attributes) {
+    attributes = attributes || {};
+    attributes.width = attributes.width || "1px";
+    attributes.color = attributes.color || "#00FF00";
+    var augmentedPoint3D = createPoint3D(attributes);
+    var superToString = augmentedPoint3D.toString;  // Store the super toString
+    // method locally.
+
+    augmentedPoint3D.toString = function() {        // Shadow super toString
+    // and call it with 'apply'.
+    return "{" + superToString.apply(augmentedPoint3D) + ", width:" +
+        attributes.width + ", color:" + attributes.color + "}";
+    };
+    return augmentedPoint3D;
+};
+var ap3d = createAugmentedPoint3D({ color: "#b3e4a2" });
+ap3d.toString(); // '{(0, 0, 0), width:1px, color:#b3e4a2}'</code></pre>
+</section>
+
+<!-- ==== 1.5 JAVASCRIPT ARRAYS ==== -->
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Arrays">
+    <h2>Arrays</h2>
+    <ul>
+        <li>Literals:
+            <pre class="prettyprint lang-js"><code>var a = [ 'a', 'b', ['c', 'd'], true];
+var b = [];</code></pre>
+        </li>
+        <li>Access with integer indices:
+            <code class="prettyprint lang-js">a[0]; // 'a'</code>.</li>
+        <li>Javascript's Arrays are ordinary objects (key/value) with arrays characteristics.</li>
+        <li>Indices are converted into keys (strings)
+            <code class="prettyprint lang-js">a[0] === a['0'] // true</code>.</li>
+        <li>Arrays can be sparse (no memory wasted):
+            <pre class="prettyprint lang-js"><code>a[10] = 'k';
+a[8]; // 'undefined'
+a; // ['a', 'b', ['c', 'd'], true, , , , , , , , 'k']
+var prop;
+for (prop in a) {
+    if (a.hasOwnProperty(prop)) { console.log(prop);}
+} // 0 1 2 3 10</code></pre>
+        </li>
+
+    </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Arrays2">
+    <h2>Arrays</h2>
+    <h3>Length</h3>
+    Arrays have a
+    <code class="prettyprint lang-js">length</code> property. The highest index plus one, not this actual size:
+    <pre class="prettyprint lang-js nowatermark"><code>a.length; // 11</code></pre>
+    <h3>Add Elements</h3>
+    <pre class="prettyprint lang-js"><code>a[a.length]="v1";
+a.push("v2");</code></pre>
+    <h3>Delete Elements</h3>
+    The
+    <code class="prettyprint lang-js">delete</code> operator can be use (as for objects) but array will not be rearranged. We use
+    <code class="prettyprint lang-js">splice</code> instead. <pre class="prettyprint lang-js"><code>delete a[2]; // ['a', 'b', , true, , , , , , , , 'k', "v1", "v2"]
+a.length; // 13
+a.splice(2, 1); // ['a', 'b', true, , , , , , , , 'k', "v1", "v2"]
+a.length; // 12</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Array_Methods">
+    <h2>Array Methods</h2>
+    <h3>concat(item...)</h3>
+    Returns a
+    <strong>new</strong> array that has the items of
+    <code class="prettyprint lang-js">this</code> plus the
+    <em>flatten</em> items given in parameters:
+    <pre class="prettyprint lang-js"><code>var a = ["a", "b", "c"];
+var b = ["d", "e", "f"];
+var c = a.concat(b, "g", "h");
+c; // ['a','b','c','d','e','f','g','h']</code></pre>
+    <h3>push(item...)</h3>
+    Appends items in parameters to this array.
+    <pre class="prettyprint lang-js"><code>a.push(b, "g", "h");
+a; // ['a', 'b', 'c', ['d', 'e', 'f'], 'g', 'h']</code></pre>
+    <h3>join(separator)</h3>
+    Returns a concatenated string of values of the array. The
+    <code class="prettyprint lang-js">separator</code> is inserted between each value.
+    <code class="prettyprint lang-js">a.join("-"); // 'a-b-c-d-e-f-g-h'</code>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Array_Methods2">
+    <h2>Array Methods</h2>
+    <h3>pop()</h3>
+    Removes and returns the last element of the array. Arrays can be used as stacks when
+    <code>pop()</code> and
+    <code class="prettyprint lang-js">push(...)</code> are used.
+    <pre class="prettyprint lang-js"><code>var a = ['x', 'y', 'z'];
+a.pop(); // 'z', a : ['x', 'y']</code></pre>
+    <h3>unshift(item...)</h3>
+    Adds items at the beginning of the array. Returns the size of the array. Existing elements are shifted.
+    <pre class="prettyprint lang-js"><code>a.unshift("a"); // 3
+a; //  ['a', 'x', 'y']</code></pre>
+    <h3>shift()</h3>
+    Removes and returns the item at the beginning of the array.
+    <pre class="prettyprint lang-js"><code>a.shift(); // "a"
+a; // ['x', 'y']</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Array_Methods3">
+    <h2>Array Methods</h2>
+    <h3>reverse()</h3>
+    Reverses the order of the array
+    <strong>and</strong> returns it.
+    <h3>splice(beg, len, item...)</h3>
+    Removes "<code class="prettyprint lang-js">len</code>" elements at position "<code class="prettyprint lang-js">beg</code>" and insert items "<code class="prettyprint lang-js">item...</code>" at that position. Re-indexing if needed.
+    <pre class="prettyprint lang-js"><code>var a = ['a', 'b', 'c'];
+a.splice(1, 1, "b1", "b2"); // ['b']
+a; // ['a', 'b1', 'b2', 'c']</code></pre>
+    <h3>slice(beg, end)</h3>
+    Return a copy array (references only if objects) of elements between
+    <code>beg</code> and
+    <code>end</code> indices. Original array not affected.
+    <pre class="prettyprint lang-js"><code>a.slice(1, 2); // ['b1', 'b2'];
+a; // ['a', 'b1', 'b2', 'c']</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Array_Methods4">
+    <h2>Array Methods</h2>
+    <h3>sort(func)</h3>
+    <p>Reorders the array according to the given function. The function takes 2 args (
+        <code class="prettyprint lang-js">a,b</code>) and returns 0 id
+        <code class="prettyprint lang-js">a === b</code>, a positive number if
+        <code class="prettyprint lang-js">a > b</code>, and a negative number if
+        <code class="prettyprint lang-js">b > a</code>.
+    </p>
+    <div class="twocols">
+        <pre class="first prettyprint lang-js nowatermark"><code>function by(prop){
+    return function(obj1, obj2){
+        var a = obj1[prop],
+        b = obj2[prop];
+        if(a === b){
+            return 0;
+        }
+        return a > b ? 1 : -1;
+    }
+}
+var pts = [ {x:10,y:34},
+{x:-10,y:4},
+{x:0,y:-4}];</code></pre>
+        <pre class="second prettyprint lang-js nowatermark"><code>var i;
+pts.sort(by('y'));
+for(i = 0 ;  i &lt; pts.length; i++) {
+    console.log(
+    Point.prototype.toString.apply(pts[i])
+);
+}
+// (0, -4)
+// (-10, 4)
+// (10, 34)
+</code></pre>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_LODASH">
+<h2>Lo-Dash <small>Going farther with arrays</small></h2>
+<ul>
+    <li>By John David Dalton</li>
+    <li><a href="lodash.com">http://lodash.com</a></li>
+    <li>A utility library delivering consistency, customization, performance, &amp; extras.</li>
+</ul>
+<pre class="prettyprint lang-js"><code>var _ = require('lodash'); // loading lodash in node.js
+
+_.map([1, 2, 3], function(num) { return num * 3; });
+// → [3, 6, 9]
+
+_.reduce([1, 2, 3], function(sum, num) {
+    return sum + num;
+});
+// → 6
+</code></pre>
+
+</section>
+
+
+<!-- ==== 1.6 JAVASCRIPT REGEXP ==== -->
+
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_RegEx">
+    <h2>Regular Expressions
+        <small>borrowed from Perl</small>
+    </h2>
+    <ul>
+        <li>For search and replace operation in strings.</li>
+        <li>Faster than equivalent string operations.</li>
+        <li>Not as powerful as real Perl regex.</li>
+        <li>Main methods:
+            <code>exec, test, match, replace, search, split</code>.</li>
+    </ul>
+    <pre class=" prettyprint lang-js" data-src="http://codepen.io/pigne/pen/thfCv"><code>/* matching ip addresses */
+var worst = /^\d+\.\d+.\d+.\d+$/;
+var bad = /^(?:\d{1,3}\.){3}\d{1,3}$/
+var better = /^(?:\b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b\.){3}
+            \b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\b$/</code></pre>
+    <p><a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/RegExp">Mozilla Developer Network's article on RegExp</a>.</p>
+</section>
+
+
+<!-- ==== 1.7 JAVASCRIPT JSON ==== -->
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_JSON">
+    <h2> JSON
+        <small>JavaScript Object Notation</small>
+    </h2>
+    <ul>
+        <li>Concise and text-based, made for data exchange through different systems.</li>
+        <li>Based on JS object literals syntax.</li>
+        <li>6 data types: objects, arrays, strings (double-quoted), number, boolean,
+            <code class="prettyprint lang-js">null</code>.</li>
+        <li>Can directly be interpreted as JS objects.</li>
+    </ul>
+    <pre class="prettyprint lang-json"><code>{
+    "type": "line",
+    "points": [
+        {
+            "x": -1, "y": -1
+        },
+        {
+            "x": 10, "y": 100
+        }
+    ]
+}</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Safe_JSON">
+    <h2>Safe JSON</h2>
+    <ul>
+        <li>With JSON, exchanged data is interpreted as JS objects: very dangerous.</li>
+        <li>Malicious (or mis-constructed) data could be sent by the server.</li>
+        <li>From ECMAScript 3.1,
+            <code class="prettyprint lang-js">JSON.parse()</code> is used to parse JSON data.</li>
+        <li>Never use the dangerous
+            <code class="prettyprint lang-js">eval()</code> function.</li>
+    </ul>
+    <pre class="prettyprint lang-json"><code>
+var shape = JSON.parse(
+    '{
+        "type":"line",
+        "points":[
+            {"x":-1,"y":-1},
+            {"x":10,"y":100}
+        ]
+    }'
+);
+shape.type; // 'line'
+shape.points.length; // 2</code></pre>
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Data_Pattern">
+    <h2>Classical Data manipulation Pattern</h2>
+    <p>JSON is used as a way to import raw data from a server and to create models from it. Classical steps are:</p>
+    <ol>
+        <li>Import JSON raw data from a distant server into a client.</li>
+        <li>Create Models from this raw data. Adaptations may be needed.</li>
+        <li>Create Views for these Models.</li>
+    </ol>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_LAB_SESSION">
+    <h2>Lab Session</h2>
+    <p>
+        Considering a JSON dataset containing geographical map data, one want to create a read only model (no write access) which represents the various geographical objects.
+    </p>
+    <h3>The JSON dataset</h3>
+    Get the <a href="data/eure.json">JSON geographical data</a>.
+    <div class="threecols x-3">
+        <pre class="prettyprint lang-js first"><code>[
+{
+"_id": "-630059",
+"building": true,
+"nodes": [
+    {
+        "x": 608.0,
+        "y": 302.0
+    },
+    {
+        "x": 610.0,
+        "y": 305.0
+    },
+    {
+        "x": 608.0,
+        "y": 302.0
+    }
+]
+}, </code></pre>
+        <pre class="prettyprint lang-js second"><code>{
+"_id": "-630043",
+"building": false,
+"name": "Bassin Paul Vatine",
+"natural": "water",
+"nodes": [
+    {
+        "e": "e"
+    }
+]
+}, </code></pre>
+        <pre class="prettyprint lang-js third"><code>{
+"_id": "-630016",
+"building": false,
+"highway": "residential",
+"name": "Place D\u00e9sir\u00e9 Rebeuf",
+"nodes": [
+    {
+        "x": 633.0,
+        "y": 453.0
+    },
+    {
+        "x": 677.0,
+        "y": 438.0
+    }
+]
+}
+]</code></pre>
+
+
+    </div>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_LAB_SESSION2">
+    <h2>Lab Session</h2>
+    <h3>The Data Model</h3>
+    <p class="text_center">
+        <img src="./images/uml.svg" alt="uml" style="width:80%">
+    </p>
+    <ul>
+        <li>The
+            <code>nodes</code> attribute is an array of objects (<code class="prettyprint lang-js">[{x:23,y:45},{x:3,y:5},{x:12,y:0}]</code>)that can be simplified into an array of arrays (
+            <code class="prettyprint lang-js">[[23,45],[3,5],[12,0]]</code>). What about Lo-Dash?</li>
+        <li>The  <code>toSvgPath()</code> method should return a string such as:
+            <code class="prettyprint lang-js">"M 23 45 L 3 5 L 12 0"</code>
+        </li>
+    </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_LAB_SESSION3">
+    <h2>Lab Session</h2>
+    In
+    <code>node.js</code>:
+    <ul>
+        <li>
+            import the downloaded JSON data :
+            <pre class="prettyprint lang-js"><code>var fs = require('fs');
+var raw_data = fs.readFileSync('eure.json', 'utf8');</code></pre>
+        </li>
+        <li>From the previous UML Model create read only objects with protected/hidden data.</li>
+        <li>Store new objects in containers.</li>
+        <li>Compute the overall and average surface of available buildings.</li>
+    </ul>
+</section>
+
+
+    	</div>
+	</div>
+       <script src="../../bower_components/reveal.js/lib/js/head.min.js"></script>
+       <script src="../../bower_components/reveal.js/js/reveal.min.js"></script>
+
+        <script>
+			    (function() {
+			        var list = document.querySelectorAll('*[data-src]');
+			        for (var i = 0; i < list.length; i++) {
+			            var p = document.createElement('p')
+			            var a = document.createElement('a')
+			            var img = document.createElement('img')
+			            a.setAttribute('href', list[i].getAttribute('data-src'))
+			            img.setAttribute('src', '/images/codepen.png')
+			            img.setAttribute('alt', 'codepen')
+			            p.setAttribute('class', 'codepen')
+			            a.appendChild(img)
+			            p.appendChild(a)
+			            list[i].appendChild(p)
+			        }
+			    })();
+                // Full list of configuration options available here:
+                // https://github.com/hakimel/reveal.js#configuration
+                Reveal.initialize({
+
+					    width: 1400,
+					    height: 1050,
+
+					    // Factor of the display size that should remain empty around the content
+					    margin: 0.05,
+
+					    minScale: 0.1,
+    					maxScale: 2.0,
+
+                        // Optional libraries used to extend on reveal.js
+                        dependencies: [
+                                { src: '../../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                { src: '../../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '../../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '../../bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                { src: '../../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                                { src: '../../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                        ],
+						// Display controls in the bottom right corner
+						controls: true,
+
+						// Display a presentation progress bar
+						progress: true,
+
+						// Display the page number of the current slide
+						slideNumber: false,
+
+						// Push each slide change to the browser history
+						history: true,
+
+						// Enable keyboard shortcuts for navigation
+						keyboard: true,
+
+						// Enable the slide overview mode
+						overview: true,
+
+						// Vertical centering of slides
+						center: true,
+
+						// Enables touch navigation on devices with touch input
+						touch: true,
+
+						// Loop the presentation
+						loop: false,
+
+						// Change the presentation direction to be RTL
+						rtl: false,
+
+						// Turns fragments on and off globally
+						fragments: true,
+
+						// Flags if the presentation is running in an embedded mode,
+						// i.e. contained within a limited portion of the screen
+						embedded: false,
+
+						// Number of milliseconds between automatically proceeding to the
+						// next slide, disabled when set to 0, this value can be overwritten
+						// by using a data-autoslide attribute on your slides
+						autoSlide: 0,
+
+						// Stop auto-sliding after user input
+						autoSlideStoppable: true,
+
+						// Enable slide navigation via mouse wheel
+						mouseWheel: false,
+
+						// Hides the address bar on mobile devices
+						hideAddressBar: true,
+
+						// Opens links in an iframe preview overlay
+						previewLinks: false,
+
+						// Transition style
+						transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+						// Transition speed
+						transitionSpeed: 'fast', // default/fast/slow
+
+						// Transition style for full page slide backgrounds
+						backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+						// Number of slides away from the current that are visible
+						viewDistance: 3,
+
+						// Parallax background image
+						parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+						// Parallax background size
+						parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                });
+
+        </script>
+
+
+</body>
+</html>

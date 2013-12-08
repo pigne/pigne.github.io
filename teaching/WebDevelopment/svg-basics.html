@@ -1,0 +1,423 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dynamic graphical data (SVG)</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
+
+		
+		<link rel="stylesheet" href="../../styles/lecture-utilities.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../../bower_components/highlightjs/styles/dark.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+                document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <style>
+        	.reveal .slides {
+				text-align: left;
+			}
+			.reveal dt {
+				font-weight: bold;
+			}
+			.reveal dd {
+				margin-left:1em;
+			}
+			.reveal input {
+				font-size: inherit;
+			}
+			.reveal .slides>section {
+				/*border:1px solid black;*/
+			}
+			.reveal pre {
+				display: block;
+				position: relative;
+				width: 90%;
+				/*margin: 0;*/
+				text-align: left;
+				font-size: .75em;
+				font-family: monospace;
+				line-height: 1.2em;
+				word-wrap: break-word;
+				box-shadow: 0 0 6px rgba(0,0,0,.3);
+
+			}
+			.reveal pre code {
+				max-height: 600px;
+			}
+			.reveal ul, .reveal dl{
+				margin-bottom: .5em ;
+			}
+			#back{
+				position:absolute;
+				z-index:100;
+				right:5px;
+				top:5px;
+			}
+			#back>a {
+				font-size: larger;
+				text-decoration: none;
+				color:gray;
+
+			}
+			#back>a:hover {
+				text-decoration: none;
+			}
+			#back>a:hover:after{
+				content: "Back to Outline"
+			}
+
+        </style>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+	<div id="back"><a href=".">&#8630;</a></div>
+    <div class="reveal">
+    	<div class="slides">
+		<!-- ==== SLIDE ==== -->
+		<section id="home">
+			<h1>Dynamic graphical data (SVG)</h1>
+
+			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
+			
+			<li class="x2"><em>Scalable Vector Graphics (SVG)</em></li>
+		
+			<li class="x2"><em>D3.js</em></li>
+		
+		</ul>
+		<p class="x2 bottom-right">
+		            Le Havre University
+		            <br>
+		            <em>Yoann Pigné</em>
+		            <br>2013
+		        </p>
+		</section>
+
+    	
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="DynamicGraphicalData">
+            <h2>Dynamic graphical data</h2>
+            <ul>
+                <li>Canvas 2D</li>
+                <li>WebGL</li>
+                <li>SVG</li>
+            </ul>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="DynamicGraphicalData2">
+            <h2>SVG</h2>
+            <p>
+                an XML markup language for describing two-dimensional vector graphics.
+            </p>
+
+            <div class="threecols">
+                <pre class="x-4 prettyprint lang-html nowatermark firstsecond x-3"><code class="svg">&lt;svg width=&quot;150&quot; height=&quot;100&quot; viewBox=&quot;0 0 3 2&quot;&gt;
+   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;0&quot; fill=&quot;#002395&quot; /&gt;
+   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;1&quot; fill=&quot;#ffffff&quot; /&gt;
+   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;2&quot; fill=&quot;#ED2939&quot; /&gt;
+&lt;/svg&gt;</code></pre>
+                <p class="third">
+                    <svg width="100" height="50" viewBox="0 0 3 2">
+                        <rect width="1" height="2" x="0" fill="#002395" />
+                        <rect width="1" height="2" x="1" fill="#ffffff" />
+                        <rect width="1" height="2" x="2" fill="#ED2939" />
+                    </svg>
+                </p>
+            </div>
+
+            <h3>Elements</h3>
+            <ul>
+                <li>Shape elements
+                    <br>
+                    <code class="svg">&lt;circle&gt;, &lt;ellipse&gt;, &lt;line&gt;, &lt;path&gt;, &lt;polygon&gt;, &lt;polyline&gt;, &lt;rect&gt;</code>
+                </li>
+                <li>Structural elements
+                    <br>
+                    <code>&lt;defs&gt;, &lt;g&gt;, &lt;svg&gt;, &lt;symbol&gt;, &lt;use&gt;</code>
+                </li>
+                <li>Text content elements
+                    <br>
+                    <code>&lt;altGlyph&gt;, &lt;textPath&gt;, &lt;text&gt;, &lt;tref&gt;, &lt;tspan&gt;</code>
+                </li>
+                <li>...</li>
+            </ul>
+            <h3>Attributes</h3>
+            Mostly for Animations and Events.
+
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="D3js">
+            <h2>D3.js
+                <small>Data-Driven Documents</small>
+            </h2>
+            <p>
+                Bind arbitrary data to a Document Object Model (DOM)
+            </p>
+            <p>
+                Classical steps to create data-linked DOM elements:
+            </p>
+            <div class="twocols">
+                <ol class="first">
+                    <li>Start from one existing DOM element</li>
+                    <li>Make a selection (<i>empty</i>) of DOM elements</li>
+                    <li>Link data to the selection</li>
+                    <li>Append new DOM elements to the seletion (one Element per data item)</li>
+                    <li>modify the new DOM elements :
+                        <ol>
+                            <li>style</li>
+                            <li>attributes</li>
+                            <li>events</li>
+                        </ol>
+                    </li>
+                </ol>
+                <pre class="second prettyprint lang-js">
+<code class="javascript">var user_data = [ 10, 20, 35, 12];
+var svg = d3.select('svg'); // (1)
+svg.selectAll('.block') // (2)
+  .data(user_data) // (3)
+  .enter() // data to be linked to DOM
+  .append("svg:path") // (4)
+  .classed("block",1) // (4.1)
+  .attr("cx", function(d, i) { // (4.2)
+    return 100*(1+i);
+  })
+  .on("click", function(d, i){ // (4.3)
+    d3.select(this)
+      .classed('clicked', 1);
+    });
+  })
+</code></pre>
+            </div>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="D3js2">
+
+
+            <div class="twocols">
+
+                <div class="first">
+                    <pre class=" x-4 prettyprint lang-js" data-src="http://codepen.io/pigne/pen/JBzai">
+<code class="javascript">var user_data = [ 10, 20, 35, 22, 25, 40];
+
+var coordiate_width = 800;
+var display_width = 400;
+
+var svg = d3.select('#svg1')
+    .append("svg")
+    .attr("width", display_width)
+    .attr("height", display_width/2)
+    .append("g")
+    .attr("transform", "scale("
+      +(display_width/coordiate_width)+")");
+
+var blocks = svg.selectAll('.block')
+    .data(user_data)
+    .enter()
+    .append("circle")
+    .classed("block",1)
+    .attr("cx", function(d, i) {
+        return 100*(1+i);
+    })
+    .attr("cy", coordiate_width/4)
+    .attr("r", function(d, i) {
+        return d;
+    })
+    .on("mouseover", function(d, i){
+      d3.select(this)
+        .classed('over', 1);
+    })
+    .on("mouseout", function(d, i){
+      d3.select(this)
+        .classed('over', 0);
+    });
+</code></pre>
+                </div>
+
+                <div class="second" id="svg1">
+                    <pre class=" prettyprint lang-css">
+<code class="css">.block {
+    stroke: #55F;
+    stroke-width: 2px;
+    stroke-linecap: square;
+    fill: #EEE;
+}
+
+.block.over {
+    stroke: #f99;
+    stroke-width: 3px;
+    fill: #DDD;
+}
+</code></pre>
+                </div>
+            </div>
+            <style type="text/css">
+            .block {
+                stroke: #55F;
+                stroke-width: 2px;
+                stroke-linecap: square;
+                fill: #EEE;
+            }
+            .block.over {
+                stroke: #f99;
+                stroke-width: 3px;
+                fill: #DDD;
+            }
+            </style>
+
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="SVG_LAB_SESSION">
+            <h2>SVG Lab Session</h2>
+            <p>Using the JSON data set and the Object Model of the previous lab session, write a function that, given the data model, draws the various shapes (roads, amenities, natural, buildings...) on an svg element.</p>
+            <p>Private buildings must highlight when the mouse passes over and they must be selectable through clicking.</p>
+            <p class="text_center"><img src="images/svgMap.png" alt="svg_map" style="width:40%;"></p>
+        </section>
+
+
+    	</div>
+	</div>
+       <script src="../../bower_components/reveal.js/lib/js/head.min.js"></script>
+       <script src="../../bower_components/reveal.js/js/reveal.min.js"></script>
+
+        <script>
+			    (function() {
+			        var list = document.querySelectorAll('*[data-src]');
+			        for (var i = 0; i < list.length; i++) {
+			            var p = document.createElement('p')
+			            var a = document.createElement('a')
+			            var img = document.createElement('img')
+			            a.setAttribute('href', list[i].getAttribute('data-src'))
+			            img.setAttribute('src', '/images/codepen.png')
+			            img.setAttribute('alt', 'codepen')
+			            p.setAttribute('class', 'codepen')
+			            a.appendChild(img)
+			            p.appendChild(a)
+			            list[i].appendChild(p)
+			        }
+			    })();
+                // Full list of configuration options available here:
+                // https://github.com/hakimel/reveal.js#configuration
+                Reveal.initialize({
+
+					    width: 1400,
+					    height: 1050,
+
+					    // Factor of the display size that should remain empty around the content
+					    margin: 0.05,
+
+					    minScale: 0.1,
+    					maxScale: 2.0,
+
+                        // Optional libraries used to extend on reveal.js
+                        dependencies: [
+                                { src: '../../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                { src: '../../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '../../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '../../bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                { src: '../../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                                { src: '../../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                        ],
+						// Display controls in the bottom right corner
+						controls: true,
+
+						// Display a presentation progress bar
+						progress: true,
+
+						// Display the page number of the current slide
+						slideNumber: false,
+
+						// Push each slide change to the browser history
+						history: true,
+
+						// Enable keyboard shortcuts for navigation
+						keyboard: true,
+
+						// Enable the slide overview mode
+						overview: true,
+
+						// Vertical centering of slides
+						center: true,
+
+						// Enables touch navigation on devices with touch input
+						touch: true,
+
+						// Loop the presentation
+						loop: false,
+
+						// Change the presentation direction to be RTL
+						rtl: false,
+
+						// Turns fragments on and off globally
+						fragments: true,
+
+						// Flags if the presentation is running in an embedded mode,
+						// i.e. contained within a limited portion of the screen
+						embedded: false,
+
+						// Number of milliseconds between automatically proceeding to the
+						// next slide, disabled when set to 0, this value can be overwritten
+						// by using a data-autoslide attribute on your slides
+						autoSlide: 0,
+
+						// Stop auto-sliding after user input
+						autoSlideStoppable: true,
+
+						// Enable slide navigation via mouse wheel
+						mouseWheel: false,
+
+						// Hides the address bar on mobile devices
+						hideAddressBar: true,
+
+						// Opens links in an iframe preview overlay
+						previewLinks: false,
+
+						// Transition style
+						transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+						// Transition speed
+						transitionSpeed: 'fast', // default/fast/slow
+
+						// Transition style for full page slide backgrounds
+						backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+						// Number of slides away from the current that are visible
+						viewDistance: 3,
+
+						// Parallax background image
+						parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+						// Parallax background size
+						parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                });
+
+        </script>
+
+
+</body>
+</html>

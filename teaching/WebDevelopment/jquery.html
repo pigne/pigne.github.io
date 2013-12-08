@@ -1,0 +1,765 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>JQuery</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
+
+		
+		<link rel="stylesheet" href="../../styles/lecture-utilities.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../../bower_components/highlightjs/styles/dark.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+                document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <style>
+        	.reveal .slides {
+				text-align: left;
+			}
+			.reveal dt {
+				font-weight: bold;
+			}
+			.reveal dd {
+				margin-left:1em;
+			}
+			.reveal input {
+				font-size: inherit;
+			}
+			.reveal .slides>section {
+				/*border:1px solid black;*/
+			}
+			.reveal pre {
+				display: block;
+				position: relative;
+				width: 90%;
+				/*margin: 0;*/
+				text-align: left;
+				font-size: .75em;
+				font-family: monospace;
+				line-height: 1.2em;
+				word-wrap: break-word;
+				box-shadow: 0 0 6px rgba(0,0,0,.3);
+
+			}
+			.reveal pre code {
+				max-height: 600px;
+			}
+			.reveal ul, .reveal dl{
+				margin-bottom: .5em ;
+			}
+			#back{
+				position:absolute;
+				z-index:100;
+				right:5px;
+				top:5px;
+			}
+			#back>a {
+				font-size: larger;
+				text-decoration: none;
+				color:gray;
+
+			}
+			#back>a:hover {
+				text-decoration: none;
+			}
+			#back>a:hover:after{
+				content: "Back to Outline"
+			}
+
+        </style>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+	<div id="back"><a href=".">&#8630;</a></div>
+    <div class="reveal">
+    	<div class="slides">
+		<!-- ==== SLIDE ==== -->
+		<section id="home">
+			<h1>JQuery</h1>
+
+			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
+			
+			<li class="x2"><em>Browser Agnostic DOM Manipulation</em></li>
+		
+			<li class="x2"><em>By John Resig</em></li>
+		
+		</ul>
+		<p class="x2 bottom-right">
+		            Le Havre University
+		            <br>
+		            <em>Yoann Pigné</em>
+		            <br>2013
+		        </p>
+		</section>
+
+    	
+
+
+<section>
+	<p class="text_center"><a href="images/jquery.pdf">JQuery Lecture</a></p>
+</section>
+
+
+<section data-markdown>
+    <script type="text/template">
+##jQuery par John Resig
+
+- Depuis janvier 2006
+- Applications coté client
+- Multi-navigateurs multi-OS
+- Fonctionnalités : le parcours du DOM, les évènements, AJAX et les animations
+- version 1.8.2 (minifiée/zipée) : 32 ko
+- Extensions de la bibliothèque par plugins
+- Code concis, fichier très petit
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##La fonction ```jQuery()```
+
+- Tout commence par cette fonction
+- «factory» pour tous les objets jQuery
+- Code en 2 parties : requête & action jQuery(".even").hide()
+- «$» alias de «jQuery»
+
+```
+jQuery("div.even") ➔ $("div.even")
+```
+<!-- .element: class="javascript"  -->
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Sélecteurs CSS 2 et 3
+
+	a[rel]
+	div[class~="even"]
+	a[href^="http://"]
+	ul#nav > li
+	li#current ~ li
+	li:first-child, li:last-child, li:nth-child(3)
+
+<!-- .element: class="css"  -->
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+##D’autres sélecteurs
+```
+div:first, h3:last
+:header
+:hidden,:visible
+:animated
+:input,:text,:password,:radio,:submit...
+div:contains(Hello)
+```
+<!-- .element: class="css"  -->
+
+http://api.jquery.com/category/selectors/
+
+<!-- .element: class="text_center"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+## ```jQuery()``` retourne un tableau
+
+- Collections (objet) jQuery
+
+```
+$('.odd')
+[<div class=!"odd" id=!"d1">!that's d1!</div>,
+<div class=!"odd" id=!"d3">!that's d3!</div> ,
+<div class=!"odd" id=!"d5">!that's d5!</div>!,
+<div class=!"odd" id=!"d7">!that's d7!</div>!]
+```
+<!-- .element: class="javascript"  -->
+
+
+- Peut se traiter comme un tableau
+
+```
+$(".odd").length;
+$(".odd")[0];
+```
+<!-- .element: class="javascript"  -->
+
+
+- On peut leur appliquer des méthodes
+
+```$(".odd").size();
+$(".odd").each(function() {
+     console.log(this);
+});
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+
+
+<section data-markdown>
+    <script type="text/template">
+##Action sur la sélection
+
+- Méthodes qui manipule l’objet appelant (les objets du tableau sélectionné)
+- Elle retournent généralement l’objet (la collection) appelant
+- Actions ou commandes enchainables
+
+```
+$(".odd").add(".even").addClass("darcker").show("fast");
+```
+
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Consistance du code
+
+###Nom des fonctions
+```
+.click() vs. .onclick()
+```
+<!-- .element: class="javascript"  -->
+
+###Position des arguments
+
+```
+.methode(options, arg1, arg2, ... , callback)
+```
+<!-- .element: class="javascript"  -->
+
+###Contexte des callbacks
+
+```
+.methode(function(){
+    // this == DOMElement
+});
+```
+<!-- .element: class="javascript"  -->
+
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Manipulations HTML
+```
+$(".even:first").text("First \"even\" div on the page.")
+$(".odd:last").html("<ul><li>The last</li><li>odd div</li></ul>")
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Manipulations d’attributs
+```
+$('a.nav').attr('href', 'http://flickr.com/');
+$('a.nav').attr({
+    'href': 'http://flickr.com/',
+    'id': 'flickr'
+});
+$('#intro').removeAttr('id');
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+###Manipulations CSS
+```
+$('#intro').addClass('highlighted');
+$('#intro').removeClass('highlighted');
+$('#intro').toggleClass('highlighted');
+$('.div').css("background-color", "#eee");
+jQuery(".div").css({
+    "background-color": "#eee",
+    "border": "1px solid #555"
+})
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Retour de valeurs
+
+Certaines méthodes retournent une valeur pour le première élément de la collection.
+
+```
+var height = $('div#intro').height();
+var src = $('img.photo').attr('src');
+var lastP = $('p:last').html();
+var hasFoo = $('p').hasClass('foo');
+var email = $('input#email').val();
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Parcours du DOM
+```
+$('div.section').parent();
+$('div.section').next();
+$('div.section').prev();
+$('div.section').nextAll('div');
+$('h1:first').parents();
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Gestion des évènements
+```
+$('a:first').click(function(ev){
+   $(this).css({ "background-color": "#a0a8b8"});
+   return false; // ou ev.preventDefault();
+}
+```
+<!-- .element: class="javascript"  -->
+
+```
+blur, change, click, dblclick, error, focus, hover, ready, resize, scroll, select, submit, toggle
+```
+<!-- .element: class="css wrap"  -->
+
+http://api.jquery.com/category/events/
+
+<!-- .element: class="text_center"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Unobtrusive JS
+```
+$(document).ready(function(){
+     alert('Le DOM est prêt !')
+});
+```
+<!-- .element: class="javascript"  -->
+
+⬇
+
+<!-- .element: class="text_center"  -->
+
+```
+$(function(){
+     alert('Le DOM est prêt !')
+});
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+###Chainage des actions
+
+- Actions classiques renvoient la collection appelante
+- Certains renvoient une collection différente
+- ```end()``` revient à la collection précédente
+
+
+```
+$('.intro').css('color','#ccc')
+	.find('a').addClass('highlight')
+	.end()
+	.find('em').css('color','red')
+	.end()
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+
+<section data-markdown>
+    <script type="text/template">
+##Autres méthodes ≠ actions
+
+Ne s’appliquent pas obligatoirement sur des objets jQuery.
+
+Méthodes de l'objet global ```jQuery``` ou ```<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>JQuery</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
+
+		
+		<link rel="stylesheet" href="../../styles/lecture-utilities.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../../bower_components/highlightjs/styles/dark.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+                document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <style>
+        	.reveal .slides {
+				text-align: left;
+			}
+			.reveal dt {
+				font-weight: bold;
+			}
+			.reveal dd {
+				margin-left:1em;
+			}
+			.reveal input {
+				font-size: inherit;
+			}
+			.reveal .slides>section {
+				/*border:1px solid black;*/
+			}
+			.reveal pre {
+				display: block;
+				position: relative;
+				width: 90%;
+				/*margin: 0;*/
+				text-align: left;
+				font-size: .75em;
+				font-family: monospace;
+				line-height: 1.2em;
+				word-wrap: break-word;
+				box-shadow: 0 0 6px rgba(0,0,0,.3);
+
+			}
+			.reveal pre code {
+				max-height: 600px;
+			}
+			.reveal ul, .reveal dl{
+				margin-bottom: .5em ;
+			}
+			#back{
+				position:absolute;
+				z-index:100;
+				right:5px;
+				top:5px;
+			}
+			#back>a {
+				font-size: larger;
+				text-decoration: none;
+				color:gray;
+
+			}
+			#back>a:hover {
+				text-decoration: none;
+			}
+			#back>a:hover:after{
+				content: "Back to Outline"
+			}
+
+        </style>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+	<div id="back"><a href=".">&#8630;</a></div>
+    <div class="reveal">
+    	<div class="slides">
+		<!-- ==== SLIDE ==== -->
+		<section id="home">
+			<h1>JQuery</h1>
+
+			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
+			
+			<li class="x2"><em>Browser Agnostic DOM Manipulation</em></li>
+		
+			<li class="x2"><em>By John Resig</em></li>
+		
+		</ul>
+		<p class="x2 bottom-right">
+		            Le Havre University
+		            <br>
+		            <em>Yoann Pigné</em>
+		            <br>2013
+		        </p>
+		</section>
+
+    	``
+
+- Utilitaires
+
+```
+$.isArray()
+$.trim()
+$.type()
+$.paseJSON()
+```
+<!-- .element: class="javascript"  -->
+
+- AJAX
+
+```
+$.ajax()
+$.get()
+$.post()
+$.getJSON()
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+ ##AJAX
+
+S’appliquant sur un objet jQuery
+
+```
+$("#data").load("/some/file.html") Méthode bas niveau
+$.ajax({
+  url: "test.html",
+  context: document.body,
+  success: function(){
+    $(this).addClass("done");
+  }
+});
+```
+<!-- .element: class="javascript"  -->
+
+Méthodes haut niveau
+
+```
+$.get()
+$.post()
+$.getJSON()
+$.getScript()
+```
+<!-- .element: class="javascript"  -->
+
+http://api.jquery.com/category/ajax/
+
+<!-- .element: class="text_center"  -->
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+##Animation
+
+jQuery a quelques effets pré-installés
+
+```
+$('h1').hide('slow');
+$('h1').slideDown('fast');
+$('h1').fadeOut(2000);
+```
+<!-- .element: class="javascript"  -->
+
+On peut les enchainer
+
+```
+$('h1').fadeOut(2000).slideDown();
+```
+<!-- .element: class="javascript"  -->
+
+http://api.jquery.com/category/effects/
+
+<!-- .element: class="text_center"  -->
+
+
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+##Plugins
+
+- AJAX
+- DOM
+- Drag-Drop
+- Menu
+- Navigation
+- Tableaux
+- ...
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+    </script>
+</section>
+
+
+    	</div>
+	</div>
+       <script src="../../bower_components/reveal.js/lib/js/head.min.js"></script>
+       <script src="../../bower_components/reveal.js/js/reveal.min.js"></script>
+
+        <script>
+			    (function() {
+			        var list = document.querySelectorAll('*[data-src]');
+			        for (var i = 0; i < list.length; i++) {
+			            var p = document.createElement('p')
+			            var a = document.createElement('a')
+			            var img = document.createElement('img')
+			            a.setAttribute('href', list[i].getAttribute('data-src'))
+			            img.setAttribute('src', '/images/codepen.png')
+			            img.setAttribute('alt', 'codepen')
+			            p.setAttribute('class', 'codepen')
+			            a.appendChild(img)
+			            p.appendChild(a)
+			            list[i].appendChild(p)
+			        }
+			    })();
+                // Full list of configuration options available here:
+                // https://github.com/hakimel/reveal.js#configuration
+                Reveal.initialize({
+
+					    width: 1400,
+					    height: 1050,
+
+					    // Factor of the display size that should remain empty around the content
+					    margin: 0.05,
+
+					    minScale: 0.1,
+    					maxScale: 2.0,
+
+                        // Optional libraries used to extend on reveal.js
+                        dependencies: [
+                                { src: '../../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                { src: '../../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '../../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '../../bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                { src: '../../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                                { src: '../../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                        ],
+						// Display controls in the bottom right corner
+						controls: true,
+
+						// Display a presentation progress bar
+						progress: true,
+
+						// Display the page number of the current slide
+						slideNumber: false,
+
+						// Push each slide change to the browser history
+						history: true,
+
+						// Enable keyboard shortcuts for navigation
+						keyboard: true,
+
+						// Enable the slide overview mode
+						overview: true,
+
+						// Vertical centering of slides
+						center: true,
+
+						// Enables touch navigation on devices with touch input
+						touch: true,
+
+						// Loop the presentation
+						loop: false,
+
+						// Change the presentation direction to be RTL
+						rtl: false,
+
+						// Turns fragments on and off globally
+						fragments: true,
+
+						// Flags if the presentation is running in an embedded mode,
+						// i.e. contained within a limited portion of the screen
+						embedded: false,
+
+						// Number of milliseconds between automatically proceeding to the
+						// next slide, disabled when set to 0, this value can be overwritten
+						// by using a data-autoslide attribute on your slides
+						autoSlide: 0,
+
+						// Stop auto-sliding after user input
+						autoSlideStoppable: true,
+
+						// Enable slide navigation via mouse wheel
+						mouseWheel: false,
+
+						// Hides the address bar on mobile devices
+						hideAddressBar: true,
+
+						// Opens links in an iframe preview overlay
+						previewLinks: false,
+
+						// Transition style
+						transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+						// Transition speed
+						transitionSpeed: 'fast', // default/fast/slow
+
+						// Transition style for full page slide backgrounds
+						backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+						// Number of slides away from the current that are visible
+						viewDistance: 3,
+
+						// Parallax background image
+						parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+						// Parallax background size
+						parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                });
+
+        </script>
+
+
+</body>
+</html>
