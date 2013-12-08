@@ -1,0 +1,5550 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Page Not Found :(</title>
+        <style>
+            ::-moz-selection {
+                background: #b3d4fc;
+                text-shadow: none;
+            }
+
+            ::selection {
+                background: #b3d4fc;
+                text-shadow: none;
+            }
+
+            html {
+                padding: 30px 10px;
+                font-size: 20px;
+                line-height: 1.4;
+                color: #737373;
+                background: #f0f0f0;
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+            }
+
+            html,
+            input {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+
+            body {
+                max-width: 500px;
+                _width: 500px;
+                padding: 30px 20px 50px;
+                border: 1px solid #b3b3b3;
+                border-radius: 4px;
+                margin: 0 auto;
+                box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+                background: #fcfcfc;
+            }
+
+            h1 {
+                margin: 0 10px;
+                font-size: 50px;
+                text-align: center;
+            }
+
+            h1 span {
+                color: #bbb;
+            }
+
+            h3 {
+                margin: 1.5em 0 0.5em;
+            }
+
+            p {
+                margin: 1em 0;
+            }
+
+            ul {
+                padding: 0 0 0 40px;
+                margin: 1em 0;
+            }
+
+            .container {
+                max-width: 380px;
+                _width: 380px;
+                margin: 0 auto;
+            }
+
+            /* google search */
+
+            #goog-fixurl ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            #goog-fixurl form {
+                margin: 0;
+            }
+
+            #goog-wm-qt,
+            #goog-wm-sb {
+                border: 1px solid #bbb;
+                font-size: 16px;
+                line-height: normal;
+                vertical-align: top;
+                color: #444;
+                border-radius: 2px;
+            }
+
+            #goog-wm-qt {
+                width: 220px;
+                height: 20px;
+                padding: 5px;
+                margin: 5px 10px 0 0;
+                box-shadow: inset 0 1px 1px #ccc;
+            }
+
+            #goog-wm-sb {
+                display: inline-block;
+                height: 32px;
+                padding: 0 10px;
+                margin: 5px 0 0;
+                white-space: nowrap;
+                cursor: pointer;
+                background-color: #f5f5f5;
+                background-image: -webkit-linear-gradient(rgba(255,255,255,0), #f1f1f1);
+                background-image: -moz-linear-gradient(rgba(255,255,255,0), #f1f1f1);
+                background-image: -ms-linear-gradient(rgba(255,255,255,0), #f1f1f1);
+                background-image: -o-linear-gradient(rgba(255,255,255,0), #f1f1f1);
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                *overflow: visible;
+                *display: inline;
+                *zoom: 1;
+            }
+
+            #goog-wm-sb:hover,
+            #goog-wm-sb:focus {
+                border-color: #aaa;
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+                background-color: #f8f8f8;
+            }
+
+            #goog-wm-qt:hover,
+            #goog-wm-qt:focus {
+                border-color: #105cb6;
+                outline: 0;
+                color: #222;
+            }
+
+            input::-moz-focus-inner {
+                padding: 0;
+                border: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Not found <span>:(</span></h1>
+
+                <p>{{message}}</p>
+
+            <p>Sorry, but the page you were trying to view does not exist.</p>
+            <p>It looks like this was the result of either:</p>
+            <ul>
+                <li>a mistyped address</li>
+                <li>an out-of-date link</li>
+            </ul>
+            <script>
+                var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
+            </script>
+            <script src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+        </div>
+    </body>
+</html>
+---
+layout: root.hbs
+---
+
+{{>page-info}}
+
+<div class="jumbotron">
+	<div class="container">
+		<h1>{{page.title}} <small>{{page.subtitle}}</small></h1>
+		{{#if page.description}}
+			<ul class="text-right list-unstyled">
+				{{#each page.description}}
+				<li>{{.}}</li>
+				{{/each}}
+			</ul>
+		{{/if}}
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			{{> body }}
+		</div>
+	</div>
+</div>
+---
+layout: default.hbs
+---
+
+{{> body}}
+<div class="row">
+	<div class="col-md-12">
+		<h2>Outline</h2>
+		<div class="panel-group" id="accordion">
+		{{#sortedEach pages "order"}}
+			{{#is data.subsection ../page.title}}
+				<div class="panel panel-default">
+					<div class="panel-heading active">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse{{data.order}}">
+              		<h3 class="panel-title" >{{data.order}} - {{data.title}} <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
+					</a>
+					</div>
+					<div id="collapse{{data.order}}" class="in accordion-body" style="height: auto;">
+              			<div class="panel-body">
+							<ul class="">
+							{{#each data.description}}
+								<li class="">{{.}}</li>
+							{{/each}}
+							</ul>
+							<p class="text-right bottom-right"><a href="{{relative ../../page.dest this.dest}}" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
+						</div>
+  		          	</div>
+          		</div>
+			{{/is}}
+		{{/sortedEach}}
+		</div>
+	</div>
+</div>
+
+
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{title}}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="{{assets}}/bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="{{assets}}/bower_components/reveal.js/css/theme/beige.css" id="theme">
+
+		{{!-- <link rel="stylesheet" href="{{assets}}/styles/lecture-elements.css" id="theme">
+ --}}
+		<link rel="stylesheet" href="{{assets}}/styles/lecture-utilities.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="{{assets}}/bower_components/highlightjs/styles/dark.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+                document.write( '<link rel="stylesheet" href="{{assets}}/bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <style>
+        	.reveal .slides {
+				text-align: left;
+			}
+			.reveal dt {
+				font-weight: bold;
+			}
+			.reveal dd {
+				margin-left:1em;
+			}
+			.reveal input {
+				font-size: inherit;
+			}
+			.reveal .slides>section {
+				/*border:1px solid black;*/
+			}
+			.reveal pre {
+				display: block;
+				position: relative;
+				width: 90%;
+				/*margin: 0;*/
+				text-align: left;
+				font-size: .75em;
+				font-family: monospace;
+				line-height: 1.2em;
+				word-wrap: break-word;
+				box-shadow: 0 0 6px rgba(0,0,0,.3);
+
+			}
+			.reveal pre code {
+				max-height: 600px;
+			}
+			.reveal ul, .reveal dl{
+				margin-bottom: .5em ;
+			}
+			#back{
+				position:absolute;
+				z-index:100;
+				right:5px;
+				top:5px;
+			}
+			#back>a {
+				font-size: larger;
+				text-decoration: none;
+				color:gray;
+
+			}
+			#back>a:hover {
+				text-decoration: none;
+			}
+			#back>a:hover:after{
+				content: "Back to Outline"
+			}
+
+        </style>
+
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+	<div id="back"><a href=".">&#8630;</a></div>
+    <div class="reveal">
+    	<div class="slides">
+		<!-- ==== SLIDE ==== -->
+		<section id="home">
+			<h1>{{title}}</h1>
+
+			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
+			{{#each description}}
+			<li class="x2"><em>{{.}}</em></li>
+		{{/each}}
+		</ul>
+		<p class="x2 bottom-right">
+		            Le Havre University
+		            <br>
+		            <em>Yoann Pigné</em>
+		            <br>2013
+		        </p>
+		</section>
+
+    	{{> body}}
+    	</div>
+	</div>
+       <script src="{{assets}}/bower_components/reveal.js/lib/js/head.min.js"></script>
+       <script src="{{assets}}/bower_components/reveal.js/js/reveal.min.js"></script>
+
+        <script>
+			    (function() {
+			        var list = document.querySelectorAll('*[data-src]');
+			        for (var i = 0; i < list.length; i++) {
+			            var p = document.createElement('p')
+			            var a = document.createElement('a')
+			            var img = document.createElement('img')
+			            a.setAttribute('href', list[i].getAttribute('data-src'))
+			            img.setAttribute('src', '/images/codepen.png')
+			            img.setAttribute('alt', 'codepen')
+			            p.setAttribute('class', 'codepen')
+			            a.appendChild(img)
+			            p.appendChild(a)
+			            list[i].appendChild(p)
+			        }
+			    })();
+                // Full list of configuration options available here:
+                // https://github.com/hakimel/reveal.js#configuration
+                Reveal.initialize({
+
+					    width: 1400,
+					    height: 1050,
+
+					    // Factor of the display size that should remain empty around the content
+					    margin: 0.05,
+
+					    minScale: 0.1,
+    					maxScale: 2.0,
+
+                        // Optional libraries used to extend on reveal.js
+                        dependencies: [
+                                { src: '{{assets}}/bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                { src: '{{assets}}/bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '{{assets}}/bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: '{{assets}}/bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                { src: '{{assets}}/bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                                { src: '{{assets}}/bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                        ],
+						// Display controls in the bottom right corner
+						controls: true,
+
+						// Display a presentation progress bar
+						progress: true,
+
+						// Display the page number of the current slide
+						slideNumber: false,
+
+						// Push each slide change to the browser history
+						history: true,
+
+						// Enable keyboard shortcuts for navigation
+						keyboard: true,
+
+						// Enable the slide overview mode
+						overview: true,
+
+						// Vertical centering of slides
+						center: true,
+
+						// Enables touch navigation on devices with touch input
+						touch: true,
+
+						// Loop the presentation
+						loop: false,
+
+						// Change the presentation direction to be RTL
+						rtl: false,
+
+						// Turns fragments on and off globally
+						fragments: true,
+
+						// Flags if the presentation is running in an embedded mode,
+						// i.e. contained within a limited portion of the screen
+						embedded: false,
+
+						// Number of milliseconds between automatically proceeding to the
+						// next slide, disabled when set to 0, this value can be overwritten
+						// by using a data-autoslide attribute on your slides
+						autoSlide: 0,
+
+						// Stop auto-sliding after user input
+						autoSlideStoppable: true,
+
+						// Enable slide navigation via mouse wheel
+						mouseWheel: false,
+
+						// Hides the address bar on mobile devices
+						hideAddressBar: true,
+
+						// Opens links in an iframe preview overlay
+						previewLinks: false,
+
+						// Transition style
+						transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+						// Transition speed
+						transitionSpeed: 'fast', // default/fast/slow
+
+						// Transition style for full page slide backgrounds
+						backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+						// Number of slides away from the current that are visible
+						viewDistance: 3,
+
+						// Parallax background image
+						parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+						// Parallax background size
+						parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                });
+
+        </script>
+
+
+</body>
+</html>
+---
+layout: root.hbs
+---
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>testYP | {{title}}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css(.tmp) {{assets}}/styles/main.css -->
+        <link rel="stylesheet" href="/styles/main.css">
+        <!-- endbuild -->
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <header>
+            {{> header }}
+        </header>
+        <div class="main">
+            {{> body}}
+        </div>
+        <footer>
+            {{> footer}}
+        </footer>
+
+
+        <!-- build:js {{assets}}/scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="/bower_components/jquery/jquery.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <!-- build:js {{assets}}/scripts/main.js -->
+        <script src="/scripts/main.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js {{assets}}/scripts/plugins.js -->
+        <script src="/bower_components/sass-bootstrap/js/affix.js"></script>
+        <script src="/bower_components/sass-bootstrap/js/alert.js"></script>
+        <script src="/bower_components/sass-bootstrap/js/dropdown.js"></script>
+        <script src="/bower_components/sass-bootstrap/js/tooltip.js"></script>
+        <script src="/bower_components/sass-bootstrap/js/modal.js"></script>
+        <script src="/bower_components/sass-bootstrap/js/transition.js"></script>
+        <script src="/bower_components/sass-bootstrap/js/button.js"></script>
+        <script src="/bower_components/sass-bootstrap/js/popover.js"></script>
+        <script src="/bower_components/sass-bootstrap/js/carousel.js"></script>
+        <script src="/bower_components/sass-bootstrap/js/scrollspy.js"></script>
+        <script src="/bower_components/sass-bootstrap/js/collapse.js"></script>
+        <script src="/bower_components/sass-bootstrap/js/tab.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
+---
+layout: default.hbs
+---
+
+{{> body}}
+<div class="row">
+	<div class="col-md-12">
+
+{{#sortedEach pages "order"}}
+	{{#is data.section ../page.section}}
+		{{#unless data.index }}
+		<div class="section-item">
+		<img  src="{{../../../assets}}/images/{{data.thumbnail}}" alt="thumbnail">
+		<div class="clearfix">
+			<h3>{{data.title}}</h3>
+			<ul class="">
+			{{#each data.description}}
+				<li>{{.}}</li>
+			{{/each}}
+			</ul>
+			<p class="text-right "><a href="{{relative ../../../page.dest this.dest}}" class="btn btn-primary" role="button">Details <span class="glyphicon glyphicon-play"></a> </p>
+			</div>
+		</div>
+
+		{{/unless}}
+	{{/is}}
+{{/sortedEach}}
+
+	</div>
+</div>
+---
+title: '404 Error'
+layout: 404.hbs
+message: "ooops!"
+---
+
+---
+title: Contact
+section: Contact
+layout: default.hbs
+index: true
+---
+
+<h2>Mail</h2>
+<ul class="unstyled">
+  <li>25 rue Philippe Lebon</li>
+  <li>CS 80540</li>
+  <li>76058 Le Havre cedex</li>
+  <li>FRANCE</li>
+</ul>
+<hr>
+<h2>Email</h2>
+<p>
+  <span class="label label-default">professional</span> yoann.pigne@univ-lehavre.fr
+</p>
+<p>
+  <span class="label label-default ">personal</span> yoann.pigne@gmail.com
+</p>
+<hr>
+<h2>Phone</h2>
+<p>
+  <span class="label label-default">office</span> +332 32 74 45 46
+</p>
+<p>
+  <span class="label label-default">mobile</span> +336 03 38 52 68
+</p>
+---
+title: About
+layout: root.hbs
+---
+
+<div class="jumbotron">
+	<div class="container">
+	<h1>'Allo, 'Allo!</h1>
+	<p class="lead">Always a pleasure scaffolding your apps.</p>
+	<p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
+	</div>
+</div>
+
+<div class="container">
+<div class="row ">
+	<div class="col-lg-4">
+		<a href="resume/">My résumé</a>
+	</div>
+	<div class="col-lg-4">
+	non
+	</div>
+	<div class="col-lg-4">
+	oui
+	</div>
+</div>
+</div>
+---
+title: GraphStream
+subtitle: A Dynamic Graph Library
+thumbnail: gs-thumb.png
+image: gs.png
+tags:
+	- GraphStream
+section: Projects
+order: 1
+description: [ "A java-based library to ease dynamic graphs modeling.", "Create, compute and display static and dynamic graphs."]
+---
+
+{{#markdown}}
+GraphStream is a dynamic graph library written in Java that provides Java developers a way to easily represent dynamic graphs in memory, on screen or in files.
+
+GraphStream provides a framework to handle the evolution of graphs, that is the changes on values stored on edges and nodes of a graph during time, but also the "topology" changes of the graph, that is the addition, removal and modification of nodes and edges during time.
+
+{{/markdown}}
+<br><br><br>
+<p style="text-align:center; " >
+  <a href="http://graphstream-project.org" class="btn btn-primary btn-large"><span class="glyphicon glyphicon-new-window"></span> Visit the website</a>
+  <a href="https://github.com/graphstream/" class="btn btn-primary btn-large"><span class="glyphicon glyphicon-cloud"></span> View on GitHub</a>
+  <a href="http://graphstream-project.org/download" class="btn btn-primary btn-large"><span class="glyphicon glyphicon-download"></span> Get GraphStream</a>
+</p>
+---
+title: Projects
+section: Projects
+index: true
+layout: section-index.hbs
+---
+---
+title: OVNIS
+subtitle: A VANET simulation platform
+thumbnail: ovnis-thumb.png
+image: ovnis.png
+tags:
+	- OVNIS
+section: Projects
+order: 2
+description: ["For online vehicular wireless and traffic simulation", "An integration of traffic simulator SUMO with network simulator ns-3"]
+---
+{{#markdown}}
+
+OVNIS stands for Online Vehicular Network Integrated Simulation. It is a platform dedicated to the simulation of vehicular network applications. OVNIS integrates network simulator ns-3 and traffic microsimulator SUMO. Both simulators are coupled so that the mobility of vehicles in SUMO is injected in the mobility model of ns-3. Inversely, any simulated network application in ns-3 can influence the traffic simulation and, for instance, reroute simulated vehicles.
+
+For more information please check the [documentation pages](https://github.com/pigne/ovnis/wiki) at Github. You may find a [definition of the architecture](https://github.com/pigne/ovnis/wiki/ArchitectureDEfinition). You may also get inputs on how to [build the platform](https://github.com/pigne/ovnis/wiki/Install).
+{{/markdown}}
+
+
+<br><br><br>
+<p style="text-align:center; " >
+  <a href="https://github.com/pigne/ovnis/" class="btn btn-primary btn-large">View project on GitHub</a>
+  <a href="https://github.com/pigne/ovnis/downloads" class="btn btn-primary btn-large">Download OVNIS <small>v0.1</small></a>
+</p>
+
+---
+title: VehILux
+subtitle: A traffic model for Luxembourg
+thumbnail: vehilux-thumb.png
+image: vehilux.png
+tags:
+	- VehILux
+section: Projects
+order: 3
+description: ["A vehicular mobility model based on real data", "A VANET simulation testbed for Luxembourg roads"]
+---
+
+
+[TODO]
+
+---
+title: Publications
+section: Publications
+index: true
+---
+
+{{#each pub_years }}
+  <h2>{{.}}</h2>
+  <ul class="list-unstyled">
+  {{#each ../pubs }}
+
+    {{#is this.year ../this}}
+      <li class="bibitem"><span class="label label-info">{{this.niceType}}</span>&nbsp;<span class="bibitem_authors">{{this.niceAuthors}}.</span>
+        <span class='bibitem_title'>
+        {{#if this.URL }}
+          <a href="{{this.URL}}">{{this.title}}</a>.
+        {{else}}
+          {{this.title}}.
+        {{/if}}
+        </span>
+
+        {{#if this.container-title }}
+          In <span class="bibitem_in">{{this.container-title}}. </span>
+        {{else}}
+          {{#if this.event }}
+           In <span class="bibitem_in">{{this.event}}.</span>
+          {{/if}}
+        {{/if}}
+        {{#if this.volume }}
+          Volume <span class="bibitem_volume"> {{this.volume}}.</span>
+        {{/if}}
+        {{#if this.issue }}
+          Issue <span class="bibitem_volume"> {{this.issue}}.</span>
+        {{/if}}
+        {{#if this.series }}
+          Series <span class="bibitem_volume"> {{this.series}}.</span>
+        {{/if}}
+        {{#if this.page }}
+          Pages <span class="bibitem_pages"> {{this.page}}.</span>
+        {{/if}}
+        {{#if this.DOI }}
+          DOI: <span class="bibitem_doi"> <a href="http://dx.doi.org/{{this.DOI}}">{{this.DOI}}</a></span>.
+        {{/if}}
+        {{#if this.ISBN }}
+          ISBN: <span class="bibitem_isbn">{{this.ISBN}}</span>.
+        {{/if}}
+        {{#if this.publisher}}
+          <span class="bibitem_publisher">{{this.publisher}}, </span>
+        {{/if}}
+        {{#if this.event-place}}
+          <span class="bibitem_address">{{this.event-place}}, </span>
+        {{/if}}
+        <span class="bibitem_year">{{this.year}}</span>.
+
+        {{#if this.abstract}}
+          &nbsp;<a href=""  class="unfold_abstract btn btn-sm btn-default">Abstract</a>&nbsp;
+          <pre class="folded hidd alert alert-info">{{this.abstract}}</pre>
+        {{/if}}
+      </li>
+    {{/is}}
+  {{/each}}
+  </ul>
+{{/each}}
+
+<script type="text/javascript">
+  var nodes = document.getElementsByClassName('unfold_abstract')
+  for(var i =0; i< nodes.length; i++){
+    nodes[i].addEventListener('click', function (event){
+      console.log(event.target);
+      event.target.nextElementSibling.classList.toggle('hidd');
+      event.preventDefault();
+      event.stopPropagation();
+      console.log("oii");
+
+    })
+  }
+</script
+
+
+>
+---
+title: Résumé
+category:
+	- Résumé
+layout: default.hbs
+index: false
+
+---
+
+<h2>Experience</h2>
+<hr />
+<h3>Assistant Professor <small>October 2011—Present</small></h3>
+<ul class="unstyled">
+<li>University of Le Havre, France, LITIS Lab.</li>
+<li>Research fields: Dynamic Graphs, Complex Networks, Complex Systems, Epidemiology</li>
+<li>Lecturer in Computer Science (C, Web Development, UML).</li>
+</ul>
+<h3>Research Associate <small>October 2009—September2011</small></h3>
+<ul class="unstyled">
+<li>Research Associate at the University of Luxembourg (SnT), in  Prof. Bouvry's team. </li>
+<li>Research fields : vehicular ad hoc networks, mobility models.</li>
+</ul>
+
+<h3>Teaching and Research Assistant <small>October 2004—September 2009</small></h3>
+<ul class="unstyled">
+<li>Teaching assistant at the university of Le Havre (France). 380 hours. Computer Science.</li>
+<li>Research fields: mobile ad hoc networks, dynamic graphs, swarm intelligence.</li>
+</ul>
+
+<h3>Trainee in Information Technology <small>June—August 2003</small></h3>
+<ul class="unstyled">
+<li>Development of a management application (Microsoft VB, Access). Company "SITA-SUEZ Environnement", Le Havre, France.</li>
+</ul>
+
+<h3>Trainee in Information Technology <small>May—August 2001</small></h3>
+<ul class="unstyled"><li>Development of management applications (Lotus Notes business software). Company "EDF nuclear power
+plant",  Paluel & Lille, France.</li>
+</ul>
+
+<h2>Education</h2>
+<hr />
+<h3>Doctor degree in Computer Science <small>2004—2008</small></h3>
+<ul>
+<li>Title: Modeling and Processing Dynamic Graphs - Application to Mobile Ad Hoc Networks</li>
+<li> Advisor: Professor Frédéric GUINAND</li>
+<li>Board: Prof. Pascal BOUVRY, Prof. Serge CHAUMETTE, Prof. Isabelle GUÉRIN-LASSOUS, Dr. Clémence MAGNIEN, Prof. Alain CARDON.</li>
+<li>University of Le Havre, france</li>
+</ul>
+<h3>Master Degree in CS <small>2002—2004</small></h3>
+<ul>
+<li>Thesis: Ant-Based Models for Multiple Sequences Alignment.<Li>
+<li>Le Havre and Rouen Universities, France.
+</ul>
+---
+title: Teaching
+layout: section-index.hbs
+section: Teaching
+index: true
+---
+---
+title: Java Web Apps Tools
+thumbnail: jenkins-thumb.png
+section: Teaching
+layout: lecture-outline.hbs
+order: 2
+description:
+- "Tools for Web Apps Developer Teams."
+- "Build Configuration."
+- "Versioning System."
+- "Continuous Integration."
+- "Lecture for Master 2  CAW."
+
+---
+
+<p>
+Ceci est une introduction rapide aux outils de travail en équipe,  dans le cadre du développement d'application web avec serveurs d'application, en Java. </p>
+<p>Ce cours est complémentaire aux différentes intervension de l'UE CAW du master 2 SIRES De l'université du Havre.
+</p>
+---
+title: "Web Apps with Tools"
+subsection: Java Web Apps Tools
+order: 1
+description:
+- "Java Web Archives"
+- "Web apps with Tomcat"
+- "Web apps with Maven"
+- "Web apps with Eclipse"
+layout: lecture.hbs
+---
+
+
+
+<section>
+<h3>MVC</h3>
+<p>
+	<img src="images/mvc_sequence.png" class="noborder" alt="mvc sequence">
+</p>
+</section>
+
+<section data-markdown id="">
+    <script type="text/template">
+##Animation
+
+jQuery a quelques effets pré-installés
+
+```
+$('h1').hide('slow');
+$('h1').slideDown('fast');
+$('h1').fadeOut(2000);
+```
+<!-- .element: class="javascript"  -->
+
+On peut les enchainer
+
+```
+$('h1').fadeOut(2000).slideDown();
+```
+<!-- .element: class="javascript"  -->
+
+http://api.jquery.com/category/effects/
+
+<!-- .element: class="text_center"  -->
+
+
+
+    </script>
+</section>
+
+
+
+<section>
+	<table border="1" class="bodyTable x-3">
+<tbody><tr class="a x-3">
+<td align="left"><tt>validate</tt></td>
+<td align="left">validate the project is correct and all necessary information is available.</td></tr>
+<tr class="b x-3">
+<td align="left" class="x-3"><tt>initialize</tt></td>
+<td align="left">initialize build state, e.g. set properties or create directories.</td></tr>
+<tr class="a">
+<td align="left"><tt>generate-sources</tt></td>
+<td align="left">generate any source code for inclusion in compilation.</td></tr>
+<tr class="b">
+<td align="left"><tt>process-sources</tt></td>
+<td align="left">process the source code, for example to filter any values.</td></tr>
+<tr class="a">
+<td align="left"><tt>generate-resources</tt></td>
+<td align="left">generate resources for inclusion in the package.</td></tr>
+<tr class="b">
+<td align="left"><tt>process-resources</tt></td>
+<td align="left">copy and process the resources into the destination directory, ready for packaging.</td></tr>
+<tr class="a">
+<td align="left"><tt>compile</tt></td>
+<td align="left">compile the source code of the project.</td></tr>
+<tr class="b">
+<td align="left"><tt>process-classes</tt></td>
+<td align="left">post-process the generated files from compilation, for example to do bytecode enhancement on Java classes.</td></tr>
+<tr class="a">
+<td align="left"><tt>generate-test-sources</tt></td>
+<td align="left">generate any test source code for inclusion in compilation.</td></tr>
+<tr class="b">
+<td align="left"><tt>process-test-sources</tt></td>
+<td align="left">process the test source code, for example to filter any values.</td></tr>
+<tr class="a">
+<td align="left"><tt>generate-test-resources</tt></td>
+<td align="left">create resources for testing.</td></tr>
+<tr class="b">
+<td align="left"><tt>process-test-resources</tt></td>
+<td align="left">copy and process the resources into the test destination directory.</td></tr>
+<tr class="a">
+<td align="left"><tt>test-compile</tt></td>
+<td align="left">compile the test source code into the test destination directory</td></tr>
+<tr class="b">
+<td align="left"><tt>process-test-classes</tt></td>
+<td align="left">post-process the generated files from test compilation, for example to do bytecode enhancement on Java classes. For Maven 2.0.5 and above.</td></tr>
+<tr class="a">
+<td align="left"><tt>test</tt></td>
+<td align="left">run tests using a suitable unit testing framework. These tests should not require the code be packaged or deployed.</td></tr>
+<tr class="b">
+<td align="left"><tt>prepare-package</tt></td>
+<td align="left">perform any operations necessary to prepare a package before the actual packaging. This often results in an unpacked, processed version of the package. (Maven 2.1 and above)</td></tr>
+<tr class="a">
+<td align="left"><tt>package</tt></td>
+<td align="left">take the compiled code and package it in its distributable format, such as a JAR.</td></tr>
+<tr class="b">
+<td align="left"><tt>pre-integration-test</tt></td>
+<td align="left">perform actions required before integration tests are executed. This may involve things such as setting up the required environment.</td></tr>
+<tr class="a">
+<td align="left"><tt>integration-test</tt></td>
+<td align="left">process and deploy the package if necessary into an environment where integration tests can be run.</td></tr>
+<tr class="b">
+<td align="left"><tt>post-integration-test</tt></td>
+<td align="left">perform actions required after integration tests have been executed. This may including cleaning up the environment.</td></tr>
+<tr class="a">
+<td align="left"><tt>verify</tt></td>
+<td align="left">run any checks to verify the package is valid and meets quality criteria.</td></tr>
+<tr class="b">
+<td align="left"><tt>install</tt></td>
+<td align="left">install the package into the local repository, for use as a dependency in other projects locally.</td></tr>
+<tr class="a">
+<td align="left"><tt>deploy</tt></td>
+<td align="left">done in an integration or release environment, copies the final package to the remote repository for sharing with other developers and projects.</td></tr></tbody></table>
+</section>
+---
+title: test2
+tags :
+- Teaching
+teaching : All
+category: teaching
+
+---
+
+
+<img src="{{assets}}/images/maison-positive.jpg" alt="ok">
+---
+title: CSS Basics
+subsection: Web Development
+order: 4
+description:
+- Selectors
+- "@font-face"
+- transform / transition
+- CSS pre processors (SASS, LESS)
+layout: lecture.hbs
+---
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS">
+            <h2>Cascading Style Sheets (CSS)</h2>
+            <p>Describe the presentation of a document written in HTML or XML (including XHTML, SVG, ...)
+            </p>
+            <ul>
+                <li>CSS1: fisrt level of the norm. Obsolete.</li>
+                <li>CSS2.1: recommended level.</li>
+                <li>CSS3: new modular approach. Many new features.</li>
+            </ul>
+            <h3>Basic building blocks</h3>
+            <ul>
+                <li>The <b>property</b>: a name that identifies a visible feature (color, position, decoration).</li>
+                <li>The <b>value</b>: a description of how the property should be painted.</li>
+                <li>Coments :
+                    <code class="prettyprint lang-css">/* multiline-only c-style comments */</code>
+                </li>
+            </ul>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Syntaxe">
+            <h3>CSS Declarations</h3>
+            <p>A declaration assigns a value to a property. The property and the value are separated by a
+                <code>:</code>.</p>
+            <pre class="prettyprint lang-css ">
+<code class="css">color : blue
+</code></pre>
+            <h3>CSS Declarations Blocks</h3>
+            <p>Declarations are grouped in blocks. A block opens with a
+                <code>{</code> and closes with a
+                <code>}</code>. Decalrations are separated with a
+                <code>;</code>.</p>
+            <pre class="prettyprint lang-css ">
+<code class="css">{
+  color : darkblue ;
+  background-color : #EFF4F5
+}</code></pre>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Syntaxe2">
+            <h3>CSS Selectors</h3>
+            <p>Style blocks may apply to a subset of the DOM not to all the elements of the page. A selector is a condition statement that match a selection of elements.</p>
+            <pre class="prettyprint lang-css ">
+<code class="css">#mainmenu, div.menu > ul , nav ul</code></pre>
+            <ul>
+                <li>
+                    Selection can be based on ids (
+                    <code class="prettyprint lang-css">#myId</code>), classes (
+                    <code class="prettyprint lang-css">.myClass</code>) tags (
+                    <code class="prettyprint lang-css">div</code>), pseudo-classes (
+                    <code class="prettyprint lang-css">a:hover</code>), attributes (
+                    <code class="prettyprint lang-css">p[hidden="true"]</code>), or with general selectors(
+                    <code class="prettyprint lang-css">*[hidden="true"]</code>).</li>
+                <li>
+                    Search by inheritance is done strictly (direct descendant of) with
+                    <code>&gt;</code> or loosely (some descendant of) with a space.</li>
+            </ul>
+            <h3>CSS Rulesets (or Rules)</h3>
+            <p>A ruleset is the combination of a selector with a block of declarations, where matched elements are applied the declarations in the block.
+            </p>
+            <pre class="prettyprint lang-css ">
+<code class="css">#mainmenu, div.menu > ul , nav ul {
+  color : darkblue ;
+  background-color : #EFF4F5
+}
+</code></pre>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Syntaxe3">
+            <h3>At-Rules</h3>
+            <p>Statements that start with an at sign
+                <code>@</code> followed by an identifier. Then the rest of the statement is up to the next
+                <code>;</code>(if no block) or the end of a block
+                <code>}</code>(if there is a block). The syntaxe of the rest may differ for each at-rule.</p>
+            <pre class="prettyprint lang-css ">
+<code class="css">@charset "UTF-8";  // Set the encoding of the style sheet to UTF-8
+@import url("fineprint.css"); // Import rules from another file
+@font-face {
+  font-family: MyHelvetica;
+  src: local("Helvetica Neue Bold"),
+  local("HelveticaNeue-Bold"),
+  url(MgOpenModernaBold.ttf);
+  font-weight: bold;
+}
+</code></pre>
+
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Specificity">
+            <h2>Specificity</h2>
+            <p>The order the navigator chooses to use to select the good rules for the elements.</p>
+            <p>Order of specificity (by less specific to highly specific):</p>
+            <ul>
+                <li>Universal selectors</li>
+                <li>Type selectors</li>
+                <li>Class selectors</li>
+                <li>Attributes selectors</li>
+                <li>Pseudo-classes</li>
+                <li>ID selectors</li>
+                <li>Inline style</li>
+            </ul>
+            <h3>The !important exception</h3>
+            <p>When
+                <code>!important</code> is added at the end of a declaration, this one overwrites all the others made in the CSS for this property with these elements.</p>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_BoxModel">
+            <h2>Box Model</h2>
+            <p>Each element is represented as a 4-parts box model.</p>
+            <div class="twocols">
+
+                <ul class="first">
+                    <li>The <b>content</b>: controlled with
+                        <code class="prettyprint lang-css">width, min-width, max-width, height, min-height, max-height</code>
+                    </li>
+                    <li>The <b>padding</b>: controlled with
+                        <code class="prettyprint lang-css">padding-top, padding-right, padding-bottom, padding-left</code>
+                    </li>
+                    <li>The <b>border</b>: controlled with
+                        <code class="prettyprint lang-css">border-width</code>
+                    </li>
+                    <li>The <b>margin</b>: controlled with
+                        <code class="prettyprint lang-css">margin-top, margin-right, margin-bottom, margin-left</code>
+                    </li>
+                </ul>
+                <p class="second text_center">
+                    <img src="./images/boxmodel.png" alt="Box Model" style="width:100%; text-align:center">
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Position">
+            <h2>The
+                <code>position</code> property</h2>
+            <p>define how a block should be position in regard to the others with properties such as
+                <code>top</code>,
+                <code>left</code>,
+                <code>right</code> and
+                <code>bottom</code>.
+            </p>
+            <div class="twocols">
+                <dl class="first">
+                    <dt>
+                        <code>static</code>
+                    </dt>
+                    <dd>Normal behavior.</dd>
+                    <dt>
+                        <code>relative</code>
+                    </dt>
+                    <dd>Position relative to initial position in the flow. Leave a gap at original position.</dd>
+                    <dt>
+                        <code>absolute</code>
+                    </dt>
+                    <dd>Specified position relative to its closest positioned ancestor or to the containing block. Do not leave space for the element.
+                    </dd>
+                    <dt>
+                        <code>fixed</code>
+                    </dt>
+                    <dd>
+                        Specified position relative to the screen's viewport. Do not leave space for the element.
+                    </dd>
+                </dl>
+                <p class="second text_center"  data-src="http://codepen.io/pigne/pen/kJpxb" >
+                    <img src="./images/relative-positioning.png" alt="relative" style="width:100%">
+                    <br>
+                    <img src="./images/absolute-positioning.png" alt="relative" style="width:100%">
+                    <br>
+                    <img src="./images/fixed-1.png" alt="relative" style="width:45%">
+                    <img src="./images/fixed-2.png" alt="relative" style="width:45%">
+                </p>
+            </div>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_MediaQueries">
+        <h2>Media Queries</h2>
+        <p>Limit the stylesheet's scope with media types and other properties</p>
+        <pre class="prettyprint lang-css">
+<code class="css">@media media-types | media-features {
+    /* media-specific rules */
+}
+</code></pre>
+        <h3>media types <small>CSS 2.1</small></h3>
+<pre class="prettyprint lang-css nowatermark" ><code class="css">all speech braille handheld print projection screen tty tv embossed</code></pre>
+        <h3>Media Features <small>CSS 3</small></h3>
+        <pre class="prettyprint lang-css prewrap nowatermark" ><code class="css wrap">height min-height max-height device-width min-device-width max-device-width device-height min-device-height max-device-height aspect-ratio min-aspect-ratio max-aspect-ratio device-aspect-ratio min-device-aspect-ratio max-device-aspect-ratio color min-color max-color color-index min-color-index max-color-index monochrome min-monochrome max-monochrome resolution min-resolution max-resolution scan grid</code></pre>
+		</section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_MediaQueries2">
+<h3>logical operators <small>CSS 3</small></h3>
+<pre><code>'and' ',' 'not' 'only'</code></pre>
+        <h3>Examples</h3>
+<pre class="prettyprint lang-css">
+<code class="css">&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;example.css&quot; /&gt;
+&lt;style&gt;
+@media (max-width: 500px), handheld and (orientation: portrait) {
+  aside.ads {
+    display: none;
+  }
+}
+@media only print and (max-device-width:800px) {
+ body {
+ background-color:white;
+ color:black
+ }
+}
+&lt;/style&gt;
+</code></pre>
+</section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Mozilla">
+            <p class="text_center">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <a href="https://developer.mozilla.org/en-US/docs/CSS">https://developer.mozilla.org/en-US/docs/CSS</a>
+            </p>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_VendorPrefix">
+            <h2>New/Experimental features</h2>
+            <ul>
+                <li>
+                    <code>transition</code>: change value of a property with a smooth animation</li>
+                <li>
+                    <code>transform</code>: apply 2D transformations to elements</li>
+                <li>
+                    <code>animations</code>: define animation of elements</li>
+            </ul>
+            <h3>Vendor Prefixes</h3>
+            Browser consider some properties with a prefix when standards are not stabilized and the feature's behavior may change, or when the implementation of a feature is not stabilized in the browser. The code and the syntax may change.
+            <pre class="prettyprint lang-css">
+<code class="css">selector {
+  -webkit-property : value;
+  -moz-property : value;
+  -ms-property : value;
+  -o-property : value;
+  property : value;
+}
+</code></pre>
+            check needed prefixes on <a href="http://caniuse.com/">http://caniuse.com/</a> or use <a href="https://github.com/ai/autoprefixer">Autoprefixer</a>.
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Transition">
+            <h2>CSS
+                <code>transition</code> properties</h2>
+            <p>
+                Permit a smooth transition between an old and a new value of a CSS property. CSS properties are changed by :
+            </p>
+            <ul>
+
+                <li>pseudo classes :
+                    <code>:hover</code>,
+                    <code>:focus</code>,
+                    <code>:active</code>
+                </li>
+                <li>adding/removing a class to an element via JavaScript</li>
+                <li>dynamic styling via JavaScript:
+                    <code class="prettyprint lang-js">document.getElementById("d").style.color = "orange";</code>
+                </li>
+
+            </ul>
+            4 properties:
+            <dl>
+                <dt>
+                    <code>transition-property</code>
+                </dt>
+                <dd>List of CSS properties to transform.</dd>
+                <dt>
+                    <code>transition-duration</code>
+                </dt>
+                <dd>Duration of the smooth effect.</dd>
+                <dt>
+                    <code>transition-timing-function</code>(optional)</dt>
+                <dd>Transition function (acceleration, trajectory, deceleration).</dd>
+                <dt>
+                    <code>transition-delay</code>(optional)</dt>
+                <dd>Duration to wait for before starting the transition.</dd>
+            </dl>
+
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_TransitionExample">
+            <h3>A transition example</h3>
+            <pre class="prettyprint lang-css">
+<code class="css">#test_transition:hover {
+  transition-property: font-size, background-color, color;
+  transition-duration: 2s, 2s, 8s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  font-size:2em;
+  background-color: #333;
+  color:#eee;
+}
+</code></pre>
+            <style type="text/css">
+            #test_transition:hover {
+                -webkit-transition-property: font-size, background-color, color;
+                -webkit-transition-duration: 2s, 2s, 8s;
+                -webkit-transition-timing-function: ease;
+                -webkit-transition-delay: 0s;
+                font-size:2em;
+                background-color: #333;
+                color:#eee;
+            }
+            </style>
+            <a id="test_transition" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  </a>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_TransitionExample2">
+            <h3>A transition example... with all the vendor prefixes</h3>
+            <pre class="x-3 prettyprint lang-css">
+<code class="css">#test_transition:hover {
+  -webkit-transition-property: font-size, background-color, color;
+  -webkit-transition-duration: 2s, 2s, 8s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0s;
+  -moz-transition-property: font-size, background-color, color;
+  -moz-transition-duration: 2s, 2s, 8s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
+  -ms-transition-property: font-size, background-color, color;
+  -ms-transition-duration: 2s, 2s, 8s;
+  -ms-transition-timing-function: ease;
+  -ms-transition-delay: 0s;
+  -o-transition-property: font-size, background-color, color;
+  -o-transition-duration: 2s, 2s, 8s;
+  -o-transition-timing-function: ease;
+  -o-transition-delay: 0s;
+  transition-property: font-size, background-color, color;
+  transition-duration: 2s, 2s, 8s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  font-size:2em;
+  background-color: #333;
+  color:#eee;
+}
+</code></pre>
+            Actually, http://caniuse.com/ says
+            <code>-ms</code> was never needed for
+            <code>transition</code>.
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_TransitionShortVersion">
+            <h2>Short notation may help</h2>
+            <pre class="prettyprint lang-css"><code class="css">selecteur {
+transition:
+        property
+        duration
+        timing-function
+        delay;
+}</code></pre>
+            with several properties:
+            <pre class="prettyprint lang-css">
+<code>transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+</code></pre>
+            with vendor prefix:
+            <pre class="prettyprint lang-css">
+<code class="css">-webkit-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+-moz-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+-ms-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+-o-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
+</code></pre>
+        </section>
+
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Transform">
+            <h2>The CSS
+                <code>transform</code> property</h2>
+            <p>Move HTML elements on the X and Y axis.</p>
+            <p>2 properties:</p>
+            <ul>
+                <li>
+                    <code>transform</code>: defines the list of function that generate the transformation
+                    <pre class="prettyprint lang-css">
+<code class="css">transform : function1(value1)
+            function2(value2)
+            function3(value3);
+</code></pre>
+                </li>
+                <li>
+                    <code>transform-origin</code> defines the origin point (x,y) relative to the top left corner of the element, from which the transform function while be computed
+                    <pre class="prettyprint lang-css">
+<code class="css">transform-origin: 50% 50%;
+transform-origin: top 0 left 0;
+</code></pre>
+    </li>
+  </ul>
+<p>Transforms need vendor prefixes.</p>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="CSS_Transform2">
+  <h2>The CSS <code>transform</code>   property</h2>
+  <pre class="prettyprint lang-css">
+<code class="css">#transform_test {
+transform-origin: 50% 50%;
+transform:  scale(1.2)
+            rotate(15deg)
+            translate(100px, 0px);
+}</code></pre>
+                    <div style="position:relative;">
+                        <div style="position:absolute; top:50px; left:100px; width:200px; height:200px; border: dashed 3px  #333;">
+                        </div>
+                        <style type="text/css">
+                        #transform_test {
+                            position:absolute;
+                            top:50px;
+                            left:100px;
+                            width:200px;
+                            height:200px;
+                            background-color:#333;
+                            opacity:0.3;
+                            -webkit-transform-origin: 50% 50%;
+                            -webkit-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                            -moz-transform-origin: 50% 50%;
+                            -moz-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                            -o-transform-origin: 50% 50%;
+                            -o-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                            -ms-transform-origin: 50% 50%;
+                            -ms-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                            transform-origin: 50% 50%;
+                            transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                            border: solid 3px #333;
+                        }
+                        </style>
+                        <div id="transform_test">
+                        </div>
+                    </div>
+
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Transform3">
+            <h2>Mixing
+                <code>transform</code> and
+                <code>transition</code>
+            </h2>
+            <pre class="prettyprint lang-css" data-src="http://codepen.io/pigne/pen/tIfrc">
+<code class="css">#transform_test:hover {
+  transition-property: transform, background-color;
+  transition-duration: 2s;
+  background-color: red;
+  transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+}</code></pre>
+
+            <div style="position:relative;">
+                <div style="position:absolute; top:50px; left:100px; width:200px; height:200px; border: dashed 3px  #333;">
+                </div>
+                <style type="text/css">
+                #transform_test {
+                    position:absolute;
+                    top:50px;
+                    left:100px;
+                    width:200px;
+                    height:200px;
+                    background-color:#333;
+                    opacity:0.3;
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                    -moz-transform-origin: 50% 50%;
+                    -moz-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                    -o-transform-origin: 50% 50%;
+                    -o-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                    -ms-transform-origin: 50% 50%;
+                    -ms-transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                    transform-origin: 50% 50%;
+                    transform: scale(1.2) rotate(15deg) translate(100px, 0px);
+                    border: solid 3px #333;
+                }
+                #transform_test:hover {
+                    -webkit-transition-property: transform, background-color;
+                    -webkit-transition-duration: 2s;
+                    -moz-transition-property: transform, background-color;
+                    -moz-transition-duration: 2s;
+                    -o-transition-property: transform, background-color;
+                    -o-transition-duration: 2s;
+                    transition-property: transform, background-color;
+                    transition-duration: 2s;
+                    background-color: red;
+                    -webkit-transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+                    -moz-transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+                    -ms-transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+                    -o-transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+                    transform: scale(.7) rotate(-1455deg) translate(0px, 0px);
+                }
+                </style>
+                <div id="transform_test">
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Animation">
+            <h2>More control with CSS
+                <code>animation</code>
+            </h2>
+			<p>
+            Animation define property values at key moments of the animation (
+            <code>keyframes</code>). Animation can be repeated.</p>
+
+            <ul>
+                <li>animation-name</li>
+                <li>animation-duration</li>
+                <li>animation-iteration-count</li>
+                <li>animation-direction</li>
+                <li>animation-timing-function</li>
+                <li>animation-delay</li>
+                <li>animation-fill-mode
+                    <ul>
+                        <li>forwards</li>
+                        <li>backwards</li>
+                        <li>both</li>
+                        <li>none</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_AnimationExample">
+            <h2>CSS
+                <code>animation</code> Example</h2>
+
+            <div class="threecols">
+                <pre class=" x-3 firstsecond prettyprint lang-css" data-src="http://codepen.io/pigne/pen/ErgGL">
+<code class="css">#animation_test {
+  height: 200px;
+  width: 200px;
+  border: 1px solid rgba(0,0,0,0.1);
+  position:relative;
+  border-radius: 50%;
+  animation: rainbow 15s 15 linear;
+}
+@keyframes rainbow {
+  0% {background-color: #FF0000;}
+  10% {background-color: #FF8000;}
+  20% {background-color: #FFFF00;}
+  30% {background-color: #80FF00;}
+  40% {background-color: #00FF00;}
+  50% {background-color: #00FF80;}
+  60% {background-color: #00FFFF;}
+  70% {background-color: #0080FF;}
+  80% {background-color: #0000FF;}
+  90% {background-color: #8000FF;}
+  100% {background-color: #FF0080;}
+}
+</code></pre>
+                <style type="text/css">
+#animation_test {
+    height: 200px;
+    width: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    background-color: #FF0000;
+    border-radius: 50%;
+}
+
+#animation_test:hover {
+    -webkit-animation: rainbow 15s 15 linear;
+    animation: rainbow 15s 15 linear;
+}
+
+@-webkit-keyframes rainbow {
+    0% {
+        background-color: #FF0000;
+    }
+
+    10% {
+        background-color: #FF8000;
+    }
+
+    20% {
+        background-color: #FFFF00;
+    }
+
+    30% {
+        background-color: #80FF00;
+    }
+
+    40% {
+        background-color: #00FF00;
+    }
+
+    50% {
+        background-color: #00FF80;
+    }
+
+    60% {
+        background-color: #00FFFF;
+    }
+
+    70% {
+        background-color: #0080FF;
+    }
+
+    80% {
+        background-color: #0000FF;
+    }
+
+    90% {
+        background-color: #8000FF;
+    }
+
+    100% {
+        background-color: #FF0080;
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-color: #FF0000;
+    }
+
+    10% {
+        background-color: #FF8000;
+    }
+
+    20% {
+        background-color: #FFFF00;
+    }
+
+    30% {
+        background-color: #80FF00;
+    }
+
+    40% {
+        background-color: #00FF00;
+    }
+
+    50% {
+        background-color: #00FF80;
+    }
+
+    60% {
+        background-color: #00FFFF;
+    }
+
+    70% {
+        background-color: #0080FF;
+    }
+
+    80% {
+        background-color: #0000FF;
+    }
+
+    90% {
+        background-color: #8000FF;
+    }
+
+    100% {
+        background-color: #FF0080;
+    }
+}
+                </style>
+                <div id="animation_test" class="third" ></div>
+            </div>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Preprocessors">
+        <h2>CSS Pre-processors <small>Dynamic CSS</small></h2>
+        <ul><li>CSS is a limited description language (no variables, no function, no inheritance, no arithmetic)</li>
+        <li>Numerous pre-processing tool give new functionalities to css: new languages
+        <ul><li><a href="http://lesscss.org/">LESS</a> (used in Bootstrap)</li>
+        <li><a href="http://sass-lang.com/">SASS</a></li>
+        <li><a href="http://learnboost.github.io/stylus/">Stylus</a></li>
+        <li>...</li></ul></li>
+       </ul>
+       </section>
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Preprocessors2">
+
+        <h3>LESS' Main features</h3>
+            <ul><li>
+                <b>Variables</b>: values used in various declarations like themed colors, default values for various sizes (border, padding, margin, spaces, ...)
+                <pre class="prettyprint lang-css">
+<code class="css">@main-theme-color-bg: #428bca;
+body{
+    background-color: @main-theme-color-bg;
+}</code></pre>
+            </li>
+            <li><b>Mixins</b>: inherit properties of a class into another declaration block.
+            <pre class="prettyprint lang-css">
+<code class="css">.general_stuff{
+    /* ... */
+}
+#special_item {
+    .general_stuff;
+    /* ... */
+}</code></pre></li>
+</ul>
+</section>
+   <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Preprocessors3">
+     <ul>
+            <li><b>Nested Rules</b>: more expressive inheritance and shorter code
+            <pre class="prettyprint lang-css">
+<code class="css">#menu {
+    h1 {
+        /* ... */
+    }
+    ul{
+        /* ... */
+    }
+}</code></pre>
+            </li>
+       <li><b>Mixins with parameters</b>
+            <pre class="prettyprint lang-css">
+<code class="css">.big-font (@size: 18px) {
+    font-size: @size;
+    font-weight: 700;
+}
+.important {
+    .big-font;
+}
+#more-important {
+    .big-font(25px);
+}
+</code></pre>
+       </li>
+       </ul></section>
+          <!-- ==== SLIDE ==== -->
+        <section class="step" id="CSS_Preprocessors4">
+     <ul>
+      <li><b>Functions and Operations</b>: used within parenthesis</li></ul>
+            <pre class="prettyprint lang-css">
+<code class="css">width : (@default-width * 1.3);
+color : darken(@default-color, 3%);
+background-color: desaturate(@default-color, 10%);
+            </code></pre>
+
+        </section>
+
+---
+title: Web Frameworks
+subsection: Web Development
+order: 7
+description:
+- Client-Side Frameworks
+- Knockout
+- Server-Side Frameworks
+- Express
+- NoSQL DataBases
+- CouchDB
+layout: lecture.hbs
+---
+
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks">
+            <h2>Web Frameworks</h2>
+            <p>
+                Web development is getting dominated by the MVC (Model View Controller) design pattern. Both on the server and client side.
+            </p>
+            <h3>Server-Side Web Frameworks</h3>
+            <p></p>
+            <h3>Client-Side Web Frameworks</h3>
+            <p></p>
+            <h3>Databases</h3>
+            <p></p>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks_ServerSide">
+            <h2>Server-Side Web Frameworks</h2>
+            many frameworks in many (all?) languages
+            <div class="twocols">
+                <ul class="first">
+                    <li>Java
+                        <ul>
+                            <li>JavaServer Faces (Oracle)</li>
+                            <li>Spring MVC</li>
+                            <li>Struts 2</li>
+                            <li>Stripes</li>
+                            <li>Wicket (Apache)</li>
+                            <li>GWT (Google)</li>
+                        </ul>
+                    </li>
+                    <li>PHP
+                        <ul>
+                            <li>Zend Framework (IBM)</li>
+                            <li>CakePHP (Open Source)</li>
+                            <li>...</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="second">
+                    <li>Python
+                        <ul>
+                            <li>Django (&hearts;)</li>
+                            <li>web2py</li>
+                            <li>Zope</li>
+                        </ul>
+                    </li>
+                    <li>Ruby
+                        <ul>
+                            <li>Ruby on Rails</li>
+                        </ul>
+                    </li>
+                    <li>JavaScript (node.js)
+                        <ul>
+                            <li>Express</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="ExpressJs">
+        <h2>Express.js <small>The JavaScript Server Side Framework</small></h2>
+        <p>A minimalist Web framework for node.</p>
+        <pre class="prettyprint lang-js">
+<code class="javascript">var express = require('express');
+var app = express();
+app.get('/hello.txt', function(req, res){
+  res.send('Hello World');
+});
+app.listen(3000);</code></pre>
+<p>Install with npm: <code>npm install express</code></p>
+<p><a href="http://expressjs.com/">http://expressjs.com/</a></p>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="ExpressJsRoutes">
+        <h3>Routes</h3>
+        <p>In a Web App each resource is accessed through one unique request (URI)</p>
+        <p>Requests are actions on elements or collections (get, create, modify, delete)</p>
+        <p>Close to the REST (Representational State Transfer)</p>
+        <p>Express link URIs to actions through REST verbs (<code>GET, PUT, POST, DELETE</code>)</p>
+        <pre class="prettyprint lang-js">
+<code class="javascript">app.get('/advert/:id?', function(req, res) {
+    res.send('You asked for advert' + req.param('id'));
+})
+.get('/search', function(req, res) { //search?q=something+fun
+    console.log('the search query is: ' + req.query.q); // req.param('q')
+})
+.post('/advert', function(req, res){ // with the bodyParser() middleware
+    req.body.advertTittle
+})
+.delete('/advert/:id?', function(req, res) {
+    // remove entry req.param('id') from database
+});
+        </code></pre>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="ExpressJsTemplates">
+        <h3>templates</h3>
+        <ul><li>Templates allow the dynamic creation on html5 pages.</li>
+        <li>Templates use a special language with variables (user data) loops and conditions</li>
+        <li>Templates are stored in the <code>views/</code> folder of the App and are called from a route.</li></ul>
+        <p>Templating in node with Jade: <a href="http://jade-lang.com/">http://jade-lang.com/</a></p>
+        <pre class=" prettyprint lang-js">
+<code class="javascript">// in /app.js
+app.set('view engine', 'jade');
+var users = [{id:1, name:'Tom'},
+            {id:2, name:'Max'}];
+app.get('/user/:id?', function(req, res){
+  res.render('hello_user', _.filter(users, {id:req.param('id')[0]);
+});</code></pre>
+        <div class="twocols">
+        <pre class="first prettyprint lang-html nowatermark">
+<code class="scss">// in /views/hello_user.jade
+.user
+  h2 Hello #{name}!
+        </code></pre>
+        <pre class="second prettyprint lang-html">
+<code class="html">&lt;div class=&quot;user&quot;&gt;
+    &lt;h2&gt;Hello Max!&lt;/h2&gt;
+&lt;/div&gt;
+        </code></pre>
+        </section>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="ExpressJsMiddleware">
+        <h3>Middlewares</h3>
+        <ul><li>Extra features given to the application. They are executed at each request.</li>
+        <li> Executed sequentially. The <strong>order</strong> is very <strong>important</strong>. </li>
+        <li>They use 4 parameters:
+        <ul>
+            <li><code>err</code>: the error messages</li>
+            <li><code>req</code>: the user request object</li>
+            <li><code>res</code>: the response object to be sent back</li>
+            <li><code>next</code>: a callback to the next middleware to call </li>
+        </ul></li>
+        <li>Middlewares are configured with the <code>use()</code> function.</li>
+        <li>logger, csrf, compression, authentication, bodyParser(forms), json, cookies, sessions, static, ...</li></ul>
+
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="ExpressJsMiddlewareUsages">
+        <h3>Example Middleware configuration</h3>
+<pre class=" prettyprint lang-js">
+<code class="javascript">app.use(express.logger()) // logging, always first
+.use(express.static(__dirname + '/public')) // static files in folder /public
+.use(express.favicon(__dirname + '/public/favicon.ico')) // favicon
+.use(express.cookieParser())
+.use(express.session())
+.use(express.methodOverride()) // allow REST 'delete' and 'put'
+.use(express.bodyParser()) // parse forms
+.use(express.csrf()) // Cross-Site Request Forgery
+.use(app.router) // the routes defines with RESTmethods are executed here
+.use(express.errorHandler()); // errors at the end
+</code></pre>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks_DataBases">
+            <h2>DataBases</h2>
+            <p>Of course classical relational DBMS hold for web apps, but NoSQL type DBMS become useful in case of:</p>
+            <ul>
+                <li>loosely structured (few or no foreign keys),</li>
+                <li>no need to JOIN tables,</li>
+                <li>Big Data.</li>
+            </ul>
+
+            <p>Famous projects:</p>
+            <div class="twocols">
+                <ul class="first">
+                    <li>Project Voldemort, used by LinkedIn</li>
+                    <li>Cassandra Project, by Apache, formally used by Facebook</li>
+                    <li>Dynamo, by Amazon</li>
+                    <li>HBase, by Apache Hadoop, used by Facebook</li>
+                </ul>
+                <ul class="second">
+                    <li>BigTable, by Google</li>
+                    <li>CouchDB (JSON store), by Apache</li>
+                    <li>MongoDB (BSON store)</li>
+                </ul>
+            </div>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks_CouchDB">
+            <h2>CouchDB
+                <small>by Apache</small>
+            </h2>
+            <ul>
+                <li>Documents are stored in JSON
+                    <pre class=" x-4 prettyprint lang-json">
+<code class="json">{
+   "_id": "REF160",
+   "_rev": "5-fb635c95134a3c9c69ce79c4d56832f4",
+   "title": "My new house in the city",
+   "text": "&lt;h2&gt;Great new house&lt;/h2&gt;",
+   "plot_id": "-628141",
+   "available_date": "2012-12-14",
+   "high_priority": false,
+   "surface_area": 230
+}
+</code></pre>
+                </li>
+                <li>MapReduce is done in JavaScript</li>
+                <li>API interface is in HTTP
+                    <table>
+                        <tr>
+                            <td>Ask for information</td>
+                            <td>
+                                <pre><code class="bash">curl http://127.0.0.1:5984/</code></pre>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>Create a DB</td>
+                            <td>
+                                <pre><code class="bash">curl -X PUT http://127.0.0.1:5984/adverts</code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Add a doc</td>
+                            <td><pre class=" x-3 nowatermark prettyprint lang-json"><code class="bash">curl -X POST -H "Content-Type: application/json" --data \
+'{ "_id": "REF160", "title": "My new house in the city", "plot_id": "-628141"}' \
+http://127.0.0.1:5984/adverts</code></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+
+
+
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks_CouchDB_utils">
+            <h2>CouchDB
+                <small>utils...</small>
+            </h2>
+
+            <h3>A web interface to manage the database</h3>
+            <p class="text_center">
+                <a href="http://localhost:5984/_utils">http://localhost:5984/_utils</a>
+            </p>
+            <h3>Let's plug it to Node.js</h3>
+            Try it in node console:
+            <pre class=" x-3 prettyprint lang-js ">
+<code class="javascript">var cradle = require('cradle');
+var db = new(cradle.Connection)().database('real-estate-adverts')
+db.save('REF160', {
+        title: 'My new house in the city',
+        plot_id: '-628141'
+    }, function (err, res) {
+      if (err) {
+          // Handle error
+      } else {
+          // Handle success
+      }
+    }
+);
+db.get('REF160', function (err, doc) {
+      doc.title; // 'My new house in the city'
+});
+</code></pre>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="SERVER_SIDE_APP_LAB_SESSION">
+        <h2>Lab Session - Server Side App</h2>
+        <ul>
+        <li>We want to create a Web App where it is possible to:</li>
+        <ul>
+            <li>get a list of existing adverts,</li>
+            <li>create a real estate adverts,</li>
+            <li>modify an existing advert,</li>
+            <li>delete an advert.</li>
+        </ul>
+        <li>Each advert has (previously defined) fields and is linked to a "building" in the svg map. When creating or modifying an advert, one need to be able to specify this building by clicking on the map.</li>
+        <li>Adverts are stored in a CouchDB database.</li>
+        <li>Express.js is used as a server side framework.</li>
+        <li>html pages are generated based on Jade templates on the server.</li>
+        <li>Optionally, common security patterns are implemented: authentication, CSRF, https</li>
+        </ul>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Web_Frameworks_ClientSide">
+            <h2>Client-Side Web Frameworks</h2>
+            <p>Obviously in JavaScript... actually not only</p>
+            <ul>
+                <li>Backbone.js (Most popular)</li>
+                <li>Cappuccino (in its own language Objective-J, tries to emulate Apple's Cocoa style)</li>
+                <li>Knockout.js (MVVM design pattern)</li>
+                <li>Javascript MVC</li>
+                <li>Angular.js (Google)</li>
+                <li>Ember.js</li>
+                <li>Batman.js</li>
+                <li>GWT (google)</li>
+                <li>...</li>
+            </ul>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Knockout_js">
+            <h2>Client-Side Web Frameworks</h2>
+            <h3>Let's try Knockout.js</h3>
+            <p>Follow all the tutorials to learn knockout at : <a href="http://learn.knockoutjs.com/">http://learn.knockoutjs.com/</a>
+            </p>
+            <ul>
+                <li>Introduction
+                </li>
+                <li>Working with Lists and Collections
+                </li>
+                <li>
+                    Single page applications
+                </li>
+
+                <li>
+                    Creating custom bindings
+
+                </li>
+
+                <li>
+                    Loading and saving data
+
+                </li>
+            </ul>
+
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Knockout_js_RealEstate">
+            <h2>Knockout.js for our RealEstate app</h2>
+            <p>We are dealing with a list of adverts. So we need a ViewModel for each advert and a general ViewModel to manage the list.</p>
+            <pre class=" x-4 prettyprint lang-html">
+<code class="javascript">&lt;!-- in public/index.html --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/js/RealEstate.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+            The advert ViewModel:
+            <pre class="x-4 prettyprint lang-js">
+<code class="javascript">/* in public/js/RealEstate.js */
+
+var RealEstate = RealEstate || {};
+
+RealEstate.Advert = function(data) {
+  var self = this;
+  self._id = data._id || "";
+  self._rev = data._rev || "";
+  self.title = ko.observable(data.title || "");
+  // ...
+}
+
+// override the toJSON method so that we send only the interesting attributes to the server
+RealEstate.Advert.prototype.toJSON = function() {
+    var copy = ko.toJS(this); //easy way to get a clean copy
+    delete copy.isSelected; //remove an extra property
+    // ...
+    return copy; //return the copy to be serialized
+};
+
+</code></pre>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Knockout_js_RealEstate2">
+            <h3>The advert list ViewModel</h3>
+            <pre class="prettyprint lang-js">
+<code class="javascript">/* in public/js/RealEstate.js */
+
+RealEstate.AdvertsViewModel = function() {
+  var self = this;
+  self.adverts = ko.observableArray([]);
+  self.nb_adverts = ko.computed(function() {
+    return ko.utils.arrayFilter(self.adverts(), function(advert) {
+      !advert._destroy ; }
+    ).length;
+  });
+  self.selectedAdvert = ko.observable("");
+  self.save = function(){
+    $.post("/adverts", {"adverts":ko.toJSON(self.adverts())},
+        function(returnedData) {
+          console.log(returnedData);
+    });
+  };
+  // ...
+};
+</code></pre>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="Knockout_js_RealEstate3">
+            <h3>Start the app</h3>
+            <pre class="prettyprint lang-js">
+<code class="javascript">/* in public/js/RealEstate.js */
+// ...
+
+// start the app
+// console.log("Starting the app");
+RealEstate.viewModel = new RealEstate.AdvertsViewModel();
+ko.applyBindings(RealEstate.viewModel);
+
+// get the data from the server
+// console.log("get the data from the server");
+$.get("/adverts", function(data){
+  var ads_tab = JSON.parse(data);
+  for (var i = ads_tab.length - 1; i >= 0; i--) {
+    RealEstate.viewModel.adverts.push(new RealEstate.Advert(ads_tab[i]));
+    //console.log(ads_tab[i]);
+  }
+});
+</code></pre>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="KO_RE_selected">
+            <h2>Show and Select Adverts...</h2>
+            <pre class="prettyprint lang-html">
+<code class="html">&lt;!-- in public/index.html --&gt;
+&lt;div class=&quot;sidebar-nav&quot;&gt;
+  &lt;ul class=&quot;nav nav-list&quot; data-bind=&quot;foreach: adverts()&quot;&gt;
+    &lt;li data-bind=&quot;attr: { class: _id == $parent.selectedAdvert()._id ?
+                                          &#039;active&#039; :&#039;&#039; }&quot;&gt;
+      &lt;a href=&quot;#&quot; data-bind=&quot;click: $parent.selectedAdvert ,
+                                          text: _id&quot;&gt;&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="CLIENT_SIDE_APP_LAB_SESSION">
+        <h2>Lab Session - Client-Side App</h2>
+        <p class="x2">We want to create a  Client-Side, Single page  version of the Real Estate Web App.</p>
+        <ul>
+        <li>We use Knockout.js as a Web framework on the client.</li>
+        <li>The server does  not provide html pages anymore (except for the index).</li>
+        <li>On the server, Express.js is used to:
+        <ul><li>
+            serve static content (index.html, js files, images, styles),
+        </li>
+        <li>
+            give access to the database (create/remove/modify/get adverts),
+        </li>
+        <li>
+            manage security, encryption, cookies.
+        </li></ul></li>
+        <li>The communication between the client and the server is ensured through AJAX requests.</li>
+        <li>Data is transported as JSON objects.</li>
+
+
+
+
+      </ul>
+        </section>
+        <!-- /.step -->
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="CLIENT_SIDE_APP_LAB_SESSION2">
+        <h2>Lab Session - Client-Side App</h2>
+<h3>Client-Side features</h3>
+<ul>
+  <li>Adverts are linked to their plot (<code>plot_id</code>).</li>
+  <li>The Advert form (created earlier) is used to populate the <strong>Advert Details</strong> tab in <code>index.html</code>.</li>
+  <li>Maintain a list of modified advert before the user saves the modifications.</li>
+  <li>When the user saves, all the modified adverts ans new adverts are sent to the server. </li>
+  <li>Allow adverts deletion.</li>
+  <li>Allow the creation of new adverts.</li>
+  <li>Handle pictures associated to <b>each</b> advert.</li>
+</ul>
+
+<h3>Deadline</h3>
+<p>
+  <b>Send the full project on the  Eureka platform by November 17th 2013 (firm deadline).</b>
+</p>
+
+        </section>
+        <!-- /.step -->
+---
+title: Html5 Basics
+subsection: Web Development
+order: 3
+description:
+- Markup
+- The DOM API
+- Events
+- Asynchronous  Communication (AJAX)
+layout: lecture.hbs
+---
+
+        <!-- =================== -->
+        <!-- = 1. HTML5 BASICS = -->
+        <!-- =================== -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_template">
+            <h3 id="">A HTML5 Template</h3>
+            <pre class="x-4 prettyprint lang-html"><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;My App&lt;/title&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/mysite.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;My Site&lt;/h1&gt;
+    &lt;p&gt;Hello world! This is My Site.&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;mon-url1&quot;&gt;lien 1&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;div id=&quot;content&quot;&gt;
+    &lt;article&gt;
+      &lt;header&gt;&lt;h2&gt;One article&lt;/h2&gt;&lt;/header&gt;
+      &lt;section&gt;&lt;p&gt;...&lt;/p&gt;&lt;/section&gt;
+      &lt;section&gt;...&lt;/section&gt;
+      &lt;footer&gt;This article is written by...&lt;/footer&gt;
+    &lt;/article&gt;
+    &lt;article&gt;&lt;!-- ... --&gt;&lt;/article&gt;
+  &lt;/div&gt;
+  &lt;aside&gt;
+    Some stand-alone content, related to My Site.
+  &lt;/aside&gt;
+  &lt;footer&gt;&amp;copy; myself, 2013&lt;/footer&gt;
+  &lt;script src=&quot;js/mysite.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Sections">
+            <h2>HTML5 new Markup</h2>
+            <h3>Sections
+                <small>Semantic replacements of the generic
+                    <code>div</code>
+                </small>
+            </h3>
+            <dl>
+                <dt>
+                    <code>&lt;article&gt;</code>
+                </dt>
+                <dd>Self-sufficient content that can be exported as is.</dd>
+                <dt>
+                    <code>&lt;section&gt;</code>
+                </dt>
+                <dd>Coherent piece of information. Part of a larger content.</dd>
+                <dt>
+                    <code>&lt;header&gt;</code>
+                </dt>
+                <dd>Introduce an article, a section, or the whole page.</dd>
+                <dt>
+                    <code>&lt;footer&gt;</code>
+                </dt>
+                <dd>Conclude an article, a section, or the whole page.</dd>
+                <dt>
+                    <code>&lt;aside&gt;</code>
+                </dt>
+                <dd>Content related (but not central) to an article, a section, or the whole page.</dd>
+                <dt>
+                    <code>&lt;nav&gt;</code>
+                </dt>
+                <dd>List of navigation links to other contents or parts of the site.</dd>
+                <dt>
+                    <code>&lt;hgroup&gt;</code>
+                </dt>
+                <dd>Group of titles (h1, h2, h3, ...).</dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Sections2">
+            <h3>Possible Web Page Sectioning</h3>
+            <p class="text_center">
+                <img src="images/sections.svg" style="width:55%" alt="Markup sections" />
+            </p>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Sections3">
+            <h3>Possible Article Sectioning</h3>
+            <p class="text_center">
+                <img src="images/article.svg" style="width:55%" alt="Markup sections" />
+            </p>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Grouping">
+            <h2>Grouping content</h2>
+            <dl>
+                <dt>
+                    <code>&lt;figure&gt;</code>
+                </dt>
+                <dd>Piece of information (mostly graphical) from an article that can be place at different positions.</dd>
+                <dt>
+                    <code>&lt;figcaption&gt;</code>
+                </dt>
+                <dd>Caption of a figure.</dd>
+            </dl>
+
+            <h2>Interactive elements</h2>
+
+            <dl>
+                <dt>
+                    <code>&lt;details&gt;</code>
+                </dt>
+                <dd>Control for additional on-demand information.</dd>
+                <dt>
+                    <code>&lt;summary&gt;</code>
+                </dt>
+                <dd>Summary, caption, or legend for a details control.</dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Embedded">
+            <h2>Embedded Content</h2>
+            <dl>
+                <dt>
+                    <code>&lt;video&gt;</code>
+                </dt>
+                <dd>Embed videos in the page.
+                    <pre class="x-3 prettyprint nowatermark lang-html"><code>&lt;video src=&quot;videofile.ogg&quot; autoplay poster=&quot;posterimage.jpg&quot;&gt;&lt;/video&gt;</code></pre>
+                    Possible attributes:
+                    <code class="x-3">autoplay buffered controls crossorigin height loop muted played preload poster src width</code>
+                </dd>
+                <dt>
+                    <code>&lt;audio&gt;</code>
+                </dt>
+                <dd>Represent sound content in the document.
+                    <pre class="x-3 prettyprint nowatermark lang-html"><code>&lt;audio src=&quot;audio.ogg&quot; autoplay&gt;</code></pre>
+                </dd>
+                <dt>
+                    <code>&lt;source&gt;</code>
+                </dt>
+                <dd>Specify alternate sources for
+                    <code>audio</code> and
+                    <code>video</code>.
+                    <pre class=" x-3 prettyprint nowatermark lang-html"><code>&lt;video controls&gt;
+  &lt;source src=&quot;foo.ogg&quot; type=&quot;video/ogg&quot;&gt;
+  &lt;source src=&quot;foo.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+&lt;/video&gt;</code></pre>
+                </dd>
+                <dt>
+                    <code>&lt;track&gt;</code>
+                </dt>
+                <dd>Specify subtitles for
+                    <code>audio</code> and
+                    <code>video</code>.
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Embedded2">
+            <h2>Embedded Content</h2>
+            <dl>
+                <dt>
+                    <code>&lt;embed&gt;</code>
+                </dt>
+                <dd>Integration of external non-html content.
+                    <pre class="prettyprint nowatermark lang-html"><code>&lt;embed type=&quot;video/quicktime&quot; src=&quot;movie.mov&quot; width=&quot;640&quot; height=&quot;480&quot;&gt;</code></pre>
+                </dd>
+                <dt>
+                    <code>&lt;svg&gt;</code>
+                </dt>
+                <dd>Embedded vectorial image. SVG format.
+                    <div class="threecols">
+                        <pre class="prettyprint lang-html nowatermark firstsecond x-3"><code>&lt;svg width=&quot;150&quot; height=&quot;100&quot; viewBox=&quot;0 0 3 2&quot;&gt;
+  &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;0&quot; fill=&quot;#002395&quot; /&gt;
+  &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;1&quot; fill=&quot;#ffffff&quot; /&gt;
+  &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;2&quot; fill=&quot;#ED2939&quot; /&gt;
+&lt;/svg&gt;</code></pre>
+                        <p class="third">
+                            <svg width="150" height="100" viewBox="0 0 3 2">
+                                <rect width="1" height="2" x="0" fill="#002395" />
+                                <rect width="1" height="2" x="1" fill="#ffffff" />
+                                <rect width="1" height="2" x="2" fill="#ED2939" />
+                            </svg>
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>&lt;mathml&gt;</code>
+                </dt>
+                <dd>Mathematical formula. MathML format.
+                    <div class="threecols">
+                        <pre class="x-4 firstsecond prettyprint lang-html nowatermark"><code>&lt;math&gt;
+  &lt;mrow&gt;
+    &lt;mrow&gt;
+      &lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+      &lt;mo&gt;+&lt;/mo&gt;
+      &lt;msup&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+    &lt;/mrow&gt;
+    &lt;mo&gt;=&lt;/mo&gt;
+    &lt;msup&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+  &lt;/mrow&gt;
+&lt;/math&gt;</code></pre>
+                        <p class="third">
+                            <math>
+                                <mrow>
+                                    <mrow>
+                                        <msup>
+                                            <mi>a</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <msup>
+                                            <mi>b</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                    </mrow>
+                                    <mo>=</mo>
+                                    <msup>
+                                        <mi>c</mi>
+                                        <mn>2</mn>
+                                    </msup>
+                                </mrow>
+                            </math>
+                        </p>
+                    </div>
+                </dd>
+            </dl>
+
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms">
+            <h2>Forms</h2>
+            <dl>
+                <dt>
+                    <code>&lt;datalist&gt;</code>
+                </dt>
+                <dd>A set of predifined options for other controls.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>Browsers: &lt;input list=&quot;browsers&quot;&gt;
+&lt;datalist id=&quot;browsers&quot;&gt;
+  &lt;option value=&quot;Chrome&quot;&gt;
+  &lt;option value=&quot;Firefox&quot;&gt;
+  &lt;option value=&quot;Internet Explorer&quot;&gt;
+  &lt;option value=&quot;Opera&quot;&gt;
+  &lt;option value=&quot;Safari&quot;&gt;
+&lt;/datalist&gt;
+</code></pre>
+                        <p class="third">
+                            Browsers:
+                            <input list="browsers">
+                            <datalist id="browsers">
+                                <option value="Chrome"></option>
+                                <option value="Firefox"></option>
+                                <option value="Internet Explorer"></option>
+                                <option value="Opera"></option>
+                                <option value="Safari"></option>
+                            </datalist>
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>&lt;output&gt;</code>
+                </dt>
+                <dd>Field for the result of a calculation.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;form oninput=&quot;result.value=parseInt(a.value)
+                        +parseInt(b.value)&quot;&gt;
+  &lt;input type=&quot;number&quot; name=&quot;b&quot;  /&gt; +
+  &lt;input type=&quot;number&quot; name=&quot;a&quot;  /&gt; =
+  &lt;output name=&quot;result&quot;&gt;&lt;/output&gt;
+&lt;/form&gt;
+</code></pre>
+                        <p class="third">
+                            <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+                                <input type="number" name="b" value="50" />+
+                                <input type="number" name="a" value="10" />=
+                                <output name="result"></output>
+                            </form>
+                        </p>
+                    </div>
+                </dd>
+            </dl>
+
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms2">
+            <h2>Forms</h2>
+            <dl>
+                <dt>
+                    <code>&lt;keygen&gt;</code>
+                </dt>
+                <dd>
+                <pre class="prettyprint nowatermark lang-html"><code>&lt;keygen name=&quot;RSA public key&quot; challenge=&quot;123456789&quot; keytype=&quot;RSA&quot;&gt;
+&lt;/keygen&gt;</code></pre>
+                </dd>
+                <dt>
+                    <code>&lt;progress&gt;</code>
+                </dt>
+                <dd>Completion progress of a task.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;progress value=&quot;70&quot; max=&quot;100&quot;&gt;70 %&lt;/progress&gt;
+</code></pre>
+                        <p class="third">
+                            <progress value="70" max="100">70 %</progress>
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>&lt;meter&gt;</code>
+                </dt>
+                <dd>Graphical representation of a measure.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;meter min=&quot;0&quot; max=&quot;30&quot; low=&quot;5&quot; high=&quot;20&quot;
+                            value=&quot;15&quot;&gt;
+  15 degrees.
+&lt;/meter&gt;</code></pre>
+                        <p class="third">
+                            <meter min="0" max="30" low="5" high="20" value="0">0 degrees.</meter>
+                            <br>
+                            <meter min="0" max="30" low="5" high="20" value="5">5 degrees.</meter>
+                            <br>
+                            <meter min="0" max="30" low="5" high="20" value="15">15 degrees.</meter>
+                            <br>
+                            <meter min="0" max="30" low="5" high="20" value="25">25 degrees.</meter>
+                            <br>
+                            <meter min="0" max="30" low="5" high="20" value="30">30 degrees.</meter>
+                        </p>
+                    </div>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms3">
+            <h3>Forms new attributes</h3>
+            <dl>
+                <dt>
+                    <code>novalidate</code>
+                </dt>
+                <dd>Prevent validation of the form before sending it.</dd>
+            </dl>
+            <h3>Forms new inputs controls</h3>
+            <dl>
+                <dt>
+                    <code>search</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;search&quot; name=&quot;my_search&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="search" name="my_search">
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>number</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;number&quot; name=&quot;my_number&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="number" name="my_number">
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>range</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;range&quot; name=&quot;my_range&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="range" name="my_range">
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>color</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;color&quot; name=&quot;my_color&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="color" name="my_color">
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>date</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;date&quot; &gt;</code></pre>
+                        <p class="third">
+                            <input type="date">
+                        </p>
+                    </div>
+                    Other dates and times:
+                    <code>datetime datetime-local month time week</code>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms4">
+            <h3>Forms inputs attributes</h3>
+
+            <dl>
+                <dt>
+                    <code>form</code>
+                </dt>
+                <dd>Specify which
+                    <code>form</code> this
+                    <code>input</code> belongs to.
+                </dd>
+                <dt>
+                    <code>formaction, formenctype, formmethod, formnovalidate, formtarget</code>
+                </dt>
+                <dd>Surcharge form's default
+                    <code>action</code>,
+                    <code>enctype</code>
+                    <code>novalidate</code> and
+                    <code>target</code> attributes.
+                    <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;form action=&quot;default_form.php&quot;&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Default Submit&quot; /&gt;&lt;br /&gt;
+  &lt;input type=&quot;submit&quot; formaction=&quot;alternate_form.php&quot;
+          value=&quot;Alternate Submit&quot; /&gt;
+&lt;/form&gt;</code></pre>
+                </dd>
+                <dt>
+                    <code>multiple</code>
+                </dt>
+                <dd>Allow more than one value in the input.</dd>
+                <dt>
+                    <code>placeholder</code>
+                </dt>
+                <dd>A hint for the user.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;text&quot; placeholder=&quot;login&quot;&gt;
+&lt;input type=&quot;password&quot; placeholder=&quot;password&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="text" placeholder="login">
+                            <input type="password" placeholder="password">
+                        </p>
+                    </div>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms5">
+            <dl>
+                <dt>
+                    <code>min, max, step</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;range&quot;
+        min=&quot;12&quot; max=&quot;120&quot; step=&quot;12&quot;&gt;
+&lt;input  type=&quot;number&quot;
+        min=&quot;12&quot; max=&quot;120&quot; step=&quot;12&quot;&gt;
+&lt;input  type=&quot;date&quot;
+        min=&quot;2012-10-01&quot; max=&quot;2012-12-01&quot;
+        step=&quot;14&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="range" min="12" max="120" step="12">
+                            <br>
+                            <input type="number" min="12" max="120" step="12">
+                            <br>
+                            <input type="date" min="2012-10-01" max="2012-12-01" step="14">
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>patterns</code>
+                </dt>
+                <dd>Regular expression to validate an input.
+                    <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;text&quot; name=&quot;code&quot; pattern=&quot;[A-Za-z]{3}&quot;
+        title=&quot;3 letters code&quot; /&gt;</code></pre>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms6">
+            <dl>
+                <dt>
+                    <code>required</code>
+                </dt>
+                <dd>validation of the input. Will raise a message if no value on required input.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;form action=&quot;&quot;&gt;
+code: &lt;input type=&quot;text&quot; name=&quot;code&quot;
+pattern=&quot;[A-Z]{3}&quot; placeholder=&quot;AAA&quot;
+title=&quot;Three letters code&quot; autofocus /&gt;
+&lt;br&gt;
+value: &lt;input type=&quot;number&quot;  min=&quot;1&quot;
+max=&quot;100&quot; title=&quot;integer between 1 and 100&quot;
+required&gt;
+&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+                        <div class="third">
+
+                        <form action="">
+                                code:
+                                <input type="text" name="code" pattern="[A-Z]{3}" placeholder="AAA" title="Three letters code" />
+                                <br>value:
+                                <input type="number" min="1" max="100" title="integer between 1 and 100" required>
+                                <input type="submit" value="Submit">
+                        </form>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Attributes">
+            <h2>New global attributes</h2>
+            <dl>
+                <dt>
+                    <code>data-*</code>
+                </dt>
+                <dd>User defined attributes. Any attribute prefixed by <i>data-</i> can be defined and used. HTML pages with
+                    <code>data-*</code> are valid pages.</dd>
+                <dt>
+                    <code>on*</code>
+                </dt>
+                <dd>Specify code to execute on specific events linked to an element.
+                    <pre class="html prewrap"><code class="javascript wrap">onabort, onblur, oncancel, oncanplay, oncanplaythrough, onchange, onclick, onclose, oncontextmenu, oncuechange, ondblclick, ondrag, ondragend, ondragenter, ondragleave, ondragover, ondragstart, ondrop, ondurationchange, onemptied, onended, onerror, onfocus, oninput, oninvalid, onkeydown, onkeypress, onkeyup, onload, onloadeddata, onloadedmetadata, onloadstart, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, onmousewheel, onpause, onplay, onplaying, onprogress, onratechange, onreset, onscroll, onseeked, onseeking, onselect, onshow, onstalled, onsubmit, onsuspend, ontimeupdate, onvolumechange, onwaiting</code></pre>
+                </dd>
+                <dt>
+                    <code>accesskey</code>
+                </dt>
+                <dd>Define keyboard shortcuts.</dd>
+                <dt>
+                    <code>class</code>
+                </dt>
+                <dd>List of classes this element belongs to.</dd>
+                <dt>
+                    <code>contenteditable</code>
+                </dt>
+                <dd>Boolean. Is this element is editable?</dd>
+                <dt>
+                    <code>contextmenu</code>
+                </dt>
+                <dd>Link a
+                    <code>command</code> to a menu.</dd>
+            </dl>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Attributes2">
+            <dl>
+                <dt>
+                    <code>dir</code>
+                </dt>
+                <dd>Set the direction of the text in that element.</dd>
+                <dt>
+                    <code>draggable</code>
+                </dt>
+                <dd>Boolean. Is that element draggable?</dd>
+                <dt>
+                    <code>dropzone</code>
+                </dt>
+                <dd>What action to take when an element is dropped on this one (copy, move, link...)</dd>
+                <dt>
+                    <code>hidden</code>
+                </dt>
+                <dd>Boolean. Is it visible?</dd>
+                <dt>
+                    <code>id</code>
+                </dt>
+                <dd>The unique identifier of an element.</dd>
+                <dt>
+                    <code>lang</code>
+                </dt>
+                <dd>Primary language of the text in that element.</dd>
+                <dt>
+                    <code>spellcheck</code>
+                </dt>
+                <dd>Boolean. Activate spell checking?</dd>
+                <dt>
+                    <code>style</code>
+                </dt>
+                <dd>CSS element style.</dd>
+                <dt>
+                    <code>tabindex</code>
+                </dt>
+                <dd>Integer that defines the order of focus of the element with the keyboard.</dd>
+                <dt>
+                    <code>title</code>
+                </dt>
+                <dd>Tooltips...</dd>
+                <dt>
+                    <code>translate</code>
+                </dt>
+                <dd>Boolean. Does the content of the element need to be translated when the page is localized?</dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_DOM_API">
+            <h2>Document Object Model (DOM)</h2>
+            <p>Structural representation of a HTML or XML document. Content and visual presentation can be modified with JavaScript.</p>
+
+            <ul>
+                <li>Each web page loaded in the browser has a
+                    <code>document</code> object. It is the entry point of the web page content. The root of the DOM tree.</li>
+                <li>In a document's script,
+                    <code>document</code> is also accessed through
+                    <code>window.document</code>.</li>
+                <li>Each Element in the DOM inherits from the
+                    <code>Node</code> Interface.</li>
+                <li>Specialized elements have other interfaces:
+                    <ul>
+                        <li>attributes inherit from
+                            <code>Attr</code>
+                        </li>
+                        <li>elements inherit from
+                            <code>Element</code>
+                        </li>
+                        <li>
+                            <code>document</code> inherit from
+                            <code>Document</code>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_DOM_API_Node">
+            <h2>The
+                <code>Node</code> interface</h2>
+            <dl>
+                <dt>
+                    <code>nodeName</code>
+                </dt>
+                <dd>element -> tagName, text -> #text, attribute -> name.</dd>
+                <dt>
+                    <code>nodeValue</code>
+                </dt>
+                <dd>Attribute -> name.</dd>
+                <dt>
+                    <code>attributes</code>
+                </dt>
+                <dd>List of attributes. Only for elements</dd>
+                <dt>
+                    <code>parentNode</code>
+                </dt>
+                <dd>Link to the parent node.</dd>
+                <dt>
+                    <code>childNodes</code>
+                </dt>
+                <dd>List of child nodes.</dd>
+                <dt>
+                    <code>firstChild</code>
+                </dt>
+                <dd>First child in the
+                    <code>childNodes</code> list.</dd>
+                <dt>
+                    <code>lastChild</code>
+                </dt>
+                <dd>Last child in the
+                    <code>childNodes</code> list.</dd>
+                <dt>
+                    <code>previousSibling</code>
+                </dt>
+                <dd>Previous node at the same level of this node.</dd>
+                <dt>
+                    <code>nextSibling</code>
+                </dt>
+                <dd>Next node at the same level of this node.</dd>
+            </dl>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_DOM_API_Node2">
+            <h2>The
+                <code>Node</code> interface</h2>
+            <p>Methods:</p>
+            <ul>
+                <li>
+                    <code>appendChild(newChild)</code>
+                </li>
+                <li>
+                    <code>cloneNode(deep)</code>
+                </li>
+                <li>
+                    <code>hasAttributes()</code>
+                </li>
+                <li>
+                    <code>hasChildNodes()</code>
+                </li>
+                <li>
+                    <code>insertBefore(new,ref)</code>
+                </li>
+                <li>
+                    <code>removeBefore(old)</code>
+                </li>
+                <li>
+                    <code>replaceChild(new,old)</code>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_DOM_API_Doc">
+            <h2>The
+                <code>Document</code> interface</h2>
+            <dl>
+                <dt>The
+                    <code>documentElement</code> property</dt>
+                <dd>The
+                    <code>html</code> Element.</dd>
+                <dt>The
+                    <code>documentURI</code> property</dt>
+                <dd>The document location.</dd>
+                <dt>The
+                    <code>head</code> and
+                    <code>body</code> properties</dt>
+                <dd></dd>
+                <dt>The
+                    <code>cookie</code> property</dt>
+                <dd>Semicolon-separated list of the cookies for that document.</dd>
+                <dt>The
+                    <code>createElement(tagName)</code> method</dt>
+                <dd>Create new DOM elements.</dd>
+                <dt>The
+                    <code>createTextNode()</code> method</dt>
+                <dd>Create text nodes.</dd>
+                <dt>The
+                    <code>createEvent()</code> method</dt>
+                <dd>Create events.</dd>
+                <dt>Elements access methods:</dt>
+                <dd>
+                    <ul>
+                        <li>
+                            <code>getElementById(id)</code>
+                        </li>
+                        <li>
+                            <code>getElementsByClassName(className)</code>
+                        </li>
+                        <li>
+                            <code>getElementsByTagName(tagName)</code>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Events">
+
+            <h2>Events</h2>
+            <ul>
+                <li>
+                    Interaction between the user and the page or between various components lead to events that are called in JavaScript.
+                </li>
+                <li>
+                    Events define the behavior of the page.
+                </li>
+                <li>Each element in the page can generate events.</li>
+                <li>Reaction to events is made through callbacks (listeners).</li>
+                <li>When an event is activated, the registered callbacks to this event are executed.</li>
+            </ul>
+            <pre class="prettyprint lang-js"><code>function initEventHandlers() {
+  document.getElementById('mainForm')
+      .addEventListener('submit', checkForm, false);
+  document.getElementById('helpPopupLink')
+      .addEventListener( 'click' , popupHelp, false);
+}
+window.addEventListener( 'load', initEventHandlers, false);</code></pre>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Events2">
+            <h2>Attribute events are <i>bad</i>
+            </h2>
+            <pre class="prettyprint lang-html"><code>&lt;body onload=&quot;initPage()&quot;&gt; ...
+
+&lt;form method=&quot;post&quot; action=&quot;p.php&quot; onsubmit=&quot;checkForm()&quot;&gt; ...
+
+&lt;a href=&quot;#&quot; onclick=&quot;return popupWindow(&rsquo;h.htm&rsquo;)&quot;&gt;Aide&lt;/a&gt; ...
+
+&lt;div onclick=&quot;doSomething()&quot;&gt; ...
+</code></pre>
+            <ol>
+                <li>Mixing of content and behavior.</li>
+                <li>Multiple bindings on one event not allowed.</li>
+                <li>Only a subset of events are supported.</li>
+            </ol>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Events_Bubbling">
+            <h2>Events Bubbling</h2>
+            <br>
+            <br>
+            <br>
+            <p class="text_center">What is that?</p>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Async">
+            <h2>Asynchronous Communication
+                <small>AJAX</small>
+            </h2>
+            <h3>XMLHttpRequest</h3>
+            <p>A JavaScript object that allows the exchange of information between the client and the server, <i>without</i> reloading the page.
+            </p>
+            <p>
+                The object is standardized but not allays implemented.
+            </p>
+            <pre class="prettyprint lang-js"><code class="javascript">var xhr;
+try {
+  xhr = new ActiveXObject ( "Msxml2 .XMLHTTP" ) ;
+} catch (e) { try {
+  xhr = new ActiveXObject( "Microsoft .XMLHTTP" ); } catch (e) {
+  xhr = false; }
+}
+if( ! xhr &amp;&amp; typeof XMLHttpRequest != "undefined" ) {
+  xhr = new   XMLHttpRequest();
+}
+  </code></pre>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_XMLHttpRequest">
+            <h2>XMLHttpRequest</h2>
+            <p>
+            2 important methods:
+            </p>
+            <ul>
+                <li>
+                    <code>open()</code>: set parameters, initialize the connection.
+                    <pre class="prettyprint lang-js"><code class="javascript">xhr.open( "GET", "/message" );</code></pre>
+                </li>
+                <li>
+                    <code>send()</code>: actually send the request:
+                    <code  class="javascript">xhr.send();</code>
+                </li>
+            </ul>
+            <p>
+            XMLHttpRequest are asynchronous. 5 states are passed after sending
+            </p>
+            <ol>
+                <li>Not initialized (before
+                    <code>send()</code>).</li>
+                <li>Waiting for reception (after
+                    <code>send</code>).</li>
+                <li>Data received.</li>
+                <li>Response being processed.</li>
+                <li>Terminated.</li>
+            </ol>
+        </section>
+        <!-- /.step -->
+
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_XMLHttpRequest_data">
+            <h2>XMLHttpRequest: How do we get the data?</h2>
+            <pre class="prettyprint lang-js"><code class="javascript">var xhr;
+//...
+xhr.open( "GET", "/message" );
+xhr.onreadystatechange = handleData;
+xhr.send( null ); // Argument utilisé uniquement pour POST
+//...
+function handleData () {
+  if ( xhr.readyState === 4 ) { // Data received.
+    if( xhr.status === 200 ) { // HTTP status.
+      var data = xhr.responseText;
+    }else{
+    // deal with the server error...
+    }
+  }
+}</code></pre>
+        </section>
+
+---
+title: Web Development
+thumbnail: js-thumb.jpg
+section: Teaching
+description:
+layout: lecture-outline.hbs
+order: 1
+description:
+    - "Basic tools, protocols, standards and technologies."
+    - "Main Languages: JavaScript, HTML, CSS"
+    - "Client-side and Server-side Web Frameworks."
+    - "Lecture for Master 2 - IDOD."
+---
+
+
+
+
+<div class=""id="chart" data-color="type"></div>
+<p id="option_panel">
+  Distance:
+    <input type="range" name="distance_range" value="50" id="distance_range" min=1 max=100 step=5>
+    <br>
+   <!--  <input type="submit" name="Start" value="Start" id="start_graph"> -->
+</p>
+<style type="text/css" media="screen">
+
+.node {
+    background-color: white;
+}
+.node:hover {
+    cursor: pointer;
+}
+.link {
+    stroke:#bbb;
+    stroke-opacity: .6;
+    fill: none;
+}
+#chart {
+    z-index:-1;
+}
+</style>
+
+ <!-- build:js {{assets}}/scripts/graph_outline.js -->
+<script type="text/javascript" src="/bower_components/d3/d3.js"></script>
+<script type="text/javascript" src="/scripts/graph_outline.js"></script>
+<!-- endbuild -->
+<script type="text/javascript" charset="utf-8">
+//document.getElementById('start_graph').addEventListener('click', function(e) {
+    var e = document.getElementById('chart');
+    var w = e.parentElement.scrollWidth -65;
+    var options = {
+        'width': w,
+        'height': w/1.3,
+        'area': '#chart',
+        't': '#color_type_selector',
+        'range': '#distance_range'
+    };
+    graph_outline(options);
+    //$(this).hide();
+//});
+    </script>
+---
+title: "JQuery"
+subsection: Web Development
+order: 5
+description:
+- "Browser Agnostic DOM Manipulation"
+- "By John Resig"
+layout: lecture.hbs
+---
+
+
+<section>
+	<p class="text_center"><a href="images/jquery.pdf">JQuery Lecture</a></p>
+</section>
+
+
+<section data-markdown>
+    <script type="text/template">
+##jQuery par John Resig
+
+- Depuis janvier 2006
+- Applications coté client
+- Multi-navigateurs multi-OS
+- Fonctionnalités : le parcours du DOM, les évènements, AJAX et les animations
+- version 1.8.2 (minifiée/zipée) : 32 ko
+- Extensions de la bibliothèque par plugins
+- Code concis, fichier très petit
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##La fonction ```jQuery()```
+
+- Tout commence par cette fonction
+- «factory» pour tous les objets jQuery
+- Code en 2 parties : requête & action jQuery(".even").hide()
+- «$» alias de «jQuery»
+
+```
+jQuery("div.even") ➔ $("div.even")
+```
+<!-- .element: class="javascript"  -->
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Sélecteurs CSS 2 et 3
+
+	a[rel]
+	div[class~="even"]
+	a[href^="http://"]
+	ul#nav > li
+	li#current ~ li
+	li:first-child, li:last-child, li:nth-child(3)
+
+<!-- .element: class="css"  -->
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+##D’autres sélecteurs
+```
+div:first, h3:last
+:header
+:hidden,:visible
+:animated
+:input,:text,:password,:radio,:submit...
+div:contains(Hello)
+```
+<!-- .element: class="css"  -->
+
+http://api.jquery.com/category/selectors/
+
+<!-- .element: class="text_center"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+## ```jQuery()``` retourne un tableau
+
+- Collections (objet) jQuery
+
+```
+$('.odd')
+[<div class=!"odd" id=!"d1">!that's d1!</div>,
+<div class=!"odd" id=!"d3">!that's d3!</div> ,
+<div class=!"odd" id=!"d5">!that's d5!</div>!,
+<div class=!"odd" id=!"d7">!that's d7!</div>!]
+```
+<!-- .element: class="javascript"  -->
+
+
+- Peut se traiter comme un tableau
+
+```
+$(".odd").length;
+$(".odd")[0];
+```
+<!-- .element: class="javascript"  -->
+
+
+- On peut leur appliquer des méthodes
+
+```$(".odd").size();
+$(".odd").each(function() {
+     console.log(this);
+});
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+
+
+<section data-markdown>
+    <script type="text/template">
+##Action sur la sélection
+
+- Méthodes qui manipule l’objet appelant (les objets du tableau sélectionné)
+- Elle retournent généralement l’objet (la collection) appelant
+- Actions ou commandes enchainables
+
+```
+$(".odd").add(".even").addClass("darcker").show("fast");
+```
+
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Consistance du code
+
+###Nom des fonctions
+```
+.click() vs. .onclick()
+```
+<!-- .element: class="javascript"  -->
+
+###Position des arguments
+
+```
+.methode(options, arg1, arg2, ... , callback)
+```
+<!-- .element: class="javascript"  -->
+
+###Contexte des callbacks
+
+```
+.methode(function(){
+    // this == DOMElement
+});
+```
+<!-- .element: class="javascript"  -->
+
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Manipulations HTML
+```
+$(".even:first").text("First \"even\" div on the page.")
+$(".odd:last").html("<ul><li>The last</li><li>odd div</li></ul>")
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Manipulations d’attributs
+```
+$('a.nav').attr('href', 'http://flickr.com/');
+$('a.nav').attr({
+    'href': 'http://flickr.com/',
+    'id': 'flickr'
+});
+$('#intro').removeAttr('id');
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+###Manipulations CSS
+```
+$('#intro').addClass('highlighted');
+$('#intro').removeClass('highlighted');
+$('#intro').toggleClass('highlighted');
+$('.div').css("background-color", "#eee");
+jQuery(".div").css({
+    "background-color": "#eee",
+    "border": "1px solid #555"
+})
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Retour de valeurs
+
+Certaines méthodes retournent une valeur pour le première élément de la collection.
+
+```
+var height = $('div#intro').height();
+var src = $('img.photo').attr('src');
+var lastP = $('p:last').html();
+var hasFoo = $('p').hasClass('foo');
+var email = $('input#email').val();
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Parcours du DOM
+```
+$('div.section').parent();
+$('div.section').next();
+$('div.section').prev();
+$('div.section').nextAll('div');
+$('h1:first').parents();
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Gestion des évènements
+```
+$('a:first').click(function(ev){
+   $(this).css({ "background-color": "#a0a8b8"});
+   return false; // ou ev.preventDefault();
+}
+```
+<!-- .element: class="javascript"  -->
+
+```
+blur, change, click, dblclick, error, focus, hover, ready, resize, scroll, select, submit, toggle
+```
+<!-- .element: class="css wrap"  -->
+
+http://api.jquery.com/category/events/
+
+<!-- .element: class="text_center"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Unobtrusive JS
+```
+$(document).ready(function(){
+     alert('Le DOM est prêt !')
+});
+```
+<!-- .element: class="javascript"  -->
+
+⬇
+
+<!-- .element: class="text_center"  -->
+
+```
+$(function(){
+     alert('Le DOM est prêt !')
+});
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+###Chainage des actions
+
+- Actions classiques renvoient la collection appelante
+- Certains renvoient une collection différente
+- ```end()``` revient à la collection précédente
+
+
+```
+$('.intro').css('color','#ccc')
+	.find('a').addClass('highlight')
+	.end()
+	.find('em').css('color','red')
+	.end()
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+
+<section data-markdown>
+    <script type="text/template">
+##Autres méthodes ≠ actions
+
+Ne s’appliquent pas obligatoirement sur des objets jQuery.
+
+Méthodes de l'objet global ```jQuery``` ou ```$```
+
+- Utilitaires
+
+```
+$.isArray()
+$.trim()
+$.type()
+$.paseJSON()
+```
+<!-- .element: class="javascript"  -->
+
+- AJAX
+
+```
+$.ajax()
+$.get()
+$.post()
+$.getJSON()
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+ ##AJAX
+
+S’appliquant sur un objet jQuery
+
+```
+$("#data").load("/some/file.html") Méthode bas niveau
+$.ajax({
+  url: "test.html",
+  context: document.body,
+  success: function(){
+    $(this).addClass("done");
+  }
+});
+```
+<!-- .element: class="javascript"  -->
+
+Méthodes haut niveau
+
+```
+$.get()
+$.post()
+$.getJSON()
+$.getScript()
+```
+<!-- .element: class="javascript"  -->
+
+http://api.jquery.com/category/ajax/
+
+<!-- .element: class="text_center"  -->
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+##Animation
+
+jQuery a quelques effets pré-installés
+
+```
+$('h1').hide('slow');
+$('h1').slideDown('fast');
+$('h1').fadeOut(2000);
+```
+<!-- .element: class="javascript"  -->
+
+On peut les enchainer
+
+```
+$('h1').fadeOut(2000).slideDown();
+```
+<!-- .element: class="javascript"  -->
+
+http://api.jquery.com/category/effects/
+
+<!-- .element: class="text_center"  -->
+
+
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+##Plugins
+
+- AJAX
+- DOM
+- Drag-Drop
+- Menu
+- Navigation
+- Tableaux
+- ...
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+    </script>
+</section>
+
+---
+title: JavaScript Basics
+subsection: Web Development
+order: 2
+description:
+	- Syntax
+ 	- Objects
+ 	- Functions
+ 	- Inheritance
+ 	- Arrays
+ 	- Regexp
+ 	- JSON
+
+layout: lecture.hbs
+---
+
+<!-- ======================== -->
+<!-- = 1. JAVASCRIPT BASICS = -->
+<!-- ======================== -->
+
+<section class="step" id="JS_History">
+    <h2>Javascript in a Nutshell</h2>
+    <ul>
+        <li>By Brendan Eich @ Netscape, 1995.</li>
+        <li>The name comes from a cooperation with Sun Microsystems (nothing to do with Java).</li>
+        <li>Standardized by ECMA (ECMAScript Language Specification).</li>
+        <li>Interpreted language.</li>
+        <li>Dynamic typing.</li>
+        <li>Object Oriented language based on Prototypes.</li>
+        <li>Functionnal language with nested functions and closures.</li>
+    </ul>
+</section>
+
+<!-- ==== 1.1 JAVASCRIPT SYNTAX ==== -->
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Syntax">
+    <h2>Syntax
+        <small>a C-based syntax with lots of idioms borrowed from java</small>
+    </h2>
+    <h3>Variables Declaration</h3>
+    <div class="twocols">
+        <pre class="prettyprint lang-js nowatermark first"><code>var i = 0;</code></pre>        <pre class="prettyprint lang-js nowatermark second"><code>var i=0, j=i+1, k;</code></pre>    </div>
+    <h3>Comments</h3>
+    <div class="twocols">
+        <pre class="prettyprint lang-js nowatermark first"><code>/* multi-line
+comment */</code></pre>
+        <pre class="prettyprint lang-js nowatermark second"><code>// single line comment</code></pre>    </div>
+    <h3>Names</h3>
+    <p>
+        One letter or underscore optionally followed by one or more letters, digits, underscores.
+    </p>
+    <h3>Reserved Words
+        <small>most are not used</small>
+    </h3>
+    <pre style='white-space : pre-wrap;' class="prettyprint  x-2"><tt>abstract boolean break byte case catch char class const continue debugger default delete do double else enum export extends false final finally float for function goto if implements import in instanceof int interface long native new null package private protected public return short static super switch synchronized this throw throws  transient true try typeof var volatile void while with</tt></code></pre>
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Numbers">
+    <h2>Numbers</h2>
+    <ul>
+        <li>an integer part
+            <code class="prettyprint lang-js">123</code>
+        </li>
+        <li>followed by an optional fraction part
+            <code class="prettyprint lang-js">123.456</code>
+        </li>
+        <li>followed by an optional exponent part
+            <code class="prettyprint lang-js">123.456e+7</code>
+        </li>
+    </ul>
+    <h3>Format</h3>
+    <ul>
+        <li>64 bits floats (Java doubles)</li>
+        <li>No integers,
+            <code class="prettyprint lang-js">1</code> is the same value as
+            <code class="prettyprint lang-js">1.0</code>.</li>
+        <li>Arithmetic is not exact, (
+            <code class="prettyprint lang-js">0.1 + 0.2 !== 0.3</code>) as in all programming languages.
+        </li>
+    </ul>
+    <h3>NaN</h3>
+    <ul>
+        <li>
+            <code class="prettyprint lang-js">NaN</code> is a value that results from an operation producing abnormal arithmetic result.</li>
+        <li>
+            <code class="prettyprint lang-js">isNaN(number)</code> can spot NaNs.</li>
+    </ul>
+</section>
+<section class="step" id="JS_Numbers2">
+    <h2>Numbers</h2>
+    <h3>Infinity</h3>
+    <p><code class="prettyprint lang-js">Infinity > 1.79769313486231570e+308</code></p>
+    <h3>Utility Function</h3>
+    Utility functions and constants are available through the
+    <code class="prettyprint lang-js">Math</code> object.
+    <pre class="prettyprint lang-js"><code>Math.floor(3.45); // 3
+Math.random();  // 0.22312605078332126
+Math.PI; // 3.141592653589793
+Math.sin(Math.PI/2); // 1
+</code></pre>
+    <h3>Parse strings</h3>
+    <code class="prettyprint lang-js">parseInt(string, base)</code>
+    <pre class="prettyprint lang-js"><code>parseInt("345€", 10); // 345
+parseInt("$345", 10); // 'undefined'
+parseInt("8"); // 8
+parseInt("08"); // 0 -> leading 0 is understood as octal base
+parseInt("08", 10); // 8 -> always give the base!!!
+</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Strings">
+    <h2>Strings
+        <small>immutable objects</small>
+    </h2>
+    <h3>String literals</h3>
+    <ul>
+        <li>Written between single or double quotes (
+            <code class="prettyprint lang-js">'this string'</code>,
+            <code class="prettyprint lang-js">"that string"</code>).</li>
+        <li>The empty string
+            <code class="prettyprint lang-js">""</code> is allowed (0 characters).</li>
+        <li>No
+            <code>char</code> type. We use one-character strings (
+            <code class="prettyprint lang-js">"a"</code>).</li>
+    </ul>
+    <h3>Escaped Characters</h3>
+    <ul>
+        <li>
+            <code class="prettyprint lang-js">\</code>(backslash) escapes characters.</li>
+        <li>
+            <code class="prettyprint lang-js">"\\ \" \' \n \/ \t \b \f \r \u0065"</code>
+        </li>
+    </ul>
+    <h3>Unicode</h3>
+    <ul>
+        <li>Strings are 16 bits unicode characters.</li>
+        <li>
+            <code class="prettyprint lang-js">"\u004A \u0053 \u062D \u0F1C \u3FEF \u0DF4" === "J S ح ༜ 㿯 ෴"</code>
+        </li>
+        <li>Characters above
+            <code class="prettyprint  lang-js">'\uFFFF'</code> need 2 JS characters.</li>
+    </ul>
+</section>
+
+<section class="step" id="JS_Strings2">
+    <h2>Strings</h2>
+    <h3>Concatenation</h3>
+    <ul>
+        <li>The
+            <code class="prettyprint lang-js">+</code> operator has 2 function:
+            <strong>
+                <em>concatenation</em>
+            </strong> of strings and
+            <strong>
+                <em>addition</em>
+            </strong> of numbers.</li>
+        <li>
+            <code class="prettyprint lang-js">"J" + "S" === "JS"</code>
+        </li>
+        <li>If the 2 operands are numbers, then addition, else concatenation.</li>
+        <li>
+            <code class="prettyprint lang-js">"HTML" + 10 / 2 === "HTML5"</code>
+        </li>
+    </ul>
+    <h3>Length</h3>
+    <ul>
+        <li>String objects have a
+            <code class="prettyprint lang-js">length</code> property (number of 16 bits unicode characters in the string).</li>
+        <li>
+            <code class="prettyprint lang-js">"€\u5555ñ".length === 3</code>
+        </li>
+        <li>
+            <code class="prettyprint lang-js">"€\u5555ñ" === '€啕ñ'</code>
+        </li>
+    </ul>
+</section>
+<section class="step" id="JS_Strings3">
+    <h2>Strings</h2>
+    <h3>Methods</h3>
+    <ul>
+        <li>The
+            <code class="prettyprint lang-js">String</code> pseudo-class has methods.</li>
+        <li>Since strings are immutable, methods are static and only return new objects (no modification).</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>var s = "ok/ko";
+var s1 = s;
+s += "/ok"; // 'ok/ko/ok' but strings are immutable, so s is a new object.
+s1; // 'ok/ko' The original object remains unchanged.
+
+s1.toUpperCase(); // 'OK/KO'
+s1.split('/'); // [ 'ok', 'ko' ]
+s1.replace('/', ' ≠ '); // 'ok ≠ ko'
+"one,    two   ,  three".split(/\s*,\s*/); // [ 'one', 'two', 'three' ]
+String.fromCharCode(74, 83) // "JS"</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Statements">
+    <h2>Statements
+        <small>C-style block statements</small>
+    </h2>
+    <div class="twocols">
+        <div class="first">
+            <strong>if/else</strong>
+            <pre class="prettyprint lang-js nowatermark"><code>if (expression) {
+    // statements;
+} else if (expression) {
+    // statements;
+}</code></pre>
+        </div>
+        <div class="second">
+            <strong>for</strong>
+            <pre class="prettyprint lang-js nowatermark"><code>var i; // at beginning of function
+// ...
+for (i = 0; i &lt; 10; i += 1) {
+    // statements;
+}
+for (i in obj) {
+    // statements;
+}</code></pre>
+        </div>
+    </div>
+    <div class="twocols">
+        <div class="first">
+            <strong>while</strong>
+            <pre class="prettyprint lang-js nowatermark"><code>var i; // at beginning of function
+// ...
+i = 0;
+while (i &lt; 10) {
+    // statements;
+}</code></pre>
+        </div>
+        <div class="second">
+            <strong>switch</strong>
+            <pre class="prettyprint lang-js nowatermark"><code>switch (expression) {
+    case expression:
+        // statements;
+        break;
+    default:
+        // statements;
+}</code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Expressions">
+    <h2>Expressions
+        <small>literals, names, operators and other expressions</small>
+    </h2>
+    <h3>Operators precedence</h3>
+    <table border="0" class="center">
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">. [] ()</code>
+            </td>
+            <td>Refinement and invocation</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">delete new typeof - + !</code>
+            </td>
+            <td>Unary operators</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">* / %</code>
+            </td>
+            <td>Multiplication, division, modulo</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">+ -</code>
+            </td>
+            <td>Addition (or string concatenation), subtraction</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">&lt;= &lt; &gt;= &gt;</code>
+            </td>
+            <td>Inequalities</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">=== !==</code>
+            </td>
+            <td>Equality</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">&amp;&amp;</code>
+            </td>
+            <td>Logical AND</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">||</code>
+            </td>
+            <td>Logical OR</td>
+        </tr>
+        <tr>
+            <td>
+                <code class="prettyprint lang-js">?:</code>
+            </td>
+            <td>Ternary operator</td>
+        </tr>
+    </table>
+    <p></p>
+    <div class="twocols">
+        <div class="first">
+            <em>
+                <strong>Refinement</strong>
+            </em>
+            <pre class="prettyprint lang-js nowatermark"><code>object.property;
+object['property'];</code></pre>
+        </div>
+        <div class="second">
+            <strong>
+                <em>Invocation</em>
+            </strong>
+            <pre class="prettyprint lang-js nowatermark"><code>my_function(param1, param2);</code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Literals">
+    <h2>Literals</h2>
+    <div class="twocols">
+        <div class="first">
+            <h3>Objects</h3>
+            <pre class="prettyprint lang-js nowatermark"><code>{
+    property1: 'value1',
+    my_property: true,
+    "% of value": 23
+}</code></pre>
+        </div>
+        <div class="second">
+            <h3>Arrays</h3>
+            <pre class="prettyprint lang-js nowatermark"><code class="javascript">["a", 'b', 'c', 3, true, my_obj]</code></pre>
+        </div>
+    </div>
+
+    <h3>Regexp
+        <small>borrowed from Perl</small>
+    </h3>
+    <pre class="prettyprint lang-js nowatermark" style="white-space : pre-wrap;"><code class="javascript">/^[a-zA-Z_][a-zA-Z_0-9]*$/ // recognizes javascript 'names'</code></pre>
+    <div class=twocols>
+        <div class="first">
+            <h3>Functions</h3>
+            <pre class="first prettyprint lang-js nowatermark" style="white-space : pre-wrap;"><code class="javascript">function my_function(p1, p2) {
+    // var statements;
+    // statements
+}</code></pre>
+        </div>
+        <div class="second">
+            <h3>Anonymous Functions</h3>
+            <pre class="prettyprint lang-js nowatermark" style="white-space : pre-wrap;"><code class="javascript">some_function(p1, p2, function(){
+    // var statements;
+    // statements;
+});</code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_StrictMode">
+    <h2>Strict Mode</h2>
+    <ul>
+        <li>A restricted variant of JS defined in EcmaScript 5</li>
+        <li>Per-function activation. Never use "strict mode" on global scope!
+            <pre class="prettyprint lang-js"><code class="javascript">function myFunction(){
+"use strict";
+// instructions...
+}</code></pre>
+        </li>
+
+
+        <li>Some silent errors become throw errors
+            <pre class="prettyprint lang-js"><code class="javascript">forgotTheVar = 17; // throws a ReferenceError
+delete Object.prototype; // throws a TypeError
+var o = { p: 1, p: 2 }; // !!! syntax error
+function sum(a, a, c){ /* ... */ }// !!! syntax error
+var sum = 015; // !!! syntax error</code></pre>
+        </li>
+        </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_StrictMode2">
+    <h2>Strict Mode</h2>
+
+        <ul>
+        <li>Some dangerous or slow structures are forbidden
+            <pre class="prettyprint lang-js"><code>"use strict";
+var o = { x:17 };
+with (o) { console.log(x); } // !!! syntax error
+
+var x = 17;
+var evalX = eval("'use strict'; var x = 42; x");
+x === 17;  // true
+evalX === 42; // true</code></pre>
+        </li>
+        <li>Use of restricted words raises errors (<code>class, enum, export, extends, import, super</code>)</li>
+    </ul>
+</section>
+
+<!-- ==== 1.2 JAVASCRIPT OBJECTS ==== -->
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Objects">
+    <h2>Objects</h2>
+    <ul>
+        <li>Numbers, strings, booleans,
+            <code class="prettyprint lang-js">null</code> and
+            <code class="prettyprint lang-js">undefined</code> are simple and
+            <strong>
+                immutable
+            </strong> types.</li>
+        <li>All other values are
+            <strong>
+                objects
+            </strong>.</li>
+        <li>Objects are
+            <strong>
+                mutable
+            </strong> dictionaries (Java's hashtables, Python's dicts).</li>
+        <li>An object is a container for
+            <strong>
+                properties
+            </strong>.</li>
+        <li>A property has a
+            <strong>
+                name
+            </strong> and a
+            <em>
+                <strong>value</strong>
+            </em>.</li>
+        <li>A name of a property can be any string (quotes are optional if name matches
+            <code class="prettyprint lang-js">/^[a-zA-Z_][a-zA-Z_0-9]*$/</code>).</li>
+        <li>A value of a property can be any JS value except for
+            <code class="prettyprint lang-js">undefined</code>.</li>
+    </ul>
+    <div class="threecols">
+        <div class="first">
+            <strong>
+                <em>Object Literal</em>
+            </strong>
+            <pre class="prettyprint lang-js nowatermark"><code>var w = {
+"°C": 27,
+humidity: "80%",
+place: "Le Havre"
+}</code></pre>
+        </div>
+        <div class="second">
+            <strong>
+                <em>Access to properties</em>
+            </strong>
+            <pre class="prettyprint lang-js nowatermark"><code>w['°C']; //27
+w.humidity; //"80%"
+w.pressure; //'undefined'
+w.pressure = 1030;
+w.place = "Nice";</code></pre>
+        </div>
+        <div class="third">
+            <strong>
+                <em>Objects are passed by reference</em>
+            </strong>
+            <pre class="prettyprint lang-js nowatermark"><code>var w2 = w;
+w['°C']=34;
+w2['°C']; // 34</code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Prototype">
+    <h2>Prototype</h2>
+    <ul>
+        <li>Every object inherits properties from a prototype object.</li>
+        <li>Object literals are linked to
+            <code class="prettyprint lang-js">Object.prototype</code>.</li>
+        <li>New objects can have any object as a prototype.</li>
+        <li>Accessing an object's property is a recursive search into the
+            <em>prototype chain</em>.</li>
+        <li>Recursively, all objects inherit from
+            <code class="prettyprint lang-js">Object.prototype</code>.</li>
+    </ul>
+    <p></p>
+    <div class="twocols">
+        <pre class="prettyprint lang-js first"><code>var o = {
+    "a": 0,
+    "b": false
+};
+Object.prototype.ok = function() {
+    return "That's OK!"
+};
+Object.prototype.not_ok = "Not OK.";
+o.ok(); // "That's OK!"
+o.not_ok; // "Not OK."
+</code></pre>
+        <ul class="second x-2">
+            <li>object
+                <code data-jm>o</code>
+                <ul>
+                    <li>properties
+                        <code class="prettyprint lang-js">{"a":0, "b":false}</code>
+                    </li>
+                    <li>prototype
+                        <code class="prettyprint lang-js">Object.prototype</code>
+                        <ul>
+                            <li>properties
+                                <code class="prettyprint lang-js">{
+                                    <span>ok: [Function], not_ok: 'Not OK.'</span>}</code>
+                            </li>
+                            <li>prototype
+                                <code class="prettyprint lang-js">undefined</code>
+                                <ul>
+                                    <li>...</li>
+                                    <li>...</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Constructor_Function">
+    <h2>Creation of New Objects</h2>
+    <p>Several technics allow the creation of new objects. The most common uses
+        <strong>
+            <em>Constructor Functions</em>
+        </strong> and the
+        <strong>
+            <em>new</em>
+        </strong> operator.</p>
+    <h3>Constructor Functions</h3>
+    <ul>
+        <li>Like an ordinary function, with a capital first Letter name (convention)</li>
+        <li>The function body describes properties of the new objects it can create (referred to with
+            <code>this</code>)</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>function Point() {
+    this.x = 0;
+    this.y = 0;
+    this.toString = function() {
+        return "("+ this.x + ", " + this.y + ")";
+    };
+}</code></pre>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="The_new_Operator">
+    <h2>The
+        <code>new</code> operator</h2>
+    <ul>
+        <li>Creates new objects with a
+            <em>
+                <strong>Constructor Function</strong>
+            </em> as their prototype.</li>
+        <li>Gives newly created objects properties referred to by
+            <code>this</code> in the
+            <em>
+                <strong>CF</strong>
+            </em>.</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>var p1 = new Point();
+p1; // { x: 0, y: 0, toString: [Function] } </code></pre>
+    <ul>
+        <li>Changing an object's properties does not change its prototype object.</li>
+        <li>Changing properties on an object used as a prototype will affect the corresponding objects.</li>
+    </ul>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Properties">
+    <h2>Dealing with properties of an object</h2>
+    <ul>
+        <li>One use the
+            <em>for in</em> statement to iterate through properties.
+            <pre class="prettyprint lang-js"><code>var prop;
+for (prop in p1){
+    console.log(prop+" : "+p1[prop]);
+}</code></pre>
+        </li>
+        <li>the for in loop may bring properties inherited from the prototype chain.
+            <code class="prettyprint lang-js">hasOwnProperty</code> filter only properties (not function) belonging to that object.
+            <pre class="prettyprint lang-js"><code>for(var prop in options) {
+    if(options.hasOwnProperty(prop) &amp;&amp; this.hasOwnProperty(prop)) {
+        this[prop] = options[prop];
+    }
+}</code></pre>
+        </li>
+        <li>Delete a property from an object. Cannot affect properties from the prototype.
+            <pre class="prettyprint lang-js"><code>delete p1.x; // true
+p1.x; // undefined</code></pre>
+        </li>
+    </ul>
+</section>
+
+
+<!-- ==== 1.3 JAVASCRIPT FUNCTIONS ==== -->
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Functions">
+    <h2>Functions
+        <small>borrowed from Scheme</small>
+    </h2>
+    <ul>
+        <li>Functions are objects.</li>
+        <li>Functions are linked to
+            <code class="prettyprint lang-js">Function.prototype</code>(which is itself linked to
+            <code class="prettyprint lang-js">Object.prototype</code>).</li>
+        <li>Functions have a
+            <code class="prettyprint lang-js">prototype</code> property,
+            <strong>different</strong> from the
+            <em>prototype link</em>.
+            <ul>
+                <li>Used by
+                    <em>Constructor Functions</em> to define newly created objects' prototype.</li>
+                <li>Nothing differentiates
+                    <em>CF</em> from
+                    <em>non-CF</em> so all functions have it.</li>
+            </ul>
+        </li>
+
+        <li>Functions have a link to the object which invokes them:
+            <code class="prettyprint lang-js">this</code>.</li>
+    </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Func_Arguments">
+    <h2>Functions' arguments</h2>
+    <ul>
+        <li>No error is raised when parameters do not match defined arguments. The hidden object
+            <code>arguments</code> holds the given parameters.
+            <pre class="prettyprint lang-js"><code>function f(a) {
+    for (var i = 0; i &lt; arguments.length; i++) {
+        console.log(i + "=>" + arguments[i]);
+    }
+}
+f("ok",false) //  0=>ok
+//  1=>false</code></pre>
+        </li>
+        <li>Argument lists' order can be tricky to handle. We use objects to identify parameters.</li>
+        <pre class="prettyprint lang-js"><code>var obj1 = new Object1( w, h, c, o, s);
+var obj2 = new Object2({
+    width : w,
+    height : h,
+    color: c,
+    opacity: o,
+    shadow: s
+});</code></pre>
+        </li>
+    </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Func_Methods">
+    <h2>Functions used as
+        <em>Methods</em>
+    </h2>
+    <ul>
+        <li>When belonging to an object
+            <em>and</em> being invoked by this object, functions are
+            <em>methods</em>.</li>
+
+        <li>the parameter
+            <code>this</code> refers to the object that owns the method.</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>var p1 = {
+    x: 10,
+    y: 10,
+    toString: function() { /* definition of a method */
+        return "(" + this.x + ", " + this.y + ")";
+    }
+};
+// invocation of 'toString' as a method
+p1.toString(); // "(10, 10)"</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Func_Functions">
+    <h2>Functions used as
+        <em>Functions</em>
+    </h2>
+    <ul>
+        <li>If not bounded to an object, functions are bounded to the
+            <em>global scope</em>.</li>
+        <li>This refers to the global scope and not to the calling context.</li>
+    </ul>
+
+    <pre class="prettyprint lang-js"><code>var my_name_is = "global";
+function f() {
+    var my_name_is = "local to f()";
+    function print_name() {
+        console.log(this.my_name_is);
+    }
+    print_name();
+}
+f(); // global</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Func_Constructors">
+    <h2>Functions used as
+        <em>Constructors</em>
+    </h2>
+    <ul>
+        <li>
+            <code class="prettyprint lang-js">this</code> is meant to refer to the
+            <em>new</em> object.</li>
+        <li>First letter uppercase convention.</li>
+        <li>
+            <code class="prettyprint lang-js">prototype</code> property is used to initialize the new object's prototype link.</li>
+        <li>If no
+            <code class="prettyprint lang-js">return</code> statement or if the function doesn't return an object, then
+            <code class="prettyprint lang-js">this</code> is automatically returned.</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>function Point(x, y) {
+    this.x = x || 0;
+    this.y = y || 0;
+}
+Point.prototype.toString = function() {
+    return "("+ this.x + ", " + this.y + ")";
+};
+var p = new Point();</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Func_Apply">
+    <h2>Functions invoked with
+        <code class="prettyprint lang-js">apply</code>
+    </h2>
+    <ul>
+        <li>Since functions are objects, they can have methods.</li>
+        <li>The
+            <code class="prettyprint lang-js">apply</code> method belongs to
+            <code class="prettyprint lang-js">Function</code>.</li>
+        <li>
+            <code>apply</code> invokes the function with a given context (
+            <code class="prettyprint lang-js">this</code>).</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code class="javascript">var weirdo = {
+    x: "\u03B1",
+    y: "\u03B2"
+}
+Point.prototype.toString.apply(weirdo); // '(α, β)'
+p.toString.apply(weirdo); // '(α, β)'
+</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Exceptions">
+    <h2>Exceptions</h2>
+    <ul>
+        <li>Exceptions are meant to interrupt abnormally behaving programs.</li>
+        <li>Exceptions are thrown with the
+            <code class="prettyprint lang-js">throw</code> statement.</li>
+        <li>Exceptions are catch with the
+            <code class="prettyprint lang-js">try / catch</code> statements.</li>
+    </ul>
+    <pre class="firstsecond prettyprint lang-js"><code class="javascript">function Point(x, y) {
+    if ((typeof x !== 'undefined' &amp;&amp; typeof x !== 'number')
+    || (typeof y !== 'undefined'  &amp;&amp; typeof y !== 'number')) {
+    throw { name: 'TypeError', message: "'Point' needs numbers" };
+    }
+    // ...
+}
+(function() {
+    try {
+        var weirdo = new Point("\u03B1", 0);
+    } catch (e) {
+        console.log(e.name + ': ' + e.message);
+    }
+})(); // TypeError: 'Point' needs numbers</code></pre>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Augment">
+    <h2>Augmenting default types</h2>
+    <ul>
+        <li>Preexisting objects also have a prototype link that can be accessed.</li>
+        <li>The String pseudo-class can be augmented</li>
+    </ul>
+    <pre class="prettyprint lang-js"><code>String.prototype.trim = function() {
+    return this.replace(/^\s*|\s*$/, '');
+};
+
+" Ok then     ".trim(); // 'Ok then'
+
+Number.prototype.integer = function() {
+    return Math[this >= 0 ? 'floor' : 'ceil'](this);
+};
+
+(2.34).integer(); // 2
+(-Math.PI).integer(); // -3</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Recursion">
+    <h2>Recursion</h2>
+    <ul>
+        <li>Possible but slow.</li>
+        <li>No
+            <em>tail</em> optimization for self calling functions.</li>
+    </ul>
+    <!-- http://jsfiddle.net/Yoann/u9MKW/ -->
+    <pre data-src="http://codepen.io/pigne/pen/edLBE" class="prettyprint lang-js"><code class="javascript">function fib(n) {
+    if (n &lt;= 2) {
+        return 1;
+    }
+    return fib(n - 1) + fib(n - 2);
+}</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Scope">
+    <h2>Scope</h2>
+    <p>
+        <li>Although being a block-based syntax language, JS does
+            <strong>not</strong> have block scope. Javascript has
+            <em>function scope</em>.</li>
+        <li>Function get access to the context (surrounding variables) they are defined within.</li>
+    </ul>
+    <pre class="prettyprint lang-js" data-src="http://codepen.io/pigne/pen/LhHEo"><code class="javascript">function f () {
+    var a = 10, b = 2;
+    function f2() {
+        var b = 20, c = 2;
+        // a : 10,  b : 20,  c : 2
+    }
+    f2();
+    // a : 10,  b : 2,  'c' exists but is undefined
+    if (a > 0) {
+        var c = 34;
+        b = 25;
+        // a : 10, b : 25, c : 34
+    }
+    // a : 10, b : 25, c : 34
+}
+f();</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_IIFE">
+<h2>IIFE <small>Immediately Invoked Function Expressions</small></h2>
+<p>Use immediately invoked function expressions to prevent polluting the global scope. </p>
+    <pre class="prettyprint lang-js"><code  class="javascript">var a = 1;
+(function(){
+    var a = 0
+    console.log(a); // 0
+})();
+console.log(a); // 1</code></pre>
+
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Closure">
+    <h2>Closure</h2>
+    <ul>
+        <li>Functions have access to the variables and parameters of the function that defined them.</li>
+        <li>An inner function may live longer than its outer function.</li>
+    </ul>
+    <div class="twocols">
+        <pre class="prettyprint lang-js first"><code>function f_outer() {
+    function f_inner() {
+        return "Inner function";
+    }
+    return f_inner;
+}</code></pre>
+        <pre class="prettyprint lang-js second"><code>var f = f_outer(); // f_inner
+f(); // "Inner function"</code></pre>
+    </div>
+    <ul>
+        <li>Inner functions encapsulate states of outer functions for a latter invocation.</li>
+    </ul>
+    <div class="twocols">
+        <pre class="prettyprint lang-js first"><code>function increment() {
+    var counter = 0;
+    return function() {
+        counter = counter + 1;
+        return counter;
+    };
+}</code></pre>
+        <pre class="prettyprint lang-js second"><code>var my_increment = increment();
+my_increment(); // 1
+my_increment(); // 2
+my_increment(); // 3
+my_increment(); // 4</code></pre>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_hide_singletons">
+    <h2>Closure to hide singletons</h2>
+    <pre class="prettyprint lang-js" data-src="http://codepen.io/pigne/pen/HtqjF"><code class="javascript">function html_to_md() {
+    var tokens = {
+        "p": "\n",
+        "/p": "\n",
+        "h1": "#",
+        // ...
+    };
+    return function(html) {
+        return html.replace(/&lt;([^&lt;&gt;]+)>/g, function(a, b) {
+            var t = tokens[b];
+            console.log(t);
+            return typeof t === 'string' ? t : a;
+        });
+    };
+}
+var parse = html_to_md();
+parse("&lt;h1&gt;My Title&lt;/h1&gt;&lt;h2&gt;Subtitle&lt;...");
+// #My Title#\n ##Subtitle##...</code></pre>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Private_Vars">
+    <h2>Closure to make safe objects</h2>
+    <ul>
+        <li>By default, objects properties are always visible and writable.</li>
+        <li>Inner Functions and closure can create objects with "private" members.</li>
+    </ul>
+    <div class="twocols">
+        <pre class="first prettyprint lang-js" data-src="http://codepen.io/pigne/pen/DsEnA"><code class="javascript">function createPoint() {
+    var x = 0;
+    var y = 0;
+    // ...
+    return {
+        getX: function() {
+            return x;
+        },
+        setX: function(new_x) {
+            check_number(new_x);
+            x = new_x;
+        },
+        // ...
+    };
+}</code></pre>
+        <pre class="second prettyprint lang-js" data-src="http://codepen.io/pigne/pen/DsEnA"><code class="javascript">var p = createPoint();
+// new object without 'new' operator
+
+p.x; // 'undefined'
+p.getX(); // 0
+p.setY(-12);
+p.toString(); // "(0, -12)"
+</code></pre>
+    </div>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Modules">
+    <h2>Closure to make modules</h2>
+    <pre class="second prettyprint lang-js" data-src="http://codepen.io/pigne/pen/BEcGI"><code>var prop;
+(function(global) {
+    global.MY_MODULE = global.MY_MODULE || {};
+    // private API
+    function hidden_function() {
+        console.log("You called a hidden function.");
+    }
+    // public API
+    global.MY_MODULE.publicFunction = function() {
+        console.log("Public function calling a hidden one...");
+        hidden_function();
+    };
+})(this);
+
+for (prop in MY_MODULE) {
+    console.log(prop);
+}
+MY_MODULE.publicFunction(); // Public function calling a hidden one...
+// You called an hidden function.</code></pre>
+</section>
+
+<!-- ==== 1.4 JAVASCRIPT Inheritance ==== -->
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Classical_Inheritance">
+    <h2>Objects &amp; Inheritance <small>Classical Pattern</small></h2>
+    <ul>
+    <li>Pros: It's the classical way to do. Easy to read and understand. </li>
+    <li>Cons:
+    <ul>
+        <li>Manipulating
+            <em>Constructor Functions</em> and
+            <code class="prettyprint  lang-js">new</code> operator is risky.</li>
+        <li>All members are public.</li>
+        <li>Problem with parameters.</li>
+    </ul>
+    </li>
+    </ul>
+    <pre class="second prettyprint lang-js" data-src="http://codepen.io/pigne/pen/fkczG"><code>var p,
+    Point3D = function() {
+        this.z = 0;
+    };
+Point3D.prototype = new Point();
+Point3D.prototype.toString = function() {
+    return "(" + this.x + ", " + this.y + ", " + this.z + ")";
+};
+p = new Point3D();
+p.x = p.y = p.z = -3;
+p.toString(); // '(-1, -2, -3)';</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Differential_inheritance">
+    <h2>Objects &amp; Inheritance <small>Differential Pattern</small></h2>
+    <ul>
+        <li>Create new object from existing one.</li>
+        <li>Specify differences from base object.</li>
+        <li>Pros: can hide
+            <em>Constructor Functions</em> and
+            <code class="prettyprint  lang-js">new</code> operators.</li>
+        <li>Cons: objects are linked (if base object changes then inherited objects change too).</li>
+    </ul>
+    <pre class="second prettyprint lang-js" data-src="http://codepen.io/pigne/pen/tLHFA"><code class="javascript">function createObject(base) {     // Utility function to
+    function F() {};                // create objects with
+    F.prototype = base;             // 'base' as a prototype.
+    return new F();
+}
+var point = { x: 0, y: 0 },       // A 'base' object.
+p3d = createObject(point);        // New object with 'point' as its prototype.
+p3d.z = 0;                        // Differences from 'point'.
+p3d.toString = function() {
+    return "(" + this.x + ", " + this.y + ", " + this.z + ")";
+};
+p3d.toString(); // "(0, 0, 0)"</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Functional_creation">
+    <h2>Objects &amp; Inheritance <small>Functional Pattern</small></h2>
+    <ul>
+        <li>Some classical function returns new objects with
+            <em>public methods</em> in it.</li>
+        <li>
+            <em>Public methods</em> access hidden attributes thanks to closure.</li>
+        <li>That function is called as a regular function (no
+            <code class="prettyprint lang-js">new</code> operator).</li>
+    </ul>
+    <pre class="prettyprint lang-js" data-src="http://codepen.io/pigne/pen/EajDd">
+<code class="javascript">var createPoint = function(attributes) {
+    attributes = attributes || {};
+    attributes.x = attributes.x || 0; // Hidden attributes, given as parameters.
+    attributes.y = attributes.y || 0;
+    // ...
+    var point = {}; // The new object to be returned.
+
+    point.toString = function() { // public methods accessing hidden parameters.
+        return "(" + attributes.x + ", " + attributes.y + ")";
+    };
+    // ...
+    return point; // return the newly created object.
+};
+var p1 = createPoint({ x: -1, y: -4 });</code></pre>
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Functional_inheritance">
+    <h2>Objects &amp; Inheritance <small>Functional Pattern</small></h2>
+    Inheritance is simply done by:
+    <ul>
+        <li>using a create function into another,</li>
+        <li>sharing the attributes to initialize to new object.</li>
+    </ul>
+    <pre class="prettyprint lang-js" data-src="http://codepen.io/pigne/pen/EajDd"><code class="javascript">var createPoint3D = function(attributes) {
+    attributes = attributes || {};
+    attributes.z = attributes.z || 0;
+    var point3D = createPoint(attributes); // create a new object from upper hierarchy
+
+    point3D.toString = function() {
+        return "(" + attributes.x + ", " + attributes.y + ", " + attributes.z + ")";
+    };
+    // ...
+    return point3D;
+};
+var p3d = createPoint3D({ x: -3, y: -3, z: -4 });</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Functional_Code_Reuse">
+    <h2>Objects &amp; Inheritance <small>Functional Pattern</small></h2>
+    <p>Code reuse or access to
+    <em>super</em> members can be done with the
+    <code class="prettyprint lang-js">apply</code> invocation pattern.</p>
+    <pre class="prettyprint lang-js" data-src="http://codepen.io/pigne/pen/EajDd"><code>var createAugmentedPoint3D = function(attributes) {
+    attributes = attributes || {};
+    attributes.width = attributes.width || "1px";
+    attributes.color = attributes.color || "#00FF00";
+    var augmentedPoint3D = createPoint3D(attributes);
+    var superToString = augmentedPoint3D.toString;  // Store the super toString
+    // method locally.
+
+    augmentedPoint3D.toString = function() {        // Shadow super toString
+    // and call it with 'apply'.
+    return "{" + superToString.apply(augmentedPoint3D) + ", width:" +
+        attributes.width + ", color:" + attributes.color + "}";
+    };
+    return augmentedPoint3D;
+};
+var ap3d = createAugmentedPoint3D({ color: "#b3e4a2" });
+ap3d.toString(); // '{(0, 0, 0), width:1px, color:#b3e4a2}'</code></pre>
+</section>
+
+<!-- ==== 1.5 JAVASCRIPT ARRAYS ==== -->
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Arrays">
+    <h2>Arrays</h2>
+    <ul>
+        <li>Literals:
+            <pre class="prettyprint lang-js"><code>var a = [ 'a', 'b', ['c', 'd'], true];
+var b = [];</code></pre>
+        </li>
+        <li>Access with integer indices:
+            <code class="prettyprint lang-js">a[0]; // 'a'</code>.</li>
+        <li>Javascript's Arrays are ordinary objects (key/value) with arrays characteristics.</li>
+        <li>Indices are converted into keys (strings)
+            <code class="prettyprint lang-js">a[0] === a['0'] // true</code>.</li>
+        <li>Arrays can be sparse (no memory wasted):
+            <pre class="prettyprint lang-js"><code>a[10] = 'k';
+a[8]; // 'undefined'
+a; // ['a', 'b', ['c', 'd'], true, , , , , , , , 'k']
+var prop;
+for (prop in a) {
+    if (a.hasOwnProperty(prop)) { console.log(prop);}
+} // 0 1 2 3 10</code></pre>
+        </li>
+
+    </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Arrays2">
+    <h2>Arrays</h2>
+    <h3>Length</h3>
+    Arrays have a
+    <code class="prettyprint lang-js">length</code> property. The highest index plus one, not this actual size:
+    <pre class="prettyprint lang-js nowatermark"><code>a.length; // 11</code></pre>
+    <h3>Add Elements</h3>
+    <pre class="prettyprint lang-js"><code>a[a.length]="v1";
+a.push("v2");</code></pre>
+    <h3>Delete Elements</h3>
+    The
+    <code class="prettyprint lang-js">delete</code> operator can be use (as for objects) but array will not be rearranged. We use
+    <code class="prettyprint lang-js">splice</code> instead. <pre class="prettyprint lang-js"><code>delete a[2]; // ['a', 'b', , true, , , , , , , , 'k', "v1", "v2"]
+a.length; // 13
+a.splice(2, 1); // ['a', 'b', true, , , , , , , , 'k', "v1", "v2"]
+a.length; // 12</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Array_Methods">
+    <h2>Array Methods</h2>
+    <h3>concat(item...)</h3>
+    Returns a
+    <strong>new</strong> array that has the items of
+    <code class="prettyprint lang-js">this</code> plus the
+    <em>flatten</em> items given in parameters:
+    <pre class="prettyprint lang-js"><code>var a = ["a", "b", "c"];
+var b = ["d", "e", "f"];
+var c = a.concat(b, "g", "h");
+c; // ['a','b','c','d','e','f','g','h']</code></pre>
+    <h3>push(item...)</h3>
+    Appends items in parameters to this array.
+    <pre class="prettyprint lang-js"><code>a.push(b, "g", "h");
+a; // ['a', 'b', 'c', ['d', 'e', 'f'], 'g', 'h']</code></pre>
+    <h3>join(separator)</h3>
+    Returns a concatenated string of values of the array. The
+    <code class="prettyprint lang-js">separator</code> is inserted between each value.
+    <code class="prettyprint lang-js">a.join("-"); // 'a-b-c-d-e-f-g-h'</code>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Array_Methods2">
+    <h2>Array Methods</h2>
+    <h3>pop()</h3>
+    Removes and returns the last element of the array. Arrays can be used as stacks when
+    <code>pop()</code> and
+    <code class="prettyprint lang-js">push(...)</code> are used.
+    <pre class="prettyprint lang-js"><code>var a = ['x', 'y', 'z'];
+a.pop(); // 'z', a : ['x', 'y']</code></pre>
+    <h3>unshift(item...)</h3>
+    Adds items at the beginning of the array. Returns the size of the array. Existing elements are shifted.
+    <pre class="prettyprint lang-js"><code>a.unshift("a"); // 3
+a; //  ['a', 'x', 'y']</code></pre>
+    <h3>shift()</h3>
+    Removes and returns the item at the beginning of the array.
+    <pre class="prettyprint lang-js"><code>a.shift(); // "a"
+a; // ['x', 'y']</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Array_Methods3">
+    <h2>Array Methods</h2>
+    <h3>reverse()</h3>
+    Reverses the order of the array
+    <strong>and</strong> returns it.
+    <h3>splice(beg, len, item...)</h3>
+    Removes "<code class="prettyprint lang-js">len</code>" elements at position "<code class="prettyprint lang-js">beg</code>" and insert items "<code class="prettyprint lang-js">item...</code>" at that position. Re-indexing if needed.
+    <pre class="prettyprint lang-js"><code>var a = ['a', 'b', 'c'];
+a.splice(1, 1, "b1", "b2"); // ['b']
+a; // ['a', 'b1', 'b2', 'c']</code></pre>
+    <h3>slice(beg, end)</h3>
+    Return a copy array (references only if objects) of elements between
+    <code>beg</code> and
+    <code>end</code> indices. Original array not affected.
+    <pre class="prettyprint lang-js"><code>a.slice(1, 2); // ['b1', 'b2'];
+a; // ['a', 'b1', 'b2', 'c']</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Array_Methods4">
+    <h2>Array Methods</h2>
+    <h3>sort(func)</h3>
+    <p>Reorders the array according to the given function. The function takes 2 args (
+        <code class="prettyprint lang-js">a,b</code>) and returns 0 id
+        <code class="prettyprint lang-js">a === b</code>, a positive number if
+        <code class="prettyprint lang-js">a > b</code>, and a negative number if
+        <code class="prettyprint lang-js">b > a</code>.
+    </p>
+    <div class="twocols">
+        <pre class="first prettyprint lang-js nowatermark"><code>function by(prop){
+    return function(obj1, obj2){
+        var a = obj1[prop],
+        b = obj2[prop];
+        if(a === b){
+            return 0;
+        }
+        return a > b ? 1 : -1;
+    }
+}
+var pts = [ {x:10,y:34},
+{x:-10,y:4},
+{x:0,y:-4}];</code></pre>
+        <pre class="second prettyprint lang-js nowatermark"><code>var i;
+pts.sort(by('y'));
+for(i = 0 ;  i &lt; pts.length; i++) {
+    console.log(
+    Point.prototype.toString.apply(pts[i])
+);
+}
+// (0, -4)
+// (-10, 4)
+// (10, 34)
+</code></pre>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_LODASH">
+<h2>Lo-Dash <small>Going farther with arrays</small></h2>
+<ul>
+    <li>By John David Dalton</li>
+    <li><a href="lodash.com">http://lodash.com</a></li>
+    <li>A utility library delivering consistency, customization, performance, &amp; extras.</li>
+</ul>
+<pre class="prettyprint lang-js"><code>var _ = require('lodash'); // loading lodash in node.js
+
+_.map([1, 2, 3], function(num) { return num * 3; });
+// → [3, 6, 9]
+
+_.reduce([1, 2, 3], function(sum, num) {
+    return sum + num;
+});
+// → 6
+</code></pre>
+
+</section>
+
+
+<!-- ==== 1.6 JAVASCRIPT REGEXP ==== -->
+
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_RegEx">
+    <h2>Regular Expressions
+        <small>borrowed from Perl</small>
+    </h2>
+    <ul>
+        <li>For search and replace operation in strings.</li>
+        <li>Faster than equivalent string operations.</li>
+        <li>Not as powerful as real Perl regex.</li>
+        <li>Main methods:
+            <code>exec, test, match, replace, search, split</code>.</li>
+    </ul>
+    <pre class=" prettyprint lang-js" data-src="http://codepen.io/pigne/pen/thfCv"><code>/* matching ip addresses */
+var worst = /^\d+\.\d+.\d+.\d+$/;
+var bad = /^(?:\d{1,3}\.){3}\d{1,3}$/
+var better = /^(?:\b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b\.){3}
+            \b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\b$/</code></pre>
+    <p><a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/RegExp">Mozilla Developer Network's article on RegExp</a>.</p>
+</section>
+
+
+<!-- ==== 1.7 JAVASCRIPT JSON ==== -->
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_JSON">
+    <h2> JSON
+        <small>JavaScript Object Notation</small>
+    </h2>
+    <ul>
+        <li>Concise and text-based, made for data exchange through different systems.</li>
+        <li>Based on JS object literals syntax.</li>
+        <li>6 data types: objects, arrays, strings (double-quoted), number, boolean,
+            <code class="prettyprint lang-js">null</code>.</li>
+        <li>Can directly be interpreted as JS objects.</li>
+    </ul>
+    <pre class="prettyprint lang-json"><code>{
+    "type": "line",
+    "points": [
+        {
+            "x": -1, "y": -1
+        },
+        {
+            "x": 10, "y": 100
+        }
+    ]
+}</code></pre>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Safe_JSON">
+    <h2>Safe JSON</h2>
+    <ul>
+        <li>With JSON, exchanged data is interpreted as JS objects: very dangerous.</li>
+        <li>Malicious (or mis-constructed) data could be sent by the server.</li>
+        <li>From ECMAScript 3.1,
+            <code class="prettyprint lang-js">JSON.parse()</code> is used to parse JSON data.</li>
+        <li>Never use the dangerous
+            <code class="prettyprint lang-js">eval()</code> function.</li>
+    </ul>
+    <pre class="prettyprint lang-json"><code>
+var shape = JSON.parse(
+    '{
+        "type":"line",
+        "points":[
+            {"x":-1,"y":-1},
+            {"x":10,"y":100}
+        ]
+    }'
+);
+shape.type; // 'line'
+shape.points.length; // 2</code></pre>
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_Data_Pattern">
+    <h2>Classical Data manipulation Pattern</h2>
+    <p>JSON is used as a way to import raw data from a server and to create models from it. Classical steps are:</p>
+    <ol>
+        <li>Import JSON raw data from a distant server into a client.</li>
+        <li>Create Models from this raw data. Adaptations may be needed.</li>
+        <li>Create Views for these Models.</li>
+    </ol>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_LAB_SESSION">
+    <h2>Lab Session</h2>
+    <p>
+        Considering a JSON dataset containing geographical map data, one want to create a read only model (no write access) which represents the various geographical objects.
+    </p>
+    <h3>The JSON dataset</h3>
+    Get the <a href="data/eure.json">JSON geographical data</a>.
+    <div class="threecols x-3">
+        <pre class="prettyprint lang-js first"><code>[
+{
+"_id": "-630059",
+"building": true,
+"nodes": [
+    {
+        "x": 608.0,
+        "y": 302.0
+    },
+    {
+        "x": 610.0,
+        "y": 305.0
+    },
+    {
+        "x": 608.0,
+        "y": 302.0
+    }
+]
+}, </code></pre>
+        <pre class="prettyprint lang-js second"><code>{
+"_id": "-630043",
+"building": false,
+"name": "Bassin Paul Vatine",
+"natural": "water",
+"nodes": [
+    {
+        "e": "e"
+    }
+]
+}, </code></pre>
+        <pre class="prettyprint lang-js third"><code>{
+"_id": "-630016",
+"building": false,
+"highway": "residential",
+"name": "Place D\u00e9sir\u00e9 Rebeuf",
+"nodes": [
+    {
+        "x": 633.0,
+        "y": 453.0
+    },
+    {
+        "x": 677.0,
+        "y": 438.0
+    }
+]
+}
+]</code></pre>
+
+
+    </div>
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_LAB_SESSION2">
+    <h2>Lab Session</h2>
+    <h3>The Data Model</h3>
+    <p class="text_center">
+        <img src="./images/uml.svg" alt="uml" style="width:80%">
+    </p>
+    <ul>
+        <li>The
+            <code>nodes</code> attribute is an array of objects (<code class="prettyprint lang-js">[{x:23,y:45},{x:3,y:5},{x:12,y:0}]</code>)that can be simplified into an array of arrays (
+            <code class="prettyprint lang-js">[[23,45],[3,5],[12,0]]</code>). What about Lo-Dash?</li>
+        <li>The  <code>toSvgPath()</code> method should return a string such as:
+            <code class="prettyprint lang-js">"M 23 45 L 3 5 L 12 0"</code>
+        </li>
+    </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="JS_LAB_SESSION3">
+    <h2>Lab Session</h2>
+    In
+    <code>node.js</code>:
+    <ul>
+        <li>
+            import the downloaded JSON data :
+            <pre class="prettyprint lang-js"><code>var fs = require('fs');
+var raw_data = fs.readFileSync('eure.json', 'utf8');</code></pre>
+        </li>
+        <li>From the previous UML Model create read only objects with protected/hidden data.</li>
+        <li>Store new objects in containers.</li>
+        <li>Compute the overall and average surface of available buildings.</li>
+    </ul>
+</section>
+
+---
+title: Prerequisite
+subsection: Web Development
+order: 1
+description:
+    - Text editor
+    - Navigator
+    - Code Interpreter
+    - Code Quality Control
+layout: lecture.hbs
+---
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Basic_Tools_Editor">
+    <h2>Basic Tools
+        <small>necessary but surely not sufficient</small>
+    </h2>
+    <h3>A Decent Text Editor</h3>
+    <div class="threecols">
+        <div class="first">
+            <h4>Features</h4>
+            <ul>
+                <li>Syntax coloration</li>
+                <li>Templates</li>
+                <li>Snippets</li>
+                <li>Linter</li>
+                <li>Formatter</li>
+                <li>Minifier</li>
+                <li>...</li>
+            </ul>
+        </div>
+        <div class="secondthird">
+            <h4>Some Good Editors</h4>
+            <ul>
+                <li><b>Old School:</b> Vim, Emacs</li>
+                <li><b>IDE:</b> Netbeans, Eclipse, Aptana</li>
+                <li><b>Windows only:</b> NotePad++, UltraEdit, Dreamweaver</li>
+                <li><b>Mac only:</b> TextMate, Coda, Textwrangler</li>
+                <li><b>Linux only:</b> Gedit</li>
+                <li><b>&#9729;:</b> Cloud9, Codeanywhere, Kodingen</li>
+                <li><b>&hearts;:</b> Sublime Text, Brackets</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Basic_Tools_Navigator">
+    <h3>A Resent Web Navigator</h3>
+    <h4>Google Chrome Development Releases</h4>
+    <ul>
+        <li><a href="http://www.chromium.org/getting-involved/dev-channel">http://www.chromium.org/getting-involved/dev-channel</a>
+        </li>
+    </ul>
+    <h4>With Developer Tools...</h4>
+    <ul>
+        <li>DOM/CSS analyzer/explorer</li>
+        <li>Network status (per request)</li>
+        <li>Profiler</li>
+        <li>Code Explorer</li>
+        <li>Javascript Console</li>
+        <li>Debugger</li>
+        <li>...</li>
+    </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Basic_Tools_Node">
+
+    <h3>A Server-side Javascript Interpreter: node.js</h3>
+    <h4>Install on Linux (Ubuntu/Debian)</h4>
+    <pre class="prettyprint lang-sh">
+<code class="bash">sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs # only that one for Ubuntu 13.04+</code></pre>
+    <h4>Install on Windows</h4>
+    <p><a href="http://nodejs.org/">http://nodejs.org/</a> <b>**restart your session after Install**</b></p>
+    <div class="twocols">
+        <div class="first">
+            <h4>
+                <code>node</code> on the command line</h4>
+            <pre class="prettyprint nowatermark">
+<code class="javascript">$ node
+> var oh = {my: 'dear'}
+undefined
+> oh.my
+'dear'
+></code></pre>
+
+        </div>
+        <div class="second">
+            <h4>
+                <code>npm</code>, the package manager</h4>
+            <pre class="prettyprint ">
+<code class="bash">mkdir myProject &amp;&amp; cd myProject
+npm search lodash
+npm install lodash
+npm init # create your own package!
+</code></pre>
+        </div>
+    </div>
+
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Basic_Tools2">
+    <h3>Code Quality Control</h3>
+    <ul>
+        <li><a href="http://www.jslint.com/">JSLint</a>, <a href="http://www.jshint.com/">JSHint</a> or <a href="https://developers.google.com/closure/utilities/docs/linter_howto">Google Closure Linter (gjslint)</a>
+        </li>
+        <li>Most editor can include them.</li>
+    </ul>
+    <h3>Code formatting</h3>
+    <ul>
+        <li>Online: <a href="http://jsbeautifier.org/">http://jsbeautifier.org/</a>
+        </li>
+        <li>Should also be integrated in the editor.</li>
+    </ul>
+    <h3>Quickly test and exchange code</h3>
+    <ul>
+        <li>General Purpose: Github's <a href="https://gist.github.com/">Gist</a>
+        </li>
+        <li>Specific to Web Development: <a href="http://codepen.io/">http://codepen.io/</a>
+            <ul>
+                <li>Used for detailed examples in this course.</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+---
+title: Dynamic graphical data (SVG)
+subsection: Web Development
+order: 6
+description:
+- Scalable Vector Graphics (SVG)
+- D3.js
+layout: lecture.hbs
+---
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="DynamicGraphicalData">
+            <h2>Dynamic graphical data</h2>
+            <ul>
+                <li>Canvas 2D</li>
+                <li>WebGL</li>
+                <li>SVG</li>
+            </ul>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="DynamicGraphicalData2">
+            <h2>SVG</h2>
+            <p>
+                an XML markup language for describing two-dimensional vector graphics.
+            </p>
+
+            <div class="threecols">
+                <pre class="x-4 prettyprint lang-html nowatermark firstsecond x-3"><code class="svg">&lt;svg width=&quot;150&quot; height=&quot;100&quot; viewBox=&quot;0 0 3 2&quot;&gt;
+   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;0&quot; fill=&quot;#002395&quot; /&gt;
+   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;1&quot; fill=&quot;#ffffff&quot; /&gt;
+   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;2&quot; fill=&quot;#ED2939&quot; /&gt;
+&lt;/svg&gt;</code></pre>
+                <p class="third">
+                    <svg width="100" height="50" viewBox="0 0 3 2">
+                        <rect width="1" height="2" x="0" fill="#002395" />
+                        <rect width="1" height="2" x="1" fill="#ffffff" />
+                        <rect width="1" height="2" x="2" fill="#ED2939" />
+                    </svg>
+                </p>
+            </div>
+
+            <h3>Elements</h3>
+            <ul>
+                <li>Shape elements
+                    <br>
+                    <code class="svg">&lt;circle&gt;, &lt;ellipse&gt;, &lt;line&gt;, &lt;path&gt;, &lt;polygon&gt;, &lt;polyline&gt;, &lt;rect&gt;</code>
+                </li>
+                <li>Structural elements
+                    <br>
+                    <code>&lt;defs&gt;, &lt;g&gt;, &lt;svg&gt;, &lt;symbol&gt;, &lt;use&gt;</code>
+                </li>
+                <li>Text content elements
+                    <br>
+                    <code>&lt;altGlyph&gt;, &lt;textPath&gt;, &lt;text&gt;, &lt;tref&gt;, &lt;tspan&gt;</code>
+                </li>
+                <li>...</li>
+            </ul>
+            <h3>Attributes</h3>
+            Mostly for Animations and Events.
+
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="D3js">
+            <h2>D3.js
+                <small>Data-Driven Documents</small>
+            </h2>
+            <p>
+                Bind arbitrary data to a Document Object Model (DOM)
+            </p>
+            <p>
+                Classical steps to create data-linked DOM elements:
+            </p>
+            <div class="twocols">
+                <ol class="first">
+                    <li>Start from one existing DOM element</li>
+                    <li>Make a selection (<i>empty</i>) of DOM elements</li>
+                    <li>Link data to the selection</li>
+                    <li>Append new DOM elements to the seletion (one Element per data item)</li>
+                    <li>modify the new DOM elements :
+                        <ol>
+                            <li>style</li>
+                            <li>attributes</li>
+                            <li>events</li>
+                        </ol>
+                    </li>
+                </ol>
+                <pre class="second prettyprint lang-js">
+<code class="javascript">var user_data = [ 10, 20, 35, 12];
+var svg = d3.select('svg'); // (1)
+svg.selectAll('.block') // (2)
+  .data(user_data) // (3)
+  .enter() // data to be linked to DOM
+  .append("svg:path") // (4)
+  .classed("block",1) // (4.1)
+  .attr("cx", function(d, i) { // (4.2)
+    return 100*(1+i);
+  })
+  .on("click", function(d, i){ // (4.3)
+    d3.select(this)
+      .classed('clicked', 1);
+    });
+  })
+</code></pre>
+            </div>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="D3js2">
+
+
+            <div class="twocols">
+
+                <div class="first">
+                    <pre class=" x-4 prettyprint lang-js" data-src="http://codepen.io/pigne/pen/JBzai">
+<code class="javascript">var user_data = [ 10, 20, 35, 22, 25, 40];
+
+var coordiate_width = 800;
+var display_width = 400;
+
+var svg = d3.select('#svg1')
+    .append("svg")
+    .attr("width", display_width)
+    .attr("height", display_width/2)
+    .append("g")
+    .attr("transform", "scale("
+      +(display_width/coordiate_width)+")");
+
+var blocks = svg.selectAll('.block')
+    .data(user_data)
+    .enter()
+    .append("circle")
+    .classed("block",1)
+    .attr("cx", function(d, i) {
+        return 100*(1+i);
+    })
+    .attr("cy", coordiate_width/4)
+    .attr("r", function(d, i) {
+        return d;
+    })
+    .on("mouseover", function(d, i){
+      d3.select(this)
+        .classed('over', 1);
+    })
+    .on("mouseout", function(d, i){
+      d3.select(this)
+        .classed('over', 0);
+    });
+</code></pre>
+                </div>
+
+                <div class="second" id="svg1">
+                    <pre class=" prettyprint lang-css">
+<code class="css">.block {
+    stroke: #55F;
+    stroke-width: 2px;
+    stroke-linecap: square;
+    fill: #EEE;
+}
+
+.block.over {
+    stroke: #f99;
+    stroke-width: 3px;
+    fill: #DDD;
+}
+</code></pre>
+                </div>
+            </div>
+            <style type="text/css">
+            .block {
+                stroke: #55F;
+                stroke-width: 2px;
+                stroke-linecap: square;
+                fill: #EEE;
+            }
+            .block.over {
+                stroke: #f99;
+                stroke-width: 3px;
+                fill: #DDD;
+            }
+            </style>
+
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="SVG_LAB_SESSION">
+            <h2>SVG Lab Session</h2>
+            <p>Using the JSON data set and the Object Model of the previous lab session, write a function that, given the data model, draws the various shapes (roads, amenities, natural, buildings...) on an svg element.</p>
+            <p>Private buildings must highlight when the mouse passes over and they must be selectable through clicking.</p>
+            <p class="text_center"><img src="images/svgMap.png" alt="svg_map" style="width:40%;"></p>
+        </section>
+
+---
+title: Ph.D.
+index: true
+section: Ph.D.
+<div class="container">
+	<p>&copy; Yoann Pigné 2013</p>
+</div>
+
+	<div class="container">
+
+			<h3 class="pull-left "><a href="/">Yoann Pigné</a></h3>
+			<ul class="nav nav-pills  pull-right">
+				{{#each pages}}
+					{{#if data.index }}
+						<li{{#is ../../page.dest this.dest}} class="active"{{/is}}><a href="{{relative ../../page.dest this.dest}}">{{data.title}} </a></li>
+					{{/if}}
+				{{/each}}
+			</ul>
+
+	</div>
+{{!-- <div class="container">
+	<div class="navbar-header">
+	  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+	    <span class="sr-only">Toggle navigation</span>
+	    <span >&#8278;</span>
+	  </button>
+	  <a href="http://pigne.org" class="navbar-brand">Yoann Pigné</a>
+	</div>
+	<nav class="pull-right navbar-collapse bs-navbar-collapse" role="navigation">
+	  <ul class="nav navbar-nav">
+	    {{#each pages}}
+			{{#if data.index }}
+				<li{{#is ../../page.dest this.dest}} class="active"{{/is}}><a href="{{relative ../../page.dest this.dest}}">{{data.title}} </a></li>
+			{{/if}}
+		{{/each}}
+	  </ul>
+	</nav>
+</div> --}}
+<div class="page-info row">
+
+</div>

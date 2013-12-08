@@ -1,0 +1,131 @@
+---
+title: Prerequisite
+subsection: Web Development
+order: 1
+description:
+    - Text editor
+    - Navigator
+    - Code Interpreter
+    - Code Quality Control
+layout: lecture.hbs
+---
+
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Basic_Tools_Editor">
+    <h2>Basic Tools
+        <small>necessary but surely not sufficient</small>
+    </h2>
+    <h3>A Decent Text Editor</h3>
+    <div class="threecols">
+        <div class="first">
+            <h4>Features</h4>
+            <ul>
+                <li>Syntax coloration</li>
+                <li>Templates</li>
+                <li>Snippets</li>
+                <li>Linter</li>
+                <li>Formatter</li>
+                <li>Minifier</li>
+                <li>...</li>
+            </ul>
+        </div>
+        <div class="secondthird">
+            <h4>Some Good Editors</h4>
+            <ul>
+                <li><b>Old School:</b> Vim, Emacs</li>
+                <li><b>IDE:</b> Netbeans, Eclipse, Aptana</li>
+                <li><b>Windows only:</b> NotePad++, UltraEdit, Dreamweaver</li>
+                <li><b>Mac only:</b> TextMate, Coda, Textwrangler</li>
+                <li><b>Linux only:</b> Gedit</li>
+                <li><b>&#9729;:</b> Cloud9, Codeanywhere, Kodingen</li>
+                <li><b>&hearts;:</b> Sublime Text, Brackets</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Basic_Tools_Navigator">
+    <h3>A Resent Web Navigator</h3>
+    <h4>Google Chrome Development Releases</h4>
+    <ul>
+        <li><a href="http://www.chromium.org/getting-involved/dev-channel">http://www.chromium.org/getting-involved/dev-channel</a>
+        </li>
+    </ul>
+    <h4>With Developer Tools...</h4>
+    <ul>
+        <li>DOM/CSS analyzer/explorer</li>
+        <li>Network status (per request)</li>
+        <li>Profiler</li>
+        <li>Code Explorer</li>
+        <li>Javascript Console</li>
+        <li>Debugger</li>
+        <li>...</li>
+    </ul>
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Basic_Tools_Node">
+
+    <h3>A Server-side Javascript Interpreter: node.js</h3>
+    <h4>Install on Linux (Ubuntu/Debian)</h4>
+    <pre class="prettyprint lang-sh">
+<code class="bash">sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs # only that one for Ubuntu 13.04+</code></pre>
+    <h4>Install on Windows</h4>
+    <p><a href="http://nodejs.org/">http://nodejs.org/</a> <b>**restart your session after Install**</b></p>
+    <div class="twocols">
+        <div class="first">
+            <h4>
+                <code>node</code> on the command line</h4>
+            <pre class="prettyprint nowatermark">
+<code class="javascript">$ node
+> var oh = {my: 'dear'}
+undefined
+> oh.my
+'dear'
+></code></pre>
+
+        </div>
+        <div class="second">
+            <h4>
+                <code>npm</code>, the package manager</h4>
+            <pre class="prettyprint ">
+<code class="bash">mkdir myProject &amp;&amp; cd myProject
+npm search lodash
+npm install lodash
+npm init # create your own package!
+</code></pre>
+        </div>
+    </div>
+
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Basic_Tools2">
+    <h3>Code Quality Control</h3>
+    <ul>
+        <li><a href="http://www.jslint.com/">JSLint</a>, <a href="http://www.jshint.com/">JSHint</a> or <a href="https://developers.google.com/closure/utilities/docs/linter_howto">Google Closure Linter (gjslint)</a>
+        </li>
+        <li>Most editor can include them.</li>
+    </ul>
+    <h3>Code formatting</h3>
+    <ul>
+        <li>Online: <a href="http://jsbeautifier.org/">http://jsbeautifier.org/</a>
+        </li>
+        <li>Should also be integrated in the editor.</li>
+    </ul>
+    <h3>Quickly test and exchange code</h3>
+    <ul>
+        <li>General Purpose: Github's <a href="https://gist.github.com/">Gist</a>
+        </li>
+        <li>Specific to Web Development: <a href="http://codepen.io/">http://codepen.io/</a>
+            <ul>
+                <li>Used for detailed examples in this course.</li>
+            </ul>
+        </li>
+    </ul>
+</section>

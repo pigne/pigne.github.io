@@ -1,0 +1,201 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+
+
+//@import url(http://fonts.googleapis.com/css?family=Muli);
+// "Muli",
+$font-family-sans-serif:  Droid Sans, Helvetica, sans-serif !default;
+
+$border-radius-base: 2px !default;
+$border-radius-large: 3px !default;
+$border-radius-small: 1px !default;
+/*
+//#66863f
+//#d46552
+//#5c8681
+//#c97cc4
+//#b7d642
+
+
+
+
+
+
+
+
+
+
+
+$brand-primary: #DDC87C !default;
+$brand-success: #CAC7E2 !default;
+$brand-warning: #9FDCD2 !default;
+$brand-danger:  #E6B7AF !default;
+$brand-info:    #B5DCA3 !default;
+
+$my_black: black !default;
+$gray-darker: lighten($my_black, 13.5%) !default;
+$gray-dark: lighten($my_black, 20%) !default;
+$gray: lighten($my_black, 33.5%) !default;
+$gray-light: lighten($my_black, 60%) !default;
+$gray-lighter: lighten($my_black, 93.5%) !default;
+
+$header-bg: transparentize($gray-light, .5);
+*/
+
+
+@import "sass-bootstrap/lib/bootstrap";
+
+
+
+
+
+/*----------------------------------------*/
+/*           Special classes              */
+/*----------------------------------------*/
+
+.glyphicon-github:before {
+  content: "\e022";
+}
+.glyphicon-lines:before {
+  content: "\e159";
+}
+
+
+
+
+.jumbotron {
+  line-height: ($line-height-base * 1.2);
+}
+
+
+
+
+
+.bibitem { margin-bottom:5px;}
+.bibitem_authors { }
+.bibitem_title {font-weight:bold}
+.bibitem_in {font-style:italic}
+.bibitem_volume {}
+.bibitem_pages {font-weight:bold}
+.bibitem_year {}
+.bibitem > pre {margin: 5px; white-space:pre-wrap;word-break: normal;}
+
+.bibitem > pre{
+    transition:opacity .5s linear;
+    opacity:1;
+    z-index:-10;
+    position:relative;
+}
+
+.bibitem > pre.hidd {
+    transition:opacity 0 linear;
+    opacity:0;
+    height:0;
+    padding:0;
+    margin:0;
+}
+.section-item {
+    @extend .well;
+}
+.section-item > img{
+    @extend .pull-right;
+    max-height: 95px;
+}
+.lecture-outline {
+    font-size: larger;
+}
+.lecture-outline > ul, .lecture-outline > ol {
+    @extend .list-unstyled;
+}
+
+
+.bottom-right{
+    position:absolute;
+    right:0;
+    bottom:0;
+    margin-right:10px;
+
+}
+/*----------------------------------------*/
+/*           elements style               */
+/*----------------------------------------*/
+
+
+/* Space out content a bit */
+body {
+    
+    padding-bottom: 20px;
+}
+
+.container{
+  // border:1px solid black;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+.jumbotron {
+    padding-top: 90px;
+}
+header,
+footer,
+.jumbotron 
+{
+    padding-left: 0px;
+    padding-right: 0px; 
+}
+
+/* Custom page header */
+header {
+    @extend .navbar-fixed-top;
+    background-color: $jumbotron-bg;
+
+    
+    // border-bottom: 1px solid #e5e5e5;
+}
+
+.panel{
+    position:relative;
+}
+/* Make the masthead heading the same height as the navigation */
+header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 0;
+}
+
+/* Custom page footer */
+footer {
+    @extend .text-right;
+    padding-top: 19px;
+    color: #777;
+}
+
+
+
+
+/*----------------------------------------*/
+/*               responsive               */
+/*----------------------------------------*/
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 738px;
+    }
+    .large{
+        display: block;
+    }
+header,
+footer {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}

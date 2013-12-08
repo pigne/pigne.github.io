@@ -1,0 +1,30 @@
+---
+layout: default.hbs
+---
+
+{{> body}}
+<div class="row">
+	<div class="col-md-12">
+
+{{#sortedEach pages "order"}}
+	{{#is data.section ../page.section}}
+		{{#unless data.index }}
+		<div class="section-item">
+		<img  src="{{../../../assets}}/images/{{data.thumbnail}}" alt="thumbnail">
+		<div class="clearfix">
+			<h3>{{data.title}}</h3>
+			<ul class="">
+			{{#each data.description}}
+				<li>{{.}}</li>
+			{{/each}}
+			</ul>
+			<p class="text-right "><a href="{{relative ../../../page.dest this.dest}}" class="btn btn-primary" role="button">Details <span class="glyphicon glyphicon-play"></a> </p>
+			</div>
+		</div>
+
+		{{/unless}}
+	{{/is}}
+{{/sortedEach}}
+
+	</div>
+</div>

@@ -1,0 +1,33 @@
+---
+layout: default.hbs
+---
+
+{{> body}}
+<div class="row">
+	<div class="col-md-12">
+		<h2>Outline</h2>
+		<div class="panel-group" id="accordion">
+		{{#sortedEach pages "order"}}
+			{{#is data.subsection ../page.title}}
+				<div class="panel panel-default">
+					<div class="panel-heading active">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse{{data.order}}">
+              		<h3 class="panel-title" >{{data.order}} - {{data.title}} <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
+					</a>
+					</div>
+					<div id="collapse{{data.order}}" class="in accordion-body" style="height: auto;">
+              			<div class="panel-body">
+							<ul class="">
+							{{#each data.description}}
+								<li class="">{{.}}</li>
+							{{/each}}
+							</ul>
+							<p class="text-right bottom-right"><a href="{{relative ../../page.dest this.dest}}" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
+						</div>
+  		          	</div>
+          		</div>
+			{{/is}}
+		{{/sortedEach}}
+		</div>
+	</div>
+</div>

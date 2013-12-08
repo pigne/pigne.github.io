@@ -1,0 +1,738 @@
+[
+	{
+		"id": 9,
+		"type": "paper-conference",
+		"title": "GraphStream: A Tool for bridging the gap between Complex Systems and Dynamic Graphs",
+		"container-title": "Emergent Properties in Natural and Artificial Complex Systems. Satellite Conference within the 4th European Conference on Complex Systems (ECCS'2007)",
+		"author": [
+			{
+				"family": "Dutot",
+				"given": "Antoine"
+			},
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Olivier",
+				"given": "Damien"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2007"
+				]
+			]
+		}
+	},
+	{
+		"id": 10,
+		"type": "chapter",
+		"title": "Distributed Maintenance of Anytime Available Spanning Trees in Dynamic Networks",
+		"container-title": "Ad-hoc, Mobile, and Wireless Network",
+		"collection-title": "Lecture Notes in Computer Science",
+		"publisher": "Springer Berlin Heidelberg",
+		"page": "99-110",
+		"volume": "7960",
+		"URL": "http://dx.doi.org/10.1007/978-3-642-39247-4_9",
+		"ISBN": "978-3-642-39246-7",
+		"editor": [
+			{
+				"family": "Cichoń",
+				"given": "Jacek"
+			},
+			{
+				"family": "Gȩbala",
+				"given": "Maciej"
+			},
+			{
+				"family": "Klonowski",
+				"given": "Marek"
+			}
+		],
+		"author": [
+			{
+				"family": "Casteigts",
+				"given": "Arnaud"
+			},
+			{
+				"family": "Chaumette",
+				"given": "Serge"
+			},
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2013"
+				]
+			]
+		}
+	},
+	{
+		"id": 63,
+		"type": "article-journal",
+		"title": "Using graph search algorithms for a rigorous application of emergy algebra rules",
+		"container-title": "Revue de Métallurgie",
+		"page": "87-94",
+		"volume": "110",
+		"issue": "01",
+		"source": "Cambridge Journals Online",
+		"abstract": "Emergy evaluation (EME) is an environmental assessment method which is gaining international recognition and has increasingly been applied during the last decade. Emergy represents the memory of the geobiosphere exergy (environmental work) – measured in solar emjoules (seJ) – that has been used in the past or accumulated over time to make a natural resource available. The rationale behind the concept of Emergy is the consideration that all different forms of energy can be sorted under a hierarchy and measured with the common metric of the seJ, which is then the yardstick through which all energy inputs and outputs can be compared with each other. For this reason EME is suggested to be a suitable method of environmental accounting for a wide set of natural resources, and can be used to define guidelines for sustainable consumption of resources. Despite those interesting features, EME is still affected by several drawbacks in its calculation procedures and in its general methodological background, which prevent it from being accepted by a wider community. The main operational hurdle lays in the set of mathematical rules (known as Emergy algebra rules) governing EME, which do not follow logic of conservation and make their automatic implementation very difficult. This work presents an open source code specifically created for allowing a rigorous Emergy calculation (complying with all the Emergy algebra rules). We modeled the Emergy values circulating in multi-component systems with an oriented graph, formalized the problem in a matrix-based structure and developed a variant of the well-known track summing algorithm to obtain the total Emergy flow associated with the investigated product. The calculation routine (written in C++) implements the Depth First Search (DFS) strategy for graph searches. The most important features of the calculation routine are: (1) its ability to read the input in matrix form without the need of drawing a graph; (2) its rigorous implementation of the Emergy rules; (3) its low running time, which makes the algorithm applicable to any system described at the level of detail nowadays made possible by the use of the available life cycle inventory (LCI) databases. A version of the Emergy calculation routine based on the DFS algorithm has been completed and is being tested on case studies involving matrices of thousands of rows and columns, describing real product production systems.",
+		"DOI": "10.1051/metal/2013050",
+		"author": [
+			{
+				"family": "Marvuglia",
+				"given": "A."
+			},
+			{
+				"family": "Rugani",
+				"given": "B."
+			},
+			{
+				"family": "Rios",
+				"given": "G."
+			},
+			{
+				"family": "Pigné",
+				"given": "Y."
+			},
+			{
+				"family": "Benetto",
+				"given": "E."
+			},
+			{
+				"family": "Tiruta-Barna",
+				"given": "L."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2013"
+				]
+			]
+		}
+	},
+	{
+		"id": 66,
+		"type": "article-journal",
+		"title": "A metapopulation model for chikungunya including populations mobility on a large-scale network",
+		"container-title": "Journal of Theoretical Biology",
+		"page": "129-139",
+		"volume": "318",
+		"source": "ScienceDirect",
+		"abstract": "In this paper we study the influence of populations mobility on the spread of a vector-borne disease. We focus on the chikungunya epidemic event that occurred in 2005–2006 on the Réunion Island, Indian Ocean, France, and validate our models with real epidemic data from the event. We propose a metapopulation model to represent both a high-resolution patch model of the island with realistic population densities and also mobility models for humans (based on real-motion data) and mosquitoes. In this metapopulation network, two models are coupled: one for the dynamics of the mosquito population and one for the transmission of the disease. A high-resolution numerical model is created from real geographical, demographical and mobility data. The Island is modeled with an 18,000-nodes metapopulation network. Numerical results show the impact of the geographical environment and populations’ mobility on the spread of the disease. The model is finally validated against real epidemic data from the Réunion event.",
+		"URL": "http://www.sciencedirect.com/science/article/pii/S0022519312005838",
+		"DOI": "10.1016/j.jtbi.2012.11.008",
+		"ISSN": "0022-5193",
+		"journalAbbreviation": "Journal of Theoretical Biology",
+		"author": [
+			{
+				"family": "Moulay",
+				"given": "Djamila"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2013",
+					2,
+					7
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2013",
+					11,
+					27
+				]
+			]
+		}
+	},
+	{
+		"id": 203,
+		"type": "paper-conference",
+		"title": "Impact of square environment on the connectivity in finite ad hoc networks",
+		"container-title": "2011 14th International Symposium on Wireless Personal Multimedia Communications (WPMC)",
+		"page": "1-5",
+		"source": "IEEE Xplore",
+		"event": "2011 14th International Symposium on Wireless Personal Multimedia Communications (WPMC)",
+		"abstract": "This paper aims at studying some connectivity properties for random geometric graphs when they are constrained by the topological space in which they are embedded. More precisely, we focus our attention on limited square and rectangular environments. In order to analyse the impact of such environments on related graphs, we observe the evolution of mean degree. We propose an approach aiming at estimating the impact of the environment borders on the connectivity and we provide an analytical formula for computing the mean degree value depending on borders effects.",
+		"author": [
+			{
+				"family": "Aboue Nze",
+				"given": "G.-C."
+			},
+			{
+				"family": "Guinand",
+				"given": "F."
+			},
+			{
+				"family": "Pigne",
+				"given": "Y."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2011"
+				]
+			]
+		}
+	},
+	{
+		"id": 205,
+		"type": "chapter",
+		"title": "Short and Robust Communication Paths in Dynamic Wireless Networks",
+		"container-title": "Swarm Intelligence",
+		"collection-title": "Lecture Notes in Computer Science",
+		"collection-number": "6234",
+		"publisher": "Springer Berlin Heidelberg",
+		"page": "520-527",
+		"source": "link.springer.com",
+		"abstract": "We consider the problem of finding and maintaining communication paths in wireless mobile ad hoc networks (MANET). We consider this problem as a bi-objective problem when trying to minimize both the length of the constructed paths and the number link reconnections. We propose two centralized algorithms that help analyse the problem from a dynamic graph point of view. These algorithms give lower bounds for our proposed decentralized ant-based algorithm that constructs and maintains such paths in a MANET.",
+		"URL": "http://link.springer.com/chapter/10.1007/978-3-642-15461-4_52",
+		"ISBN": "978-3-642-15460-7, 978-3-642-15461-4",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			}
+		],
+		"editor": [
+			{
+				"family": "Dorigo",
+				"given": "Marco"
+			},
+			{
+				"family": "Birattari",
+				"given": "Mauro"
+			},
+			{
+				"family": "Caro",
+				"given": "Gianni A. Di"
+			},
+			{
+				"family": "Doursat",
+				"given": "René"
+			},
+			{
+				"family": "Engelbrecht",
+				"given": "Andries P."
+			},
+			{
+				"family": "Floreano",
+				"given": "Dario"
+			},
+			{
+				"family": "Gambardella",
+				"given": "Luca Maria"
+			},
+			{
+				"family": "Groß",
+				"given": "Roderich"
+			},
+			{
+				"family": "Şahin",
+				"given": "Erol"
+			},
+			{
+				"family": "Sayama",
+				"given": "Hiroki"
+			},
+			{
+				"family": "Stützle",
+				"given": "Thomas"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2010",
+					1,
+					1
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2013",
+					11,
+					27
+				]
+			]
+		}
+	},
+	{
+		"id": 206,
+		"type": "paper-conference",
+		"title": "A vehicular mobility model based on real traffic counting data",
+		"container-title": "Proceedings of the Third international conference on Communication technologies for vehicles",
+		"collection-title": "Nets4Cars/Nets4Trains'11",
+		"publisher": "Springer-Verlag",
+		"publisher-place": "Berlin, Heidelberg",
+		"page": "131–142",
+		"archive_location": "Oberpfaffenhofen, Germany",
+		"event-place": "Berlin, Heidelberg",
+		"URL": "http://dl.acm.org/citation.cfm?id=1987310.1987325",
+		"ISBN": "978-3-642-19785-7",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2011"
+				]
+			]
+		}
+	},
+	{
+		"id": 210,
+		"type": "paper-conference",
+		"title": "Generation of realistic mobility for VANETs using genetic algorithms",
+		"container-title": "2012 IEEE Congress on Evolutionary Computation (CEC)",
+		"page": "1 -8",
+		"source": "IEEE Xplore",
+		"event": "2012 IEEE Congress on Evolutionary Computation (CEC)",
+		"abstract": "The first step in the evaluation of vehicular ad hoc networks (VANETs) applications is based on simulations. The quality of those simulations not only depends on the accuracy of the network model but also on the degree of reality of the underlying mobility model. VehILux-a recently proposed vehicular mobility model, allows generating realistic mobility traces using traffic volume count data. It is based on the concept of probabilistic attraction points. However, this model does not address the question of how to select the best values of the probabilities associated with the points. Moreover, these values depend on the problem instance (i.e. geographical region). In this article we demonstrate how genetic algorithms (GAs) can be used to discover these probabilities. Our approach combined together with VehILux and a traffic simulator allows to generate realistic vehicular mobility traces for any region, for which traffic volume counts are available. The process of the discovery of the probabilities is represented as an optimisation problem. Three GAs-generational GA, steady-state GA, and cellular GA-are compared. Computational experiments demonstrate that using basic evolutionary heuristics for optimising VehILux parameters on a given problem instance permits to improve the model realism. However, in some cases, the results significantly deviate from real traffic count data. This is due to the route generation method of the VehILux model, which does not take into account specific behaviour of drivers in rush hours.",
+		"DOI": "10.1109/CEC.2012.6252987",
+		"author": [
+			{
+				"family": "Seredynski",
+				"given": "M."
+			},
+			{
+				"family": "Danoy",
+				"given": "G."
+			},
+			{
+				"family": "Tabatabaei",
+				"given": "M."
+			},
+			{
+				"family": "Bouvry",
+				"given": "P."
+			},
+			{
+				"family": "Pigne",
+				"given": "Y."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2012",
+					6
+				]
+			]
+		}
+	},
+	{
+		"id": 212,
+		"type": "paper-conference",
+		"title": "Sensitivity analysis for a realistic vehicular mobility model",
+		"container-title": "Proceedings of the first ACM international symposium on Design and analysis of intelligent vehicular networks and applications",
+		"collection-title": "DIVANet '11",
+		"publisher": "ACM",
+		"publisher-place": "New York, NY, USA",
+		"page": "31–38",
+		"source": "ACM Digital Library",
+		"event-place": "New York, NY, USA",
+		"abstract": "In this article, we consider a realistic vehicular mobility model, VehILux, and use a sensitivity analysis method to quantitatively study the influence and interdependencies of its parameters. The analysis reveals several properties in the set of parameters. Some are identified as irrelevant to the output while some have stronger impact than expected. This analysis is proposed as a preliminary step to the mobility model optimization, as it permits to significantly reduce the parameters search space.",
+		"URL": "http://doi.acm.org/10.1145/2069000.2069007",
+		"DOI": "10.1145/2069000.2069007",
+		"ISBN": "978-1-4503-0904-2",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2011"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2012",
+					12,
+					12
+				]
+			]
+		}
+	},
+	{
+		"id": 214,
+		"type": "paper-conference",
+		"title": "Construction et maintien d'une forêt couvrante dans un réseau dynamique",
+		"container-title": ".",
+		"source": "hal.inria.fr",
+		"event": "12èmes Rencontres Francophones sur les Aspects Algorithmiques de Télécommunications (AlgoTel)",
+		"abstract": "In this work we introduce the principles of an algorithm that constructs and maintains a spanning forest in a mobile telecommunication network—a MANET. The algorithm is based on the random walk of a token and is entirely decentralized. A probability analysis is performed when the network is static. Then we show that performances can be slightly enhanced when adding a memory process in the walk on the token.",
+		"URL": "http://hal.inria.fr/inria-00477755",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Casteigts",
+				"given": "Arnaud"
+			},
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Chaumette",
+				"given": "Serge"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2010"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2012",
+					12,
+					12
+				]
+			]
+		}
+	},
+	{
+		"id": 225,
+		"type": "paper-conference",
+		"title": "A platform for realistic online vehicular network management",
+		"container-title": "2010 IEEE GLOBECOM Workshops (GC Wkshps)",
+		"page": "595-599",
+		"source": "IEEE Xplore",
+		"event": "2010 IEEE GLOBECOM Workshops (GC Wkshps)",
+		"abstract": "This paper introduces a platform for realistic and computationally efficient online vehicular networks simulation. It permits decentralized traffic management applications simulation as nodes mobility is modifiable at runtime thanks to the integration of two state-of-the-art network and traffic simulators. The platform embeds a tool that generates vehicular traces based on traffic counting data and ensures performance through a geographical decomposition of the network. Evidence of its performance is given on a Luxembougian traffic management scenario, using real road network and traffic data.",
+		"DOI": "10.1109/GLOCOMW.2010.5700389",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Y."
+			},
+			{
+				"family": "Danoy",
+				"given": "G."
+			},
+			{
+				"family": "Bouvry",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2010"
+				]
+			]
+		}
+	},
+	{
+		"id": 227,
+		"type": "chapter",
+		"title": "Tour d'horizon des problèmes combinatoires traités par les fourmis artificielles",
+		"container-title": "Fourmis artificielles 1, Des bases de l'optimisation aux applications industrielles",
+		"collection-title": "IC2",
+		"publisher": "Hermes Sciences",
+		"page": "71-100",
+		"URL": "http://hal.archives-ouvertes.fr/hal-00457742",
+		"language": "Français",
+		"author": [
+			{
+				"family": "Dutot",
+				"given": "Antoine"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"editor": [
+			{
+				"family": "Nicolas Monmarché, Frédéric Guinand",
+				"given": "Patrick Siarry"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2009"
+				]
+			]
+		}
+	},
+	{
+		"id": 228,
+		"type": "paper-conference",
+		"title": "Impact of Obstacles on the Degree of Mobile Ad Hoc Connection Graphs",
+		"container-title": "Proceedings of the 2009 Fifth International Conference on Networking and Services",
+		"collection-title": "ICNS '09",
+		"publisher": "IEEE Computer Society",
+		"publisher-place": "Washington, DC, USA",
+		"page": "332–337",
+		"source": "ACM Digital Library",
+		"event-place": "Washington, DC, USA",
+		"abstract": "What is the impact of obstacles on the graphs of connections between stations in Mobile Ad hoc Networks? In order to answer, at least partially, this question, the first step is to define both an environment with obstacles and a mobility model for the stations in such an environment. The present paper focuses on a new way of considering the mobility within environments with obstacles, while keeping the core ideas of the well-known Random WayPoint mobility model (a.k.a RWP). Based on a mesh-partitioning of the space, we propose a new model called RSP-O-G for which we compute the spatial distribution of stations and analyse how the presence of obstacles impacts this distribution compared to the distribution when no obstacles are present. Coupled with a simple model of radio propagation, and according to the density of stations in the environment, we study the mean degree of the connection graphs corresponding to such mobile ad hoc networks.",
+		"URL": "http://dx.doi.org/10.1109/ICNS.2009.36",
+		"DOI": "10.1109/ICNS.2009.36",
+		"ISBN": "978-0-7695-3586-9",
+		"author": [
+			{
+				"family": "Aboue-Nze",
+				"given": "Cédric Gaël"
+			},
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2009"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2012",
+					12,
+					12
+				]
+			]
+		}
+	},
+	{
+		"id": 230,
+		"type": "article-journal",
+		"title": "Problem Solving and Complex Systems",
+		"container-title": "arXiv:0803.2314",
+		"source": "arXiv.org",
+		"abstract": "The observation and modeling of natural Complex Systems (CSs) like the human nervous system, the evolution or the weather, allows the definition of special abilities and models reusable to solve other problems. For instance, Genetic Algorithms or Ant Colony Optimizations are inspired from natural CSs to solve optimization problems. This paper proposes the use of ant-based systems to solve various problems with a non assessing approach. This means that solutions to some problem are not evaluated. They appear as resultant structures from the activity of the system. Problems are modeled with graphs and such structures are observed directly on these graphs. Problems of Multiple Sequences Alignment and Natural Language Processing are addressed with this approach.",
+		"URL": "http://arxiv.org/abs/0803.2314",
+		"note": "Emergent Properties in Natural and Artificial Dynamical Systems, Springer Verlag (Ed.) (2006) 53-86",
+		"author": [
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2008",
+					3,
+					15
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2012",
+					12,
+					12
+				]
+			]
+		}
+	},
+	{
+		"id": 233,
+		"type": "chapter",
+		"title": "Principes généraux de résolution de problèmes combinatoires",
+		"container-title": "Fourmis artificielles 1, Des bases de l'optimisation aux applications industrielles",
+		"collection-title": "IC2",
+		"publisher": "Hermes Sciences",
+		"page": "41-70",
+		"URL": "http://hal.archives-ouvertes.fr/hal-00457722",
+		"language": "Français",
+		"author": [
+			{
+				"family": "Dutot",
+				"given": "Antoine"
+			},
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Olivier",
+				"given": "Damien"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"editor": [
+			{
+				"family": "Nicolas Monmarché, Frédéric Guinand",
+				"given": "Patrick Siarry"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2009"
+				]
+			]
+		}
+	},
+	{
+		"id": 234,
+		"type": "chapter",
+		"title": "An Ant-Based Model for Multiple Sequence Alignment",
+		"container-title": "Large-Scale Scientific Computing",
+		"collection-title": "Lecture Notes in Computer Science",
+		"collection-number": "4818",
+		"publisher": "Springer Berlin Heidelberg",
+		"page": "553-560",
+		"source": "link.springer.com",
+		"abstract": "Multiple sequence alignment is a key process in today’s biology, and finding a relevant alignment of several sequences is much more challenging than just optimizing some improbable evaluation functions. Our approach for addressing multiple sequence alignment focuses on the building of structures in a new graph model: the factor graph model. This model relies on block-based formulation of the original problem, formulation that seems to be one of the most suitable ways for capturing evolutionary aspects of alignment. The structures are implicitly built by a colony of ants laying down pheromones in the factor graphs, according to relations between blocks belonging to the different sequences.",
+		"URL": "http://link.springer.com/chapter/10.1007/978-3-540-78827-0_63",
+		"ISBN": "978-3-540-78825-6, 978-3-540-78827-0",
+		"author": [
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"editor": [
+			{
+				"family": "Lirkov",
+				"given": "Ivan"
+			},
+			{
+				"family": "Margenov",
+				"given": "Svetozar"
+			},
+			{
+				"family": "Waśniewski",
+				"given": "Jerzy"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2008",
+					1,
+					1
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2013",
+					11,
+					27
+				]
+			]
+		}
+	},
+	{
+		"id": 254,
+		"type": "thesis",
+		"title": "Modélisation et traitement décentralisé des graphes dynamiques Application aux réseaux mobiles ad hoc",
+		"publisher": "Université du Havre",
+		"source": "tel.archives-ouvertes.fr",
+		"abstract": "Les graphes dynamiques sont un outil de plus en plus utilisé dans des contextes variés où il s'avère nécessaire de modéliser des environnements changeants ou incertains. Les modèles aujourd'hui proposés sont dédiés à ces applications précises. Il n'existe pas de modèle général reprenant, hors de tout contexte applicatif, ces caractéristiques. D'autre part la résolution de problèmes liés à ces environnements dynamiques et incertains est problématique. Nous proposons, ici, la formalisation d'un modèle général de graphe dynamique.   Nous étudions la résolution de problèmes dans ces graphes à l'aide de méthodes inspirées de mécanismes d'intelligence collective.   Les modèles proposés sont validés dans le contexte applicatif des réseaux mobiles ad hoc. Une approche originale de construction et de maintien de chemins de communication sous plusieurs contraintes est proposée. Le problème de la construction et du maintien d'une forêt couvrante dans un réseau mobile ad hoc est également étudié.",
+		"URL": "http://tel.archives-ouvertes.fr/tel-00371962",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2008",
+					12,
+					4
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2013",
+					1,
+					10
+				]
+			],
+			"season": "09:25:25"
+		}
+	}
+]

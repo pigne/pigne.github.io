@@ -1,0 +1,13 @@
+{
+  "name": "testyp",
+  "version": "0.0.0",
+  "dependencies": {
+    "sass-bootstrap": "~3.0.0",
+    "jquery": "~1.10.2",
+    "d3": "~3.3.6",
+    "google-code-prettify": "~1.0.0",
+    "reveal.js": "~2.6.1",
+    "highlightjs": "~7.5.0"
+  },
+  "devDependencies": {}
+}

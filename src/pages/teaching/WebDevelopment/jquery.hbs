@@ -1,0 +1,427 @@
+---
+title: "JQuery"
+subsection: Web Development
+order: 5
+description:
+- "Browser Agnostic DOM Manipulation"
+- "By John Resig"
+layout: lecture.hbs
+---
+
+
+<section>
+	<p class="text_center"><a href="images/jquery.pdf">JQuery Lecture</a></p>
+</section>
+
+
+<section data-markdown>
+    <script type="text/template">
+##jQuery par John Resig
+
+- Depuis janvier 2006
+- Applications coté client
+- Multi-navigateurs multi-OS
+- Fonctionnalités : le parcours du DOM, les évènements, AJAX et les animations
+- version 1.8.2 (minifiée/zipée) : 32 ko
+- Extensions de la bibliothèque par plugins
+- Code concis, fichier très petit
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##La fonction ```jQuery()```
+
+- Tout commence par cette fonction
+- «factory» pour tous les objets jQuery
+- Code en 2 parties : requête & action jQuery(".even").hide()
+- «$» alias de «jQuery»
+
+```
+jQuery("div.even") ➔ $("div.even")
+```
+<!-- .element: class="javascript"  -->
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Sélecteurs CSS 2 et 3
+
+	a[rel]
+	div[class~="even"]
+	a[href^="http://"]
+	ul#nav > li
+	li#current ~ li
+	li:first-child, li:last-child, li:nth-child(3)
+
+<!-- .element: class="css"  -->
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+##D’autres sélecteurs
+```
+div:first, h3:last
+:header
+:hidden,:visible
+:animated
+:input,:text,:password,:radio,:submit...
+div:contains(Hello)
+```
+<!-- .element: class="css"  -->
+
+http://api.jquery.com/category/selectors/
+
+<!-- .element: class="text_center"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+## ```jQuery()``` retourne un tableau
+
+- Collections (objet) jQuery
+
+```
+$('.odd')
+[<div class=!"odd" id=!"d1">!that's d1!</div>,
+<div class=!"odd" id=!"d3">!that's d3!</div> ,
+<div class=!"odd" id=!"d5">!that's d5!</div>!,
+<div class=!"odd" id=!"d7">!that's d7!</div>!]
+```
+<!-- .element: class="javascript"  -->
+
+
+- Peut se traiter comme un tableau
+
+```
+$(".odd").length;
+$(".odd")[0];
+```
+<!-- .element: class="javascript"  -->
+
+
+- On peut leur appliquer des méthodes
+
+```$(".odd").size();
+$(".odd").each(function() {
+     console.log(this);
+});
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+
+
+<section data-markdown>
+    <script type="text/template">
+##Action sur la sélection
+
+- Méthodes qui manipule l’objet appelant (les objets du tableau sélectionné)
+- Elle retournent généralement l’objet (la collection) appelant
+- Actions ou commandes enchainables
+
+```
+$(".odd").add(".even").addClass("darcker").show("fast");
+```
+
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Consistance du code
+
+###Nom des fonctions
+```
+.click() vs. .onclick()
+```
+<!-- .element: class="javascript"  -->
+
+###Position des arguments
+
+```
+.methode(options, arg1, arg2, ... , callback)
+```
+<!-- .element: class="javascript"  -->
+
+###Contexte des callbacks
+
+```
+.methode(function(){
+    // this == DOMElement
+});
+```
+<!-- .element: class="javascript"  -->
+
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Manipulations HTML
+```
+$(".even:first").text("First \"even\" div on the page.")
+$(".odd:last").html("<ul><li>The last</li><li>odd div</li></ul>")
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Manipulations d’attributs
+```
+$('a.nav').attr('href', 'http://flickr.com/');
+$('a.nav').attr({
+    'href': 'http://flickr.com/',
+    'id': 'flickr'
+});
+$('#intro').removeAttr('id');
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+###Manipulations CSS
+```
+$('#intro').addClass('highlighted');
+$('#intro').removeClass('highlighted');
+$('#intro').toggleClass('highlighted');
+$('.div').css("background-color", "#eee");
+jQuery(".div").css({
+    "background-color": "#eee",
+    "border": "1px solid #555"
+})
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Retour de valeurs
+
+Certaines méthodes retournent une valeur pour le première élément de la collection.
+
+```
+var height = $('div#intro').height();
+var src = $('img.photo').attr('src');
+var lastP = $('p:last').html();
+var hasFoo = $('p').hasClass('foo');
+var email = $('input#email').val();
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Parcours du DOM
+```
+$('div.section').parent();
+$('div.section').next();
+$('div.section').prev();
+$('div.section').nextAll('div');
+$('h1:first').parents();
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Gestion des évènements
+```
+$('a:first').click(function(ev){
+   $(this).css({ "background-color": "#a0a8b8"});
+   return false; // ou ev.preventDefault();
+}
+```
+<!-- .element: class="javascript"  -->
+
+```
+blur, change, click, dblclick, error, focus, hover, ready, resize, scroll, select, submit, toggle
+```
+<!-- .element: class="css wrap"  -->
+
+http://api.jquery.com/category/events/
+
+<!-- .element: class="text_center"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+##Unobtrusive JS
+```
+$(document).ready(function(){
+     alert('Le DOM est prêt !')
+});
+```
+<!-- .element: class="javascript"  -->
+
+⬇
+
+<!-- .element: class="text_center"  -->
+
+```
+$(function(){
+     alert('Le DOM est prêt !')
+});
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+###Chainage des actions
+
+- Actions classiques renvoient la collection appelante
+- Certains renvoient une collection différente
+- ```end()``` revient à la collection précédente
+
+
+```
+$('.intro').css('color','#ccc')
+	.find('a').addClass('highlight')
+	.end()
+	.find('em').css('color','red')
+	.end()
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+
+<section data-markdown>
+    <script type="text/template">
+##Autres méthodes ≠ actions
+
+Ne s’appliquent pas obligatoirement sur des objets jQuery.
+
+Méthodes de l'objet global ```jQuery``` ou ```$```
+
+- Utilitaires
+
+```
+$.isArray()
+$.trim()
+$.type()
+$.paseJSON()
+```
+<!-- .element: class="javascript"  -->
+
+- AJAX
+
+```
+$.ajax()
+$.get()
+$.post()
+$.getJSON()
+```
+<!-- .element: class="javascript"  -->
+
+    </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+ ##AJAX
+
+S’appliquant sur un objet jQuery
+
+```
+$("#data").load("/some/file.html") Méthode bas niveau
+$.ajax({
+  url: "test.html",
+  context: document.body,
+  success: function(){
+    $(this).addClass("done");
+  }
+});
+```
+<!-- .element: class="javascript"  -->
+
+Méthodes haut niveau
+
+```
+$.get()
+$.post()
+$.getJSON()
+$.getScript()
+```
+<!-- .element: class="javascript"  -->
+
+http://api.jquery.com/category/ajax/
+
+<!-- .element: class="text_center"  -->
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+##Animation
+
+jQuery a quelques effets pré-installés
+
+```
+$('h1').hide('slow');
+$('h1').slideDown('fast');
+$('h1').fadeOut(2000);
+```
+<!-- .element: class="javascript"  -->
+
+On peut les enchainer
+
+```
+$('h1').fadeOut(2000).slideDown();
+```
+<!-- .element: class="javascript"  -->
+
+http://api.jquery.com/category/effects/
+
+<!-- .element: class="text_center"  -->
+
+
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+##Plugins
+
+- AJAX
+- DOM
+- Drag-Drop
+- Menu
+- Navigation
+- Tableaux
+- ...
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+    </script>
+</section>
+

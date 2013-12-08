@@ -1,0 +1,77 @@
+---
+title: Publications
+section: Publications
+index: true
+---
+
+{{#each pub_years }}
+  <h2>{{.}}</h2>
+  <ul class="list-unstyled">
+  {{#each ../pubs }}
+
+    {{#is this.year ../this}}
+      <li class="bibitem"><span class="label label-info">{{this.niceType}}</span>&nbsp;<span class="bibitem_authors">{{this.niceAuthors}}.</span>
+        <span class='bibitem_title'>
+        {{#if this.URL }}
+          <a href="{{this.URL}}">{{this.title}}</a>.
+        {{else}}
+          {{this.title}}.
+        {{/if}}
+        </span>
+
+        {{#if this.container-title }}
+          In <span class="bibitem_in">{{this.container-title}}. </span>
+        {{else}}
+          {{#if this.event }}
+           In <span class="bibitem_in">{{this.event}}.</span>
+          {{/if}}
+        {{/if}}
+        {{#if this.volume }}
+          Volume <span class="bibitem_volume"> {{this.volume}}.</span>
+        {{/if}}
+        {{#if this.issue }}
+          Issue <span class="bibitem_volume"> {{this.issue}}.</span>
+        {{/if}}
+        {{#if this.series }}
+          Series <span class="bibitem_volume"> {{this.series}}.</span>
+        {{/if}}
+        {{#if this.page }}
+          Pages <span class="bibitem_pages"> {{this.page}}.</span>
+        {{/if}}
+        {{#if this.DOI }}
+          DOI: <span class="bibitem_doi"> <a href="http://dx.doi.org/{{this.DOI}}">{{this.DOI}}</a></span>.
+        {{/if}}
+        {{#if this.ISBN }}
+          ISBN: <span class="bibitem_isbn">{{this.ISBN}}</span>.
+        {{/if}}
+        {{#if this.publisher}}
+          <span class="bibitem_publisher">{{this.publisher}}, </span>
+        {{/if}}
+        {{#if this.event-place}}
+          <span class="bibitem_address">{{this.event-place}}, </span>
+        {{/if}}
+        <span class="bibitem_year">{{this.year}}</span>.
+
+        {{#if this.abstract}}
+          &nbsp;<a href=""  class="unfold_abstract btn btn-sm btn-default">Abstract</a>&nbsp;
+          <pre class="folded hidd alert alert-info">{{this.abstract}}</pre>
+        {{/if}}
+      </li>
+    {{/is}}
+  {{/each}}
+  </ul>
+{{/each}}
+
+<script type="text/javascript">
+  var nodes = document.getElementsByClassName('unfold_abstract')
+  for(var i =0; i< nodes.length; i++){
+    nodes[i].addEventListener('click', function (event){
+      console.log(event.target);
+      event.target.nextElementSibling.classList.toggle('hidd');
+      event.preventDefault();
+      event.stopPropagation();
+      console.log("oii");
+
+    })
+  }
+</script>

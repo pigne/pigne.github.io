@@ -1,0 +1,933 @@
+---
+title: Html5 Basics
+subsection: Web Development
+order: 3
+description:
+- Markup
+- The DOM API
+- Events
+- Asynchronous  Communication (AJAX)
+layout: lecture.hbs
+---
+
+        <!-- =================== -->
+        <!-- = 1. HTML5 BASICS = -->
+        <!-- =================== -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_template">
+            <h3 id="">A HTML5 Template</h3>
+            <pre class="x-4 prettyprint lang-html"><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;My App&lt;/title&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/mysite.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;My Site&lt;/h1&gt;
+    &lt;p&gt;Hello world! This is My Site.&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;mon-url1&quot;&gt;lien 1&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;div id=&quot;content&quot;&gt;
+    &lt;article&gt;
+      &lt;header&gt;&lt;h2&gt;One article&lt;/h2&gt;&lt;/header&gt;
+      &lt;section&gt;&lt;p&gt;...&lt;/p&gt;&lt;/section&gt;
+      &lt;section&gt;...&lt;/section&gt;
+      &lt;footer&gt;This article is written by...&lt;/footer&gt;
+    &lt;/article&gt;
+    &lt;article&gt;&lt;!-- ... --&gt;&lt;/article&gt;
+  &lt;/div&gt;
+  &lt;aside&gt;
+    Some stand-alone content, related to My Site.
+  &lt;/aside&gt;
+  &lt;footer&gt;&amp;copy; myself, 2013&lt;/footer&gt;
+  &lt;script src=&quot;js/mysite.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Sections">
+            <h2>HTML5 new Markup</h2>
+            <h3>Sections
+                <small>Semantic replacements of the generic
+                    <code>div</code>
+                </small>
+            </h3>
+            <dl>
+                <dt>
+                    <code>&lt;article&gt;</code>
+                </dt>
+                <dd>Self-sufficient content that can be exported as is.</dd>
+                <dt>
+                    <code>&lt;section&gt;</code>
+                </dt>
+                <dd>Coherent piece of information. Part of a larger content.</dd>
+                <dt>
+                    <code>&lt;header&gt;</code>
+                </dt>
+                <dd>Introduce an article, a section, or the whole page.</dd>
+                <dt>
+                    <code>&lt;footer&gt;</code>
+                </dt>
+                <dd>Conclude an article, a section, or the whole page.</dd>
+                <dt>
+                    <code>&lt;aside&gt;</code>
+                </dt>
+                <dd>Content related (but not central) to an article, a section, or the whole page.</dd>
+                <dt>
+                    <code>&lt;nav&gt;</code>
+                </dt>
+                <dd>List of navigation links to other contents or parts of the site.</dd>
+                <dt>
+                    <code>&lt;hgroup&gt;</code>
+                </dt>
+                <dd>Group of titles (h1, h2, h3, ...).</dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Sections2">
+            <h3>Possible Web Page Sectioning</h3>
+            <p class="text_center">
+                <img src="images/sections.svg" style="width:55%" alt="Markup sections" />
+            </p>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Sections3">
+            <h3>Possible Article Sectioning</h3>
+            <p class="text_center">
+                <img src="images/article.svg" style="width:55%" alt="Markup sections" />
+            </p>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Grouping">
+            <h2>Grouping content</h2>
+            <dl>
+                <dt>
+                    <code>&lt;figure&gt;</code>
+                </dt>
+                <dd>Piece of information (mostly graphical) from an article that can be place at different positions.</dd>
+                <dt>
+                    <code>&lt;figcaption&gt;</code>
+                </dt>
+                <dd>Caption of a figure.</dd>
+            </dl>
+
+            <h2>Interactive elements</h2>
+
+            <dl>
+                <dt>
+                    <code>&lt;details&gt;</code>
+                </dt>
+                <dd>Control for additional on-demand information.</dd>
+                <dt>
+                    <code>&lt;summary&gt;</code>
+                </dt>
+                <dd>Summary, caption, or legend for a details control.</dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Embedded">
+            <h2>Embedded Content</h2>
+            <dl>
+                <dt>
+                    <code>&lt;video&gt;</code>
+                </dt>
+                <dd>Embed videos in the page.
+                    <pre class="x-3 prettyprint nowatermark lang-html"><code>&lt;video src=&quot;videofile.ogg&quot; autoplay poster=&quot;posterimage.jpg&quot;&gt;&lt;/video&gt;</code></pre>
+                    Possible attributes:
+                    <code class="x-3">autoplay buffered controls crossorigin height loop muted played preload poster src width</code>
+                </dd>
+                <dt>
+                    <code>&lt;audio&gt;</code>
+                </dt>
+                <dd>Represent sound content in the document.
+                    <pre class="x-3 prettyprint nowatermark lang-html"><code>&lt;audio src=&quot;audio.ogg&quot; autoplay&gt;</code></pre>
+                </dd>
+                <dt>
+                    <code>&lt;source&gt;</code>
+                </dt>
+                <dd>Specify alternate sources for
+                    <code>audio</code> and
+                    <code>video</code>.
+                    <pre class=" x-3 prettyprint nowatermark lang-html"><code>&lt;video controls&gt;
+  &lt;source src=&quot;foo.ogg&quot; type=&quot;video/ogg&quot;&gt;
+  &lt;source src=&quot;foo.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+&lt;/video&gt;</code></pre>
+                </dd>
+                <dt>
+                    <code>&lt;track&gt;</code>
+                </dt>
+                <dd>Specify subtitles for
+                    <code>audio</code> and
+                    <code>video</code>.
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Embedded2">
+            <h2>Embedded Content</h2>
+            <dl>
+                <dt>
+                    <code>&lt;embed&gt;</code>
+                </dt>
+                <dd>Integration of external non-html content.
+                    <pre class="prettyprint nowatermark lang-html"><code>&lt;embed type=&quot;video/quicktime&quot; src=&quot;movie.mov&quot; width=&quot;640&quot; height=&quot;480&quot;&gt;</code></pre>
+                </dd>
+                <dt>
+                    <code>&lt;svg&gt;</code>
+                </dt>
+                <dd>Embedded vectorial image. SVG format.
+                    <div class="threecols">
+                        <pre class="prettyprint lang-html nowatermark firstsecond x-3"><code>&lt;svg width=&quot;150&quot; height=&quot;100&quot; viewBox=&quot;0 0 3 2&quot;&gt;
+  &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;0&quot; fill=&quot;#002395&quot; /&gt;
+  &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;1&quot; fill=&quot;#ffffff&quot; /&gt;
+  &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;2&quot; fill=&quot;#ED2939&quot; /&gt;
+&lt;/svg&gt;</code></pre>
+                        <p class="third">
+                            <svg width="150" height="100" viewBox="0 0 3 2">
+                                <rect width="1" height="2" x="0" fill="#002395" />
+                                <rect width="1" height="2" x="1" fill="#ffffff" />
+                                <rect width="1" height="2" x="2" fill="#ED2939" />
+                            </svg>
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>&lt;mathml&gt;</code>
+                </dt>
+                <dd>Mathematical formula. MathML format.
+                    <div class="threecols">
+                        <pre class="x-4 firstsecond prettyprint lang-html nowatermark"><code>&lt;math&gt;
+  &lt;mrow&gt;
+    &lt;mrow&gt;
+      &lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+      &lt;mo&gt;+&lt;/mo&gt;
+      &lt;msup&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+    &lt;/mrow&gt;
+    &lt;mo&gt;=&lt;/mo&gt;
+    &lt;msup&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+  &lt;/mrow&gt;
+&lt;/math&gt;</code></pre>
+                        <p class="third">
+                            <math>
+                                <mrow>
+                                    <mrow>
+                                        <msup>
+                                            <mi>a</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <msup>
+                                            <mi>b</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                    </mrow>
+                                    <mo>=</mo>
+                                    <msup>
+                                        <mi>c</mi>
+                                        <mn>2</mn>
+                                    </msup>
+                                </mrow>
+                            </math>
+                        </p>
+                    </div>
+                </dd>
+            </dl>
+
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms">
+            <h2>Forms</h2>
+            <dl>
+                <dt>
+                    <code>&lt;datalist&gt;</code>
+                </dt>
+                <dd>A set of predifined options for other controls.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>Browsers: &lt;input list=&quot;browsers&quot;&gt;
+&lt;datalist id=&quot;browsers&quot;&gt;
+  &lt;option value=&quot;Chrome&quot;&gt;
+  &lt;option value=&quot;Firefox&quot;&gt;
+  &lt;option value=&quot;Internet Explorer&quot;&gt;
+  &lt;option value=&quot;Opera&quot;&gt;
+  &lt;option value=&quot;Safari&quot;&gt;
+&lt;/datalist&gt;
+</code></pre>
+                        <p class="third">
+                            Browsers:
+                            <input list="browsers">
+                            <datalist id="browsers">
+                                <option value="Chrome"></option>
+                                <option value="Firefox"></option>
+                                <option value="Internet Explorer"></option>
+                                <option value="Opera"></option>
+                                <option value="Safari"></option>
+                            </datalist>
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>&lt;output&gt;</code>
+                </dt>
+                <dd>Field for the result of a calculation.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;form oninput=&quot;result.value=parseInt(a.value)
+                        +parseInt(b.value)&quot;&gt;
+  &lt;input type=&quot;number&quot; name=&quot;b&quot;  /&gt; +
+  &lt;input type=&quot;number&quot; name=&quot;a&quot;  /&gt; =
+  &lt;output name=&quot;result&quot;&gt;&lt;/output&gt;
+&lt;/form&gt;
+</code></pre>
+                        <p class="third">
+                            <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+                                <input type="number" name="b" value="50" />+
+                                <input type="number" name="a" value="10" />=
+                                <output name="result"></output>
+                            </form>
+                        </p>
+                    </div>
+                </dd>
+            </dl>
+
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms2">
+            <h2>Forms</h2>
+            <dl>
+                <dt>
+                    <code>&lt;keygen&gt;</code>
+                </dt>
+                <dd>
+                <pre class="prettyprint nowatermark lang-html"><code>&lt;keygen name=&quot;RSA public key&quot; challenge=&quot;123456789&quot; keytype=&quot;RSA&quot;&gt;
+&lt;/keygen&gt;</code></pre>
+                </dd>
+                <dt>
+                    <code>&lt;progress&gt;</code>
+                </dt>
+                <dd>Completion progress of a task.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;progress value=&quot;70&quot; max=&quot;100&quot;&gt;70 %&lt;/progress&gt;
+</code></pre>
+                        <p class="third">
+                            <progress value="70" max="100">70 %</progress>
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>&lt;meter&gt;</code>
+                </dt>
+                <dd>Graphical representation of a measure.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;meter min=&quot;0&quot; max=&quot;30&quot; low=&quot;5&quot; high=&quot;20&quot;
+                            value=&quot;15&quot;&gt;
+  15 degrees.
+&lt;/meter&gt;</code></pre>
+                        <p class="third">
+                            <meter min="0" max="30" low="5" high="20" value="0">0 degrees.</meter>
+                            <br>
+                            <meter min="0" max="30" low="5" high="20" value="5">5 degrees.</meter>
+                            <br>
+                            <meter min="0" max="30" low="5" high="20" value="15">15 degrees.</meter>
+                            <br>
+                            <meter min="0" max="30" low="5" high="20" value="25">25 degrees.</meter>
+                            <br>
+                            <meter min="0" max="30" low="5" high="20" value="30">30 degrees.</meter>
+                        </p>
+                    </div>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms3">
+            <h3>Forms new attributes</h3>
+            <dl>
+                <dt>
+                    <code>novalidate</code>
+                </dt>
+                <dd>Prevent validation of the form before sending it.</dd>
+            </dl>
+            <h3>Forms new inputs controls</h3>
+            <dl>
+                <dt>
+                    <code>search</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;search&quot; name=&quot;my_search&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="search" name="my_search">
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>number</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;number&quot; name=&quot;my_number&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="number" name="my_number">
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>range</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;range&quot; name=&quot;my_range&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="range" name="my_range">
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>color</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;color&quot; name=&quot;my_color&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="color" name="my_color">
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>date</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;date&quot; &gt;</code></pre>
+                        <p class="third">
+                            <input type="date">
+                        </p>
+                    </div>
+                    Other dates and times:
+                    <code>datetime datetime-local month time week</code>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms4">
+            <h3>Forms inputs attributes</h3>
+
+            <dl>
+                <dt>
+                    <code>form</code>
+                </dt>
+                <dd>Specify which
+                    <code>form</code> this
+                    <code>input</code> belongs to.
+                </dd>
+                <dt>
+                    <code>formaction, formenctype, formmethod, formnovalidate, formtarget</code>
+                </dt>
+                <dd>Surcharge form's default
+                    <code>action</code>,
+                    <code>enctype</code>
+                    <code>novalidate</code> and
+                    <code>target</code> attributes.
+                    <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;form action=&quot;default_form.php&quot;&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Default Submit&quot; /&gt;&lt;br /&gt;
+  &lt;input type=&quot;submit&quot; formaction=&quot;alternate_form.php&quot;
+          value=&quot;Alternate Submit&quot; /&gt;
+&lt;/form&gt;</code></pre>
+                </dd>
+                <dt>
+                    <code>multiple</code>
+                </dt>
+                <dd>Allow more than one value in the input.</dd>
+                <dt>
+                    <code>placeholder</code>
+                </dt>
+                <dd>A hint for the user.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;text&quot; placeholder=&quot;login&quot;&gt;
+&lt;input type=&quot;password&quot; placeholder=&quot;password&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="text" placeholder="login">
+                            <input type="password" placeholder="password">
+                        </p>
+                    </div>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms5">
+            <dl>
+                <dt>
+                    <code>min, max, step</code>
+                </dt>
+                <dd>
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;range&quot;
+        min=&quot;12&quot; max=&quot;120&quot; step=&quot;12&quot;&gt;
+&lt;input  type=&quot;number&quot;
+        min=&quot;12&quot; max=&quot;120&quot; step=&quot;12&quot;&gt;
+&lt;input  type=&quot;date&quot;
+        min=&quot;2012-10-01&quot; max=&quot;2012-12-01&quot;
+        step=&quot;14&quot;&gt;</code></pre>
+                        <p class="third">
+                            <input type="range" min="12" max="120" step="12">
+                            <br>
+                            <input type="number" min="12" max="120" step="12">
+                            <br>
+                            <input type="date" min="2012-10-01" max="2012-12-01" step="14">
+                        </p>
+                    </div>
+                </dd>
+                <dt>
+                    <code>patterns</code>
+                </dt>
+                <dd>Regular expression to validate an input.
+                    <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;input type=&quot;text&quot; name=&quot;code&quot; pattern=&quot;[A-Za-z]{3}&quot;
+        title=&quot;3 letters code&quot; /&gt;</code></pre>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Forms6">
+            <dl>
+                <dt>
+                    <code>required</code>
+                </dt>
+                <dd>validation of the input. Will raise a message if no value on required input.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;form action=&quot;&quot;&gt;
+code: &lt;input type=&quot;text&quot; name=&quot;code&quot;
+pattern=&quot;[A-Z]{3}&quot; placeholder=&quot;AAA&quot;
+title=&quot;Three letters code&quot; autofocus /&gt;
+&lt;br&gt;
+value: &lt;input type=&quot;number&quot;  min=&quot;1&quot;
+max=&quot;100&quot; title=&quot;integer between 1 and 100&quot;
+required&gt;
+&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+                        <div class="third">
+
+                        <form action="">
+                                code:
+                                <input type="text" name="code" pattern="[A-Z]{3}" placeholder="AAA" title="Three letters code" />
+                                <br>value:
+                                <input type="number" min="1" max="100" title="integer between 1 and 100" required>
+                                <input type="submit" value="Submit">
+                        </form>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Attributes">
+            <h2>New global attributes</h2>
+            <dl>
+                <dt>
+                    <code>data-*</code>
+                </dt>
+                <dd>User defined attributes. Any attribute prefixed by <i>data-</i> can be defined and used. HTML pages with
+                    <code>data-*</code> are valid pages.</dd>
+                <dt>
+                    <code>on*</code>
+                </dt>
+                <dd>Specify code to execute on specific events linked to an element.
+                    <pre class="html prewrap"><code class="javascript wrap">onabort, onblur, oncancel, oncanplay, oncanplaythrough, onchange, onclick, onclose, oncontextmenu, oncuechange, ondblclick, ondrag, ondragend, ondragenter, ondragleave, ondragover, ondragstart, ondrop, ondurationchange, onemptied, onended, onerror, onfocus, oninput, oninvalid, onkeydown, onkeypress, onkeyup, onload, onloadeddata, onloadedmetadata, onloadstart, onmousedown, onmousemove, onmouseout, onmouseover, onmouseup, onmousewheel, onpause, onplay, onplaying, onprogress, onratechange, onreset, onscroll, onseeked, onseeking, onselect, onshow, onstalled, onsubmit, onsuspend, ontimeupdate, onvolumechange, onwaiting</code></pre>
+                </dd>
+                <dt>
+                    <code>accesskey</code>
+                </dt>
+                <dd>Define keyboard shortcuts.</dd>
+                <dt>
+                    <code>class</code>
+                </dt>
+                <dd>List of classes this element belongs to.</dd>
+                <dt>
+                    <code>contenteditable</code>
+                </dt>
+                <dd>Boolean. Is this element is editable?</dd>
+                <dt>
+                    <code>contextmenu</code>
+                </dt>
+                <dd>Link a
+                    <code>command</code> to a menu.</dd>
+            </dl>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Attributes2">
+            <dl>
+                <dt>
+                    <code>dir</code>
+                </dt>
+                <dd>Set the direction of the text in that element.</dd>
+                <dt>
+                    <code>draggable</code>
+                </dt>
+                <dd>Boolean. Is that element draggable?</dd>
+                <dt>
+                    <code>dropzone</code>
+                </dt>
+                <dd>What action to take when an element is dropped on this one (copy, move, link...)</dd>
+                <dt>
+                    <code>hidden</code>
+                </dt>
+                <dd>Boolean. Is it visible?</dd>
+                <dt>
+                    <code>id</code>
+                </dt>
+                <dd>The unique identifier of an element.</dd>
+                <dt>
+                    <code>lang</code>
+                </dt>
+                <dd>Primary language of the text in that element.</dd>
+                <dt>
+                    <code>spellcheck</code>
+                </dt>
+                <dd>Boolean. Activate spell checking?</dd>
+                <dt>
+                    <code>style</code>
+                </dt>
+                <dd>CSS element style.</dd>
+                <dt>
+                    <code>tabindex</code>
+                </dt>
+                <dd>Integer that defines the order of focus of the element with the keyboard.</dd>
+                <dt>
+                    <code>title</code>
+                </dt>
+                <dd>Tooltips...</dd>
+                <dt>
+                    <code>translate</code>
+                </dt>
+                <dd>Boolean. Does the content of the element need to be translated when the page is localized?</dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_DOM_API">
+            <h2>Document Object Model (DOM)</h2>
+            <p>Structural representation of a HTML or XML document. Content and visual presentation can be modified with JavaScript.</p>
+
+            <ul>
+                <li>Each web page loaded in the browser has a
+                    <code>document</code> object. It is the entry point of the web page content. The root of the DOM tree.</li>
+                <li>In a document's script,
+                    <code>document</code> is also accessed through
+                    <code>window.document</code>.</li>
+                <li>Each Element in the DOM inherits from the
+                    <code>Node</code> Interface.</li>
+                <li>Specialized elements have other interfaces:
+                    <ul>
+                        <li>attributes inherit from
+                            <code>Attr</code>
+                        </li>
+                        <li>elements inherit from
+                            <code>Element</code>
+                        </li>
+                        <li>
+                            <code>document</code> inherit from
+                            <code>Document</code>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_DOM_API_Node">
+            <h2>The
+                <code>Node</code> interface</h2>
+            <dl>
+                <dt>
+                    <code>nodeName</code>
+                </dt>
+                <dd>element -> tagName, text -> #text, attribute -> name.</dd>
+                <dt>
+                    <code>nodeValue</code>
+                </dt>
+                <dd>Attribute -> name.</dd>
+                <dt>
+                    <code>attributes</code>
+                </dt>
+                <dd>List of attributes. Only for elements</dd>
+                <dt>
+                    <code>parentNode</code>
+                </dt>
+                <dd>Link to the parent node.</dd>
+                <dt>
+                    <code>childNodes</code>
+                </dt>
+                <dd>List of child nodes.</dd>
+                <dt>
+                    <code>firstChild</code>
+                </dt>
+                <dd>First child in the
+                    <code>childNodes</code> list.</dd>
+                <dt>
+                    <code>lastChild</code>
+                </dt>
+                <dd>Last child in the
+                    <code>childNodes</code> list.</dd>
+                <dt>
+                    <code>previousSibling</code>
+                </dt>
+                <dd>Previous node at the same level of this node.</dd>
+                <dt>
+                    <code>nextSibling</code>
+                </dt>
+                <dd>Next node at the same level of this node.</dd>
+            </dl>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_DOM_API_Node2">
+            <h2>The
+                <code>Node</code> interface</h2>
+            <p>Methods:</p>
+            <ul>
+                <li>
+                    <code>appendChild(newChild)</code>
+                </li>
+                <li>
+                    <code>cloneNode(deep)</code>
+                </li>
+                <li>
+                    <code>hasAttributes()</code>
+                </li>
+                <li>
+                    <code>hasChildNodes()</code>
+                </li>
+                <li>
+                    <code>insertBefore(new,ref)</code>
+                </li>
+                <li>
+                    <code>removeBefore(old)</code>
+                </li>
+                <li>
+                    <code>replaceChild(new,old)</code>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_DOM_API_Doc">
+            <h2>The
+                <code>Document</code> interface</h2>
+            <dl>
+                <dt>The
+                    <code>documentElement</code> property</dt>
+                <dd>The
+                    <code>html</code> Element.</dd>
+                <dt>The
+                    <code>documentURI</code> property</dt>
+                <dd>The document location.</dd>
+                <dt>The
+                    <code>head</code> and
+                    <code>body</code> properties</dt>
+                <dd></dd>
+                <dt>The
+                    <code>cookie</code> property</dt>
+                <dd>Semicolon-separated list of the cookies for that document.</dd>
+                <dt>The
+                    <code>createElement(tagName)</code> method</dt>
+                <dd>Create new DOM elements.</dd>
+                <dt>The
+                    <code>createTextNode()</code> method</dt>
+                <dd>Create text nodes.</dd>
+                <dt>The
+                    <code>createEvent()</code> method</dt>
+                <dd>Create events.</dd>
+                <dt>Elements access methods:</dt>
+                <dd>
+                    <ul>
+                        <li>
+                            <code>getElementById(id)</code>
+                        </li>
+                        <li>
+                            <code>getElementsByClassName(className)</code>
+                        </li>
+                        <li>
+                            <code>getElementsByTagName(tagName)</code>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+        <!-- /.step -->
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Events">
+
+            <h2>Events</h2>
+            <ul>
+                <li>
+                    Interaction between the user and the page or between various components lead to events that are called in JavaScript.
+                </li>
+                <li>
+                    Events define the behavior of the page.
+                </li>
+                <li>Each element in the page can generate events.</li>
+                <li>Reaction to events is made through callbacks (listeners).</li>
+                <li>When an event is activated, the registered callbacks to this event are executed.</li>
+            </ul>
+            <pre class="prettyprint lang-js"><code>function initEventHandlers() {
+  document.getElementById('mainForm')
+      .addEventListener('submit', checkForm, false);
+  document.getElementById('helpPopupLink')
+      .addEventListener( 'click' , popupHelp, false);
+}
+window.addEventListener( 'load', initEventHandlers, false);</code></pre>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Events2">
+            <h2>Attribute events are <i>bad</i>
+            </h2>
+            <pre class="prettyprint lang-html"><code>&lt;body onload=&quot;initPage()&quot;&gt; ...
+
+&lt;form method=&quot;post&quot; action=&quot;p.php&quot; onsubmit=&quot;checkForm()&quot;&gt; ...
+
+&lt;a href=&quot;#&quot; onclick=&quot;return popupWindow(&rsquo;h.htm&rsquo;)&quot;&gt;Aide&lt;/a&gt; ...
+
+&lt;div onclick=&quot;doSomething()&quot;&gt; ...
+</code></pre>
+            <ol>
+                <li>Mixing of content and behavior.</li>
+                <li>Multiple bindings on one event not allowed.</li>
+                <li>Only a subset of events are supported.</li>
+            </ol>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Events_Bubbling">
+            <h2>Events Bubbling</h2>
+            <br>
+            <br>
+            <br>
+            <p class="text_center">What is that?</p>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Async">
+            <h2>Asynchronous Communication
+                <small>AJAX</small>
+            </h2>
+            <h3>XMLHttpRequest</h3>
+            <p>A JavaScript object that allows the exchange of information between the client and the server, <i>without</i> reloading the page.
+            </p>
+            <p>
+                The object is standardized but not allays implemented.
+            </p>
+            <pre class="prettyprint lang-js"><code class="javascript">var xhr;
+try {
+  xhr = new ActiveXObject ( "Msxml2 .XMLHTTP" ) ;
+} catch (e) { try {
+  xhr = new ActiveXObject( "Microsoft .XMLHTTP" ); } catch (e) {
+  xhr = false; }
+}
+if( ! xhr &amp;&amp; typeof XMLHttpRequest != "undefined" ) {
+  xhr = new   XMLHttpRequest();
+}
+  </code></pre>
+        </section>
+        <!-- /.step -->
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_XMLHttpRequest">
+            <h2>XMLHttpRequest</h2>
+            <p>
+            2 important methods:
+            </p>
+            <ul>
+                <li>
+                    <code>open()</code>: set parameters, initialize the connection.
+                    <pre class="prettyprint lang-js"><code class="javascript">xhr.open( "GET", "/message" );</code></pre>
+                </li>
+                <li>
+                    <code>send()</code>: actually send the request:
+                    <code  class="javascript">xhr.send();</code>
+                </li>
+            </ul>
+            <p>
+            XMLHttpRequest are asynchronous. 5 states are passed after sending
+            </p>
+            <ol>
+                <li>Not initialized (before
+                    <code>send()</code>).</li>
+                <li>Waiting for reception (after
+                    <code>send</code>).</li>
+                <li>Data received.</li>
+                <li>Response being processed.</li>
+                <li>Terminated.</li>
+            </ol>
+        </section>
+        <!-- /.step -->
+
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_XMLHttpRequest_data">
+            <h2>XMLHttpRequest: How do we get the data?</h2>
+            <pre class="prettyprint lang-js"><code class="javascript">var xhr;
+//...
+xhr.open( "GET", "/message" );
+xhr.onreadystatechange = handleData;
+xhr.send( null ); // Argument utilisé uniquement pour POST
+//...
+function handleData () {
+  if ( xhr.readyState === 4 ) { // Data received.
+    if( xhr.status === 200 ) { // HTTP status.
+      var data = xhr.responseText;
+    }else{
+    // deal with the server error...
+    }
+  }
+}</code></pre>
+        </section>
+

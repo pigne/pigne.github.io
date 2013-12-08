@@ -1,0 +1,197 @@
+---
+title: Dynamic graphical data (SVG)
+subsection: Web Development
+order: 6
+description:
+- Scalable Vector Graphics (SVG)
+- D3.js
+layout: lecture.hbs
+---
+
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="DynamicGraphicalData">
+            <h2>Dynamic graphical data</h2>
+            <ul>
+                <li>Canvas 2D</li>
+                <li>WebGL</li>
+                <li>SVG</li>
+            </ul>
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="DynamicGraphicalData2">
+            <h2>SVG</h2>
+            <p>
+                an XML markup language for describing two-dimensional vector graphics.
+            </p>
+
+            <div class="threecols">
+                <pre class="x-4 prettyprint lang-html nowatermark firstsecond x-3"><code class="svg">&lt;svg width=&quot;150&quot; height=&quot;100&quot; viewBox=&quot;0 0 3 2&quot;&gt;
+   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;0&quot; fill=&quot;#002395&quot; /&gt;
+   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;1&quot; fill=&quot;#ffffff&quot; /&gt;
+   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;2&quot; fill=&quot;#ED2939&quot; /&gt;
+&lt;/svg&gt;</code></pre>
+                <p class="third">
+                    <svg width="100" height="50" viewBox="0 0 3 2">
+                        <rect width="1" height="2" x="0" fill="#002395" />
+                        <rect width="1" height="2" x="1" fill="#ffffff" />
+                        <rect width="1" height="2" x="2" fill="#ED2939" />
+                    </svg>
+                </p>
+            </div>
+
+            <h3>Elements</h3>
+            <ul>
+                <li>Shape elements
+                    <br>
+                    <code class="svg">&lt;circle&gt;, &lt;ellipse&gt;, &lt;line&gt;, &lt;path&gt;, &lt;polygon&gt;, &lt;polyline&gt;, &lt;rect&gt;</code>
+                </li>
+                <li>Structural elements
+                    <br>
+                    <code>&lt;defs&gt;, &lt;g&gt;, &lt;svg&gt;, &lt;symbol&gt;, &lt;use&gt;</code>
+                </li>
+                <li>Text content elements
+                    <br>
+                    <code>&lt;altGlyph&gt;, &lt;textPath&gt;, &lt;text&gt;, &lt;tref&gt;, &lt;tspan&gt;</code>
+                </li>
+                <li>...</li>
+            </ul>
+            <h3>Attributes</h3>
+            Mostly for Animations and Events.
+
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="D3js">
+            <h2>D3.js
+                <small>Data-Driven Documents</small>
+            </h2>
+            <p>
+                Bind arbitrary data to a Document Object Model (DOM)
+            </p>
+            <p>
+                Classical steps to create data-linked DOM elements:
+            </p>
+            <div class="twocols">
+                <ol class="first">
+                    <li>Start from one existing DOM element</li>
+                    <li>Make a selection (<i>empty</i>) of DOM elements</li>
+                    <li>Link data to the selection</li>
+                    <li>Append new DOM elements to the seletion (one Element per data item)</li>
+                    <li>modify the new DOM elements :
+                        <ol>
+                            <li>style</li>
+                            <li>attributes</li>
+                            <li>events</li>
+                        </ol>
+                    </li>
+                </ol>
+                <pre class="second prettyprint lang-js">
+<code class="javascript">var user_data = [ 10, 20, 35, 12];
+var svg = d3.select('svg'); // (1)
+svg.selectAll('.block') // (2)
+  .data(user_data) // (3)
+  .enter() // data to be linked to DOM
+  .append("svg:path") // (4)
+  .classed("block",1) // (4.1)
+  .attr("cx", function(d, i) { // (4.2)
+    return 100*(1+i);
+  })
+  .on("click", function(d, i){ // (4.3)
+    d3.select(this)
+      .classed('clicked', 1);
+    });
+  })
+</code></pre>
+            </div>
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="D3js2">
+
+
+            <div class="twocols">
+
+                <div class="first">
+                    <pre class=" x-4 prettyprint lang-js" data-src="http://codepen.io/pigne/pen/JBzai">
+<code class="javascript">var user_data = [ 10, 20, 35, 22, 25, 40];
+
+var coordiate_width = 800;
+var display_width = 400;
+
+var svg = d3.select('#svg1')
+    .append("svg")
+    .attr("width", display_width)
+    .attr("height", display_width/2)
+    .append("g")
+    .attr("transform", "scale("
+      +(display_width/coordiate_width)+")");
+
+var blocks = svg.selectAll('.block')
+    .data(user_data)
+    .enter()
+    .append("circle")
+    .classed("block",1)
+    .attr("cx", function(d, i) {
+        return 100*(1+i);
+    })
+    .attr("cy", coordiate_width/4)
+    .attr("r", function(d, i) {
+        return d;
+    })
+    .on("mouseover", function(d, i){
+      d3.select(this)
+        .classed('over', 1);
+    })
+    .on("mouseout", function(d, i){
+      d3.select(this)
+        .classed('over', 0);
+    });
+</code></pre>
+                </div>
+
+                <div class="second" id="svg1">
+                    <pre class=" prettyprint lang-css">
+<code class="css">.block {
+    stroke: #55F;
+    stroke-width: 2px;
+    stroke-linecap: square;
+    fill: #EEE;
+}
+
+.block.over {
+    stroke: #f99;
+    stroke-width: 3px;
+    fill: #DDD;
+}
+</code></pre>
+                </div>
+            </div>
+            <style type="text/css">
+            .block {
+                stroke: #55F;
+                stroke-width: 2px;
+                stroke-linecap: square;
+                fill: #EEE;
+            }
+            .block.over {
+                stroke: #f99;
+                stroke-width: 3px;
+                fill: #DDD;
+            }
+            </style>
+
+        </section>
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="SVG_LAB_SESSION">
+            <h2>SVG Lab Session</h2>
+            <p>Using the JSON data set and the Object Model of the previous lab session, write a function that, given the data model, draws the various shapes (roads, amenities, natural, buildings...) on an svg element.</p>
+            <p>Private buildings must highlight when the mouse passes over and they must be selectable through clicking.</p>
+            <p class="text_center"><img src="images/svgMap.png" alt="svg_map" style="width:40%;"></p>
+        </section>
+

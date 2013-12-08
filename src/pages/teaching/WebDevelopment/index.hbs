@@ -1,0 +1,61 @@
+---
+title: Web Development
+thumbnail: js-thumb.jpg
+section: Teaching
+description:
+layout: lecture-outline.hbs
+order: 1
+description:
+    - "Basic tools, protocols, standards and technologies."
+    - "Main Languages: JavaScript, HTML, CSS"
+    - "Client-side and Server-side Web Frameworks."
+    - "Lecture for Master 2 - IDOD."
+---
+
+
+
+
+<div class=""id="chart" data-color="type"></div>
+<p id="option_panel">
+  Distance:
+    <input type="range" name="distance_range" value="50" id="distance_range" min=1 max=100 step=5>
+    <br>
+   <!--  <input type="submit" name="Start" value="Start" id="start_graph"> -->
+</p>
+<style type="text/css" media="screen">
+
+.node {
+    background-color: white;
+}
+.node:hover {
+    cursor: pointer;
+}
+.link {
+    stroke:#bbb;
+    stroke-opacity: .6;
+    fill: none;
+}
+#chart {
+    z-index:-1;
+}
+</style>
+
+ <!-- build:js {{assets}}/scripts/graph_outline.js -->
+<script type="text/javascript" src="/bower_components/d3/d3.js"></script>
+<script type="text/javascript" src="/scripts/graph_outline.js"></script>
+<!-- endbuild -->
+<script type="text/javascript" charset="utf-8">
+//document.getElementById('start_graph').addEventListener('click', function(e) {
+    var e = document.getElementById('chart');
+    var w = e.parentElement.scrollWidth -65;
+    var options = {
+        'width': w,
+        'height': w/1.3,
+        'area': '#chart',
+        't': '#color_type_selector',
+        'range': '#distance_range'
+    };
+    graph_outline(options);
+    //$(this).hide();
+//});
+    </script>
