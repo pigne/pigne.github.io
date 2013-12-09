@@ -1,10 +1,9 @@
-$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
-
-
-
-//@import url(http://fonts.googleapis.com/css?family=Muli);
-// "Muli",
+//----------------------------------
+//             Fonts
+// ---------------------------------
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Droid+Serif);
+
+$icon-font-path: "../bower_components/sass-bootstrap/fonts/";
 
 $font-family-sans-serif:  Droid Sans, Helvetica, sans-serif !default;
 $font-family-serif: 'Droid Serif', serif !default;
@@ -13,31 +12,18 @@ $font-family-monospace: 'Droid Sans Mono', sans-serif !default;
 $headings-font-family:    $font-family-sans-serif !default;
 $font-family-base:        $font-family-sans-serif !default; 
 
+//----------------------------------
+//             Variables
+// ---------------------------------
 $border-radius-base: 2px !default;
 $border-radius-large: 3px !default;
 $border-radius-small: 1px !default;
-/*
-//#66863f
-//#d46552
-//#5c8681
-//#c97cc4
-//#b7d642
 
-
-
-
-
-
-
-
-
-
-
-$brand-primary: #DDC87C !default;
-$brand-success: #CAC7E2 !default;
-$brand-warning: #9FDCD2 !default;
-$brand-danger:  #E6B7AF !default;
-$brand-info:    #B5DCA3 !default;
+// $brand-primary: #DDC87C !default;
+// $brand-success: #CAC7E2 !default;
+// $brand-warning: #9FDCD2 !default;
+// $brand-danger:  #E6B7AF !default;
+// $brand-info:    #B5DCA3 !default;
 
 $my_black: black !default;
 $gray-darker: lighten($my_black, 13.5%) !default;
@@ -47,18 +33,78 @@ $gray-light: lighten($my_black, 60%) !default;
 $gray-lighter: lighten($my_black, 93.5%) !default;
 
 $header-bg: transparentize($gray-light, .5);
-*/
 
-
+//----------------------------------
+//             Bootstrap
+// ---------------------------------
+// TODO : stop importing the all project. Only import what's needed...
 @import "sass-bootstrap/lib/bootstrap";
 
 
+/*----------------------------------------*/
+/*           Utility classes              */
+/*----------------------------------------*/
+.bottom-right{
+    position:absolute;
+    right:0;
+    bottom:0;
+    margin-right:10px;
 
-
+}
 
 /*----------------------------------------*/
-/*           Special classes              */
+/*           Ad Hoc style                 */
 /*----------------------------------------*/
+
+body {
+    padding-bottom: 20px;
+}
+header,
+footer,
+.jumbotron {
+    padding-left: 0px;
+    padding-right: 0px; 
+}
+.jumbotron {
+    line-height: ($line-height-base * 1.2);
+    background-image: url(../images/bg.svg); 
+    background-size: 3300px 90px; 
+    background-position: bottom left; 
+    background-repeat:repeat-x;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+/* Custom page header */
+header {
+    @extend .navbar-fixed-top;
+    background-color: transparentize($jumbotron-bg, .5);
+}
+/* Make the masthead heading the same height as the navigation */
+header {
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+        padding-bottom: 0;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+} 
+
+
+/* Custom page footer */
+footer {
+    @extend .text-right;
+    padding-top: 19px;
+    color: #777;
+}
 
 .glyphicon-github:before {
   content: "\e022";
@@ -67,33 +113,30 @@ $header-bg: transparentize($gray-light, .5);
   content: "\e159";
 }
 
-
-
-
-.jumbotron {
-  line-height: ($line-height-base * 1.2);
+.bibitem { 
+    margin-bottom:5px;
 }
-
-
-
-
-
-.bibitem { margin-bottom:5px;}
 .bibitem_authors { }
-.bibitem_title {font-weight:bold}
-.bibitem_in {font-style:italic}
+.bibitem_title {
+    font-weight:bold;
+}
+.bibitem_in {
+    font-style:italic;
+}
 .bibitem_volume {}
-.bibitem_pages {font-weight:bold}
+.bibitem_pages {
+    font-weight:bold;
+}
 .bibitem_year {}
-.bibitem > pre {margin: 5px; white-space:pre-wrap;word-break: normal;}
-
+.bibitem > pre {
+    margin: 5px; white-space:pre-wrap;word-break: normal;
+}
 .bibitem > pre{
     transition:opacity .5s linear;
     opacity:1;
     z-index:-10;
     position:relative;
 }
-
 .bibitem > pre.hidd {
     transition:opacity 0 linear;
     opacity:0;
@@ -108,6 +151,7 @@ $header-bg: transparentize($gray-light, .5);
     @extend .pull-right;
     max-height: 95px;
 }
+
 .lecture-outline {
     font-size: larger;
 }
@@ -115,71 +159,9 @@ $header-bg: transparentize($gray-light, .5);
     @extend .list-unstyled;
 }
 
-
-.bottom-right{
-    position:absolute;
-    right:0;
-    bottom:0;
-    margin-right:10px;
-
-}
-/*----------------------------------------*/
-/*           elements style               */
-/*----------------------------------------*/
-
-
-/* Space out content a bit */
-body {
-    
-    padding-bottom: 20px;
-}
-
-.container{
-  // border:1px solid black;
-    padding-left: 15px;
-    padding-right: 15px;
-
-}
-.jumbotron {
-    padding-top: 90px;
-}
-header,
-footer,
-.jumbotron 
-{
-    padding-left: 0px;
-    padding-right: 0px; 
-}
-
-/* Custom page header */
-header {
-    @extend .navbar-fixed-top;
-    background-color: $jumbotron-bg;
-
-    
-    // border-bottom: 1px solid #e5e5e5;
-}
-
 .panel{
     position:relative;
 }
-/* Make the masthead heading the same height as the navigation */
-header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 0;
-}
-
-/* Custom page footer */
-footer {
-    @extend .text-right;
-    padding-top: 19px;
-    color: #777;
-}
-
-
-
 
 /*----------------------------------------*/
 /*               responsive               */
