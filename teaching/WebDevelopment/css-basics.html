@@ -10,21 +10,47 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="../../favicon.ico" />
 
-        <link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
+        <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../images/apple-touch-icon-152x152-precomposed.png">
+        <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../images/apple-touch-icon-144x144-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../images/apple-touch-icon-120x120-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../images/apple-touch-icon-114x114-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../../images/apple-touch-icon-76x76-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../images/apple-touch-icon-72x72-precomposed.png">
+        <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+        <link rel="apple-touch-icon-precomposed" href="../../apple-touch-icon-precomposed.png">
+
+
+
+		<link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
         <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
-
+		<link rel="stylesheet" href="../../styles/26d0b258.lecture.css"/>
+		<!-- For syntax highlighting -->
+        <link rel="stylesheet" href="/bower_components/highlightjs/styles/dark.css">
 		
-		<link rel="stylesheet" href="../../styles/lecture-utilities.css">
-
-        <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="../../bower_components/highlightjs/styles/dark.css">
-
         <!-- If the query includes 'print-pdf', use the PDF print sheet -->
         <script>
                 document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
         </script>
         <style>
+        
+        	body {
+        		background:none;
+        	}
+			.reveal svg{
+				max-width: 95%;
+				max-height: 95%;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+			}
         	.reveal .slides {
 				text-align: left;
 			}
@@ -66,7 +92,7 @@
 				top:5px;
 			}
 			#back>a {
-				font-size: larger;
+				/*font-size: larger;*/
 				text-decoration: none;
 				color:gray;
 
@@ -74,9 +100,9 @@
 			#back>a:hover {
 				text-decoration: none;
 			}
-			#back>a:hover:after{
+			/*#back>a:hover:after{
 				content: "Back to Outline"
-			}
+			}*/
 
         </style>
 
@@ -88,7 +114,8 @@
         <![endif]-->
 
 
-	<div id="back"><a href=".">&#8630;</a></div>
+	
+	<div id="back"><a href="."><img src="../../favicon.ico" alt="back"></a></div>
     <div class="reveal">
     	<div class="slides">
 		<!-- ==== SLIDE ==== -->
@@ -887,122 +914,120 @@ background-color: desaturate(@default-color, 10%);
 
     	</div>
 	</div>
-       <script src="../../bower_components/reveal.js/lib/js/head.min.js"></script>
-       <script src="../../bower_components/reveal.js/js/reveal.min.js"></script>
 
-        <script>
-			    (function() {
-			        var list = document.querySelectorAll('*[data-src]');
-			        for (var i = 0; i < list.length; i++) {
-			            var p = document.createElement('p')
-			            var a = document.createElement('a')
-			            var img = document.createElement('img')
-			            a.setAttribute('href', list[i].getAttribute('data-src'))
-			            img.setAttribute('src', '/images/codepen.png')
-			            img.setAttribute('alt', 'codepen')
-			            p.setAttribute('class', 'codepen')
-			            a.appendChild(img)
-			            p.appendChild(a)
-			            list[i].appendChild(p)
-			        }
-			    })();
-                // Full list of configuration options available here:
-                // https://github.com/hakimel/reveal.js#configuration
-                Reveal.initialize({
+	<script src="../../scripts/ba414d1e.lecture-all.js"></script>
 
-					    width: 1400,
-					    height: 1050,
+	<script>
+	(function() {
+            var list = document.querySelectorAll('*[data-src]');
+            for (var i = 0; i < list.length; i++) {
+                var p = document.createElement('p')
+                var a = document.createElement('a')
+                var img = document.createElement('img')
+                a.setAttribute('href', list[i].getAttribute('data-src'))
+                img.setAttribute('src', '/images/codepen.png')
+                img.setAttribute('alt', 'codepen')
+                p.setAttribute('class', 'codepen')
+                a.appendChild(img)
+                p.appendChild(a)
+                list[i].appendChild(p)
+            }
+        })();
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
 
-					    // Factor of the display size that should remain empty around the content
-					    margin: 0.05,
+                width: 1400,
+                height: 1050,
 
-					    minScale: 0.1,
-    					maxScale: 2.0,
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,
 
-                        // Optional libraries used to extend on reveal.js
-                        dependencies: [
-                                { src: '../../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                                { src: '../../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                                { src: '../../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                                { src: '../../bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                                { src: '../../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                                { src: '../../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-                        ],
-						// Display controls in the bottom right corner
-						controls: true,
+                minScale: 0.1,
+                maxScale: 2.0,
 
-						// Display a presentation progress bar
-						progress: true,
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                        { src: '../../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                        { src: '../../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: '../../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: '../../bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                        { src: '../../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                        { src: '../../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ],
+                // Display controls in the bottom right corner
+                controls: true,
 
-						// Display the page number of the current slide
-						slideNumber: false,
+                // Display a presentation progress bar
+                progress: true,
 
-						// Push each slide change to the browser history
-						history: true,
+                // Display the page number of the current slide
+                slideNumber: false,
 
-						// Enable keyboard shortcuts for navigation
-						keyboard: true,
+                // Push each slide change to the browser history
+                history: true,
 
-						// Enable the slide overview mode
-						overview: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
 
-						// Vertical centering of slides
-						center: true,
+                // Enable the slide overview mode
+                overview: true,
 
-						// Enables touch navigation on devices with touch input
-						touch: true,
+                // Vertical centering of slides
+                center: true,
 
-						// Loop the presentation
-						loop: false,
+                // Enables touch navigation on devices with touch input
+                touch: true,
 
-						// Change the presentation direction to be RTL
-						rtl: false,
+                // Loop the presentation
+                loop: false,
 
-						// Turns fragments on and off globally
-						fragments: true,
+                // Change the presentation direction to be RTL
+                rtl: false,
 
-						// Flags if the presentation is running in an embedded mode,
-						// i.e. contained within a limited portion of the screen
-						embedded: false,
+                // Turns fragments on and off globally
+                fragments: true,
 
-						// Number of milliseconds between automatically proceeding to the
-						// next slide, disabled when set to 0, this value can be overwritten
-						// by using a data-autoslide attribute on your slides
-						autoSlide: 0,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
 
-						// Stop auto-sliding after user input
-						autoSlideStoppable: true,
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
 
-						// Enable slide navigation via mouse wheel
-						mouseWheel: false,
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
 
-						// Hides the address bar on mobile devices
-						hideAddressBar: true,
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
 
-						// Opens links in an iframe preview overlay
-						previewLinks: false,
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
 
-						// Transition style
-						transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
 
-						// Transition speed
-						transitionSpeed: 'fast', // default/fast/slow
+                // Transition style
+                transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
 
-						// Transition style for full page slide backgrounds
-						backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+                // Transition speed
+                transitionSpeed: 'fast', // default/fast/slow
 
-						// Number of slides away from the current that are visible
-						viewDistance: 3,
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
 
-						// Parallax background image
-						parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
 
-						// Parallax background size
-						parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
-                });
+                // Parallax background image
+               	parallaxBackgroundImage: '../../images/lecture-bg.svg', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
-        </script>
-
-
+                // Parallax background size
+               	parallaxBackgroundSize: '4995px 1350px' // CSS syntax, e.g. "2100px 900px"
+        });
+	</script>
+	
 </body>
 </html>

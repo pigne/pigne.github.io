@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg3217"
+   version="1.1"
+   inkscape:version="0.48+devel r10526 custom"
+   sodipodi:docname="favicon.svg"
+   inkscape:export-filename="/Users/pigne/Documents/Web/pigne.org/src/favicon32.ico.png"
+   inkscape:export-xdpi="15"
+   inkscape:export-ydpi="15">
+  <defs
+     id="defs3219" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2"
+     inkscape:cx="342.01979"
+     inkscape:cy="835.42997"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="852"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata3222">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       transform="matrix(1.0497184,0,0,1.0497184,359.76094,-23.126528)"
+       d="m 257.14285,223.79076 a 91.428574,91.428574 0 1 1 -182.857144,0 91.428574,91.428574 0 1 1 182.857144,0 z"
+       sodipodi:ry="91.428574"
+       sodipodi:rx="91.428574"
+       sodipodi:cy="223.79076"
+       sodipodi:cx="165.71428"
+       id="path3771"
+       style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.498;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:type="arc" />
+    <text
+       sodipodi:linespacing="150%"
+       id="text3773"
+       y="267.18921"
+       x="454.84552"
+       style="font-size:32.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:150%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Futura;-inkscape-font-specification:Futura Medium"
+       xml:space="preserve"><tspan
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:150%;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans Bold"
+         y="267.18921"
+         x="454.84552"
+         id="tspan3775"
+         sodipodi:role="line">YP</tspan></text>
+    <path
+       style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.498;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 179.71875,117.8125 c -53.00512,0 -95.96875,42.96363 -95.96875,95.96875 0,53.00512 42.96363,95.96875 95.96875,95.96875 53.00512,0 95.96875,-42.96363 95.96875,-95.96875 0,-53.00512 -42.96363,-95.96875 -95.96875,-95.96875 z m -78.875,48.59375 23.625,0 18.4375,42.3125 18.5625,-42.3125 23.46875,0 -31.21875,62.78125 0,40 -21.65625,0 0,-39.3125 -31.21875,-63.46875 z m 97.03125,0 28.5625,0 c 6.60938,0 12.28125,0.75 17.0625,2.25 4.82812,1.45313 8.8125,3.54687 11.90625,6.3125 3.14063,2.71875 5.4375,6.07813 6.9375,10.0625 1.5,3.9375 2.25,8.42187 2.25,13.4375 0,4.5 -0.67187,8.8125 -2.03125,12.9375 -1.35938,4.125 -3.60938,7.73437 -6.75,10.875 -3.09375,3.14063 -7.20312,5.65625 -12.3125,7.53125 -5.0625,1.875 -11.34375,2.8125 -18.84375,2.8125 l -4.96875,0 0,36.5625 -21.8125,0 0,-102.78125 z m 21.8125,17.84375 0,30.53125 4.28125,0 c 6.14063,0 10.75,-1.21875 13.84375,-3.65625 3.14062,-2.4375 4.71875,-6.42188 4.71875,-11.90625 0,-5.10937 -1.40625,-8.875 -4.21875,-11.3125 -2.76562,-2.4375 -7.14062,-3.65625 -13.09375,-3.65625 l -5.53125,0 z"
+       id="path3225"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/pigne/Documents/Web/pigne.org/src/favicon128.png"
+       inkscape:export-xdpi="60.02"
+       inkscape:export-ydpi="60.02" />
+  </g>
+</svg>

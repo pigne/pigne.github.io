@@ -2032,8 +2032,9 @@ var Reveal = (function(){
 
 			var slideHeight = dom.background.offsetHeight;
 			var verticalSlideCount = verticalSlides.length;
-			var verticalOffset = verticalSlideCount > 0 ? -( backgroundHeight - slideHeight ) / ( verticalSlideCount-1 ) * indexv : 0;
-
+			//var verticalOffset = verticalSlideCount > 0 ? -( backgroundHeight - slideHeight ) / ( verticalSlideCount-1 ) * indexv : 0;
+			var verticalOffset = verticalSlideCount > 0 ? -( backgroundHeight - slideHeight ) / ( verticalSlideCount-1 ) * indexv : (slideHeight - backgroundHeight);
+							
 			dom.background.style.backgroundPosition = horizontalOffset + 'px ' + verticalOffset + 'px';
 
 		}
