@@ -34,7 +34,8 @@
 		<link rel="stylesheet" href="../../styles/26d0b258.lecture.css"/>
 		<!-- For syntax highlighting -->
         <link rel="stylesheet" href="/bower_components/highlightjs/styles/dark.css">
-		
+        
+        
         <!-- If the query includes 'print-pdf', use the PDF print sheet -->
         <script>
                 document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -85,7 +86,11 @@
 			.reveal ul, .reveal dl{
 				margin-bottom: .5em ;
 			}
-			#back{
+            .reveal li, .reveal dd{
+                margin-bottom: .5ex ;
+            }
+			
+            #back{
 				position:absolute;
 				z-index:100;
 				right:5px;
@@ -124,13 +129,15 @@
 
 			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
 			
-			<li class="x2"><em>Java Web Archives</em></li>
+			<li class="x2"><em>Java EE Web Apps</em></li>
 		
-			<li class="x2"><em>Web apps with Tomcat</em></li>
+			<li class="x2"><em>Web Archives</em></li>
 		
-			<li class="x2"><em>Web apps with Maven</em></li>
+			<li class="x2"><em>Web Apps with Maven</em></li>
 		
-			<li class="x2"><em>Web apps with Eclipse</em></li>
+			<li class="x2"><em>Web Apps with Tomcat</em></li>
+		
+			<li class="x2"><em>Web Apps with Eclipse</em></li>
 		
 		</ul>
 		<p class="x2 bottom-right">
@@ -145,18 +152,46 @@
 
 
 
+
+
 <section>
-<h3>MVC</h3>
+<h2>Web App Classical Patterns</h2>
+<p>The <em>Model View Controller</em> is the default and acknowledged design pattern for Web Applications. </p>
+	<img src="images/generalMVC.svg" class="maximize-width"  alt="mvc sequence">
+</section>
+
+<section>
+<h3>MVC pattern</h3>
 <p>
 	<img src="images/mvc_sequence.png" class="maximize-width" class="noborder" alt="mvc sequence">
 </p>
 </section>
 
 <section>
-<h3>Web App Classical MVC Pattern</h3>
-<p>Classical entities in a Web App (client/server) request with server-side MVC.</p>
-	<img src="images/generalMVC.svg" class="maximize-width"  alt="mvc sequence">
+	<h3>Java EE (Java Enterprise Edition)</h3>
+	<ul>
+		<li>A set of specifications for tools that extend the standard Java platform (Java SE).</li>
+		<li>Java EE is not a <em>Platform</em>, it is a <em>platform specification</em> : a set of standards like 
+		Servlets, JSP, EJB, Java Persistence API, JSON Processing, Web Socket API, ... </li>
+		<li>
+		Many compatible implementations of the standard: 
+			<ul>
+				<li>Oracle GlassFish</li>
+				<li>IBM WebSphere</li>
+				<li>Apache TomEE</li>
+				<li>Hitachi uCosminexus</li>
+				<li>Red Hat WildFly (Formally JBoss)</li>
+			</ul>
+		</li>
+		<li>2 main features : 
+			<ul>
+				<li>A web server : serves low-level connexions, requests, cookies, security, ...</li>
+				<li>An Application Server : serves high-level interaction between users and applications.</li>
+			</ul>
+		</li>
+	</ul>
 </section>
+
 
 <section>
 <h3>Java EE Web App MVC Pattern</h3>
@@ -168,128 +203,557 @@
 
 
 <section>
-<h3>MVC</h3>
+<h2 id="java-ee-servlets">Java EE Servlets</h2>
+<ul>
+<li>Java classes meant to extend the capabilities of an <em>application server</em>. </li>
+<li>Could actually serve any king of network connection.</li>
+<li>Mostly used with HTTP.</li>
+<li>All HTTP Servlets extend the <code>javax.servlet.http.HttpServlet</code> abstract class.</li>
+<li>Main role:<ul>
+<li>Manage requests and response objects (<code>HttpServletRequest</code> and <code>HttpServletResponse</code>)</li>
+<li>Serve HTTP verbs (<code>GET, POST, PUT, DELETE, ...</code>)</li>
+<li>Dispatch requests and call appropriate actions (dealing with Views and Models)</li>
+</ul>
+</li>
+</ul>
 
 </section>
-<section>
-<h3>MVC</h3>
-
-	<img src="images/generalMVC.svg"  alt="mvc sequence">
-</section>
-<section>
-<h3>MVC</h3>
-
-	<img src="images/generalMVC.svg"  alt="mvc sequence">
-</section>
-<section>
-<h3>MVC</h3>
-
-	<img src="images/generalMVC.svg"  alt="mvc sequence">
-</section>
-
-<section data-markdown >
-    <script type="text/template">
-##Animation
-
-jQuery a quelques effets pré-installés
-
-```
-$('h1').hide('slow');
-$('h1').slideDown('fast');
-$('h1').fadeOut(2000);
-```
-<!-- .element: class="javascript"  -->
-
-On peut les enchainer
-
-```
-$('h1').fadeOut(2000).slideDown();
-```
-<!-- .element: class="javascript"  -->
-
-http://api.jquery.com/category/effects/
-
-<!-- .element: class="text_center"  -->
-
-
-
-    </script>
-</section>
-
 
 
 <section>
-	<table border="1" class="bodyTable x-3">
-<tbody><tr class="a x-3">
-<td align="left"><tt>validate</tt></td>
-<td align="left">validate the project is correct and all necessary information is available.</td></tr>
-<tr class="b x-3">
-<td align="left" class="x-3"><tt>initialize</tt></td>
-<td align="left">initialize build state, e.g. set properties or create directories.</td></tr>
-<tr class="a">
-<td align="left"><tt>generate-sources</tt></td>
-<td align="left">generate any source code for inclusion in compilation.</td></tr>
-<tr class="b">
-<td align="left"><tt>process-sources</tt></td>
-<td align="left">process the source code, for example to filter any values.</td></tr>
-<tr class="a">
-<td align="left"><tt>generate-resources</tt></td>
-<td align="left">generate resources for inclusion in the package.</td></tr>
-<tr class="b">
-<td align="left"><tt>process-resources</tt></td>
-<td align="left">copy and process the resources into the destination directory, ready for packaging.</td></tr>
-<tr class="a">
-<td align="left"><tt>compile</tt></td>
-<td align="left">compile the source code of the project.</td></tr>
-<tr class="b">
-<td align="left"><tt>process-classes</tt></td>
-<td align="left">post-process the generated files from compilation, for example to do bytecode enhancement on Java classes.</td></tr>
-<tr class="a">
-<td align="left"><tt>generate-test-sources</tt></td>
-<td align="left">generate any test source code for inclusion in compilation.</td></tr>
-<tr class="b">
-<td align="left"><tt>process-test-sources</tt></td>
-<td align="left">process the test source code, for example to filter any values.</td></tr>
-<tr class="a">
-<td align="left"><tt>generate-test-resources</tt></td>
-<td align="left">create resources for testing.</td></tr>
-<tr class="b">
-<td align="left"><tt>process-test-resources</tt></td>
-<td align="left">copy and process the resources into the test destination directory.</td></tr>
-<tr class="a">
-<td align="left"><tt>test-compile</tt></td>
-<td align="left">compile the test source code into the test destination directory</td></tr>
-<tr class="b">
-<td align="left"><tt>process-test-classes</tt></td>
-<td align="left">post-process the generated files from test compilation, for example to do bytecode enhancement on Java classes. For Maven 2.0.5 and above.</td></tr>
-<tr class="a">
-<td align="left"><tt>test</tt></td>
-<td align="left">run tests using a suitable unit testing framework. These tests should not require the code be packaged or deployed.</td></tr>
-<tr class="b">
-<td align="left"><tt>prepare-package</tt></td>
-<td align="left">perform any operations necessary to prepare a package before the actual packaging. This often results in an unpacked, processed version of the package. (Maven 2.1 and above)</td></tr>
-<tr class="a">
-<td align="left"><tt>package</tt></td>
-<td align="left">take the compiled code and package it in its distributable format, such as a JAR.</td></tr>
-<tr class="b">
-<td align="left"><tt>pre-integration-test</tt></td>
-<td align="left">perform actions required before integration tests are executed. This may involve things such as setting up the required environment.</td></tr>
-<tr class="a">
-<td align="left"><tt>integration-test</tt></td>
-<td align="left">process and deploy the package if necessary into an environment where integration tests can be run.</td></tr>
-<tr class="b">
-<td align="left"><tt>post-integration-test</tt></td>
-<td align="left">perform actions required after integration tests have been executed. This may including cleaning up the environment.</td></tr>
-<tr class="a">
-<td align="left"><tt>verify</tt></td>
-<td align="left">run any checks to verify the package is valid and meets quality criteria.</td></tr>
-<tr class="b">
-<td align="left"><tt>install</tt></td>
-<td align="left">install the package into the local repository, for use as a dependency in other projects locally.</td></tr>
-<tr class="a">
-<td align="left"><tt>deploy</tt></td>
-<td align="left">done in an integration or release environment, copies the final package to the remote repository for sharing with other developers and projects.</td></tr></tbody></table>
+<h2 id="java-ee-servlets-methods">Java EE Servlets Methods</h2>
+<ul>
+<li><code>doGet</code>, if the servlet supports HTTP GET requests</li>
+<li><code>doPost</code>, for HTTP POST requests</li>
+<li><code>doPut</code>, for HTTP PUT requests</li>
+<li><code>doDelete</code>, for HTTP DELETE requests</li>
+<li><code>init</code> and <code>destroy</code>, to manage resources that are held for the life of the servlet</li>
+<li><code>getServletInfo</code>, which the servlet uses to provide information about itself</li>
+<li><code>service</code> : receives HTTP requests and dispatches them to the <code>doXXX</code> methods. Should not be overridden. </li>
+</ul>
+
 </section>
+
+
+<section>
+<h2 id="exemple-servlet">Exemple Servlet</h2>
+<pre><code>import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestServlet extends HttpServlet {
+
+    @Override
+    public void doGet( HttpServletRequest request, HttpServletResponse response )   
+        throws ServletException, IOException {
+        // Do something with &#39;request&#39; and &#39;response&#39;
+    }
+}</code></pre>
+
+
+</section>
+
+
+
+
+<section>
+<h2 id="javaserver-pages-jsp-">JavaServer Pages (JSP)</h2>
+<ul>
+<li>Fast creation of dynamic web pages</li>
+<li>It&#39;s a templating language based on block/tags that can create any output language (HTML, CSS, JS,...)</li>
+<li>Main characteristic : new tags with new functionality  can be defined with <code>JavaServer Pages Standard Tag   Library (JSTL)</code></li>
+<li>From a JSP a Java Servlet is dynamically created. Then the Servlet is executed to produce the output file. </li>
+</ul>
+<pre><code>&lt;%@ page pageEncoding=&quot;UTF-8&quot; %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;title&gt;Test&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+      &lt;p&gt;Je suis une page générée dynamiquement avec JSP, et je sais compter jusqu&#39;à &lt;%=2+3%&gt; !&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+</section>
+
+<section>
+<h2>Generated Servlet Class from the JSP</h2>
+<pre><code class="x-3">/*
+ * Generated by the Jasper component of Apache Tomcat
+ * Version: Apache Tomcat/7.0.47
+ * Generated at: 2013-12-09 21:02:40 UTC
+ * Note: The last modified time of this file was set to
+ *       the last modified time of the source file after
+ *       generation to assist with modification tracking.
+ */
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+
+public final class test_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final javax.servlet.jsp.JspFactory _jspxFactory =
+          javax.servlet.jsp.JspFactory.getDefaultFactory();
+
+  private static java.util.Map<java.lang.String,java.lang.Long> _jspx_dependants;
+
+  private javax.el.ExpressionFactory _el_expressionfactory;
+  private org.apache.tomcat.InstanceManager _jsp_instancemanager;
+
+  public java.util.Map<java.lang.String,java.lang.Long> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
+    _jsp_instancemanager = org.apache.jasper.runtime.InstanceManagerFactory.getInstanceManager(getServletConfig());
+  }
+
+  public void _jspDestroy() {
+  }
+
+  public void _jspService(final javax.servlet.http.HttpServletRequest request, final javax.servlet.http.HttpServletResponse response)
+        throws java.io.IOException, javax.servlet.ServletException {
+
+    final javax.servlet.jsp.PageContext pageContext;
+    javax.servlet.http.HttpSession session = null;
+    final javax.servlet.ServletContext application;
+    final javax.servlet.ServletConfig config;
+    javax.servlet.jsp.JspWriter out = null;
+    final java.lang.Object page = this;
+    javax.servlet.jsp.JspWriter _jspx_out = null;
+    javax.servlet.jsp.PageContext _jspx_page_context = null;
+
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("  <head>\n");
+      out.write("  <meta charset=\"utf-8\" />\n");
+      out.write("  <title>Test</title>\n");
+      out.write("  </head>\n");
+      out.write("\n");
+      out.write("  <body>\n");
+      out.write("      <p>Je suis une page générée dynamiquement avec JSP, et je sais compter jusqu'à ");
+      out.print(2+3);
+      out.write(" !</p>\n");
+      out.write("  </body>\n");
+      out.write("</html>");
+    } catch (java.lang.Throwable t) {
+      if (!(t instanceof javax.servlet.jsp.SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          try { out.clearBuffer(); } catch (java.io.IOException e) {}
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}
+</code></pre>
+</section>
+
+
+<section>
+<h2 id="generated-html-page-from-the-servlet">Generated HTML Page from the Servlet</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;title&gt;Test&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+      &lt;p&gt;Je suis une page générée dynamiquement avec JSP, et je sais compter jusqu&#39;à 5 !&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+</section>
+
+
+
+<section>
+<h2 id="web-archives-war-files-">Web Archives (WAR files)</h2>
+<p>Standard format for deploying an application to an application server. </p>
+<pre><code>MyApp/
+├── WEB-INF/
+│   ├── *.jsp
+│   ├── classes/
+│   │   └── *.class
+│   ├── lib/
+│   │   └── *.jar
+│   └── web.xml
+├── *.html
+├── *.css
+├── *.png
+└── *.js</code></pre>
+<ul>
+<li>Resources outside The <code>WEB-INF/</code> folder are public resources (html, css, js). Inside  <code>WEB-INF</code>, files are not publicly accessible</li>
+<li><code>web.xml</code> is the entry point of the application. Contains routing information.</li>
+<li>The <code>classes/</code> folder contains compiled Java objects of the application</li>
+<li>The <code>lib/</code> folder contains external libraries needed by the application.</li>
+</ul>
+
+</section>
+
+
+
+<section>
+	<h1>Web  Applications With Maven </h1>
+</section>
+
+<section>
+<h3>Install Maven and bootstrap a project</h3>
+<p>Install on Ubuntu.</p>
+<pre><code class="bash">sudo apt-get install maven2
+</code></pre>
+<p>Create a Web App with the ```webapp``` artifact.</p>
+<pre><code class="bash">mvn archetype:generate  -DarchetypeArtifactId=maven-archetype-webapp
+</code></pre>
+<p>3 parameters are asked : </p>
+<pre><code class="xml">&lt;groupId&gt;org.pigne&lt;/groupId&gt;
+&lt;artifactId&gt;CountDownWebApp&lt;/artifactId&gt;
+&lt;version&gt;0.0.1&lt;/version&gt;
+</code></pre>    
+
+<p>Add a missing folder (for proper use with Eclipse later on)</p>
+<pre><code class="bash">mkdir CountDownWebApp/src/main/java
+cd CountDownWebApp</code></pre>
+<p>We get a different structure that a normal WAR. </p>
+<pre><code class="bash">CountDownWebApp
+├── pom.xml
+└── src
+    └── main
+        ├── resources
+        └── webapp
+            ├── WEB-INF
+            │   └── web.xml
+            └── index.jsp
+</code></pre>
+</section>
+
+
+<section>
+<h3>Generated <code>pom.xml</code> file</h3>
+<pre><code class="xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;org.pigne&lt;/groupId&gt;
+  &lt;artifactId&gt;CountDownWebApp&lt;/artifactId&gt;
+  &lt;packaging&gt;war&lt;/packaging&gt;
+  &lt;version&gt;0.0.1&lt;/version&gt;
+  &lt;name&gt;CountDownWebApp Maven Webapp&lt;/name&gt;
+  &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;3.8.1&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+  &lt;build&gt;
+    &lt;finalName&gt;CountDownWebApp&lt;/finalName&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
+</code></pre>
+</section>
+
+<section>
+<h3>Add some dependencies to be able to use Java EE libs</h3>
+
+<ul>
+	<li>Dependency for Servlets
+	<pre><code class="xml">&lt;dependency&gt;
+	&lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+	&lt;artifactId&gt;servlet-api&lt;/artifactId&gt;
+	&lt;version&gt;2.5&lt;/version&gt;
+	&lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre></li>
+    <li>Dependency for JSP
+    <pre><code class="xml">&lt;dependency&gt;
+	&lt;groupId&gt;javax.servlet.jsp&lt;/groupId&gt;
+	&lt;artifactId&gt;jsp-api&lt;/artifactId&gt;
+	&lt;version&gt;2.1&lt;/version&gt;
+	&lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre>
+    </li>
+</ul>
+<p>
+Note the <code>&lt;scope&gt;provided&lt;/scope&gt;</code> property the tells maven <b>not</b> to package those dependencies with the WAR file. Servlets and JSP are already part of the destination Application Server.  
+</p>
+</section>
+
+<section>
+	<h1>Tomcat</h1>
+	<p>An Lightweight Application Server and Web Server.</p>
+	<p>Not a complete Java EE platform.</p>
+</section>
+
+
+<section>
+<h3>Install and configure Tomcat </h3>
+<p>Installation for Ubuntu</p>
+<pre><code class="bash">sudo apt-get install tomcat7</code></pre>
+<p>Configure authorizations. In file <code>/somewhere/on/the/machine/tomcat-users.xml</code>: 	</p>
+<pre><code class="xml">&lt;tomcat-users&gt;
+  &lt;role rolename=&quot;manager-gui&quot;/&gt;
+  &lt;role rolename=&quot;manager-script&quot;/&gt;
+  &lt;user password=&quot;123soleil&quot; roles=&quot;manager-gui,manager-script&quot; username=&quot;tomcat&quot;/&gt;
+&lt;/tomcat-users&gt;</code></pre>
+
+</section>
+
+
+<section>
+	<h3>Maven and Tomcat</h3>
+	<p>Add and configure a <code>plugin</code> to the <code>build</code> configuration of the project in the <code>pom.xml</code> file.</p>
+<pre><code class="xml">&lt;build&gt;
+&lt;finalName&gt;CountDownWebApp&lt;/finalName&gt;
+&lt;pluginManagement&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
+      &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;
+      &lt;configuration&gt;
+        &lt;path&gt;/${project.build.finalName}&lt;/path&gt;
+        &lt;update&gt;true&lt;/update&gt;
+        &lt;url&gt;http://localhost:8080/manager/text&lt;/url&gt;
+        &lt;username&gt;tomcat&lt;/username&gt;
+        &lt;password&gt;123soleil&lt;/password&gt;
+      &lt;/configuration&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/pluginManagement&gt;
+&lt;/build&gt;</code></pre>
+Note that the login and  password must reflect the ones int the Tomcat configuration.
+</section>
+
+<section>
+	<h3>Compile and deploy to Tomcat with Maven</h3>
+	<pre><code class="bash">mvn tomcat7:redeploy</code></pre>
+
+<pre><code class="bash">[INFO] tomcatManager status code:200, ReasonPhrase:OK
+[INFO] OK - Undeployed application at context path /CountDownWebApp
+[INFO] OK - Deployed application at context path /CountDownWebApp
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.884s
+[INFO] Finished at: Mon Dec 09 23:59:11 CET 2013
+[INFO] Final Memory: 13M/33M
+[INFO] ------------------------------------------------------------------------
+</code></pre>
+
+<p>Let's enjoy our first Web App : <a href="http://localhost:8080/CountDownWebApp/">http://localhost:8080/CountDownWebApp/</a></p>
+</section>
+
+
+<section>
+	<h3>Create a Servlet</h3>
+	<p> In the <code>src/main/java/</code> folder, under the package names  you  have : <code>src/main/java/org/pigne/CountDown.java</code></p>
+<pre><code class="java">package org.pigne;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class CountDown extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		resp.setContentType(&quot;text/html&quot;);
+		resp.setCharacterEncoding(&quot;UTF-8&quot;);
+		PrintWriter out = resp.getWriter();
+		out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);
+		out.println(&quot;&lt;html&gt;&quot;);
+		out.println(&quot;&lt;head&gt;&quot;);
+		out.println(&quot;&lt;meta charset=\&quot;utf-8\&quot; /&gt;&quot;);
+		out.println(&quot;&lt;title&gt;CountDown&lt;/title&gt;&quot;);
+		out.println(&quot;&lt;/head&gt;&quot;);
+		out.println(&quot;&lt;body&gt;&quot;);
+		out.println(&quot;&lt;p&gt;&quot;+diff()+&quot;&lt;/p&gt;&quot;);
+		out.println(&quot;&lt;/body&gt;&quot;);
+		out.println(&quot;&lt;/html&gt;&quot;);
+
+	}
+	private String diff(){
+		String theDate = &quot;10/12/2013 12:30:00&quot;;
+		String pattern = &quot;dd/MM/yyyy HH:mm:ss&quot;;
+		Date d2 = null;
+		try {
+			d2 = new SimpleDateFormat(pattern).parse(theDate);
+		} catch (ParseException e) {
+			return &quot;server error...&quot;;
+		}
+		Date d1 = new Date();
+		
+		long diff = d2.getTime() - d1.getTime();
+		 
+		long diffSeconds = diff / 1000 % 60;
+		long diffMinutes = diff / (60 * 1000) % 60;
+		long diffHours = diff / (60 * 60 * 1000) % 24;
+		long diffDays = diff / (24 * 60 * 60 * 1000);
+		return diffDays+&quot; jour(s) &quot;+diffHours+&quot; heure(s) &quot;+diffMinutes+&quot; minute(s) &quot;+diffSeconds+&quot; seconde(s)&quot;;
+		
+	}
+}</code></pre>
+
+</section>
+
+<section>
+	<h3>Declare the Servlate and associate a route to it </h3>
+	<p>The main file in the project is <code>web.xml</code> in <code>src/main/webapp/WEB-INF/</code>:</p>
+	<pre><code class="xml">&lt;web-app&gt;
+	&lt;servlet&gt;
+		&lt;servlet-name&gt;CountDown&lt;/servlet-name&gt;
+		&lt;servlet-class&gt;org.pigne.CountDown&lt;/servlet-class&gt;
+	&lt;/servlet&gt;
+	&lt;servlet-mapping&gt;
+		&lt;servlet-name&gt;CountDown&lt;/servlet-name&gt;
+		&lt;url-pattern&gt;/countdown&lt;/url-pattern&gt;
+	&lt;/servlet-mapping&gt;
+&lt;/web-app&gt;</code></pre>
+<p>Compile / Deploy / <a href="http://localhost:8080/CountDownWebApp/countdown">Test</a></p>
+</section>
+
+
+
+<section>
+<h3>Create A JSP</h3>
+<p>We don't whant to write HTML code in the java Servlet to code : separation of concerns</p>
+<p>First we create a simple JSP in the public folder : <code>src/main/webapp/CountDownView.jsp</code></p>
+
+<pre><code class="html">&lt;%@ page pageEncoding=&quot;UTF-8&quot; %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+	&lt;title&gt;CountDown&lt;/title&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;p&gt;Je suis une page g&eacute;n&eacute;r&eacute;e dynamiquement avec JSP, mais je ne peux pas vous donner l&#039;heure...&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>Test this JSP's automaticaly generated Servlet : <a href="http://localhost:8080/CountDownWebApp/CountDownView.jsp">http://localhost:8080/CountDownWebApp/CountDownView.jsp</a></p>
+<p>Check the Generated java code in the <code>work</code> folder of the  Tomcat App server.</p>
+</section>
+
+
+<section>
+<h3>Have the Servlet manage the JSP</h3>
+
+<p>Hide the JSP behind the <code>WEB-INF</code> folder.</p>
+<pre><code class="bash">mv src/main/webapp/CountDownView.jsp src/main/webapp/WEB-INF</code></pre>
+
+<p>Modify the servlet</p>
+<pre><code class="java">@Override
+public void doGet( HttpServletRequest request, HttpServletResponse response )   
+	throws ServletException, IOException {
+	this.getServletContext().getRequestDispatcher( "/WEB-INF/CountDown.jsp" ).forward( request, response );
+}</code></pre>
+
+<p>Compile / Deploy / <a href="http://localhost:8080/CountDownWebApp/countdown">Test</a></p>
+</section>
+
+
+
+<section>
+	<h3>Transfer data to the JSP</h3>
+	<p>Modify the Servlet</p>
+
+<pre><code class="java">@Override
+public void doGet( HttpServletRequest request, HttpServletResponse response )   
+	throws ServletException, IOException {
+	String diff = diff();
+	request.setAttribute( "diff", diff );
+	this.getServletContext().getRequestDispatcher( "/WEB-INF/CountDown.jsp" ).forward( request, response );
+}</code></pre>
+</section>
+<section>
+	<h3>Transfer data to the JSP</h3>
+
+<p>Modify the JSP</p>
+
+<pre><code class="html">&lt;%@ page pageEncoding=&quot;UTF-8&quot; %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+	&lt;title&gt;CountDown&lt;/title&gt;
+	&lt;style&gt;
+	blockquote {
+		font-style: italic;
+		padding: 20px;
+	}
+
+	blockquote footer{
+		color:#555;
+		font-weight: bold
+	}
+	&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+	&lt;blockquote&gt;
+	&amp;laquo; Il reste 
+	&lt;% 
+            String diff = (String) request.getAttribute(&quot;diff&quot;);
+            out.println( diff );
+	%&gt;
+	avant la fin de ce cours ! &amp;raquo;
+	&lt;footer&gt;
+	&lt;% 
+            String parametre = request.getParameter( &quot;author&quot; );
+            out.println( parametre );
+	%&gt;
+	&lt;/footer&gt;
+	&lt;/blockquote&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>Compile / Deploy / <a href="http://localhost:8080/CountDownWebApp/countdown">Test</a></p>
+</section>
+
+
+<section>
+	<h3>Maven & Eclipse</h3>
+	<p>create an eclipse project from the Maven configuration:</p>
+	<pre><code class="bash">mvn eclipse:eclipse -Dwtpversion=2.0</code></pre>
+
+</section>
+
+
 
     	</div>
 	</div>
