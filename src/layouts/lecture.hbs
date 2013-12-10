@@ -36,7 +36,8 @@
         <!-- endbuild -->		
 		<!-- For syntax highlighting -->
         <link rel="stylesheet" href="/bower_components/highlightjs/styles/dark.css">
-		
+        {{!-- <link rel="stylesheet" href="/bower_components/highlightjs/styles/tomorrow.css"> --}}
+        
         <!-- If the query includes 'print-pdf', use the PDF print sheet -->
         <script>
                 document.write( '<link rel="stylesheet" href="{{assets}}/bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -87,7 +88,11 @@
 			.reveal ul, .reveal dl{
 				margin-bottom: .5em ;
 			}
-			#back{
+            .reveal li, .reveal dd{
+                margin-bottom: .5ex ;
+            }
+			
+            #back{
 				position:absolute;
 				z-index:100;
 				right:5px;
