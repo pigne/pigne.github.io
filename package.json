@@ -1,8 +1,7 @@
 {
   "name": "pigne.org",
   "version": "0.0.1",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
@@ -27,7 +26,8 @@
     "load-grunt-tasks": "~0.1.0",
     "time-grunt": "~0.1.1",
     "assemble": "~0.4.17",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "grunt-highlight": "0.0.1"
   },
   "engines": {
     "node": ">=0.8.0"

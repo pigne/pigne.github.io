@@ -4,19 +4,29 @@
 var _ = require('lodash');
 var fs = require('fs');
 
-var publications = _.map(JSON.parse(fs.readFileSync('src/data/publications.json', 'utf-8')), function(pub){
-                pub.year = pub.issued['date-parts'][0][0];
-                switch(pub.type){
-                    case 'article-journal': pub.niceType = "Journal Article";break;
-                    case 'chapter': pub.niceType = "Book Chapter";break;
-                    case 'paper-conference': pub.niceType = "Conference Paper";break;
-                    case 'thesis': pub.niceType = "Ph.D. Thesis";break;
-                };
-                pub.niceAuthors = _.map(pub.author, function(author){
-                    return _.values(author).reverse().join(' ');
-                }).join(', ');
-                return pub;
-        }).sort(function(a, b){return a.year<b.year?1:a.year===b.year?0:-1; })
+var publications = _.map(JSON.parse(fs.readFileSync('src/data/publications.json', 'utf-8')), function(pub) {
+    pub.year = pub.issued['date-parts'][0][0];
+    switch (pub.type) {
+        case 'article-journal':
+            pub.niceType = "Journal Article";
+            break;
+        case 'chapter':
+            pub.niceType = "Book Chapter";
+            break;
+        case 'paper-conference':
+            pub.niceType = "Conference Paper";
+            break;
+        case 'thesis':
+            pub.niceType = "Ph.D. Thesis";
+            break;
+    };
+    pub.niceAuthors = _.map(pub.author, function(author) {
+        return _.values(author).reverse().join(' ');
+    }).join(', ');
+    return pub;
+}).sort(function(a, b) {
+    return a.year < b.year ? 1 : a.year === b.year ? 0 : -1;
+})
 var publications_years = _.uniq(_.pluck(publications, 'year'), true)
 var publications_types = _.uniq(_.pluck(publications, 'types'))
 
@@ -36,7 +46,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('assemble');
 
-   
+    grunt.loadNpmTasks('grunt-highlight');
 
 
     grunt.initConfig({
@@ -70,17 +80,17 @@ module.exports = function(grunt) {
                 files: ['<%= yeoman.src %>/{layouts,pages,partials}/**/*.hbs'],
                 tasks: ['assemble:server']
             },
-            images:{
+            images: {
                 files: ['<%= yeoman.src %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'],
                 tasks: ['copy:images']
             },
-            data:{
+            data: {
                 files: ['<%= yeoman.src %>/data/{,*/}*.json'],
-                tasks: ['copy:data','assemble:server']
+                tasks: ['copy:data', 'assemble:server']
             },
-            app_stuff:{
+            app_stuff: {
                 files: ['<%= yeoman.src %>/pages/**', '!<%= yeoman.src %>/pages/**/*.hbs'],
-                tasks: ['copy:app_stuff']   
+                tasks: ['copy:app_stuff']
             }
         },
         connect: {
@@ -365,14 +375,14 @@ module.exports = function(grunt) {
                 dest: '<%= yeoman.dist %>/data',
                 src: '{,*/}*.json'
             },
-            app_stuff:{
+            app_stuff: {
                 expand: true,
                 dot: false,
                 cwd: '<%= yeoman.src %>/pages',
                 dest: '<%= yeoman.dist %>/',
                 src: [
-                    '**','!**/*.hbs'
-                ]  
+                    '**', '!**/*.hbs'
+                ]
             }
         },
         concurrent: {
@@ -394,10 +404,10 @@ module.exports = function(grunt) {
             ]
         },
         pubs: publications,
-        pub_years:publications_years,
+        pub_years: publications_years,
         assemble: {
-            options:{
-               helpers: ['./src/helpers/sorted-each-helper-module.js'],
+            options: {
+                helpers: ['./src/helpers/sorted-each-helper-module.js'],
             },
             build: {
                 options: {
@@ -447,6 +457,18 @@ module.exports = function(grunt) {
             }
 
         },
+        highlight: { // nope 
+            server: {
+                options: {
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.dist %>',
+                    dest: '<%= yeoman.dist %>',
+                    src: ['**/*.html', '!bower_components/**']
+                }]
+            }
+        }
     });
 
 
