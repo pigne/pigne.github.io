@@ -33,8 +33,8 @@
         <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
 		<link rel="stylesheet" href="../../styles/26d0b258.lecture.css"/>
 		<!-- For syntax highlighting -->
-        <link rel="stylesheet" href="/bower_components/highlightjs/styles/dark.css">
-        
+        <link rel="stylesheet" media="screen" href="/bower_components/highlightjs/styles/dark.css">
+        <link rel="stylesheet" media="projection, print" href="/bower_components/highlightjs/styles/tomorrow.css">
         
         <!-- If the query includes 'print-pdf', use the PDF print sheet -->
         <script>
@@ -1618,9 +1618,10 @@ var raw_data = fs.readFileSync('eure.json', 'utf8');</code></pre>
     	</div>
 	</div>
 
-	<script src="../../scripts/ba414d1e.lecture-all.js"></script>
+	<script src="../../scripts/b04b0310.lecture-all.js"></script>
 
 	<script>
+    updateHighlightClassNames();
 	(function() {
             var list = document.querySelectorAll('*[data-src]');
             for (var i = 0; i < list.length; i++) {
@@ -1644,10 +1645,10 @@ var raw_data = fs.readFileSync('eure.json', 'utf8');</code></pre>
                 height: 1050,
 
                 // Factor of the display size that should remain empty around the content
-                margin: 0.05,
+                margin: 0.01,
 
                 minScale: 0.1,
-                maxScale: 2.0,
+                maxScale: 3.0,
 
                 // Optional libraries used to extend on reveal.js
                 dependencies: [
