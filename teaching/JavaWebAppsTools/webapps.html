@@ -31,86 +31,18 @@
 
 		<link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
         <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
-		<link rel="stylesheet" href="../../styles/26d0b258.lecture.css"/>
-		<!-- For syntax highlighting -->
-        <link rel="stylesheet" media="screen" href="/bower_components/highlightjs/styles/dark.css">
-        <link rel="stylesheet" media="projection, print" href="/bower_components/highlightjs/styles/tomorrow.css">
+        
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" media="screen" href="../../bower_components/highlightjs/styles/dark.css">
+        <link rel="stylesheet" media="projection, print" href="../../bower_components/highlightjs/styles/tomorrow.css">
+
+		<link rel="stylesheet" href="../../styles/946cb6a4.lecture.css"/>
         
         <!-- If the query includes 'print-pdf', use the PDF print sheet -->
         <script>
                 document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
         </script>
-        <style>
         
-        	body {
-        		background:none;
-        	}
-			.reveal svg{
-				max-width: 95%;
-				max-height: 95%;
-				margin-left: auto;
-				margin-right: auto;
-				display: block;
-			}
-        	.reveal .slides {
-				text-align: left;
-			}
-			.reveal dt {
-				font-weight: bold;
-			}
-			.reveal dd {
-				margin-left:1em;
-			}
-			.reveal input {
-				font-size: inherit;
-			}
-			.reveal .slides>section {
-				/*border:1px solid black;*/
-			}
-			.reveal pre {
-				display: block;
-				position: relative;
-				width: 90%;
-				/*margin: 0;*/
-				text-align: left;
-				font-size: .75em;
-				font-family: monospace;
-				line-height: 1.2em;
-				word-wrap: break-word;
-				box-shadow: 0 0 6px rgba(0,0,0,.3);
-
-			}
-			.reveal pre code {
-				max-height: 600px;
-			}
-			.reveal ul, .reveal dl{
-				margin-bottom: .5em ;
-			}
-            .reveal li, .reveal dd{
-                margin-bottom: .5ex ;
-            }
-			
-            #back{
-				position:absolute;
-				z-index:100;
-				right:5px;
-				top:5px;
-			}
-			#back>a {
-				/*font-size: larger;*/
-				text-decoration: none;
-				color:gray;
-
-			}
-			#back>a:hover {
-				text-decoration: none;
-			}
-			/*#back>a:hover:after{
-				content: "Back to Outline"
-			}*/
-
-        </style>
-
 
     </head>
     <body>
@@ -119,8 +51,8 @@
         <![endif]-->
 
 
+	<div ><a id="back"href="."></a></div>
 	
-	<div id="back"><a href="."><img src="../../favicon.ico" alt="back"></a></div>
     <div class="reveal">
     	<div class="slides">
 		<!-- ==== SLIDE ==== -->
@@ -157,7 +89,7 @@
 </section>
 
 <section>
-<h3>MVC pattern</h3>
+<h2>MVC pattern</h2>
 <p>Sequence Diagram of a request within the MVC pattern.</p>
 <p>
 	<img src="images/mvc_sequence.png" class="maximize-width" class="noborder" alt="mvc sequence">
@@ -165,7 +97,7 @@
 </section>
 
 <section>
-	<h3>Java EE (Java Enterprise Edition)</h3>
+	<h2>Java EE (Java Enterprise Edition)</h2>
 	<ul>
 		<li>A set of specifications for tools that extend the standard Java platform (Java SE).</li>
 		<li>Java EE is not a <em>Platform</em>, it is a <em>platform specification</em> : a set of standards like 
@@ -191,7 +123,7 @@
 
 
 <section>
-<h3>Java EE Web App MVC Pattern</h3>
+<h2>Java EE Web App MVC Pattern</h2>
 <p>Java EE entities in a typical Web App (client/server) request.</p>
 	<img src="images/javaWebAppMVC.svg" class="maximize-width"  alt="mvc sequence">
 </section>
@@ -420,7 +352,7 @@ public class TestServlet extends HttpServlet {
 </section>
 
 <section>
-<h3>Install Maven and bootstrap a project</h3>
+<h2>Install Maven and bootstrap a project</h2>
 <p>Install on Ubuntu.</p>
 <pre><code class="bash">sudo apt-get install maven
 </code></pre>
@@ -451,7 +383,7 @@ cd CountDownWebApp</code></pre>
 
 
 <section>
-<h3>Generated <code>pom.xml</code> file</h3>
+<h2>Generated <code>pom.xml</code> file</h2>
 <pre><code class="xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
   xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
@@ -477,7 +409,30 @@ cd CountDownWebApp</code></pre>
 </section>
 
 <section>
-<h3>Add some dependencies to be able to use Java EE libs</h3>
+<h2>Specify the Java version we want to compile the project</h2>
+<p>
+We add a the this <code>compiler</code> to the list of plugins, in the <code>build</code> section of the <code>pom.xml</code> file.
+</p>
+<pre><code class="xml">&lt;build&gt;
+  &lt;finalName&gt;CountDownWebApp&lt;/finalName&gt;
+  &lt;plugins&gt;
+      &lt;plugin&gt;
+          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+          &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+          &lt;version&gt;3.0&lt;/version&gt;
+          &lt;configuration&gt;
+              &lt;source&gt;${jdk.version}&lt;/source&gt;
+              &lt;target&gt;${jdk.version}&lt;/target&gt;
+          &lt;/configuration&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+
+</section>
+
+<section>
+<h2>Add some dependencies to be able to use Java EE libs</h2>
 
 <ul>
 	<li>Dependency for Servlets
@@ -509,7 +464,7 @@ Note the <code>&lt;scope&gt;provided&lt;/scope&gt;</code> property the tells mav
 
 
 <section>
-<h3>Install and configure Tomcat </h3>
+<h2>Install and configure Tomcat </h2>
 <p>Installation for Ubuntu</p>
 <pre><code class="bash">sudo apt-get install tomcat7 tomcat-admin</code></pre>
 <p>Configure authorizations. In file <code>/somewhere/on/the/machine/tomcat-users.xml</code>: 	</p>
@@ -525,7 +480,7 @@ Note the <code>&lt;scope&gt;provided&lt;/scope&gt;</code> property the tells mav
 
 
 <section>
-	<h3>Maven and Tomcat</h3>
+	<h2>Maven and Tomcat</h2>
 	<p>Add and configure a <code>plugin</code> to the <code>build</code> configuration of the project in the <code>pom.xml</code> file.</p>
 <pre><code class="xml">&lt;build&gt;
 &lt;finalName&gt;CountDownWebApp&lt;/finalName&gt;
@@ -549,7 +504,7 @@ Note that the login and  password must reflect the ones int the Tomcat configura
 </section>
 
 <section>
-	<h3>Compile and deploy to Tomcat with Maven</h3>
+	<h2>Compile and deploy to Tomcat with Maven</h2>
 	<pre><code class="bash">mvn tomcat7:redeploy</code></pre>
 
 <pre><code class="bash">[INFO] tomcatManager status code:200, ReasonPhrase:OK
@@ -569,7 +524,7 @@ Note that the login and  password must reflect the ones int the Tomcat configura
 
 
 <section>
-	<h3>Create a Servlet</h3>
+	<h2>Create a Servlet</h2>
 	<p> In the <code>src/main/java/</code> folder, under the package names  you  have : <code>src/main/java/org/pigne/CountDown.java</code></p>
 <pre><code class="java">package org.pigne;
 
@@ -629,7 +584,7 @@ public class CountDown extends HttpServlet {
 </section>
 
 <section>
-	<h3>Declare the Servlate and associate a route to it </h3>
+	<h2>Declare the Servlate and associate a route to it </h2>
 	<p>The main file in the project is <code>web.xml</code> in <code>src/main/webapp/WEB-INF/</code>:</p>
 	<pre><code class="xml">&lt;web-app&gt;
 	&lt;servlet&gt;
@@ -647,7 +602,7 @@ public class CountDown extends HttpServlet {
 
 
 <section>
-<h3>Create A JSP</h3>
+<h2>Create A JSP</h2>
 <p>We don't want to write HTML code in the java Servlet to code : separation of concerns</p>
 <p>First we create a simple JSP in the public folder : <code>src/main/webapp/CountDownView.jsp</code></p>
 
@@ -670,7 +625,7 @@ public class CountDown extends HttpServlet {
 
 
 <section>
-<h3>Have the Servlet manage the JSP</h3>
+<h2>Have the Servlet manage the JSP</h2>
 
 <p>Hide the JSP behind the <code>WEB-INF</code> folder.</p>
 <pre><code class="bash">mv src/main/webapp/CountDownView.jsp src/main/webapp/WEB-INF</code></pre>
@@ -688,7 +643,7 @@ public void doGet( HttpServletRequest request, HttpServletResponse response )
 
 
 <section>
-	<h3>Transfer data to the JSP</h3>
+	<h2>Transfer data to the JSP</h2>
 	<p>Modify the Servlet</p>
 
 <pre><code class="java">@Override
@@ -700,7 +655,7 @@ public void doGet( HttpServletRequest request, HttpServletResponse response )
 }</code></pre>
 </section>
 <section>
-	<h3>Transfer data to the JSP</h3>
+	<h2>Transfer data to the JSP</h2>
 
 <p>Modify the JSP</p>
 
@@ -744,13 +699,90 @@ public void doGet( HttpServletRequest request, HttpServletResponse response )
 <p>Compile / Deploy / Test : <a href="http://localhost:8080/CountDownWebApp/countdown">http://localhost:8080/CountDownWebApp/countdown</a></p>
 </section>
 
-
 <section>
-	<h3>Maven & Eclipse</h3>
-	<p>create an eclipse project from the Maven configuration:</p>
-	<pre><code class="bash">mvn eclipse:eclipse -Dwtpversion=2.0</code></pre>
+<h1 id="webapps-with-eclipse">WebApps with Eclipse</h1>
+<p>A dedicated version of Eclipse for Java EE.</p>
+<p>Integration of Maven and Application Servers (e.g. Tomcat).</p>
 
 </section>
+
+
+<section>
+<h2 id="install-eclipse-for-java-ee">Install Eclipse for Java EE</h2>
+<ul>
+<li>Download <strong>Eclipse IDE for Java EE Developers</strong> from the Eclipse download site : <a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a>.</li>
+<li>Eclipse is self-contained in the downloaded archive.</li>
+</ul>
+
+</section>
+
+<section>
+<h2 id="maven-eclipse">Maven &amp; Eclipse</h2>
+<ul>
+<li>Create an eclipse project from the Maven configuration:<pre><code class="language-bash">mvn eclipse:eclipse -Dwtpversion=<span class="number">2.0</span></code></pre>
+</li>
+<li>Import the project in Eclipse as an <em>existing project</em> : 
+<code>File &gt; Import &gt; Existing Projects into Workspace</code></li>
+</ul>
+<p class='text_center'>
+<img src="images/importEclipse.png" alt="Import Eclipse Project">
+</p>
+
+
+</section>
+
+<section>
+<h2 id="run-the-project-in-eclipse">Run the project in Eclipse</h2>
+<p>We create a <em>run configuration</em> to execute the maven target: <code>Run &gt; Run configurations</code></p>
+<p class='text_center'>
+<img src="images/mavenConfiguration.png" alt="Import Eclipse Project">
+</p>
+
+
+</section>
+
+
+
+
+<section>
+<h2 id="an-application-server-in-eclipse">An application server in Eclipse</h2>
+<ul>
+<li>First, switch off our Tomcat server:<pre><code class="language-bash"><span class="built_in">sudo</span> catalina stop
+<span class="comment"># or</span>
+<span class="built_in">sudo</span> service tomcat stop</code></pre>
+</li>
+<li>Then, configure a Tomcat server in Eclipse:
+<code>Window &gt; Show View &gt; Servers</code></li>
+</ul>
+<p class='text_center'>
+<img src="images/newServer.png" alt="Import Eclipse Project">
+</p>
+
+
+
+</section>
+
+
+<section>
+<h2 id="configure-tomcat">Configure Tomcat</h2>
+<p>Give the <code>libexec</code> folder name of your Tomcat&#39;s install directory. Probably <code>/var/lib/tomcat7/</code>.</p>
+<p class='text_center'>
+<img src="images/configureTomcat.png" alt="Import Eclipse Project">
+</p>
+
+</section>
+
+<section>
+<h2 id="run-your-project">Run your project</h2>
+<p>Now you can run you project. Any modification to the code (upon saving the file) will be compiled and published to Tomcat!</p>
+<p class='text_center'>
+<img src="images/runOnServer.png" alt="Import Eclipse Project">
+</p>
+
+
+
+</section>
+
 
 
 
