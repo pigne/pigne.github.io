@@ -8,16 +8,16 @@ var publications = _.map(JSON.parse(fs.readFileSync('src/data/publications.json'
     pub.year = pub.issued['date-parts'][0][0];
     switch (pub.type) {
         case 'article-journal':
-            pub.niceType = "Journal Article";
+            pub.niceType = 'Journal Article';
             break;
         case 'chapter':
-            pub.niceType = "Book Chapter";
+            pub.niceType = 'Book Chapter';
             break;
         case 'paper-conference':
-            pub.niceType = "Conference Paper";
+            pub.niceType = 'Conference Paper';
             break;
         case 'thesis':
-            pub.niceType = "Ph.D. Thesis";
+            pub.niceType = 'Ph.D. Thesis';
             break;
     };
     pub.niceAuthors = _.map(pub.author, function(author) {
@@ -27,8 +27,8 @@ var publications = _.map(JSON.parse(fs.readFileSync('src/data/publications.json'
 }).sort(function(a, b) {
     return a.year < b.year ? 1 : a.year === b.year ? 0 : -1;
 })
-var publications_years = _.uniq(_.pluck(publications, 'year'), true)
-var publications_types = _.uniq(_.pluck(publications, 'types'))
+var publicationsYears = _.uniq(_.pluck(publications, 'year'), true)
+var publicationsTypes = _.uniq(_.pluck(publications, 'types'))
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -301,6 +301,8 @@ module.exports = function(grunt) {
                     useShortDoctype: true,
                     removeEmptyAttributes: true,
                     removeOptionalTags: true*/
+                    removeComments: true,
+                    collapseWhitespace: true
                 },
                 files: [{
                     expand: true,
@@ -404,7 +406,7 @@ module.exports = function(grunt) {
             ]
         },
         pubs: publications,
-        pub_years: publications_years,
+        pub_years: publicationsYears,
         assemble: {
             options: {
                 helpers: ['./src/helpers/sorted-each-helper-module.js'],
@@ -459,8 +461,7 @@ module.exports = function(grunt) {
         },
         highlight: { // nope 
             server: {
-                options: {
-                },
+                options: {},
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.dist %>',

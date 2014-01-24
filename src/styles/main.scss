@@ -96,6 +96,14 @@ header {
     a:hover {
         text-decoration: none;
     }
+    #favicon{
+        height: 40px;
+        width: 40px;
+        background-image : url(../images/favicon64.png);
+        background-repeat: no-repeat;
+        background-size: 80% 80%;
+        background-position : 50% 50%           
+    }
 } 
 
 

@@ -18,7 +18,7 @@ layout: lecture.hbs
 </section>
 
 <section>
-<h3>MVC pattern</h3>
+<h2>MVC pattern</h2>
 <p>Sequence Diagram of a request within the MVC pattern.</p>
 <p>
 	<img src="images/mvc_sequence.png" class="maximize-width" class="noborder" alt="mvc sequence">
@@ -26,7 +26,7 @@ layout: lecture.hbs
 </section>
 
 <section>
-	<h3>Java EE (Java Enterprise Edition)</h3>
+	<h2>Java EE (Java Enterprise Edition)</h2>
 	<ul>
 		<li>A set of specifications for tools that extend the standard Java platform (Java SE).</li>
 		<li>Java EE is not a <em>Platform</em>, it is a <em>platform specification</em> : a set of standards like 
@@ -52,7 +52,7 @@ layout: lecture.hbs
 
 
 <section>
-<h3>Java EE Web App MVC Pattern</h3>
+<h2>Java EE Web App MVC Pattern</h2>
 <p>Java EE entities in a typical Web App (client/server) request.</p>
 	<img src="images/javaWebAppMVC.svg" class="maximize-width"  alt="mvc sequence">
 </section>
@@ -301,7 +301,7 @@ MyApp/
 </section>
 
 <section>
-<h3>Install Maven and bootstrap a project</h3>
+<h2>Install Maven and bootstrap a project</h2>
 <p>Install on Ubuntu.</p>
 <pre><code class="bash">sudo apt-get install maven
 </code></pre>
@@ -333,7 +333,7 @@ cd CountDownWebApp</code></pre>
 
 
 <section>
-<h3>Generated <code>pom.xml</code> file</h3>
+<h2>Generated <code>pom.xml</code> file</h2>
 <pre><code class="xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
   xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
@@ -359,7 +359,30 @@ cd CountDownWebApp</code></pre>
 </section>
 
 <section>
-<h3>Add some dependencies to be able to use Java EE libs</h3>
+<h2>Specify the Java version we want to compile the project</h2>
+<p>
+We add a the this <code>compiler</code> to the list of plugins, in the <code>build</code> section of the <code>pom.xml</code> file.
+</p>
+<pre><code class="xml">&lt;build&gt;
+  &lt;finalName&gt;CountDownWebApp&lt;/finalName&gt;
+  &lt;plugins&gt;
+      &lt;plugin&gt;
+          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+          &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+          &lt;version&gt;3.0&lt;/version&gt;
+          &lt;configuration&gt;
+              &lt;source&gt;${jdk.version}&lt;/source&gt;
+              &lt;target&gt;${jdk.version}&lt;/target&gt;
+          &lt;/configuration&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+
+</section>
+
+<section>
+<h2>Add some dependencies to be able to use Java EE libs</h2>
 
 <ul>
 	<li>Dependency for Servlets
@@ -391,7 +414,7 @@ Note the <code>&lt;scope&gt;provided&lt;/scope&gt;</code> property the tells mav
 
 
 <section>
-<h3>Install and configure Tomcat </h3>
+<h2>Install and configure Tomcat </h2>
 <p>Installation for Ubuntu</p>
 <pre><code class="bash">sudo apt-get install tomcat7 tomcat-admin</code></pre>
 <p>Configure authorizations. In file <code>/somewhere/on/the/machine/tomcat-users.xml</code>: 	</p>
@@ -407,7 +430,7 @@ Note the <code>&lt;scope&gt;provided&lt;/scope&gt;</code> property the tells mav
 
 
 <section>
-	<h3>Maven and Tomcat</h3>
+	<h2>Maven and Tomcat</h2>
 	<p>Add and configure a <code>plugin</code> to the <code>build</code> configuration of the project in the <code>pom.xml</code> file.</p>
 <pre><code class="xml">&lt;build&gt;
 &lt;finalName&gt;CountDownWebApp&lt;/finalName&gt;
@@ -431,7 +454,7 @@ Note that the login and  password must reflect the ones int the Tomcat configura
 </section>
 
 <section>
-	<h3>Compile and deploy to Tomcat with Maven</h3>
+	<h2>Compile and deploy to Tomcat with Maven</h2>
 	<pre><code class="bash">mvn tomcat7:redeploy</code></pre>
 
 <pre><code class="bash">[INFO] tomcatManager status code:200, ReasonPhrase:OK
@@ -451,7 +474,7 @@ Note that the login and  password must reflect the ones int the Tomcat configura
 
 
 <section>
-	<h3>Create a Servlet</h3>
+	<h2>Create a Servlet</h2>
 	<p> In the <code>src/main/java/</code> folder, under the package names  you  have : <code>src/main/java/org/pigne/CountDown.java</code></p>
 <pre><code class="java">package org.pigne;
 
@@ -511,7 +534,7 @@ public class CountDown extends HttpServlet {
 </section>
 
 <section>
-	<h3>Declare the Servlate and associate a route to it </h3>
+	<h2>Declare the Servlate and associate a route to it </h2>
 	<p>The main file in the project is <code>web.xml</code> in <code>src/main/webapp/WEB-INF/</code>:</p>
 	<pre><code class="xml">&lt;web-app&gt;
 	&lt;servlet&gt;
@@ -529,7 +552,7 @@ public class CountDown extends HttpServlet {
 
 
 <section>
-<h3>Create A JSP</h3>
+<h2>Create A JSP</h2>
 <p>We don't want to write HTML code in the java Servlet to code : separation of concerns</p>
 <p>First we create a simple JSP in the public folder : <code>src/main/webapp/CountDownView.jsp</code></p>
 
@@ -552,7 +575,7 @@ public class CountDown extends HttpServlet {
 
 
 <section>
-<h3>Have the Servlet manage the JSP</h3>
+<h2>Have the Servlet manage the JSP</h2>
 
 <p>Hide the JSP behind the <code>WEB-INF</code> folder.</p>
 <pre><code class="bash">mv src/main/webapp/CountDownView.jsp src/main/webapp/WEB-INF</code></pre>
@@ -570,7 +593,7 @@ public void doGet( HttpServletRequest request, HttpServletResponse response )
 
 
 <section>
-	<h3>Transfer data to the JSP</h3>
+	<h2>Transfer data to the JSP</h2>
 	<p>Modify the Servlet</p>
 
 <pre><code class="java">@Override
@@ -582,7 +605,7 @@ public void doGet( HttpServletRequest request, HttpServletResponse response )
 }</code></pre>
 </section>
 <section>
-	<h3>Transfer data to the JSP</h3>
+	<h2>Transfer data to the JSP</h2>
 
 <p>Modify the JSP</p>
 
@@ -626,12 +649,109 @@ public void doGet( HttpServletRequest request, HttpServletResponse response )
 <p>Compile / Deploy / Test : <a href="http://localhost:8080/CountDownWebApp/countdown">http://localhost:8080/CountDownWebApp/countdown</a></p>
 </section>
 
+<section>
+{{#markdown}}
+# WebApps with Eclipse
+
+A dedicated version of Eclipse for Java EE.
+
+Integration of Maven and Application Servers (e.g. Tomcat).
+
+{{/markdown}}
+</section>
+
 
 <section>
-	<h3>Maven & Eclipse</h3>
-	<p>create an eclipse project from the Maven configuration:</p>
-	<pre><code class="bash">mvn eclipse:eclipse -Dwtpversion=2.0</code></pre>
+{{#markdown}}
+## Install Eclipse for Java EE
 
+- Download **Eclipse IDE for Java EE Developers** from the Eclipse download site : http://www.eclipse.org/downloads/.
+- Eclipse is self-contained in the downloaded archive.
+
+{{/markdown}}
 </section>
+
+<section>
+{{#markdown}}
+## Maven & Eclipse
+  
+- Create an eclipse project from the Maven configuration:
+  ```bash
+  mvn eclipse:eclipse -Dwtpversion=2.0
+  ```
+- Import the project in Eclipse as an *existing project* : 
+  `File > Import > Existing Projects into Workspace`
+
+<p class='text_center'>
+![Import Eclipse Project](images/importEclipse.png)
+</p>
+
+{{/markdown}}
+</section>
+
+<section>
+{{#markdown}}
+## Run the project in Eclipse
+
+We create a *run configuration* to execute the maven target: `Run > Run configurations`
+
+<p class='text_center'>
+![Import Eclipse Project](images/mavenConfiguration.png)
+</p>
+
+{{/markdown}}
+</section>
+
+
+
+
+<section>
+{{#markdown}}
+## An application server in Eclipse
+
+- First, switch off our Tomcat server:
+  ```bash
+  sudo catalina stop
+  # or
+  sudo service tomcat stop
+  ```
+- Then, configure a Tomcat server in Eclipse:
+  `Window > Show View > Servers`
+
+<p class='text_center'>
+![Import Eclipse Project](images/newServer.png)
+</p>
+  
+
+{{/markdown}}
+</section>
+
+
+<section>
+{{#markdown}}
+## Configure Tomcat 
+Give the `libexec` folder name of your Tomcat's install directory. Probably `/var/lib/tomcat7/`.
+
+
+<p class='text_center'>
+![Import Eclipse Project](images/configureTomcat.png)
+</p>
+{{/markdown}}
+</section>
+
+<section>
+{{#markdown}}
+## Run your project
+
+Now you can run you project. Any modification to the code (upon saving the file) will be compiled and published to Tomcat!
+
+<p class='text_center'>
+![Import Eclipse Project](images/runOnServer.png)
+</p>
+
+
+{{/markdown}}
+</section>
+
 
 
