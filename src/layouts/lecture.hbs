@@ -31,109 +31,22 @@
 
 		<link rel="stylesheet" href="{{assets}}/bower_components/reveal.js/css/reveal.min.css">
         <link rel="stylesheet" href="{{assets}}/bower_components/reveal.js/css/theme/beige.css" id="theme">
+        
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" media="screen" href="{{assets}}/bower_components/highlightjs/styles/dark.css">
+        <link rel="stylesheet" media="projection, print" href="{{assets}}/bower_components/highlightjs/styles/tomorrow.css">
+
 		<!-- build:css(.tmp) {{assets}}/styles/lecture.css -->
         <link rel="stylesheet" href="/styles/lecture-utilities.css">
+        <link rel="stylesheet" href="/styles/lecture.css">
+        <link rel="stylesheet" href="/styles/lecture-beige-theme-extra.css">
         <!-- endbuild -->		
-		<!-- For syntax highlighting -->
-        <link rel="stylesheet" media="screen" href="/bower_components/highlightjs/styles/dark.css">
-        <link rel="stylesheet" media="projection, print" href="/bower_components/highlightjs/styles/tomorrow.css">
         
         <!-- If the query includes 'print-pdf', use the PDF print sheet -->
         <script>
                 document.write( '<link rel="stylesheet" href="{{assets}}/bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
         </script>
-        <style>
         
-        	body {
-        		background:none;
-        	}
-			.reveal svg{
-				max-width: 95%;
-				max-height: 95%;
-				margin-left: auto;
-				margin-right: auto;
-				display: block;
-			}
-        	.reveal .slides {
-				text-align: left;
-			}
-            .reveal .slides h1, .reveal .slides h2, .reveal .slides h3, .reveal .slides h2{
-                text-align: center;   
-            }
-            .reveal .slides h2+p {
-                text-align: center;    
-            }
-            .reveal>.slides section>p>img {
-                text-align: center;    
-            }
-			.reveal dt {
-				font-weight: bold;
-			}
-			.reveal dd {
-				margin-left:1em;
-			}
-			.reveal input {
-				font-size: inherit;
-			}
-			.reveal .slides>section {
-				/*border:1px solid black;*/
-			}
-			.reveal pre {
-				display: block;
-				position: relative;
-				width: 90%;
-				/*margin: 0;*/
-				text-align: left;
-				font-size: .75em;
-				font-family: monospace;
-				line-height: 1.2em;
-				word-wrap: break-word;
-				box-shadow: 0 0 6px rgba(0,0,0,.3);
-			}
-            .reveal code {
-                color: #8b743d;
-            }
-			.reveal pre code {
-                color: #DDD;
-				max-height: 600px;
-			}
-			.reveal ul, .reveal dl{
-				margin-bottom: .5em ;
-			}
-            .reveal li, .reveal dd{
-                margin-bottom: .5ex ;
-            }
-			
-            #back{
-                font-family: sans-serif;
-				position:absolute;
-				z-index:100;
-				right:5px;
-				top:5px;
-                height:10%;
-                width:5%;
-                background-image: url({{assets}}/images/favicon64.png) ;     
-                background-position : 50% 50%  ;
-                -webkit-background-size: 80%;
-                background-size: 80%;
-                background-repeat: no-repeat;
-                text-decoration: none;
-                color:gray;
-                text-align: center;
-                vertical-align: center;
-                line-height: 100%;
-			}
-	        #back:hover {
-                background-image: url({{assets}}/images/back.png) ;     
-                
-            }
-            /*#back:hover:before{
-                content: "Back to Outline";
-            }*/
-			
-
-        </style>
-
 
     </head>
     <body>
