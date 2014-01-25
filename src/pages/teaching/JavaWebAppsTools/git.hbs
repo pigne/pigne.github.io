@@ -1,0 +1,377 @@
+---
+title: "GIT"
+subsection: "Java Web Apps Tools"
+order: 2
+description:
+- "Basics of the Git Version Control System"
+- "Understanding Branches and Merges"
+- "Github"
+---
+
+{{#markdown}}
+
+## Avant Propos
+
+This page contains a very short, partial and incomplete sum-up of the [**Pro Git book**](http://git-scm.com/book) written by *Scott Chacon* ([CC BY-NC-SA 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/)). This is not a standalone course. This should be considered as "speech notes" for the in-class lecture.
+
+## Some definitions
+
+**Diff**: a command line tool that shows, on a line-basis, the differences between two text files.
+
+**Repository**:  more or less a whole database of files and their history.
+
+**Working copy/directory**:  a local set of files and folders (a project) that contains, not only, files from a version system. Working copies are used to create new snapshots (new versions) in the version system. 
+
+**Snapshot**:  instantaneous state of the files in a filesystem (project / folder / set of files)
+
+**commit**: a set of changes applied to the repository that constitute an atomic new version in the system.
+
+**branch**: An diverged set of commits from the original flow of commits 
+
+## About Version Control
+
+Different types of version control systems have evolved. 
+
+### Version Control System (VCS) 
+
+- Manual local copies a individual files.
+- `+` Easy to use.
+- `-` Error prone.
+- `-` No team work.
+- tools: rcs
+
+<p class="text-center figure">
+![Local Version Control Systems.](images/vcs-diag.png)
+</p>
+
+### Centralized Version Control System (CVCS)
+	
+- A single central server contains all the versioned files (the repository). Users only old working copies.
+- `+` Allows collaboration and team work,
+- `-` One single point of failure. 
+- `-` Most of the operations require a network connection (slow). 
+- `-` Branches are a pain to deal with.
+- tools: CVS, Subversion 
+, ...
+
+<p class="text-center figure">
+![Centralized Version Control Systems.](images/cvcs-diag.png)
+</p>
+
+### Distributed Version Control System (DVCS)
+
+- Each collaborator/client contains the whole set of versioned files (the whole repository) with history, branches and all.
+- After a server crash, any user's repository can be copied back to the server.
+- `+` No single point of failure.
+- `+` Most operation are local. No network connection needed (fast).
+- '+' Thousands of branches can be gracefully handled. 
+- tools :  Git, Mercurial, Bazaar or Darcs
+
+## Snapshot, not differences
+
+Most Version Systems use a file-based and file modification-based storage system. Each revision is composed of a list of differences for each modified file.
+<p class="text-center figure">
+![Other VCS Data Storage System](images/otherStoreSystems.png)
+</p>
+
+In Git revisions are snapshots. Each one is like a filesystem. Only modified files are copied, the others are linked. 
+
+<p class="text-center figure">
+![GIT Data Storage System.](images/gitStoreSystem.png)
+</p>
+
+## Mostly Local Operations
+
+- Getting a previous version of a file, doing a `diff` between two versions, can be done locally without any connection to the Server. 
+- Client can commit while offline/off-VPN because the all repository is available locally. 
+- This means most operation are fast!
+
+## Check-sum
+
+- Since there is no single point of synchronization (no central server) revisions can't be numbered sequentially. 
+- Revisions are identified with a check-sum based on the snapshot contents. 
+- GIT uses the SHA-1 hash algorithm to produce (most certainly) unique ids. 
+- A SHA-1 hash is a 40-hexadecimal string. (16<sup>40</sup> possible combinations).
+
+```
+4b999440d97ee264e981d7479e7cb119e221591d
+```
+
+## Git Generally Only Adds Data
+
+By default we never remove anything from git. 
+
+`+` Nothing ever gets lost. Even if a file is removed in a new revision, it still exists in the history. 
+
+`-` Users need to be careful at what they commit. We don't version binaries, compiled files, logs...
+
+
+## The Three States
+
+
+3 possible states for a file : 
+
+- **committed** : the file in its current version is stored in the repository.
+- **modified** : some modifications have occurred on the file and are not yet committed. 
+- **staged** : a modified file has been selected to be part of the next commit snapshot. This state is important, it allows to chose which file to commit. 
+
+
+As a consequence there are 3 sections (locations) in a git project : 
+
+- the **working directory**;
+- the **staging area**
+- the **repository** (git directory)
+
+<p class="text-center figure">
+![The 3 local sections.](images/localOperations.png)
+</p>
+
+## Install Git
+- On Ubuntu
+```
+sudo apt-get install git
+```
+- On Windows
+	- Many possibilities...
+	- http://msysgit.github.io/
+	- http://windows.github.com/
+
+## Configure Git
+
+One tool to configure git : `git config`. 
+
+```bash
+git config --list
+```
+
+3 configuration levels : 
+- the system level : `--system` option, modifies `/etc/gitconfig`
+- the user level : `--global`option, modifies '~/.gitconfig'
+- the repository level : no option, modifies `.git/config`
+
+
+### Identity
+
+```bash
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+```
+
+### Editor
+
+```bash
+git config --global core.editor emacs
+```
+
+### Diff tool 
+
+Any of  kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge, and opendiff
+
+```bash
+$ git config --global merge.tool vimdiff
+
+```
+
+
+## Getting Help
+
+
+```bash
+$ git help <verb>
+$ git <verb> --help
+$ man git-<verb>
+```
+
+# Git Basics
+
+
+
+## Initializing a new Repository
+
+Usually you already have a folder with a project in it. Source files and so. 
+
+`git init` Initialize a new repository.
+
+```bash
+cd myProject
+git init
+git add "*.java"
+git commit -m "Initial commit for myProject"
+```
+
+## Clone an existing project 
+
+`git clone` pulls a complete repository to the local directory. 
+
+Warning : other VCS like Subversion use `checkout`. With `checkout` you only get a branch (a working directory). `clone` gets the whole repository (history, branches, tags...) 
+
+```
+git clone https://github.com/pigne/CountDownWebApp.git 
+````
+
+Various transfer protocol are possible and depend on the server `git://` , `http(s)://` or `user@server:/path.git`.
+
+## Life cycle of a file
+
+A file can be **tracked** or **untracked**. If it is tracked it is whether **unmodified**, **modified**, or **staged**.
+
+untracked
+tracked
+	unmodified
+	modified
+	staged
+
+
+<p class="text-center figure">
+![File Status Life Cycle.](images/fileLifeCycle.png)
+</p>
+
+## Checking the Status of Files
+
+The main tool for checking the status of files is `git status`. 
+
+```bash
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+```
+
+See `git help status`.
+
+
+## Start tracking a file
+
+- Start editing a file... Say `README.md`
+- Check the status with `git status`
+
+```bash
+$ git status
+On branch master
+Initial commit
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	README.md
+nothing added to commit but untracked files present (use "git add" to track)  
+```
+
+- Start tracking with `git add`
+
+```
+$ git add README.md
+$ git status
+On branch master
+Initial commit
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   README.md
+```
+
+## Staging a modified file
+
+When an already tracked file is modified we see it with `git status`
+
+```bash
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+	modified:   src/main/java/org/pigne/CountDown.java
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+Staging a file for commit is also done with `git add`
+
+```bash
+$ git add src/main/java/org/pigne/CountDown.java
+$ git status
+# ...
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+	modified:   src/main/java/org/pigne/CountDown.java
+```
+
+## Ignoring files
+
+Some file we don't want to store in the repository
+
+- compiled files (*.class, *.o, *.so, Eclipse's `bin` folder)
+- archive/deployment files (*.tar, *.jar, *.zip)
+- log and backup files (*.log, *~)
+- local IDE / Editor configuration (Eclipse's `.settings/` `.classpath` `.project`)
+
+The `.gitignore file contains regex patterns to ignore such files : 
+```bash
+target/
+.projets
+.settings/
+.classpath
+```
+
+## Staged and unstaged changes
+
+`git diff` : line per line diff between files. 
+
+- `git diff` with no arguments to see what is *changed* but *not yet staged*.
+- `git diff --staged` to see what is *staged*.
+
+## Committing Your Changes
+
+`git commit` will actually take a snapshot of the staged files set and add it to the repository
+
+- `git commit` with non argument will open the default text editor, waiting for a commit message. 
+- `git commit -m "My commit message that details what happens here..."` to give an inline commit message.
+
+
+## Removing a file
+
+- Removing a file from both the repository and the fiesystem
+```bash
+ git rm readme.txt 
+ ```
+- Removing a file from the repository **but** keeping it in the filesystem (stop tracking the file):
+```bash
+ git rm --cached readme.txt
+ ```
+
+## Moving Files
+
+As well as removing files, moving files also require to be committed.
+
+```bash
+$ git mv file_from file_to
+```
+
+Then `file_to` is staged for the next commit.
+
+
+## Viewing the Commits History
+
+```bash
+$ git log
+$ git help log
+```
+
+Better use GUI to see git history:
+
+- Linux : git-cola, gitg, git gui, qgit, SmartGit
+- Mac / Windows : github GUI
+
+## Remotes
+
+## Tagging
+
+
+{{/markdown}}
+
+<script>
+	var elements = document.querySelectorAll(".figure");
+	for (var i = 0 ; i < elements.length; i++){
+		var img = elements[i].querySelector('img');
+		var caption = document.createElement('p');
+		caption.appendChild(document.createTextNode(img.getAttribute('alt')));
+		caption.setAttribute('class', 'caption')
+		elements[i].appendChild(caption);
+	};
+</script>

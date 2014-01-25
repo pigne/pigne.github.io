@@ -22,7 +22,7 @@ layout: default.hbs
 								<li class="">{{.}}</li>
 							{{/each}}
 							</ul>
-							<p class="text-right bottom-right"><a href="{{relative ../../page.dest this.dest}}" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
+							<p class="text-right bottom-right"><a href="{{relative ../../page.dest this.dest}}" class="btn btn-primary" role="button">{{#is data.layout "lecture.hbs"}}Slides{{else}}More{{/is}} <span class="glyphicon glyphicon-play"></span></a> </p>
 						</div>
   		          	</div>
           		</div>
