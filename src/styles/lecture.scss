@@ -9,8 +9,8 @@ body {
 	display: block;
 }
 .reveal .slides {
-	text-align: left;
- 	h1, h2, h3, h2 {
+	text-align: left; 
+ 	h1, h2 {
     	text-align: center;   
     }
     h2+p {
@@ -40,11 +40,7 @@ body {
 		word-wrap: break-word;
 		box-shadow: 0 0 6px rgba(0,0,0,.3);
 	}
-    code {
-        color: #8b743d;
-    }
-	pre code {
-        color: #EEE;
+	pre code {       
 		max-height: 600px;
 	}
 	ul, dl{

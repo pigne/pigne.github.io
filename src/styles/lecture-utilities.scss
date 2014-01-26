@@ -64,13 +64,13 @@
 .center {
     margin:auto;
 }
-.text_right {
+.text_right,.text-right {
     text-align: right;
 }
-.text_center {
+.text_center,.text-center {
     text-align: center;
 }
-.text_left {
+.text_left,.text-left {
     text-align: left;
 }
 .x2 {
@@ -94,6 +94,17 @@
 .x5 {
     font-size:190%;
 }
+.wide-image,p.wide-image>img{
+    width:95%;
+}
+.high-image,p.high-image>img{
+    height:95%;
+}
+.noborder-image, p.noborder-image>img {
+    border:none;
+    box-shadow: none;
+}
+
 .codeh {
     background-color: rgb(255, 255, 100);
 }
