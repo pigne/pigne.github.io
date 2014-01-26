@@ -1,0 +1,777 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Git</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="../../favicon.ico" />
+
+        <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../images/apple-touch-icon-152x152-precomposed.png">
+        <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../images/apple-touch-icon-144x144-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../images/apple-touch-icon-120x120-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../images/apple-touch-icon-114x114-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../../images/apple-touch-icon-76x76-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../images/apple-touch-icon-72x72-precomposed.png">
+        <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+        <link rel="apple-touch-icon-precomposed" href="../../apple-touch-icon-precomposed.png">
+
+
+
+		<link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
+        
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" media="screen" href="../../bower_components/highlightjs/styles/dark.css">
+        <link rel="stylesheet" media="projection, print" href="../../bower_components/highlightjs/styles/tomorrow.css">
+
+		<link rel="stylesheet" href="../../styles/00379118.lecture.css"/>
+        
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+                document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+	<div ><a id="back"href="."></a></div>
+	
+    <div class="reveal">
+    	<div class="slides">
+		<!-- ==== SLIDE ==== -->
+		<section id="home">
+			<h1>Git</h1>
+
+			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
+			
+			<li class="x2"><em>Basics of the Git Version Control System</em></li>
+		
+			<li class="x2"><em>Understanding Branches and Merges</em></li>
+		
+		</ul>
+		<p class="x2 bottom-right">
+		            Le Havre University
+		            <br>
+		            <em>Yoann Pigné</em>
+		            <br>2013
+		        </p>
+		</section>
+
+    	
+
+
+<section>
+<h2 id="avant-propos">Avant Propos</h2>
+<p>This page contains a very short, partial and incomplete sum-up of chapter 1, 2 and 3 of the <a href="http://git-scm.com/book"><strong>Pro Git book</strong></a> written by <em>Scott Chacon</em> (<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>). This is not a standalone course. This should be considered as &quot;speech notes&quot; for the in-class lecture.</p>
+
+</section>
+<section>
+<h2 id="some-definitions">Some definitions</h2>
+<ul>
+<li><p><strong>Diff</strong>: a command line tool that shows, on a line-basis, the differences between two text files.</p>
+</li>
+<li><p><strong>Repository</strong>:  more or less a whole database of files and their history.</p>
+</li>
+<li><p><strong>Working copy/directory</strong>:  a local set of files and folders (a project) that contains, not only, files from a version system. Working copies are used to create new snapshots (new versions) in the version system. </p>
+</li>
+<li><p><strong>Snapshot</strong>:  instantaneous state of the files in a filesystem (project / folder / set of files).</p>
+</li>
+<li><p><strong>commit</strong>: a set of changes applied to the repository that constitute an atomic new version in the versioning system.</p>
+</li>
+<li><p><strong>branch</strong>: An diverged set of commits from the original flow of commits.</p>
+</li>
+</ul>
+
+</section>
+<section>
+<h1 id="about-version-control">About Version Control</h1>
+<p>Different types of version control systems have evolved. </p>
+
+</section>
+<section>
+<h2 id="version-control-system-vcs-">Version Control System (VCS)</h2>
+<ul>
+<li>Manual local copies of individual files.</li>
+<li><code>+</code> Easy to use.</li>
+<li><code>-</code> Error prone.</li>
+<li><code>-</code> No team work.</li>
+<li><strong>tools</strong>: rcs</li>
+</ul>
+<p class="text-center figure">
+<img src="images/vcs-diag.png" alt="Local Version Control Systems.">
+</p>
+
+
+</section>
+<section>
+<h2 id="centralized-version-control-system-cvcs-">Centralized Version Control System (CVCS)</h2>
+<ul>
+<li>A single central server contains all the versioned files (the repository). Users only old working copies.</li>
+<li><code>+</code> Allows collaboration and team work,</li>
+<li><code>-</code> One single point of failure. </li>
+<li><code>-</code> Most of the operations require a network connection (slow). </li>
+<li><code>-</code> Branches are a pain to deal with.</li>
+<li><strong>tools</strong>: CVS, Subversion 
+, ...</li>
+</ul>
+<p class="text-center figure">
+<img src="images/cvcs-diag.png" alt="Centralized Version Control Systems.">
+</p>
+
+</section>
+<section>
+<h2 id="distributed-version-control-system-dvcs-">Distributed Version Control System (DVCS)</h2>
+<ul>
+<li>Each collaborator/client contains the whole set of versioned files (the whole repository) with history, branches and all.</li>
+<li>After a server crash, any user&#39;s repository can be copied back to the server.</li>
+<li><code>+</code> No single point of failure.</li>
+<li><code>+</code> Most operation are local. No network connection needed (fast).</li>
+<li><code>+</code> Thousands of branches can be gracefully handled. </li>
+<li><strong>tools</strong>:  Git, Mercurial, Bazaar or Darcs</li>
+</ul>
+
+</section>
+<section>
+<h2 id="snapshot-not-differences">Snapshot, not differences</h2>
+<p>Most Version Systems use a file-based and file modification-based storage system. Each revision is composed of a list of differences for each modified file.</p>
+<p class="text-center figure">
+<img src="images/otherStoreSystems.png" alt="Other VCS Data Storage System">
+</p>
+
+<p>In Git revisions are snapshots. Each one is like a filesystem. Only modified files are copied, the others are linked. </p>
+<p class="text-center figure">
+<img src="images/gitStoreSystem.png" alt="GIT Data Storage System.">
+</p>
+
+
+</section>
+<section>
+<h2 id="mostly-local-operations">Mostly Local Operations</h2>
+<ul>
+<li>Getting a previous version of a file, doing a <code>diff</code> between two versions, can be done locally without any connection to the Server. </li>
+<li>Client can commit while offline/off-VPN because the all repository is available locally. </li>
+<li>This means most operation are fast!</li>
+</ul>
+
+</section>
+<section>
+<h2 id="check-sum">Check-sum</h2>
+<ul>
+<li>Since there is no single point of synchronization (no central server) revisions can&#39;t be numbered sequentially. </li>
+<li>Revisions are identified with a check-sum based on the snapshot contents. </li>
+<li>GIT uses the SHA-1 hash algorithm to produce (most certainly) unique ids. </li>
+<li>A SHA-1 hash is a 40-hexadecimal string. (16<sup>40</sup> possible combinations).</li>
+</ul>
+<pre><code>4b999440d97ee264e981d7479e7cb119e221591d</code></pre>
+
+</section>
+<section>
+<h2 id="git-generally-only-adds-data">Git Generally Only Adds Data</h2>
+<p>By default we never remove anything from git. </p>
+<p><code>+</code> Nothing ever gets lost. Even if a file is removed in a new revision, it still exists in the history. </p>
+<p><code>-</code> Users need to be careful at what they commit. We don&#39;t version binaries, compiled files, logs...</p>
+
+</section>
+<section>
+<h2 id="the-three-states">The Three States</h2>
+<p>3 possible states for a file : </p>
+<ul>
+<li><strong>committed</strong> : the file in its current version is stored in the repository.</li>
+<li><strong>modified</strong> : some modifications have occurred on the file and are not yet committed. </li>
+<li><strong>staged</strong> : a modified file has been selected to be part of the next commit snapshot. This state is important, it allows to chose which file to commit. </li>
+</ul>
+<p>As a consequence there are 3 sections (locations) in a git project : </p>
+<ul>
+<li>the <strong>working directory</strong>;</li>
+<li>the <strong>staging area</strong></li>
+<li>the <strong>repository</strong> (git directory)</li>
+</ul>
+<p class="text-center figure">
+<img src="images/localOperations.png" alt="The 3 local sections.">
+</p>
+
+
+</section>
+<section>
+<h2 id="install-git">Install Git</h2>
+<ul>
+<li>On Ubuntu<pre><code class="language-bash"><span class="built_in">sudo</span> apt-get install git</code></pre>
+</li>
+<li>On Windows<ul>
+<li>Many possibilities...</li>
+<li><a href="http://msysgit.github.io/">http://msysgit.github.io/</a></li>
+<li><a href="http://windows.github.com/">http://windows.github.com/</a></li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+<h2 id="configure-git">Configure Git</h2>
+<p>One tool to configure git : <code>git config</code>. </p>
+<pre><code class="language-bash">git config --list</code></pre>
+<p>3 configuration levels: </p>
+<ul>
+<li>the system level : <code>--system</code> option, modifies <code>/etc/gitconfig</code></li>
+<li>the user level : <code>--global</code>option, modifies &#39;~/.gitconfig&#39;</li>
+<li>the repository level : no option, modifies <code>.git/config</code></li>
+</ul>
+<h3 id="identity">Identity</h3>
+<pre><code class="language-bash">$ git config --global user.name <span class="string">"John Doe"</span>
+$ git config --global user.email johndoe@example.com</code></pre>
+<h3 id="editor">Editor</h3>
+<pre><code class="language-bash">git config --global core.editor emacs</code></pre>
+<h3 id="diff-tool">Diff tool</h3>
+<p>Any of  kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge, and opendiff</p>
+<pre><code class="language-bash">$ git config --global merge.tool vimdiff</code></pre>
+
+</section>
+<section>
+<h2 id="getting-help">Getting Help</h2>
+<pre><code class="language-bash">$ git <span class="built_in">help</span> &lt;verb&gt;
+$ git &lt;verb&gt; --help
+$ man git-&lt;verb&gt;</code></pre>
+
+</section>
+<section>
+<h1 id="git-basics">Git Basics</h1>
+
+</section>
+<section>
+<h2 id="initializing-a-new-repository">Initializing a new Repository</h2>
+<p>Usually you already have a folder with a project in it. Source files and so. </p>
+<p><code>git init</code> initializes a new repository.</p>
+<pre><code class="language-bash"><span class="built_in">cd</span> myProject
+git init
+git add <span class="string">"*.java"</span>
+git commit -m <span class="string">"Initial commit for myProject"</span></code></pre>
+
+</section>
+<section>
+<h2 id="clone-an-existing-project">Clone an existing project</h2>
+<p><code>git clone</code> pulls a complete repository to the local directory. </p>
+<p>Warning : other VCS like Subversion use <code>checkout</code>. With <code>checkout</code> you only get a branch (a working directory). <code>clone</code> gets the whole repository (history, branches, tags...) </p>
+<pre><code class="language-bash">$ git clone https://github.com/pigne/CountDownWebApp.git</code></pre>
+<p>Various transfer protocol are possible and depend on the server:</p>
+<ul>
+<li><code>git://</code>,</li>
+<li><code>http(s)://</code>,</li>
+<li><code>user@server:/path.git</code>.</li>
+</ul>
+
+</section>
+<section>
+<h2 id="life-cycle-of-a-file">Life cycle of a file</h2>
+<p>A file can be <strong>tracked</strong> or <strong>untracked</strong>. If it is tracked it is whether <strong>unmodified</strong>, <strong>modified</strong>, or <strong>staged</strong>.</p>
+<ul>
+<li>untracked</li>
+<li>tracked<ul>
+<li>unmodified</li>
+<li>modified</li>
+<li>staged</li>
+</ul>
+</li>
+</ul>
+<p class="text-center figure">
+<img src="images/fileLifeCycle.png" alt="File Status Life Cycle.">
+</p>
+
+
+</section>
+<section>
+<h2 id="checking-the-status-of-files">Checking the Status of Files</h2>
+<p>The main tool for checking the status of files is <code>git status</code>. </p>
+<pre><code class="language-bash">$ git status
+<span class="comment"># On branch master</span>
+nothing to commit (working directory clean)</code></pre>
+<p>See <code>git help status</code>.</p>
+
+</section>
+<section>
+<h2 id="start-tracking-a-file">Start tracking a file</h2>
+<ul>
+<li>Start editing a file... Say <code>README.md</code></li>
+<li>Check the status with <code>git status</code></li>
+</ul>
+<pre><code class="language-bash">$ git status
+On branch master
+Initial commit
+Untracked files:
+  (use <span class="string">"git add &lt;file&gt;..."</span> to include <span class="keyword">in</span> what will be committed)
+    README.md
+nothing added to commit but untracked files present (use <span class="string">"git add"</span> to track)</code></pre>
+<ul>
+<li>Start tracking with <code>git add</code></li>
+</ul>
+<pre><code>$ git add README.md
+$ git status
+On branch master
+Initial commit
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+    new file:   README.md</code></pre>
+
+</section>
+<section>
+<h2 id="staging-a-modified-file">Staging a modified file</h2>
+<p>When an already tracked file is modified we see it with <code>git status</code></p>
+<pre><code class="language-bash">$ git status
+On branch master
+Your branch is up-to-date with <span class="string">'origin/master'</span>.
+Changes not staged <span class="keyword">for</span> commit:
+  (use <span class="string">"git add &lt;file&gt;..."</span> to update what will be committed)
+  (use <span class="string">"git checkout -- &lt;file&gt;..."</span> to discard changes <span class="keyword">in</span> working directory)
+    modified:   src/main/java/org/pigne/CountDown.java
+no changes added to commit (use <span class="string">"git add"</span> and/or <span class="string">"git commit -a"</span>)</code></pre>
+<p>Staging a file for commit is also done with <code>git add</code></p>
+<pre><code class="language-bash">$ git add src/main/java/org/pigne/CountDown.java
+$ git status
+<span class="comment"># ...</span>
+Changes to be committed:
+  (use <span class="string">"git reset HEAD &lt;file&gt;..."</span> to unstage)
+    modified:   src/main/java/org/pigne/CountDown.java</code></pre>
+
+</section>
+<section>
+<h2 id="ignoring-files">Ignoring files</h2>
+<p>Some file we don&#39;t want to store in the repository</p>
+<ul>
+<li>compiled files (*.class, *.o, *.so, Eclipse&#39;s <code>bin</code> folder),</li>
+<li>dependencies and external libraries,</li>
+<li>archive/deployment files (*.tar, *.jar, *.zip),</li>
+<li>log and backup files (*.log, *~),</li>
+<li>local IDE / Editor configuration (Eclipse&#39;s <code>.settings/</code> <code>.classpath</code> <code>.project</code>).</li>
+</ul>
+<p>The `.gitignore file contains regex patterns to ignore such files : </p>
+<pre><code class="language-bash">target/
+.projets
+.settings/
+.classpath</code></pre>
+
+</section>
+<section>
+<h2 id="staged-and-unstaged-changes">Staged and Unstaged changes</h2>
+<p><code>git diff</code> : line per line diff between files. </p>
+<ul>
+<li><code>git diff</code> with no arguments to see what is <em>changed</em> but <em>not yet staged</em>.</li>
+<li><code>git diff --staged</code> to see what is <em>staged</em>.</li>
+</ul>
+
+</section>
+<section>
+<h2 id="committing-your-changes">Committing Your Changes</h2>
+<p><code>git commit</code> will actually take a snapshot of the staged files set and add it to the repository</p>
+<ul>
+<li><code>git commit</code> with non argument will open the default text editor, waiting for a commit message. </li>
+<li><code>git commit -m &quot;My commit message that details what happens here...&quot;</code> to give an inline commit message.</li>
+</ul>
+
+</section>
+<section>
+<h2 id="removing-a-file">Removing a file</h2>
+<ul>
+<li>Removing a file from both the repository and the fiesystem<pre><code class="language-bash">git rm readme.txt</code></pre>
+</li>
+<li>Removing a file from the repository <strong>but</strong> keeping it in the filesystem (stop tracking the file):<pre><code class="language-bash">git rm --cached readme.txt</code></pre>
+</li>
+</ul>
+
+</section>
+<section>
+<h2 id="moving-files">Moving Files</h2>
+<p>As well as removing files, moving files also require to be committed.</p>
+<pre><code class="language-bash">$ git mv file_from file_to</code></pre>
+<p>Then <code>file_to</code> is staged for the next commit.</p>
+
+</section>
+<section>
+<h2 id="viewing-the-commits-history">Viewing the Commits History</h2>
+<pre><code class="language-bash">$ git log
+$ git <span class="built_in">help</span> log</code></pre>
+<p>Better use GUI to see git history:</p>
+<ul>
+<li>Linux : git-cola, gitg, git gui, qgit, SmartGit</li>
+<li>Mac / Windows : github GUI</li>
+</ul>
+
+</section>
+<section>
+<h2 id="undoing-commits-and-unstaging">Undoing commits and Unstaging</h2>
+<p><em>So you committed but it does not compile? Or maybe you pushed  a &quot;.class&quot; file? This is bad...</em></p>
+<ul>
+<li><p>Unstage a file that was not already in the repository:</p>
+<pre><code class="language-Bash">$ git rm --cached &lt;file&gt;</code></pre>
+</li>
+<li><p>Unstage a file that already exists: </p>
+<pre><code class="language-bash">$ git reset HEAD &lt;file&gt;</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>Undo last commit but keep your modifications in the working directory : </p>
+<pre><code class="language-bash">$ git reset HEAD~<span class="number">1</span></code></pre>
+</li>
+<li><p>You are sure you really don&#39;t want to keep anything from this commit:</p>
+<pre><code class="language-bash">$ git reset --hard HEAD~<span class="number">1</span></code></pre>
+</li>
+<li><p>Forget all your local modifications on a file and come back to the last committed version in the repository:</p>
+<pre><code class="language-bash">$ git checkout  HEAD -- &lt;file&gt;</code></pre>
+</li>
+</ul>
+
+</section>
+<section>
+<p class="text-center figure wide-image noborder-image">
+<img src="images/gitCommitCommands.svg" alt="Git Commit Commands">
+</p>
+
+
+</section>
+<section>
+<h2 id="remotes">Remotes</h2>
+<p>In order to collaborate, common repositories have to be accessible from servers (remotes). Clients will be pushing and pulling data between their repository to other repositories.</p>
+<p>The <code>git remote</code> command helps dealing with those repositories. </p>
+<pre><code class="language-bash">$ git clone https://github.com/pigne/CountDownWebApp.git 
+$ <span class="built_in">cd</span> CountDownWebApp
+$ git remote -v
+origin    https://github.com/pigne/CountDownWebApp.git (fetch)
+origin    https://github.com/pigne/CountDownWebApp.git (push)</code></pre>
+<p>Add a remote with <code>git remote add [shortname] [url]</code></p>
+
+</section>
+<section>
+<h2 id="fetch-and-pull-from-remotes">Fetch and Pull from Remotes</h2>
+<p><code>git fetch [remote-name]</code> will retrieve <strong>any</strong> new material from the given remote into the <strong>local repository</strong>.</p>
+<ul>
+<li><p>Fetching a remote only affects the <strong>local repository</strong>. It does not change the <strong>working directory</strong>.</p>
+</li>
+<li><p>In order to mix the changes  from the remote into the local branch, we need to <code>merge</code>.</p>
+</li>
+<li><p>by default (after a <code>git clone</code>), the local &quot;master&quot; branch is synchronized with the remote&#39;s &quot;master&quot; branch.</p>
+</li>
+<li><p><code>git pull</code> will do several steps :</p>
+<ul>
+<li>fetch from a remote</li>
+<li>merge the remote&#39;s master to the local master and this affect the <strong>working directory</strong></li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+<h2 id="push-to-the-remote">Push to the Remote</h2>
+<p>Once local changes have been committed to the local repository, we publish them to the remote server with <code>git push [remote-name] [branch-name]</code></p>
+<p>Usually the remote is called &quot;origin&quot; and the default branch is &quot;master&quot;</p>
+<pre><code class="language-bash">$ git push origin master</code></pre>
+<ul>
+<li>Inspect a remote with <code>git remote show [remote-name]</code>.</li>
+<li>Rename a remote with <code>git remote rename [old-name] [new-name]</code>.</li>
+<li>Remove a remote with <code>git remote remove [remote-name]</code>.</li>
+</ul>
+
+</section>
+<section>
+<p class="text-center figure wide-image noborder-image">
+<img src="images/gitPushPullCommands.svg" alt="Git Push/Pull Commands">
+</p>
+
+
+
+</section>
+<section>
+<h2 id="tagging">Tagging</h2>
+<p>Tags allow to associate textual information on a commit. Mostly useful for software releases.</p>
+<ul>
+<li>List all tags with <code>git tag</code></li>
+</ul>
+<h3 id="annotated-tags">Annotated tags</h3>
+<p>A new commit is created with it.</p>
+<pre><code class="language-bash">$ git tag <span class="operator">-a</span> v1.<span class="number">4</span> -m <span class="string">'my version 1.4'</span></code></pre>
+<h3 id="lightweight-tags">Lightweight Tags</h3>
+<p>No other information is kept, only a file with the hash of the previous commit is stored.</p>
+<pre><code class="language-bash">$ git tag v1.<span class="number">4</span>-lw</code></pre>
+<h3 id="tagging-an-older-revision">Tagging an older revision</h3>
+<pre><code class="language-bash">$ git tag <span class="operator">-a</span> v1.<span class="number">2</span> -m <span class="string">'version 1.2'</span> <span class="number">9</span>fceb02</code></pre>
+<h3 id="sharing-tags">Sharing tags</h3>
+<p>By default git push does not propagates tags, we have to specify it:</p>
+<pre><code class="language-bash">$ git push origin v1.<span class="number">5</span>
+$ <span class="comment"># or</span>
+$ git push origin --tags</code></pre>
+
+</section>
+<section>
+<h1 id="branches">Branches</h1>
+<p>The best advantage of Git over the other VCS and DVCS.
+Branches are fast and easy to merge. </p>
+
+</section>
+<section>
+<h2 id="commits-network-representation">Commits&#39; Network Representation</h2>
+<p>Commit in Git are identified by a unique number (check-sum) and one of more likes to <strong>parent commits</strong>.</p>
+<p class="text-center  wide-image noborder-image">
+<img src="images/commitsNetwork.svg" alt="Commits Linked with their parents">
+</p>
+
+
+</section>
+<section>
+<h2 id="branches-are-pointers">Branches are Pointers</h2>
+<p>A branch is a simple pointer to one of the commits in the repository. </p>
+<ul>
+<li>On the first commit of a repository, a default branch is created : <code>master</code> </li>
+<li>Each time a new branch is created (<code>git branch cli_branch</code>), a new pointer is created. </li>
+<li><code>HEAD</code> is a spacial pointer that indicates which branch the <strong>working directory</strong> is in. </li>
+</ul>
+<p class="text-center  wide-image     noborder-image">
+<img src="images/newBranch.svg" alt="Branches and HEAD Point to commits">
+</p>
+
+
+</section>
+<section>
+<h2 id="working-in-branches">Working in Branches</h2>
+<p><code>git checkout &lt;branch-name&gt;</code> moves the <code>HEAD</code> to the given branch and puts the snapshot of that commit into the <strong>working directory</strong>.</p>
+<ul>
+<li>A commit on a branch does not change the others.</li>
+<li>The <code>HEAD</code> pointer moves with the current branch when occurs on it.</li>
+</ul>
+<pre><code class="language-bach">$ git checkout cli_branch  # moves HEAD
+$ # modify some_file
+$ git add some_file 
+$ git commit # moves cli_branch &amp; HEAD</code></pre>
+<p class="text-center  wide-image     noborder-image">
+<img src="images/commitBranches.svg" alt="Commits in branches">
+</p>
+
+
+
+</section>
+<section>
+<h2 id="diverging-history">Diverging History</h2>
+<p>Committing from various branches makes the history of the repository diverge.</p>
+<pre><code class="language-bash">$ git checkout master 
+$ <span class="comment"># modify some_file</span>
+$ git add some_file
+$ git commit</code></pre>
+<p class="text-center  wide-image     noborder-image">
+<img src="images/diverged.svg" alt="Diverging History">
+</p>
+
+
+</section>
+<section>
+<h2 id="merging-branches">Merging Branches</h2>
+<p>As soon as concurrent modifications are finished, we want to reintegrate branches with <code>git merge</code></p>
+<ul>
+<li>To merge branch B in branch A, one have to call <code>merge</code> from branch A.</li>
+<li>Merging 2 branches will create a new commit with 2 (or more) parents.</li>
+<li>Conflicts may happen.</li>
+</ul>
+<p><code>`bash
+$ git checkout master       ## be sure we are in destination branch
+$ git merge cli_branch      
+$ git branch -d cli_branch  ## remove cli_branch as it is useless</code></p>
+
+</section>
+<section>
+<p class="text-center  wide-image     noborder-image">
+<img src="images/merging.svg" alt="Diverging History">
+</p>
+
+
+</section>
+<section>
+<h2 id="resolving-conflicts">Resolving conflicts</h2>
+<p>In case of conflict the commit is aborted and problematic files are unmerged</p>
+<pre><code class="language-bash">$ git status
+index.html: needs merge
+<span class="comment"># On branch master</span>
+<span class="comment"># Changes not staged for commit:</span>
+<span class="comment">#   (use "git add &lt;file&gt;..." to update what will be committed)</span>
+<span class="comment">#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+<span class="comment">#</span>
+<span class="comment">#   unmerged:   index.html</span>
+<span class="comment">#</span></code></pre>
+<ul>
+<li>Use <code>git mergetool</code> to call one of the merging tools available (kdiff3,tkdiff,xxdiff,meld,gvimdiff,opendiff,emerge,vimdiff).</li>
+<li>Or edit the unmerged files.</li>
+</ul>
+<pre><code class="language-bash">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:index.html
+&lt;div id=<span class="string">"footer"</span>&gt;contact : email.support@github.com&lt;/div&gt;
+=======
+&lt;div id=<span class="string">"footer"</span>&gt;
+  please contact us at support@github.com
+&lt;/div&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; iss53:index.html</code></pre>
+<ul>
+<li>At the end re-stage files and commit.</li>
+</ul>
+
+</section>
+<section>
+<h2 id="remote-branches">Remote branches</h2>
+<p>Remote branches are references to the state of branches on your remote repositories. They’re local branches that you can’t move.</p>
+<ul>
+<li>A remote branch is denoted as <code>[remote_name]/[branch_name]</code> (e.g. <code>origin/master</code>)</li>
+<li><code>git clone</code> will set local <code>master</code> according to <code>origin/master</code></li>
+<li>when you commit on <code>master</code> but do not &quot;push&quot;, then you are &quot;ahead&quot;. </li>
+<li><p>We can push a local branch to a remote: </p>
+<pre><code class="language-bash">$ git push origin cli_branch</code></pre>
+</li>
+<li><p>We can create a new local branch that &quot;tracks&quot; a remote one:</p>
+<pre><code class="language-bash">$ git fetch origin
+$ git checkout -b bogus123 origin/fix_bug_123</code></pre>
+</li>
+<li>any <code>git pull</code> or <code>git push</code> from the branch <code>bogus123</code> will refer to remote  <code>origin</code> with branch <code>fix_bug_123</code>.</li>
+</ul>
+
+</section>
+
+
+
+<script>
+	var elements = document.querySelectorAll(".figure");
+	for (var i = 0 ; i < elements.length; i++){
+		var img = elements[i].querySelector('img');
+		var caption = document.createElement('p');
+		caption.appendChild(document.createTextNode(img.getAttribute('alt')));
+		caption.setAttribute('class', 'caption')
+		elements[i].appendChild(caption);
+	};
+</script>
+    	</div>
+	</div>
+
+	<script src="../../scripts/b04b0310.lecture-all.js"></script>
+
+	<script>
+    updateHighlightClassNames();
+	(function() {
+            var list = document.querySelectorAll('*[data-src]');
+            for (var i = 0; i < list.length; i++) {
+                var p = document.createElement('p')
+                var a = document.createElement('a')
+                var img = document.createElement('img')
+                a.setAttribute('href', list[i].getAttribute('data-src'))
+                img.setAttribute('src', '/images/codepen.png')
+                img.setAttribute('alt', 'codepen')
+                p.setAttribute('class', 'codepen')
+                a.appendChild(img)
+                p.appendChild(a)
+                list[i].appendChild(p)
+            }
+        })();
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+
+                width: 1400,
+                height: 1050,
+
+                // Factor of the display size that should remain empty around the content
+                margin: 0.01,
+
+                minScale: 0.1,
+                maxScale: 3.0,
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                        { src: '../../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                        { src: '../../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: '../../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: '../../bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                        { src: '../../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                        { src: '../../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ],
+                // Display controls in the bottom right corner
+                controls: true,
+
+                // Display a presentation progress bar
+                progress: true,
+
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Push each slide change to the browser history
+                history: true,
+
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+
+                // Change the presentation direction to be RTL
+                rtl: false,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition style
+                transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Transition speed
+                transitionSpeed: 'fast', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+               	parallaxBackgroundImage: '../../images/lecture-bg.svg', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+               	parallaxBackgroundSize: '4995px 1350px' // CSS syntax, e.g. "2100px 900px"
+        });
+	</script>
+	
+</body>
+</html>
