@@ -1,0 +1,386 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Responsive Design</title>
+        <meta name="description" content="Yoann Pigné's personal
+                      website. Researcher in computer science, Networks,  dynamic
+                      graphs, Mobile ad hoc Networks, Vehicular Ad hoc
+                      Networks. Lecturer in CS, web services.">
+        <meta name="author" content="Yoann Pigné">
+        <meta name="google-site-verification" content="FKKi10AM77zJWOKffGHjTdcaOdN6HyLQSTYZu9T_M-0">
+        <meta name="Robots" content="all">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="shortcut icon" href="../../favicon.ico" />
+
+        <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../images/apple-touch-icon-152x152-precomposed.png">
+        <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../images/apple-touch-icon-144x144-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../images/apple-touch-icon-120x120-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../images/apple-touch-icon-114x114-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../../images/apple-touch-icon-76x76-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../images/apple-touch-icon-72x72-precomposed.png">
+        <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+        <link rel="apple-touch-icon-precomposed" href="../../apple-touch-icon-precomposed.png">
+
+
+
+        <link rel="stylesheet" href="../../styles/d11856ca.main.css"/>
+        
+            
+                 <link rel="stylesheet" media="screen" href="../../bower_components/highlightjs/styles/default.css">
+                <link rel="stylesheet" media="projection, print" href="../../bower_components/highlightjs/styles/tomorrow.css">
+        
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <header>
+            <div class="container">
+
+	<h3 class="pull-left "><a href="/">Yoann Pigné</a></h3>
+	<div class="pull-right" id="favicon"></div>
+	<ul class="nav nav-pills  pull-right">
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				<li><a href="../../projects/index.html">Projects </a></li>
+			
+		
+			
+		
+			
+				<li><a href="../../publications/index.html">Publications </a></li>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				<li><a href="../../contact/index.html">Contact </a></li>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				<li><a href="../index.html">Teaching </a></li>
+			
+		
+			
+				<li><a href="../../these/index.html">Ph.D. </a></li>
+			
+		
+	</ul>
+</div>
+
+        </header>
+        <div class="main">
+            
+
+<div class="page-info row">
+
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Responsive Design <small></small></h1>
+        
+            <ul class="text-right list-unstyled">
+                
+                <li>TP n°1  - Info-Web - Licence 3</li>
+                
+                <li>HTML5 et CSS3</li>
+                
+                <li>Utilisation d&#x27;un framework front-end</li>
+                
+                <li>Zurb Foundation</li>
+                
+            </ul>
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            
+
+<style>
+    .main p>img {
+        max-width:100%;
+    }
+</style>
+
+<p>Le but de ce TP est de se familiariser avec les techniques actuelles de création de pages web faisant appel aux dernières versions des standards du Web (HTML5, CSS3) et aux nouveaux modes d&#39;utilisation, via des terminaux plus petits (tablettes, smartphones). </p>
+<p>Les sites Web doivent non seulement s&#39;adapter à des largeurs d&#39;écran variable mais pour être efficace cette adaptation doit être pensée dès l&#39;étape de conception (le <em>design</em>) du site. </p>
+<p>Ainsi on parle de <em>Responsive design</em> pour ces sites qui s&#39;adaptent à la largueur d&#39;écran (et a d&#39;autres attributs propres aux mobiles). On parle également d&#39;un mode de conception  <em>Mobile First</em> dont l&#39;idée est de concevoir en premier lieu les sites pour les plateformes mobiles, puis d&#39;adapter les règles de mise en page pour les navigateurs plus larges (les <em>desktops</em>).</p>
+<h2 id="grid-system">Grid System</h2>
+<p>Dans un site web, la mise en page des différents éléments (panneaux central, menu de navigations, panneaux de pub sur le coté, ...) avec le CSS est fastidieuse sans l&#39;utilisation de quelques règles de <em>design</em>. </p>
+<p><strong>On ne conçoit plus de site Web sans s&#39;aider d&#39;outils qui facilitent la mise en page: les</strong> <strong><em>grid systems.</em></strong></p>
+<p>Ceux-ci divisent la page en lignes et colonnes aux-quelles on fait référence dans le document HTML avec les attributs <code>class</code> des éléments. </p>
+<p>Ainsi une division classique avec un titre en haut, un contenu central large et une colonne sur chaque cotés, pour la navigation et les liens pourra, s&#39;écrire simplement : </p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-12 columns"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Grid Systems<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 columns"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"panel callout"</span>&gt;</span>Menu de navigation...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"panel"</span>&gt;</span>Ici le contenu principal de mon site...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 columns"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"panel"</span>&gt;</span>PUB et réseaux sociaux...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+<p>Sur un écran large ce code pourra donner ceci :</p>
+<p class="text-center">
+<img src="images/GS-large.png" alt="Grid Systems écran large">
+</p>
+
+<p>Sur un écran plus petit ce <strong>même code</strong> donnera automatiquement un agencement adapté à la taille pour faciliter la lecture : </p>
+<p class="text-center">
+<img src="images/GS-small.png" alt="Grid Systems écran petit">
+</p>
+
+<h2 id="les-front-end-frameworks-">Les <em>Front-End Frameworks</em></h2>
+<p>En français ? Les guides pour le développement coté client... </p>
+<p>Beaucoup d&#39;outils sont à la disposition des développeurs pour mettre en place le <em>Responsive Design</em> : </p>
+<ul>
+<li><a href="http://foundation.zurb.com/">Zurb Foundation</a></li>
+<li><a href="http://getbootstrap.com/">Twitter Bootstrap</a></li>
+<li><a href="http://www.jalxob.com/cool-kitten/">Cool kitten</a></li>
+<li><a href="http://inuitcss.com/">inuitcss</a></li>
+<li><a href="http://www.blueprintcss.org/">Blueprint</a></li>
+<li><a href="http://lessframework.com/">Less Framework</a></li>
+<li><a href="http://gumbyframework.com/">Grumby</a></li>
+<li><a href="http://maxmert.com/">Maxmertkit</a></li>
+<li>...</li>
+</ul>
+<p>On choisi (presque) arbitrairement d&#39;utiliser <em>Foundation</em> pour ce TP. </p>
+<h2 id="les-grilles-de-foundation-">Les grilles de <em>Foundation</em></h2>
+<p><em>Foundation</em> définie un système de grille avec un nombre indéfini de lignes et exactement 12 colonnes. un élément occupant toute la largeur autorisée de la page occupera ainsi 12 colonnes. Un tel objet aura un attribut <code>class</code> indiquant cette taille. </p>
+<p><em>Foundation</em> utilise un préfixe pour identifier 3 tailles possible d&#39;écrans (ou de fenêtres) : </p>
+<ul>
+<li>large (écrans supérieur ou égal à 1024 pixel de largeur)</li>
+<li>medium (écrans entre 640 et 1024 pixels de large)</li>
+<li>small (écrans inférieurs à 640 pixels de large)</li>
+</ul>
+<p>Considérons l&#39;exemple :</p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+<p>L&#39;élément interne interne occupera 6 des 12 colonnes disponible dans la ligne (<em>row</em>) dans le cas d&#39;un écran large (&geq;1024 pixels). Dans le cas d&#39;un écran plus petit, le comportement par défaut est de maximiser la largeur des éléments et celle-ci fera 12 colonnes et occupera tout l&#39;espace. </p>
+<p>On peut spécifier une taille pour l&#39;élément (nombre de colonnes) pour chacun des cas de figure : </p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 medium-8 columns"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+<p>Ici, l&#39;élément fera 6 colonnes de large dans un grand écran, 8 dans un écran moyen, et il utilisera toute la largeur sur un petit écran. Notons que l&#39;on n&#39;écrit pas <code>small-12</code> car c&#39;est le comportement par défaut. </p>
+<p><span class="label label-info">Bon à savoir</span> : si on alloue plus de colonnes que la ligne n&#39;en contient (12), les éléments vont continuer à s&#39;afficher sur la ligne suivante. Ainsi :</p>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+<p>Ce code va s&#39;afficher sur trois lignes.</p>
+<h2 id="le-tp">Le TP</h2>
+<p>On veut réaliser un site web permettant l&#39;affichage des différentes données relatives à la coupe du monde de football de la FIFA de 2014. On s&#39;intéresse aujourd&#39;hui à un affichage des différents groupes et des équipes qui les composent. </p>
+<p>On cherche à reproduire le site comme montré ci dessous en utilisant le framework <em>Foundation</em>. Pour y parvenir une consultation intensive de la documentation en ligne du framework est indispensable. </p>
+<p>Il faut tout d&#39;abord télécharger le framework en suivant les <a href="http://foundation.zurb.com/docs/css.html">instructions</a>. D&#39;une manière générale toute l&#39;information nécessaire pour faire le TP se trouve dans la documentation en ligne : <a href="http://foundation.zurb.com/docs/">http://foundation.zurb.com/docs/</a>. </p>
+<p>Pour commencer le TP il faut partir du <em>template</em> de page donné dans l&#39;archive de <em>Foundation</em> que vous avez téléchargée.</p>
+<h3 id="les-composants-de-la-page">Les composants de la page</h3>
+<p>La page que l&#39;on cherche à reproduire est composée de plusieurs parties qui sont toutes adaptées aux 3 tailles d&#39;écran possibles. </p>
+<h4 id="le-carrousel">Le carrousel</h4>
+<p>En Haut se trouve une division de la largeur de la page (quelque soit la largueur). Dedans y défilent automatiquement des images. <em>Foundation</em> possède un carrousel (<a href="http://foundation.zurb.com/docs/components/orbit.html">Orbit Slider</a>). LEs images suivantes peuvent être utilisées ci nécessaire : <a class="btn btn-primary" href="data/img.zip"> <span class="glyphicon glyphicon-download"></span>  Images</a></p>
+<h4 id="le-menu-de-navigation-du-cot-">Le menu de navigation du coté</h4>
+<p>Il permettra plus tard de naviguer vers d&#39;autres parties du site. Pour l&#39;instant ces 3 boutons ne mènent qu&#39;à cette page. Cette division mesure 4 colonnes de large en mode <code>medium</code> et <code>large</code>. elle occupe toute la page en mode <code>small</code> et ses boutons s&#39;alignent alors horizontalement.</p>
+<h4 id="partage-sur-les-r-seaux-sociaux">Partage sur les réseaux sociaux</h4>
+<p>Cette section à la suite du menu de coté se comporte de la même manière que ce dernier pour les modes <code>medium</code> et <code>large</code> mais elle <strong>disparaît</strong> en mode <code>small</code>. <em>Foundation</em> possède un mécanisme pour définir la <strong>visibilité</strong> d&#39;un élément en fonction du mode. </p>
+<p>Les différents réseaux sociaux mettent à disposition des développeurs de la documentation très détaillée pour pouvoir insérer un bouton de &quot;partage&quot; dans votre page.</p>
+<h4 id="le-cadre-central">Le Cadre central</h4>
+<p>Il est composé de 8 éléments, un par groupe. chaque groupe possède un tableau. </p>
+<ul>
+<li>En mode <code>large</code> 4 groupes sont affichés par ligne. Puis qu&#39;il y a 8 groupes, cela fait 2 lignes exactement. </li>
+<li>En mode <code>medium</code> on affichera 3 groupes par ligne. Il y aura donc une 3ème ligne avec uniquement 2 groupes. Par défaut, l&#39;affichage n&#39;est pas bon. A vous de régler ce problème. </li>
+<li>En mode <code>small</code>, 2 groupes par ligne, facile. </li>
+</ul>
+<p>Les groupes sont : </p>
+<ul>
+<li>Groupe A<ul>
+<li>BRA</li>
+<li>CRO</li>
+<li>MEX</li>
+<li>CMR</li>
+</ul>
+</li>
+<li>Groupe B<ul>
+<li>ESP</li>
+<li>NED</li>
+<li>CHI</li>
+<li>AUS</li>
+</ul>
+</li>
+<li>Groupe C<ul>
+<li>COL</li>
+<li>GRE</li>
+<li>CIV</li>
+<li>JPN</li>
+</ul>
+</li>
+<li>Groupe D<ul>
+<li>URU</li>
+<li>CRC</li>
+<li>ENG</li>
+<li>ITA</li>
+</ul>
+</li>
+<li>Groupe E<ul>
+<li>SUI</li>
+<li>ECU</li>
+<li>FRA</li>
+<li>HON</li>
+</ul>
+</li>
+<li>Groupe F<ul>
+<li>ARG</li>
+<li>BIH</li>
+<li>IRN</li>
+<li>NGA</li>
+</ul>
+</li>
+<li>Groupe G<ul>
+<li>GER</li>
+<li>POR</li>
+<li>GHA</li>
+<li>USA</li>
+</ul>
+</li>
+<li>Groupe H<ul>
+<li>BEL</li>
+<li>ALG</li>
+<li>RUS</li>
+<li>KOR</li>
+</ul>
+</li>
+</ul>
+<h3 id="taille-d-cran-large-">Taille d&#39;écran <code>large</code></h3>
+<p class="text-center">
+<img src="images/FIFA-large.png" alt="Page Web en mode large">
+</p>
+
+<h3 id="taille-d-cran-medium-">Taille d&#39;écran <code>medium</code></h3>
+<p class="text-center">
+<img src="images/FIFA-medium.png" alt="Page Web en mode medium">
+</p>
+
+<h3 id="taille-d-cran-small-">Taille d&#39;écran <code>small</code></h3>
+<p class="text-center">
+<img src="images/FIFA-small.png" alt="Page Web en mode small">
+</p>
+
+
+
+        </div>
+    </div>
+</div>
+
+        </div>
+        <footer>
+            <div class="container">
+	<p>&copy; Yoann Pigné 2014</p>
+</div>
+
+        </footer>
+
+
+        <script src="../../scripts/dbd26eaf.vendor.js"></script>
+
+        
+            
+            <script src="../../scripts/updateHighlightClassNames.js"></script>
+            <script>
+                updateHighlightClassNames();
+            </script>
+            <script src="../../bower_components/highlightjs/highlight.pack.js"></script>
+            <script>
+                hljs.initHighlightingOnLoad();
+            </script>
+        
+        
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-20560642-1');ga('send','pageview');
+        </script>
+
+        
+        <script src="../../scripts/20bdd8fe.plugins.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

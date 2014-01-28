@@ -417,7 +417,7 @@ $ git <span class="built_in">help</span> log</code></pre>
 <p><em>So you committed but it does not compile? Or maybe you pushed  a &quot;.class&quot; file? This is bad...</em></p>
 <ul>
 <li><p>Unstage a file that was not already in the repository:</p>
-<pre><code class="language-Bash">$ git rm --cached &lt;file&gt;</code></pre>
+<pre><code class="language-bash">$ git rm --cached &lt;file&gt;</code></pre>
 </li>
 <li><p>Unstage a file that already exists: </p>
 <pre><code class="language-bash">$ git reset HEAD &lt;file&gt;</code></pre>
@@ -583,10 +583,9 @@ $ git commit</code></pre>
 <li>Merging 2 branches will create a new commit with 2 (or more) parents.</li>
 <li>Conflicts may happen.</li>
 </ul>
-<p><code>`bash
-$ git checkout master       ## be sure we are in destination branch
+<pre><code class="language-bash">$ git checkout master       <span class="comment">## be sure we are in destination branch</span>
 $ git merge cli_branch      
-$ git branch -d cli_branch  ## remove cli_branch as it is useless</code></p>
+$ git branch <span class="operator">-d</span> cli_branch  <span class="comment">## remove cli_branch as it is useless</span></code></pre>
 
 </section>
 <section>
