@@ -3,6 +3,10 @@
 /* = UTILITY CLASSES = */
 
 /* =================== */
+ .prewrap {
+    white-space: prewrap;
+    word-wrap:  break-word;
+ }
  .wrap {
     white-space: normal;
 }

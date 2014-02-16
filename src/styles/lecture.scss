@@ -72,4 +72,10 @@ body {
 #back:hover {
     background-image: url(../images/back.png) ;
 }
+
+table>,tbody>{
+	tr:nth-child(even) {background: #FFF; border:none;}
+	tr:nth-child(odd) {background: #CCC; border:none;}
+}
+
  

@@ -1,0 +1,1404 @@
+---
+title: "Web Frameworks"
+subsection: Info-Web
+order: 2
+description:
+    - "Model-View-Controller design pattern"
+    - "The CakePHP Framework"
+    - "L3 - InfoWeb - Le Havre"
+layout: lecture.hbs
+---
+
+
+
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Prerequisite">
+{{#markdown}}
+
+<h2>Prerequisite</h2>
+<p >A few needed technologies</p>
+
+<ul>
+  <li>HTTP</li>
+  <li>REST</li>
+  <li>Security</li>
+</ul>
+
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="HTTP">
+{{#markdown}}
+<h2>Hypertext Transfer Protocol</h2>
+<p >Application-level protocol for distributed systems. Generic and stateless.</p>
+<ul>
+  <li>Request message (from client to server)</li>
+  <li>Response message (from server to client)</li>
+  <li>Text-based messages / Multipurpose Internet Mail Extensions (MIME) format</li>
+  <li >Messages
+    <pre class="no-highlight"><code>generic-message = start-line
+                *(message-header CRLF)
+                CRLF
+                [ message-body ]
+start-line      = Request-Line | Status-Line</code></pre>
+  </li>
+</ul>  
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section  id="HTTP_Headers">
+{{#markdown}}
+  <h2>HTTP Headers and Entities</h2>
+    <pre class="no-highlight"><code>message-header = field-name &quot;:&quot; [ field-value ]
+field-name     = token
+field-value    = \*( field-content | LWS )
+field-content  = &lt;the OCTETs making up the field-value
+                 and consisting of either *TEXT or combinations
+                 of token, separators, and quoted-string&gt;</code></pre>
+<h3>Example request headers and entities</h3>
+<pre ><code class="no-highlight prewrap">Host: tools.ietf.org
+Connection: keep-alive
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Accept-Charset: UTF-8,*;q=0.5
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17
+</code></pre>
+
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section  id="HTTP_Requests">
+{{#markdown}}
+  <h2>HTTP Requests</h2>
+  <p >From the client to the server</p>
+    <pre class="no-highlight"><code>Request = Request-Line
+          *(( general-header
+            | request-header 
+            | entity-header ) CRLF)
+          CRLF
+          [ message-body ] </code></pre>
+<h3>Request Line</h3>
+<pre class="no-highlight"><code>Request-Line = Method SP Request-URI SP HTTP-Version CRLF
+</code></pre>
+{{/markdown}}
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section  id="HTTP_Methods">
+{{#markdown}}
+<h2>HTTP Methods</h2>
+  <ul >
+    <li><code>"OPTIONS"</code>:  information about the communication options available</li>
+    <li><code>"GET"</code>: retrieve whatever information is identified by the <code>Request-URI</code></li>
+    <li><code>"HEAD"</code>: same as <code>"GET"</code> <code>message-body</code> in the response</li>
+    <li><code>"POST"</code>: append entity to the existing <code>Request-URI</code></li>
+    <li><code>"PUT"</code>: store entity as the new <code>Request-URI</code></li>
+    <li><code>"DELETE"</code>: delete existing <code>Request-URI</code></li>
+    <li><code>"TRACE"</code> : see what is being received at the other end of the request chain</li>
+    <li><code>"CONNECT"</code> : for use with a proxy that can dynamically switch to being a tunnel (e.g. SSL tunneling).</li>
+  </ul>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section  id="HTTP_Responses">
+{{#markdown}}
+  <h2>HTTP Responses</h2>
+    <pre class="no-highlight"><code>Response    = Status-Line             
+              *(( general-header      
+               | response-header      
+               | entity-header ) CRLF)
+              CRLF
+              [ message-body ]
+Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF
+</code></pre>
+<h3>Status Codes</h3>
+<ul>
+<li><code>1xx</code>: Informational - Request received, continuing process
+
+<li><code>2xx</code>: Success - The action was received,
+  understood, and accepted</li>
+
+<li><code>3xx</code>: Redirection - Further action must be taken to
+  complete the request</li>
+
+<li><code>4xx</code>: Client Error - The request contains bad syntax or cannot
+  be fulfilled</li>
+
+<li><code>5xx</code>: Server Error - The server failed to fulfill an apparently
+  valid request</li>
+</ul>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section  id="REST">
+{{#markdown}}
+<h2>Representational State Transfer</h2>
+<p><code>REST</code> is a style of software architecture for distributed systems on top of HTTP.</p>
+<ul>
+  <li>Each resource are accessed through one unique request (URI).</li>
+  <li>Requests are stateless (identification within the URI)</li>
+  <li>Resources are accessed one by one or as collections</li>
+  <li>RESTful web service (RESTful web API)</li>
+</ul>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section  id="RESTful_Web_Services">
+{{#markdown}}
+<h2>RESTful Web Services</h2>
+<p >RESTful API and HTTP methods</p>
+<table class="x-2" >
+<tbody><tr>
+<th>Resource</th>
+<th>GET</th>
+<th>PUT</th>
+<th>POST</th>
+<th>DELETE</th>
+</tr>
+<tr>
+<th>Collection&nbsp;URI</th>
+<td><em>List</em> elements</td>
+<td><em>Replace</em> entire collection</td>
+<td><em>Create</em> new element in collection</td>
+<td><em>Delete</em> collection</td>
+</tr>
+<tr>
+<th>Element URI</th>
+<td><em>Retrieve</em> one element</td>
+<td><em>Replace</em> existing element</td>
+<td>*Generally not used*</td>
+<td ><em>Delete</em> one element</td>
+</tr>
+</tbody></table>
+  <ul>
+    <li>Plural may indicate a collection e.g. <code class="x-2">http://example.com/emails/</code></li>
+    <li>An id may indicate an element e.g. <code class="x-2">http://example.com/email/17/</code></li>
+    <li>URN can be prefixed with API version e.g. <code class="x-2">https://api.twitter.com/1.1/statuses/home_timeline.json</code></li>
+  </ul>
+{{/markdown}}
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Security">
+{{#markdown}}
+##Security
+Too many vulnerabilities exist... But developers <em>are  responsible</em> for their code!
+
+###Common Attacks
+
+- Cross-Site Request Forgery (CSRF)
+- Cross-site scripting (XSS)
+- SQL injection
+
+###Common Measures
+
+- Anti-CSRF tokens
+- Forms Timeouts
+- Escape users inputs
+
+<p class="text_right">***Reduce vulnerability... Use frameworks!***</p>
+
+{{/markdown}}
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section id="MVC">
+{{#markdown}}
+##MVC
+The Model–View–Controller Design Pattern
+
+  - Improve the separation of concerns
+  - Facilitate automated unit testing
+  - Facilitate team work
+
+<div class="threecols">
+  <div class="first">
+    <h3>Model</h3>
+    <ul class="unstyled">
+      <li>Holds the data</li>
+      <li>Links to persistent storage (DBMS)</li>
+      <li>Ignores other components</li>
+    </ul>
+  </div>
+  <div class="second">
+    <h3>View</h3>
+    <ul class="unstyled">
+      <li>Representation of data</li>
+      <li>What users see</li>
+      <li>May know the <em>Model</em></li>
+    </ul>
+  </div>
+  <div class="third">
+    <h3>Controller</h3>
+    <ul class="unstyled">
+      <li>Handles users requests</li>
+      <li>Updates <em>Model</em> data</li>
+      <li>Triggers <em>Views</em></li>
+    </ul>
+  </div>
+</div>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="MVC_Schema">
+{{#markdown}}
+<h2>MVC Schema</h2>
+<p class="text_center">
+<img src="images/generalMVC.svg" class="maximize-width" alt="MCV overview">
+</p>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="MVC_Sequence">
+{{#markdown}}
+<h2>MVC Sequence</h2>
+<p class="text_center">
+<img src="images/mvc_sequence.png" alt="MVC Sequence" style="width:90%; valign:middle;">
+</p>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Classical_PHP_Page">
+{{#markdown}}
+<h2>A simple PHP script</h2> 
+<p>Show news and allow comments on them. </p>
+<pre class=" php x-2"><code>&lt;?php
+$connect = mysql_connect(&#039;myserver&#039;, &#039;mylogin&#039;, &#039;mypassword&#039;);
+mysql_select_db(&#039;myDB&#039;);
+if ($_SERVER[&#039;REQUEST_METHOD&#039;] == &#039;POST&#039;) {
+    $news_id = $_POST[&#039;news_id&#039;];
+    mysql_query(&quot;INSERT INTO commentaires SET news_id=&#039;$news_id&#039;,
+      auteur=&#039;&quot;.mysql_escape_string($_POST[&#039;auteur&#039;]).&quot;&#039;,
+      texte=&#039;&quot;.mysql_escape_string($_POST[&#039;texte&#039;]).&quot;&#039;,
+      date=NOW()&quot;
+      );
+    header(&quot;location: &quot;.$_SERVER[&#039;SCRIPT_NAME&#039;].&quot;?news_id=$news_id&quot;);
+    exit;
+} else {
+    $news_id = $_GET[&#039;news_id&#039;];
+}
+?&gt;
+&lt;!-- [...] --&gt;
+</code></pre>
+{{/markdown}}
+</section>
+<section id="Classical_PHP_Page_2">
+{{#markdown}}
+<pre class=" php x-2"><code>&lt;!-- [...] --&gt;
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Les news&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Les news&lt;/h1&gt;
+&lt;div id=&quot;news&quot;&gt;
+  &lt;?php
+  $news_req = mysql_query(&quot;SELECT * FROM news WHERE id=&#039;$news_id&#039;&quot;);
+  $news = mysql_fetch_array($news_req);
+  ?&gt;
+  &lt;h2&gt;&lt;?php echo $news[&#039;titre&#039;] ?&gt; post&eacute;e le &lt;?php echo $news[&#039;date&#039;] ?&gt;&lt;/h2&gt;
+  &lt;p&gt;&lt;?php echo $news[&#039;texte_nouvelle&#039;] ?&gt; &lt;/p&gt;
+  &lt;?php
+  $comment_req = mysql_query(&quot;SELECT * FROM commentaires 
+      WHERE news_id=&#039;$news_id&#039;&quot;);
+  $nbre_comment = mysql_num_rows($comment_req);
+  ?&gt;
+  &lt;h3&gt;&lt;?php echo $nbre_comment ?&gt; commentaires relatifs &agrave; cette nouvelle&lt;/h3&gt;
+  &lt;?php while ($comment = mysql_fetch_array($comment_req)) {?&gt;
+  &lt;h3&gt;&lt;?php echo $comment[&#039;auteur&#039;] ?&gt; 
+      a &eacute;crit le &lt;?php echo $comment[&#039;date&#039;] ?&gt;&lt;/h3&gt;
+  &lt;p&gt;&lt;?php echo $comment[&#039;texte&#039;] ?&gt;&lt;/p&gt;
+  &lt;?php } ?&gt;
+&lt;!-- [...] --&gt;
+</code></pre>
+{{/markdown}}
+</section>
+<section id="Classical_PHP_Page_3">
+{{#markdown}}
+<pre class=" php x-2"><code>&lt;!-- [...] --&gt;
+  &lt;form method=&quot;POST&quot; action=&quot;&lt;?php echo $_SERVER[&#039;SCRIPT_NAME&#039;] ?&gt;&quot; 
+      name=&quot;ajoutcomment&quot;&gt;
+      &lt;input type=&quot;hidden&quot; name=&quot;news_id&quot; value=&quot;&lt;?php echo $news_id?&gt;&quot;&gt;
+      &lt;input type=&quot;text&quot; name=&quot;auteur&quot; value=&quot;Votre nom&quot;&gt;&lt;br /&gt;
+      &lt;textarea name=&quot;texte&quot; rows=&quot;5&quot; cols=&quot;10&quot;&gt;
+          Saisissez votre commentaire
+      &lt;/textarea&gt;&lt;br /&gt;
+      &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Envoyer&quot;&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Various actions are mixed up in this file:</p>
+<ul class="center three-columns" >
+  <li>Request handling</li>
+  <li>Database update</li>
+  <li>Database lookup</li>
+  <li>Visualization (style?)</li>
+  <li>Security</li>
+  <li>Routing</li>
+</ul>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Simplest_MVC_Model">
+{{#markdown}}
+##The Simplest MVC App
+Same as previous example, with MVC pattern
+
+###The Model
+<pre class=" php x-2"><code>&lt;?php
+function dbconnect() {
+  static $connect = null;
+  if ($connect === null) {
+    try {
+      $connect = new PDO(&quot;mysql:dbname=simplemvc;host=127.0.0.1&quot;, &#039;pigne&#039;, &#039;n2EfCJYFx6CExzSX&#039; );
+      $connect-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) { echo &#039;Connection failed :( : &#039; . $e-&gt;getMessage(); exit;}
+  }
+  return $connect;
+}
+/* [...] */
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Simplest_MVC_Model_2">
+{{#markdown}}
+<pre class=" php x-2"><code>/* [...] */
+function get_news($id) {
+  try{
+    $sql = &quot;SELECT * FROM news WHERE id= :id&quot;;
+    $sth = dbconnect()-&gt;prepare($sql);
+    $sth-&gt;execute(array(&#039;:id&#039; =&gt; $id));
+    if($sth-&gt;errorCode() == 0) {
+      return  $sth-&gt;fetch();
+    }
+    else {
+      return array();
+    }
+  }catch (PDOException $e) { echo &#039;Select comments failed: &#039; . $e-&gt;getMessage(); exit;}
+}
+
+function get_comments($news_id) {
+  try {
+    $sql = &quot;SELECT * FROM commentaires WHERE news_id= :news_id&quot;;
+    $sth = dbconnect()-&gt;prepare($sql);
+    $sth-&gt;execute(array(&#039;:news_id&#039; =&gt; $news_id));
+    if($sth-&gt;errorCode() == 0) {
+      return  $sth-&gt;fetchAll();
+    }
+    else {
+      return array();
+    }
+  }catch (PDOException $e) { echo &#039;Select comments failed: &#039; . $e-&gt;getMessage(); exit;}
+}
+/* [...] */
+</code></pre>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Simplest_MVC_Model_3">
+{{#markdown}}
+<pre class=" php x-2"><code>/* [...] */
+function insert_comment($comment) {
+  $connect = dbconnect();
+  try{
+    $sql =  &quot;INSERT INTO commentaires SET news_id= :news_id , &quot; .
+    &quot;auteur= :auteur , &quot; .
+    &quot;texte= :texte , &quot; .
+    &quot;date=NOW()&quot;;
+    $sth = $connect-&gt;prepare($sql);
+    $sth-&gt;execute(array(&#039;:news_id&#039; =&gt; (int)$comment[&#039;news_id&#039;], 
+      &#039;:auteur&#039; =&gt; $connect-&gt;quote($comment[&#039;auteur&#039;]),
+      &#039;:texte&#039; =&gt; $connect-&gt;quote($comment[&#039;texte&#039;]),
+      )
+    );
+  } catch(PDOException $e) { echo &#039;Insert failed: &#039; . $e-&gt;getMessage(); exit;}
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Simplest_MVC_View">
+{{#markdown}}
+<h3>The View</h3>
+<pre class=" php x-2"><code>&lt;html&gt;&lt;head&gt;&lt;title&gt;Les news&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Les News&lt;/h1&gt;
+  &lt;div id=&quot;news&quot;&gt;
+    &lt;h2&gt;&lt;?php echo $news[&#039;titre&#039;] ?&gt; post&eacute;e le &lt;?php echo $news[&#039;date&#039;] ?&gt;&lt;/h2&gt;
+    &lt;p&gt;&lt;?php echo $news[&#039;texte_nouvelle&#039;] ?&gt; &lt;/p&gt;
+    &lt;h3&gt;&lt;?php echo $nbre_comment ?&gt; commentaires relatifs &agrave; cette nouvelle&lt;/h3&gt;
+    &lt;dl&gt;
+    &lt;?php foreach ($comments AS $comment) {?&gt;
+    &lt;dt&gt;&lt;?php echo $comment[&#039;auteur&#039;] ?&gt;, le &lt;?php echo $comment[&#039;date&#039;]?&gt;:&lt;/dt&gt;
+    &lt;dd&gt;&lt;?php echo $comment[&#039;texte&#039;] ?&gt;&lt;/dd&gt;
+    &lt;?php } ?&gt;
+    &lt;/dl&gt;
+    &lt;h3&gt;Un commentaire ?&lt;/h3&gt;
+    &lt;form method=&quot;POST&quot; action=&quot;&lt;?php echo $_SERVER[&#039;SCRIPT_NAME&#039;] ?&gt;&quot; name=&quot;ajoutcomment&quot;&gt;
+      &lt;input type=&quot;hidden&quot; name=&quot;news_id&quot; value=&quot;&lt;?php echo $news[&#039;id&#039;]?&gt;&quot;&gt;
+      &lt;input type=&quot;text&quot; name=&quot;auteur&quot; placeholder=&quot;Votre nom&quot;&gt;&lt;br&gt;
+      &lt;textarea name=&quot;texte&quot; placeholder=&quot;Saisissez votre commentaire&quot;&gt;&lt;/textarea&gt;&lt;br&gt;
+      &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Envoyer&quot;&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Simplest_MVC_Controller">
+{{#markdown}}
+<h3>The Controller</h3>
+<pre class=" php x-2"><code>require (&#039;simpleModel.php&#039;);
+if ($_SERVER[&#039;REQUEST_METHOD&#039;] == &#039;POST&#039;) {
+  insert_comment($_POST);
+  header(&quot;HTTP/1.1 301 Moved Permanently&quot;); 
+  header(&quot;location: {$_SERVER[&#039;SCRIPT_NAME&#039;]}?news_id={$_POST[&#039;news_id&#039;]}&quot;);
+  exit;
+} else {
+  $news = get_news($_GET[&#039;news_id&#039;]);
+  $comments = get_comments($_GET[&#039;news_id&#039;]);
+  $nbre_comment = sizeof($comments);
+  require (&#039;simpleView.php&#039;);
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="MVC_Frameworks">
+{{#markdown}}
+  <h2>PHP MVC Frameworks</h2>
+  <p >Many of them</p>
+
+  <ul class="three-columns">
+  <li>Agavi</li>
+  <li>CakePHP</li>
+  <li>CodeIgniter</li>
+  <li>Copix</li>
+  <li>Dynatrix</li>
+  <li>FuelPHP</li>
+  <li>Gest-HVSL</li>
+  <li>Hoa</li>
+  <li>Jelix</li>
+  <li>Kinkama</li>
+  <li>Kohana</li>
+  <li>MODx</li>
+  <li>Open Web Framework</li>
+  <li>Postnuke</li>
+  <li>QCodo</li>
+  <li>Symfony</li>
+  <li>TemplatePP</li>
+  <li>Yii Framework</li>
+  <li>Zend Framework</li>
+  <li>Joomla! Platform</li>
+  </ul>  
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="CakePHP">
+{{#markdown}}
+<h2>CakePHP</h2>
+<p class="text_right " style="position:absolute; width:100%;height:100%;bottom:0;"><img src="images/cakephp.png"  alt="Logo CakePHP"></p>
+<ul>
+  <li>A robust <em>base</em> for your application.</li>
+  <li>Handles all the aspects from user's <em>request</em> to the server's <em>response</em>.</li>
+  <li>Provides a <em>MVC</em> development approach.</li>
+  <li>Provides <em>tools</em> to help development process (debug, scaffolding...)</li>
+  <li>Based on a strict organizational structure and naming conventions: CakePHP prefers <em>convention</em> over <em>configuration</em>.</li>
+  </ul>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="CakePHP_Features">
+{{#markdown}}
+<h2>CakePHP's Main Features</h2>
+<ul class="two-columns unstyled">
+<li>Integrated <em>CRUD</em> for database interaction.</li>
+<li>Application scaffolding.</li>
+<li>Code generation.</li>
+<li>Built-in <em>validation</em>.</li>
+<li><em>MVC</em> architecture.</li>
+<li>Request <em>dispatcher</em> with clean, custom URLs and <em>routes</em>.</li>
+<li>Fast and flexible <em>templating</em> (PHP syntax, with helpers).</li>
+<li>View Helpers for AJAX, JavaScript, HTML Forms and more.</li>
+<li>Email, Cookie, Security, Session, and Request Handling Components.</li>
+<li>Flexible <em>Caching</em>.</li>
+<li>Localization.</li>
+</ul>
+{{/markdown}}
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section id="CakePHP_App">
+{{#markdown}}
+<h2>CakePHP Apps' Structure</h2>
+<pre class="prettyprint "><code>├── README.md
+├── app
+│   ├── Config
+│   ├── Controller
+│   ├── Model
+│   ├── View
+│   ├── index.php
+│   └── webroot
+│       ├── css
+│       ├── favicon.ico
+│       ├── files
+│       ├── img
+│       ├── index.php
+│       ├── js
+│       └── test.php
+├── index.php
+├── lib
+├── plugins
+└── vendors
+</code></pre>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="CakePHP_MVC_Model">
+{{#markdown}}
+  <h2>CakePHP's MVC Model</h2>
+  <p class="text_center">
+    <img src="images/cake_mvc.png" alt="">
+  </p>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="CakePHP_Controllers">
+{{#markdown}}
+  <h2>CakePHP's Controllers</h2>
+  <ul>
+    <li>The controller should handle the <em>request</em> up to the <em>response</em>.</li>
+    <li>Each user request is  <em>routed</em> to the proper <em>action</em> on the proper <em>controller</em>.</li>
+    <li>Usually, <em>one controller</em> is associated to <em>one model</em>.</li>
+    <li>Controllers are defined in the <code>/app/Controller/</code> folder.</li>
+    <li>Controllers extend <code>AppController</code>, defined in <code>/app/Controller/AppController.php</code></li>
+    <li>Controllers have attributes (mainly <code>$components</code>, <code>$helpers</code> and <code>$uses</code>).</li>
+  </ul>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Controllers_Actions">
+{{#markdown}}
+  <h2>Controllers' Actions</h2>
+  <ul>
+    <li>Actions are defined by the requested URI.</li>
+    <li>Each Controller can have several actions. </li>
+    <li>Actions in one Controller all deal with the same kind of data (same <em>Model</em>).</li>
+    <li>By default, each action in a Controller should have a corresponding <em>View</em>.</li>
+  </ul>
+  <pre class=" php "><code>class PlayersController extends AppController {
+    public function best() {
+        $bestPlayer = $this->Player->find('first', array(
+          'order' => array('Player.points' => 'desc')
+        );
+        $this->set('best', $bestPlayer);
+    }
+}</code></pre>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Request_Life_Cycle">
+{{#markdown}}
+<h2>Requests' Life Cycle</h2>
+  <ol>
+    <li><code>beforeFilter()</code>
+      <ul>
+        <li>Inherited from <code>AppController</code>.</li>
+        <li>Place where to check for session,  permissions, ...</li>
+      </ul>
+    </li>
+    <li>The actual action's logic</li>
+    <li><code>beforeRender()</code>
+      <ul>
+        <li>Inherited from <code>AppController</code>.</li>
+        <li>Not really used.</li>
+      </ul>
+    </li>
+    <li>The View is rendered</li>
+    <li><code>AfterRender()</code>
+      <ul>
+        <li>Inherited from <code>AppController</code>.</li>
+        <li>Last method invoked before the response is sent back to the user.</li>
+      </ul>
+    </li>
+  </ol> 
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Controller_View_interaction">
+{{#markdown}}
+<h2>Interaction with the View</h2>
+<h3>The <code>set()</code> Method</h3>
+<pre class=" php "><code>$this->set('color', 'pink');
+$data = array(
+  'color' => 'pink',
+  'type' => 'sugar',
+  'base_price' => 23.95
+);
+// make $color, $type, and $base_price
+// available to the view:
+$this->set($data);
+$this->set($this->MyModel->find());
+$this->set('title_for_layout', 'Title of that Web page');
+</code></pre>
+<h3>the <code>render()</code> method</h3>
+ (called automatically)
+{{/markdown}}
+</section>
+
+
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Controller_Attributes">
+{{#markdown}}
+<h2>Controller Attributes</h2>
+<h3><code>Controller::$uses</code></h3>
+<p>Allows access to other Models than the default one</p>
+<pre class="php"><code>class RecipesController extends AppController {
+  public $uses = array('Recipe', 'User');
+  //...
+</code></pre>
+<h3><code>Controller::$helpers</code></h3>
+<p>Extra methods and utilities that help with the <em>representation</em> of the response (the view). By default (in <code>AppController</code>), only <code>Html</code> and <code>Form</code> helpers are included.</p>
+<pre class="php"><code>    public $helpers = array('Js', 'Html', 'Form');
+</code></pre>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Controller_Attributes2">
+{{#markdown}}
+<h3><code>Controller::$components</code></h3>
+<p>Components allow extra actions, validations and control over the <em>all App</em>. They are not specific to one particular Controller.</p>
+<pre class=" php "><code>class PostsController extends AppController {
+    public $components = array(
+        'Auth' => array(
+            'authorize' => array('controller'),
+            'loginAction' => array('controller' => 'users', 'action' => 'login')
+        ),
+        'Cookie' => array('name' => 'CookieMonster')
+    );
+</code></pre>
+<ul class="two-columns">
+  <li>Security</li>
+  <li>Sessions</li>
+  <li>Access control lists</li>
+  <li>Emails</li>
+  <li>Cookies</li>
+  <li>Authentication</li>
+  <li>Request handling</li>
+  <li>Pagination</li>
+</ul>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Views">
+{{#markdown}}
+<h2>Views</h2>
+<p >View are responsible for the output of the <em>model data</em>, mainly through <em>visual representation</em> (HTML), but not only.</p>
+<ul>
+  <li>Various data formats can be generated: XML, JSON, binary.</li>
+  <li>Views are written in PHP with file extension <code>.ctp</code> (CakePHP Template).</li>
+  <li>Views a stored in <code>/app/View/</code>... In a folder named after a controller... with a file name according to one of that controller's actions. Example: <ul>
+      <li> A controller: <code class="prettyprint">OrdersController</code> stored in <code>app/Controller/OrdersController.php</code> with a <code class="prettyprint">ship()</code> action.</li>
+      <li>A corresponding view: <code>app/View/Orders/ship.ctp</code></li>
+  </ul>
+  <li><em>Helpers</em> defined in <em>Controllers</em> are used in <em>Views</em></li>
+</ul>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_View">
+{{#markdown}}
+<h3>Example View</h3>
+<p>A view (CakePHP template format) using an <code >Html</code> helper to generate a link to another controller action.</p>
+<pre class=" php "><code>// app/view/Posts/view.ctp
+&lt;h1&gt;View Post&lt;/h1&gt;
+&lt;article&gt;
+&lt;h2&gt;&lt;?php echo $post[&#039;Post&#039;][&#039;title&#039;];?&gt;&lt;/h2&gt;
+&lt;div class=&quot;body&quot;&gt;&lt;?php echo $post[&#039;Post&#039;][&#039;body&#039;];?&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;aside&gt;
+&lt;p&gt;&lt;?php 
+echo $this-&gt;Html-&gt;link(
+      __(&#039;Edit this Post&#039;), 
+      array(&#039;action&#039; =&gt; &#039;edit&#039;, $post[&#039;Post&#039;][&#039;id&#039;])
+);
+?&gt;&lt;/p&gt;
+&lt;/aside&gt;
+&lt;/article&gt;
+</code></pre>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Extending_Views">
+{{#markdown}}
+<h2>Extending Views</h2>
+<p >Allows to reuse common code between views</p>
+
+```php
+<!-- app/View/Common/view.ctp -->
+<h1><?php echo $this->fetch('title'); ?></h1>
+<?php echo $this->fetch('content'); ?>
+<div class="related">
+    <h3>Related...</h3>
+      <?php echo $this->fetch('sidebar'); ?>
+</div>
+```
+
+```php
+<!-- app/View/Posts/view.ctp -->
+<?php $this->extend('/Common/view');
+$this->assign('title', $post);
+
+$this->start('sidebar'); ?>
+<p>
+  <?php echo $this->Html->link('edit', array( 
+      'action' => 'edit', $post['Post']['id'])); ?>
+</p>
+<?php $this->end(); ?>
+
+<p>
+  The rest of the page goes to the 'content' block...
+</p>
+```
+
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="View_Layouts">
+{{#markdown}}
+<h2>View Layouts</h2>
+<p class="">Layouts contain parts of the view that stay from one view to the other. </p>
+<pre class=" php "><code>&lt;!-- app/View/Layouts/default.ctp --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;?php echo $title_for_layout?&gt;&lt;/title&gt;
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+&lt;?php echo $this-&gt;fetch(&#039;meta&#039;);
+echo $this-&gt;fetch(&#039;css&#039;);
+echo $this-&gt;fetch(&#039;script&#039;); ?&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;header&quot;&gt;
+    &lt;div id=&quot;menu&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;?php echo $this-&gt;fetch(&#039;content&#039;); ?&gt;
+&lt;div id=&quot;footer&quot;&gt;...&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Models">
+{{#markdown}}
+<h2>Models</h2>
+<p >Models hold the application's information logic. They are responsible for the <em>storage</em> and <em>validation</em> of data.</p>
+<ul>
+  <li>Defined in <code>app/Model/</code></li>
+  <li>Extend <code class="prettyprint">AppModel</code></li>
+  <li><em>Storage</em>: automatic link with DB (<em>Convention</em> over <em>configuration</em>)</li>
+  <li><em>Validation</em>: done with a reserved <code class="prettyprint">$validate</code> field</li>
+</ul>
+{{/markdown}}
+</section>
+
+
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Models_Validation">
+{{#markdown}}
+<h3>Models validation</h3>
+<pre class=" php "><code>class User extends AppModel {
+    public $validate = array(
+        &#039;login&#039; =&gt; array(
+            &#039;alphaNumeric&#039; =&gt; array(
+                &#039;rule&#039;     =&gt; &#039;alphaNumeric&#039;,
+                &#039;required&#039; =&gt; true,
+                &#039;message&#039;  =&gt; &#039;Alphabets and numbers only&#039;
+            ),
+            &#039;between&#039; =&gt; array(
+                &#039;rule&#039;    =&gt; array(&#039;between&#039;, 5, 15),
+                &#039;message&#039; =&gt; &#039;Between 5 to 15 characters&#039;
+            )
+        ),
+        &#039;password&#039; =&gt; array(
+            &#039;rule&#039;    =&gt; array(&#039;minLength&#039;, &#039;8&#039;),
+            &#039;message&#039; =&gt; &#039;Minimum 8 characters long&#039;
+        ),
+        &#039;born&#039; =&gt; array(
+            &#039;rule&#039;       =&gt; &#039;date&#039;,
+            &#039;message&#039;    =&gt; &#039;Enter a valid date&#039;,
+            &#039;allowEmpty&#039; =&gt; true
+        )
+    );
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Models_Relationships">
+{{#markdown}}
+<h3>Models Relationships</h3>
+<p >Relationship define how Models are linked together -- Tables joins in the database</p>
+<table border="1">
+<colgroup>
+<col width="16%">
+<col width="27%">
+<col width="57%">
+</colgroup>
+<thead >
+<tr><th>Relationship</th>
+<th>Association Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody >
+<tr><td>one to one</td>
+<td>hasOne</td>
+<td>A user has one profile.</td>
+</tr>
+<tr><td>one to many</td>
+<td>hasMany</td>
+<td>A user can have multiple recipes.</td>
+</tr>
+<tr><td>many to one</td>
+<td>belongsTo</td>
+<td>Many recipes belong to a user.</td>
+</tr>
+<tr><td>many to many</td>
+<td>hasAndBelongsToMany</td>
+<td>Recipes have, and belong to many ingredients.</td>
+</tr>
+</tbody>
+</table>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Model_hasOne">
+{{#markdown}}
+<h3>hasOne</h3>
+<p>The other model contains the foreign key.</p>
+<div class="twocols">
+<div class="first">
+<pre class=" php "><code>class User extends AppModel {
+  public $hasOne = &#039;Profile&#039;;
+  // ...
+}
+</code></pre>
+</div>
+<div class="second">
+<pre class="sql"><code>
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  // ...
+  PRIMARY KEY (`id`)
+)
+</code></pre>
+</div>
+
+
+<h3>belongsTo</h3>
+<p>The current model contains the foreign key.</p>
+<div class="twocols">
+<div class="first">
+<pre class=" php "><code>
+class Profile extends AppModel {
+    public $belongsTo = &#039;User&#039;;
+    // ...
+}
+</code></pre>
+</div>
+
+
+<div class="second">
+<pre class="sql"><code>
+CREATE TABLE IF NOT EXISTS `profiles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  // ...
+  PRIMARY KEY (`id`)
+)
+</code></pre>
+</div>
+</div>
+
+
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Model_hasMany">
+{{#markdown}}
+<h3>hasMany</h3>
+<p>The other model contains the foreign key.</p>
+<div class="twocols">
+<div class="first">
+<pre class=" php "><code>// app/Model/Post.php
+class Post extends AppModel {
+    public $hasMany = &#039;Comment&#039;;
+    // ...
+}
+
+// app/Model/Comment.php
+class  Comment extends AppModel {
+    public $belongsTo = &#039;Post&#039;;
+    // ...
+}
+</code></pre>
+</div>
+<div class="second">
+<pre class="sql"><code>CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  // ...
+  PRIMARY KEY (`id`)
+)
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `post_id` int(11) NOT NULL,
+  ...
+  PRIMARY KEY (`id`)
+)
+</code></pre>
+</div>
+</div>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Model_counterCache">
+{{#markdown}}
+
+<h3>counterCache</h3>
+<p>Avoid having to count (<code class="prettyprint">SELECT COUNT(*) FROM table</code>) references. Add a special field in the parent model.</p>
+<div class="twocols">
+<div class="first">
+<pre class=" php"><code>CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `comment_count` int(11) NOT NULL 
+                        DEFAULT `0`,
+  // ...
+  PRIMARY KEY (`id`)
+)
+</code></pre>
+</div>
+<div class="second">
+<pre class=" sql"><code>// app/Model/Comment.php
+class  Comment extends AppModel {
+    public $belongsTo = array(
+        `Post` => array(
+            `counterCache` => true,
+        )
+    );
+    // ...
+}
+</code></pre>
+</div>
+</div>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Model_HABTM">
+{{#markdown}}
+<h3>hasAndBelongsToMany</h3>
+<ul>
+<li>Bidirectional and non exclusive association between tables.</li>
+  <li>Need an extra table in database to handle HABTM</li>
+  <li>Convention : name of two tables alphabetically sorted and separated by "_".</li>
+</ul>
+<pre class=" sql "><code>CREATE TABLE IF NOT EXISTS `ingredients_recipes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ingredient_id` int(11) NOT NULL,
+  `recipe_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+)
+</code></pre>
+<pre class=" sql second"><code>// app/Model/Recipe.php
+class Recipe extends AppModel {
+    public $hasAndBelongsToMany = `Ingredient`;
+    // ...
+}
+
+// app/Model/Ingredient.php
+class Ingredient extends AppModel {
+    public $hasAndBelongsToMany = `Recipe`;
+    // ...
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Configuration">
+{{#markdown}}
+  <h2>A basic Example</h2>
+  <p >A Simple Blog application. Step by step.</p>
+<h3>Step 0: Configuration</h3>
+  <ul>
+    <li>Download CakePHP in the App folder (e.g. <code>~/public_html/MyApp</code>)</li>
+    <li>Set permissions and tune <code>htaccess</code> files...</li>
+    <li>Configure database information in <code>app/Config/database.php</code></li>
+  </ul> 
+<pre class=" sql x-3"><code>public $default = array(
+  'datasource' => 'Database/Mysql',
+  'persistent' => false,
+  'host' => 'localhost',
+  'login' => 'pigne',
+  'password' => 'xxxxxxxxx',
+  'database' => 'MyApp',
+  'prefix' => ',
+  'encoding' => 'utf8',
+);
+</code></pre>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Model">
+{{#markdown}}
+  <h3>Step 1: Create a Post model in the DB</h3>
+<pre class=" sql "><code>CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `body` text CHARACTER SET utf8 COLLATE utf8_bin,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`) VALUES
+(1, 'The titlezkfjalkezf', 'This is the post body...', '2014-02-16 16:11:16', NULL),
+(2, 'A title once again', 'And the post body follows.', '2014-02-16 16:11:16', NULL),
+(3, 'Title strikes back', 'This is really exciting! Not.', '2014-02-16 16:11:16', NULL),
+(4, 'My new idea I want to share', 'qsdfqsdfqsdfqsdfqsdf', '2014-02-16 17:41:16', NULL);
+</code></pre>
+<h3>Step 2: Create a Post model in CakePHP</h3>
+<pre class=" php "><code>// app/Model/Post.php
+class Post extends AppModel {
+}
+</code></pre>  
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Controller">
+{{#markdown}}
+<h3>Step 3: Create a Post Controller</h3>
+<pre class=" php "><code>// app/Controller/PostsCrontroller.php
+class PostsController extends AppController {
+    public $helpers = array('Html', 'Form');
+
+    public function index() {
+        $this->set('posts', $this->Post->find('all'));
+    }
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Create_Post">
+{{#markdown}}
+<h3>Step 4: Create Post Views</h3>
+<pre class=" php "><code>&lt;!-- app/View/Posts/index.ctp --&gt;
+&lt;h1&gt;List of Posts&lt;/h1&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Created&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;?php foreach ($posts as $post): ?&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            &lt;?php echo $this-&gt;Html-&gt;link(
+                    $post[&#039;Post&#039;][&#039;title&#039;], 
+                    array(&#039;action&#039; =&gt; &#039;view&#039;, $post[&#039;Post&#039;][&#039;id&#039;])
+                 ); 
+            ?&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;?php echo $post[&#039;Post&#039;][&#039;created&#039;]; ?&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;?php endforeach; ?&gt;
+&lt;/table&gt;
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<section id="Example_View_Post">
+{{#markdown}}
+<h3>Step 5: View one Post</h3>
+<pre class=" php "><code>// app/Controller/PostsCrontroller.php
+public function view($id = null) {
+    if (!$id) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    $post = $this-&gt;Post-&gt;findById($id);
+    if (!$post) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    $this-&gt;set(&#039;post&#039;, $post);
+}
+</code></pre>
+<pre class=" php "><code>&lt;!-- app/View/Posts/view.ctp --&gt;
+&lt;h1&gt;View Post&lt;/h1&gt;
+&lt;article&gt;
+&lt;h2&gt;&lt;?php echo $post[&#039;Post&#039;][&#039;title&#039;];?&gt;&lt;/h2&gt;
+&lt;section&gt;&lt;p&gt;&lt;?php echo $post[&#039;Post&#039;][&#039;body&#039;];?&gt;&lt;p&gt;&lt;/section&gt;
+&lt;aside&gt;
+  &lt;p&gt;Created: &lt;?php echo $post[&#039;Post&#039;][&#039;created&#039;];?&gt;&lt;/p&gt;
+  &lt;p&gt;Modified: &lt;?php echo $post[&#039;Post&#039;][&#039;modified&#039;];?&gt;&lt;/p&gt;
+&lt;/aside&gt;
+&lt;/article&gt;
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<section id="Example_Add_Post">
+{{#markdown}}
+<h3>Step 6: Add a Post</h3>
+<pre class=" php "><code>// app/Controller/PostsCrontroller.php
+class PostsController extends AppController {
+    public $helpers = array(&#039;Html&#039;, &#039;Form&#039;, &#039;Session&#039;);
+    public $components = array(&#039;Session&#039;);
+    // ...
+    public function add() {
+        if ($this-&gt;request-&gt;is(&#039;post&#039;)) {
+            $this-&gt;Post-&gt;create();
+            if ($this-&gt;Post-&gt;save($this-&gt;request-&gt;data)) {
+                $this-&gt;Session-&gt;setFlash(&#039;Your post has been saved.&#039;);
+                $this-&gt;redirect(array(&#039;action&#039; =&gt; &#039;index&#039;));
+            } else {
+                $this-&gt;Session-&gt;setFlash(&#039;Unable to add your post.&#039;);
+            }
+        }
+    }
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Add_Post2">
+{{#markdown}}
+<h3>Step 6: Add a Post</h3>
+<pre class=" php "><code>&lt;!-- File: app/View/Posts/add.ctp --&gt;
+&lt;h1&gt;&lt;?php __(&#039;Add Post&#039;);?&gt;&lt;/h1&gt;
+&lt;?php
+echo $this-&gt;Form-&gt;create(&#039;Post&#039;);
+echo $this-&gt;Form-&gt;input(__(&#039;title&#039;));
+echo $this-&gt;Form-&gt;input(__(&#039;body&#039;), array(&#039;rows&#039; =&gt; &#039;3&#039;));
+echo $this-&gt;Form-&gt;end(__(&#039;Save Post&#039;));
+?&gt;
+</code></pre>
+<pre class=" php "><code>&lt;!-- File: app/View/Posts/index.ctp --&gt;
+&lt;!-- ... --&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+    &lt;?php echo $this-&gt;Html-&gt;link(&#039;Create a new Post&#039;, array(&#039;action&#039; =&gt; &#039;add&#039;)); ?&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Validation">
+{{#markdown}}
+<h3>Step 7: Validate new Post</h3>
+<pre class=" php "><code>// app/Model/Post.php
+class Post extends AppModel {
+  public $validate = array(
+    &#039;title&#039; =&gt; array(
+      &#039;rule&#039; =&gt; &#039;notEmpty&#039;,
+      &#039;message&#039; =&gt; &#039;Please provide a title for your post&#039;
+      ),
+    &#039;body&#039; =&gt; array(
+      &#039;rule&#039; =&gt; &#039;notEmpty&#039;
+      )
+    );
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Edit_Post">
+{{#markdown}}
+<h3>Step 8: Edit Post</h3>
+<pre class=" php "><code>public function edit($id = null) {
+    if (!$id) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    $post = $this-&gt;Post-&gt;findById($id);
+    if (!$post) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    if ($this-&gt;request-&gt;is(&#039;post&#039;) || $this-&gt;request-&gt;is(&#039;put&#039;)) {
+        $this-&gt;Post-&gt;id = $id;
+        if ($this-&gt;Post-&gt;save($this-&gt;request-&gt;data)) {
+            $this-&gt;Session-&gt;setFlash(&#039;Your post has been updated.&#039;);
+            $this-&gt;redirect(array(&#039;action&#039; =&gt; &#039;index&#039;));
+        } else {
+            $this-&gt;Session-&gt;setFlash(&#039;Unable to update your post.&#039;);
+        }
+    }
+    if (!$this-&gt;request-&gt;data) {
+        $this-&gt;request-&gt;data = $post;
+    }
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+
+
+<section>
+{{#markdown}}
+<h3>Step 8: Edit Post</h3>
+  
+  ```php
+<!-- app/View/Posts/edit.ctp -->
+<h1>Edit Post</h1>
+<?php
+echo $this->Form->create('Post');
+echo $this->Form->input('title');
+echo $this->Form->input('body', array('rows' => '3'));
+echo $this->Form->input('id', array('type' => 'hidden'));
+echo $this->Form->end('Save Post');
+?>
+```
+
+```php
+<!-- app/View/Posts/view.ctp -->
+<!-- ... -->
+<li>
+  <?php echo $this->Html->link("Edit this post", 
+          array('action' => 'edit', $post['Post']['id'])
+        );
+  ?>
+</li>
+```
+
+{{/markdown}}
+</section>
+
+
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Delete_Post">
+{{#markdown}}
+<h3>Step 9: Delete Post</h3>
+<pre class=" php "><code>public function delete($id) {
+  if ($this-&gt;request-&gt;is(&#039;get&#039;)) {
+    throw new MethodNotAllowedException();
+  }
+
+  if ($this-&gt;Post-&gt;delete($id)) {
+    $this-&gt;Session-&gt;setFlash(&#039;The post with id: &#039; . $id . &#039; has been deleted.&#039;);
+    $this-&gt;redirect(array(&#039;action&#039; =&gt; &#039;index&#039;));
+  }
+}
+</code></pre>
+
+<pre class=" php "><code>&lt;!-- app/View/Posts/index.ctp --&gt;
+&lt;!-- ... --&gt;
+&lt;td&gt;
+    &lt;?php echo $this-&gt;Html-&gt;link(&#039;Edit&#039;, 
+                        array(&#039;action&#039; =&gt; &#039;edit&#039;, $post[&#039;Post&#039;][&#039;id&#039;])); ?&gt;
+    &lt;?php echo $this-&gt;Form-&gt;postLink(
+        &#039;Delete&#039;,
+        array(&#039;action&#039; =&gt; &#039;delete&#039;, $post[&#039;Post&#039;][&#039;id&#039;]),
+        array(&#039;confirm&#039; =&gt; &#039;Are you sure?&#039;));
+    ?&gt; 
+&lt;/td&gt;
+&lt;!-- ... --&gt;
+</code></pre>
+
+{{/markdown}}
+</section>
+
+
+
+<!-- ==== SLIDE ==== -->
+<section id="References">
+{{#markdown}}
+  <h2>References</h2>
+  <ul>
+    <li>The official CakePHP manual: <a href="http://book.cakephp.org/">http://book.cakephp.org/</a></li>
+    <li>The Hypertext Transfer Protocol -- HTTP/1.1: <a href="http://www.w3.org/Protocols/rfc2616/rfc2616.html">RFC 2616</a></li>
+    <li><a href="http://julien-pauli.developpez.com/tutoriels/php/mvc-controleur/"><i>Le modèle MVC et le contrôleur sous PHP</i></a> by (Julien Pauli)</li>
+  </ul>
+{{/markdown}}
+</section>
+
