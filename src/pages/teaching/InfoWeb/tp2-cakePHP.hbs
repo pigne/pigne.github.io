@@ -1,0 +1,444 @@
+---
+title: "Introduction to cakePHP"
+subsection: Info-Web
+order: 3
+description:
+    - "TP n°2  - Info-Web - Licence 3"
+    - "CakePKP"
+    - "Installation and configuration"
+    - "First Simple App"
+layout: lecture.hbs
+---
+
+<section id="Download">
+{{#markdown}}
+  <h2>Install And Configure CakePHP</h2>
+
+  Détails de l'installation (LINUX) de CakePHP sur les machines de TP de l'UFR.
+
+  - Chaque App possèse sa propre installation de CakePHP. Une app est donc portable facilement en copiant tout son contenu sur un nouveau server.
+  - Note : Dans les explications suivantes, lorsque le mot ```LOGIN``` est utilisé, il s'agit de votre login qu'il faut remplacer. L'application est nommée ```MyApp```. Bien-sûr, ce nom peut être changé. 
+
+<h3>Download</h3>
+```bash
+cd ~/public_html
+wget https://github.com/cakephp/cakephp/zipball/2.4.5 --no-check-certificate
+unzip 2.4.5
+mv cakephp* MyApp
+cd MyApp
+```
+{{/markdown}}
+</section>
+
+<section id="htaccess">
+{{#markdown}}
+### fichiers `.htaccess` 
+
+- Les chemins indiqués ici sont relatifs à l'application (`~/public_html/MyApp/`)
+- `LOGIN` est votre login perso...
+
+-   Le fichier `.htaccess` : ajouter `/~LOGIN/MyApp/` à la rêgle `Rewrite`. Le fichier doit ressembler à cela :
+
+```apache
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule    ^$ /~LOGIN/MyApp/app/webroot/    [L]
+    RewriteRule    (.*) /~LOGIN/MyApp/app/webroot/$1 [L]
+</IfModule>
+```
+
+
+{{/markdown}}
+</section>
+
+<section id="htaccess2">
+{{#markdown}}
+
+
+*   Le fichier `app/.htaccess` : Idem.
+
+
+```apache
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule    ^$   /~LOGIN/MyApp/app/webroot/    [L]
+    RewriteRule    (.*) /~LOGIN/MyApp/app/webroot/$1    [L]
+</IfModule>
+```
+
+*   Le fichier `app/webroot/.htaccess`: Ajouter la ligne `RewriteBase /~LOGIN/MyApp/app/webroot/` avant la ligne ```RewriteCond``` (ligne 3).
+
+```apache
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /~LOGIN/cakephp/app/webroot/
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    Rewrit
+    eRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+```
+
+{{/markdown}}
+</section>
+
+
+<section id="database">
+{{#markdown}}
+
+### Connexion à la base de donnée
+
+Copier le fichier de configuration par défaut : 
+
+```bash
+cp app/Config/database.php.default app/Config/database.php
+```
+
+Modifier le fichier  `app/Config/database.php` :
+
+```php
+public $default = array(
+    'datasource' => 'Database/Mysql',
+    'persistent' => false,
+    'host' => 'ust-info',
+    'login' => 'LOGIN',
+    'password' => 'xxxxxxx',
+    'database' => 'LOGIN',
+    'prefix' => 'myApp-',   // !!! Attention !!! Si un préfixe est indiqué ici,
+                      // il faudra l'ajouter au nom des tables dans la BD !
+    'encoding' => 'utf8',
+);
+```
+{{/markdown}}
+</section>
+
+
+<section id="salt">
+{{#markdown}}
+
+###Valeurs par défaut pour sécuriser l'App.
+
+Les variables `salt` et `seed` servent à augmenter la sécurité de votre application. Le contenu de `salt` est ajouté aux mots de passe et le champ `seed` est la graine aléatoire pour la génération des jetons CSRF (comme vu en cours).
+
+{{/markdown}}
+</section>
+
+<section id="salt">
+{{#markdown}}
+## Installation de DebugKit
+
+DebugKit est un utilitaire qui offre des information utiles en phase de développement. 
+
+```bash
+wget https://github.com/cakephp/debug_kit/archive/master.zip --no-check-certificate 
+unzip master.zip 
+mv debug_kit-master app/Plugin/DebugKit
+rm master.zip
+```
+
+- Dans `app/Config/bootstrap.php` ajouter (n'importe où):
+ ```php
+ CakePlugin::load('DebugKit');
+ ```
+- Inclure la bare d'outils dans tous les contrôleurs. On utilise la classe mère `AppController` dans  `app/Controller/AppController.php`:
+ ```php
+ public $components = array('DebugKit.Toolbar');
+ ```
+
+- Régler le mode `debug` à `2` dans `app/Config/core.php`:
+ ```php
+ Configure::write('debug', 2);
+ ```
+
+- Retirer tous les appels à  `sql_dump` dans les  `layout`
+    - `app/View/Layouts/default.ctp`
+    -  `app/View/Layouts/error.ctp`
+
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Configuration">
+{{#markdown}}
+  <h2>A basic Example</h2>
+  <p >A Simple blog application. Step by step.</p>
+<h3>Step 0: Is the App properly configured?</h3>
+
+Check the status in: http:://ust-info/~LOGIN/MyApp
+
+<p class="text-center">
+![screen CakePHP](images/screenCakePHP.png)
+</p>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Model">
+{{#markdown}}
+  <h3>Step 1: Create a Post model in the DB</h3>
+<pre class=" sql "><code>CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `body` text CHARACTER SET utf8 COLLATE utf8_bin,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`) VALUES
+(1, 'The titlezkfjalkezf', 'This is the post body...', '2014-02-16 16:11:16', NULL),
+(2, 'A title once again', 'And the post body follows.', '2014-02-16 16:11:16', NULL),
+(3, 'Title strikes back', 'This is really exciting! Not.', '2014-02-16 16:11:16', NULL),
+(4, 'My new idea I want to share', 'qsdfqsdfqsdfqsdfqsdf', '2014-02-16 17:41:16', NULL);
+</code></pre>
+<h3>Step 2: Create a Post model in CakePHP</h3>
+<pre class=" php "><code>// app/Model/Post.php
+class Post extends AppModel {
+}
+</code></pre>  
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Controller">
+{{#markdown}}
+<h3>Step 3: Create a Post Controller</h3>
+<pre class=" php "><code>// app/Controller/PostsCrontroller.php
+class PostsController extends AppController {
+    public $helpers = array('Html', 'Form');
+
+    public function index() {
+        $this->set('posts', $this->Post->find('all'));
+    }
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Create_Post">
+{{#markdown}}
+<h3>Step 4: Create Post Views</h3>
+<pre class=" php "><code>&lt;!-- app/View/Posts/index.ctp --&gt;
+&lt;h1&gt;List of Posts&lt;/h1&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Created&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;?php foreach ($posts as $post): ?&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            &lt;?php echo $this-&gt;Html-&gt;link(
+                    $post[&#039;Post&#039;][&#039;title&#039;], 
+                    array(&#039;action&#039; =&gt; &#039;view&#039;, $post[&#039;Post&#039;][&#039;id&#039;])
+                 ); 
+            ?&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;?php echo $post[&#039;Post&#039;][&#039;created&#039;]; ?&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;?php endforeach; ?&gt;
+&lt;/table&gt;
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<section id="Example_View_Post">
+{{#markdown}}
+<h3>Step 5: View one Post</h3>
+<pre class=" php "><code>// app/Controller/PostsCrontroller.php
+public function view($id = null) {
+    if (!$id) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    $post = $this-&gt;Post-&gt;findById($id);
+    if (!$post) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    $this-&gt;set(&#039;post&#039;, $post);
+}
+</code></pre>
+<pre class=" php "><code>&lt;!-- app/View/Posts/view.ctp --&gt;
+&lt;h1&gt;View Post&lt;/h1&gt;
+&lt;article&gt;
+&lt;h2&gt;&lt;?php echo $post[&#039;Post&#039;][&#039;title&#039;];?&gt;&lt;/h2&gt;
+&lt;section&gt;&lt;p&gt;&lt;?php echo $post[&#039;Post&#039;][&#039;body&#039;];?&gt;&lt;p&gt;&lt;/section&gt;
+&lt;aside&gt;
+  &lt;p&gt;Created: &lt;?php echo $post[&#039;Post&#039;][&#039;created&#039;];?&gt;&lt;/p&gt;
+  &lt;p&gt;Modified: &lt;?php echo $post[&#039;Post&#039;][&#039;modified&#039;];?&gt;&lt;/p&gt;
+&lt;/aside&gt;
+&lt;/article&gt;
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<section id="Example_Add_Post">
+{{#markdown}}
+<h3>Step 6: Add a Post</h3>
+<pre class=" php "><code>// app/Controller/PostsCrontroller.php
+class PostsController extends AppController {
+    public $helpers = array(&#039;Html&#039;, &#039;Form&#039;, &#039;Session&#039;);
+    public $components = array(&#039;Session&#039;);
+    // ...
+    public function add() {
+        if ($this-&gt;request-&gt;is(&#039;post&#039;)) {
+            $this-&gt;Post-&gt;create();
+            if ($this-&gt;Post-&gt;save($this-&gt;request-&gt;data)) {
+                $this-&gt;Session-&gt;setFlash(&#039;Your post has been saved.&#039;);
+                $this-&gt;redirect(array(&#039;action&#039; =&gt; &#039;index&#039;));
+            } else {
+                $this-&gt;Session-&gt;setFlash(&#039;Unable to add your post.&#039;);
+            }
+        }
+    }
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Add_Post2">
+{{#markdown}}
+<h3>Step 6: Add a Post</h3>
+<pre class=" php "><code>&lt;!-- File: app/View/Posts/add.ctp --&gt;
+&lt;h1&gt;&lt;?php __(&#039;Add Post&#039;);?&gt;&lt;/h1&gt;
+&lt;?php
+echo $this-&gt;Form-&gt;create(&#039;Post&#039;);
+echo $this-&gt;Form-&gt;input(__(&#039;title&#039;));
+echo $this-&gt;Form-&gt;input(__(&#039;body&#039;), array(&#039;rows&#039; =&gt; &#039;3&#039;));
+echo $this-&gt;Form-&gt;end(__(&#039;Save Post&#039;));
+?&gt;
+</code></pre>
+<pre class=" php "><code>&lt;!-- File: app/View/Posts/index.ctp --&gt;
+&lt;!-- ... --&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+    &lt;?php echo $this-&gt;Html-&gt;link(&#039;Create a new Post&#039;, array(&#039;action&#039; =&gt; &#039;add&#039;)); ?&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+{{/markdown}}
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Validation">
+{{#markdown}}
+<h3>Step 7: Validate new Post</h3>
+<pre class=" php "><code>// app/Model/Post.php
+class Post extends AppModel {
+  public $validate = array(
+    &#039;title&#039; =&gt; array(
+      &#039;rule&#039; =&gt; &#039;notEmpty&#039;,
+      &#039;message&#039; =&gt; &#039;Please provide a title for your post&#039;
+      ),
+    &#039;body&#039; =&gt; array(
+      &#039;rule&#039; =&gt; &#039;notEmpty&#039;
+      )
+    );
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Edit_Post">
+{{#markdown}}
+<h3>Step 8: Edit Post</h3>
+<pre class=" php "><code>public function edit($id = null) {
+    if (!$id) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    $post = $this-&gt;Post-&gt;findById($id);
+    if (!$post) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    if ($this-&gt;request-&gt;is(&#039;post&#039;) || $this-&gt;request-&gt;is(&#039;put&#039;)) {
+        $this-&gt;Post-&gt;id = $id;
+        if ($this-&gt;Post-&gt;save($this-&gt;request-&gt;data)) {
+            $this-&gt;Session-&gt;setFlash(&#039;Your post has been updated.&#039;);
+            $this-&gt;redirect(array(&#039;action&#039; =&gt; &#039;index&#039;));
+        } else {
+            $this-&gt;Session-&gt;setFlash(&#039;Unable to update your post.&#039;);
+        }
+    }
+    if (!$this-&gt;request-&gt;data) {
+        $this-&gt;request-&gt;data = $post;
+    }
+}
+</code></pre>
+{{/markdown}}
+</section>
+
+
+
+<section>
+{{#markdown}}
+<h3>Step 8: Edit Post</h3>
+  
+  ```php
+<!-- app/View/Posts/edit.ctp -->
+<h1>Edit Post</h1>
+<?php
+echo $this->Form->create('Post');
+echo $this->Form->input('title');
+echo $this->Form->input('body', array('rows' => '3'));
+echo $this->Form->input('id', array('type' => 'hidden'));
+echo $this->Form->end('Save Post');
+?>
+```
+
+```php
+<!-- app/View/Posts/view.ctp -->
+<!-- ... -->
+<li>
+  <?php echo $this->Html->link("Edit this post", 
+          array('action' => 'edit', $post['Post']['id'])
+        );
+  ?>
+</li>
+```
+
+{{/markdown}}
+</section>
+
+
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Delete_Post">
+{{#markdown}}
+<h3>Step 9: Delete Post</h3>
+<pre class=" php "><code>public function delete($id) {
+  if ($this-&gt;request-&gt;is(&#039;get&#039;)) {
+    throw new MethodNotAllowedException();
+  }
+
+  if ($this-&gt;Post-&gt;delete($id)) {
+    $this-&gt;Session-&gt;setFlash(&#039;The post with id: &#039; . $id . &#039; has been deleted.&#039;);
+    $this-&gt;redirect(array(&#039;action&#039; =&gt; &#039;index&#039;));
+  }
+}
+</code></pre>
+
+<pre class=" php "><code>&lt;!-- app/View/Posts/index.ctp --&gt;
+&lt;!-- ... --&gt;
+&lt;td&gt;
+    &lt;?php echo $this-&gt;Html-&gt;link(&#039;Edit&#039;, 
+                        array(&#039;action&#039; =&gt; &#039;edit&#039;, $post[&#039;Post&#039;][&#039;id&#039;])); ?&gt;
+    &lt;?php echo $this-&gt;Form-&gt;postLink(
+        &#039;Delete&#039;,
+        array(&#039;action&#039; =&gt; &#039;delete&#039;, $post[&#039;Post&#039;][&#039;id&#039;]),
+        array(&#039;confirm&#039; =&gt; &#039;Are you sure?&#039;));
+    ?&gt; 
+&lt;/td&gt;
+&lt;!-- ... --&gt;
+</code></pre>
+
+{{/markdown}}
+</section>
+

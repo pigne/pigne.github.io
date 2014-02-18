@@ -16,9 +16,10 @@ body {
     h2+p {
         text-align: center;    
     }
-    section>p>img {
-        text-align: center;    
-    }
+	section img {
+		border:none;
+		box-shadow: none;
+	}
 	dt {
 		font-weight: bold;
 	}
