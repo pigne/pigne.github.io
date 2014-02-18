@@ -1,0 +1,580 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Introduction to cakePHP</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="../../favicon.ico" />
+
+        <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../images/apple-touch-icon-152x152-precomposed.png">
+        <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../images/apple-touch-icon-144x144-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../images/apple-touch-icon-120x120-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../images/apple-touch-icon-114x114-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../../images/apple-touch-icon-76x76-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../images/apple-touch-icon-72x72-precomposed.png">
+        <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+        <link rel="apple-touch-icon-precomposed" href="../../apple-touch-icon-precomposed.png">
+
+
+
+		<link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
+        
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" media="screen" href="../../bower_components/highlightjs/styles/dark.css">
+        <link rel="stylesheet" media="projection, print" href="../../bower_components/highlightjs/styles/tomorrow.css">
+
+		<link rel="stylesheet" href="../../styles/97e5ec8e.lecture.css"/>
+        
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+                document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+	<div ><a id="back"href="."></a></div>
+	
+    <div class="reveal">
+    	<div class="slides">
+		<!-- ==== SLIDE ==== -->
+		<section id="home">
+			<h1>Introduction to cakePHP</h1>
+
+			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
+			
+			<li class="x2"><em>TP n°2  - Info-Web - Licence 3</em></li>
+		
+			<li class="x2"><em>CakePKP</em></li>
+		
+			<li class="x2"><em>Installation and configuration</em></li>
+		
+			<li class="x2"><em>First Simple App</em></li>
+		
+		</ul>
+		<p class="x2 bottom-right">
+		            Le Havre University
+		            <br>
+		            <em>Yoann Pigné</em>
+		            <br>2014
+		        </p>
+		</section>
+
+    	
+
+<section id="Download">
+  <h2>Install And Configure CakePHP</h2>
+
+<p>  Détails de l&#39;installation (LINUX) de CakePHP sur les machines de TP de l&#39;UFR.</p>
+<ul>
+<li>Chaque App possèse sa propre installation de CakePHP. Une app est donc portable facilement en copiant tout son contenu sur un nouveau server.</li>
+<li>Note : Dans les explications suivantes, lorsque le mot <code>LOGIN</code> est utilisé, il s&#39;agit de votre login qu&#39;il faut remplacer. L&#39;application est nommée <code>MyApp</code>. Bien-sûr, ce nom peut être changé. </li>
+</ul>
+<p><h3>Download</h3></p>
+<pre><code class="language-bash"><span class="built_in">cd</span> ~/public_html
+wget https://github.com/cakephp/cakephp/zipball/<span class="number">2.4</span>.<span class="number">5</span> --no-check-certificate
+unzip <span class="number">2.4</span>.<span class="number">5</span>
+mv cakephp* MyApp
+<span class="built_in">cd</span> MyApp</code></pre>
+
+</section>
+
+<section id="htaccess">
+<h3 id="fichiers-htaccess-">fichiers <code>.htaccess</code></h3>
+<ul>
+<li>Les chemins indiqués ici sont relatifs à l&#39;application (<code>~/public_html/MyApp/</code>)</li>
+<li><p><code>LOGIN</code> est votre login perso...</p>
+</li>
+<li><p>Le fichier <code>.htaccess</code> : ajouter <code>/~LOGIN/MyApp/</code> à la rêgle <code>Rewrite</code>. Le fichier doit ressembler à cela :</p>
+</li>
+</ul>
+<pre><code class="language-apache"><span class="tag">&lt;IfModule mod_rewrite.c&gt;</span>
+    <span class="keyword">RewriteEngine</span> <span class="literal">on</span>
+    <span class="keyword">RewriteRule</span>    ^$ /~LOGIN/MyApp/app/webroot/   <span class="sqbracket"> [L]</span>
+    <span class="keyword">RewriteRule</span>    (.*) /~LOGIN/MyApp/app/webroot/<span class="number">$1</span><span class="sqbracket"> [L]</span>
+<span class="tag">&lt;/IfModule&gt;</span></code></pre>
+
+</section>
+
+<section id="htaccess2">
+<ul>
+<li>Le fichier <code>app/.htaccess</code> : Idem.</li>
+</ul>
+<pre><code class="language-apache"><span class="tag">&lt;IfModule mod_rewrite.c&gt;</span>
+    <span class="keyword">RewriteEngine</span> <span class="literal">on</span>
+    <span class="keyword">RewriteRule</span>    ^$   /~LOGIN/MyApp/app/webroot/   <span class="sqbracket"> [L]</span>
+    <span class="keyword">RewriteRule</span>    (.*) /~LOGIN/MyApp/app/webroot/<span class="number">$1</span>   <span class="sqbracket"> [L]</span>
+<span class="tag">&lt;/IfModule&gt;</span></code></pre>
+<ul>
+<li>Le fichier <code>app/webroot/.htaccess</code>: Ajouter la ligne <code>RewriteBase /~LOGIN/MyApp/app/webroot/</code> avant la ligne <code>RewriteCond</code> (ligne 3).</li>
+</ul>
+<pre><code class="language-apache"><span class="tag">&lt;IfModule mod_rewrite.c&gt;</span>
+    <span class="keyword">RewriteEngine</span> <span class="literal">On</span>
+    <span class="keyword">RewriteBase</span> /~LOGIN/cakephp/app/webroot/
+    <span class="keyword">RewriteCond</span> <span class="cbracket">%{REQUEST_FILENAME}</span> !-d
+    <span class="keyword">RewriteCond</span> <span class="cbracket">%{REQUEST_FILENAME}</span> !-f
+    Rewrit
+    eRule ^(.*)$ index.php<span class="sqbracket"> [QSA,L]</span>
+<span class="tag">&lt;/IfModule&gt;</span></code></pre>
+
+</section>
+
+
+<section id="database">
+<h3 id="connexion-la-base-de-donn-e">Connexion à la base de donnée</h3>
+<p>Copier le fichier de configuration par défaut : </p>
+<pre><code class="language-bash">cp app/Config/database.php.default app/Config/database.php</code></pre>
+<p>Modifier le fichier  <code>app/Config/database.php</code> :</p>
+<pre><code class="language-php"><span class="keyword">public</span> <span class="variable">$default</span> = <span class="keyword">array</span>(
+    <span class="string">'datasource'</span> =&gt; <span class="string">'Database/Mysql'</span>,
+    <span class="string">'persistent'</span> =&gt; <span class="keyword">false</span>,
+    <span class="string">'host'</span> =&gt; <span class="string">'ust-info'</span>,
+    <span class="string">'login'</span> =&gt; <span class="string">'LOGIN'</span>,
+    <span class="string">'password'</span> =&gt; <span class="string">'xxxxxxx'</span>,
+    <span class="string">'database'</span> =&gt; <span class="string">'LOGIN'</span>,
+    <span class="string">'prefix'</span> =&gt; <span class="string">'myApp-'</span>,   <span class="comment">// !!! Attention !!! Si un préfixe est indiqué ici,</span>
+                      <span class="comment">// il faudra l'ajouter au nom des tables dans la BD !</span>
+    <span class="string">'encoding'</span> =&gt; <span class="string">'utf8'</span>,
+);</code></pre>
+
+</section>
+
+
+<section id="salt">
+<h3 id="valeurs-par-d-faut-pour-s-curiser-l-app-">Valeurs par défaut pour sécuriser l&#39;App.</h3>
+<p>Les variables <code>salt</code> et <code>seed</code> servent à augmenter la sécurité de votre application. Le contenu de <code>salt</code> est ajouté aux mots de passe et le champ <code>seed</code> est la graine aléatoire pour la génération des jetons CSRF (comme vu en cours).</p>
+
+</section>
+
+<section id="salt">
+<h2 id="installation-de-debugkit">Installation de DebugKit</h2>
+<p>DebugKit est un utilitaire qui offre des information utiles en phase de développement. </p>
+<pre><code class="language-bash">wget https://github.com/cakephp/debug_kit/archive/master.zip --no-check-certificate 
+unzip master.zip 
+mv debug_kit-master app/Plugin/DebugKit
+rm master.zip</code></pre>
+<ul>
+<li>Dans <code>app/Config/bootstrap.php</code> ajouter (n&#39;importe où):<pre><code class="language-php">CakePlugin::load(<span class="string">'DebugKit'</span>);</code></pre>
+</li>
+<li><p>Inclure la bare d&#39;outils dans tous les contrôleurs. On utilise la classe mère <code>AppController</code> dans  <code>app/Controller/AppController.php</code>:</p>
+<pre><code class="language-php"><span class="keyword">public</span> <span class="variable">$components</span> = <span class="keyword">array</span>(<span class="string">'DebugKit.Toolbar'</span>);</code></pre>
+</li>
+<li><p>Régler le mode <code>debug</code> à <code>2</code> dans <code>app/Config/core.php</code>:</p>
+<pre><code class="language-php">Configure::write(<span class="string">'debug'</span>, <span class="number">2</span>);</code></pre>
+</li>
+<li><p>Retirer tous les appels à  <code>sql_dump</code> dans les  <code>layout</code></p>
+<ul>
+<li><code>app/View/Layouts/default.ctp</code></li>
+<li><code>app/View/Layouts/error.ctp</code></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Configuration">
+<p>  <h2>A basic Example</h2>
+  <p >A Simple blog application. Step by step.</p></p>
+<h3>Step 0: Is the App properly configured?</h3>
+
+<p>Check the status in: http:://ust-info/~LOGIN/MyApp</p>
+<p class="text-center">
+<img src="images/screenCakePHP.png" alt="screen CakePHP">
+</p>
+
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Model">
+<p>  <h3>Step 1: Create a Post model in the DB</h3></p>
+<pre class=" sql "><code>CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `body` text CHARACTER SET utf8 COLLATE utf8_bin,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`) VALUES
+(1, 'The titlezkfjalkezf', 'This is the post body...', '2014-02-16 16:11:16', NULL),
+(2, 'A title once again', 'And the post body follows.', '2014-02-16 16:11:16', NULL),
+(3, 'Title strikes back', 'This is really exciting! Not.', '2014-02-16 16:11:16', NULL),
+(4, 'My new idea I want to share', 'qsdfqsdfqsdfqsdfqsdf', '2014-02-16 17:41:16', NULL);
+</code></pre>
+<h3>Step 2: Create a Post model in CakePHP</h3>
+<pre class=" php "><code>// app/Model/Post.php
+class Post extends AppModel {
+}
+</code></pre>  
+
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Controller">
+<p><h3>Step 3: Create a Post Controller</h3></p>
+<pre class=" php "><code>// app/Controller/PostsCrontroller.php
+class PostsController extends AppController {
+    public $helpers = array('Html', 'Form');
+
+    public function index() {
+        $this->set('posts', $this->Post->find('all'));
+    }
+}
+</code></pre>
+
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Create_Post">
+<p><h3>Step 4: Create Post Views</h3></p>
+<pre class=" php "><code>&lt;!-- app/View/Posts/index.ctp --&gt;
+&lt;h1&gt;List of Posts&lt;/h1&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Created&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;?php foreach ($posts as $post): ?&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            &lt;?php echo $this-&gt;Html-&gt;link(
+                    $post[&#039;Post&#039;][&#039;title&#039;], 
+                    array(&#039;action&#039; =&gt; &#039;view&#039;, $post[&#039;Post&#039;][&#039;id&#039;])
+                 ); 
+            ?&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;?php echo $post[&#039;Post&#039;][&#039;created&#039;]; ?&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;?php endforeach; ?&gt;
+&lt;/table&gt;
+</code></pre>
+
+</section>
+
+
+<section id="Example_View_Post">
+<p><h3>Step 5: View one Post</h3></p>
+<pre class=" php "><code>// app/Controller/PostsCrontroller.php
+public function view($id = null) {
+    if (!$id) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    $post = $this-&gt;Post-&gt;findById($id);
+    if (!$post) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    $this-&gt;set(&#039;post&#039;, $post);
+}
+</code></pre>
+<pre class=" php "><code>&lt;!-- app/View/Posts/view.ctp --&gt;
+&lt;h1&gt;View Post&lt;/h1&gt;
+&lt;article&gt;
+&lt;h2&gt;&lt;?php echo $post[&#039;Post&#039;][&#039;title&#039;];?&gt;&lt;/h2&gt;
+&lt;section&gt;&lt;p&gt;&lt;?php echo $post[&#039;Post&#039;][&#039;body&#039;];?&gt;&lt;p&gt;&lt;/section&gt;
+&lt;aside&gt;
+  &lt;p&gt;Created: &lt;?php echo $post[&#039;Post&#039;][&#039;created&#039;];?&gt;&lt;/p&gt;
+  &lt;p&gt;Modified: &lt;?php echo $post[&#039;Post&#039;][&#039;modified&#039;];?&gt;&lt;/p&gt;
+&lt;/aside&gt;
+&lt;/article&gt;
+</code></pre>
+
+</section>
+
+
+<section id="Example_Add_Post">
+<p><h3>Step 6: Add a Post</h3></p>
+<pre class=" php "><code>// app/Controller/PostsCrontroller.php
+class PostsController extends AppController {
+    public $helpers = array(&#039;Html&#039;, &#039;Form&#039;, &#039;Session&#039;);
+    public $components = array(&#039;Session&#039;);
+    // ...
+    public function add() {
+        if ($this-&gt;request-&gt;is(&#039;post&#039;)) {
+            $this-&gt;Post-&gt;create();
+            if ($this-&gt;Post-&gt;save($this-&gt;request-&gt;data)) {
+                $this-&gt;Session-&gt;setFlash(&#039;Your post has been saved.&#039;);
+                $this-&gt;redirect(array(&#039;action&#039; =&gt; &#039;index&#039;));
+            } else {
+                $this-&gt;Session-&gt;setFlash(&#039;Unable to add your post.&#039;);
+            }
+        }
+    }
+}
+</code></pre>
+
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Add_Post2">
+<p><h3>Step 6: Add a Post</h3></p>
+<pre class=" php "><code>&lt;!-- File: app/View/Posts/add.ctp --&gt;
+&lt;h1&gt;&lt;?php __(&#039;Add Post&#039;);?&gt;&lt;/h1&gt;
+&lt;?php
+echo $this-&gt;Form-&gt;create(&#039;Post&#039;);
+echo $this-&gt;Form-&gt;input(__(&#039;title&#039;));
+echo $this-&gt;Form-&gt;input(__(&#039;body&#039;), array(&#039;rows&#039; =&gt; &#039;3&#039;));
+echo $this-&gt;Form-&gt;end(__(&#039;Save Post&#039;));
+?&gt;
+</code></pre>
+<pre class=" php "><code>&lt;!-- File: app/View/Posts/index.ctp --&gt;
+&lt;!-- ... --&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+    &lt;?php echo $this-&gt;Html-&gt;link(&#039;Create a new Post&#039;, array(&#039;action&#039; =&gt; &#039;add&#039;)); ?&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Validation">
+<p><h3>Step 7: Validate new Post</h3></p>
+<pre class=" php "><code>// app/Model/Post.php
+class Post extends AppModel {
+  public $validate = array(
+    &#039;title&#039; =&gt; array(
+      &#039;rule&#039; =&gt; &#039;notEmpty&#039;,
+      &#039;message&#039; =&gt; &#039;Please provide a title for your post&#039;
+      ),
+    &#039;body&#039; =&gt; array(
+      &#039;rule&#039; =&gt; &#039;notEmpty&#039;
+      )
+    );
+}
+</code></pre>
+
+</section>
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Edit_Post">
+<p><h3>Step 8: Edit Post</h3></p>
+<pre class=" php "><code>public function edit($id = null) {
+    if (!$id) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    $post = $this-&gt;Post-&gt;findById($id);
+    if (!$post) {
+        throw new NotFoundException(__(&#039;Invalid post&#039;));
+    }
+    if ($this-&gt;request-&gt;is(&#039;post&#039;) || $this-&gt;request-&gt;is(&#039;put&#039;)) {
+        $this-&gt;Post-&gt;id = $id;
+        if ($this-&gt;Post-&gt;save($this-&gt;request-&gt;data)) {
+            $this-&gt;Session-&gt;setFlash(&#039;Your post has been updated.&#039;);
+            $this-&gt;redirect(array(&#039;action&#039; =&gt; &#039;index&#039;));
+        } else {
+            $this-&gt;Session-&gt;setFlash(&#039;Unable to update your post.&#039;);
+        }
+    }
+    if (!$this-&gt;request-&gt;data) {
+        $this-&gt;request-&gt;data = $post;
+    }
+}
+</code></pre>
+
+</section>
+
+
+
+<section>
+<h3>Step 8: Edit Post</h3>
+
+<pre><code class="language-php">&lt;!-- app/View/Posts/edit.ctp --&gt;
+&lt;h1&gt;Edit Post&lt;/h1&gt;
+<span class="preprocessor">&lt;?php</span>
+<span class="keyword">echo</span> <span class="variable">$this</span>-&gt;Form-&gt;create(<span class="string">'Post'</span>);
+<span class="keyword">echo</span> <span class="variable">$this</span>-&gt;Form-&gt;input(<span class="string">'title'</span>);
+<span class="keyword">echo</span> <span class="variable">$this</span>-&gt;Form-&gt;input(<span class="string">'body'</span>, <span class="keyword">array</span>(<span class="string">'rows'</span> =&gt; <span class="string">'3'</span>));
+<span class="keyword">echo</span> <span class="variable">$this</span>-&gt;Form-&gt;input(<span class="string">'id'</span>, <span class="keyword">array</span>(<span class="string">'type'</span> =&gt; <span class="string">'hidden'</span>));
+<span class="keyword">echo</span> <span class="variable">$this</span>-&gt;Form-&gt;end(<span class="string">'Save Post'</span>);
+<span class="preprocessor">?&gt;</span></code></pre>
+<pre><code class="language-php">&lt;!-- app/View/Posts/view.ctp --&gt;
+&lt;!-- ... --&gt;
+&lt;li&gt;
+  <span class="preprocessor">&lt;?php</span> <span class="keyword">echo</span> <span class="variable">$this</span>-&gt;Html-&gt;link(<span class="string">"Edit this post"</span>, 
+          <span class="keyword">array</span>(<span class="string">'action'</span> =&gt; <span class="string">'edit'</span>, <span class="variable">$post</span>[<span class="string">'Post'</span>][<span class="string">'id'</span>])
+        );
+  <span class="preprocessor">?&gt;</span>
+&lt;/li&gt;</code></pre>
+
+</section>
+
+
+
+
+<!-- ==== SLIDE ==== -->
+<section id="Example_Delete_Post">
+<p><h3>Step 9: Delete Post</h3></p>
+<pre class=" php "><code>public function delete($id) {
+  if ($this-&gt;request-&gt;is(&#039;get&#039;)) {
+    throw new MethodNotAllowedException();
+  }
+
+  if ($this-&gt;Post-&gt;delete($id)) {
+    $this-&gt;Session-&gt;setFlash(&#039;The post with id: &#039; . $id . &#039; has been deleted.&#039;);
+    $this-&gt;redirect(array(&#039;action&#039; =&gt; &#039;index&#039;));
+  }
+}
+</code></pre>
+
+<pre class=" php "><code>&lt;!-- app/View/Posts/index.ctp --&gt;
+&lt;!-- ... --&gt;
+&lt;td&gt;
+    &lt;?php echo $this-&gt;Html-&gt;link(&#039;Edit&#039;, 
+                        array(&#039;action&#039; =&gt; &#039;edit&#039;, $post[&#039;Post&#039;][&#039;id&#039;])); ?&gt;
+    &lt;?php echo $this-&gt;Form-&gt;postLink(
+        &#039;Delete&#039;,
+        array(&#039;action&#039; =&gt; &#039;delete&#039;, $post[&#039;Post&#039;][&#039;id&#039;]),
+        array(&#039;confirm&#039; =&gt; &#039;Are you sure?&#039;));
+    ?&gt; 
+&lt;/td&gt;
+&lt;!-- ... --&gt;
+</code></pre>
+
+
+</section>
+
+
+    	</div>
+	</div>
+
+	<script src="../../scripts/b04b0310.lecture-all.js"></script>
+
+	<script>
+    updateHighlightClassNames();
+	(function() {
+            var list = document.querySelectorAll('*[data-src]');
+            for (var i = 0; i < list.length; i++) {
+                var p = document.createElement('p')
+                var a = document.createElement('a')
+                var img = document.createElement('img')
+                a.setAttribute('href', list[i].getAttribute('data-src'))
+                img.setAttribute('src', '/images/codepen.png')
+                img.setAttribute('alt', 'codepen')
+                p.setAttribute('class', 'codepen')
+                a.appendChild(img)
+                p.appendChild(a)
+                list[i].appendChild(p)
+            }
+        })();
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+
+                width: 1400,
+                height: 1050,
+
+                // Factor of the display size that should remain empty around the content
+                margin: 0.01,
+
+                minScale: 0.1,
+                maxScale: 3.0,
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                        { src: '../../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                        { src: '../../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: '../../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: '../../bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                        { src: '../../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                        { src: '../../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ],
+                // Display controls in the bottom right corner
+                controls: true,
+
+                // Display a presentation progress bar
+                progress: true,
+
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Push each slide change to the browser history
+                history: true,
+
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+
+                // Change the presentation direction to be RTL
+                rtl: false,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition style
+                transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Transition speed
+                transitionSpeed: 'fast', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+               	parallaxBackgroundImage: '../../images/lecture-bg.svg', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+               	parallaxBackgroundSize: '4995px 1350px' // CSS syntax, e.g. "2100px 900px"
+        });
+	</script>
+	
+</body>
+</html>
