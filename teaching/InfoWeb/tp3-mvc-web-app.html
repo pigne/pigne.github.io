@@ -35,7 +35,7 @@
 
 
 
-        <link rel="stylesheet" href="../../styles/d11856ca.main.css"/>
+        <link rel="stylesheet" href="../../styles/42b22a2c.main.css"/>
         
             
                  <link rel="stylesheet" media="screen" href="../../bower_components/highlightjs/styles/default.css">
@@ -165,31 +165,40 @@
 </style>
 
 <h2 id="installation-et-configuration-de-cakephp">Installation et configuration de CakePHP</h2>
-<p>Suivre les étapes décrites ici pour configurer una App CakePHP : <a href="/teaching/InfoWeb/tp2-cakePHP.html">tp2 installation de cakePHP</a>.</p>
-<h2 id="travail-demand-">Travail demandé</h2>
-<p>On souhaite réaliser une application permettant la manipulation d&#39;une liste d&#39;offres immobilières. On dispose des données géolocalisées suivantes : </p>
+<p>Suivre les étapes décrites dans le tp précédent pour configurer une App CakePHP : <a href="/teaching/InfoWeb/tp2-cakePHP.html">tp2 installation de cakePHP</a>.</p>
+<h2 id="un-p-tit-caf-">Un p&#39;tit café ?</h2>
+<p>On souhaite réaliser une application permettant de manipuler et de visualiser la liste des établissements parisiens où le café est à un euro. On dispose, via le site Open Data de la ville de Paris, des données géolocalisées suivantes : </p>
 <ul>
-<li><a href="http://data.cityofsantacruz.com/en/storage/f/2013-02-05T174254/2013_02_03_listings_for_web.csv">2013_02_03_listings_for_web.csv</a></li>
+<li><a href="http://parisdata.opendatasoft.com/explore/dataset/liste-des-cafes-a-un-euro/download?format=csv">liste-des-cafes-a-un-euro.csv</a></li>
 </ul>
-<p>L&#39;application doit permettre de présenter la liste de ces annonces sous forme d&#39;un tableau. Cette liste par défaut est longue de 10 résultats par page, les autres résultats sont accessibles par des liens (à la façon des pages de résultat Google) et ne fait l&#39;objet d&#39;aucun critère de sélection par défaut. </p>
-<p>Dans cette même page, un  champs de saisie permet de faire des requêtes sur des critères à définir. Le résultat de la recherche s&#39;affiche dans la même page avec le même mécanisme de limite du nombre de résultats par page. </p>
-<p>On souhaite également pouvoir visualiser sur une carte ces offres puisqu&#39;elles possèdent des coordonnées GPS. On utilisera pour ça l&#39;un des services de cartographie librement accessibles :</p>
+<p>Le fichier ci-dessus est au format <a href="http://fr.wikipedia.org/wiki/Comma-separated_values">CSV</a>, un format textuel qui permet de stoker des données en lignes et colonnes. Ce fichier s&#39;ouvre avec un éditeur de texte. <strong>Chaque colonne représente un champ et chaque ligne représente un tuple</strong>. La première ligne est spéciale, elle contient les noms des colonnes (les champs). Il y a un travail de mise en forme préalable pour pouvoir inclure ces données dans une base de données.</p>
+<p>L&#39;application doit permettre de présenter la liste de ces cafés sous forme d&#39;un tableau. Cette liste par défaut est longue de 10 résultats par page, les autres résultats sont accessibles par des liens (à la façon des pages de résultat d&#39;un moteur de recherche) et ne fait l&#39;objet d&#39;aucun critère de sélection par défaut. </p>
+<p>Dans cette même page, un ou des champs de saisies permettent de <strong>filtrer</strong> les résultats sur des critères à définir (arrondissement, prix comptoir, prix terrasse...) Le résultat de la recherche s&#39;affiche dans la même page avec le même mécanisme de limite du nombre de résultats par page. </p>
+<p>On souhaite également pouvoir <strong>visualiser</strong> sur une carte ces cafés puisque les données possèdent des coordonnées GPS. On utilisera pour ça l&#39;un des services de cartographie librement accessibles :</p>
 <ul>
+<li>OpenStreetMap (<a href="http://leafletjs.com/">Leaflet</a>, <a href="http://wiki.openstreetmap.org/wiki/OpenLayers_Marker">OpenLayers</a>...)</li>
 <li><a href="http://developer.here.com/javascript_api_explorer">Nokia</a></li>
-<li><a href="https://developers.google.com/maps/documentation/javascript/places">Google</a></li>
-<li><a href="http://developer.yahoo.com/maps/ajax/">Yahoo!</a></li>
 <li><a href="http://developer.mapquest.com/web/documentation/sdk/javascript/v7.0/poi">AOL Mapquest</a></li>
-<li>ou autre...</li>
+<li><a href="https://developers.google.com/maps/documentation/javascript/places">Google</a></li>
+<li>ou autre ?</li>
 </ul>
-<p>Une annonce pourra être affichée dans une page seule avec :</p>
+<p>Un café pourra être <strong>affiché</strong> dans une page seule avec :</p>
 <ul>
 <li>les détails de tous ses champs (c.f. le fichier de données) ;</li>
 <li>une carte avec sa localisation ;</li>
-<li>une liste des commentaires laissés par les utilisateurs du site. </li>
+<li>une liste des commentaires laissés par les utilisateurs du site.  </li>
+<li>une note de zéro à cinq étoiles qui est la moyenne des notes laissées par les utilisateurs (zéro étoile : c&#39;est du jus de chaussette. Cinq étoiles: What Else?)</li>
 </ul>
-<p>L&#39;application devra aussi gérer la notion d&#39;utilisateur (sans forcement prévoir un système de création de nouvel utilisateur). Un utilisateur connecté doit pouvoir modifier les offres existantes ainsi que créer de nouvelles offres.</p>
-<p>Tous les utilisateurs (connectés ou non) peuvent laisser des commentaire sur les annonces, qui s&#39;affichent lors de l&#39;affichage des détails d&#39;une annonce. </p>
-<p>Toute l&#39;application sera bien évidement réalisée avec CakePHP, en respectant les standards établis par le framework. Pour la partie HTML et CSS le recours à un template de votre choix est demandé. </p>
+<p>Les visiteurs du site peuvent laisser des <strong>commentaires</strong> sur les cafés. Ceux-ci sont visibles lors de l&#39;affichage des détails d&#39;un café. Un commentaire se compose : </p>
+<ul>
+<li>d&#39;une date ; </li>
+<li>du texte du commentaire ; </li>
+<li>d&#39;une note de 0 à 5 qui évalue l&#39;établissement ; </li>
+<li>du nom de l&#39;auteur du commentaire. </li>
+</ul>
+<p>Les visiteurs peuvent aussi partager la page d&#39;un café via les réseaux sociaux.  </p>
+<p>Enfin, l&#39;application devra gérer la notion d&#39;administrateur (sans forcement prévoir un système de création de nouvel administrateur/utilisateur). Un administrateur doit se <strong>connecter</strong> avant de  pouvoir <strong>modifier</strong> les cafés existants les <strong>supprimer</strong> ou en <strong>créer</strong> de nouveaux en saisissant toutes les informations nécessaires.</p>
+<p>Toute l&#39;application sera  réalisée avec CakePHP, en respectant les standards établis par le framework. Pour la partie HTML et CSS le recours à un template de votre choix (Foundation, Bootstrap...) est demandé. </p>
 
 
         </div>
