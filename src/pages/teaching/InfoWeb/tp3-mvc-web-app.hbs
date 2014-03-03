@@ -1,0 +1,229 @@
+---
+title: "MVC Web App"
+subsection: Info-Web
+order: 4
+description:
+    - "TP n°3  - Info-Web - Licence 3"
+    - "Framework PHP"
+    - "Framework web"
+    - "Base de données"
+libraries: 
+    - "highlightjs"
+---
+
+<style>
+    .main p>img {
+        max-width:100%;
+    }
+</style>
+
+{{#markdown}}
+
+{{!-- Ce TP peut être effectué en binôme et doit être [rendu](https://eureka.univ-lehavre.fr/mod/assignment/view.php?id=22019) au plus tard le **5 avril 2013** sous forme d'une archive déposée sur la plateforme Eureka. 
+
+Le travail rendu doit contenir les fichiers de l'application web demandée ainsi que les scripts et les données nécessaires au bon fonctionnement de l'application. 
+
+En plus du code, un rapport complet doit être joint à l'archive. Celui-ci doit contenir les points suivants :
+ 
+ 1. Des explications concernant l'installation de l'application sur une machine du type Linux (comme les machines de TP). Attention, des explications trop floues ne permettant pas l'installation de l'application conduiront nécessairement à une mauvaise évaluation puisque aucun teste n'aura pu être effectué.
+ 2. Une description du modèle de données utilisé pour l'application ainsi qu'une description des différents choix techniques comme par exemple : 
+    
+    - le nombre de contrôleurs,
+    - les actions, 
+    - les composants (session, authentification, proxy) utilisés
+    - l'arborescence des vues
+    - les templates html et css utilisés, 
+    - les bibliothèques tierces PHP et Javascript (s'il y a lieu)
+    - ...
+
+3. Quelques affichages écran (screenshots) commentés illustrant l'apparence globale de l'application. 
+4. Le nom des auteurs. 
+
+
+**Indications concernant la correction.** La note tiendra compte de l'application entière et de ses fonctionnalités, mais aussi de la qualité du rapport et du code. Le code sera lu en entièrement. En conséquence toute ressemblance détectée entre les différents devoirs rendus conduira aux sanctions officielles prévus par l'UFR. De même pour le rapport, tout copié/collé à partir d'une autre source entrainera les mêmes conséquences.
+ --}}
+
+## Installation et configuration de CakePHP
+
+Suivre les étapes décrites dans le tp précédent pour configurer une App CakePHP : [tp2 installation de cakePHP](/teaching/InfoWeb/tp2-cakePHP.html).
+{{!-- Cette section décrit les détails de l'installation de CakePHP sur les machines de TP de l'UFR, sous environnement Linux. Les explications suivantes permettent d'obtenir une version 100% fonctionnelle de CakePHP. Toute installation sur une machine autre que celles des salles de TP va probablement différer de ces instructions et relève de votre seule responsabilité. 
+
+Note : Dans les explications suivantes, lorsque le mot ```LOGIN``` est utilisé, il s'agit de votre login qu'il faut remplacer. L'application est nommée ```MyApp```. Bien-sûr, ce nom peut être changé. 
+
+### Téléchargement et désarchivage
+
+    cd ~/public_html
+    wget https://github.com/cakephp/cakephp/zipball/2.3.0 --no-check-certificate
+    unzip 2.3.0
+    mv cakephp* MyApp
+    cd MyApp
+
+### Modification des fichiers `.htaccess`
+
+Les chemins indiqués ici sont relatifs à l'application (```~/public_html/MyApp/```)
+
+*   Le fichier `.htaccess`
+    
+    Ajouter `/~LOGIN/MyApp/` à la rêgle ```Rewrite```. Le fichier doit ressembler à cela :
+
+        <IfModule mod_rewrite.c>
+            RewriteEngine on
+            RewriteRule    ^$ /~LOGIN/MyApp/app/webroot/    [L]
+            RewriteRule    (.*) /~LOGIN/MyApp/app/webroot/$1 [L]
+        </IfModule>%
+
+
+
+*   Le fichier `app/.htaccess`
+    
+    Idem.
+
+        <IfModule mod_rewrite.c>
+            RewriteEngine on
+            RewriteRule    ^$   /~LOGIN/MyApp/app/webroot/    [L]
+            RewriteRule    (.*) /~LOGIN/MyApp/app/webroot/$1    [L]
+        </IfModule>
+
+
+*   Le fichier `app/webroot/.htaccess`
+    
+    Ajouter la ligne `RewriteBase /~LOGIN/MyApp/app/webroot/` avant la ligne ```RewriteCond``` (ligne 3).
+
+         <IfModule mod_rewrite.c>
+            RewriteEngine On
+            RewriteBase /~LOGIN/cakephp/app/webroot/
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^(.*)$ index.php [QSA,L]
+        </IfModule>
+
+### Connexion à la base de donnée
+
+Copier le fichier de configuration par défaut : 
+
+    cp app/Config/database.php.default app/Config/database.php
+
+Modifier le fichier  ```app/Config/database.php``` :
+
+ 
+    public $default = array(
+        'datasource' => 'Database/Mysql',
+        'persistent' => false,
+        'host' => 'ust-info',
+        'login' => 'LOGIN',
+        'password' => 'xxxxxxx',
+        'database' => 'LOGIN',
+        'prefix' => '',   // !!! Attention !!! Si un préfixe est indiqué ici,
+                                // il faudra l'ajouter au nom des tables dans la BD !
+        'encoding' => 'utf8',
+    );
+
+### Modification des valeurs par défaut
+
+Les variables `salt` et `seed` servent à augmenter la sécurité de votre application. Le contenu de ```salt``` est ajouté aux mots de passe et le champ ```seed``` est la graine aléatoire pour la génération des jetons CSRF (comme vu en cours).
+
+Éditer `app/Config/core.php` et trouver et modifier ces 2 attributs dans le fichier. 
+
+### Installation de DebugKit
+
+DebugKit est un outil supplémentaire et facultatif qui apporte un quantité d'outils pour débugger. Une fois installé, un bandeau s'affiche en haut des pages avec une quantité d'informations (logs, contenu des variables, résultat des requêtes SQL, temps de chargement des pages...)
+
+
+*   Téléchargement et désarchivage
+
+    
+        wget https://github.com/cakephp/debug_kit/archive/master.zip --no-check-certificate 
+        unzip master.zip 
+        mv debug_kit-master app/Plugin/DebugKit
+        rm master.zip
+
+
+*   Chargement du plugin
+
+    Dans `app/Config/bootstrap.php` ajouter (n'importe où):
+
+        CakePlugin::load('DebugKit');
+
+*   Inclure la bare d'outils dans tous les contrôleurs
+    
+    On utilise la classe mère `AppController` dans  `app/Controller/AppController.php`:
+
+        public $components = array('DebugKit.Toolbar');
+
+*   Régler le mode ```debug``` à `2` dans ```app/Config/core.php```:
+    
+        Configure::write('debug', 2);
+
+* Retirer tous les appels à  ```sql_dump``` dans les  ```layout```
+
+    * `app/View/Layouts/default.ctp`
+    * `app/View/Layouts/error.ctp`
+
+### Modifier les droits
+
+La dernière étape est la plus importante. Elle donne à Apache et PHP accès à votre application :
+
+
+    chmod -R 750 .
+    chmod -R g+w app/tmp/
+    chgrp -R www-data .
+
+
+## Application de teste
+
+Suivre les différentes étapes de l'application de teste dans la documentation officielle de cakePHP (application de Blog et Authentification basique):
+
+* [Blog partie 1](http://book.cakephp.org/2.0/fr/tutorials-and-examples/blog/blog.html)
+* [Blog partie 2](http://book.cakephp.org/2.0/fr/tutorials-and-examples/blog/part-two.html)
+* [Authentification simple](http://book.cakephp.org/2.0/fr/tutorials-and-examples/blog-auth-example/auth.html)
+
+ --}}
+## Café ! 
+
+On souhaite réaliser une application permettant de manipuler et de visualiser la liste des établissements parisiens où le café est à un euro. On dispose, via le site Open Data de la ville de Paris, des données géolocalisées suivantes : 
+
+{{!-- * [2013_02_03_listings_for_web.csv](http://data.cityofsantacruz.com/en/storage/f/2013-02-05T174254/2013_02_03_listings_for_web.csv)
+ --}}
+* [liste-des-cafes-a-un-euro.csv](http://parisdata.opendatasoft.com/explore/dataset/liste-des-cafes-a-un-euro/download?format=csv)
+
+Le fichier ci-dessus est au format [CSV](http://fr.wikipedia.org/wiki/Comma-separated_values), un format textuel qui permet de stoker des données en lignes et colonnes. Ce fichier s'ouvre avec un éditeur de texte. **Chaque colonne représente un champ et chaque ligne représente un tuple**. La première ligne est spéciale, elle contient les noms des colonnes (les champs). Il y a un travail de mise en forme préalable pour pouvoir inclure ces données dans une base de données.
+
+
+L'application doit permettre de présenter la liste de ces cafés sous forme d'un tableau. Cette liste par défaut est longue de 10 résultats par page, les autres résultats sont accessibles par des liens (à la façon des pages de résultat d'un moteur de recherche) et ne fait l'objet d'aucun critère de sélection par défaut. 
+
+Dans cette même page, un champ de saisie permet de faire des requêtes sur des critères à définir (arrondissement, prix comptoir, prix terrasse...) Le résultat de la recherche s'affiche dans la même page avec le même mécanisme de limite du nombre de résultats par page. 
+
+On souhaite également pouvoir visualiser sur une carte ces cafés puisque les données possèdent des coordonnées GPS. On utilisera pour ça l'un des services de cartographie librement accessibles :
+
+- OpenStreetMap ([Leaflet](http://leafletjs.com/), [OpenLayers](http://wiki.openstreetmap.org/wiki/OpenLayers_Marker)...)
+- [Nokia](http://developer.here.com/javascript_api_explorer)
+- [AOL Mapquest](http://developer.mapquest.com/web/documentation/sdk/javascript/v7.0/poi)
+- [Google](https://developers.google.com/maps/documentation/javascript/places)
+- ou autre ?
+
+
+
+Un café pourra être affiché dans une page seule avec :
+- les détails de tous ses champs (c.f. le fichier de données) ;
+- une carte avec sa localisation ;
+- une liste des commentaires laissés par les utilisateurs du site.  
+- une note de zéro à cinq étoiles qui est la moyenne des notes laissées par les utilisateurs (zéro étoile : c'est du jus de chaussette. Cinq étoiles: What Else?)
+
+Les visiteurs du site peuvent laisser des commentaires sur les cafés, qui s'affichent lors de l'affichage des détails de ceux ci. Un commentaire se compose : 
+
+- d'une date ; 
+- du texte du commentaire ; 
+- d'une note de 0 à 5 qui évalue l'établissement ; 
+- du nom de l'auteur du commentaire. 
+
+Les visiteurs peuvent aussi partager la page d'un café via les réseaux sociaux.  
+
+Enfin, l'application devra gérer la notion d'administrateur (sans forcement prévoir un système de création de nouvel administrateur/utilisateur). Un administrateur doit se connecter avant de  pouvoir modifier les cafés existants les supprimer ou en créer de nouveaux en saisissant toutes les informations nécessaires.
+
+
+
+Toute l'application sera  réalisée avec CakePHP, en respectant les standards établis par le framework. Pour la partie HTML et CSS le recours à un template de votre choix (Foundation, Bootstrap...) est demandé. 
+
+{{!-- Le TP doit être rendu sur la plateforme [Eureka](https://eureka.univ-lehavre.fr/mod/assignment/view.php?id=22019) pour le 5 avril 2013. --}}
+
+{{/markdown}}
