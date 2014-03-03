@@ -178,7 +178,7 @@ Suivre les différentes étapes de l'application de teste dans la documentation 
 * [Authentification simple](http://book.cakephp.org/2.0/fr/tutorials-and-examples/blog-auth-example/auth.html)
 
  --}}
-## Café ! 
+## Un p'tit café ? 
 
 On souhaite réaliser une application permettant de manipuler et de visualiser la liste des établissements parisiens où le café est à un euro. On dispose, via le site Open Data de la ville de Paris, des données géolocalisées suivantes : 
 
@@ -191,9 +191,9 @@ Le fichier ci-dessus est au format [CSV](http://fr.wikipedia.org/wiki/Comma-sepa
 
 L'application doit permettre de présenter la liste de ces cafés sous forme d'un tableau. Cette liste par défaut est longue de 10 résultats par page, les autres résultats sont accessibles par des liens (à la façon des pages de résultat d'un moteur de recherche) et ne fait l'objet d'aucun critère de sélection par défaut. 
 
-Dans cette même page, un champ de saisie permet de faire des requêtes sur des critères à définir (arrondissement, prix comptoir, prix terrasse...) Le résultat de la recherche s'affiche dans la même page avec le même mécanisme de limite du nombre de résultats par page. 
+Dans cette même page, un ou des champs de saisies permettent de **filtrer** les résultats sur des critères à définir (arrondissement, prix comptoir, prix terrasse...) Le résultat de la recherche s'affiche dans la même page avec le même mécanisme de limite du nombre de résultats par page. 
 
-On souhaite également pouvoir visualiser sur une carte ces cafés puisque les données possèdent des coordonnées GPS. On utilisera pour ça l'un des services de cartographie librement accessibles :
+On souhaite également pouvoir **visualiser** sur une carte ces cafés puisque les données possèdent des coordonnées GPS. On utilisera pour ça l'un des services de cartographie librement accessibles :
 
 - OpenStreetMap ([Leaflet](http://leafletjs.com/), [OpenLayers](http://wiki.openstreetmap.org/wiki/OpenLayers_Marker)...)
 - [Nokia](http://developer.here.com/javascript_api_explorer)
@@ -203,13 +203,13 @@ On souhaite également pouvoir visualiser sur une carte ces cafés puisque les d
 
 
 
-Un café pourra être affiché dans une page seule avec :
+Un café pourra être **affiché** dans une page seule avec :
 - les détails de tous ses champs (c.f. le fichier de données) ;
 - une carte avec sa localisation ;
 - une liste des commentaires laissés par les utilisateurs du site.  
 - une note de zéro à cinq étoiles qui est la moyenne des notes laissées par les utilisateurs (zéro étoile : c'est du jus de chaussette. Cinq étoiles: What Else?)
 
-Les visiteurs du site peuvent laisser des commentaires sur les cafés, qui s'affichent lors de l'affichage des détails de ceux ci. Un commentaire se compose : 
+Les visiteurs du site peuvent laisser des **commentaires** sur les cafés. Ceux-ci sont visibles lors de l'affichage des détail d'un café. Un commentaire se compose : 
 
 - d'une date ; 
 - du texte du commentaire ; 
@@ -218,7 +218,7 @@ Les visiteurs du site peuvent laisser des commentaires sur les cafés, qui s'aff
 
 Les visiteurs peuvent aussi partager la page d'un café via les réseaux sociaux.  
 
-Enfin, l'application devra gérer la notion d'administrateur (sans forcement prévoir un système de création de nouvel administrateur/utilisateur). Un administrateur doit se connecter avant de  pouvoir modifier les cafés existants les supprimer ou en créer de nouveaux en saisissant toutes les informations nécessaires.
+Enfin, l'application devra gérer la notion d'administrateur (sans forcement prévoir un système de création de nouvel administrateur/utilisateur). Un administrateur doit se **connecter** avant de  pouvoir **modifier** les cafés existants les **supprimer** ou en **créer** de nouveaux en saisissant toutes les informations nécessaires.
 
 
 
