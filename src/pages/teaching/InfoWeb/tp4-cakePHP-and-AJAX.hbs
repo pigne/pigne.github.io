@@ -1,0 +1,142 @@
+---
+title: "CakePHP & AJAX"
+subsection: Info-Web
+order: 5
+description:
+    - "TP n°4  - Info-Web - Licence 3"
+    - "CakePKP"
+    - "AJAX"
+    - 'jQuery'
+libraries: 
+    - "highlightjs"
+---
+
+{{#markdown}}
+
+## Des requêtes AJAX dans une web app. 
+
+CakePHP est un framework coté serveur où toute la logique (Modèle, Vue et Contrôle) est gérée sur le serveur. Il est néanmoins possible de rendre les applications  plus dynamiques et d'éviter les rechargements systématiques de pages.
+
+Pour éviter le rechargement des pages il y a principalement 2 mécanismes mettre en œuvre :
+
+- Coté *client* (dans le navigateur, en JavaScript), il faut empêcher l'exécution des liens classiques et les "transformer" en appels asynchrones *XmlHttpRequest*. Puis il faut traiter correctement le contenu qui sera retourné par le serveur en modifiant dynamiquement la page Web (modification du DOM). 
+- Coté *serveur* (en PHP), lors de la réception d'une requête, il faut détecter la nature de la requête et adapter la réponse en conséquence. En effet, la requête AJAX s'attend à recevoir uniquement le code nécessaire à l'affichage du nouveau contenu. Elle ne s'attend pas à recevoir le code d'une page entière avec tout ses entêtes, ses scripts, ses styles... L'idéal en terme de performance est de ne même pas envoyer de HTML mais uniquement les données nécessaires dans un format adapté (XML ou JSON). 
+
+
+## Coté client
+
+[JQuery](http://jquery.com/) est une bibliothèque JavaScript dédiée à la **manipulation du DOM**. La bibliothèque possède également de méthodes utilitaires pour d'autres composant des navigateurs. Ainsi la manipulation des XmlHttpRequests (XHR) se fait souvent avec jQuery. Attention à ne pas croire à tore que jQuery sert à tout dès qu'il s'agit de javascript dans un navigateur.
+
+### Gestion des clics 
+
+Afin d'éviter les rechargements de page, on doit contrôler les appels de l'application au serveur. Pour cela il faut empêcher le fonctionnement normal des liens dans l'application et les remplacer par des appels asynchrones XHR. On utilise la fonction `on()` de jQuery qui permet d'enregistrer un écouteur d'événement sur des éléments du DOM. Les événements qui nous intéressent sont les clics et les éléments qui nous intéressent sont les liens de l'application. 
+
+Puisqu'il est possible que des liens dans nos pages ne soient pas liés à l'application (liens externes) il convient de repérer les liens qui nous intéressent en les "marquant" d'une classe CSS (`ajax` par exemple). 
+
+Le code suivant permet d'écouter les clics à l'échelle de toute l'application en ne réagissant qu'aux clics venant des éléments portant une classe `ajax`:
+
+```javascript
+$(document).on('click', '.ajax', function(event){
+	// do something...
+});
+```
+
+### XmlHttpRequest
+
+On doit maintenant effectuer la requête à la place du lien normal en utilisant une XHR. Avec jQuery la fonction de *callback*, qui réagit aux clics, doit retourner `false` pour en empêcher le mécanisme normal de suivi du lien. On utilise la fonction `get()` de jQuery à laquelle on donne l'url indiquée dans le lien qui vient d'être cliqué et qui est contenue dans son champ `href` 
+
+```javascript
+$(document).on('click', '.ajax', function(event){
+	$.get($(event.target).attr('href'), function (data){
+		// do something with the data
+	});
+	return false; // empêche le lien de fonctionner "normalement"
+});
+```
+
+### Nouveau contenu 	
+
+Une fois les données reçues par le client, il faut les insérer dans la page. On doit définir un point d'entrer dans le DOM de la page et remplacer ce qui existe par le nouveau contenu. On considère ici l'élément d'id `main_content`. Cet élément doit exister au préalable dans la page et doit donc faire parti du *templete* de départ envoyé par le serveur (`app/view/Layouts/default.ctp` dans CakePHP). On utilise encore jQuery pour créer le nouveau DOM reçu par la requête XHR en utilisant les fonction `empty()` et `html()` :
+
+```javascript
+$(document).on('click', '.ajax', function(event){
+	$.get($(event.target).attr('href'), function (data){
+		$('#main_content')
+				.empty()       // vide le conteneur,
+				.html(data);   // puis ajoute le nouveau contenu
+	});
+	return false;
+
+});
+```
+
+## Coté server
+
+Le comportement par défaut de CakePHP, quand une requête est reçue, est de fabriquer une nouvelle page web complète avec l'entête les liens vers les feuilles de style, le javascript, etc. Or on ne veut pas récupérer toute la page lors d'une requête XHR, mais seulement le code utile de la vue demandée. 
+
+Pour gérer le fait qu'une requête sur une application Cake PHP est de type XHR, il faut ajouter le composant `RequestHandler` à la liste des `components` du ou des contrôleurs concernés. 
+
+```php
+<?php
+class AdvertsController extends AppController {
+	public $helpers = array('Html', 'Form');
+	public $components = array('Session', 'RequestHandler');
+	// ...
+```
+
+
+Quand il est activé, le composant `requestHandler` détecte les requêtes XHR et supprime le *layout* par défaut, revoyant ainsi uniquement ce que la vue associée au contrôleur a généré. 
+
+# Travail demandé
+
+On souhaite reprendre la Web App des cafés de Paris a un euro pour la rendre "AJAX".
+
+## Partie 1 : Modification de l'application  
+
+Il est demandé de reprendre votre webapp sur les "cafés de Paris a un euro" et de rendre cette application "AJAX" en remplaçant tout les liens avec le mécanisme décrit ci-dessus. 
+
+## Partie 2 : Historique de Navigation
+
+Il y à quelques incohérences avec notre application ainsi modifiée. En effet un clic sur un lien nous emmène à la page souhaité mais cela n'est pas répercuté dans l'URL du navigateur. Cela est en contradiction avec les règles des Web Services et des API REST qui, à chaque service, définissent une URL unique. 
+
+Depuis HTML5 l'historique de navigation d'un navigateur peut être géré et manipulé en javascript. 
+
+
+Il vous ai demandé de gérer les URL de votre application et donc de mettre ajour l'historique de navigation  lors d'une requête XHR  avec l'objet HTML5 `history`. Voir la documentation sur le site [Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/Guide/DOM/Manipuler_historique_du_navigateur).
+
+##Partie 3 :  Moteurs de template coté client 
+
+Un second inconvénient à la technique précédente est que le nouveau contenu est inséré à un endroit prédéfini de la page. On ne peut pas facilement utiliser une partie du nouveau contenu dans un cadre puis une autre partie de ce contenu dans un autre élément. Un moyen de contourner cette  limitation est de  déporter la construction du code HTMl (ce que font les vues de CakePHP) vers le navigateur. 
+
+Ainsi on ne souhaitera plus produire du HTML coté serveur puis l'envoyer au client pour qu'il l'affiche. En revanche on va vouloir envoyer uniquement les données nécessaires dans un format approprié (XML ou JSON) et laisser le client produire les éléments du DOM. 
+
+Pour envoyer des données JSON plutôt que du HTML en réponse à une XHR, une vue utilisera la méthode `is()` du requestHandler pour identifier la nature de la requête et la fonction `json_encode()` pour encoder les données a envoyer:
+
+```php
+<?php
+if ($this->request->is('ajax')) { // si c'est une XHR
+	echo json_encode($advert);
+}
+else { // si c'est une requête classique
+?>
+	<article>
+	<h2><?php echo $advert['Advert']['title'];?></h2>
+	<!-- ... -->
+<?php
+}
+?>
+```
+
+Coté client on utilise la méthode `getJSON()` de jQuery pour récupérer des objets JavaScript. On utilisera un moteur de template coté client comme par exemple [Mustache](https://github.com/janl/mustache.js) : 
+
+```javascript
+var template: "<article><h2>{{title}}</h2><!-- ...  --></article>",
+var renderedTemplate = Mustache.render(template, data.Advert);
+$('#main_content').empty().html(renderedTemplate);
+```
+
+Il vous ai demandé de mettre en place le rendu des pages du coté du client en effectuant le transport des données en JSON. 
+
+
+{{/markdown}}
+
