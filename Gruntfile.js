@@ -19,6 +19,9 @@ var publications = _.map(JSON.parse(fs.readFileSync('src/data/publications.json'
         case 'thesis':
             pub.niceType = 'Ph.D. Thesis';
             break;
+        case 'book':
+            pub.niceType = 'Book';
+            break;
     };
     pub.niceAuthors = _.map(pub.author, function(author) {
         return _.values(author).reverse().join(' ');

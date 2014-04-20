@@ -734,5 +734,41 @@
 			],
 			"season": "09:25:25"
 		}
+	},
+	{
+		"id": 320,
+		"type": "book",
+		"title": "Evolutionary Algorithms for Mobile Ad hoc Networks",
+		"publisher": "John Wiley & Sons",
+		"ISBN": "978-1-118-34113-1",
+		"author": [
+			{
+				"family": "Dorronsoro",
+				"given": "Bernabé"
+			},
+			{
+				"family": "Ruiz",
+				"given": "Patricia"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2014"
+				]
+			]
+		}
 	}
 ]
