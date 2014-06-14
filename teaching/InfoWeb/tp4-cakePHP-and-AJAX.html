@@ -68,6 +68,8 @@
 			
 		
 			
+		
+			
 				<li><a href="../../projects/index.html">Projects </a></li>
 			
 		
@@ -157,18 +159,18 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-sx-12">
             
 
-<h2 id="des-requ-tes-ajax-dans-une-web-app-">Des requêtes AJAX dans une web app.</h2>
+<h2 id="des-requ-tes-ajax-dans-une-web-app">Des requêtes AJAX dans une web app</h2>
 <p>CakePHP est un framework coté serveur où toute la logique (Modèle, Vue et Contrôle) est gérée sur le serveur. Il est néanmoins possible de rendre les applications  plus dynamiques et d&#39;éviter les rechargements systématiques de pages.</p>
-<p>Pour éviter le rechargement des pages il y a principalement 2 mécanismes mettre en œuvre :</p>
+<p>Pour éviter le rechargement des pages il y a principalement 2 mécanismes à mettre en œuvre :</p>
 <ul>
 <li>Coté <em>client</em> (dans le navigateur, en JavaScript), il faut empêcher l&#39;exécution des liens classiques et les &quot;transformer&quot; en appels asynchrones <em>XmlHttpRequest</em>. Puis il faut traiter correctement le contenu qui sera retourné par le serveur en modifiant dynamiquement la page Web (modification du DOM). </li>
 <li>Coté <em>serveur</em> (en PHP), lors de la réception d&#39;une requête, il faut détecter la nature de la requête et adapter la réponse en conséquence. En effet, la requête AJAX s&#39;attend à recevoir uniquement le code nécessaire à l&#39;affichage du nouveau contenu. Elle ne s&#39;attend pas à recevoir le code d&#39;une page entière avec tout ses entêtes, ses scripts, ses styles... L&#39;idéal en terme de performance est de ne même pas envoyer de HTML mais uniquement les données nécessaires dans un format adapté (XML ou JSON). </li>
 </ul>
 <h2 id="cot-client">Coté client</h2>
-<p><a href="http://jquery.com/">JQuery</a> est une bibliothèque JavaScript dédiée à la <strong>manipulation du DOM</strong>. La bibliothèque possède également de méthodes utilitaires pour d&#39;autres composant des navigateurs. Ainsi la manipulation des XmlHttpRequests (XHR) se fait souvent avec jQuery. Attention à ne pas croire à tore que jQuery sert à tout dès qu&#39;il s&#39;agit de javascript dans un navigateur.</p>
+<p><a href="http://jquery.com/">JQuery</a> est une bibliothèque JavaScript dédiée à la <strong>manipulation du DOM</strong>. La bibliothèque possède également des méthodes utilitaires pour d&#39;autres composants des navigateurs. Ainsi la manipulation des XmlHttpRequests (XHR) se fait souvent avec jQuery. Attention à ne pas croire à tore que jQuery sert à tout dès qu&#39;il s&#39;agit de javascript dans un navigateur.</p>
 <h3 id="gestion-des-clics">Gestion des clics</h3>
 <p>Afin d&#39;éviter les rechargements de page, on doit contrôler les appels de l&#39;application au serveur. Pour cela il faut empêcher le fonctionnement normal des liens dans l&#39;application et les remplacer par des appels asynchrones XHR. On utilise la fonction <code>on()</code> de jQuery qui permet d&#39;enregistrer un écouteur d&#39;événement sur des éléments du DOM. Les événements qui nous intéressent sont les clics et les éléments qui nous intéressent sont les liens de l&#39;application. </p>
 <p>Puisqu&#39;il est possible que des liens dans nos pages ne soient pas liés à l&#39;application (liens externes) il convient de repérer les liens qui nous intéressent en les &quot;marquant&quot; d&#39;une classe CSS (<code>ajax</code> par exemple). </p>
@@ -177,7 +179,7 @@
     <span class="comment">// do something...</span>
 });</code></pre>
 <h3 id="xmlhttprequest">XmlHttpRequest</h3>
-<p>On doit maintenant effectuer la requête à la place du lien normal en utilisant une XHR. Avec jQuery la fonction de <em>callback</em>, qui réagit aux clics, doit retourner <code>false</code> pour en empêcher le mécanisme normal de suivi du lien. On utilise la fonction <code>get()</code> de jQuery à laquelle on donne l&#39;url indiquée dans le lien qui vient d&#39;être cliqué et qui est contenue dans son champ <code>href</code> </p>
+<p>On doit maintenant effectuer la requête à la place du lien normal en utilisant une XHR. Avec jQuery la fonction de <em>callback</em>, qui réagit aux clics, doit retourner <code>false</code> pour en empêcher le mécanisme normal de suivi du lien. On utilise la fonction <code>get()</code> de jQuery à laquelle on donne l&#39;url indiquée dans le lien qui vient d&#39;être cliqué et qui est contenue dans son champ <code>href</code> :</p>
 <pre><code class="language-javascript">$(document).on(<span class="string">'click'</span>, <span class="string">'.ajax'</span>, <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
     $.get($(event.target).attr(<span class="string">'href'</span>), <span class="function"><span class="keyword">function</span> <span class="params">(data)</span>{</span>
         <span class="comment">// do something with the data</span>
@@ -185,7 +187,7 @@
     <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// empêche le lien de fonctionner "normalement"</span>
 });</code></pre>
 <h3 id="nouveau-contenu">Nouveau contenu</h3>
-<p>Une fois les données reçues par le client, il faut les insérer dans la page. On doit définir un point d&#39;entrer dans le DOM de la page et remplacer ce qui existe par le nouveau contenu. On considère ici l&#39;élément d&#39;id <code>main_content</code>. Cet élément doit exister au préalable dans la page et doit donc faire parti du <em>templete</em> de départ envoyé par le serveur (<code>app/view/Layouts/default.ctp</code> dans CakePHP). On utilise encore jQuery pour créer le nouveau DOM reçu par la requête XHR en utilisant les fonction <code>empty()</code> et <code>html()</code> :</p>
+<p>Une fois les données reçues par le client, il faut les insérer dans la page. On doit définir un point d&#39;entrer dans le DOM de la page et remplacer ce qui existe par le nouveau contenu. On considère ici l&#39;élément d&#39;<em>id</em> <code>main_content</code>. Cet élément doit exister au préalable dans la page et doit donc faire parti du <em>templete</em> de départ envoyé par le serveur (<code>app/view/Layouts/default.ctp</code> dans CakePHP). On utilise encore jQuery pour créer le nouveau DOM reçu par la requête XHR en utilisant les fonctions <code>empty()</code> et <code>html()</code> :</p>
 <pre><code class="language-javascript">$(document).on(<span class="string">'click'</span>, <span class="string">'.ajax'</span>, <span class="function"><span class="keyword">function</span><span class="params">(event)</span>{</span>
     $.get($(event.target).attr(<span class="string">'href'</span>), <span class="function"><span class="keyword">function</span> <span class="params">(data)</span>{</span>
         $(<span class="string">'#main_content'</span>)
@@ -196,8 +198,8 @@
 
 });</code></pre>
 <h2 id="cot-server">Coté server</h2>
-<p>Le comportement par défaut de CakePHP, quand une requête est reçue, est de fabriquer une nouvelle page web complète avec l&#39;entête les liens vers les feuilles de style, le javascript, etc. Or on ne veut pas récupérer toute la page lors d&#39;une requête XHR, mais seulement le code utile de la vue demandée. </p>
-<p>Pour gérer le fait qu&#39;une requête sur une application Cake PHP est de type XHR, il faut ajouter le composant <code>RequestHandler</code> à la liste des <code>components</code> du ou des contrôleurs concernés. </p>
+<p>Le comportement par défaut de CakePHP, quand une requête est reçue, est de fabriquer une nouvelle page web complète avec l&#39;entête, les liens vers les feuilles de style, le javascript, etc. Or on ne veut pas récupérer toute la page lors d&#39;une requête XHR, mais seulement le code utile de la vue demandée. </p>
+<p>Pour gérer le fait qu&#39;une requête sur une application CakePHP est de type XHR, il faut ajouter le composant <code>RequestHandler</code> à la liste des <code>components</code> du ou des contrôleurs concernés. </p>
 <pre><code class="language-php"><span class="preprocessor">&lt;?php</span>
 <span class="class"><span class="keyword">class</span> <span class="title">AdvertsController</span> <span class="keyword">extends</span> <span class="title">AppController</span> {</span>
     <span class="keyword">public</span> <span class="variable">$helpers</span> = <span class="keyword">array</span>(<span class="string">'Html'</span>, <span class="string">'Form'</span>);
@@ -205,17 +207,17 @@
     <span class="comment">// ...</span></code></pre>
 <p>Quand il est activé, le composant <code>requestHandler</code> détecte les requêtes XHR et supprime le <em>layout</em> par défaut, revoyant ainsi uniquement ce que la vue associée au contrôleur a généré. </p>
 <h1 id="travail-demand-">Travail demandé</h1>
-<p>On souhaite reprendre la Web App des cafés de Paris a un euro pour la rendre &quot;AJAX&quot;.</p>
+<p>On souhaite reprendre la Web App des &quot;cafés de Paris à un euro&quot; pour la rendre &quot;AJAX&quot;.</p>
 <h2 id="partie-1-modification-de-l-application">Partie 1 : Modification de l&#39;application</h2>
-<p>Il est demandé de reprendre votre webapp sur les &quot;cafés de Paris a un euro&quot; et de rendre cette application &quot;AJAX&quot; en remplaçant tout les liens avec le mécanisme décrit ci-dessus. </p>
+<p>Il est demandé de reprendre votre <em>webapp</em> sur les &quot;cafés de Paris à un euro&quot; et de rendre cette application &quot;AJAX&quot; en remplaçant tout les liens avec le mécanisme décrit ci-dessus. </p>
 <h2 id="partie-2-historique-de-navigation">Partie 2 : Historique de Navigation</h2>
 <p>Il y à quelques incohérences avec notre application ainsi modifiée. En effet un clic sur un lien nous emmène à la page souhaité mais cela n&#39;est pas répercuté dans l&#39;URL du navigateur. Cela est en contradiction avec les règles des Web Services et des API REST qui, à chaque service, définissent une URL unique. </p>
 <p>Depuis HTML5 l&#39;historique de navigation d&#39;un navigateur peut être géré et manipulé en javascript. </p>
 <p>Il vous ai demandé de gérer les URL de votre application et donc de mettre ajour l&#39;historique de navigation  lors d&#39;une requête XHR  avec l&#39;objet HTML5 <code>history</code>. Voir la documentation sur le site <a href="https://developer.mozilla.org/fr/docs/Web/Guide/DOM/Manipuler_historique_du_navigateur">Mozilla Developer Network</a>.</p>
 <h2 id="partie-3-moteurs-de-template-cot-client">Partie 3 :  Moteurs de template coté client</h2>
-<p>Un second inconvénient à la technique précédente est que le nouveau contenu est inséré à un endroit prédéfini de la page. On ne peut pas facilement utiliser une partie du nouveau contenu dans un cadre puis une autre partie de ce contenu dans un autre élément. Un moyen de contourner cette  limitation est de  déporter la construction du code HTMl (ce que font les vues de CakePHP) vers le navigateur. </p>
+<p>Un second inconvénient à la technique précédente est que le nouveau contenu est inséré à un endroit prédéfini de la page. On ne peut pas facilement utiliser une partie du nouveau contenu dans un cadre puis une autre partie de ce contenu dans un autre élément. Un moyen de contourner cette  limitation est de  déporter la construction du code HTML (ce que font les vues de CakePHP) vers le navigateur. </p>
 <p>Ainsi on ne souhaitera plus produire du HTML coté serveur puis l&#39;envoyer au client pour qu&#39;il l&#39;affiche. En revanche on va vouloir envoyer uniquement les données nécessaires dans un format approprié (XML ou JSON) et laisser le client produire les éléments du DOM. </p>
-<p>Pour envoyer des données JSON plutôt que du HTML en réponse à une XHR, une vue utilisera la méthode <code>is()</code> du requestHandler pour identifier la nature de la requête et la fonction <code>json_encode()</code> pour encoder les données a envoyer:</p>
+<p>Pour envoyer des données JSON plutôt que du HTML en réponse à une XHR, une vue utilisera la méthode <code>is()</code> du <code>requestHandler</code> pour identifier la nature de la requête et la fonction <code>json_encode()</code> pour encoder les données à envoyer:</p>
 <pre><code class="language-php"><span class="preprocessor">&lt;?php</span>
 <span class="keyword">if</span> (<span class="variable">$this</span>-&gt;request-&gt;is(<span class="string">'ajax'</span>)) { <span class="comment">// si c'est une XHR</span>
     <span class="keyword">echo</span> json_encode(<span class="variable">$advert</span>);

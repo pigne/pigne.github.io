@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Lab Session</title>
+        <title>Maritime Networks</title>
         <meta name="description" content="Yoann Pigné's personal
                       website. Researcher in computer science, Networks,  dynamic
                       graphs, Mobile ad hoc Networks, Vehicular Ad hoc
@@ -65,7 +65,7 @@
 			
 		
 			
-				<li><a href="../../projects/index.html">Projects </a></li>
+				<li><a href="../index.html">Projects </a></li>
 			
 		
 			
@@ -115,7 +115,7 @@
 			
 		
 			
-				<li><a href="../index.html">Teaching </a></li>
+				<li><a href="../../teaching/index.html">Teaching </a></li>
 			
 		
 			
@@ -135,15 +135,15 @@
 
 <div class="jumbotron">
     <div class="container">
-        <h1>Lab Session <small></small></h1>
+        <h1>Maritime Networks <small></small></h1>
         
             <ul class="text-right list-unstyled">
                 
-                <li>Development of a WebApp in teams</li>
+                <li>Demo for the presentation &#x27;Random walks in dynamic maritime networks&#x27;</li>
                 
-                <li>Split the work load among the team</li>
+                <li>International Workshop on Maritime Networks ERC World Seastems</li>
                 
-                <li>Host the project on Github</li>
+                <li>Simple Demo showing the evolution of ports activity.</li>
                 
             </ul>
         
@@ -155,27 +155,85 @@
         <div class="col-sx-12">
             
 
-<h2 id="the-webapp">The WebApp</h2>
-<p>We want a simple WebApp that offers a text field where characters can be typed. Each time a character is entered the App would display (in a table, below the text field) a line with the character itself and its <strong>decimal</strong>, <strong>hexadecimal</strong>, <strong>html</strong>, and <strong>unicode</strong> values. </p>
-<p>The computation of the various codes <strong>MUST</strong> be done on the server and sent back to the client with JSON data. A request to the server is emitted each time a keystroke is entered in the text field. </p>
-<p class="text-center">
-<img src="images/convert.png" alt="The Convert Application">
-</p>
+<style>
+    .block {
+        text-align:center;
+    }
+</style>
+<p>These graphs represent the evolution of the number of vessels leaving ports every day. Each day of 1996 is visualised on the top/left panel. each day of 2006 is visualised on the right /bottom pannel. Each circle is a port. It's size representes how many vessels are leaving it on that day. This number is more or less coorelated to the surface of the circle (diamiter ~ sqrt (nbVessels)).</p>
+<p>This page is part of the results of a scientific collaboration between :</p>
+<ul>
+    <li>César Ducruet,</li>
+    <li>Frédéric Guinand,</li>and Yoann Pigné.</ul>
+<div class=row>
+    <div class="col-md-offset-2 col-md-10 col-sx-12">
+        <ul>
+            <li>Control annimation:
+                <button id=playButton type=button class="hidden btn btn-default btn-xs">
+                    <span class="glyphicon glyphicon-play"></span>
+                </button>
+                <button id=pauseButton type=button class="btn btn-default btn-xs">
+                    <span class="glyphicon glyphicon-pause"></span>
+                </button>
+            </li>
+            <li>Change projection:
+                <select id=projection-menu></select>
+            </li>
+        </ul>
+    </div>
+</div>
 
-<h2 id="tests-tests-tests-tests-tests">Tests tests tests tests tests</h2>
-<p>Each feature of the application (server AND client) is separately tested with the appropriated  test framework. Server-side tests should be easy to launch from maven. </p>
-<h2 id="teams">Teams</h2>
-<p>Each team will have to self-organize so that the server part of the application and client part are developed in parallel. Two <strong>sub-teams</strong> have to be created. </p>
-<p>Each team works with it&#39;s own git repository. Branches for sub-teams may have to be created. Their is one remote server per team, hosted at GitHub. </p>
-<p>Teams should not communicate their repository location to other teams, to prevent industrial espionage...</p>
-<h2 id="github">GitHub</h2>
-<p>Everyone has to create a GitHub account. </p>
-<p>Each team elects a &quot;project holder&quot; who is responsible for the creation of the remote repository on GitHub and gives  his team members access to the project.</p>
-<h2 id="evaluation">Evaluation</h2>
-<h3 id="individual-basis">Individual basis</h3>
-<p>Since each commit is signed, it is easy to see who did what in the project. Marks will be given after checking the logs of the git repositories. </p>
-<h3 id="team-basis">Team basis</h3>
-<p>Bonus points will be given to the <strong>best team</strong> (best = best organization, best application, cleanest project).</p>
+
+</div>
+</div>
+</div>
+
+
+<div class=container-fluid style="width:100%; max-width:100%">
+    <div class=row>
+        <div class="col-md-6 col-sx-12 block" id=y1996>
+            <h3>1996</h3>
+            <h4></h4>
+            <div id=drawing1996></div>
+            <table class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>#
+                            <th>Port Name
+                                <th>Departures
+                                    <tbody>
+            </table>
+        </div>
+        <div class="col-md-6 col-sx-12 block" id=y2006>
+            <h3>2006</h3>
+            <h4></h4>
+            <div id=drawing2006></div>
+            <table class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>#
+                            <th>Port Name
+                                <th>Departures
+                                    <tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script src=scripts/d3.min.js></script>
+<script src=scripts/moment.min.js></script>
+<script src=http://d3js.org/d3.geo.projection.v0.min.js charset=utf-8></script>
+<script src=http://d3js.org/topojson.v1.min.js></script>
+<script src=scripts/0b042307.main.js></script>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sx-12">
+        <p>
+            <span class="glyphicon glyphicon-heart"></span>from the LH team. The material about vessel movements is copyrighted and not free. The visual representations are based on <a href="http://www.jasondavies.com/maps/transition/">this example</a> with the <a href=http://d3js.org>D3.js</a> library.</p>
 
 
         </div>
