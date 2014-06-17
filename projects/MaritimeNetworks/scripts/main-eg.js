@@ -608,7 +608,7 @@
         var d2006 = new Date("2006/01/01")
         d2006.setDate(currentDay)
         var from = moment(d2006).format('MMMM Do');
-        d2006.setDate(currentDay + 15)
+        d2006.setDate(currentDay + 7)
         var to = moment(d2006).format('MMMM Do');
         d3.select('#y2006>h4').text(from + " to " + to);
 
@@ -640,7 +640,7 @@
         d1996.setDate(currentDay)
 
         var from = moment(d1996).format('MMMM Do');
-        d1996.setDate(currentDay + 15)
+        d1996.setDate(currentDay + 7)
         var to = moment(d1996).format('MMMM Do');
         d3.select('#y1996>h4').text(from + " to " + to);
 
