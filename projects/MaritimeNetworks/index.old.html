@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Java Web Apps Tools</title>
+        <title>Maritime Networks</title>
         <meta name="description" content="Yoann Pigné's personal
                       website. Researcher in computer science, Networks,  dynamic
                       graphs, Mobile ad hoc Networks, Vehicular Ad hoc
@@ -67,7 +67,7 @@
 			
 		
 			
-				<li><a href="../../projects/index.html">Projects </a></li>
+				<li><a href="../index.html">Projects </a></li>
 			
 		
 			
@@ -117,7 +117,7 @@
 			
 		
 			
-				<li><a href="../index.html">Teaching </a></li>
+				<li><a href="../../teaching/index.html">Teaching </a></li>
 			
 		
 			
@@ -137,19 +137,15 @@
 
 <div class="jumbotron">
     <div class="container">
-        <h1>Java Web Apps Tools <small></small></h1>
+        <h1>Maritime Networks <small></small></h1>
         
             <ul class="text-right list-unstyled">
                 
-                <li>Tools for Web Apps Developer Teams.</li>
+                <li>Demo for the presentation &#x27;Random walks in dynamic maritime networks&#x27;</li>
                 
-                <li>Build Configuration.</li>
+                <li>International Workshop on Maritime Networks ERC World Seastems</li>
                 
-                <li>Versioning System.</li>
-                
-                <li>Continuous Integration.</li>
-                
-                <li>Lecture for Master 2  CAW.</li>
+                <li>Simple Demo showing the evolution of ports activity.</li>
                 
             </ul>
         
@@ -161,153 +157,86 @@
         <div class="col-sx-12">
             
 
-
-
-<p>
-Ceci est une introduction rapide aux outils de travail en équipe,  dans le cadre du développement d'application web avec serveurs d'application, en Java. </p>
-<p>Ce cours est complémentaire aux différentes intervensions de l'UE CAW du master 2 SIRES De l'université du Havre.
-</p>
-
-
-
-<div class="row">
-	<div class="col-md-12">
-		<h2>Outline</h2>
-		<div class="panel-group" id="accordion">
-		
-			
-		
-			
-		
-			
-				<div class="panel panel-default">
-					<div class="panel-heading active">
-					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
-              		<h3 class="panel-title" >1 - Web Apps with Tools <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
-					</a>
-					</div>
-					<div id="collapse1" class="in accordion-body" style="height: auto;">
-              			<div class="panel-body">
-							<ul class="">
-							
-								<li class="">Java EE Web Apps</li>
-							
-								<li class="">Web Archives</li>
-							
-								<li class="">Web Apps with Maven</li>
-							
-								<li class="">Web Apps with Tomcat</li>
-							
-								<li class="">Web Apps with Eclipse</li>
-							
-							</ul>
-							<p class="text-right bottom-right"><a href="webapps.html" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
-						</div>
-  		          	</div>
-          		</div>
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-				<div class="panel panel-default">
-					<div class="panel-heading active">
-					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
-              		<h3 class="panel-title" >2 - Git <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
-					</a>
-					</div>
-					<div id="collapse2" class="in accordion-body" style="height: auto;">
-              			<div class="panel-body">
-							<ul class="">
-							
-								<li class="">Basics of the Git Version Control System</li>
-							
-								<li class="">Understanding Branches and Merges</li>
-							
-							</ul>
-							<p class="text-right bottom-right"><a href="git.html" class="btn btn-primary" role="button">Slides <span class="glyphicon glyphicon-play"></span></a> </p>
-						</div>
-  		          	</div>
-          		</div>
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-				<div class="panel panel-default">
-					<div class="panel-heading active">
-					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
-              		<h3 class="panel-title" >3 - Lab Session <i class="pull-right glyphicon glyphicon-chevron-down"></i></h3>
-					</a>
-					</div>
-					<div id="collapse3" class="in accordion-body" style="height: auto;">
-              			<div class="panel-body">
-							<ul class="">
-							
-								<li class="">Development of a WebApp in teams</li>
-							
-								<li class="">Split the work load among the team</li>
-							
-								<li class="">Host the project on Github</li>
-							
-							</ul>
-							<p class="text-right bottom-right"><a href="labSession.html" class="btn btn-primary" role="button">More <span class="glyphicon glyphicon-play"></span></a> </p>
-						</div>
-  		          	</div>
-          		</div>
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-		</div>
-	</div>
+<style>
+    .block {
+        text-align:center;
+    }
+</style>
+<p>These graphs represent the evolution of the number of vessels leaving ports every day. Each day of 1996 is visualised on the top/left panel. each day of 2006 is visualised on the right /bottom pannel. Each circle is a port. It's size representes how many vessels are leaving it on that day. This number is more or less coorelated to the surface of the circle (diamiter ~ sqrt (nbVessels)).</p>
+<p>This page is part of the results of a scientific collaboration between :</p>
+<ul>
+    <li>César Ducruet,</li>
+    <li>Frédéric Guinand,</li>and Yoann Pigné.</ul>
+<div class=row>
+    <div class="col-md-offset-2 col-md-10 col-sx-12">
+        <ul>
+            <li>Control annimation:
+                <button id=playButton type=button class="hidden btn btn-default btn-xs">
+                    <span class="glyphicon glyphicon-play"></span>
+                </button>
+                <button id=pauseButton type=button class="btn btn-default btn-xs">
+                    <span class="glyphicon glyphicon-pause"></span>
+                </button>
+            </li>
+            <li>Change projection:
+                <select id=projection-menu></select>
+            </li>
+        </ul>
+    </div>
 </div>
+
+
+</div>
+</div>
+</div>
+
+
+<div class=container-fluid style="width:100%; max-width:100%">
+    <div class=row>
+        <div class="col-md-6 col-sx-12 block" id=y1996>
+            <h3>1996</h3>
+            <h4></h4>
+            <div id=drawing1996></div>
+            <table class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>#
+                            <th>Port Name
+                                <th>Departures
+                                    <tbody>
+            </table>
+        </div>
+        <div class="col-md-6 col-sx-12 block" id=y2006>
+            <h3>2006</h3>
+            <h4></h4>
+            <div id=drawing2006></div>
+            <table class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>#
+                            <th>Port Name
+                                <th>Departures
+                                    <tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script src=scripts/d3.min.js></script>
+<script src=scripts/moment.min.js></script>
+<script src=http://d3js.org/d3.geo.projection.v0.min.js charset=utf-8></script>
+<script src=http://d3js.org/topojson.v1.min.js></script>
+<script src=scripts/main-eg.js></script>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sx-12">
+        <p>
+            <span class="glyphicon glyphicon-heart"></span>from the LH team. The material about vessel movements is copyrighted and not free. The visual representations are based on <a href="http://www.jasondavies.com/maps/transition/">this example</a> with the <a href=http://d3js.org>D3.js</a> library.</p>
+
 
         </div>
     </div>

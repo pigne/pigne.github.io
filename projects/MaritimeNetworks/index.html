@@ -65,6 +65,8 @@
 			
 		
 			
+		
+			
 				<li><a href="../index.html">Projects </a></li>
 			
 		
@@ -85,9 +87,9 @@
 			
 		
 			
-		
-			
 				<li><a href="../../contact/index.html">Contact </a></li>
+			
+		
 			
 		
 			
@@ -141,7 +143,7 @@
                 
                 <li>Demo for the presentation &#x27;Random walks in dynamic maritime networks&#x27;</li>
                 
-                <li>International Workshop on Maritime Networks ERC World Seastems</li>
+                <li>International Workshop on Maritime Networks ERC &#x27;World Seastems&#x27;</li>
                 
                 <li>Simple Demo showing the evolution of ports activity.</li>
                 
@@ -160,15 +162,21 @@
         text-align:center;
     }
 </style>
-<p>These graphs represent the evolution of the number of vessels leaving ports every day. Each day of 1996 is visualised on the top/left panel. each day of 2006 is visualised on the right /bottom pannel. Each circle is a port. It's size representes how many vessels are leaving it on that day. This number is more or less coorelated to the surface of the circle (diamiter ~ sqrt (nbVessels)).</p>
+<p>These graphs show the activity of ports bsed on a windowed time frame. A sliding time window of 15 days shows which ports are actually active.</p>
+
+<p>
+The top/left panel shows year 1996 while  the bottom/right panel illustrates year 2006. Each dot is a port. Active ports during the considered time windows have a brighter dot.</p>
+
 <p>This page is part of the results of a scientific collaboration between :</p>
 <ul>
     <li>César Ducruet,</li>
-    <li>Frédéric Guinand,</li>and Yoann Pigné.</ul>
+    <li>Frédéric Guinand,</li>
+    <li>and Yoann Pigné.</li>
+</ul>
 <div class=row>
     <div class="col-md-offset-2 col-md-10 col-sx-12">
         <ul>
-            <li>Control annimation:
+            <li>Control map rotation:
                 <button id=playButton type=button class="hidden btn btn-default btn-xs">
                     <span class="glyphicon glyphicon-play"></span>
                 </button>
@@ -179,10 +187,17 @@
             <li>Change projection:
                 <select id=projection-menu></select>
             </li>
+            <li>
+                Control time annimation:
+                        <input id="slider" type="range" min=1 max=351 value=1>
+            </li>
         </ul>
     </div>
 </div>
-
+<div class="row">
+    <div class="col-xs-12 col-md-6 offset-md-3 text-center">
+    </div>
+</div>
 
 </div>
 </div>
@@ -194,28 +209,12 @@
         <div class="col-md-6 col-sx-12 block" id=y1996>
             <h3>1996</h3>
             <h4></h4>
-            <div id=drawing1996></div>
-            <table class="table table-hover table-condensed">
-                <thead>
-                    <tr>
-                        <th>#
-                            <th>Port Name
-                                <th>Departures
-                                    <tbody>
-            </table>
+            <div id="drawing1996"></div>
         </div>
         <div class="col-md-6 col-sx-12 block" id=y2006>
             <h3>2006</h3>
             <h4></h4>
-            <div id=drawing2006></div>
-            <table class="table table-hover table-condensed">
-                <thead>
-                    <tr>
-                        <th>#
-                            <th>Port Name
-                                <th>Departures
-                                    <tbody>
-            </table>
+            <div id="drawing2006"></div>
         </div>
     </div>
 </div>
@@ -225,7 +224,7 @@
 <script src=scripts/moment.min.js></script>
 <script src=http://d3js.org/d3.geo.projection.v0.min.js charset=utf-8></script>
 <script src=http://d3js.org/topojson.v1.min.js></script>
-<script src=scripts/0b042307.main.js></script>
+<script src=scripts/main-eg.js></script>
 
 
 
