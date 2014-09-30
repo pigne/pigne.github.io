@@ -1,11 +1,12 @@
 function graph_outline(options){
   var data={};
+
   data.nodes=[
     {name:"HTML5", family:1, size:5, type:"Standard and Language"}, // 0
     {name:"CSS3", family:2, size:5, type:"Language"},
     {name:"JavaScript", family:3, size:5, type:"Language"},
     {name:"DOM", family:1, size:3, type:"Standard"},
-    {name:"Canvas", family:1, size:2, type:"Standard and Language"},
+    {name:"<canvas>", family:1, size:1, type:"Standard and Language"},
     {name:"SVG", family:4, size:2, type:"Standard and Language"}, // 5
     {name:"WebRTC", family:1, size:1, type:"Standard"},
     {name:"@font-face", family:2, size:1, type:"Standard and Language"},
@@ -15,8 +16,8 @@ function graph_outline(options){
     {name:"WebSocket", family:1, size:1, type:"Standard and Language"},
     {name:"Drag & Drop", family:1, size:1, type:"Standard and Language"},
     {name:"JQuery", family:1, size:1, type:"Library"},
-    {name:"d3.js", family:4, size:1, type:"Library"},
-    {name:"Raphael.js", family:4, size:1, type:"Library"}, // 15
+    {name:"D3", family:4, size:1, type:"Library"},
+    {name:"Raphael", family:4, size:1, type:"Library"}, // 15
     {name:"<audio>", family:1, size:1, type:"Standard and Language"},
     {name:"<video>", family:1, size:1, type:"Standard and Language"},
     {name:"Web Frameworks", family:5, size:4, type:"Technics"}, // 18
@@ -25,9 +26,9 @@ function graph_outline(options){
     {name:"node.js", family:3, size:1, type:"tool"},
     {name:"JSLint", family:3, size:1, type:"tool"},
     {name:"QUnit", family:3, size:1, type:"tool"},
-    {name:"Backbone.js", family:5, size:1, type:"Library"},
-    {name:"Angular.js", family:5, size:1, type:"Library"}, // 25
-    {name:"Ember.js", family:5, size:1, type:"Library"},
+    {name:"Backbone", family:5, size:1, type:"Library"},
+    {name:"Angular", family:5, size:1, type:"Library"}, // 25
+    {name:"Ember", family:5, size:1, type:"Library"},
     {name:"Templates", family:5, size:1, type:"Technics"},
     {name:"Data Binding", family:5, size:1, type:"Technics"}, // 28
     {name:"Client Side", family:5, size:2, type:"Technics"},
@@ -39,17 +40,25 @@ function graph_outline(options){
     {name:"In browsers", family:3, size:2, type:"Standard and Language"}, // 35
     {name:"V8", family:3, size:2, type:"Standard and Language"},
     {name:"SpiderMonkey", family:3, size:2, type:"Standard and Language"},
-    {name:"Nitro", family:3, size:2, type:"Standard and Language"},
-    {name:"HeadLess browsers", family:3, size:2, type:"Standard and Language"},
-    {name:"PhantomJS", family:3, size:2, type:"Standard and Language"}, // 40
-    {name:"Selenium", family:3, size:2, type:"Standard and Language"},
+    {name:"Nitro", family:3, size:2, type:"tool"},
+    {name:"HeadLess browsers", family:3, size:2, type:"tool"},
+    {name:"PhantomJS", family:3, size:2, type:"tool"}, // 40
+    {name:"Selenium", family:3, size:2, type:"tool"},
     {name:"Unit Tests", family:3, size:2, type:"Standard and Language"},
     {name:"EcmaScript", family:3, size:2, type:"Standard and Language"},
     {name:"MV*", family:5, size:2, type:"Standard and Language"},
-    {name:"Express", family:5, size:2, type:"Standard and Language"}, // 45
+    {name:"Express", family:5, size:2, type:"tool"}, // 45
     {name:"CSS Extensions", family:2, size:2, type:"Standard and Language"},
     {name:"transform", family:2, size:2, type:"Standard and Language"},
-    {name:"animation", family:2, size:2, type:"Standard and Language"}
+    {name:"animation", family:2, size:2, type:"Standard and Language"},
+    {name:"Chakra", family:3, size:2, type:"tool"},
+    {name:"DataBases", family:4, size:3, type:"Standard and Language"}, // 50
+    {name:"RDBMS", family:4, size:2, type:"Standard and Language"},
+    {name:"NoSQL (Not only SQL)", family:4, size:2, type:"Standard and Language"}, 
+    {name:"Key-values Stores", family:4, size:1, type:"tool"},
+    {name:"Column Family Stores", family:4, size:1, type:"tool"},
+    {name:"Document Databases", family:4, size:1, type:"tool"}, // 55
+    {name:"Graph Databases", family:4, size:1, type:"tool"}
   ];
   data.links=[
     {"source":0,"target":1,"value":2},
@@ -58,7 +67,7 @@ function graph_outline(options){
     //{"source":0,"target":4,"value":1},
     //{"source":0,"target":5,"value":1},
     //{"source":0,"target":6,"value":1},
-    {"source":0,"target":7,"value":1},
+    //{"source":0,"target":7,"value":1},
     {"source":0,"target":8,"value":1},
     {"source":0,"target":9,"value":1},
     {"source":0,"target":10,"value":1},
@@ -82,6 +91,7 @@ function graph_outline(options){
     {"source":35,"target":36,"value":1},
     {"source":35,"target":37,"value":1},
     {"source":35,"target":38,"value":1},
+    {"source":35,"target":49,"value":1},
     {"source":2,"target":39,"value":1},
     {"source":39,"target":40,"value":1},
     {"source":39,"target":41,"value":1},
@@ -104,9 +114,27 @@ function graph_outline(options){
     {"source":18,"target":30,"value":1},
     {"source":30,"target":45,"value":1},
     {"source":18,"target":44,"value":1},
+    {"source":18,"target":50,"value":1},
     {"source":4,"target":31,"value":1},
-    {"source":4,"target":32,"value":1}
+    {"source":4,"target":32,"value":1},
+    {"source":50,"target":51,"value":1},
+    {"source":50,"target":52,"value":1},
+    {"source":52,"target":53,"value":1},
+    {"source":52,"target":54,"value":1},
+    {"source":52,"target":55,"value":1},
+    {"source":52,"target":56,"value":1},
+
   ];
+
+
+// Compute the distinct nodes from the links.
+//links.forEach(function(link) {
+//  link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
+//  link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
+//});
+
+
+
   var width = options.width,
       height = options.height;
 

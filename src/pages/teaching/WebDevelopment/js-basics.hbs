@@ -40,12 +40,21 @@ layout: lecture.hbs
     </h2>
     <h3>Variables Declaration</h3>
     <div class="twocols">
-        <pre class="prettyprint lang-js nowatermark first"><code>var i = 0;</code></pre>        <pre class="prettyprint lang-js nowatermark second"><code>var i=0, j=i+1, k;</code></pre>    </div>
+        <div class="first">
+        <pre class="prettyprint lang-js nowatermark"><code>var i = 0;</code></pre>
+        </div>
+        <div class="second">
+        <pre class="prettyprint lang-js nowatermark"><code>var i=0, j=i+1, k;</code></pre>
+        </div>
+    </div>
     <h3>Comments</h3>
     <div class="twocols">
-        <pre class="prettyprint lang-js nowatermark first"><code>/* multi-line
-comment */</code></pre>
-        <pre class="prettyprint lang-js nowatermark second"><code>// single line comment</code></pre>    </div>
+        <div class="first"><pre class="prettyprint lang-js nowatermark"><code>/* multi-line
+comment */</code></pre></div>
+        <div class="second">
+        <pre class="prettyprint lang-js nowatermark "><code>// single line comment</code></pre>
+        </div>
+    </div>
     <h3>Names</h3>
     <p>
         One letter or underscore optionally followed by one or more letters, digits, underscores.
@@ -355,7 +364,7 @@ object['property'];</code></pre>
             <h3>Functions</h3>
             <pre class="first prettyprint lang-js nowatermark" style="white-space : pre-wrap;"><code class="javascript">function my_function(p1, p2) {
     // var statements;
-    // statements
+    // statements;
 }</code></pre>
         </div>
         <div class="second">
@@ -397,14 +406,16 @@ var sum = 015; // !!! syntax error</code></pre>
 
         <ul>
         <li>Some dangerous or slow structures are forbidden
-            <pre class="prettyprint lang-js"><code>"use strict";
-var o = { x:17 };
-with (o) { console.log(x); } // !!! syntax error
-
+            <pre class="prettyprint lang-js"><code>function f() {
+    "use strict";
+    var o = { x:17 };
+    with (o) { console.log(x); } // !!! syntax error
+}
 var x = 17;
 var evalX = eval("'use strict'; var x = 42; x");
 x === 17;  // true
-evalX === 42; // true</code></pre>
+evalX === 42; // true
+</code></pre>
         </li>
         <li>Use of restricted words raises errors (<code>class, enum, export, extends, import, super</code>)</li>
     </ul>
@@ -492,9 +503,37 @@ w2['°C']; // 34</code></pre>
         <li>Recursively, all objects inherit from
             <code class="prettyprint lang-js">Object.prototype</code>.</li>
     </ul>
-    <p></p>
-    <div class="twocols">
-        <pre class="prettyprint lang-js first"><code>var o = {
+    <ul class=" x-2">
+            <li>object
+
+                <ul>
+                    <li>properties
+                 
+                    </li>
+                    <li>prototype
+                 
+                        <ul>
+                            <li>properties
+                            </li>
+                            <li>prototype
+                                <ul>
+                                    <li>...</li>
+                                    <li>...</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    
+</section>
+
+<!-- ==== SLIDE ==== -->
+<section class="step" id="Prototype2">
+    <h2>Prototype</h2>
+    <h3>Example</h3>
+            <pre class="prettyprint lang-js first"><code>var o = {
     "a": 0,
     "b": false
 };
@@ -505,7 +544,7 @@ Object.prototype.not_ok = "Not OK.";
 o.ok(); // "That's OK!"
 o.not_ok; // "Not OK."
 </code></pre>
-        <ul class="second x-2">
+        <ul class=" x-2">
             <li>object
                 <code data-jm>o</code>
                 <ul>
@@ -521,17 +560,13 @@ o.not_ok; // "Not OK."
                             </li>
                             <li>prototype
                                 <code class="prettyprint lang-js">undefined</code>
-                                <ul>
-                                    <li>...</li>
-                                    <li>...</li>
-                                </ul>
+                                
                             </li>
                         </ul>
                     </li>
                 </ul>
             </li>
         </ul>
-    </div>
 </section>
 
 <!-- ==== SLIDE ==== -->
@@ -777,7 +812,7 @@ p.toString.apply(weirdo); // '(α, β)'
     <pre class="firstsecond prettyprint lang-js"><code class="javascript">function Point(x, y) {
     if ((typeof x !== 'undefined' &amp;&amp; typeof x !== 'number')
     || (typeof y !== 'undefined'  &amp;&amp; typeof y !== 'number')) {
-    throw { name: 'TypeError', message: "'Point' needs numbers" };
+        throw { name: 'TypeError', message: "'Point' needs numbers" };
     }
     // ...
 }
@@ -877,31 +912,35 @@ console.log(a); // 1</code></pre>
         <li>An inner function may live longer than its outer function.</li>
     </ul>
     <div class="twocols">
-        <pre class="prettyprint lang-js first"><code>function f_outer() {
+    <div class="first">
+        <pre class="prettyprint lang-js"><code>function f_outer() {
     function f_inner() {
         return "Inner function";
     }
     return f_inner;
-}</code></pre>
-        <pre class="prettyprint lang-js second"><code>var f = f_outer(); // f_inner
-f(); // "Inner function"</code></pre>
+}</code></pre></div>
+<div class="second">
+        <pre class="prettyprint lang-js"><code>var f = f_outer(); // f_inner
+f(); // "Inner function"</code></pre></div>
     </div>
     <ul>
         <li>Inner functions encapsulate states of outer functions for a latter invocation.</li>
     </ul>
     <div class="twocols">
+    <div class="first">
         <pre class="prettyprint lang-js first"><code>function increment() {
     var counter = 0;
     return function() {
         counter = counter + 1;
         return counter;
     };
-}</code></pre>
+}</code></pre></div>
+<div class="second">
         <pre class="prettyprint lang-js second"><code>var my_increment = increment();
 my_increment(); // 1
 my_increment(); // 2
 my_increment(); // 3
-my_increment(); // 4</code></pre>
+my_increment(); // 4</code></pre></div>
     </div>
 </section>
 
@@ -937,6 +976,7 @@ parse("&lt;h1&gt;My Title&lt;/h1&gt;&lt;h2&gt;Subtitle&lt;...");
         <li>Inner Functions and closure can create objects with "private" members.</li>
     </ul>
     <div class="twocols">
+    <div class="first">
         <pre class="first prettyprint lang-js" data-src="http://codepen.io/pigne/pen/DsEnA"><code class="javascript">function createPoint() {
     var x = 0;
     var y = 0;
@@ -951,7 +991,8 @@ parse("&lt;h1&gt;My Title&lt;/h1&gt;&lt;h2&gt;Subtitle&lt;...");
         },
         // ...
     };
-}</code></pre>
+}</code></pre></div>
+<div class="second">
         <pre class="second prettyprint lang-js" data-src="http://codepen.io/pigne/pen/DsEnA"><code class="javascript">var p = createPoint();
 // new object without 'new' operator
 
@@ -959,7 +1000,7 @@ p.x; // 'undefined'
 p.getX(); // 0
 p.setY(-12);
 p.toString(); // "(0, -12)"
-</code></pre>
+</code></pre></div>
     </div>
 </section>
 
@@ -1077,7 +1118,7 @@ var p1 = createPoint({ x: -1, y: -4 });</code></pre>
 <!-- ==== SLIDE ==== -->
 <section class="step" id="JS_Functional_inheritance">
     <h2>Objects &amp; Inheritance <small>Functional Pattern</small></h2>
-    Inheritance is simply done by:
+    <p>Inheritance is simply done by:</p>
     <ul>
         <li>using a create function into another,</li>
         <li>sharing the attributes to initialize to new object.</li>
@@ -1107,11 +1148,11 @@ var p3d = createPoint3D({ x: -3, y: -3, z: -4 });</code></pre>
     attributes.width = attributes.width || "1px";
     attributes.color = attributes.color || "#00FF00";
     var augmentedPoint3D = createPoint3D(attributes);
-    var superToString = augmentedPoint3D.toString;  // Store the super toString
-    // method locally.
+    var superToString = augmentedPoint3D.toString;  /* Store the super toString 
+                                                       method locally.*/
 
-    augmentedPoint3D.toString = function() {        // Shadow super toString
-    // and call it with 'apply'.
+    augmentedPoint3D.toString = function() {        /* Shadow super toString 
+                                                       and call it with 'apply' */
     return "{" + superToString.apply(augmentedPoint3D) + ", width:" +
         attributes.width + ", color:" + attributes.color + "}";
     };
@@ -1239,6 +1280,7 @@ a; // ['a', 'b1', 'b2', 'c']</code></pre>
         <code class="prettyprint lang-js">b > a</code>.
     </p>
     <div class="twocols">
+    <div class="first">
         <pre class="first prettyprint lang-js nowatermark"><code>function by(prop){
     return function(obj1, obj2){
         var a = obj1[prop],
@@ -1251,7 +1293,8 @@ a; // ['a', 'b1', 'b2', 'c']</code></pre>
 }
 var pts = [ {x:10,y:34},
 {x:-10,y:4},
-{x:0,y:-4}];</code></pre>
+{x:0,y:-4}];</code></pre></div>
+    <div class="second">
         <pre class="second prettyprint lang-js nowatermark"><code>var i;
 pts.sort(by('y'));
 for(i = 0 ;  i &lt; pts.length; i++) {
@@ -1262,7 +1305,7 @@ for(i = 0 ;  i &lt; pts.length; i++) {
 // (0, -4)
 // (-10, 4)
 // (10, 34)
-</code></pre>
+</code></pre></div>
     </div>
 </section>
 

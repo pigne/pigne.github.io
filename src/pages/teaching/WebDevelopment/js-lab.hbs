@@ -1,0 +1,102 @@
+---
+title: JavaScript Lab Session
+subsection: Web Development
+order: 3
+description:
+	- Lab Session on Javascript
+ 	- Create models and constructors
+ 	- Manipulate JSON data
+layout: default.hbs
+---
+
+<!-- ==== SLIDE ==== -->
+    <h2>Lab Session</h2>
+    <p>
+        Considering a JSON dataset containing geographical map data, one want to create a read only model (no write access) which represents the various geographical objects.
+    </p>
+    <h3>The JSON dataset</h3>
+    Get the <a href="data/eure.json">JSON geographical data</a>.
+    <div class="threecols x-3">
+        <pre class="prettyprint lang-js first"><code>[
+	{
+		"_id": "-630059",
+		"building": true,
+		"nodes": [
+		    {
+		        "x": 608.0,
+		        "y": 302.0
+		    },
+		    {
+		        "x": 610.0,
+		        "y": 305.0
+		    },
+		    {
+		        "x": 608.0,
+		        "y": 302.0
+		    }
+		]
+	}, 
+	{
+		"_id": "-630043",
+		"building": false,
+		"name": "Bassin Paul Vatine",
+		"natural": "water",
+		"nodes": [
+		    {
+		        "e": "e"
+		    }
+		]
+	}, 
+	{
+		"_id": "-630016",
+		"building": false,
+		"highway": "residential",
+		"name": "Place D\u00e9sir\u00e9 Rebeuf",
+		"nodes": [
+		    {
+		        "x": 633.0,
+		        "y": 453.0
+		    },
+		    {
+		        "x": 677.0,
+		        "y": 438.0
+		    }
+		]
+	},
+	...
+]</code></pre>
+
+
+    </div>
+
+
+    <h3>The Data Model</h3>
+
+<p>We want to be able to create javascript objects according to the following class model.</p>
+
+    <p class="text_center">
+        <img src="./images/uml.svg" alt="uml" style="width:80%">
+    </p>
+    <ul>
+        <li>The
+            <code>nodes</code> attribute is an array of objects (<code class="prettyprint lang-js">[{x:23,y:45},{x:3,y:5},{x:12,y:0}]</code>)that can be simplified into an array of arrays (
+            <code class="prettyprint lang-js">[[23,45],[3,5],[12,0]]</code>). What about Lo-Dash?</li>
+        <li>The  <code>toSvgPath()</code> method should return a string such as:
+            <code class="prettyprint lang-js">"M 23 45 L 3 5 L 12 0"</code>
+        </li>
+    </ul>
+
+    <h3>Implementation in <code>node</code></h3>
+    
+    <ul>
+        <li>
+            import the downloaded JSON data :
+            <pre class="prettyprint lang-js"><code>var fs = require('fs');
+var raw_data = fs.readFileSync('eure.json', 'utf8');</code></pre>
+        </li>
+        <li>From the previous UML Model create read only objects with protected/hidden data.</li>
+        <li>Building, Road,Amenity, and Natural objects are created based on the JSON data downloaded.</li>
+        <li>Store new objects in containers (Arrays).</li>
+        <li>Compute the overall and average surface of available buildings.</li>
+    </ul>
+</section>
