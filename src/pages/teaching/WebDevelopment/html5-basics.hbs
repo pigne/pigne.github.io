@@ -1,7 +1,7 @@
 ---
 title: Html5 Basics
 subsection: Web Development
-order: 5
+order: 4
 description:
 - Markup
 - The DOM API
@@ -201,11 +201,12 @@ layout: lecture.hbs
                 </dt>
                 <dd>Embedded vectorial image. SVG format.
                     <div class="threecols">
-                        <pre class="prettyprint lang-html nowatermark firstsecond x-3"><code>&lt;svg width=&quot;150&quot; height=&quot;100&quot; viewBox=&quot;0 0 3 2&quot;&gt;
+                        <div class="firstsecond">
+                        <pre class="prettyprint lang-html nowatermark  x-3"><code>&lt;svg width=&quot;150&quot; height=&quot;100&quot; viewBox=&quot;0 0 3 2&quot;&gt;
   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;0&quot; fill=&quot;#002395&quot; /&gt;
   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;1&quot; fill=&quot;#ffffff&quot; /&gt;
   &lt;rect width=&quot;1&quot; height=&quot;2&quot; x=&quot;2&quot; fill=&quot;#ED2939&quot; /&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;</code></pre></div>
                         <p class="third">
                             <svg width="150" height="100" viewBox="0 0 3 2">
                                 <rect width="1" height="2" x="0" fill="#002395" />
@@ -215,12 +216,24 @@ layout: lecture.hbs
                         </p>
                     </div>
                 </dd>
+
+            </dl>
+
+        </section>
+
+
+        <!-- ==== SLIDE ==== -->
+        <section class="step" id="HTML5_Markup_Embedded3">
+            <h2>Embedded Content</h2>
+            <dl>
                 <dt>
+
                     <code>&lt;mathml&gt;</code>
                 </dt>
                 <dd>Mathematical formula. MathML format.
                     <div class="threecols">
-                        <pre class="x-4 firstsecond prettyprint lang-html nowatermark"><code>&lt;math&gt;
+                    <div class="firstsecond">
+                        <pre class="x-4  prettyprint lang-html nowatermark"><code>&lt;math&gt;
   &lt;mrow&gt;
     &lt;mrow&gt;
       &lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
@@ -230,8 +243,9 @@ layout: lecture.hbs
     &lt;mo&gt;=&lt;/mo&gt;
     &lt;msup&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
   &lt;/mrow&gt;
-&lt;/math&gt;</code></pre>
-                        <p class="third">
+&lt;/math&gt;</code></pre></div>
+<div class="third">
+                        <p class="">
                             <math>
                                 <mrow>
                                     <mrow>
@@ -252,6 +266,19 @@ layout: lecture.hbs
                                     </msup>
                                 </mrow>
                             </math>
+                        </p>
+                        </div>
+                    </div>
+                </dd>
+                <dt>
+                    <code>&lt;progress&gt;</code>
+                </dt>
+                <dd>Completion progress of a task.
+                    <div class="threecols">
+                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;progress value=&quot;70&quot; max=&quot;100&quot;&gt;70 %&lt;/progress&gt;
+</code></pre>
+                        <p class="third">
+                            <progress value="70" max="100">70 %</progress>
                         </p>
                     </div>
                 </dd>
@@ -326,18 +353,6 @@ layout: lecture.hbs
                 <dd>
                 <pre class="prettyprint nowatermark lang-html"><code>&lt;keygen name=&quot;RSA public key&quot; challenge=&quot;123456789&quot; keytype=&quot;RSA&quot;&gt;
 &lt;/keygen&gt;</code></pre>
-                </dd>
-                <dt>
-                    <code>&lt;progress&gt;</code>
-                </dt>
-                <dd>Completion progress of a task.
-                    <div class="threecols">
-                        <pre class="firstsecond  prettyprint nowatermark lang-html"><code>&lt;progress value=&quot;70&quot; max=&quot;100&quot;&gt;70 %&lt;/progress&gt;
-</code></pre>
-                        <p class="third">
-                            <progress value="70" max="100">70 %</progress>
-                        </p>
-                    </div>
                 </dd>
                 <dt>
                     <code>&lt;meter&gt;</code>

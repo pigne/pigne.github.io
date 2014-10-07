@@ -1,7 +1,7 @@
 ---
 title: CSS Basics
 subsection: Web Development
-order: 4
+order: 5
 description:
 - Selectors
 - "@font-face"
@@ -44,7 +44,7 @@ layout: lecture.hbs
             <h3>CSS Declarations Blocks</h3>
             <p>Declarations are grouped in blocks. A block opens with a
                 <code>{</code> and closes with a
-                <code>}</code>. Decalrations are separated with a
+                <code>}</code>. Declarations are separated with a
                 <code>;</code>.</p>
             <pre class="prettyprint lang-css ">
 <code class="css">{
@@ -112,13 +112,13 @@ layout: lecture.hbs
             <p>The order the navigator chooses to use to select the good rules for the elements.</p>
             <p>Order of specificity (by less specific to highly specific):</p>
             <ul>
-                <li>Universal selectors</li>
-                <li>Type selectors</li>
-                <li>Class selectors</li>
-                <li>Attributes selectors</li>
-                <li>Pseudo-classes</li>
-                <li>ID selectors</li>
-                <li>Inline style</li>
+                <li>Universal selectors (e.g.: <code>*</code>) </li>
+                <li>Type selectors (e.g.: <code>div</code>)</li>
+                <li>Class selectors (e.g.: <code>.my-class</code>)</li>
+                <li>Attributes selectors (e.g.: <code>a[href*="example"]</code>)</li>
+                <li>Pseudo-classes (e.g.: <code>p:nth-child(4n+1)</code>)</li>
+                <li>ID selectors (e.g.: <code>#item234</code>)</li>
+                <li>Inline style(e.g.: <code>&lt;p style=&quot;color:red; width:100%;&quot;&gt;.../&lt;p&gt;</code>)</li>
             </ul>
             <h3>The !important exception</h3>
             <p>When
@@ -320,24 +320,28 @@ layout: lecture.hbs
             <h3>A transition example</h3>
             <pre class="prettyprint lang-css">
 <code class="css">#test_transition:hover {
-  transition-property: font-size, background-color, color;
-  transition-duration: 2s, 2s, 8s;
+  transition-property: font-weight, background-color, color;
+  transition-duration: 2s, 2s, 10s;
   transition-timing-function: ease;
   transition-delay: 0s;
-  font-size:2em;
+  font-size:1.1em;
   background-color: #333;
   color:#eee;
 }
 </code></pre>
             <style type="text/css">
             #test_transition:hover {
-                -webkit-transition-property: font-size, background-color, color;
-                -webkit-transition-duration: 2s, 2s, 8s;
+                -webkit-transition-property: font-weight, background-color, color;
+                -webkit-transition-duration: 2s, 2s, 10s;
                 -webkit-transition-timing-function: ease;
                 -webkit-transition-delay: 0s;
-                font-size:2em;
+                transition-property: font-weight, background-color, color;
+                transition-duration: 2s, 2s, 10s;
+                transition-timing-function: ease;
+                transition-delay: 0s;
+                font-weight:bold;
                 background-color: #333;
-                color:#eee;
+                color:white;
             }
             </style>
             <a id="test_transition" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -376,7 +380,7 @@ layout: lecture.hbs
   color:#eee;
 }
 </code></pre>
-            Actually, http://caniuse.com/ says
+            Actually, <a href="http://caniuse.com/#search=transitions">http://caniuse.com/</a> says
             <code>-ms</code> was never needed for
             <code>transition</code>.
         </section>
@@ -384,7 +388,7 @@ layout: lecture.hbs
         <!-- ==== SLIDE ==== -->
         <section class="step" id="CSS_TransitionShortVersion">
             <h2>Short notation may help</h2>
-            <pre class="prettyprint lang-css"><code class="css">selecteur {
+            <pre class="prettyprint lang-css"><code class="css">selector {
 transition:
         property
         duration
@@ -398,9 +402,6 @@ transition:
             with vendor prefix:
             <pre class="prettyprint lang-css">
 <code class="css">-webkit-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
--moz-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
--ms-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
--o-transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
 transition: font-size 2s ease 0s, background-color 2s ease, color 8s;
 </code></pre>
         </section>
