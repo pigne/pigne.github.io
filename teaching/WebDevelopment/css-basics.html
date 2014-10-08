@@ -788,22 +788,22 @@ transform:  scale(1.2)
         <!-- ==== SLIDE ==== -->
         <section class="step" id="CSS_Preprocessors2">
 
-        <h3>LESS' Main features</h3>
+        <h3>SASS' Main features (SCSS syntax)</h3>
             <ul><li>
                 <b>Variables</b>: values used in various declarations like themed colors, default values for various sizes (border, padding, margin, spaces, ...)
                 <pre class="prettyprint lang-css">
-<code class="css">@main-theme-color-bg: #428bca;
+<code class="css">$main-theme-color-bg: #428bca;
 body{
-    background-color: @main-theme-color-bg;
+    background-color: $main-theme-color-bg;
 }</code></pre>
             </li>
             <li><b>Mixins</b>: inherit properties of a class into another declaration block.
             <pre class="prettyprint lang-css">
-<code class="css">.general_stuff{
+<code class="css">@mixin general_stuff{
     /* ... */
 }
 #special_item {
-    .general_stuff;
+    @include general_stuff;
     /* ... */
 }</code></pre></li>
 </ul>
@@ -824,15 +824,15 @@ body{
             </li>
        <li><b>Mixins with parameters</b>
             <pre class="prettyprint lang-css">
-<code class="css">.big-font (@size: 18px) {
-    font-size: @size;
+<code class="css">@big-font ($size: 18px) {
+    font-size: $size;
     font-weight: 700;
 }
 .important {
     .big-font;
 }
 #more-important {
-    .big-font(25px);
+     @include big-font(25px);
 }
 </code></pre>
        </li>
@@ -842,9 +842,9 @@ body{
      <ul>
       <li><b>Functions and Operations</b>: used within parenthesis</li></ul>
             <pre class="prettyprint lang-css">
-<code class="css">width : (@default-width * 1.3);
-color : darken(@default-color, 3%);
-background-color: desaturate(@default-color, 10%);
+<code class="css">width : ($default-width * 1.3);
+color : darken($default-color, 3%);
+background-color: desaturate($default-color, 10%);
             </code></pre>
 
         </section>
