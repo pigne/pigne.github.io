@@ -13,16 +13,17 @@ $headings-font-family:    $font-family-sans-serif !default;
 $font-family-base:        $font-family-sans-serif !default; 
 
 $font-size-base:          15px;
-$font-size-large:         ceil($font-size-base * 1.25) !default; // ~18px
-$font-size-small:         ceil($font-size-base * 0.85) !default; // ~12px
+// $font-size-large:         ceil($font-size-base * 1.25) !default; // ~18px
+// $font-size-small:         ceil($font-size-base * 0.85) !default; // ~12px
 
-$font-size-h1:            floor($font-size-base * 2.2) !default; // ~36px
-$font-size-h2:            floor($font-size-base * 2) !default; // ~30px
-$font-size-h3:            ceil($font-size-base * 1.7) !default; // ~24px
-$font-size-h4:            ceil($font-size-base * 1.25) !default; // ~18px
-$font-size-h5:            $font-size-base !default;
-$font-size-h6:            ceil($font-size-base * 0.85) !default; // ~12px
+// $font-size-h1:            floor($font-size-base * 2.2) !default; // ~36px
+// $font-size-h2:            floor($font-size-base * 2) !default; // ~30px
+// $font-size-h3:            ceil($font-size-base * 1.7) !default; // ~24px
+// $font-size-h4:            ceil($font-size-base * 1.25) !default; // ~18px
+// $font-size-h5:            $font-size-base !default;
+// $font-size-h6:            ceil($font-size-base * 0.85) !default; // ~12px
 
+$jumbotron-font-size:            ceil($font-size-base * 1.3) !default;
 
 //----------------------------------
 //             Variables
@@ -46,12 +47,23 @@ $gray-lighter: lighten($my_black, 93.5%) !default;
 
 $header-bg: transparentize($gray-light, .5);
 
+
+
+
+
 //----------------------------------
 //             Bootstrap
 // ---------------------------------
 // TODO : stop importing the all project. Only import what's needed...
 @import "sass-bootstrap/lib/bootstrap";
 
+.jumbotron {
+@media screen and (min-width: $screen-sm-min) { 
+    h1 {
+      font-size: ($font-size-base * 3.5);
+    }
+}
+}
 
 /*----------------------------------------*/
 /*           Utility classes              */
