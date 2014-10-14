@@ -1,0 +1,144 @@
+---
+title: JavaScript Lab Session 2
+subsection: Web Development
+order: 8
+description:
+    - Lab Session on Unit Testing JS server library
+    - Unit Test - BDD - TDD
+    - Client/Server Testing 
+layout: default.hbs
+---
+
+{{#markdown}}
+
+# Lab Session 2: testing and drawing (first part)
+
+## Code Quality Control 
+ 
+ A few terms: 
+
+- **Unit Tests**: Code dedicated to the testing the proper behavior of a software/library/module/app.
+- **TDD (test driven development)**: A development technic that aims at writing unit tests for testing a software before writing the actual software
+- **BDD (Behavior driven development)**: TDD using natural language in order to describe the intended functionalities of a software.
+- **Code coverage** : A measure that indicates how much of a software is actually tested in the unit tests. Usually Code Coverage tool integrate with IDEs and highlight untested portion of code in a project.
+
+
+
+## Testing web apps
+
+
+###On the client
+
+Testing client code (i.e. JavaScript) is done with a testing library. The most notorious are:
+
+- [QUnit](qunitjs.com)
+- [Jasmine](http://jasmine.github.io/)
+- [Mocha](http://visionmedia.github.io/mocha/)
+
+###On the server
+
+Depending on the server language/architecture, various unit testing frameworks exist in order to test server code(JUnit for Java...)
+
+If Javascript is used on the server, most of the popular frameworks also work on the server side (Mocha, Jasmine, but not QUnit)
+
+###Automation tools 
+
+We use automation in order to run the test framework. Grunt and Yeoman can help prepare and configure testing platforms.
+
+## Developing and testing a node library: the `shapes` project
+
+### Install and scaffold the node project
+
+the Yeoman  node generator will install the mocha framework in order to test our server side shape library
+
+```bash
+cd shapes # the one previously created
+npm install --global generator-node # sudo?
+yo node
+```
+
+Several node related features are now installed. 
+
+### Update your project 
+
+Your `shape.js` main file sould now be in `lib/`  
+
+### Lint your code
+
+Run `grunt jshint` on the project until no more error appear.
+
+### A first unit test with mocha
+
+A Mocha test use function `describe` and `it` in order to describe the tests to be performed. The assertions can be done with several assertion framework. We first test with nodes's `assert` function.
+
+Modify `test/shapes_test.js` in order to ensure that a "road shape" object with the fowloing attributes has a type equal to "residential" and a name equal to "Rue de Colmar":
+
+```json
+{
+	"building":false,
+	"highway":"residential",
+	"_id":"-629863",
+	"nodes":[
+		{	
+			"y":369.0,
+			"x":708.0
+		},
+		{
+			"y":396.0,
+			"x":743.0
+		}
+	],
+	"name":"Rue de Colmar"
+}
+```
+
+Test with `grunt mochacli`
+
+### BDD
+
+In order to use behavioral testing style we use the `chai` assertion library. 
+
+```sh
+npm install --save-dev chai
+```
+
+Add chai to the testing file (`test/shapes_test.js`):
+
+```js
+var should = require('chai').should(); 
+```
+
+Executing this function will add a `should` property to all Javascript objects. Now we can test in  a behavioral declarative way e.g. :
+
+```js
+describe('Function getType', function() {
+    it('should be of type "function"', function() {
+        road1.getType.should.be.a('function');
+    });
+    it('should return a the string "residential when attribute "highway"  is set accordingly', function() {
+        road1.getType().should.equal('residential');
+    });
+});
+```
+
+### test all
+
+Create a full unit test suite of your library in order to test all the features. 
+
+Note that you can nest  calls to function `describe`.
+
+
+In the `Gruntfile.js`  change property `reporter` to "list" instead of "nyan" to see the list of tests that are executed when doing a `grunt mochatest`. 
+
+### Code Covering
+
+How can you be sure that you covered all the features of your code? 
+
+Install and configure the code covering framework  [`blanket.js`](http://blanketjs.org/) in your project and configure grunt accordingly.
+
+### testing asynchoneous code
+
+Load the test file `eure.json` into the test suite using the asynchronous function `fs.readFile`. Test the number of different shapes created and average area. Make sure the asynchronous call works properly with Mocha.
+
+{{/markdown}}
+

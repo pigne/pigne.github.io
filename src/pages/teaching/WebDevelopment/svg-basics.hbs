@@ -76,6 +76,7 @@ layout: lecture.hbs
                 Classical steps to create data-linked DOM elements:
             </p>
             <div class="twocols">
+                <div class="first">
                 <ol class="first">
                     <li>Start from one existing DOM element</li>
                     <li>Make a selection (<i>empty</i>) of DOM elements</li>
@@ -89,13 +90,15 @@ layout: lecture.hbs
                         </ol>
                     </li>
                 </ol>
+                </div>
+                <div class="second">
                 <pre class="second prettyprint lang-js">
 <code class="javascript">var user_data = [ 10, 20, 35, 12];
 var svg = d3.select('svg'); // (1)
 svg.selectAll('.block') // (2)
   .data(user_data) // (3)
   .enter() // data to be linked to DOM
-  .append("svg:path") // (4)
+  .append("circle") // (4)
   .classed("block",1) // (4.1)
   .attr("cx", function(d, i) { // (4.2)
     return 100*(1+i);
@@ -105,7 +108,7 @@ svg.selectAll('.block') // (2)
       .classed('clicked', 1);
     });
   })
-</code></pre>
+</code></pre></div>
             </div>
         </section>
 
@@ -114,9 +117,9 @@ svg.selectAll('.block') // (2)
         <section class="step" id="D3js2">
 
 
-            <div class="twocols">
+            <div class="threecols">
 
-                <div class="first">
+                <div class="firstsecond">
                     <pre class=" x-4 prettyprint lang-js" data-src="http://codepen.io/pigne/pen/JBzai">
 <code class="javascript">var user_data = [ 10, 20, 35, 22, 25, 40];
 
@@ -154,7 +157,7 @@ var blocks = svg.selectAll('.block')
 </code></pre>
                 </div>
 
-                <div class="second" id="svg1">
+                <div class="third" id="svg1">
                     <pre class=" prettyprint lang-css">
 <code class="css">.block {
     stroke: #55F;
