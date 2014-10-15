@@ -157,7 +157,7 @@
         <div class="col-sx-12">
             
 
-<h1 id="testing-and-drawing-first-part-">Testing and Drawing (first part)</h1>
+<h1 id="testing-and-drawing">Testing and Drawing</h1>
 <h2 id="code-quality-control">Code Quality Control</h2>
 <p> A few terms: </p>
 <ul>
@@ -166,7 +166,7 @@
 <li><strong>BDD (Behavior driven development)</strong>: TDD using natural language in order to describe the intended functionalities of a software.</li>
 <li><strong>Code coverage</strong> : A measure that indicates how much of a software is actually tested in the unit tests. Usually Code Coverage tools integrate with IDEs and highlight untested portion of code in a project.</li>
 </ul>
-<h2 id="testing-webapps">Testing WebApps</h2>
+<h2 id="testing-javascript-projects">Testing JavaScript projects</h2>
 <h3 id="on-the-client">On the Client</h3>
 <p>Testing client code (i.e. JavaScript) is done with a testing library. The most notorious are:</p>
 <ul>
@@ -233,6 +233,39 @@ yo node</code></pre>
 <p>Install and configure the code covering framework  <a href="http://blanketjs.org/"><code>blanket.js</code></a> in your project and configure grunt accordingly.</p>
 <h3 id="testing-asynchronous-code">Testing Asynchronous Code</h3>
 <p>Load the test file <code>eure.json</code> into the test suite using the asynchronous function <code>fs.readFile</code>. Test the number of different shapes created and average area. Make sure the asynchronous call works properly with Mocha.</p>
+<h2 id="testing-on-the-client">Testing on the Client</h2>
+<p>We want to use your <code>shapes</code> library in the browser. Projects who are used both on the browser and on node need to detect the environment in order to properly setup the library. </p>
+<p>The module approach:</p>
+<pre><code class="language-js"><span class="keyword">if</span>(<span class="keyword">typeof</span> process === <span class="string">'object'</span> &amp;&amp; process + <span class="string">''</span> === <span class="string">'[object process]'</span>){
+    global.publicMethod1 = publicMethod1;
+    global.publicMethod2 = publicMethod2;
+     <span class="comment">// ...</span>
+} <span class="keyword">else</span> {
+    global.module = {};
+    global.module.publicMethod1 = publicMethod1;
+    global.module.publicMethod2 = publicMethod2;
+}</code></pre>
+<p>We usually use modules that are published on the public <a href="https://www.npmjs.org/">npm  repository</a>. A local lib can be used as well in another local project with <code>bower link</code>. See the <a href="http://bower.io/docs/api/#link">documentation</a>. </p>
+<p>In the <code>shapes</code> project:</p>
+<pre><code class="language-sh">bower link</code></pre>
+<p>Create a new webapp project:</p>
+<pre><code class="language-sh">cd ..
+mkdir shapesApp
+cd shapesApp
+yo webapp</code></pre>
+<p>In that project we can use our local project:</p>
+<pre><code class="language-sh">bower link shapes</code></pre>
+<p><code>shapes</code> needs to be added in the <code>test</code> folder too.  The test folder contains : </p>
+<ul>
+<li>the <code>test/index.html</code> file that sets up the references: <pre><code class="language-html">&lt;script src=&quot;bower_components/chai/chai.js&quot;&gt;&lt;/script&gt;</code></pre>
+</li>
+<li>the <code>test/spec/test.js</code> file where regular tests can be written</li>
+</ul>
+<h2 id="drawing-svg-data-with-d3-js">Drawing SVG data with d3.js</h2>
+<p>In this new <code>shapesApp</code> project, using the JSON data set and the Object Model of the <code>shapes</code> project, write a function that, given the data model, draws the various shapes (roads, amenities, natural, buildings...) on an svg element.</p>
+<p>Private buildings must highlight when the mouse passes over and they must be selectable when clicked.</p>
+<p class="text_center"><img src="images/svgMap.png" alt="svg_map" style="width:80%;text-align: center;"></p>
+
 
 
 
