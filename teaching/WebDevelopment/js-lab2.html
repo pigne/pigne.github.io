@@ -161,23 +161,23 @@
 <h2 id="code-quality-control">Code Quality Control</h2>
 <p> A few terms: </p>
 <ul>
-<li><strong>Unit Tests</strong>: Code dedicated to the testing the proper behavior of a software/library/module/app.</li>
-<li><strong>TDD (test driven development)</strong>: A development technic that aims at writing unit tests for testing a software before writing the actual software</li>
+<li><strong>Unit Tests</strong>: Code dedicated to testing the proper behavior of a software/library/module/app.</li>
+<li><strong>TDD (test driven development)</strong>: A development technique that aims at writing unit tests for testing a software before writing the actual software</li>
 <li><strong>BDD (Behavior driven development)</strong>: TDD using natural language in order to describe the intended functionalities of a software.</li>
-<li><strong>Code coverage</strong> : A measure that indicates how much of a software is actually tested in the unit tests. Usually Code Coverage tool integrate with IDEs and highlight untested portion of code in a project.</li>
+<li><strong>Code coverage</strong> : A measure that indicates how much of a software is actually tested in the unit tests. Usually Code Coverage tools integrate with IDEs and highlight untested portion of code in a project.</li>
 </ul>
-<h2 id="testing-web-apps">Testing web apps</h2>
-<h3 id="on-the-client">On the client</h3>
+<h2 id="testing-webapps">Testing WebApps</h2>
+<h3 id="on-the-client">On the Client</h3>
 <p>Testing client code (i.e. JavaScript) is done with a testing library. The most notorious are:</p>
 <ul>
 <li><a href="qunitjs.com">QUnit</a></li>
 <li><a href="http://jasmine.github.io/">Jasmine</a></li>
 <li><a href="http://visionmedia.github.io/mocha/">Mocha</a></li>
 </ul>
-<h3 id="on-the-server">On the server</h3>
-<p>Depending on the server language/architecture, various unit testing frameworks exist in order to test server code(JUnit for Java...)</p>
-<p>If Javascript is used on the server, most of the popular frameworks also work on the server side (Mocha, Jasmine, but not QUnit)</p>
-<h3 id="automation-tools">Automation tools</h3>
+<h3 id="on-the-server">On the Server</h3>
+<p>Depending on the server language/architecture, various unit testing frameworks exist in order to test server code (JUnit for Java...)</p>
+<p>If JavaScript is used on the server, most of the popular frameworks also work on the server side (Mocha, Jasmine, but not QUnit)</p>
+<h3 id="automation-tools">Automation Tools</h3>
 <p>We use automation in order to run the test framework. Grunt and Yeoman can help prepare and configure testing platforms.</p>
 <h2 id="developing-and-testing-a-node-library-the-shapes-project">Developing and testing a node library: the <code>shapes</code> project</h2>
 <h3 id="install-and-scaffold-the-node-project">Install and scaffold the node project</h3>
@@ -186,11 +186,11 @@
 npm install --global generator-node <span class="comment"># sudo?</span>
 yo node</code></pre>
 <p>Several node related features are now installed. </p>
-<h3 id="update-your-project">Update your project</h3>
+<h3 id="update-your-project">Update your Project</h3>
 <p>Your <code>shape.js</code> main file sould now be in <code>lib/</code>  </p>
-<h3 id="lint-your-code">Lint your code</h3>
+<h3 id="lint-your-code">Lint your Code</h3>
 <p>Run <code>grunt jshint</code> on the project until no more error appear.</p>
-<h3 id="a-first-unit-test-with-mocha">A first unit test with mocha</h3>
+<h3 id="a-first-unit-test-with-mocha">A first Unit Test with Mocha</h3>
 <p>A Mocha test use function <code>describe</code> and <code>it</code> in order to describe the tests to be performed. The assertions can be done with several assertion framework. We first test with nodes&#39;s <code>assert</code> function.</p>
 <p>Modify <code>test/shapes_test.js</code> in order to ensure that a &quot;road shape&quot; object with the fowloing attributes has a type equal to &quot;residential&quot; and a name equal to &quot;Rue de Colmar&quot;:</p>
 <pre><code class="language-json">{
@@ -224,14 +224,14 @@ yo node</code></pre>
         road1.getType().should.equal(<span class="string">'residential'</span>);
     });
 });</code></pre>
-<h3 id="test-all">test all</h3>
+<h3 id="test-all-your-project">Test All your Project</h3>
 <p>Create a full unit test suite of your library in order to test all the features. </p>
 <p>Note that you can nest  calls to function <code>describe</code>.</p>
 <p>In the <code>Gruntfile.js</code>  change property <code>reporter</code> to &quot;list&quot; instead of &quot;nyan&quot; to see the list of tests that are executed when doing a <code>grunt mochatest</code>. </p>
 <h3 id="code-covering">Code Covering</h3>
 <p>How can you be sure that you covered all the features of your code? </p>
 <p>Install and configure the code covering framework  <a href="http://blanketjs.org/"><code>blanket.js</code></a> in your project and configure grunt accordingly.</p>
-<h3 id="testing-asynchoneous-code">testing asynchoneous code</h3>
+<h3 id="testing-asynchronous-code">Testing Asynchronous Code</h3>
 <p>Load the test file <code>eure.json</code> into the test suite using the asynchronous function <code>fs.readFile</code>. Test the number of different shapes created and average area. Make sure the asynchronous call works properly with Mocha.</p>
 
 
