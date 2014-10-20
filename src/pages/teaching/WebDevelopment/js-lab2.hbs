@@ -11,23 +11,24 @@ layout: default.hbs
 
 {{#markdown}}
 
-#Testing and Drawing (first part)
+#Testing and Drawing
+
 
 ## Code Quality Control 
  
  A few terms: 
 
-- **Unit Tests**: Code dedicated to the testing the proper behavior of a software/library/module/app.
-- **TDD (test driven development)**: A development technic that aims at writing unit tests for testing a software before writing the actual software
+- **Unit Tests**: Code dedicated to testing the proper behavior of a software/library/module/app.
+- **TDD (test driven development)**: A development technique that aims at writing unit tests for testing a software before writing the actual software
 - **BDD (Behavior driven development)**: TDD using natural language in order to describe the intended functionalities of a software.
-- **Code coverage** : A measure that indicates how much of a software is actually tested in the unit tests. Usually Code Coverage tool integrate with IDEs and highlight untested portion of code in a project.
+- **Code coverage** : A measure that indicates how much of a software is actually tested in the unit tests. Usually Code Coverage tools integrate with IDEs and highlight untested portion of code in a project.
 
 
 
-## Testing web apps
+## Testing JavaScript projects
 
 
-###On the client
+###On the Client
 
 Testing client code (i.e. JavaScript) is done with a testing library. The most notorious are:
 
@@ -35,13 +36,13 @@ Testing client code (i.e. JavaScript) is done with a testing library. The most n
 - [Jasmine](http://jasmine.github.io/)
 - [Mocha](http://visionmedia.github.io/mocha/)
 
-###On the server
+###On the Server
 
-Depending on the server language/architecture, various unit testing frameworks exist in order to test server code(JUnit for Java...)
+Depending on the server language/architecture, various unit testing frameworks exist in order to test server code (JUnit for Java...)
 
-If Javascript is used on the server, most of the popular frameworks also work on the server side (Mocha, Jasmine, but not QUnit)
+If JavaScript is used on the server, most of the popular frameworks also work on the server side (Mocha, Jasmine, but not QUnit)
 
-###Automation tools 
+###Automation Tools 
 
 We use automation in order to run the test framework. Grunt and Yeoman can help prepare and configure testing platforms.
 
@@ -59,15 +60,15 @@ yo node
 
 Several node related features are now installed. 
 
-### Update your project 
+### Update your Project 
 
 Your `shape.js` main file sould now be in `lib/`  
 
-### Lint your code
+### Lint your Code
 
 Run `grunt jshint` on the project until no more error appear.
 
-### A first unit test with mocha
+### A first Unit Test with Mocha
 
 A Mocha test use function `describe` and `it` in order to describe the tests to be performed. The assertions can be done with several assertion framework. We first test with nodes's `assert` function.
 
@@ -121,14 +122,14 @@ describe('Function getType', function() {
 });
 ```
 
-### test all
-
+### Test All your Project
+ 
 Create a full unit test suite of your library in order to test all the features. 
 
 Note that you can nest  calls to function `describe`.
 
 
-In the `Gruntfile.js`  change property `reporter` to "list" instead of "nyan" to see the list of tests that are executed when doing a `grunt mochatest`. 
+In the `Gruntfile.js`  change property `reporter` to "list" instead of "nyan" to see the list of tests that are executed when doing a `grunt mochacli`. 
 
 ### Code Covering
 
@@ -136,9 +137,68 @@ How can you be sure that you covered all the features of your code?
 
 Install and configure the code covering framework  [`blanket.js`](http://blanketjs.org/) in your project and configure grunt accordingly.
 
-### testing asynchoneous code
+### Testing Asynchronous Code
 
 Load the test file `eure.json` into the test suite using the asynchronous function `fs.readFile`. Test the number of different shapes created and average area. Make sure the asynchronous call works properly with Mocha.
+
+
+
+## Testing on the Client
+
+We want to use your `shapes` library in the browser. Projects who are used both on the browser and on node need to detect the environment in order to properly setup the library. 
+
+The module approach:
+```js
+if(typeof process === 'object' && process + '' === '[object process]'){
+	global.publicMethod1 = publicMethod1;
+    global.publicMethod2 = publicMethod2;
+     // ...
+} else {
+	global.module = {};
+	global.module.publicMethod1 = publicMethod1;
+	global.module.publicMethod2 = publicMethod2;
+}
+
+```
+
+We usually use modules that are published on the public [npm  repository](https://www.npmjs.org/). A local lib can be used as well in another local project with `bower link`. See the [documentation](http://bower.io/docs/api/#link). 
+
+In the `shapes` project:
+```sh 
+bower link
+```
+
+
+Create a new webapp project:
+
+```sh
+cd ..
+mkdir shapesApp
+cd shapesApp
+yo webapp
+```
+
+In that project we can use our local project:
+
+```sh
+bower link shapes
+```
+
+`shapes` needs to be added in the `test` folder too.  The test folder contains : 
+
+- the `test/index.html` file that sets up the references: 
+```html
+<script src="bower_components/chai/chai.js"></script>
+```
+- the `test/spec/test.js` file where regular tests can be written
+
+## Drawing SVG data with d3.js
+
+In this new `shapesApp` project, using the JSON data set and the Object Model of the `shapes` project, write a function that, given the data model, draws the various shapes (roads, amenities, natural, buildings...) on an svg element.
+
+Private buildings must highlight when the mouse passes over and they must be selectable when clicked.
+
+<p class="text_center"><img src="images/svgMap.png" alt="svg_map" style="width:80%;text-align: center;"></p>
 
 {{/markdown}}
 
