@@ -173,8 +173,8 @@ app.listen(3000);</code></pre>
         <h3>Routes</h3>
         <p>In a Web App each resource is accessed through one unique request (URI)</p>
         <p>Requests are actions on elements or collections (get, create, modify, delete)</p>
-        <p>Close to the REST (Representational State Transfer)</p>
-        <p>Express link URIs to actions through REST verbs (<code>GET, PUT, POST, DELETE</code>)</p>
+        <p>Close to the idea of RESTfull applications (Representational State Transfer)</p>
+        <p>Express link URIs to actions through HTTP verbs (<code>GET, PUT, POST, DELETE</code>)</p>
         <pre class="prettyprint lang-js">
 <code class="javascript">app.get('/advert/:id?', function(req, res) {
     res.send('You asked for advert' + req.param('id'));
@@ -207,19 +207,19 @@ app.get('/user/:id?', function(req, res){
   res.render('hello_user', _.filter(users, {id:req.param('id')[0]);
 });</code></pre>
         <div class="twocols">
-        <pre class="first prettyprint lang-html nowatermark">
+            <div class="first">
+        <pre class=" prettyprint lang-html nowatermark">
 <code class="scss">// in /views/hello_user.jade
 .user
   h2 Hello #{name}!
-        </code></pre>
-        <pre class="second prettyprint lang-html">
+        </code></pre></div>
+        <div class="second">
+        <pre class=" prettyprint lang-html">
 <code class="html">&lt;div class=&quot;user&quot;&gt;
     &lt;h2&gt;Hello Max!&lt;/h2&gt;
 &lt;/div&gt;
-        </code></pre>
+        </code></pre></div></div>
         </section>
-        </section>
-
         <!-- ==== SLIDE ==== -->
         <section class="step" id="ExpressJsMiddleware">
         <h3>Middlewares</h3>
