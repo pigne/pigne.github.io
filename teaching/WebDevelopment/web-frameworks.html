@@ -35,7 +35,7 @@
 
 
 
-        <link rel="stylesheet" href="../../styles/4e60e4da.main.css"/>
+        <link rel="stylesheet" href="../../styles/d94e83c8.main.css"/>
         
             
                  <link rel="stylesheet" media="screen" href="../../bower_components/highlightjs/styles/default.css">
@@ -161,6 +161,8 @@
     <div class="row">
         <div class="col-sx-12">
             
+
+<div class="md">
 <p>Web development is getting dominated by the MVC (Model View Controller) design pattern. Both on the server and client side.</p>
 <p>Web development relies on well established protocols and standards. </p>
 <ul>
@@ -472,7 +474,7 @@ app.get(<span class="string">'*'</span>, <span class="function"><span class="key
 Requests are actions on elements or collections (get, create, modify, delete)
 Close to the idea of RESTfull applications (Representational State Transfer)
 Express link URIs to actions through HTTP verbs (GET, PUT, POST, DELETE)</p>
-<pre><code class="language-js">app.get(<span class="string">'/advert/:id?'</span>, <span class="function"><span class="keyword">function</span><span class="params">(req, res)</span> {</span>
+<pre><code class="language-javascript">app.get(<span class="string">'/advert/:id?'</span>, <span class="function"><span class="keyword">function</span><span class="params">(req, res)</span> {</span>
     res.send(<span class="string">'You asked for advert'</span> + req.param(<span class="string">'id'</span>));
 })
 .get(<span class="string">'/search'</span>, <span class="function"><span class="keyword">function</span><span class="params">(req, res)</span> {</span> <span class="comment">//search?q=something+fun</span>
@@ -492,7 +494,7 @@ Express link URIs to actions through HTTP verbs (GET, PUT, POST, DELETE)</p>
 <li>Templating in node with Jade: <a href="http://jade-lang.com/">http://jade-lang.com/</a></li>
 </ul>
 <p>In the main express configuration file (<code>app.js</code>): </p>
-<pre><code class="language-js">app.set(<span class="string">'view engine'</span>, <span class="string">'jade'</span>);
+<pre><code class="language-javascript">app.set(<span class="string">'view engine'</span>, <span class="string">'jade'</span>);
 <span class="keyword">var</span> users = [{id:<span class="number">1</span>, name:<span class="string">'Tom'</span>},
             {id:<span class="number">2</span>, name:<span class="string">'Max'</span>}];
 app.get(<span class="string">'/user/:id?'</span>, <span class="function"><span class="keyword">function</span><span class="params">(req, res)</span>{</span>
@@ -502,9 +504,9 @@ app.get(<span class="string">'/user/:id?'</span>, <span class="function"><span c
 <pre><code>.user
   h2 Hello #{name}!</code></pre>
 <p>Result:</p>
-<pre><code class="language-HTML">&lt;div class=&quot;user&quot;&gt;
-    &lt;h2&gt;Hello Max!&lt;/h2&gt;
-&lt;/div&gt;</code></pre>
+<pre><code class="language-xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"user"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">h2</span>&gt;</span>Hello Max!<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
 <h3 id="express-s-middlewares">Express&#39;s Middlewares</h3>
 <ul>
 <li>Extra features given to the application. They are executed at each request.</li>
@@ -521,7 +523,7 @@ app.get(<span class="string">'/user/:id?'</span>, <span class="function"><span c
 <li>middleware modules are installed on a per-module basis (<code>npm install body-parser</code>)</li>
 </ul>
 <h3 id="example-classical-express-middleware-configuration">Example classical Express middleware configuration</h3>
-<pre><code class="language-js"><span class="keyword">var</span> express = require(<span class="string">'express'</span>);
+<pre><code class="language-javascript"><span class="keyword">var</span> express = require(<span class="string">'express'</span>);
 <span class="keyword">var</span> path = require(<span class="string">'path'</span>);
 <span class="keyword">var</span> favicon = require(<span class="string">'serve-favicon'</span>);
 <span class="keyword">var</span> logger = require(<span class="string">'morgan'</span>);
@@ -565,20 +567,20 @@ app.use(<span class="function"><span class="keyword">function</span><span class=
 });</code></pre>
 <h2 id="mongodb-www-mongodb-org-http-www-mongodb-org-an-object-oriented-storage-nosql-database">MongoDB(<a href="http://www.mongodb.org/">www.mongodb.org</a>): an object-oriented storage noSQL Database</h2>
 <p>Documents are stores in a JSON-like format (BSON: binary representation of JSON).</p>
-<pre><code>{
-   &quot;title&quot;: &quot;My new house in the city&quot;,
-   &quot;text&quot;: &quot;&lt;h2&gt;Great new house&lt;/h2&gt;&quot;,
-   &quot;plot_id&quot;: &quot;-628141&quot;,
-   &quot;available_date&quot;: &quot;2012-12-14&quot;,
-   &quot;high_priority&quot;: false,
-   &quot;surface_area&quot;: 230
+<pre><code class="language-javascript">{
+   <span class="string">"title"</span>: <span class="string">"My new house in the city"</span>,
+   <span class="string">"text"</span>: <span class="string">"&lt;h2&gt;Great new house&lt;/h2&gt;"</span>,
+   <span class="string">"plot_id"</span>: <span class="string">"-628141"</span>,
+   <span class="string">"available_date"</span>: <span class="string">"2012-12-14"</span>,
+   <span class="string">"high_priority"</span>: <span class="literal">false</span>,
+   <span class="string">"surface_area"</span>: <span class="number">230</span>
 }</code></pre>
 <ul>
 <li>each document is identified by an <code>_id</code> field of type <code>ObjectId()</code></li>
 </ul>
 <h3 id="mongoose-mongoosejs-com-http-mongoosejs-com-an-odm-object-oriented-data-model-for-mongodb-and-node-">Mongoose (<a href="http://mongoosejs.com/">mongoosejs.com</a>) an ODM (Object-Oriented Data Model) for MongoDB and Node.</h3>
 
-
+</div>
         </div>
     </div>
 </div>
