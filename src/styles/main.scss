@@ -130,13 +130,6 @@ header {
     }
 } 
 
-h2 {
-    border-bottom: solid 1px #333;
-    padding-bottom:.2em;
-}
-p>img {
-    width:100%;
-}
 
 /* Custom page footer */
 footer {
@@ -202,9 +195,18 @@ footer {
     position:relative;
 }
 
-table {
-    @extend .table;
-    @extend .table-bordered;
+.md {
+    table {
+        @extend .table;
+        @extend .table-bordered;
+    }
+    h2 {
+        border-bottom: solid 1px #333;
+        padding-bottom:.2em;
+    }
+    p>img {
+        width:100%;
+    }
 }
 /*----------------------------------------*/
 /*               responsive               */

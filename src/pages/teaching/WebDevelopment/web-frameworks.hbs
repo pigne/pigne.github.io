@@ -9,6 +9,8 @@ layout: default.hbs
 libraries: 
 - "highlightjs"
 ---
+
+<div class="md">
 {{#markdown}}
 
 Web development is getting dominated by the MVC (Model View Controller) design pattern. Both on the server and client side.
@@ -346,7 +348,7 @@ Requests are actions on elements or collections (get, create, modify, delete)
 Close to the idea of RESTfull applications (Representational State Transfer)
 Express link URIs to actions through HTTP verbs (GET, PUT, POST, DELETE)
 
-```js
+```javascript
 app.get('/advert/:id?', function(req, res) {
     res.send('You asked for advert' + req.param('id'));
 })
@@ -368,7 +370,7 @@ app.get('/advert/:id?', function(req, res) {
 - Templating in node with Jade: http://jade-lang.com/
 
 In the main express configuration file (`app.js`): 
-```js 
+```javascript 
 app.set('view engine', 'jade');
 var users = [{id:1, name:'Tom'},
             {id:2, name:'Max'}];
@@ -383,7 +385,7 @@ In a template file (`/views/hello_user.jade`):
 ```
 
 Result:
-```HTML
+```xml
 <div class="user">
     <h2>Hello Max!</h2>
 </div>
@@ -403,7 +405,7 @@ Result:
 
 ### Example classical Express middleware configuration
 
-```js
+```javascript
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -453,7 +455,7 @@ app.use(function(err, req, res, next) {
 
 Documents are stores in a JSON-like format (BSON: binary representation of JSON).
 
-```
+```javascript
 {
    "title": "My new house in the city",
    "text": "<h2>Great new house</h2>",
@@ -470,3 +472,4 @@ Documents are stores in a JSON-like format (BSON: binary representation of JSON)
 
 
 {{/markdown}}
+</div>
