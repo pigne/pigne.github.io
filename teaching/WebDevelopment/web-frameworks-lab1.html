@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>MVC Web App</title>
+        <title>Web Frameworks Lab Session 1</title>
         <meta name="description" content="Yoann Pigné's personal
                       website. Researcher in computer science, Networks,  dynamic
                       graphs, Mobile ad hoc Networks, Vehicular Ad hoc
@@ -146,17 +146,15 @@
 
 <div class="jumbotron">
     <div class="container">
-        <h1>MVC Web App <small></small></h1>
+        <h1>Web Frameworks Lab Session 1 <small></small></h1>
         
             <ul class="text-right list-unstyled">
                 
-                <li>TP n°3  - Info-Web - Licence 3</li>
+                <li>Express</li>
                 
-                <li>Framework PHP</li>
+                <li>MongoDB</li>
                 
-                <li>Framework web</li>
-                
-                <li>Base de données</li>
+                <li>Mongoose</li>
                 
             </ul>
         
@@ -168,49 +166,28 @@
         <div class="col-sx-12">
             
 
-<style>
-    .main p>img {
-        max-width:100%;
-    }
-</style>
+<div class="md">
+<p>Create a first Server-Side WebApp to handle CRUD with real estate adverts. We will use the form created earlier  as well as the d3.js map. </p>
+<h3 id="mondodb">MondoDB</h3>
+<p>Install MongoDB on the system (sudo apt-get ...)</p>
+<p>MongoDB does have any user interface (only a shell). We have to rely on other tools to do administration on the database (like PHPMyAdmin for MySQL). </p>
+<p>Try <a href="http://robomongo.org/">robomongo</a> or something else?</p>
+<h3 id="mongoose">Mongoose</h3>
+<p>Mongoose is a node package installed with npm. We use the Yeoman generator to scaffold a new project. </p>
+<pre><code class="language-javascript">npm install -g generator-mongoose # sudo?
+mkdir serverSideAdverts
+cd serverSideAdverts
+yo mongoose # answer NO to the question about Heroku</code></pre>
+<h3 id="a-basic-server-side-web-app">A Basic server side Web App</h3>
+<p>Use this Mongoose base project to create a simple application that can be used to :</p>
+<ul>
+<li>Create new Real Estates adverts based on the form and the map, we did earlier. The <a href="http://www.embeddedjs.com/">ejs</a> template system or any other can be used.</li>
+<li>List all the adverts in an array;</li>
+<li>modify an advert.</li>
+<li>delete an advert.</li>
+</ul>
 
-<h2 id="installation-et-configuration-de-cakephp">Installation et configuration de CakePHP</h2>
-<p>Suivre les étapes décrites dans le tp précédent pour configurer une App CakePHP : <a href="/teaching/InfoWeb/tp2-cakePHP.html">tp2 installation de cakePHP</a>.</p>
-<h2 id="un-p-tit-caf-">Un p&#39;tit café ?</h2>
-<p>On souhaite réaliser une application permettant de manipuler et de visualiser la liste des établissements parisiens où le café est à un euro. On dispose, via le site Open Data de la ville de Paris, des données géolocalisées suivantes : </p>
-<ul>
-<li><a href="http://parisdata.opendatasoft.com/explore/dataset/liste-des-cafes-a-un-euro/download?format=csv">liste-des-cafes-a-un-euro.csv</a></li>
-</ul>
-<p>Le fichier ci-dessus est au format <a href="http://fr.wikipedia.org/wiki/Comma-separated_values">CSV</a>, un format textuel qui permet de stoker des données en lignes et colonnes. Ce fichier s&#39;ouvre avec un éditeur de texte. <strong>Chaque colonne représente un champ et chaque ligne représente un tuple</strong>. La première ligne est spéciale, elle contient les noms des colonnes (les champs). Il y a un travail de mise en forme préalable pour pouvoir inclure ces données dans une base de données.</p>
-<p>L&#39;application doit permettre de présenter la liste de ces cafés sous forme d&#39;un tableau. Cette liste par défaut est longue de 10 résultats par page, les autres résultats sont accessibles par des liens (à la façon des pages de résultat d&#39;un moteur de recherche) et ne fait l&#39;objet d&#39;aucun critère de sélection par défaut. </p>
-<p>Dans cette même page, un ou des champs de saisies permettent de <strong>filtrer</strong> les résultats sur des critères à définir (arrondissement, prix comptoir, prix terrasse...) Le résultat de la recherche s&#39;affiche dans la même page avec le même mécanisme de limite du nombre de résultats par page. </p>
-<p>On souhaite également pouvoir <strong>visualiser</strong> sur une carte ces cafés puisque les données possèdent des coordonnées GPS. On utilisera pour ça l&#39;un des services de cartographie librement accessibles :</p>
-<ul>
-<li>OpenStreetMap (<a href="http://leafletjs.com/">Leaflet</a>, <a href="http://wiki.openstreetmap.org/wiki/OpenLayers_Marker">OpenLayers</a>...)</li>
-<li><a href="http://developer.here.com/javascript_api_explorer">Nokia</a></li>
-<li><a href="http://developer.mapquest.com/web/documentation/sdk/javascript/v7.0/poi">AOL Mapquest</a></li>
-<li><a href="https://developers.google.com/maps/documentation/javascript/places">Google</a></li>
-<li>ou autre ?</li>
-</ul>
-<p>Un café pourra être <strong>affiché</strong> dans une page seule avec :</p>
-<ul>
-<li>les détails de tous ses champs (c.f. le fichier de données) ;</li>
-<li>une carte avec sa localisation ;</li>
-<li>une liste des commentaires laissés par les utilisateurs du site.  </li>
-<li>une note de zéro à cinq étoiles qui est la moyenne des notes laissées par les utilisateurs (zéro étoile : c&#39;est du jus de chaussette. Cinq étoiles: What Else?)</li>
-</ul>
-<p>Les visiteurs du site peuvent laisser des <strong>commentaires</strong> sur les cafés. Ceux-ci sont visibles lors de l&#39;affichage des détails d&#39;un café. Un commentaire se compose : </p>
-<ul>
-<li>d&#39;une date ; </li>
-<li>du texte du commentaire ; </li>
-<li>d&#39;une note de 0 à 5 qui évalue l&#39;établissement ; </li>
-<li>du nom de l&#39;auteur du commentaire. </li>
-</ul>
-<p>Les visiteurs peuvent aussi partager la page d&#39;un café via les réseaux sociaux.  </p>
-<p>Enfin, l&#39;application devra gérer la notion d&#39;administrateur (sans forcement prévoir un système de création de nouvel administrateur/utilisateur). Un administrateur doit se <strong>connecter</strong> avant de  pouvoir <strong>modifier</strong> les cafés existants les <strong>supprimer</strong> ou en <strong>créer</strong> de nouveaux en saisissant toutes les informations nécessaires.</p>
-<p>Toute l&#39;application sera  réalisée avec CakePHP, en respectant les standards établis par le framework. Pour la partie HTML et CSS le recours à un template de votre choix (Foundation, Bootstrap...) est demandé. </p>
-
-
+</div>
         </div>
     </div>
 </div>
