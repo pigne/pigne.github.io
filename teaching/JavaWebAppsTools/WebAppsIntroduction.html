@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Web Apps with Tools</title>
+        <title>Web Apps Introduction</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -57,19 +57,13 @@
     	<div class="slides">
 		<!-- ==== SLIDE ==== -->
 		<section id="home">
-			<h1>Web Apps with Tools</h1>
+			<h1>Web Apps Introduction</h1>
 
 			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
 			
 			<li class="x2"><em>Java EE Web Apps</em></li>
 		
 			<li class="x2"><em>Web Archives</em></li>
-		
-			<li class="x2"><em>Web Apps with Maven</em></li>
-		
-			<li class="x2"><em>Web Apps with Tomcat</em></li>
-		
-			<li class="x2"><em>Web Apps with Eclipse</em></li>
 		
 		</ul>
 		<p class="x2 bottom-right">
@@ -121,6 +115,20 @@
 	</ul>
 </section>
 
+<section>
+<h2 id="which-java-ee-technology-should-be-used-for-web-apps-">Which Java EE technology should be used for Web Apps?</h2>
+<ul>
+<li>2 main technologies can do WebApps, depending on the needs of the app</li>
+<li><em>Servlets</em> are best for <ul>
+<li>service-oriented  applications (API) </li>
+<li>dispatching requests (routing)</li>
+<li>dealing with non-textual data</li>
+</ul>
+</li>
+<li><em>JavaServer Faces</em> and <em>Facelets pages</em> are best for generating text-based markup (XHTML)</li>
+</ul>
+
+</section>
 
 <section>
 <h2>Java EE Web App MVC Pattern</h2>
@@ -191,7 +199,7 @@ public class TestServlet extends HttpServlet {
 <ul>
 <li>Fast creation of dynamic web pages</li>
 <li>It&#39;s a templating language based on block/tags that can create any output language (HTML, CSS, JS,...)</li>
-<li>Main characteristic : new tags with new functionality  can be defined with <code>JavaServer Pages Standard Tag   Library (JSTL)</code></li>
+<li>Main characteristic : new tags with new functionality  can be defined with <em>JavaServer Pages Standard Tag   Library (JSTL)</em>  but for a better <em>presentation-oriented</em> application, <em>JavaServer Faces</em> and <em>Facelets pages</em> are preferred. </li>
 <li>From a JSP a Java Servlet is dynamically created. Then the Servlet is executed to produce the output file. </li>
 </ul>
 <pre><code class="language-html">&lt;%@ page pageEncoding=&quot;UTF-8&quot; %&gt;
@@ -344,446 +352,6 @@ public class TestServlet extends HttpServlet {
 </ul>
 
 </section>
-
-
-
-<section>
-	<h1>Web  Applications With Maven </h1>
-</section>
-
-<section>
-<h2>Install Maven and bootstrap a project</h2>
-<p>Install on Ubuntu.</p>
-<pre><code class="bash">sudo apt-get install maven
-</code></pre>
-<p>Create a Web App with the <code>webapp</code> artifact.</p>
-<pre><code class="bash">mvn archetype:generate  -DarchetypeArtifactId=maven-archetype-webapp
-</code></pre>
-<p>3 parameters are asked : </p>
-<pre><code class="xml">&lt;groupId&gt;org.pigne&lt;/groupId&gt;
-&lt;artifactId&gt;CountDownWebApp&lt;/artifactId&gt;
-&lt;version&gt;0.0.1&lt;/version&gt;
-</code></pre>    
-
-<p>Add a missing folder (for proper use with Eclipse later on)</p>
-<pre><code class="bash">mkdir CountDownWebApp/src/main/java
-cd CountDownWebApp</code></pre>
-<p>We get a different structure that a normal WAR. </p>
-<pre><code class="bash">CountDownWebApp
-├── pom.xml
-└── src
-    └── main
-        ├── resources
-        └── webapp
-            ├── WEB-INF
-            │   └── web.xml
-            └── index.jsp
-</code></pre>
-</section>
-
-
-<section>
-<h2>Generated <code>pom.xml</code> file</h2>
-<pre><code class="xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
-  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-  &lt;groupId&gt;org.pigne&lt;/groupId&gt;
-  &lt;artifactId&gt;CountDownWebApp&lt;/artifactId&gt;
-  &lt;packaging&gt;war&lt;/packaging&gt;
-  &lt;version&gt;0.0.1&lt;/version&gt;
-  &lt;name&gt;CountDownWebApp Maven Webapp&lt;/name&gt;
-  &lt;url&gt;http://maven.apache.org&lt;/url&gt;
-  &lt;dependencies&gt;
-    &lt;dependency&gt;
-      &lt;groupId&gt;junit&lt;/groupId&gt;
-      &lt;artifactId&gt;junit&lt;/artifactId&gt;
-      &lt;version&gt;3.8.1&lt;/version&gt;
-      &lt;scope&gt;test&lt;/scope&gt;
-    &lt;/dependency&gt;
-  &lt;/dependencies&gt;
-  &lt;build&gt;
-    &lt;finalName&gt;CountDownWebApp&lt;/finalName&gt;
-  &lt;/build&gt;
-&lt;/project&gt;
-</code></pre>
-</section>
-
-<section>
-<h2>Specify the Java version we want to compile the project</h2>
-<p>
-We add a the this <code>compiler</code> to the list of plugins, in the <code>build</code> section of the <code>pom.xml</code> file.
-</p>
-<pre><code class="xml">&lt;build&gt;
-  &lt;finalName&gt;CountDownWebApp&lt;/finalName&gt;
-  &lt;plugins&gt;
-      &lt;plugin&gt;
-          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-          &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-          &lt;version&gt;3.0&lt;/version&gt;
-          &lt;configuration&gt;
-              &lt;source&gt;${jdk.version}&lt;/source&gt;
-              &lt;target&gt;${jdk.version}&lt;/target&gt;
-          &lt;/configuration&gt;
-      &lt;/plugin&gt;
-    &lt;/plugins&gt;
-&lt;/build&gt;
-</code></pre>
-
-</section>
-
-<section>
-<h2>Add some dependencies to be able to use Java EE libs</h2>
-
-<ul>
-	<li>Dependency for Servlets
-	<pre><code class="xml">&lt;dependency&gt;
-	&lt;groupId&gt;javax.servlet&lt;/groupId&gt;
-	&lt;artifactId&gt;servlet-api&lt;/artifactId&gt;
-	&lt;version&gt;2.5&lt;/version&gt;
-	&lt;scope&gt;provided&lt;/scope&gt;
-&lt;/dependency&gt;</code></pre></li>
-    <li>Dependency for JSP
-    <pre><code class="xml">&lt;dependency&gt;
-	&lt;groupId&gt;javax.servlet.jsp&lt;/groupId&gt;
-	&lt;artifactId&gt;jsp-api&lt;/artifactId&gt;
-	&lt;version&gt;2.1&lt;/version&gt;
-	&lt;scope&gt;provided&lt;/scope&gt;
-&lt;/dependency&gt;</code></pre>
-    </li>
-</ul>
-<p>
-Note the <code>&lt;scope&gt;provided&lt;/scope&gt;</code> property the tells maven <b>not</b> to package those dependencies with the WAR file. Servlets and JSP are already part of the destination Application Server.  
-</p>
-</section>
-
-<section>
-	<h1>Tomcat</h1>
-	<p>An Lightweight Application Server and Web Server.</p>
-	<p>Not a complete Java EE platform.</p>
-</section>
-
-
-<section>
-<h2>Install and configure Tomcat </h2>
-<p>Installation for Ubuntu</p>
-<pre><code class="bash">sudo apt-get install tomcat7 tomcat-admin</code></pre>
-<p>Configure authorizations. In file <code>/somewhere/on/the/machine/tomcat-users.xml</code>: 	</p>
-<pre><code class="xml">&lt;tomcat-users&gt;
-  &lt;role rolename=&quot;manager-gui&quot;/&gt;
-  &lt;role rolename=&quot;manager-script&quot;/&gt;
-  &lt;user password=&quot;123soleil&quot; roles=&quot;manager-gui,manager-script&quot; username=&quot;tomcat&quot;/&gt;
-&lt;/tomcat-users&gt;</code></pre>
-<p>Restart the server (Ubuntu)</p>
-<pre><code class="bash">sudo /etc/init.d/tomcat7 restart</code></pre>
-
-</section>
-
-
-<section>
-	<h2>Maven and Tomcat</h2>
-	<p>Add and configure a <code>plugin</code> to the <code>build</code> configuration of the project in the <code>pom.xml</code> file.</p>
-<pre><code class="xml">&lt;build&gt;
-&lt;finalName&gt;CountDownWebApp&lt;/finalName&gt;
-&lt;pluginManagement&gt;
-  &lt;plugins&gt;
-    &lt;plugin&gt;
-      &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
-      &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;
-      &lt;configuration&gt;
-        &lt;path&gt;/${project.build.finalName}&lt;/path&gt;
-        &lt;update&gt;true&lt;/update&gt;
-        &lt;url&gt;http://localhost:8080/manager/text&lt;/url&gt;
-        &lt;username&gt;tomcat&lt;/username&gt;
-        &lt;password&gt;123soleil&lt;/password&gt;
-      &lt;/configuration&gt;
-    &lt;/plugin&gt;
-  &lt;/plugins&gt;
-&lt;/pluginManagement&gt;
-&lt;/build&gt;</code></pre>
-Note that the login and  password must reflect the ones int the Tomcat configuration.
-</section>
-
-<section>
-	<h2>Compile and deploy to Tomcat with Maven</h2>
-	<pre><code class="bash">mvn tomcat7:redeploy</code></pre>
-
-<pre><code class="bash">[INFO] tomcatManager status code:200, ReasonPhrase:OK
-[INFO] OK - Undeployed application at context path /CountDownWebApp
-[INFO] OK - Deployed application at context path /CountDownWebApp
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 4.884s
-[INFO] Finished at: Mon Dec 09 23:59:11 CET 2013
-[INFO] Final Memory: 13M/33M
-[INFO] ------------------------------------------------------------------------
-</code></pre>
-
-<p>Let's enjoy our first Web App : <a href="http://localhost:8080/CountDownWebApp/">http://localhost:8080/CountDownWebApp/</a></p>
-</section>
-
-
-<section>
-	<h2>Create a Servlet</h2>
-	<p> In the <code>src/main/java/</code> folder, under the package names  you  have : <code>src/main/java/org/pigne/CountDown.java</code></p>
-<pre><code class="java">package org.pigne;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-public class CountDown extends HttpServlet {
-
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		resp.setContentType(&quot;text/html&quot;);
-		resp.setCharacterEncoding(&quot;UTF-8&quot;);
-		PrintWriter out = resp.getWriter();
-		out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);
-		out.println(&quot;&lt;html&gt;&quot;);
-		out.println(&quot;&lt;head&gt;&quot;);
-		out.println(&quot;&lt;meta charset=\&quot;utf-8\&quot; /&gt;&quot;);
-		out.println(&quot;&lt;title&gt;CountDown&lt;/title&gt;&quot;);
-		out.println(&quot;&lt;/head&gt;&quot;);
-		out.println(&quot;&lt;body&gt;&quot;);
-		out.println(&quot;&lt;p&gt;&quot;+diff()+&quot;&lt;/p&gt;&quot;);
-		out.println(&quot;&lt;/body&gt;&quot;);
-		out.println(&quot;&lt;/html&gt;&quot;);
-
-	}
-	private String diff(){
-		String theDate = &quot;10/12/2013 12:30:00&quot;;
-		String pattern = &quot;dd/MM/yyyy HH:mm:ss&quot;;
-		Date d2 = null;
-		try {
-			d2 = new SimpleDateFormat(pattern).parse(theDate);
-		} catch (ParseException e) {
-			return &quot;server error...&quot;;
-		}
-		Date d1 = new Date();
-		
-		long diff = d2.getTime() - d1.getTime();
-		 
-		long diffSeconds = diff / 1000 % 60;
-		long diffMinutes = diff / (60 * 1000) % 60;
-		long diffHours = diff / (60 * 60 * 1000) % 24;
-		long diffDays = diff / (24 * 60 * 60 * 1000);
-		return diffDays+&quot; jour(s) &quot;+diffHours+&quot; heure(s) &quot;+diffMinutes+&quot; minute(s) &quot;+diffSeconds+&quot; seconde(s)&quot;;
-		
-	}
-}</code></pre>
-
-</section>
-
-<section>
-	<h2>Declare the Servlate and associate a route to it </h2>
-	<p>The main file in the project is <code>web.xml</code> in <code>src/main/webapp/WEB-INF/</code>:</p>
-	<pre><code class="xml">&lt;web-app&gt;
-	&lt;servlet&gt;
-		&lt;servlet-name&gt;CountDown&lt;/servlet-name&gt;
-		&lt;servlet-class&gt;org.pigne.CountDown&lt;/servlet-class&gt;
-	&lt;/servlet&gt;
-	&lt;servlet-mapping&gt;
-		&lt;servlet-name&gt;CountDown&lt;/servlet-name&gt;
-		&lt;url-pattern&gt;/countdown&lt;/url-pattern&gt;
-	&lt;/servlet-mapping&gt;
-&lt;/web-app&gt;</code></pre>
-<p>Compile / Deploy / Test : <a href="http://localhost:8080/CountDownWebApp/countdown">http://localhost:8080/CountDownWebApp/countdown</a></p>
-</section>
-
-
-
-<section>
-<h2>Create A JSP</h2>
-<p>We don't want to write HTML code in the java Servlet to code : separation of concerns</p>
-<p>First we create a simple JSP in the public folder : <code>src/main/webapp/CountDownView.jsp</code></p>
-
-<pre><code class="html">&lt;%@ page pageEncoding=&quot;UTF-8&quot; %&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-	&lt;head&gt;
-	&lt;meta charset=&quot;utf-8&quot; /&gt;
-	&lt;title&gt;CountDown&lt;/title&gt;
-	&lt;/head&gt;
-	
-	&lt;body&gt;
-		&lt;p&gt;Je suis une page g&eacute;n&eacute;r&eacute;e dynamiquement avec JSP, mais je ne peux pas vous donner l&#039;heure...&lt;/p&gt;
-	&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-
-<p>Test this JSP's automaticaly generated Servlet : <a href="http://localhost:8080/CountDownWebApp/CountDownView.jsp">http://localhost:8080/CountDownWebApp/CountDownView.jsp</a></p>
-<p>Check the Generated java code in the <code>work</code> folder of the  Tomcat App server.</p>
-</section>
-
-
-<section>
-<h2>Have the Servlet manage the JSP</h2>
-
-<p>Hide the JSP behind the <code>WEB-INF</code> folder.</p>
-<pre><code class="bash">mv src/main/webapp/CountDownView.jsp src/main/webapp/WEB-INF</code></pre>
-
-<p>Modify the servlet</p>
-<pre><code class="java">@Override
-public void doGet( HttpServletRequest request, HttpServletResponse response )   
-	throws ServletException, IOException {
-	this.getServletContext().getRequestDispatcher( "/WEB-INF/CountDownView.jsp" ).forward( request, response );
-}</code></pre>
-
-<p>Compile / Deploy / Test : <a href="http://localhost:8080/CountDownWebApp/countdown">http://localhost:8080/CountDownWebApp/countdown</a></p>
-</section>
-
-
-
-<section>
-	<h2>Transfer data to the JSP</h2>
-	<p>Modify the Servlet</p>
-
-<pre><code class="java">@Override
-public void doGet( HttpServletRequest request, HttpServletResponse response )   
-	throws ServletException, IOException {
-	String diff = diff();
-	request.setAttribute( "diff", diff );
-	this.getServletContext().getRequestDispatcher( "/WEB-INF/CountDownView.jsp" ).forward( request, response );
-}</code></pre>
-</section>
-<section>
-	<h2>Transfer data to the JSP</h2>
-
-<p>Modify the JSP</p>
-
-<pre><code class="html">&lt;%@ page pageEncoding=&quot;UTF-8&quot; %&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-	&lt;meta charset=&quot;utf-8&quot; /&gt;
-	&lt;title&gt;CountDown&lt;/title&gt;
-	&lt;style&gt;
-	blockquote {
-		font-style: italic;
-		padding: 20px;
-	}
-
-	blockquote footer{
-		color:#555;
-		font-weight: bold
-	}
-	&lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-	&lt;blockquote&gt;
-	&amp;laquo; Il reste 
-	&lt;% 
-            String diff = (String) request.getAttribute(&quot;diff&quot;);
-            out.println( diff );
-	%&gt;
-	avant la fin de ce cours ! &amp;raquo;
-	&lt;footer&gt;
-	&lt;% 
-            String parametre = request.getParameter( &quot;author&quot; );
-            out.println( parametre );
-	%&gt;
-	&lt;/footer&gt;
-	&lt;/blockquote&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-
-<p>Compile / Deploy / Test : <a href="http://localhost:8080/CountDownWebApp/countdown">http://localhost:8080/CountDownWebApp/countdown</a></p>
-</section>
-
-<section>
-<h1 id="webapps-with-eclipse">WebApps with Eclipse</h1>
-<p>A dedicated version of Eclipse for Java EE.</p>
-<p>Integration of Maven and Application Servers (e.g. Tomcat).</p>
-
-</section>
-
-
-<section>
-<h2 id="install-eclipse-for-java-ee">Install Eclipse for Java EE</h2>
-<ul>
-<li>Download <strong>Eclipse IDE for Java EE Developers</strong> from the Eclipse download site : <a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a>.</li>
-<li>Eclipse is self-contained in the downloaded archive.</li>
-</ul>
-
-</section>
-
-<section>
-<h2 id="maven-eclipse">Maven &amp; Eclipse</h2>
-<ul>
-<li>Create an eclipse project from the Maven configuration:<pre><code class="language-bash">mvn eclipse:eclipse -Dwtpversion=<span class="number">2.0</span></code></pre>
-</li>
-<li>Import the project in Eclipse as an <em>existing project</em> : 
-<code>File &gt; Import &gt; Existing Projects into Workspace</code></li>
-</ul>
-<p class='text_center'>
-<img src="images/importEclipse.png" alt="Import Eclipse Project">
-</p>
-
-
-</section>
-
-<section>
-<h2 id="run-the-project-in-eclipse">Run the project in Eclipse</h2>
-<p>We create a <em>run configuration</em> to execute the maven target: <code>Run &gt; Run configurations</code></p>
-<p class='text_center'>
-<img src="images/mavenConfiguration.png" alt="Import Eclipse Project">
-</p>
-
-
-</section>
-
-
-
-
-<section>
-<h2 id="an-application-server-in-eclipse">An application server in Eclipse</h2>
-<ul>
-<li>First, switch off our Tomcat server:<pre><code class="language-bash"><span class="built_in">sudo</span> catalina stop
-<span class="comment"># or</span>
-<span class="built_in">sudo</span> service tomcat stop</code></pre>
-</li>
-<li>Then, configure a Tomcat server in Eclipse:
-<code>Window &gt; Show View &gt; Servers</code></li>
-</ul>
-<p class='text_center'>
-<img src="images/newServer.png" alt="Import Eclipse Project">
-</p>
-
-
-
-</section>
-
-
-<section>
-<h2 id="configure-tomcat">Configure Tomcat</h2>
-<p>Give the <code>libexec</code> folder name of your Tomcat&#39;s install directory. Probably <code>/var/lib/tomcat7/</code>.</p>
-<p class='text_center'>
-<img src="images/configureTomcat.png" alt="Import Eclipse Project">
-</p>
-
-</section>
-
-<section>
-<h2 id="run-your-project">Run your project</h2>
-<p>Now you can run you project. Any modification to the code (upon saving the file) will be compiled and published to Tomcat!</p>
-<p class='text_center'>
-<img src="images/runOnServer.png" alt="Import Eclipse Project">
-</p>
-
-
-
-</section>
-
-
 
 
     	</div>
