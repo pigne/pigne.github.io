@@ -47,6 +47,18 @@ layout: lecture.hbs
 	</ul>
 </section>
 
+<section>
+{{#markdown}}
+## Which Java EE technology should be used for Web Apps? 
+- 2 main technologies can do WebApps, depending on the needs of the app
+- *Servlets* are best for 
+    - service-oriented  applications (API) 
+    - dispatching requests (routing)
+    - dealing with non-textual data
+- *JavaServer Faces* and *Facelets pages* are best for generating text-based markup (XHTML)
+
+ {{/markdown}}
+</section>
 
 <section>
 <h2>Java EE Web App MVC Pattern</h2>
@@ -121,7 +133,7 @@ public class TestServlet extends HttpServlet {
 
 - Fast creation of dynamic web pages
 - It's a templating language based on block/tags that can create any output language (HTML, CSS, JS,...)
-- Main characteristic : new tags with new functionality  can be defined with ```JavaServer Pages Standard Tag   Library (JSTL)```
+- Main characteristic : new tags with new functionality  can be defined with *JavaServer Pages Standard Tag   Library (JSTL)*  but for a better *presentation-oriented* application, *JavaServer Faces* and *Facelets pages* are preferred. 
 - From a JSP a Java Servlet is dynamically created. Then the Servlet is executed to produce the output file. 
 
 ```html

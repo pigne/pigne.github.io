@@ -32,7 +32,7 @@ layout: lecture.hbs
 <p>Add a missing folder (for proper use with Eclipse later on)</p>
 <pre><code class="bash">mkdir CountDownWebApp/src/main/java
 cd CountDownWebApp</code></pre>
-<p>We get a different structure that a normal WAR. </p>
+<p>We get development structure, different from a classical WAR file structure. </p>
 <pre><code class="bash">CountDownWebApp
 ├── pom.xml
 └── src
@@ -73,26 +73,31 @@ cd CountDownWebApp</code></pre>
 </section>
 
 <section>
-<h2>Specify the Java version we want to compile the project</h2>
-<p>
-We add a the this <code>compiler</code> to the list of plugins, in the <code>build</code> section of the <code>pom.xml</code> file.
-</p>
-<pre><code class="xml">&lt;build&gt;
-  &lt;finalName&gt;CountDownWebApp&lt;/finalName&gt;
-  &lt;plugins&gt;
-      &lt;plugin&gt;
-          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-          &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-          &lt;version&gt;3.0&lt;/version&gt;
-          &lt;configuration&gt;
-              &lt;source&gt;${jdk.version}&lt;/source&gt;
-              &lt;target&gt;${jdk.version}&lt;/target&gt;
-          &lt;/configuration&gt;
-      &lt;/plugin&gt;
-    &lt;/plugins&gt;
-&lt;/build&gt;
-</code></pre>
+{{#markdown}}
+##Specify the Java version we want to compile the project
 
+We add the <code>compiler</code> plugin to the list of plugins, in the <code>build</code> section of the <code>pom.xml</code> file.
+
+
+```xml
+<!-- ... -->
+<build>
+  <finalName>CountDownWebApp</finalName>
+  <plugins>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.0</version>
+          <configuration>
+              <source>1.7</source>
+              <target>1.7</target>
+          </configuration>
+      </plugin>
+    </plugins>
+</build>
+<!-- ... -->
+```
+{{/markdown}}
 </section>
 
 <section>
@@ -128,69 +133,105 @@ Note the <code>&lt;scope&gt;provided&lt;/scope&gt;</code> property the tells mav
 
 
 <section>
-<h2>Install and configure Tomcat </h2>
-<p>Installation for Ubuntu</p>
-<pre><code class="bash">sudo apt-get install tomcat7 tomcat-admin</code></pre>
-<p>Configure authorizations. In file <code>/somewhere/on/the/machine/tomcat-users.xml</code>: 	</p>
-<pre><code class="xml">&lt;tomcat-users&gt;
-  &lt;role rolename=&quot;manager-gui&quot;/&gt;
-  &lt;role rolename=&quot;manager-script&quot;/&gt;
-  &lt;user password=&quot;123soleil&quot; roles=&quot;manager-gui,manager-script&quot; username=&quot;tomcat&quot;/&gt;
-&lt;/tomcat-users&gt;</code></pre>
-<p>Restart the server (Ubuntu)</p>
-<pre><code class="bash">sudo /etc/init.d/tomcat7 restart</code></pre>
+{{#markdown}}
+##Install and configure Tomcat
 
+Installation for Ubuntu
+
+```bash
+sudo apt-get install tomcat7 tomcat7-admin
+```
+
+Configure authorizations. In file `/etc/tomcat7/tomcat-users.xml`:
+
+```xml
+<tomcat-users>
+  <role rolename="manager-gui"/>
+  <role rolename="manager-script"/>
+  <user username="tomcat" password="123soleil" roles="manager-gui,manager-script" />
+</tomcat-users>
+```
+
+Restart the server (Ubuntu)
+
+```bash
+sudo /etc/init.d/tomcat7 restart
+```
+
+{{/markdown}}
 </section>
 
 
 <section>
-	<h2>Maven and Tomcat</h2>
-	<p>Add and configure a <code>plugin</code> to the <code>build</code> configuration of the project in the <code>pom.xml</code> file.</p>
-<pre><code class="xml">&lt;build&gt;
-&lt;finalName&gt;CountDownWebApp&lt;/finalName&gt;
-&lt;pluginManagement&gt;
-  &lt;plugins&gt;
-    &lt;plugin&gt;
-      &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
-      &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;
-      &lt;configuration&gt;
-        &lt;path&gt;/${project.build.finalName}&lt;/path&gt;
-        &lt;update&gt;true&lt;/update&gt;
-        &lt;url&gt;http://localhost:8080/manager/text&lt;/url&gt;
-        &lt;username&gt;tomcat&lt;/username&gt;
-        &lt;password&gt;123soleil&lt;/password&gt;
-      &lt;/configuration&gt;
-    &lt;/plugin&gt;
-  &lt;/plugins&gt;
-&lt;/pluginManagement&gt;
-&lt;/build&gt;</code></pre>
+{{#markdown}}
+##Maven and Tomcat
+
+Add and configure a <code>plugin</code> to the <code>build</code> configuration of the project in the <code>pom.xml</code> file.
+
+```xml
+<build>
+<finalName>CountDownWebApp</finalName>
+<pluginManagement>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.tomcat.maven</groupId>
+      <artifactId>tomcat7-maven-plugin</artifactId>
+      <configuration>
+        <path>/${project.build.finalName}</path>
+        <update>true</update>
+        <url>http://localhost:8080/manager/text</url>
+        <username>tomcat</username>
+        <password>123soleil</password>
+      </configuration>
+    </plugin>
+  </plugins>
+</pluginManagement>
+</build>
+```
+
 Note that the login and  password must reflect the ones int the Tomcat configuration.
+
+{{/markdown}}
 </section>
 
 <section>
-	<h2>Compile and deploy to Tomcat with Maven</h2>
-	<pre><code class="bash">mvn tomcat7:redeploy</code></pre>
+{{#markdown}}
+##Compile and deploy to Tomcat with Maven
 
-<pre><code class="bash">[INFO] tomcatManager status code:200, ReasonPhrase:OK
-[INFO] OK - Undeployed application at context path /CountDownWebApp
-[INFO] OK - Deployed application at context path /CountDownWebApp
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 4.884s
-[INFO] Finished at: Mon Dec 09 23:59:11 CET 2013
-[INFO] Final Memory: 13M/33M
-[INFO] ------------------------------------------------------------------------
-</code></pre>
 
-<p>Let's enjoy our first Web App : <a href="http://localhost:8080/CountDownWebApp/">http://localhost:8080/CountDownWebApp/</a></p>
+```bash
+mvn tomcat7:redeploy
+```
+
+
+
+```bash
+	[INFO] tomcatManager status code:200, ReasonPhrase:OK
+	[INFO] OK - Undeployed application at context path /CountDownWebApp
+	[INFO] OK - Deployed application at context path /CountDownWebApp
+	...
+	[INFO] BUILD SUCCESS
+	[INFO] Total time: 4.884s
+	[INFO] Finished at: Mon Dec 09 23:59:11 CET 2013
+	[INFO] Final Memory: 13M/33M	
+```
+
+
+Let's enjoy our first Web App : <a href="http://localhost:8080/CountDownWebApp/">http://localhost:8080/CountDownWebApp/</a></p>
+
+{{/markdown}}
 </section>
 
 
 <section>
-	<h2>Create a Servlet</h2>
-	<p> In the <code>src/main/java/</code> folder, under the package names  you  have : <code>src/main/java/org/pigne/CountDown.java</code></p>
-<pre><code class="java">package org.pigne;
+{{#markdown}}
+
+##Create a Servlet
+	
+In the <code>src/main/java/</code> folder, under the package names  you  have : `src/main/java/org/pigne/CountDown.java`
+
+```java
+package org.pigne;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -208,29 +249,29 @@ public class CountDown extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		resp.setContentType(&quot;text/html&quot;);
-		resp.setCharacterEncoding(&quot;UTF-8&quot;);
+		resp.setContentType("text/html");
+		resp.setCharacterEncoding("UTF-8");
 		PrintWriter out = resp.getWriter();
-		out.println(&quot;&lt;!DOCTYPE html&gt;&quot;);
-		out.println(&quot;&lt;html&gt;&quot;);
-		out.println(&quot;&lt;head&gt;&quot;);
-		out.println(&quot;&lt;meta charset=\&quot;utf-8\&quot; /&gt;&quot;);
-		out.println(&quot;&lt;title&gt;CountDown&lt;/title&gt;&quot;);
-		out.println(&quot;&lt;/head&gt;&quot;);
-		out.println(&quot;&lt;body&gt;&quot;);
-		out.println(&quot;&lt;p&gt;&quot;+diff()+&quot;&lt;/p&gt;&quot;);
-		out.println(&quot;&lt;/body&gt;&quot;);
-		out.println(&quot;&lt;/html&gt;&quot;);
+		out.println("<!DOCTYPE html>");
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<meta charset=\"utf-8\" />");
+		out.println("<title>CountDown</title>");
+		out.println("</head>");
+		out.println("<body>");
+		out.println("<p>"+diff()+"</p>");
+		out.println("</body>");
+		out.println("</html>");
 
 	}
 	private String diff(){
-		String theDate = &quot;10/12/2013 12:30:00&quot;;
-		String pattern = &quot;dd/MM/yyyy HH:mm:ss&quot;;
+		String theDate = "17/11/2014 12:30:00";
+		String pattern = "dd/MM/yyyy HH:mm:ss";
 		Date d2 = null;
 		try {
 			d2 = new SimpleDateFormat(pattern).parse(theDate);
 		} catch (ParseException e) {
-			return &quot;server error...&quot;;
+			return "server error...";
 		}
 		Date d1 = new Date();
 		
@@ -240,51 +281,66 @@ public class CountDown extends HttpServlet {
 		long diffMinutes = diff / (60 * 1000) % 60;
 		long diffHours = diff / (60 * 60 * 1000) % 24;
 		long diffDays = diff / (24 * 60 * 60 * 1000);
-		return diffDays+&quot; jour(s) &quot;+diffHours+&quot; heure(s) &quot;+diffMinutes+&quot; minute(s) &quot;+diffSeconds+&quot; seconde(s)&quot;;
+		return diffDays+" jour(s) "+diffHours+" heure(s) "+diffMinutes+" minute(s) "+diffSeconds+" seconde(s)";
 		
 	}
-}</code></pre>
+}```
 
+{{/markdown}}
 </section>
 
 <section>
-	<h2>Declare the Servlate and associate a route to it </h2>
-	<p>The main file in the project is <code>web.xml</code> in <code>src/main/webapp/WEB-INF/</code>:</p>
-	<pre><code class="xml">&lt;web-app&gt;
-	&lt;servlet&gt;
-		&lt;servlet-name&gt;CountDown&lt;/servlet-name&gt;
-		&lt;servlet-class&gt;org.pigne.CountDown&lt;/servlet-class&gt;
-	&lt;/servlet&gt;
-	&lt;servlet-mapping&gt;
-		&lt;servlet-name&gt;CountDown&lt;/servlet-name&gt;
-		&lt;url-pattern&gt;/countdown&lt;/url-pattern&gt;
-	&lt;/servlet-mapping&gt;
-&lt;/web-app&gt;</code></pre>
-<p>Compile / Deploy / Test : <a href="http://localhost:8080/CountDownWebApp/countdown">http://localhost:8080/CountDownWebApp/countdown</a></p>
+{{#markdown}}
+Declare the Servlate and associate a route to it
+
+The main file in the project is <code>web.xml</code> in <code>src/main/webapp/WEB-INF/</code>:
+```xml
+<web-app>
+	<servlet>
+		<servlet-name>CountDown</servlet-name>
+		<servlet-class>org.pigne.CountDown</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CountDown</servlet-name>
+		<url-pattern>/countdown</url-pattern>
+	</servlet-mapping>
+</web-app>
+```
+
+- Compile : `mvn compile`
+- Deploy : `mvn tomcat7:redeploy`
+- Test : <a href="http://localhost:8080/CountDownWebApp/countdown">http://localhost:8080/CountDownWebApp/countdown</a>
+{{/markdown}}
 </section>
 
 
 
 <section>
-<h2>Create A JSP</h2>
-<p>We don't want to write HTML code in the java Servlet to code : separation of concerns</p>
-<p>First we create a simple JSP in the public folder : <code>src/main/webapp/CountDownView.jsp</code></p>
+{{#markdown}}
+##Create A JSP
 
-<pre><code class="html">&lt;%@ page pageEncoding=&quot;UTF-8&quot; %&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-	&lt;head&gt;
-	&lt;meta charset=&quot;utf-8&quot; /&gt;
-	&lt;title&gt;CountDown&lt;/title&gt;
-	&lt;/head&gt;
+- We don't want to write HTML code in the java Servlet code : separation of concerns
+- First we create a simple JSP in the public folder : <code>src/main/webapp/CountDownView.jsp</code>
+
+```html
+<%@ page pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<title>CountDown</title>
+	</head>
 	
-	&lt;body&gt;
-		&lt;p&gt;Je suis une page g&eacute;n&eacute;r&eacute;e dynamiquement avec JSP, mais je ne peux pas vous donner l&#039;heure...&lt;/p&gt;
-	&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+	<body>
+		<p>Je suis une page générée dynamiquement avec JSP, mais je ne peux pas vous donner l'heure...</p>
+	</body>
+</html>
+```
+
 
 <p>Test this JSP's automaticaly generated Servlet : <a href="http://localhost:8080/CountDownWebApp/CountDownView.jsp">http://localhost:8080/CountDownWebApp/CountDownView.jsp</a></p>
-<p>Check the Generated java code in the <code>work</code> folder of the  Tomcat App server.</p>
+<p>Check the Generated java code in the <code>work</code> folder of the  Tomcat App server (`/var/lib/tomcat7/work/**/CountDownWebApp/**/CountDownView_jsp.java`).</p>
+{{/markdown}}
 </section>
 
 
