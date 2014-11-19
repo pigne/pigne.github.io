@@ -1,0 +1,50 @@
+---
+title: Web Frameworks Lab Session 1
+subsection: Web Development
+order: 10
+description:
+- Express
+- MongoDB
+- Mongoose
+layout: default.hbs
+libraries: 
+- "highlightjs"
+---
+
+<div class="md">
+{{#markdown}}
+
+
+
+Create a first Server-Side WebApp to handle CRUD with Real Estate Adverts. We will use the form created earlier  as well as the d3.js map. 
+
+### MondoDB
+
+First, [install MongoDB on Ubuntu](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/).
+
+MongoDB does have any user interface (only a shell). We have to rely on other tools to do administration on the database (like PHPMyAdmin for MySQL). 
+
+Try [robomongo](http://robomongo.org/) or something else?
+
+### Mongoose 
+
+Mongoose is a node package installed with npm. We use the Yeoman generator to scaffold a new project. 
+
+```javascript
+npm install -g generator-mongoose # sudo?
+mkdir serverSideAdverts
+cd serverSideAdverts
+yo mongoose # answer NO to the question about Heroku
+```
+
+### A Basic server side Web App 
+
+Use this Mongoose base project to create a simple application that can be used to :
+ - Create new Real Estates adverts based on the form and the map, we did earlier. The [ejs](http://www.embeddedjs.com/) template system or any other can be used.
+ - List all the adverts in an array;
+ - modify an advert.
+ - delete an advert.
+
+
+{{/markdown}}
+</div>

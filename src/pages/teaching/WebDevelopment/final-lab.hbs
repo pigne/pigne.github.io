@@ -1,0 +1,114 @@
+---
+title: Final Lab Session
+subsection: Web Development
+order: 11
+description:
+- The Real Estate WebApp
+- MEAN Stack
+- Deployment on a PaaS
+layout: default.hbs
+libraries: 
+- "highlightjs"
+---
+
+<div class="md">
+{{#markdown}}
+
+
+On veut réaliser une application web qui permet la manipulation d'annonces immobilières.
+
+On la souhaite basée sur les technologies vues en cours : 
+- Framework Web avec Express et Node ;
+- CSS Preprocessing avec SASS ;
+- une basse de données NoSQL avec MongoDB ;
+- ORM (Object Representational Model) avec Mongoose ;
+- Client-side MVC (Model View Controller) avec AngularJS ;
+- la gestion des dépendancesavec Bower (client side) et Npm (server side) ;
+- tests unitaires avec Mocha, Jasmine, etc.  ; 
+- Grunt pour les différents tâches ; 
+- *Scaffolding* avec Yeoman.
+
+On souhaite également se servir des choses déjà développées : 
+- un formulaire HTML5 complet de création/modification d'annonce ;
+- une carte interactive (et son modèle objet) permettant de sélectionner une parcelle de terrain à laquelle on souhaite associer une annonce.
+
+## The MEAN Stack
+
+L'utilisation de cet ensemble de technologies est souvent  nommé la *MEAN Stack* d'après les technologies principales qui la composent : MongoDB, Express, AngularJS, Node.
+
+Beaucoup de projets proposent leur propre version de la *MEAN stack*  avec des qualités des défauts... Voir cette [comparaison de *templates* pour WebApp](https://docs.google.com/spreadsheets/d/1r8rJy2Q5p5QORYKcye93UECwOlSgFL24c5fyF7dqhaM/pubhtml) (ne compare pas uniquement les *MEAN Stacks*) pour se faire une idée. 
+
+On choisi d'utiliser [MEAN.JS](http://meanjs.org). On va l'utiliser avec son générateur Yeoman en suivant les indications : [meanjs yeoman generator](http://meanjs.org/generator.html).
+
+- Création d'un projet *Real Estate* ;
+- Création d'un module CRUD (Create Update Delete Read) *advert* pour gérer les annonces immobilières.
+
+
+## L'application Web *Real Estate*
+
+En utilisant le *template* généré par la *stack* MEAN.JS nous allons créer l'application Web de gestion immobilière. 
+
+Voici la liste des fonctionnalités que l'on souhaite pour cette application. Leur ordre n'importe pas et il n'est pas forcement nécessaire que 2 fonctionnalités soit sur des "pages" différentes. Autrement dit, on énonce ici les fonctionnalités désirées mais on ne donne aucune contrainte sur l'organisation logique de l'application ni sur la présentation. 
+
+### Liste des annonces
+
+ Une simple liste qui reprend les informations principales de chaque annonce. A partir de cette liste il doit être possible de : 
+ - visualiser
+ - modifier
+ - supprimer
+ - créer une nouvelle annonce
+
+### Carte interactive avec les annonces
+
+La carte déjà développée doit permettre de représenter les parcelles ayant déjà une annonce associée. Une parcelle ne peut posséder qu'une seule annonce et une annonce ne concerne qu'une seule parcelle. A partir de cette carte, on doit pouvoir accéder à chaque annonce.
+
+### Visualisation d'une annonce
+
+Affichage détaillé de tous les champs d'une annonce, ses photos (voir plus bas), avec une localisation de sa parcelle sur la carte. 
+
+### Création/Modification d'une annonce
+
+Une annonce immobilière est constituée de différentes propriété que vous avez déjà défini (prix, date de dispo, classe énergétique, description détaillée...) mais aussi d'une **parcelle** qui lui est associée sur la carte interactive déjà développée ainsi que d'une **liste de photos**. 
+
+Il vous appartient d'organiser le formulaire de saisie/modification d'une annonce pour qu'il soit possible de : 
+- sélectionner sur la carte la parcelle associée à cette annonce (attention à ne pas associer 2 annonces à une parcelle)
+- gérer une liste de photos que l'utilisateur va pouvoir ajouter ou supprimer. L'utilisation du *drag'n'drop*  pour l'ajout de photos sera un plus "apprécié".
+
+## Déploiement de votre application sur un PaaS (*Platform as a Service*)
+
+Heroku permet de mettre en production notre application et d'héberger le site web dans le "cloud". 
+
+On pourra suivre la [documentation](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) de Heroku pour la mise en production d'une application utilisant node. 
+
+Pour que cela fonctionne il faut créer un compte Heroku. On aura également nesoin d'une basse de donnée MongoDB en ligne. Il en existe plusieurs ([MongoSoup](https://www.mongosoup.de/en/), [MongoLab](https://mongolab.com/), ...) 
+
+
+
+## Modalités de Contrôle 
+
+
+Le cours d'IDOD (partie développement Web) est évalué principalement à partir d'un examen sur table. 
+
+Ce dernier TP peut également faire partie de l'évaluation mais ce n'est pas obligatoire. Il n'est donc pas obligatoire de rendre ce TP. 
+
+Par défaut la note dans la matière est la note d'examen. Si vous décidez de rendre ce TP il sera pris en compte et une moyenne pondérée sera appliquée avec la note d'examen. 
+
+Le barème de notation sera "généreux", il sera donc facile d'améliorer sa note d'examen avec le TP. 
+
+### Important 
+
+Si vous décidez de rendre le TP, vous vous engagez à fournir un travail **original**.
+
+Il vous est demandé de préciser :
+- qui sont les auteurs (pas plus de 2 auteurs par TP)
+- quels sont les parties originales faites par les auteurs du TP. 
+
+Ne vous attribuez pas du travail que vous n'auriez pas fait. 
+
+### Échéance 
+
+Le TP sera envoyé par mail au plus tard avant les vacances de Noël.
+
+
+{{/markdown}}
+</div>
