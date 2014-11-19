@@ -1,0 +1,564 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Correction Examen IDOD 2014</title>
+        <meta name="description" content="Yoann Pigné's personal
+                      website. Researcher in computer science, Networks,  dynamic
+                      graphs, Mobile ad hoc Networks, Vehicular Ad hoc
+                      Networks. Lecturer in CS, web services.">
+        <meta name="author" content="Yoann Pigné">
+        <meta name="google-site-verification" content="FKKi10AM77zJWOKffGHjTdcaOdN6HyLQSTYZu9T_M-0">
+        <meta name="Robots" content="all">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="shortcut icon" href="../../favicon.ico" />
+
+        <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../images/apple-touch-icon-152x152-precomposed.png">
+        <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../images/apple-touch-icon-144x144-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../images/apple-touch-icon-120x120-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../images/apple-touch-icon-114x114-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../../images/apple-touch-icon-76x76-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../images/apple-touch-icon-72x72-precomposed.png">
+        <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+        <link rel="apple-touch-icon-precomposed" href="../../apple-touch-icon-precomposed.png">
+
+
+
+        <link rel="stylesheet" href="../../styles/d94e83c8.main.css"/>
+        
+            
+                 <link rel="stylesheet" media="screen" href="../../bower_components/highlightjs/styles/default.css">
+                <link rel="stylesheet" media="projection, print" href="../../bower_components/highlightjs/styles/tomorrow.css">
+        
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <header>
+            <div class="container">
+
+	<h3 class="pull-left "><a href="/">Yoann Pigné</a></h3>
+	<div class="pull-right" id="favicon"></div>
+	<ul class="nav nav-pills  pull-right">
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				<li><a href="../../projects/index.html">Projects </a></li>
+			
+		
+			
+		
+			
+				<li><a href="../../publications/index.html">Publications </a></li>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				<li><a href="../../contact/index.html">Contact </a></li>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				<li><a href="../index.html">Teaching </a></li>
+			
+		
+			
+				<li><a href="../../these/index.html">Ph.D. </a></li>
+			
+		
+	</ul>
+</div>
+
+        </header>
+        <div class="main">
+            
+
+<div class="page-info row">
+
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Correction Examen IDOD 2014 <small></small></h1>
+        
+            <ul class="text-right list-unstyled">
+                
+                <li>Master 2 MATIS</li>
+                
+                <li>IDOD  Développement Web</li>
+                
+                <li>18 novembre 2014</li>
+                
+            </ul>
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sx-12">
+            
+
+<div class="md">
+<h2 id="partie-1-javascript">Partie 1  - Javascript</h2>
+<h4 id="question-1-">Question 1)</h4>
+<p>L&#39;appel <code>document.getElementById( &quot;logo&quot; );</code>  est le plus rapide car il fait appel a une fonction <strong>native</strong> du navigateur, probablement écrite en C++ et compilée de manière optimale pour s&#39;exécuter sur la machine cible. La version JQuery elle est en <strong>JavaScript</strong> pur. Le code est interprété et forcement plus lent. </p>
+<h4 id="question-2-">Question 2)</h4>
+<pre><code class="language-javascript">$( <span class="string">"div#first, div.first, ol#items &gt; [name$='first']"</span> )</code></pre>
+<p>Ce code effectue une selection multiple et retourne un tableau composé des élément DOM suivants (s&#39;ils existent dans la page): </p>
+<ul>
+<li>l&#39;élément DIV d&#39;id &quot;first&quot;</li>
+<li>tous les éléments DIV de classe &quot;first&quot;</li>
+<li>les éléments, fils immédiat de l&#39;élément OL d&#39;id &quot;items&quot;, dont l&#39;attribut &quot;name&quot; se termine par la chaîne de caractères &quot;first&quot;</li>
+</ul>
+<h4 id="question-3-">Question 3)</h4>
+<pre><code class="language-javascript">$( <span class="string">"div"</span> ).css( <span class="string">"width"</span>, <span class="string">"300px"</span> ).add( <span class="string">"p"</span> ).css( <span class="string">"background-color"</span>, <span class="string">"blue"</span> );</code></pre>
+<p>Ce code commence par sélectionner tous les éléments DIV de la page, puis leur ajoute, à tous, une propriété CSS (dans l&#39;attribut &quot;style&quot;). Ensuite chaque DIV se voit ajouter dans sa descendance un élément fils P dont l&#39;attribut &quot;style&quot; est aussi modifié avec une propriété CSS. </p>
+<h4 id="question-4-">Question 4)</h4>
+<pre><code>0
+2
+1
+0</code></pre>
+<h4 id="question-5-">Question 5)</h4>
+<pre><code class="language-javascript">toString: {
+            value: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+                <span class="keyword">return</span> <span class="string">'Véhicule '</span> + <span class="keyword">this</span>.licencePlate + 
+                <span class="string">' roule à '</span> + <span class="keyword">this</span>.speed + <span class="string">' km/h. '</span> + 
+                (<span class="keyword">this</span>.infraction ? <span class="string">'Infraction!'</span> : <span class="string">'Ça va, circulez...'</span>);
+            }
+        }</code></pre>
+<h4 id="question-6-">Question 6)</h4>
+<pre><code class="language-javascript"><span class="function"><span class="keyword">function</span> <span class="title">createSpeedCheckBE</span><span class="params">()</span> {</span>
+    <span class="string">'use strict'</span>;
+    <span class="keyword">return</span> Object.create(createSpeedCheck(), {
+        validatePlate: {
+            value: <span class="function"><span class="keyword">function</span><span class="params">(plate)</span> {</span>
+                <span class="keyword">return</span> (plate.match(<span class="regexp">/\d-[A-Z]{3}-\d{3}/</span>) !== <span class="literal">null</span>);
+            }
+        },
+        validateInfraction: {
+            value: <span class="function"><span class="keyword">function</span><span class="params">(speed)</span> {</span>
+                <span class="keyword">this</span>._infraction = (speed &gt; <span class="number">120</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;
+            },
+        }
+    });
+}</code></pre>
+<h4 id="question-7-">Question 7)</h4>
+<pre><code class="language-javascript"><span class="function"><span class="keyword">function</span> <span class="title">createSpeedCheck</span><span class="params">(attributes)</span> {</span>
+    <span class="string">'use strict'</span>;
+    <span class="comment">// Private members</span>
+    attributes = attributes || {};
+    attributes.speed = attributes.speed || <span class="number">0</span>;
+    attributes.licencePlate = attributes.licencePlate || <span class="string">'???'</span>;
+    attributes.infraction = <span class="literal">false</span>;
+    attributes.speedLimit = attributes.speedLimit || <span class="number">130</span>;
+    attributes.platesPattern = attributes.platesPattern || <span class="regexp">/[A-Z]{2}\d{3}[A-Z]{2}/</span>;
+
+    <span class="comment">// Private functions</span>
+    <span class="function"><span class="keyword">function</span> <span class="title">validateInfraction</span><span class="params">(speed)</span> {</span>
+        attributes.infraction = (speed &gt; attributes.speedLimit) ? <span class="literal">true</span> : <span class="literal">false</span>;
+    }
+
+    <span class="function"><span class="keyword">function</span> <span class="title">validatePlate</span><span class="params">(plate)</span> {</span>
+            <span class="keyword">return</span> (plate.match(attributes.platesPattern) !== <span class="literal">null</span>);
+        }
+        <span class="comment">// create and return the new Object with  public functions / getters / setter</span>
+    <span class="keyword">return</span> {
+        toString: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+            <span class="keyword">return</span> <span class="string">'Véhicule '</span> + attributes.licencePlate +
+                <span class="string">' roule à '</span> + attributes.speed + <span class="string">' km/h. '</span> +
+                (attributes.infraction ? <span class="string">'Infraction!'</span> : <span class="string">'Ça va, circulez...'</span>);
+        },
+        isInfraction: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+            <span class="keyword">return</span> attributes.infraction;
+        },
+        getSpeed: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+            <span class="keyword">return</span> attributes.speed;
+        },
+        setSpeed: <span class="function"><span class="keyword">function</span><span class="params">(speed)</span> {</span>
+            <span class="keyword">if</span> (speed &lt; <span class="number">0</span>) {
+                <span class="keyword">throw</span> {
+                    name: <span class="string">'SpeedCheckError'</span>,
+                    message: <span class="string">'Vitesse négative. Vous roulez a contre sens?'</span>
+                };
+            }
+            validateInfraction(speed);
+            attributes.speed = speed;
+        },
+        getLicencePlate: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+            <span class="keyword">return</span> attributes.licencePlate;
+        },
+        setLicencePlate: <span class="function"><span class="keyword">function</span><span class="params">(licencePlate)</span> {</span>
+            <span class="keyword">if</span> (!validatePlate(licencePlate)) {
+                <span class="keyword">throw</span> {
+                    name: <span class="string">'SpeedCheckError'</span>,
+                    message: <span class="string">'Plaque non reconnue. Vous avez de la chance.'</span>
+                };
+            }
+            attributes.licencePlate = licencePlate;
+        }
+    };
+}
+
+<span class="comment">// test FR</span>
+(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="string">'use strict'</span>;
+    <span class="keyword">var</span> testFR = createSpeedCheck();
+    testFR.setSpeed(<span class="number">135</span>);
+    testFR.setLicencePlate(<span class="string">'WD366MD'</span>);
+
+    console.log(testFR.getLicencePlate(), testFR.getSpeed(), testFR.isInfraction()); <span class="comment">// WD366MD, 135, true</span>
+    console.log(testFR.toString()); <span class="comment">// Véhicule WD366MD roule à 135 km/h. Infraction!</span>
+
+    testFR.setSpeed(<span class="number">125</span>);
+
+    console.log(testFR.toString()); <span class="comment">// Véhicule WD366MD roule à 125 km/h. Ça va, circulez...</span>
+
+    <span class="keyword">try</span> {
+        testFR.setLicencePlate(<span class="string">'ABCDEFGH'</span>);
+    } <span class="keyword">catch</span> (e) {
+        console.log(e.name, <span class="string">':'</span>, e.message); <span class="comment">// SpeedCheckError: Plaque non reconnue. Vous avez de la chance.</span>
+    }
+})();
+
+
+
+<span class="function"><span class="keyword">function</span> <span class="title">createBelgianSpeedCheck</span><span class="params">(attributes)</span> {</span>
+    <span class="string">'use strict'</span>;
+    attributes = attributes || {};
+    attributes.speedLimit = <span class="number">120</span>;
+    attributes.platesPattern = <span class="regexp">/\d-[A-Z]{3}-\d{3}/</span>;
+    <span class="keyword">return</span> createSpeedCheck(attributes);
+}
+
+
+<span class="comment">// test BE</span>
+(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="string">'use strict'</span>;
+    <span class="keyword">var</span> testBE = createBelgianSpeedCheck();
+    testBE.setSpeed(<span class="number">125</span>);
+    testBE.setLicencePlate(<span class="string">'3-DFE-456'</span>);
+
+    console.log(testBE.getLicencePlate(), testBE.getSpeed(), testBE.isInfraction()); <span class="comment">// 3-DFE-456, 125, true</span>
+    console.log(testBE.toString()); <span class="comment">// Véhicule 3-DFE-456 roule à 125 km/h. Infraction!</span>
+
+    testBE.setSpeed(<span class="number">115</span>);
+
+    console.log(testBE.toString()); <span class="comment">// Véhicule 3-DFE-456 roule à 115 km/h. Ça va, circulez...</span>
+
+    <span class="keyword">try</span> {
+        testBE.setLicencePlate(<span class="string">'ABCDEFGH'</span>);
+    } <span class="keyword">catch</span> (e) {
+        console.log(e.name, <span class="string">':'</span>, e.message); <span class="comment">// SpeedCheckError: Plaque non reconnue. Vous avez de la chance.</span>
+    }
+})();</code></pre>
+<h2 id="partie-2-angularjs">Partie 2  - AngularJS</h2>
+<h4 id="question-8-">Question 8)</h4>
+<p><code>$http</code> est un service AngularJS qui donne accès à des primitives de communication entre le client et le serveur.</p>
+<h4 id="question-9-">Question 9)</h4>
+<p>Dans AngularJS les directives permettent la création de nouveaux éléments et attributs du DOM. Leur but est d&#39;enrichir le comportement des éléments existants ou de générer dynamiquement du DOM.</p>
+<h4 id="question-10-">Question 10)</h4>
+<pre><code class="language-javascript">angular.module(<span class="string">'MyApp'</span>, [])
+    .factory(<span class="string">'Graph'</span>, [<span class="string">'$window'</span>,
+        <span class="function"><span class="keyword">function</span><span class="params">($window)</span> {</span>
+            <span class="keyword">return</span> $window.Graph;
+        }
+    ])
+    .controller(<span class="string">'MyController'</span>, [<span class="string">'$scope'</span>, <span class="function"><span class="keyword">function</span><span class="params">($scope)</span> {</span>
+        $scope.nodes = [{
+            name: <span class="string">"HTML5"</span>
+        }, {
+            name: <span class="string">"CSS3"</span>
+        }, {
+            name: <span class="string">"JavaScript"</span>
+        }, {
+            name: <span class="string">"SVG"</span>
+        }]
+
+        $scope.links = [{
+            <span class="string">"source"</span>: <span class="number">0</span>,
+            <span class="string">"target"</span>: <span class="number">1</span>
+        }, {
+            <span class="string">"source"</span>: <span class="number">0</span>,
+            <span class="string">"target"</span>: <span class="number">2</span>
+        }, {
+            <span class="string">"source"</span>: <span class="number">0</span>,
+            <span class="string">"target"</span>: <span class="number">3</span>
+        }]
+
+    }])
+    .directive(<span class="string">'myGraph'</span>, [<span class="string">'Graph'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        <span class="keyword">return</span> {
+            restrict: <span class="string">'E'</span>,
+            link: <span class="function"><span class="keyword">function</span><span class="params">(scope, element)</span> {</span>
+                Graph.draw(element[<span class="number">0</span>], scope.nodes, scope.links);
+            }
+        };
+    }]);</code></pre>
+<p>Démo : </p>
+<div ng-app="MyApp">
+    <div ng-controller="MyController">
+        <my-graph></my-graph>
+    </div>
+</div>
+
+
+
+
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+<script>
+    (function(global) {
+    global.Graph = {};
+    global.Graph.draw = function(element, nodes, links) {
+        var width = 400,
+            height = 150;
+        var force = d3.layout.force()
+            .charge(-250)
+            .linkDistance(70)
+            .gravity(0.1)
+            .size([width, height]);
+
+        var svg = d3.select(element).append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        force.nodes(nodes)
+            .links(links)
+            .start();
+
+        var link = svg.selectAll(".link")
+            .data(links)
+            .enter().append("line")
+            .style("stroke-width", 2)
+            .style("stroke", "black");
+
+        var node = svg.selectAll(".node")
+            .data(nodes)
+            .enter().append("g")
+            .call(force.drag);
+
+        node.append("text")
+            .attr("text-anchor", "middle")
+            .attr("dy", ".3em")
+            .attr("class", "node")
+            .text(function(d) {
+                return d.name;
+            });
+
+        force.on("tick", function() {
+            link.attr("x1", function(d) {
+                    return d.source.x;
+                })
+                .attr("y1", function(d) {
+                    return d.source.y;
+                })
+                .attr("x2", function(d) {
+                    return d.target.x;
+                })
+                .attr("y2", function(d) {
+                    return d.target.y;
+                });
+
+            node.attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            });
+        });
+    };
+})(this);
+angular.module('MyApp', [])
+    .factory('Graph', ['$window',
+        function($window) {
+            return $window.Graph;
+        }
+    ])
+    .controller('MyController', ['$scope', function($scope) {
+        $scope.nodes = [{
+            name: "HTML5"
+        }, {
+            name: "CSS3"
+        }, {
+            name: "JavaScript"
+        }, {
+            name: "SVG"
+        }]
+
+        $scope.links = [{
+            "source": 0,
+            "target": 1
+        }, {
+            "source": 0,
+            "target": 2
+        }, {
+            "source": 0,
+            "target": 3
+        }]
+
+    }])
+    .directive('myGraph', ['Graph', function() {
+        return {
+            restrict: 'E',
+            link: function(scope, element) {
+                Graph.draw(element[0], scope.nodes, scope.links);
+            }
+        };
+    }]);
+</script>
+
+
+
+<h2 id="partie-3-base-de-donn-es">Partie 3 - Base de données</h2>
+<h4 id="question-11-">Question 11)</h4>
+<p>Le terme &quot;noSQL&quot; signifie &quot;not only SQL&quot;. Il désigne un ensemble relativement nouveau de systèmes gestions de bases de données qui ne correspondent plus aux propriétés et architectures classiques des basses de données. En particulier les notions de tables, de tuples et de jointures deviennent obsolètes dans ces systèmes. On notera que le terme est très mal choisi car il fait penser a &quot;no SQL&quot; (&quot;pas de SQL&quot;), or ce n&#39;est pas forcement vrai, voir complètement faux dans certaines bases.</p>
+<h4 id="question-12-">Question 12)</h4>
+<p>MongoDB vs. MySQL, ou plus généralement, quand utiliser une base noSQL et quand utiliser une base classique ?
+Tout dépend de l&#39;application visée. Les bases de données classiques excellent quand il s&#39;agit de mettre en relation des données et maintenir la cohérences de ces relations a tout prix. Les bases noSQL relâchent les contraintes d&#39;atomicité et de cohérence au profit de bien meilleurs temps d&#39;accès en lecture et écriture.  Les bases noSQL sont plus adaptés au stockage a gros volume et grosse fréquence de mise ajours pour des données avec pas ou peu d’interconnexions en elles. la facilité de distribution et de réplication est aussi un atout des bases noSQL.</p>
+<h4 id="question-13-">Question 13)</h4>
+<p>Dans Mongoose, un <em>Schema</em> est la représentation objet d&#39;une <em>collection</em> MongoDB. C&#39;est à partir d&#39;une définition de <em>Schema</em> que l&#39;on va pouvoir manipuler des objets JavaScript qui seront la représentation logique de documents dans la base de donnée.   </p>
+<h4 id="question-14-">Question 14)</h4>
+<pre><code class="language-javascript">Project.find({ creator: myUserId }).exec(<span class="function"><span class="keyword">function</span><span class="params">(err, projects)</span>{</span>
+    <span class="keyword">if</span>(err){ <span class="keyword">throw</span> err; }
+    console.log(<span class="string">'Here you go: '</span>, projects);
+});</code></pre>
+<h2 id="partie-4-css">Partie 4 - CSS</h2>
+<h4 id="question-15-">Question 15)</h4>
+<p>SASS est un langage de génération dynamique de feuilles de styles (CSS).</p>
+<h4 id="question-16-">Question 16)</h4>
+<p><code>@font-face</code> est une règle CSS qui permet de faire télécharger des polices au navigateur et de les utiliser dans le style de la page pour en faire le rendu. </p>
+<h4 id="question-17-">Question 17)</h4>
+<pre><code class="language-CSS">body.home .media-unit {
+  border: 1px solid #1c6389;
+  background-color: #FCF3E9;
+}
+
+body.home .media-unit .right {
+  border-left: 1px solid #1c6389;
+}
+
+body.home .media-unit .right h1 {
+  font-size: 20px;
+}</code></pre>
+
+</div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <footer>
+            <div class="container">
+	<p>&copy; Yoann Pigné 2014</p>
+</div>
+
+        </footer>
+
+
+        <script src="../../scripts/dbd26eaf.vendor.js"></script>
+
+        
+            
+            <script src="../../scripts/updateHighlightClassNames.js"></script>
+            <script>
+                updateHighlightClassNames();
+            </script>
+            <script src="../../bower_components/highlightjs/highlight.pack.js"></script>
+            <script>
+                hljs.initHighlightingOnLoad();
+            </script>
+        
+        
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-20560642-1');ga('send','pageview');
+        </script>
+
+        
+        <script src="../../scripts/20bdd8fe.plugins.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
