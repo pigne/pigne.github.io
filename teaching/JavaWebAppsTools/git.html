@@ -307,7 +307,7 @@ nothing to commit (working directory clean)</code></pre>
 <section>
 <h2 id="start-tracking-a-file">Start tracking a file</h2>
 <ul>
-<li>Start editing a file... Say <code>README.md</code></li>
+<li>Start editing a file... Say <code>AUTHORS</code></li>
 <li>Check the status with <code>git status</code></li>
 </ul>
 <pre><code class="language-bash">$ git status
@@ -315,18 +315,18 @@ On branch master
 Initial commit
 Untracked files:
   (use <span class="string">"git add &lt;file&gt;..."</span> to include <span class="keyword">in</span> what will be committed)
-    README.md
+    AUTHORS
 nothing added to commit but untracked files present (use <span class="string">"git add"</span> to track)</code></pre>
 <ul>
 <li>Start tracking with <code>git add</code></li>
 </ul>
-<pre><code>$ git add README.md
+<pre><code>$ git add AUTHORS
 $ git status
 On branch master
 Initial commit
 Changes to be committed:
   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
-    new file:   README.md</code></pre>
+    new file:   AUTHORS</code></pre>
 
 </section>
 <section>
@@ -413,8 +413,8 @@ $ git <span class="built_in">help</span> log</code></pre>
 
 </section>
 <section>
-<h2 id="undoing-commits-and-unstaging">Undoing commits and Unstaging</h2>
-<p><em>So you committed but it does not compile? Or maybe you pushed  a &quot;.class&quot; file? This is bad...</em></p>
+<h2 id="unstage-files">Unstage files</h2>
+<p><em>You did not commit but messed around with the working copy and the stage.</em> </p>
 <ul>
 <li><p>Unstage a file that was not already in the repository:</p>
 <pre><code class="language-bash">$ git rm --cached &lt;file&gt;</code></pre>
@@ -422,7 +422,24 @@ $ git <span class="built_in">help</span> log</code></pre>
 <li><p>Unstage a file that already exists: </p>
 <pre><code class="language-bash">$ git reset HEAD &lt;file&gt;</code></pre>
 </li>
+<li><p>forget unstaged modifications and revert to unmodified version</p>
+<pre><code class="language-bash">$ git checkout  HEAD -- &lt;file&gt;</code></pre>
+</li>
 </ul>
+
+</section>
+<section>
+<h2 id="moving-through-files-states">Moving through files states</h2>
+<p class="text-center figure">
+<img src="images/fileStates.svg" alt="Files States">
+</p>
+
+
+
+</section>
+<section>
+<h2 id="undo-commits">Undo commits</h2>
+<p><em>So you committed but it does not compile? Or maybe you committed  a &quot;.class&quot; file? This is bad...</em></p>
 <ul>
 <li><p>Undo last commit but keep your modifications in the working directory : </p>
 <pre><code class="language-bash">$ git reset HEAD~<span class="number">1</span></code></pre>
@@ -468,7 +485,7 @@ origin    https://github.com/pigne/CountDownWebApp.git (push)</code></pre>
 <li><p><code>git pull</code> will do several steps :</p>
 <ul>
 <li>fetch from a remote</li>
-<li>merge the remote&#39;s master to the local master and this affect the <strong>working directory</strong></li>
+<li>merge the remote&#39;s master to the local master.  This might affect the <strong>working directory</strong></li>
 </ul>
 </li>
 </ul>
@@ -523,7 +540,7 @@ Branches are fast and easy to merge. </p>
 </section>
 <section>
 <h2 id="commits-network-representation">Commits&#39; Network Representation</h2>
-<p>Commit in Git are identified by a unique number (check-sum) and one of more likes to <strong>parent commits</strong>.</p>
+<p>Commit in Git are identified by a unique number (check-sum) and one of more links to <strong>parent commits</strong>.</p>
 <p class="text-center  wide-image noborder-image">
 <img src="images/commitsNetwork.svg" alt="Commits Linked with their parents">
 </p>
@@ -548,8 +565,9 @@ Branches are fast and easy to merge. </p>
 <h2 id="working-in-branches">Working in Branches</h2>
 <p><code>git checkout &lt;branch-name&gt;</code> moves the <code>HEAD</code> to the given branch and puts the snapshot of that commit into the <strong>working directory</strong>.</p>
 <ul>
-<li>A commit on a branch does not change the others.</li>
-<li>The <code>HEAD</code> pointer moves with the current branch when occurs on it.</li>
+<li>A commit on a branch moves that branch to the new commit</li>
+<li>A commit on a branch does not change the others branches.</li>
+<li>The special  pointer <code>HEAD</code> moves with the current branch when commits occur on it.</li>
 </ul>
 <pre><code class="language-bach">$ git checkout cli_branch  # moves HEAD
 $ # modify some_file
@@ -565,10 +583,10 @@ $ git commit # moves cli_branch &amp; HEAD</code></pre>
 <section>
 <h2 id="diverging-history">Diverging History</h2>
 <p>Committing from various branches makes the history of the repository diverge.</p>
-<pre><code class="language-bash">$ git checkout master 
+<pre><code class="language-bash">$ git checkout master  <span class="comment"># moves HEAD</span>
 $ <span class="comment"># modify some_file</span>
 $ git add some_file
-$ git commit</code></pre>
+$ git commit <span class="comment"># moves master &amp; HEAD</span></code></pre>
 <p class="text-center  wide-image     noborder-image">
 <img src="images/diverged.svg" alt="Diverging History">
 </p>
