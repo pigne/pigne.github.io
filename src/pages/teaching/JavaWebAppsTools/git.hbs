@@ -326,7 +326,7 @@ See `git help status`.
 {{#markdown}}
 ## Start tracking a file
 
-- Start editing a file... Say `README.md`
+- Start editing a file... Say `AUTHORS`
 - Check the status with `git status`
 
 ```bash
@@ -335,20 +335,20 @@ On branch master
 Initial commit
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	README.md
+	AUTHORS
 nothing added to commit but untracked files present (use "git add" to track)  
 ```
 
 - Start tracking with `git add`
 
 ```
-$ git add README.md
+$ git add AUTHORS
 $ git status
 On branch master
 Initial commit
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-	new file:   README.md
+	new file:   AUTHORS
 ```
 
 {{/markdown}}
@@ -476,9 +476,9 @@ Better use GUI to see git history:
 </section>
 <section>
 {{#markdown}}
-## Undoing commits and Unstaging
+## Unstage files
 
-*So you committed but it does not compile? Or maybe you pushed  a ".class" file? This is bad...*
+*You did not commit but messed around with the working copy and the stage.* 
 
 - Unstage a file that was not already in the repository:
 ```bash
@@ -490,6 +490,30 @@ $ git rm --cached <file>
 $ git reset HEAD <file>
 ```
 
+- forget unstaged modifications and revert to unmodified version
+```bash
+$ git checkout  HEAD -- <file>
+```
+
+{{/markdown}}
+</section>
+<section>
+{{#markdown}}
+
+## Moving through files states
+<p class="text-center figure">
+![Files States](images/fileStates.svg)
+</p>
+
+
+{{/markdown}}
+</section>
+<section>
+{{#markdown}}
+
+## Undo commits
+
+*So you committed but it does not compile? Or maybe you committed  a ".class" file? This is bad...*
 
 - Undo last commit but keep your modifications in the working directory : 
 ```bash
@@ -550,7 +574,7 @@ Add a remote with `git remote add [shortname] [url]`
 
 - `git pull` will do several steps :
 	- fetch from a remote
-	- merge the remote's master to the local master and this affect the **working directory**
+	- merge the remote's master to the local master.  This might affect the **working directory**
 
 
 {{/markdown}}
@@ -632,7 +656,7 @@ Branches are fast and easy to merge.
 {{#markdown}}
 
 ## Commits' Network Representation 
-Commit in Git are identified by a unique number (check-sum) and one of more likes to **parent commits**.
+Commit in Git are identified by a unique number (check-sum) and one of more links to **parent commits**.
 
 <p class="text-center  wide-image noborder-image">
 ![Commits Linked with their parents](images/commitsNetwork.svg)
@@ -663,8 +687,9 @@ A branch is a simple pointer to one of the commits in the repository.
 ## Working in Branches
 `git checkout <branch-name>` moves the `HEAD` to the given branch and puts the snapshot of that commit into the **working directory**.
 
-- A commit on a branch does not change the others.
-- The `HEAD` pointer moves with the current branch when occurs on it.
+- A commit on a branch moves that branch to the new commit
+- A commit on a branch does not change the others branches.
+- The special  pointer `HEAD` moves with the current branch when commits occur on it.
 
 ```bach
 $ git checkout cli_branch  # moves HEAD
@@ -685,10 +710,10 @@ $ git commit # moves cli_branch & HEAD
 ##Diverging History
 Committing from various branches makes the history of the repository diverge.
 ```bash
-$ git checkout master 
+$ git checkout master  # moves HEAD
 $ # modify some_file
 $ git add some_file
-$ git commit
+$ git commit # moves master & HEAD
 ```
 
 <p class="text-center  wide-image	 noborder-image">
