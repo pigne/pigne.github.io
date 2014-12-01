@@ -1,0 +1,170 @@
+---
+title: "Continuous Integration"
+subsection: "Java Web Apps Tools"
+order: 4
+layout: lecture.hbs
+description:
+- "Basics in Continuous Integration"
+- "CI for Web apps with Jenkins/Eclipse"
+---
+
+
+<section>
+{{#markdown}}
+
+
+- *Integration*: action of putting together the various parts of a project in order to produce a full and functional version of the project. 
+
+- *Continuous Integration* :  Development practice that aims at integrating a team project as often as possible (several times a day) in order  to detect integration errors as soon as possible and  minimize  the overall integration effort.
+
+- The term "Continuous integration" comes from the *Express Programming* development process. 
+
+
+
+{{/markdown}}
+</section>
+<section>
+{{#markdown}}
+##Unit Tests &#8800; Integration Tests
+
+### Unit Tests
+- Test the smallest pieces of software separately.
+- Each feature should have several tests (for different possible inputs).
+- Rapidly identify implementation problems.
+- Easy to implement/run/update.
+
+### Integration Tests
+- Test the global behavior of the system (when all the pieces work together).
+- The test should occur in an execution environment similar to the production environment (faking web browser interaction with user, rendering pages, feeling forms, Database interactions, ...)
+- Rapidly identify conceptual/organizational  problems.
+- Complicated to setup and resource consuming.
+{{/markdown}}
+</section>
+<section>
+{{#markdown}}
+
+##Continuous Integration Tools are useful for
+- Running Tests : Unit Tests, Integration Tests
+- Multi-platform: Testing and Builds
+- Reporting: Tests,  Code Quality
+
+## Many Tools available
+
+- [Jenkins](http://jenkins-ci.org/)
+- [TeamCity](https://www.jetbrains.com/teamcity/)
+- [Cruise Control](http://cruisecontrol.sourceforge.net/)
+- ...
+
+
+{{/markdown}}
+</section>
+<section>
+{{#markdown}}
+
+##Setting up Continuous Integration
+
+We consider the steps in order to set up a CI framework for a WebApp project using Maven and Eclipse. 
+
+- Unit Tests  with JUnit
+- Run unit Tests with Eclipse and Maven
+- Integration Tests with Selenium (web browser automation) and Maven
+- Setting up Code Quality Control tools (Code Coverage) in Maven
+- Setting up Jenkins to sync with repository and show builds, tests, and code quality reports.
+
+
+
+{{/markdown}}
+</section>
+<section>
+{{#markdown}}
+
+
+## Building Continuous Integration
+
+We will be using the *CountDownWebApp*
+
+
+### Install/update the example App
+
+```sh
+## Clone a new copy 
+git clone https://github.com/pigne/CountDownWebApp.git
+cd CountDownWebApp
+## Or update it
+git fetch
+```
+
+###Follow the `ci` branch
+
+```sh
+git checkout ci 
+```
+
+###Re-import 
+Import in Eclipse as a Maven Project, not a general project.
+
+{{/markdown}}
+</section>
+<section>
+{{#markdown}}
+
+##Unit Tests
+
+```sh 
+git checkout unit-tests 
+```
+
+- update `JUnit` dependency
+- update Eclipse
+- modified the source (externalized date computations)
+- add Unit Tests in `src/test/java/*UnitTest.java`
+- add the `surefire` plugin with filtered selection
+- run tests in Maven (`mvn test`)
+- run tests in Eclipse (run as... JUnit, [infinitest](http://infinitest.github.io/))
+
+{{/markdown}}
+</section>
+<section>
+{{#markdown}}
+
+##Integration Tests 
+
+with Selenium (web browser automation) and Maven
+
+```sh 
+git checkout integration-tests
+```
+
+- add `Selenium` as a dependency in `pom.xml`
+- update Eclipse
+- add Integration tests in `src/test/java/*IntegrationTest.java`
+- shutdown tomcat
+- modify tomcat's plugin to :
+	- directly use the produced `war` file
+	- run only during the integration tests
+- use `failsafe` plugin for integration tests in Maven
+
+
+
+{{/markdown}}
+</section>
+<section>
+{{#markdown}}
+
+## Jenkins and Code Coverage
+
+```sh 
+git checkout jenkins
+```
+
+- install Jenkins:
+```sh
+wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+```
+- configure Jenkins (http://localhost:8080/)
+- Install a code coverage plugin that works...
+{{/markdown}}
+</section>
