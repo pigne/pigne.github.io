@@ -169,64 +169,38 @@
         <div class="col-sx-12">
             
 
+<h2 id="travail-demand-">Travail demandé</h2>
+<p>On désire réaliser une application qui permet à un utilisateur, sans qu&#39;il se connecte, de gérer différents compteurs de temps. Il doit pouvoir ajouter, modifier ou supprimer des compteurs.</p>
+<p>Pour chaque compteur il doit pouvoir :</p>
+<ul>
+<li>définir un titre pour ce compteur</li>
+<li>définir la langue à partir d&#39;une liste proposée, qui permet de définir une locale</li>
+<li>définir une échéance dans le temps pour ce compteur (date et heure, dans la locale définie par la langue)</li>
+</ul>
+<p>Un compteur, une fois défini avec sa langue et son échéance,  s&#39;affiche sur la page et se met à jour, chaque seconde. La mise à jour du compteur est effectuée sur le serveur, seuls la nouvelle valeur est envoyée en JSON. Pour éviter que le client ne fasse trop de requêtes de mise à jours sur le serveur, on a recours à un nouveau mode de communication : les <strong>WebSockets</strong> qui permettent au serveur d&#39;envoyer régulièrement des informations au client sans que celui ci n&#39;ai besoin d&#39;en faire la demande à chaque fois. </p>
+<p>Les utilisateurs sont identifiés par des cookies de sessions (pas d&#39;authentification, pas de login). Un utilisateur ayant définit des compteurs dans le passé doit pouvoir les récupérer plus tard dans la mesure ou il se connecte avec le même navigateur. </p>
+<h2 id="d-veloppement">Développement</h2>
+<p>L&#39;application doit être développée selon les spécifications de Java EE. Tous les calculs de temps sont fait coté serveur. Il est possible d&#39;utiliser une base de données pour stoker les compteurs. Un stockage en mémoire du serveur est néanmoins toléré. </p>
+<p>Le code est &quot;versionné&quot; avec GIT et hébergé sur GitHub (ou autre) et le projet est construit grâce a Maven.</p>
+<h2 id="tests">Tests</h2>
+<p>Des tests Unitaires vérifient le fonctionnement normal de chaque composant. Des testes d&#39;intégration évaluent le comportement de l&#39;application entière. Ces tests sont automatisés et doivent pouvoir s&#39;exécuter sur Jenkins.</p>
+<h2 id="mise-en-production">Mise en production</h2>
+<p>On utilisera un PaaS (Heroku) et autres ressources gratuites pour la mise en production de l&#39;application. </p>
+<h2 id="travail-en-equipe">Travail en Equipe</h2>
+<p>Chaque équipe devra s&#39;organizer pour que les différents composants de l&#39;application soient développés en parallèle. Il est nécéssaire de faire des sous-équipes.</p>
+<p>Chaque équipe travaille dans son propre dépôt git.  Les sous-équipes sont libres de créer autant de branches que nécessaire.</p>
+<h2 id="github-ou-autre">GitHub ou autre</h2>
+<p>Tout le monde doit avoir un compte proprement configuré pour que les commits soient signés. Les commits non signés ne seront crédités a personne. </p>
+<p>Chaque équipe désigne un référent (ce n&#39;est pas un chef) qui se charge de créer le dépôt, de donner les droits aux membres de l&#39;équipe et me donner accès au dépôt.</p>
+<h2 id="evaluation">Evaluation</h2>
+<h3 id="note-individuelle">Note individuelle</h3>
+<p>Puisque tous les commits sont signés, la note sera basée sur les contributions de chacun dans le dépôt grâce à l&#39;étude des logs. La note individuelle est sur 20 et représente le travail individuel de chacun.</p>
+<h3 id="bonification-de-groupe">Bonification de groupe</h3>
+<p>Le groupe qui aura fourni le meilleur travail collectif va gagner. Les membres du groupe gagnant verront leur note augmentée de 5 points.  Le choix de la meilleur équipe est basé sur les fonctionnalités développées dans le projet, sur la qualité de l&#39;organisation de l&#39;équipe (comment le travail a été partagé, comment les conflits/problèmes ont été gérés),  de la qualité du code et des tests.</p>
+<h2 id="deadline">Deadline</h2>
+<p> <strong><em>Lundi 8 décembre 2014, 12h30</em></strong></p>
 
 
-##Travail demandé
-
-On désire réaliser une application qui permet à un utilisateur, sans qu'il se connecte, de gérer différents compteurs de temps. Il doit pouvoir ajouter, modifier ou supprimer des compteurs.
-
-Pour chaque compteur il doit pouvoir :
-- définir un titre pour ce compteur
-- définir la langue à partir d'une liste proposée, qui permet de définir une locale
-- définir une échéance dans le temps pour ce compteur (date et heure, dans la locale définie par la langue)
-
-Un compteur, une fois défini avec sa langue et son échéance,  s'affiche sur la page et se met à jour, chaque seconde. La mise à jour du compteur est effectuée sur le serveur, seuls la nouvelle valeur est envoyée en JSON. Pour éviter que le client ne fasse trop de requêtes de mise à jours sur le serveur, on a recours à un nouveau mode de communication : les **WebSockets** qui permettent au serveur d'envoyer régulièrement des informations au client sans que celui ci n'ai besoin d'en faire la demande à chaque fois. 
-
-Les utilisateurs sont identifiés par des cookies de sessions (pas d'authentification, pas de login). Un utilisateur ayant définit des compteurs dans le passé doit pouvoir les récupérer plus tard dans la mesure ou il se connecte avec le même navigateur. 
-
-## Développement
-
-L'application doit être développée selon les spécifications de Java EE. Tous les calculs de temps sont fait coté serveur. Il est possible d'utiliser une base de données pour stoker les compteurs. Un stockage en mémoire du serveur est néanmoins toléré. 
-
-Le code est "versionné" avec GIT et hébergé sur GitHub (ou autre) et le projet est construit grâce a Maven.
-
-
-## Tests
-
-Des tests Unitaires vérifient le fonctionnement normal de chaque composant. Des testes d'intégration évaluent le comportement de l'application entière. Ces tests sont automatisés et doivent pouvoir s'exécuter sur Jenkins.
-
-
-## Mise en production
-
-On utilisera un PaaS (Heroku) et autres ressources gratuites pour la mise en production de l'application. 
-
-##Travail en Equipe 
-
-Chaque équipe devra s'organizer pour que les différents composants de l'application soient développés en parallèle. Il est nécéssaire de faire des sous-équipes.
-
-Chaque équipe travaille dans son propre dépôt git.  Les sous-équipes sont libres de créer autant de branches que nécessaire.
-
-
-## GitHub ou autre
-
-Tout le monde doit avoir un compte proprement configuré pour que les commits soient signés. Les commits non signés ne seront crédités a personne. 
-
-Chaque équipe désigne un référent (ce n'est pas un chef) qui se charge de créer le dépôt, de donner les droits aux membres de l'équipe et me donner accès au dépôt.
-
-## Evaluation
-
-### Note individuelle
-
-Puisque tous les commits sont signés, la note sera basée sur les contributions de chacun dans le dépôt grâce à l'étude des logs. La note individuelle est sur 20 et représente le travail individuel de chacun.
-
-
-### Bonification de groupe
-
-Le groupe qui aura fourni le meilleur travail collectif va gagner. Les membres du groupe gagnant verront leur note augmentée de 5 points.  Le choix de la meilleur équipe est basé sur les fonctionnalités développées dans le projet, sur la qualité de l'organisation de l'équipe (comment le travail a été partagé, comment les conflits/problèmes ont été gérés),  de la qualité du code et des tests.
-
-## Deadline
-
- ***Lundi 8 décembre 2014, 12h30***
 
         </div>
     </div>
