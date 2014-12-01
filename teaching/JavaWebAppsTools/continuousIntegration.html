@@ -1,0 +1,318 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Continuous Integration</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="../../favicon.ico" />
+
+        <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../images/apple-touch-icon-152x152-precomposed.png">
+        <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../images/apple-touch-icon-144x144-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../images/apple-touch-icon-120x120-precomposed.png">
+        <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../images/apple-touch-icon-114x114-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≥ 7: -->
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../../images/apple-touch-icon-76x76-precomposed.png">
+        <!-- For the iPad mini and the first- and second-generation iPad on iOS ≤ 6: -->
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../images/apple-touch-icon-72x72-precomposed.png">
+        <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+        <link rel="apple-touch-icon-precomposed" href="../../apple-touch-icon-precomposed.png">
+
+
+
+		<link rel="stylesheet" href="../../bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="../../bower_components/reveal.js/css/theme/beige.css" id="theme">
+        
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" media="screen" href="../../bower_components/highlightjs/styles/default.css">
+        <link rel="stylesheet" media="projection, print" href="../../bower_components/highlightjs/styles/tomorrow.css">
+
+		<link rel="stylesheet" href="../../styles/1b711f92.lecture.css"/>
+        
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+                document.write( '<link rel="stylesheet" href="../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+	<div ><a id="back"href="."></a></div>
+	
+    <div class="reveal">
+    	<div class="slides">
+		<!-- ==== SLIDE ==== -->
+		<section id="home">
+			<h1>Continuous Integration</h1>
+
+			<ul class="unstyled" style="border-left:2px solid #666; padding-left:2ex; margin: 30px">
+			
+			<li class="x2"><em>Basics in Continuous Integration</em></li>
+		
+			<li class="x2"><em>CI for Web apps with Jenkins/Eclipse</em></li>
+		
+		</ul>
+		<p class="x2 bottom-right">
+		            Le Havre University
+		            <br>
+		            <em>Yoann Pigné</em>
+		            <br>2014
+		        </p>
+		</section>
+
+    	
+
+
+<section>
+<ul>
+<li><p><em>Integration</em>: action of putting together the various parts of a project in order to produce a full and functional version of the project. </p>
+</li>
+<li><p><em>Continuous Integration</em> :  Development practice that aims at integrating a team project as often as possible (several times a day) in order  to detect integration errors as soon as possible and  minimize  the overall integration effort.</p>
+</li>
+<li><p>The term &quot;Continuous integration&quot; comes from the <em>Express Programming</em> development process. </p>
+</li>
+</ul>
+
+</section>
+<section>
+<h2 id="unit-tests-8800-integration-tests">Unit Tests &#8800; Integration Tests</h2>
+<h3 id="unit-tests">Unit Tests</h3>
+<ul>
+<li>Test the smallest pieces of software separately.</li>
+<li>Each feature should have several tests (for different possible inputs).</li>
+<li>Rapidly identify implementation problems.</li>
+<li>Easy to implement/run/update.</li>
+</ul>
+<h3 id="integration-tests">Integration Tests</h3>
+<ul>
+<li>Test the global behavior of the system (when all the pieces work together).</li>
+<li>The test should occur in an execution environment similar to the production environment (faking web browser interaction with user, rendering pages, feeling forms, Database interactions, ...)</li>
+<li>Rapidly identify conceptual/organizational  problems.</li>
+<li>Complicated to setup and resource consuming.</li>
+</ul>
+
+</section>
+<section>
+<h2 id="continuous-integration-tools-are-useful-for">Continuous Integration Tools are useful for</h2>
+<ul>
+<li>Running Tests : Unit Tests, Integration Tests</li>
+<li>Multi-platform: Testing and Builds</li>
+<li>Reporting: Tests,  Code Quality</li>
+</ul>
+<h2 id="many-tools-available">Many Tools available</h2>
+<ul>
+<li><a href="http://jenkins-ci.org/">Jenkins</a></li>
+<li><a href="https://www.jetbrains.com/teamcity/">TeamCity</a></li>
+<li><a href="http://cruisecontrol.sourceforge.net/">Cruise Control</a></li>
+<li>...</li>
+</ul>
+
+</section>
+<section>
+<h2 id="setting-up-continuous-integration">Setting up Continuous Integration</h2>
+<p>We consider the steps in order to set up a CI framework for a WebApp project using Maven and Eclipse. </p>
+<ul>
+<li>Unit Tests  with JUnit</li>
+<li>Run unit Tests with Eclipse and Maven</li>
+<li>Integration Tests with Selenium (web browser automation) and Maven</li>
+<li>Setting up Code Quality Control tools (Code Coverage) in Maven</li>
+<li>Setting up Jenkins to sync with repository and show builds, tests, and code quality reports.</li>
+</ul>
+
+</section>
+<section>
+<h2 id="building-continuous-integration">Building Continuous Integration</h2>
+<p>We will be using the <em>CountDownWebApp</em></p>
+<h3 id="install-update-the-example-app">Install/update the example App</h3>
+<pre><code class="language-sh">## Clone a new copy 
+git clone https://github.com/pigne/CountDownWebApp.git
+cd CountDownWebApp
+## Or update it
+git fetch</code></pre>
+<h3 id="follow-the-ci-branch">Follow the <code>ci</code> branch</h3>
+<pre><code class="language-sh">git checkout ci</code></pre>
+<h3 id="re-import">Re-import</h3>
+<p>Import in Eclipse as a Maven Project, not a general project.</p>
+
+</section>
+<section>
+<h2 id="unit-tests">Unit Tests</h2>
+<pre><code class="language-sh">git checkout unit-tests</code></pre>
+<ul>
+<li>update <code>JUnit</code> dependency</li>
+<li>update Eclipse</li>
+<li>modified the source (externalized date computations)</li>
+<li>add Unit Tests in <code>src/test/java/*UnitTest.java</code></li>
+<li>add the <code>surefire</code> plugin with filtered selection</li>
+<li>run tests in Maven (<code>mvn test</code>)</li>
+<li>run tests in Eclipse (run as... JUnit, <a href="http://infinitest.github.io/">infinitest</a>)</li>
+</ul>
+
+</section>
+<section>
+<h2 id="integration-tests">Integration Tests</h2>
+<p>with Selenium (web browser automation) and Maven</p>
+<pre><code class="language-sh">git checkout integration-tests</code></pre>
+<ul>
+<li>add <code>Selenium</code> as a dependency in <code>pom.xml</code></li>
+<li>update Eclipse</li>
+<li>add Integration tests in <code>src/test/java/*IntegrationTest.java</code></li>
+<li>shutdown tomcat</li>
+<li>modify tomcat&#39;s plugin to :<ul>
+<li>directly use the produced <code>war</code> file</li>
+<li>run only during the integration tests</li>
+</ul>
+</li>
+<li>use <code>failsafe</code> plugin for integration tests in Maven</li>
+</ul>
+
+</section>
+<section>
+<h2 id="jenkins-and-code-coverage">Jenkins and Code Coverage</h2>
+<pre><code class="language-sh">git checkout jenkins</code></pre>
+<ul>
+<li>install Jenkins:<pre><code class="language-sh">wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+sudo sh -c &#39;echo deb http://pkg.jenkins-ci.org/debian binary/ &gt; /etc/apt/sources.list.d/jenkins.list&#39;
+sudo apt-get update
+sudo apt-get install jenkins</code></pre>
+</li>
+<li>configure Jenkins (<a href="http://localhost:8080/">http://localhost:8080/</a>)</li>
+<li>Install a code coverage plugin that works...</li>
+</ul>
+
+</section>
+
+    	</div>
+	</div>
+
+	<script src="../../scripts/b04b0310.lecture-all.js"></script>
+
+	<script>
+    updateHighlightClassNames();
+	(function() {
+            var list = document.querySelectorAll('*[data-src]');
+            for (var i = 0; i < list.length; i++) {
+                var p = document.createElement('p')
+                var a = document.createElement('a')
+                var img = document.createElement('img')
+                a.setAttribute('href', list[i].getAttribute('data-src'))
+                img.setAttribute('src', '/images/codepen.png')
+                img.setAttribute('alt', 'codepen')
+                p.setAttribute('class', 'codepen')
+                a.appendChild(img)
+                p.appendChild(a)
+                list[i].appendChild(p)
+            }
+        })();
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+
+                width: 1400,
+                height: 1050,
+
+                // Factor of the display size that should remain empty around the content
+                margin: 0.01,
+
+                minScale: 0.1,
+                maxScale: 3.0,
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                        { src: '../../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                        { src: '../../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: '../../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: '../../bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                        { src: '../../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                        { src: '../../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ],
+                // Display controls in the bottom right corner
+                controls: true,
+
+                // Display a presentation progress bar
+                progress: true,
+
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Push each slide change to the browser history
+                history: true,
+
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+
+                // Change the presentation direction to be RTL
+                rtl: false,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition style
+                transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Transition speed
+                transitionSpeed: 'fast', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+               	parallaxBackgroundImage: '../../images/lecture-bg.svg', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+               	parallaxBackgroundSize: '4995px 1350px' // CSS syntax, e.g. "2100px 900px"
+        });
+	</script>
+	
+</body>
+</html>

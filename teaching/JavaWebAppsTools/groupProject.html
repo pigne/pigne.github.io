@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Web Frameworks Lab Session 1</title>
+        <title>Projet de Groupe</title>
         <meta name="description" content="Yoann Pigné's personal
                       website. Researcher in computer science, Networks,  dynamic
                       graphs, Mobile ad hoc Networks, Vehicular Ad hoc
@@ -36,11 +36,6 @@
 
 
         <link rel="stylesheet" href="../../styles/d94e83c8.main.css"/>
-        
-            
-                 <link rel="stylesheet" media="screen" href="../../bower_components/highlightjs/styles/default.css">
-                <link rel="stylesheet" media="projection, print" href="../../bower_components/highlightjs/styles/tomorrow.css">
-        
         
 
     </head>
@@ -154,15 +149,15 @@
 
 <div class="jumbotron">
     <div class="container">
-        <h1>Web Frameworks Lab Session 1 <small></small></h1>
+        <h1>Projet de Groupe <small></small></h1>
         
             <ul class="text-right list-unstyled">
                 
-                <li>Express</li>
+                <li>Sujet du Projet de Groupe</li>
                 
-                <li>MongoDB</li>
+                <li>Master 2 Matis, option CAW</li>
                 
-                <li>Mongoose</li>
+                <li>Le Havre 2014</li>
                 
             </ul>
         
@@ -174,28 +169,65 @@
         <div class="col-sx-12">
             
 
-<div class="md">
-<p>Create a first Server-Side WebApp to handle CRUD with Real Estate Adverts. We will use the form created earlier  as well as the d3.js map. </p>
-<h3 id="mondodb">MondoDB</h3>
-<p>First, <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">install MongoDB on Ubuntu</a>.</p>
-<p>MongoDB does have any user interface (only a shell). We have to rely on other tools to do administration on the database (like PHPMyAdmin for MySQL). </p>
-<p>Try <a href="http://robomongo.org/">robomongo</a> or something else?</p>
-<h3 id="mongoose">Mongoose</h3>
-<p>Mongoose is a node package installed with npm. We use the Yeoman generator to scaffold a new project. </p>
-<pre><code class="language-javascript">npm install -g generator-mongoose # sudo?
-mkdir serverSideAdverts
-cd serverSideAdverts
-yo mongoose # answer NO to the question about Heroku</code></pre>
-<h3 id="a-basic-server-side-web-app">A Basic server side Web App</h3>
-<p>Use this Mongoose base project to create a simple application that can be used to :</p>
-<ul>
-<li>Create new Real Estates adverts based on the form and the map, we did earlier. The <a href="http://www.embeddedjs.com/">ejs</a> template system or any other can be used.</li>
-<li>List all the adverts in an array;</li>
-<li>modify an advert.</li>
-<li>delete an advert.</li>
-</ul>
 
-</div>
+
+##Travail demandé
+
+On désire réaliser une application qui permet à un utilisateur, sans qu'il se connecte, de gérer différents compteurs de temps. Il doit pouvoir ajouter, modifier ou supprimer des compteurs.
+
+Pour chaque compteur il doit pouvoir :
+- définir un titre pour ce compteur
+- définir la langue à partir d'une liste proposée, qui permet de définir une locale
+- définir une échéance dans le temps pour ce compteur (date et heure, dans la locale définie par la langue)
+
+Un compteur, une fois défini avec sa langue et son échéance,  s'affiche sur la page et se met à jour, chaque seconde. La mise à jour du compteur est effectuée sur le serveur, seuls la nouvelle valeur est envoyée en JSON. Pour éviter que le client ne fasse trop de requêtes de mise à jours sur le serveur, on a recours à un nouveau mode de communication : les **WebSockets** qui permettent au serveur d'envoyer régulièrement des informations au client sans que celui ci n'ai besoin d'en faire la demande à chaque fois. 
+
+Les utilisateurs sont identifiés par des cookies de sessions (pas d'authentification, pas de login). Un utilisateur ayant définit des compteurs dans le passé doit pouvoir les récupérer plus tard dans la mesure ou il se connecte avec le même navigateur. 
+
+## Développement
+
+L'application doit être développée selon les spécifications de Java EE. Tous les calculs de temps sont fait coté serveur. Il est possible d'utiliser une base de données pour stoker les compteurs. Un stockage en mémoire du serveur est néanmoins toléré. 
+
+Le code est "versionné" avec GIT et hébergé sur GitHub (ou autre) et le projet est construit grâce a Maven.
+
+
+## Tests
+
+Des tests Unitaires vérifient le fonctionnement normal de chaque composant. Des testes d'intégration évaluent le comportement de l'application entière. Ces tests sont automatisés et doivent pouvoir s'exécuter sur Jenkins.
+
+
+## Mise en production
+
+On utilisera un PaaS (Heroku) et autres ressources gratuites pour la mise en production de l'application. 
+
+##Travail en Equipe 
+
+Chaque équipe devra s'organizer pour que les différents composants de l'application soient développés en parallèle. Il est nécéssaire de faire des sous-équipes.
+
+Chaque équipe travaille dans son propre dépôt git.  Les sous-équipes sont libres de créer autant de branches que nécessaire.
+
+
+## GitHub ou autre
+
+Tout le monde doit avoir un compte proprement configuré pour que les commits soient signés. Les commits non signés ne seront crédités a personne. 
+
+Chaque équipe désigne un référent (ce n'est pas un chef) qui se charge de créer le dépôt, de donner les droits aux membres de l'équipe et me donner accès au dépôt.
+
+## Evaluation
+
+### Note individuelle
+
+Puisque tous les commits sont signés, la note sera basée sur les contributions de chacun dans le dépôt grâce à l'étude des logs. La note individuelle est sur 20 et représente le travail individuel de chacun.
+
+
+### Bonification de groupe
+
+Le groupe qui aura fourni le meilleur travail collectif va gagner. Les membres du groupe gagnant verront leur note augmentée de 5 points.  Le choix de la meilleur équipe est basé sur les fonctionnalités développées dans le projet, sur la qualité de l'organisation de l'équipe (comment le travail a été partagé, comment les conflits/problèmes ont été gérés),  de la qualité du code et des tests.
+
+## Deadline
+
+ ***Lundi 8 décembre 2014, 12h30***
+
         </div>
     </div>
 </div>
@@ -211,17 +243,6 @@ yo mongoose # answer NO to the question about Heroku</code></pre>
 
         <script src="../../scripts/dbd26eaf.vendor.js"></script>
 
-        
-            
-            <script src="../../scripts/updateHighlightClassNames.js"></script>
-            <script>
-                updateHighlightClassNames();
-            </script>
-            <script src="../../bower_components/highlightjs/highlight.pack.js"></script>
-            <script>
-                hljs.initHighlightingOnLoad();
-            </script>
-        
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
