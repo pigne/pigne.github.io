@@ -213,7 +213,7 @@
         <li>Last method invoked before the response is sent back to the user.</li>
       </ul>
     </li>
-  </ol> </p>
+  </ol></p>
 
 </section>
 
@@ -310,9 +310,9 @@ $this-&gt;set(&#39;title_for_layout&#39;, &#39;Title of that Web page&#39;);
 &lt;div class=&quot;body&quot;&gt;&lt;?php echo $post[&#039;Post&#039;][&#039;body&#039;];?&gt;&lt;/div&gt;
 &lt;br&gt;
 &lt;aside&gt;
-&lt;p&gt;&lt;?php 
+&lt;p&gt;&lt;?php
 echo $this-&gt;Html-&gt;link(
-      __(&#039;Edit this Post&#039;), 
+      __(&#039;Edit this Post&#039;),
       array(&#039;action&#039; =&gt; &#039;edit&#039;, $post[&#039;Post&#039;][&#039;id&#039;])
 );
 ?&gt;&lt;/p&gt;
@@ -340,7 +340,7 @@ echo $this-&gt;Html-&gt;link(
 
 <span class="variable">$this</span>-&gt;start(<span class="string">'sidebar'</span>); <span class="preprocessor">?&gt;</span>
 &lt;p&gt;
-  <span class="preprocessor">&lt;?php</span> <span class="keyword">echo</span> <span class="variable">$this</span>-&gt;Html-&gt;link(<span class="string">'edit'</span>, <span class="keyword">array</span>( 
+  <span class="preprocessor">&lt;?php</span> <span class="keyword">echo</span> <span class="variable">$this</span>-&gt;Html-&gt;link(<span class="string">'edit'</span>, <span class="keyword">array</span>(
       <span class="string">'action'</span> =&gt; <span class="string">'edit'</span>, <span class="variable">$post</span>[<span class="string">'Post'</span>][<span class="string">'id'</span>])); <span class="preprocessor">?&gt;</span>
 &lt;/p&gt;
 <span class="preprocessor">&lt;?php</span> <span class="variable">$this</span>-&gt;end(); <span class="preprocessor">?&gt;</span>
@@ -565,7 +565,7 @@ CREATE TABLE IF NOT EXISTS <code>comments</code> (
 <div class="first">
 <pre class=" php"><code>CREATE TABLE IF NOT EXISTS <code>posts</code> (
   <code>id</code> int(11) NOT NULL AUTO_INCREMENT,
-  <code>comment_count</code> int(11) NOT NULL 
+  <code>comment_count</code> int(11) NOT NULL
                         DEFAULT <code>0</code>,
   // ...
   PRIMARY KEY (<code>id</code>)
@@ -630,7 +630,6 @@ class Ingredient extends AppModel {
   </ul></p>
 
 </section>
-
 
     	</div>
 	</div>
