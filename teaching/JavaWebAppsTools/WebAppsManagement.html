@@ -95,7 +95,7 @@
 <pre><code class="xml">&lt;groupId&gt;org.pigne&lt;/groupId&gt;
 &lt;artifactId&gt;CountDownWebApp&lt;/artifactId&gt;
 &lt;version&gt;0.0.1&lt;/version&gt;
-</code></pre>    
+</code></pre>
 
 <p>Add a missing folder (for proper use with Eclipse later on)</p>
 <pre><code class="bash">mkdir CountDownWebApp/src/main/java
@@ -183,7 +183,7 @@ cd CountDownWebApp</code></pre>
     </li>
 </ul>
 <p>
-Note the <code>&lt;scope&gt;provided&lt;/scope&gt;</code> property the tells maven <b>not</b> to package those dependencies with the WAR file. Servlets and JSP are already part of the destination Application Server.  
+Note the <code>&lt;scope&gt;provided&lt;/scope&gt;</code> property the tells maven <b>not</b> to package those dependencies with the WAR file. Servlets and JSP are already part of the destination Application Server.
 </p>
 </section>
 
@@ -288,7 +288,7 @@ Note the <code>&lt;scope&gt;provided&lt;/scope&gt;</code> property the tells mav
 
     }
     <span class="keyword">private</span> String diff(){
-        String theDate = <span class="string">"17/11/2014 12:30:00"</span>;
+        String theDate = <span class="string">"07/10/2015 17:00:00"</span>;
         String pattern = <span class="string">"dd/MM/yyyy HH:mm:ss"</span>;
         Date d2 = <span class="keyword">null</span>;
         <span class="keyword">try</span> {
@@ -366,7 +366,7 @@ Note the <code>&lt;scope&gt;provided&lt;/scope&gt;</code> property the tells mav
 
 <p>Modify the servlet</p>
 <pre><code class="java">@Override
-public void doGet( HttpServletRequest request, HttpServletResponse response )   
+public void doGet( HttpServletRequest request, HttpServletResponse response )
 	throws ServletException, IOException {
 	this.getServletContext().getRequestDispatcher( "/WEB-INF/CountDownView.jsp" ).forward( request, response );
 }</code></pre>
@@ -381,7 +381,7 @@ public void doGet( HttpServletRequest request, HttpServletResponse response )
 	<p>Modify the Servlet</p>
 
 <pre><code class="java">@Override
-public void doGet( HttpServletRequest request, HttpServletResponse response )   
+public void doGet( HttpServletRequest request, HttpServletResponse response )
 	throws ServletException, IOException {
 	String diff = diff();
 	request.setAttribute( "diff", diff );
@@ -414,14 +414,14 @@ public void doGet( HttpServletRequest request, HttpServletResponse response )
 
 &lt;body&gt;
 	&lt;blockquote&gt;
-	&amp;laquo; Il reste 
-	&lt;% 
+	&amp;laquo; Il reste
+	&lt;%
             String diff = (String) request.getAttribute(&quot;diff&quot;);
             out.println( diff );
 	%&gt;
 	avant la fin de ce cours ! &amp;raquo;
 	&lt;footer&gt;
-	&lt;% 
+	&lt;%
             String parametre = request.getParameter( &quot;author&quot; );
             out.println( parametre );
 	%&gt;
@@ -455,7 +455,7 @@ public void doGet( HttpServletRequest request, HttpServletResponse response )
 <ul>
 <li>Create an eclipse project from the Maven configuration:<pre><code class="language-bash">mvn eclipse:eclipse -Dwtpversion=<span class="number">2.0</span></code></pre>
 </li>
-<li>Import the project in Eclipse as an <em>existing project</em> : 
+<li>Import the project in Eclipse as an <em>existing project</em> :
 <code>File &gt; Import &gt; Existing Projects into Workspace</code></li>
 </ul>
 <p class='text_center'>
@@ -516,9 +516,6 @@ public void doGet( HttpServletRequest request, HttpServletResponse response )
 
 
 </section>
-
-
-
 
     	</div>
 	</div>
