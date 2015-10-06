@@ -176,23 +176,23 @@
 
 <div class="md">
 <p>Web development is getting dominated by the MVC (Model View Controller) design pattern. Both on the server and client side.</p>
-<p>Web development relies on well established protocols and standards. </p>
+<p>Web development relies on well established protocols and standards.</p>
 <ul>
 <li>HTTP</li>
 <li>REST</li>
 </ul>
-<p>Common problems need to be addressed </p>
+<p>Common problems need to be addressed</p>
 <ul>
 <li>Security</li>
 <li>Browsers&#39; compatibility</li>
 </ul>
-<p>Tools and frameworks help in every steps </p>
+<p>Tools and frameworks help in every steps</p>
 <ul>
 <li>MVC Frameworks (Client/Server-Side)</li>
 <li>Testing Frameworks</li>
 <li>Continuous integration platforms</li>
 <li>Task Runners</li>
-<li>Scaffolding </li>
+<li>Scaffolding</li>
 <li>...</li>
 </ul>
 <p>We focus here on node.js and the javascript ecosystem.</p>
@@ -216,7 +216,7 @@ field-value    = *( field-content | LWS )
 field-content  = &lt;the OCTETs making up the field-value
                  and consisting of either *TEXT or combinations
                  of token, separators, and quoted-string&gt;</code></pre>
-<p>Example header: </p>
+<p>Example header:</p>
 <pre><code>Host: tools.ietf.org
 Connection: keep-alive
 Cache-Control: max-age=0
@@ -229,7 +229,7 @@ User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (K
 <p>From the client to the server</p>
 <pre><code>Request = Request-Line
           *(( general-header
-            | request-header 
+            | request-header
             | entity-header ) CRLF)
           CRLF
           [ message-body ]</code></pre>
@@ -363,12 +363,12 @@ home_timeline.json</li>
 </ul>
 </li>
 <li>Dependencies Management:<ul>
-<li>client side: <ul>
+<li>client side:<ul>
 <li>Bower (<a href="http://bower.io/">bower.io</a>)</li>
 <li>Duo (<a href="http://duojs.org/">duojs.org</a>)</li>
 </ul>
 </li>
-<li>server side: <ul>
+<li>server side:<ul>
 <li>Npm (packaged with node)</li>
 </ul>
 </li>
@@ -423,7 +423,7 @@ home_timeline.json</li>
 <ul>
 <li>Angular.js (Google)</li>
 <li>Ember.js</li>
-<li>Backbone.js </li>
+<li>Backbone.js</li>
 <li>Cappuccino (in its own language Objective-J, tries to emulate Apple&#39;s Cocoa style)</li>
 <li>Knockout.js (MVVM design pattern)</li>
 <li>Javascript MVC</li>
@@ -457,7 +457,7 @@ home_timeline.json</li>
 <li>Neo4J (Graph Database)</li>
 </ul>
 <h2 id="web-application-frameworks">Web Application Frameworks</h2>
-<p>WebApps (client-side as well as server-side) need web servers and other network related frameworks. </p>
+<p>WebApps (client-side as well as server-side) need web servers and other network related frameworks.</p>
 <p>Web Application frameworks handle all the technical parts of the communication between client and server</p>
 <ul>
 <li>authentication</li>
@@ -505,7 +505,7 @@ Express link URIs to actions through HTTP verbs (GET, PUT, POST, DELETE)</p>
 <li>Templates are stored in the views/ folder of the App and are called from a route.</li>
 <li>Templating in node with Jade: <a href="http://jade-lang.com/">http://jade-lang.com/</a></li>
 </ul>
-<p>In the main express configuration file (<code>app.js</code>): </p>
+<p>In the main express configuration file (<code>app.js</code>):</p>
 <pre><code class="language-javascript">app.set(<span class="string">'view engine'</span>, <span class="string">'jade'</span>);
 <span class="keyword">var</span> users = [{id:<span class="number">1</span>, name:<span class="string">'Tom'</span>},
             {id:<span class="number">2</span>, name:<span class="string">'Max'</span>}];
@@ -550,9 +550,9 @@ app.get(<span class="string">'/user/:id?'</span>, <span class="function"><span c
 app.set(<span class="string">'views'</span>, path.join(__dirname, <span class="string">'views'</span>));
 app.set(<span class="string">'view engine'</span>, <span class="string">'jade'</span>);
 
-app.use(logger(<span class="string">'dev'</span>)); 
+app.use(logger(<span class="string">'dev'</span>));
 app.use(favicon(__dirname + <span class="string">'/public/img/favicon.ico'</span>));
-app.use(bodyParser.json()); 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: <span class="literal">true</span>
 }));
@@ -593,6 +593,7 @@ app.use(<span class="function"><span class="keyword">function</span><span class=
 <h3 id="mongoose-mongoosejs-com-http-mongoosejs-com-an-odm-object-oriented-data-model-for-mongodb-and-node-">Mongoose (<a href="http://mongoosejs.com/">mongoosejs.com</a>) an ODM (Object-Oriented Data Model) for MongoDB and Node.</h3>
 
 </div>
+
         </div>
     </div>
 </div>

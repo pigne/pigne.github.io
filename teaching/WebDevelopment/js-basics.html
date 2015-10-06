@@ -580,10 +580,10 @@ w2['°C']; // 34</code></pre>
 
                 <ul>
                     <li>properties
-                 
+
                     </li>
                     <li>prototype
-                 
+
                         <ul>
                             <li>properties
                             </li>
@@ -598,7 +598,7 @@ w2['°C']; // 34</code></pre>
                 </ul>
             </li>
         </ul>
-    
+
 </section>
 
 <!-- ==== SLIDE ==== -->
@@ -632,7 +632,7 @@ o.not_ok; // "Not OK."
                             </li>
                             <li>prototype
                                 <code class="prettyprint lang-js">undefined</code>
-                                
+
                             </li>
                         </ul>
                     </li>
@@ -1220,10 +1220,10 @@ var p3d = createPoint3D({ x: -3, y: -3, z: -4 });</code></pre>
     attributes.width = attributes.width || "1px";
     attributes.color = attributes.color || "#00FF00";
     var augmentedPoint3D = createPoint3D(attributes);
-    var superToString = augmentedPoint3D.toString;  /* Store the super toString 
+    var superToString = augmentedPoint3D.toString;  /* Store the super toString
                                                        method locally.*/
 
-    augmentedPoint3D.toString = function() {        /* Shadow super toString 
+    augmentedPoint3D.toString = function() {        /* Shadow super toString
                                                        and call it with 'apply' */
     return "{" + superToString.apply(augmentedPoint3D) + ", width:" +
         attributes.width + ", color:" + attributes.color + "}";
@@ -1492,7 +1492,6 @@ shape.points.length; // 2</code></pre>
         <li>Create Views for these Models.</li>
     </ol>
 </section>
-
 
     	</div>
 	</div>

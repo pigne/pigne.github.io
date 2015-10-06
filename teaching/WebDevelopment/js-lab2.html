@@ -173,7 +173,7 @@
 
 <h1 id="testing-and-drawing">Testing and Drawing</h1>
 <h2 id="code-quality-control">Code Quality Control</h2>
-<p> A few terms: </p>
+<p> A few terms:</p>
 <ul>
 <li><strong>Unit Tests</strong>: Code dedicated to testing the proper behavior of a software/library/module/app.</li>
 <li><strong>TDD (test driven development)</strong>: A development technique that aims at writing unit tests for testing a software before writing the actual software</li>
@@ -199,9 +199,9 @@
 <pre><code class="language-bash"><span class="built_in">cd</span> shapes <span class="comment"># the one previously created</span>
 npm install --global generator-node <span class="comment"># sudo?</span>
 yo node</code></pre>
-<p>Several node related features are now installed. </p>
+<p>Several node related features are now installed.</p>
 <h3 id="update-your-project">Update your Project</h3>
-<p>Your <code>shape.js</code> main file sould now be in <code>lib/</code>  </p>
+<p>Your <code>shape.js</code> main file sould now be in <code>lib/</code></p>
 <h3 id="lint-your-code">Lint your Code</h3>
 <p>Run <code>grunt jshint</code> on the project until no more error appear.</p>
 <h3 id="a-first-unit-test-with-mocha">A first Unit Test with Mocha</h3>
@@ -212,7 +212,7 @@ yo node</code></pre>
     "<span class="attribute">highway</span>":<span class="value"><span class="string">"residential"</span></span>,
     "<span class="attribute">_id</span>":<span class="value"><span class="string">"-629863"</span></span>,
     "<span class="attribute">nodes</span>":<span class="value">[
-        {    
+        {
             "<span class="attribute">y</span>":<span class="value"><span class="number">369.0</span></span>,
             "<span class="attribute">x</span>":<span class="value"><span class="number">708.0</span>
         </span>},
@@ -225,7 +225,7 @@ yo node</code></pre>
 </span>}</code></pre>
 <p>Test with <code>grunt mochacli</code></p>
 <h3 id="bdd">BDD</h3>
-<p>In order to use behavioral testing style we use the <code>chai</code> assertion library. </p>
+<p>In order to use behavioral testing style we use the <code>chai</code> assertion library.</p>
 <pre><code class="language-sh">npm install --save-dev chai</code></pre>
 <p>Add chai to the testing file (<code>test/shapes_test.js</code>):</p>
 <pre><code class="language-js"><span class="keyword">var</span> should = require(<span class="string">'chai'</span>).should();</code></pre>
@@ -239,16 +239,16 @@ yo node</code></pre>
     });
 });</code></pre>
 <h3 id="test-all-your-project">Test All your Project</h3>
-<p>Create a full unit test suite of your library in order to test all the features. </p>
+<p>Create a full unit test suite of your library in order to test all the features.</p>
 <p>Note that you can nest  calls to function <code>describe</code>.</p>
-<p>In the <code>Gruntfile.js</code>  change property <code>reporter</code> to &quot;list&quot; instead of &quot;nyan&quot; to see the list of tests that are executed when doing a <code>grunt mochacli</code>. </p>
+<p>In the <code>Gruntfile.js</code>  change property <code>reporter</code> to &quot;list&quot; instead of &quot;nyan&quot; to see the list of tests that are executed when doing a <code>grunt mochacli</code>.</p>
 <h3 id="code-covering">Code Covering</h3>
-<p>How can you be sure that you covered all the features of your code? </p>
+<p>How can you be sure that you covered all the features of your code?</p>
 <p>Install and configure the code covering framework  <a href="http://blanketjs.org/"><code>blanket.js</code></a> in your project and configure grunt accordingly.</p>
 <h3 id="testing-asynchronous-code">Testing Asynchronous Code</h3>
 <p>Load the test file <code>eure.json</code> into the test suite using the asynchronous function <code>fs.readFile</code>. Test the number of different shapes created and average area. Make sure the asynchronous call works properly with Mocha.</p>
 <h2 id="testing-on-the-client">Testing on the Client</h2>
-<p>We want to use your <code>shapes</code> library in the browser. Projects who are used both on the browser and on node need to detect the environment in order to properly setup the library. </p>
+<p>We want to use your <code>shapes</code> library in the browser. Projects who are used both on the browser and on node need to detect the environment in order to properly setup the library.</p>
 <p>The module approach:</p>
 <pre><code class="language-js"><span class="keyword">if</span>(<span class="keyword">typeof</span> process === <span class="string">'object'</span> &amp;&amp; process + <span class="string">''</span> === <span class="string">'[object process]'</span>){
     global.publicMethod1 = publicMethod1;
@@ -259,7 +259,7 @@ yo node</code></pre>
     global.module.publicMethod1 = publicMethod1;
     global.module.publicMethod2 = publicMethod2;
 }</code></pre>
-<p>We usually use modules that are published on the public <a href="https://www.npmjs.org/">npm  repository</a>. A local lib can be used as well in another local project with <code>bower link</code>. See the <a href="http://bower.io/docs/api/#link">documentation</a>. </p>
+<p>We usually use modules that are published on the public <a href="https://www.npmjs.org/">npm  repository</a>. A local lib can be used as well in another local project with <code>bower link</code>. See the <a href="http://bower.io/docs/api/#link">documentation</a>.</p>
 <p>In the <code>shapes</code> project:</p>
 <pre><code class="language-sh">bower link</code></pre>
 <p>Create a new webapp project:</p>
@@ -269,9 +269,9 @@ cd shapesApp
 yo webapp</code></pre>
 <p>In that project we can use our local project:</p>
 <pre><code class="language-sh">bower link shapes</code></pre>
-<p><code>shapes</code> needs to be added in the <code>test</code> folder too.  The test folder contains : </p>
+<p><code>shapes</code> needs to be added in the <code>test</code> folder too.  The test folder contains :</p>
 <ul>
-<li>the <code>test/index.html</code> file that sets up the references: <pre><code class="language-html">&lt;script src=&quot;bower_components/chai/chai.js&quot;&gt;&lt;/script&gt;</code></pre>
+<li>the <code>test/index.html</code> file that sets up the references:<pre><code class="language-html">&lt;script src=&quot;bower_components/chai/chai.js&quot;&gt;&lt;/script&gt;</code></pre>
 </li>
 <li>the <code>test/spec/test.js</code> file where regular tests can be written</li>
 </ul>
@@ -279,7 +279,6 @@ yo webapp</code></pre>
 <p>In this new <code>shapesApp</code> project, using the JSON data set and the Object Model of the <code>shapes</code> project, write a function that, given the data model, draws the various shapes (roads, amenities, natural, buildings...) on an svg element.</p>
 <p>Private buildings must highlight when the mouse passes over and they must be selectable when clicked.</p>
 <p class="text_center"><img src="images/svgMap.png" alt="svg_map" style="width:80%;text-align: center;"></p>
-
 
 
 
