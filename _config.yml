@@ -1,0 +1,35 @@
+title: Yoann Pigné
+author:
+  email: yoann.pigne@univ-lehavre.fr
+  name: Yoann Pigné
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://pigne.org" # the base hostname & protocol for your site, e.g. http://example.com
+
+## remote theme 
+remote_theme: chesterhow/tale
+permalink:    /:year-:month-:day/:title
+paginate:     5
+plugins:
+  - jekyll-paginate
+  - jekyll-remote-theme
+
+## publications
+publication_type: 
+  article-journal: "Journal Article"
+  chapter: "Book Chapter"
+  paper-conference: "Conference Paper"
+  thesis: "Ph.D. Thesis"
+
+
+# Build settings
+markdown: kramdown
+
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

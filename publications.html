@@ -1,0 +1,62 @@
+---
+layout: default
+permalink: /publications/
+---
+
+<h1>Publications</h1>
+
+{% assign groups =  site.data.publications  | group_by_exp:"item","item.issued.date-parts[0][0]" | sort:"name"%}
+{% for group  in groups  reversed %}
+	<h2>{{ group.name }}</h2>
+	<ul>
+	{% for publi  in  group.items %}
+	<li class="catalogue-item" >
+		<span class="bibitem_type">{{site.publication_type[publi.type]}}</span>
+		<span class='bibitem_author'>
+			{% for author  in  publi.author %}
+			{{author.given}} {{author.family}},
+			{% endfor %}
+		</span>
+		<span class='bibitem_title'>
+		{% if publi.URL %}
+			<a href="{{publi.URL}}">&quot;{{publi.title}}&quot;</a>,
+		{% else %}
+			&quot;{{publi.title}}&quot;,
+		{% endif %}
+		</span>
+		{% if publi.container-title  != nil %}
+          In <span class="bibitem_in">{{publi.container-title}}</span>,
+        {% else %}
+        {% if publi.event != nil %}
+        	In <span class="bibitem_in">{{publi.event}}</span>,
+        {% endif %}
+        {% endif %}
+        {% if publi.volume !=  nil %}
+          Volume <span class="bibitem_volume"> {{publi.volume}}</span>,
+        {% endif %}
+        {% if publi.issue !=  nil  %}
+          Issue <span class="bibitem_volume"> {{publi.issue}}</span>,
+        {% endif %}
+        {% if publi.series !=  nil  %}
+          Series <span class="bibitem_volume"> {{publi.series}}</span>,
+        {% endif %}
+        {% if publi.page !=  nil  %}
+          Pages <span class="bibitem_pages"> {{publi.page}}</span>.
+        {% endif %}
+        {% if publi.DOI !=  nil  %}
+          DOI: <span class="bibitem_doi"> <a href="http://dx.doi.org/{{publi.DOI}}">{{publi.DOI}}</a></span>,
+        {% endif %}
+        {% if publi.ISBN !=  nil  %}
+          ISBN: <span class="bibitem_isbn">{{publi.ISBN}}</span>,
+        {% endif %}
+        {% if publi.publisher !=  nil  %}
+          <span class="bibitem_publisher">{{publi.publisher}},</span>
+        {% endif %}
+        {% if publi.event-place !=  nil  %}
+          <span class="bibitem_address">{{publi.event-place}},</span>
+        {% endif %}
+        <span class="bibitem_year">{{group.name}}</span>.
+	</li>	
+	{% endfor %}
+	</ul>
+{% endfor %}
