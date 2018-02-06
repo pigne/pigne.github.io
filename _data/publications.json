@@ -944,5 +944,48 @@
 				]
 			]
 		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/JFQ2UFG3",
+		"type": "book",
+		"title": "Evolutionary Algorithms for Mobile Ad Hoc Networks",
+		"publisher": "John Wiley & Sons",
+		"number-of-pages": "249",
+		"source": "Google Books",
+		"abstract": "Describes how evolutionary algorithms (EAs) can be used to identify, model, and minimize day-to-day problems that arise for researchers in optimization and mobile networking Mobile ad hoc networks (MANETs), vehicular networks (VANETs), sensor networks (SNs), and hybrid networks—each of these require a designer’s keen sense and knowledge of evolutionary algorithms in order to help with the common issues that plague professionals involved in optimization and mobile networking. This book introduces readers to both mobile ad hoc networks and evolutionary algorithms, presenting basic concepts as well as detailed descriptions of each. It demonstrates how metaheuristics and evolutionary algorithms (EAs) can be used to help provide low-cost operations in the optimization process—allowing designers to put some “intelligence” or sophistication into the design. It also offers efficient and accurate information on dissemination algorithms, topology management, and mobility models to address challenges in the field. Evolutionary Algorithms for Mobile Ad Hoc Networks:  Instructs on how to identify, model, and optimize solutions to problems that arise in daily research Presents complete and up-to-date surveys on topics like network and mobility simulators Provides sample problems along with solutions/descriptions used to solve each, with performance comparisons Covers current, relevant issues in mobile networks, like energy use, broadcasting performance, device mobility, and more  Evolutionary Algorithms for Mobile Ad Hoc Networks is an ideal book for researchers and students involved in mobile networks, optimization, advanced search techniques, and multi-objective optimization.",
+		"ISBN": "978-1-118-83202-8",
+		"note": "Google-Books-ID: NpBUAwAAQBAJ",
+		"language": "en",
+		"author": [
+			{
+				"family": "Dorronsoro",
+				"given": "Bernabé"
+			},
+			{
+				"family": "Ruiz",
+				"given": "Patricia"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2014",
+					4,
+					8
+				]
+			]
+		}
 	}
 ]

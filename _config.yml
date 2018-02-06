@@ -18,6 +18,7 @@ plugins:
 publication_type: 
   article-journal: "Journal Article"
   chapter: "Book Chapter"
+  book: "Book"
   paper-conference: "Conference Paper"
   thesis: "Ph.D. Thesis"
 
