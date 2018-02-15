@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/pigne
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://pigne.org
+  * I am pigne (https://keybase.io/pigne) on keybase.
+  * I have a public key ASCaiC4sIiJxEfZQz4mxtsUqIves3AnfYmDS6k_bQF10two
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01209a882e2c22227111f650cf89b1b6c52a22f7acdc09df6260d2ea4fdb405d74b70a",
+      "host": "keybase.io",
+      "kid": "01209a882e2c22227111f650cf89b1b6c52a22f7acdc09df6260d2ea4fdb405d74b70a",
+      "uid": "a79ef319a58fd0e57292832574536819",
+      "username": "pigne"
+    },
+    "merkle_root": {
+      "ctime": 1518698591,
+      "hash": "2b4c0bae3440ed3cca03d8bbc03fe8478f8aa224cb669b9935908cfbbc25ebc21057e694336e4c6318d3fe756aebb0d5a2de31c16586c08e6e374fa6179f77d7",
+      "hash_meta": "c8697b525e3445a0c233b21a9e4cc792f4ff4b3b85ef9395b593cc532c014e7f",
+      "seqno": 2086222
+    },
+    "service": {
+      "hostname": "pigne.org",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.40"
+  },
+  "ctime": 1518698689,
+  "expire_in": 504576000,
+  "prev": "10d9d42fe961e54abe857ae1cd34c91c255c7d07ba399a27792ef508fd9d240e",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgmoguLCIicRH2UM+JsbbFKiL3rNwJ32Jg0upP20BddLcKp3BheWxvYWTFAz17ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwOWE4ODJlMmMyMjIyNzExMWY2NTBjZjg5YjFiNmM1MmEyMmY3YWNkYzA5ZGY2MjYwZDJlYTRmZGI0MDVkNzRiNzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwOWE4ODJlMmMyMjIyNzExMWY2NTBjZjg5YjFiNmM1MmEyMmY3YWNkYzA5ZGY2MjYwZDJlYTRmZGI0MDVkNzRiNzBhIiwidWlkIjoiYTc5ZWYzMTlhNThmZDBlNTcyOTI4MzI1NzQ1MzY4MTkiLCJ1c2VybmFtZSI6InBpZ25lIn0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNTE4Njk4NTkxLCJoYXNoIjoiMmI0YzBiYWUzNDQwZWQzY2NhMDNkOGJiYzAzZmU4NDc4ZjhhYTIyNGNiNjY5Yjk5MzU5MDhjZmJiYzI1ZWJjMjEwNTdlNjk0MzM2ZTRjNjMxOGQzZmU3NTZhZWJiMGQ1YTJkZTMxYzE2NTg2YzA4ZTZlMzc0ZmE2MTc5Zjc3ZDciLCJoYXNoX21ldGEiOiJjODY5N2I1MjVlMzQ0NWEwYzIzM2IyMWE5ZTRjYzc5MmY0ZmY0YjNiODVlZjkzOTViNTkzY2M1MzJjMDE0ZTdmIiwic2Vxbm8iOjIwODYyMjJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoicGlnbmUub3JnIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC40MCJ9LCJjdGltZSI6MTUxODY5ODY4OSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiIxMGQ5ZDQyZmU5NjFlNTRhYmU4NTdhZTFjZDM0YzkxYzI1NWM3ZDA3YmEzOTlhMjc3OTJlZjUwOGZkOWQyNDBlIiwic2Vxbm8iOjYsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAYF9nZcoQZYDqBxpdwlRZIJT5mTP1v7Az0tuYzSEZ0RkroES858Vglre+RY4CJiShO7oxjJgdO4WKi2WCrp5HAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIG4SobDdz/TOHxflH25uNB2pA5o9mwJ7hiFGg1TS2U8fo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/pigne
+
+==================================================================
