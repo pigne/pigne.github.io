@@ -1,5 +1,439 @@
 [
 	{
+		"id": "http://zotero.org/users/809971/items/3VM5ZZFC",
+		"type": "article-journal",
+		"title": "New Selection Strategies of Actor’s Substitute in DARA for Connectivity Restoration in WSANs",
+		"container-title": "SpringerLink",
+		"page": "38-49",
+		"source": "link.springer.com",
+		"abstract": "Wireless Sensor and Actor Networks are used in many dangerous applications. When performing their tasks, actors may fail due to harsh environments in which they are deployed. Some actors are cut-verti",
+		"URL": "https://link.springer.com/chapter/10.1007/978-3-319-51204-4_4",
+		"DOI": "10.1007/978-3-319-51204-4_4",
+		"language": "en",
+		"author": [
+			{
+				"family": "Saada",
+				"given": "Riadh"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Olivier",
+				"given": "Damien"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2017"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/69GD86IU",
+		"type": "article-journal",
+		"title": "Environmental assessment of bioenergy production from microalgae based systems",
+		"container-title": "Journal of Cleaner Production",
+		"page": "51-60",
+		"volume": "139",
+		"source": "ScienceDirect",
+		"abstract": "Microalgae have been studied as a potential alternative raw material and various technologies have been proposed to transform the algal biomass into energy products. In this study, two bioenergy production systems of very different complexities were modelled to assess their environmental efficiencies: a biodiesel system and a biogas system. Biodiesel system used supercritical extraction and transesterification as key processes; to the best of authors' knowledge, there is no previous work analysing the environmental performances of such production system. Cumulative energy demand, Life Cycle Assessment (LCA) and dynamic LCA for climate change were used to evaluate the environmental footprint of the production systems. Conventional systems for electricity, heat and diesel production were considered for comparison. Energy balance showed that the supercritical extraction and drying steps were the most energy consuming unit operations in biodiesel production and further developments of technologies might be envisaged. LCA showed that climate change was the main contributor to impacts on human health and ecosystem quality due to energy consumed in production steps. Also, heat from biogas was the only product that proved to have a satisfactory environmental performance with regard to other conventional production systems. Finally, dynamic climate change evaluation (used for the first time for bio-chemical processes) revealed no carbon sequestration in microalgae system.",
+		"URL": "http://www.sciencedirect.com/science/article/pii/S0959652616311283",
+		"DOI": "10.1016/j.jclepro.2016.08.003",
+		"ISSN": "0959-6526",
+		"journalAbbreviation": "Journal of Cleaner Production",
+		"author": [
+			{
+				"family": "Shimako",
+				"given": "Allan Hayato"
+			},
+			{
+				"family": "Tiruta-Barna",
+				"given": "Ligia"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Benetto",
+				"given": "Enrico"
+			},
+			{
+				"family": "Navarrete Gutiérrez",
+				"given": "Tomás"
+			},
+			{
+				"family": "Guiraud",
+				"given": "Pascal"
+			},
+			{
+				"family": "Ahmadi",
+				"given": "Aras"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					12,
+					15
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/D66HZ8KX",
+		"type": "article-journal",
+		"title": "On the Complexity of Life Cycle Inventory Networks: Role of Life Cycle Processes with Network Analysis",
+		"container-title": "Journal of Industrial Ecology",
+		"page": "1094-1107",
+		"volume": "20",
+		"issue": "5",
+		"source": "Wiley Online Library",
+		"abstract": "Determining the relevance and importance of a technosphere process or a cluster of processes in relation to the rest of the industrial network can provide insights into the sustainability of supply chains: those that need to be optimized or controlled/safeguarded. Network analysis (NA) can offer a broad framework of indicators to tackle this problem. In this article, we present a detailed analysis of a life cycle inventory (LCI) model from an NA perspective. Specifically, the network is represented as a directed graph and the “emergy” numeraire is used as the weight associated with the arcs of the network. The case study of a technological system for drinking water production is presented. We investigate the topological and structural characteristics of the network representation of this system and compare properties of its weighted and unweighted network, as well as the importance of nodes (i.e., life cycle unit processes). By identifying a number of advantages and limitations linked to the modeling complexity of such emergy-LCI networks, we classify the LCI technosphere network of our case study as a complex network belonging to the scale-free network family. The salient feature of this network family is represented by the presence of “hubs”: nodes that connect with many other nodes. Hub failures may imply relevant changes, decreases, or even breaks in the connectedness with other smaller hubs and nodes of the network. Hence, by identifying node centralities, we can rank and interpret the relevance of each node for its special role in the life cycle network.",
+		"URL": "http://onlinelibrary.wiley.com/doi/10.1111/jiec.12338/abstract",
+		"DOI": "10.1111/jiec.12338",
+		"ISSN": "1530-9290",
+		"shortTitle": "On the Complexity of Life Cycle Inventory Networks",
+		"journalAbbreviation": "Journal of Industrial Ecology",
+		"language": "en",
+		"author": [
+			{
+				"family": "Navarrete-Gutiérrez",
+				"given": "Tomás"
+			},
+			{
+				"family": "Rugani",
+				"given": "Benedetto"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Marvuglia",
+				"given": "Antonino"
+			},
+			{
+				"family": "Benetto",
+				"given": "Enrico"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					10,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/FRVP64MF",
+		"type": "article-journal",
+		"title": "Framework and computational tool for the consideration of time dependency in Life Cycle Inventory: proof of concept",
+		"container-title": "Journal of Cleaner Production",
+		"page": "198-206",
+		"volume": "116",
+		"source": "ScienceDirect",
+		"abstract": "Conventional Life Cycle Inventories (LCIs) are static models of product systems without time dependent functioning of plants and time lags between supply and demand of products. The aggregation of environmental interventions without consideration of the time dimension represents an acknowledged limitation of the Life Cycle Assessment (LCA) method. In this paper we present a novel conceptual and computational framework for the consideration of time dependency in LCIs. Process modeling is used to describe the production flows and environmental interventions of each unit process and supply modeling is used to include time lags on the raw materials exchanged by unit processes of the product system. The combination of production and supply models in life cycle networks, based on a set of specific temporal parameters (representative functioning period, production time, supply delay, supply frequency), allows the characterization of time dependency in each node. For the computation of time dependent LCI, i.e. of the time resolved environmental interventions, graph search algorithm is proposed and implemented in a prototype Web application. In terms of results, the new approach provides time dependent LCI expressed as: i) time as a function of individual emission (or resource consumption) for individual processes, ii) aggregated time as a function of a given environmental intervention. A test bed case illustrating the effectiveness of the conceptual and computational approaches (proof of concept) is presented and successfully solved both analytically and numerically.",
+		"URL": "http://www.sciencedirect.com/science/article/pii/S0959652615018739",
+		"DOI": "10.1016/j.jclepro.2015.12.049",
+		"ISSN": "0959-6526",
+		"shortTitle": "Framework and computational tool for the consideration of time dependency in Life Cycle Inventory",
+		"journalAbbreviation": "Journal of Cleaner Production",
+		"author": [
+			{
+				"family": "Tiruta-Barna",
+				"given": "Ligia"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Navarrete Gutiérrez",
+				"given": "Tomás"
+			},
+			{
+				"family": "Benetto",
+				"given": "Enrico"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					10
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/UMIGGF8E",
+		"type": "article-journal",
+		"title": "A metapopulation model for chikungunya including populations mobility on a large-scale network",
+		"container-title": "Journal of Theoretical Biology",
+		"page": "129-139",
+		"volume": "318",
+		"source": "ScienceDirect",
+		"abstract": "In this paper we study the influence of populations mobility on the spread of a vector-borne disease. We focus on the chikungunya epidemic event that occurred in 2005–2006 on the Réunion Island, Indian Ocean, France, and validate our models with real epidemic data from the event. We propose a metapopulation model to represent both a high-resolution patch model of the island with realistic population densities and also mobility models for humans (based on real-motion data) and mosquitoes. In this metapopulation network, two models are coupled: one for the dynamics of the mosquito population and one for the transmission of the disease. A high-resolution numerical model is created from real geographical, demographical and mobility data. The Island is modeled with an 18,000-nodes metapopulation network. Numerical results show the impact of the geographical environment and populations’ mobility on the spread of the disease. The model is finally validated against real epidemic data from the Réunion event.",
+		"URL": "http://www.sciencedirect.com/science/article/pii/S0022519312005838",
+		"DOI": "10.1016/j.jtbi.2012.11.008",
+		"ISSN": "0022-5193",
+		"journalAbbreviation": "Journal of Theoretical Biology",
+		"author": [
+			{
+				"family": "Moulay",
+				"given": "Djamila"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2013",
+					2,
+					7
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/UA6F8PGZ",
+		"type": "book",
+		"title": "Evolutionary Algorithms for Mobile Ad Hoc Networks: Bouvry/Evolutionary Algorithms for Mobile Ad Hoc Networks",
+		"publisher": "John Wiley & Sons, Inc.",
+		"publisher-place": "Hoboken, NJ",
+		"source": "CrossRef",
+		"event-place": "Hoboken, NJ",
+		"URL": "http://doi.wiley.com/10.1002/9781118833209",
+		"ISBN": "978-1-118-83320-9",
+		"note": "DOI: 10.1002/9781118833209",
+		"shortTitle": "Evolutionary Algorithms for Mobile Ad Hoc Networks",
+		"language": "en",
+		"author": [
+			{
+				"family": "Dorronsoro",
+				"given": "Bernabé"
+			},
+			{
+				"family": "Ruiz",
+				"given": "Patricia"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2014",
+					4,
+					30
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/GVPU4EB4",
+		"type": "paper-conference",
+		"title": "Reachability in maritime transportation networks",
+		"container-title": "Complex Networks: from theory to interdisciplinary applications",
+		"publisher-place": "Marseille",
+		"event": "Complex Networks: from theory to interdisciplinary applications",
+		"event-place": "Marseille",
+		"abstract": "In temporal network a node v is reachable from a node u iff there exists a time-respecting path from u to v. The set of reachable nodes from node u is called the reachability set of u. \nIn this work we describe a simple extension of this metric considering the round-trip reachability. The round-trip reachability set of a node u contains all vertices for which there exists a time-respecting path from u to v temporally followed by a time-respecting path from v to u. Client/Server systems as well as question/answer relations motivate this extension. A container shipping network illustrates the use of such a metric.",
+		"author": [
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					7,
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/TDFG7DDG",
+		"type": "chapter",
+		"title": "Time considerations for the study of complex maritime networks",
+		"container-title": "Maritime Networks Spatial structures and time dynamics",
+		"collection-title": "Routledge Studies in Transport Analysis",
+		"publisher": "Routledge",
+		"page": "163--189",
+		"edition": "César Ducruet",
+		"abstract": "This work proposes two new methodological approaches for the analysis of global shipping networks stemmed from containerships movements reported in Lloyds’ List Periodicals.  After a complex network analysis, the first approach proposes the analysis of sets of networks, called TG-Graphs, built from events occurring in constant-size sliding time windows. Time series represent the evolution of network measures, and the simultaneous analysis of these series for several measures highlights some phenomenons arising in the shipping network. In the second model, networks are modeled with temporal networks where each event is associated with a timestamp. In this model, distance-related measures take a new meaning since paths must obey time constraints. This approach reveals that although the global port network is highly connected, ports who are not directly connected to the main hubs are actually isolated from the rest of the network.",
+		"URL": "https://www.routledge.com/products/9781138911253",
+		"ISBN": "1-138-91125-9",
+		"language": "English",
+		"author": [
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/PJV5XV87",
+		"type": "paper-conference",
+		"title": "Generation of realistic mobility for VANETs using genetic algorithms",
+		"container-title": "2012 IEEE Congress on Evolutionary Computation (CEC)",
+		"page": "1 -8",
+		"source": "IEEE Xplore",
+		"event": "2012 IEEE Congress on Evolutionary Computation (CEC)",
+		"abstract": "The first step in the evaluation of vehicular ad hoc networks (VANETs) applications is based on simulations. The quality of those simulations not only depends on the accuracy of the network model but also on the degree of reality of the underlying mobility model. VehILux-a recently proposed vehicular mobility model, allows generating realistic mobility traces using traffic volume count data. It is based on the concept of probabilistic attraction points. However, this model does not address the question of how to select the best values of the probabilities associated with the points. Moreover, these values depend on the problem instance (i.e. geographical region). In this article we demonstrate how genetic algorithms (GAs) can be used to discover these probabilities. Our approach combined together with VehILux and a traffic simulator allows to generate realistic vehicular mobility traces for any region, for which traffic volume counts are available. The process of the discovery of the probabilities is represented as an optimisation problem. Three GAs-generational GA, steady-state GA, and cellular GA-are compared. Computational experiments demonstrate that using basic evolutionary heuristics for optimising VehILux parameters on a given problem instance permits to improve the model realism. However, in some cases, the results significantly deviate from real traffic count data. This is due to the route generation method of the VehILux model, which does not take into account specific behaviour of drivers in rush hours.",
+		"DOI": "10.1109/CEC.2012.6252987",
+		"author": [
+			{
+				"family": "Seredynski",
+				"given": "M."
+			},
+			{
+				"family": "Danoy",
+				"given": "G."
+			},
+			{
+				"family": "Tabatabaei",
+				"given": "M."
+			},
+			{
+				"family": "Bouvry",
+				"given": "P."
+			},
+			{
+				"family": "Pigné",
+				"given": "Y."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2012",
+					6
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/XCXIJGS8",
+		"type": "paper-conference",
+		"title": "Impact of square environment on the connectivity in finite ad hoc networks",
+		"container-title": "2011 14th International Symposium on Wireless Personal Multimedia Communications (WPMC)",
+		"publisher-place": "Brest, France",
+		"page": "1-5",
+		"source": "IEEE Xplore",
+		"event": "2011 14th International Symposium on Wireless Personal Multimedia Communications (WPMC)",
+		"event-place": "Brest, France",
+		"abstract": "This paper aims at studying some connectivity properties for random geometric graphs when they are constrained by the topological space in which they are embedded. More precisely, we focus our attention on limited square and rectangular environments. In order to analyse the impact of such environments on related graphs, we observe the evolution of mean degree. We propose an approach aiming at estimating the impact of the environment borders on the connectivity and we provide an analytical formula for computing the mean degree value depending on borders effects.",
+		"author": [
+			{
+				"family": "Aboue Nze",
+				"given": "G.-C."
+			},
+			{
+				"family": "Guinand",
+				"given": "F."
+			},
+			{
+				"family": "Pigné",
+				"given": "Y."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2011",
+					10
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/TXWE973H",
+		"type": "paper-conference",
+		"title": "A Vehicular Mobility Model Based on Real Traffic Counting Data",
+		"container-title": "Proceedings of the Third International Conference on Communication Technologies for Vehicles",
+		"collection-title": "Nets4Cars/Nets4Trains'11",
+		"publisher": "Springer-Verlag",
+		"publisher-place": "Berlin, Heidelberg",
+		"page": "131–142",
+		"source": "ACM Digital Library",
+		"event-place": "Berlin, Heidelberg",
+		"abstract": "This paper proposes VehILux, a new vehicular mobility model based on real traffic counting data. It relies on two freely available sources of real information for the country of Luxembourg. The first source is traffic data collected by counting devices located on the Luxembourgian road network, while the second is geographical information about different types of areas: residential, industrial, commercial and other services. VehILux models vehicles commuting around the city of Luxembourg by considering two types of traffic, outer traffic with vehicles entering in the defined geographical area and inner traffic starting from residential zones located inside the geographical area. One part of the collected traffic data is used as input traffic, while another part is used to control the produced traffic and to fine-tune the model. VehILux is coupled with the microscopic road traffic simulator SUMO to produce realistic vehicular traces.",
+		"URL": "http://dl.acm.org/citation.cfm?id=1987310.1987325",
+		"ISBN": "978-3-642-19785-7",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2011"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2015",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
 		"id": "http://zotero.org/users/809971/items/B2A24FH3",
 		"type": "paper-conference",
 		"title": "GraphStream: A Tool for bridging the gap between Complex Systems and Dynamic Graphs",
@@ -35,46 +469,38 @@
 		}
 	},
 	{
-		"id": "http://zotero.org/users/809971/items/H4SQS5UX",
-		"type": "chapter",
-		"title": "Distributed Maintenance of Anytime Available Spanning Trees in Dynamic Networks",
-		"container-title": "Ad-hoc, Mobile, and Wireless Network",
-		"collection-title": "Lecture Notes in Computer Science",
-		"publisher": "Springer Berlin Heidelberg",
-		"page": "99-110",
-		"volume": "7960",
-		"URL": "http://dx.doi.org/10.1007/978-3-642-39247-4_9",
-		"ISBN": "978-3-642-39246-7",
-		"editor": [
-			{
-				"family": "Cichoń",
-				"given": "Jacek"
-			},
-			{
-				"family": "Gȩbala",
-				"given": "Maciej"
-			},
-			{
-				"family": "Klonowski",
-				"given": "Marek"
-			}
-		],
+		"id": "http://zotero.org/users/809971/items/8XJ3NBQ2",
+		"type": "article-journal",
+		"title": "Using graph search algorithms for a rigorous application of emergy algebra rules",
+		"container-title": "Metallurgical Research & Technology",
+		"page": "8",
+		"volume": "110",
+		"issue": "1",
+		"DOI": "10.1051/metal/2013050",
 		"author": [
 			{
-				"family": "Casteigts",
-				"given": "Arnaud"
+				"family": "Marvuglia",
+				"given": "A."
 			},
 			{
-				"family": "Chaumette",
-				"given": "Serge"
+				"family": "Rugani",
+				"given": "B."
 			},
 			{
-				"family": "Guinand",
-				"given": "Frédéric"
+				"family": "Rios",
+				"given": "G."
 			},
 			{
 				"family": "Pigné",
-				"given": "Yoann"
+				"given": "Y."
+			},
+			{
+				"family": "Benetto",
+				"given": "E."
+			},
+			{
+				"family": "Tiruta-Barna",
+				"given": "L."
 			}
 		],
 		"issued": {
@@ -86,22 +512,25 @@
 		}
 	},
 	{
-		"id": "http://zotero.org/users/809971/items/UMIGGF8E",
-		"type": "article-journal",
-		"title": "A metapopulation model for chikungunya including populations mobility on a large-scale network",
-		"container-title": "Journal of Theoretical Biology",
-		"page": "129-139",
-		"volume": "318",
-		"source": "ScienceDirect",
-		"abstract": "In this paper we study the influence of populations mobility on the spread of a vector-borne disease. We focus on the chikungunya epidemic event that occurred in 2005–2006 on the Réunion Island, Indian Ocean, France, and validate our models with real epidemic data from the event. We propose a metapopulation model to represent both a high-resolution patch model of the island with realistic population densities and also mobility models for humans (based on real-motion data) and mosquitoes. In this metapopulation network, two models are coupled: one for the dynamics of the mosquito population and one for the transmission of the disease. A high-resolution numerical model is created from real geographical, demographical and mobility data. The Island is modeled with an 18,000-nodes metapopulation network. Numerical results show the impact of the geographical environment and populations’ mobility on the spread of the disease. The model is finally validated against real epidemic data from the Réunion event.",
-		"URL": "http://www.sciencedirect.com/science/article/pii/S0022519312005838",
-		"DOI": "10.1016/j.jtbi.2012.11.008",
-		"ISSN": "0022-5193",
-		"journalAbbreviation": "Journal of Theoretical Biology",
+		"id": "http://zotero.org/users/809971/items/R7Z4JNJG",
+		"type": "chapter",
+		"title": "Principes généraux de résolution de problèmes combinatoires",
+		"container-title": "Fourmis artificielles 1, Des bases de l'optimisation aux applications industrielles",
+		"page": "41-70",
+		"source": "hal.inria.fr",
+		"URL": "http://hal.archives-ouvertes.fr/hal-00457722",
 		"author": [
 			{
-				"family": "Moulay",
-				"given": "Djamila"
+				"family": "Dutot",
+				"given": "Antoine"
+			},
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Olivier",
+				"given": "Damien"
 			},
 			{
 				"family": "Pigné",
@@ -111,9 +540,139 @@
 		"issued": {
 			"date-parts": [
 				[
+					"2009"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2012",
+					12,
+					12
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/T4XCSS7V",
+		"type": "chapter",
+		"title": "Tour d'horizon des problèmes combinatoires traités par les fourmis artificielles",
+		"container-title": "Fourmis artificielles 1, Des bases de l'optimisation aux applications industrielles",
+		"page": "71-100",
+		"source": "hal.inria.fr",
+		"URL": "http://hal.archives-ouvertes.fr/hal-00457742",
+		"author": [
+			{
+				"family": "Dutot",
+				"given": "Antoine"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2009"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2012",
+					12,
+					12
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/X4HISZW4",
+		"type": "paper-conference",
+		"title": "A Platform for Realistic Online Vehicular Network Management",
+		"container-title": "IEEE International Workshop on Management of Emerging Networks and Services",
+		"publisher": "IEEE Computer Society",
+		"page": "615–619",
+		"abstract": "This paper introduces a platform for realistic and computationally efficient online vehicular networks simulation. It permits decentralized traffic management applications simulation as nodes mobility is modifiable at runtime thanks to the integration of two state-of-the-art network and traffic simulators. The platform embeds a tool that generates vehicular traces based on traffic counting data and ensures performance through a geographical decomposition of the network. Evidence of its performance is given on a Luxembougian traffic management scenario, using real road network and traffic data.",
+		"DOI": "10.1109/GLOCOMW.2010.5700389",
+		"ISBN": "978-1-4244-8863-6",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2010"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/82W9V7GS",
+		"type": "chapter",
+		"title": "An Ant-Based Model for Multiple Sequence Alignment",
+		"container-title": "Large-Scale Scientific Computing",
+		"collection-title": "Lecture Notes in Computer Science",
+		"collection-number": "4818",
+		"publisher": "Springer Berlin Heidelberg",
+		"page": "553-560",
+		"source": "link.springer.com",
+		"abstract": "Multiple sequence alignment is a key process in today’s biology, and finding a relevant alignment of several sequences is much more challenging than just optimizing some improbable evaluation functions. Our approach for addressing multiple sequence alignment focuses on the building of structures in a new graph model: the factor graph model. This model relies on block-based formulation of the original problem, formulation that seems to be one of the most suitable ways for capturing evolutionary aspects of alignment. The structures are implicitly built by a colony of ants laying down pheromones in the factor graphs, according to relations between blocks belonging to the different sequences.",
+		"URL": "http://link.springer.com/chapter/10.1007/978-3-540-78827-0_63",
+		"ISBN": "978-3-540-78825-6",
+		"author": [
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"editor": [
+			{
+				"family": "Lirkov",
+				"given": "Ivan"
+			},
+			{
+				"family": "Margenov",
+				"given": "Svetozar"
+			},
+			{
+				"family": "Waśniewski",
+				"given": "Jerzy"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2008",
+					1,
+					1
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
 					"2013",
-					2,
-					7
+					11,
+					27
 				]
 			]
 		}
@@ -207,79 +766,89 @@
 		}
 	},
 	{
-		"id": "http://zotero.org/users/809971/items/PJV5XV87",
-		"type": "paper-conference",
-		"title": "Generation of realistic mobility for VANETs using genetic algorithms",
-		"container-title": "2012 IEEE Congress on Evolutionary Computation (CEC)",
-		"page": "1 -8",
-		"source": "IEEE Xplore",
-		"event": "2012 IEEE Congress on Evolutionary Computation (CEC)",
-		"abstract": "The first step in the evaluation of vehicular ad hoc networks (VANETs) applications is based on simulations. The quality of those simulations not only depends on the accuracy of the network model but also on the degree of reality of the underlying mobility model. VehILux-a recently proposed vehicular mobility model, allows generating realistic mobility traces using traffic volume count data. It is based on the concept of probabilistic attraction points. However, this model does not address the question of how to select the best values of the probabilities associated with the points. Moreover, these values depend on the problem instance (i.e. geographical region). In this article we demonstrate how genetic algorithms (GAs) can be used to discover these probabilities. Our approach combined together with VehILux and a traffic simulator allows to generate realistic vehicular mobility traces for any region, for which traffic volume counts are available. The process of the discovery of the probabilities is represented as an optimisation problem. Three GAs-generational GA, steady-state GA, and cellular GA-are compared. Computational experiments demonstrate that using basic evolutionary heuristics for optimising VehILux parameters on a given problem instance permits to improve the model realism. However, in some cases, the results significantly deviate from real traffic count data. This is due to the route generation method of the VehILux model, which does not take into account specific behaviour of drivers in rush hours.",
-		"DOI": "10.1109/CEC.2012.6252987",
+		"id": "http://zotero.org/users/809971/items/H4SQS5UX",
+		"type": "chapter",
+		"title": "Distributed Maintenance of Anytime Available Spanning Trees in Dynamic Networks",
+		"container-title": "Ad-hoc, Mobile, and Wireless Network",
+		"collection-title": "Lecture Notes in Computer Science",
+		"publisher": "Springer Berlin Heidelberg",
+		"page": "99-110",
+		"volume": "7960",
+		"URL": "http://dx.doi.org/10.1007/978-3-642-39247-4_9",
+		"ISBN": "978-3-642-39246-7",
+		"editor": [
+			{
+				"family": "Cichoń",
+				"given": "Jacek"
+			},
+			{
+				"family": "Gȩbala",
+				"given": "Maciej"
+			},
+			{
+				"family": "Klonowski",
+				"given": "Marek"
+			}
+		],
 		"author": [
 			{
-				"family": "Seredynski",
-				"given": "M."
+				"family": "Casteigts",
+				"given": "Arnaud"
 			},
 			{
-				"family": "Danoy",
-				"given": "G."
+				"family": "Chaumette",
+				"given": "Serge"
 			},
 			{
-				"family": "Tabatabaei",
-				"given": "M."
-			},
-			{
-				"family": "Bouvry",
-				"given": "P."
+				"family": "Guinand",
+				"given": "Frédéric"
 			},
 			{
 				"family": "Pigné",
-				"given": "Y."
+				"given": "Yoann"
 			}
 		],
 		"issued": {
 			"date-parts": [
 				[
-					"2012",
-					6
+					"2013"
 				]
 			]
 		}
 	},
 	{
-		"id": "http://zotero.org/users/809971/items/GBMWDS8M",
+		"id": "http://zotero.org/users/809971/items/TTFMS973",
 		"type": "paper-conference",
-		"title": "Sensitivity analysis for a realistic vehicular mobility model",
-		"container-title": "Proceedings of the first ACM international symposium on Design and analysis of intelligent vehicular networks and applications",
-		"collection-title": "DIVANet '11",
-		"publisher": "ACM",
-		"publisher-place": "New York, NY, USA",
-		"page": "31–38",
+		"title": "Impact of Obstacles on the Degree of Mobile Ad Hoc Connection Graphs",
+		"container-title": "Proceedings of the 2009 Fifth International Conference on Networking and Services",
+		"collection-title": "ICNS '09",
+		"publisher": "IEEE Computer Society",
+		"publisher-place": "Washington, DC, USA",
+		"page": "332–337",
 		"source": "ACM Digital Library",
-		"event-place": "New York, NY, USA",
-		"abstract": "In this article, we consider a realistic vehicular mobility model, VehILux, and use a sensitivity analysis method to quantitatively study the influence and interdependencies of its parameters. The analysis reveals several properties in the set of parameters. Some are identified as irrelevant to the output while some have stronger impact than expected. This analysis is proposed as a preliminary step to the mobility model optimization, as it permits to significantly reduce the parameters search space.",
-		"URL": "http://doi.acm.org/10.1145/2069000.2069007",
-		"DOI": "10.1145/2069000.2069007",
-		"ISBN": "978-1-4503-0904-2",
+		"event-place": "Washington, DC, USA",
+		"abstract": "What is the impact of obstacles on the graphs of connections between stations in Mobile Ad hoc Networks? In order to answer, at least partially, this question, the first step is to define both an environment with obstacles and a mobility model for the stations in such an environment. The present paper focuses on a new way of considering the mobility within environments with obstacles, while keeping the core ideas of the well-known Random WayPoint mobility model (a.k.a RWP). Based on a mesh-partitioning of the space, we propose a new model called RSP-O-G for which we compute the spatial distribution of stations and analyse how the presence of obstacles impacts this distribution compared to the distribution when no obstacles are present. Coupled with a simple model of radio propagation, and according to the density of stations in the environment, we study the mean degree of the connection graphs corresponding to such mobile ad hoc networks.",
+		"URL": "http://dx.doi.org/10.1109/ICNS.2009.36",
+		"DOI": "10.1109/ICNS.2009.36",
+		"ISBN": "978-0-7695-3586-9",
 		"author": [
+			{
+				"family": "Aboue-Nze",
+				"given": "Cédric Gaël"
+			},
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
 			{
 				"family": "Pigné",
 				"given": "Yoann"
-			},
-			{
-				"family": "Danoy",
-				"given": "Grégoire"
-			},
-			{
-				"family": "Bouvry",
-				"given": "Pascal"
 			}
 		],
 		"issued": {
 			"date-parts": [
 				[
-					"2011"
+					"2009"
 				]
 			]
 		},
@@ -338,116 +907,38 @@
 		}
 	},
 	{
-		"id": "http://zotero.org/users/809971/items/T4XCSS7V",
-		"type": "chapter",
-		"title": "Tour d'horizon des problèmes combinatoires traités par les fourmis artificielles",
-		"container-title": "Fourmis artificielles 1, Des bases de l'optimisation aux applications industrielles",
-		"page": "71-100",
-		"source": "hal.inria.fr",
-		"URL": "http://hal.archives-ouvertes.fr/hal-00457742",
-		"author": [
-			{
-				"family": "Dutot",
-				"given": "Antoine"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2009"
-				]
-			]
-		},
-		"accessed": {
-			"date-parts": [
-				[
-					"2012",
-					12,
-					12
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/R7Z4JNJG",
-		"type": "chapter",
-		"title": "Principes généraux de résolution de problèmes combinatoires",
-		"container-title": "Fourmis artificielles 1, Des bases de l'optimisation aux applications industrielles",
-		"page": "41-70",
-		"source": "hal.inria.fr",
-		"URL": "http://hal.archives-ouvertes.fr/hal-00457722",
-		"author": [
-			{
-				"family": "Dutot",
-				"given": "Antoine"
-			},
-			{
-				"family": "Guinand",
-				"given": "Frédéric"
-			},
-			{
-				"family": "Olivier",
-				"given": "Damien"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2009"
-				]
-			]
-		},
-		"accessed": {
-			"date-parts": [
-				[
-					"2012",
-					12,
-					12
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/TTFMS973",
+		"id": "http://zotero.org/users/809971/items/GBMWDS8M",
 		"type": "paper-conference",
-		"title": "Impact of Obstacles on the Degree of Mobile Ad Hoc Connection Graphs",
-		"container-title": "Proceedings of the 2009 Fifth International Conference on Networking and Services",
-		"collection-title": "ICNS '09",
-		"publisher": "IEEE Computer Society",
-		"publisher-place": "Washington, DC, USA",
-		"page": "332–337",
+		"title": "Sensitivity analysis for a realistic vehicular mobility model",
+		"container-title": "Proceedings of the first ACM international symposium on Design and analysis of intelligent vehicular networks and applications",
+		"collection-title": "DIVANet '11",
+		"publisher": "ACM",
+		"publisher-place": "New York, NY, USA",
+		"page": "31–38",
 		"source": "ACM Digital Library",
-		"event-place": "Washington, DC, USA",
-		"abstract": "What is the impact of obstacles on the graphs of connections between stations in Mobile Ad hoc Networks? In order to answer, at least partially, this question, the first step is to define both an environment with obstacles and a mobility model for the stations in such an environment. The present paper focuses on a new way of considering the mobility within environments with obstacles, while keeping the core ideas of the well-known Random WayPoint mobility model (a.k.a RWP). Based on a mesh-partitioning of the space, we propose a new model called RSP-O-G for which we compute the spatial distribution of stations and analyse how the presence of obstacles impacts this distribution compared to the distribution when no obstacles are present. Coupled with a simple model of radio propagation, and according to the density of stations in the environment, we study the mean degree of the connection graphs corresponding to such mobile ad hoc networks.",
-		"URL": "http://dx.doi.org/10.1109/ICNS.2009.36",
-		"DOI": "10.1109/ICNS.2009.36",
-		"ISBN": "978-0-7695-3586-9",
+		"event-place": "New York, NY, USA",
+		"abstract": "In this article, we consider a realistic vehicular mobility model, VehILux, and use a sensitivity analysis method to quantitatively study the influence and interdependencies of its parameters. The analysis reveals several properties in the set of parameters. Some are identified as irrelevant to the output while some have stronger impact than expected. This analysis is proposed as a preliminary step to the mobility model optimization, as it permits to significantly reduce the parameters search space.",
+		"URL": "http://doi.acm.org/10.1145/2069000.2069007",
+		"DOI": "10.1145/2069000.2069007",
+		"ISBN": "978-1-4503-0904-2",
 		"author": [
-			{
-				"family": "Aboue-Nze",
-				"given": "Cédric Gaël"
-			},
-			{
-				"family": "Guinand",
-				"given": "Frédéric"
-			},
 			{
 				"family": "Pigné",
 				"given": "Yoann"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
 			}
 		],
 		"issued": {
 			"date-parts": [
 				[
-					"2009"
+					"2011"
 				]
 			]
 		},
@@ -500,94 +991,6 @@
 		}
 	},
 	{
-		"id": "http://zotero.org/users/809971/items/82W9V7GS",
-		"type": "chapter",
-		"title": "An Ant-Based Model for Multiple Sequence Alignment",
-		"container-title": "Large-Scale Scientific Computing",
-		"collection-title": "Lecture Notes in Computer Science",
-		"collection-number": "4818",
-		"publisher": "Springer Berlin Heidelberg",
-		"page": "553-560",
-		"source": "link.springer.com",
-		"abstract": "Multiple sequence alignment is a key process in today’s biology, and finding a relevant alignment of several sequences is much more challenging than just optimizing some improbable evaluation functions. Our approach for addressing multiple sequence alignment focuses on the building of structures in a new graph model: the factor graph model. This model relies on block-based formulation of the original problem, formulation that seems to be one of the most suitable ways for capturing evolutionary aspects of alignment. The structures are implicitly built by a colony of ants laying down pheromones in the factor graphs, according to relations between blocks belonging to the different sequences.",
-		"URL": "http://link.springer.com/chapter/10.1007/978-3-540-78827-0_63",
-		"ISBN": "978-3-540-78825-6",
-		"author": [
-			{
-				"family": "Guinand",
-				"given": "Frédéric"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			}
-		],
-		"editor": [
-			{
-				"family": "Lirkov",
-				"given": "Ivan"
-			},
-			{
-				"family": "Margenov",
-				"given": "Svetozar"
-			},
-			{
-				"family": "Waśniewski",
-				"given": "Jerzy"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2008",
-					1,
-					1
-				]
-			]
-		},
-		"accessed": {
-			"date-parts": [
-				[
-					"2013",
-					11,
-					27
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/X4HISZW4",
-		"type": "paper-conference",
-		"title": "A Platform for Realistic Online Vehicular Network Management",
-		"container-title": "IEEE International Workshop on Management of Emerging Networks and Services",
-		"publisher": "IEEE Computer Society",
-		"page": "615–619",
-		"abstract": "This paper introduces a platform for realistic and computationally efficient online vehicular networks simulation. It permits decentralized traffic management applications simulation as nodes mobility is modifiable at runtime thanks to the integration of two state-of-the-art network and traffic simulators. The platform embeds a tool that generates vehicular traces based on traffic counting data and ensures performance through a geographical decomposition of the network. Evidence of its performance is given on a Luxembougian traffic management scenario, using real road network and traffic data.",
-		"DOI": "10.1109/GLOCOMW.2010.5700389",
-		"ISBN": "978-1-4244-8863-6",
-		"author": [
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			},
-			{
-				"family": "Danoy",
-				"given": "Grégoire"
-			},
-			{
-				"family": "Bouvry",
-				"given": "Pascal"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2010"
-				]
-			]
-		}
-	},
-	{
 		"id": "http://zotero.org/users/809971/items/WPU6RT9Q",
 		"type": "thesis",
 		"title": "Modélisation et traitement décentralisé des graphes dynamiques Application aux réseaux mobiles ad hoc",
@@ -616,374 +1019,6 @@
 					"2013",
 					1,
 					10
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/8XJ3NBQ2",
-		"type": "article-journal",
-		"title": "Using graph search algorithms for a rigorous application of emergy algebra rules",
-		"container-title": "Metallurgical Research & Technology",
-		"page": "8",
-		"volume": "110",
-		"issue": "1",
-		"DOI": "10.1051/metal/2013050",
-		"author": [
-			{
-				"family": "Marvuglia",
-				"given": "A."
-			},
-			{
-				"family": "Rugani",
-				"given": "B."
-			},
-			{
-				"family": "Rios",
-				"given": "G."
-			},
-			{
-				"family": "Pigné",
-				"given": "Y."
-			},
-			{
-				"family": "Benetto",
-				"given": "E."
-			},
-			{
-				"family": "Tiruta-Barna",
-				"given": "L."
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2013"
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/XCXIJGS8",
-		"type": "paper-conference",
-		"title": "Impact of square environment on the connectivity in finite ad hoc networks",
-		"container-title": "2011 14th International Symposium on Wireless Personal Multimedia Communications (WPMC)",
-		"publisher-place": "Brest, France",
-		"page": "1-5",
-		"source": "IEEE Xplore",
-		"event": "2011 14th International Symposium on Wireless Personal Multimedia Communications (WPMC)",
-		"event-place": "Brest, France",
-		"abstract": "This paper aims at studying some connectivity properties for random geometric graphs when they are constrained by the topological space in which they are embedded. More precisely, we focus our attention on limited square and rectangular environments. In order to analyse the impact of such environments on related graphs, we observe the evolution of mean degree. We propose an approach aiming at estimating the impact of the environment borders on the connectivity and we provide an analytical formula for computing the mean degree value depending on borders effects.",
-		"author": [
-			{
-				"family": "Aboue Nze",
-				"given": "G.-C."
-			},
-			{
-				"family": "Guinand",
-				"given": "F."
-			},
-			{
-				"family": "Pigné",
-				"given": "Y."
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2011",
-					10
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/TXWE973H",
-		"type": "paper-conference",
-		"title": "A Vehicular Mobility Model Based on Real Traffic Counting Data",
-		"container-title": "Proceedings of the Third International Conference on Communication Technologies for Vehicles",
-		"collection-title": "Nets4Cars/Nets4Trains'11",
-		"publisher": "Springer-Verlag",
-		"publisher-place": "Berlin, Heidelberg",
-		"page": "131–142",
-		"source": "ACM Digital Library",
-		"event-place": "Berlin, Heidelberg",
-		"abstract": "This paper proposes VehILux, a new vehicular mobility model based on real traffic counting data. It relies on two freely available sources of real information for the country of Luxembourg. The first source is traffic data collected by counting devices located on the Luxembourgian road network, while the second is geographical information about different types of areas: residential, industrial, commercial and other services. VehILux models vehicles commuting around the city of Luxembourg by considering two types of traffic, outer traffic with vehicles entering in the defined geographical area and inner traffic starting from residential zones located inside the geographical area. One part of the collected traffic data is used as input traffic, while another part is used to control the produced traffic and to fine-tune the model. VehILux is coupled with the microscopic road traffic simulator SUMO to produce realistic vehicular traces.",
-		"URL": "http://dl.acm.org/citation.cfm?id=1987310.1987325",
-		"ISBN": "978-3-642-19785-7",
-		"author": [
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			},
-			{
-				"family": "Danoy",
-				"given": "Grégoire"
-			},
-			{
-				"family": "Bouvry",
-				"given": "Pascal"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2011"
-				]
-			]
-		},
-		"accessed": {
-			"date-parts": [
-				[
-					"2015",
-					3,
-					2
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/TDFG7DDG",
-		"type": "chapter",
-		"title": "Time considerations for the study of complex maritime networks",
-		"container-title": "Maritime Networks Spatial structures and time dynamics",
-		"collection-title": "Routledge Studies in Transport Analysis",
-		"publisher": "Routledge",
-		"page": "163--189",
-		"edition": "César Ducruet",
-		"abstract": "This work proposes two new methodological approaches for the analysis of global shipping networks stemmed from containerships movements reported in Lloyds’ List Periodicals.  After a complex network analysis, the first approach proposes the analysis of sets of networks, called TG-Graphs, built from events occurring in constant-size sliding time windows. Time series represent the evolution of network measures, and the simultaneous analysis of these series for several measures highlights some phenomenons arising in the shipping network. In the second model, networks are modeled with temporal networks where each event is associated with a timestamp. In this model, distance-related measures take a new meaning since paths must obey time constraints. This approach reveals that although the global port network is highly connected, ports who are not directly connected to the main hubs are actually isolated from the rest of the network.",
-		"URL": "https://www.routledge.com/products/9781138911253",
-		"ISBN": "1-138-91125-9",
-		"language": "English",
-		"author": [
-			{
-				"family": "Guinand",
-				"given": "Frédéric"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2015"
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/GVPU4EB4",
-		"type": "paper-conference",
-		"title": "Reachability in maritime transportation networks",
-		"container-title": "Complex Networks: from theory to interdisciplinary applications",
-		"publisher-place": "Marseille",
-		"event": "Complex Networks: from theory to interdisciplinary applications",
-		"event-place": "Marseille",
-		"abstract": "In temporal network a node v is reachable from a node u iff there exists a time-respecting path from u to v. The set of reachable nodes from node u is called the reachability set of u. \nIn this work we describe a simple extension of this metric considering the round-trip reachability. The round-trip reachability set of a node u contains all vertices for which there exists a time-respecting path from u to v temporally followed by a time-respecting path from v to u. Client/Server systems as well as question/answer relations motivate this extension. A container shipping network illustrates the use of such a metric.",
-		"author": [
-			{
-				"family": "Guinand",
-				"given": "Frédéric"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2016",
-					7,
-					11
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/69GD86IU",
-		"type": "article-journal",
-		"title": "Environmental assessment of bioenergy production from microalgae based systems",
-		"container-title": "Journal of Cleaner Production",
-		"page": "51-60",
-		"volume": "139",
-		"source": "ScienceDirect",
-		"abstract": "Microalgae have been studied as a potential alternative raw material and various technologies have been proposed to transform the algal biomass into energy products. In this study, two bioenergy production systems of very different complexities were modelled to assess their environmental efficiencies: a biodiesel system and a biogas system. Biodiesel system used supercritical extraction and transesterification as key processes; to the best of authors' knowledge, there is no previous work analysing the environmental performances of such production system. Cumulative energy demand, Life Cycle Assessment (LCA) and dynamic LCA for climate change were used to evaluate the environmental footprint of the production systems. Conventional systems for electricity, heat and diesel production were considered for comparison. Energy balance showed that the supercritical extraction and drying steps were the most energy consuming unit operations in biodiesel production and further developments of technologies might be envisaged. LCA showed that climate change was the main contributor to impacts on human health and ecosystem quality due to energy consumed in production steps. Also, heat from biogas was the only product that proved to have a satisfactory environmental performance with regard to other conventional production systems. Finally, dynamic climate change evaluation (used for the first time for bio-chemical processes) revealed no carbon sequestration in microalgae system.",
-		"URL": "http://www.sciencedirect.com/science/article/pii/S0959652616311283",
-		"DOI": "10.1016/j.jclepro.2016.08.003",
-		"ISSN": "0959-6526",
-		"journalAbbreviation": "Journal of Cleaner Production",
-		"author": [
-			{
-				"family": "Shimako",
-				"given": "Allan Hayato"
-			},
-			{
-				"family": "Tiruta-Barna",
-				"given": "Ligia"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			},
-			{
-				"family": "Benetto",
-				"given": "Enrico"
-			},
-			{
-				"family": "Navarrete Gutiérrez",
-				"given": "Tomás"
-			},
-			{
-				"family": "Guiraud",
-				"given": "Pascal"
-			},
-			{
-				"family": "Ahmadi",
-				"given": "Aras"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2016",
-					12,
-					15
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/FRVP64MF",
-		"type": "article-journal",
-		"title": "Framework and computational tool for the consideration of time dependency in Life Cycle Inventory: proof of concept",
-		"container-title": "Journal of Cleaner Production",
-		"page": "198-206",
-		"volume": "116",
-		"source": "ScienceDirect",
-		"abstract": "Conventional Life Cycle Inventories (LCIs) are static models of product systems without time dependent functioning of plants and time lags between supply and demand of products. The aggregation of environmental interventions without consideration of the time dimension represents an acknowledged limitation of the Life Cycle Assessment (LCA) method. In this paper we present a novel conceptual and computational framework for the consideration of time dependency in LCIs. Process modeling is used to describe the production flows and environmental interventions of each unit process and supply modeling is used to include time lags on the raw materials exchanged by unit processes of the product system. The combination of production and supply models in life cycle networks, based on a set of specific temporal parameters (representative functioning period, production time, supply delay, supply frequency), allows the characterization of time dependency in each node. For the computation of time dependent LCI, i.e. of the time resolved environmental interventions, graph search algorithm is proposed and implemented in a prototype Web application. In terms of results, the new approach provides time dependent LCI expressed as: i) time as a function of individual emission (or resource consumption) for individual processes, ii) aggregated time as a function of a given environmental intervention. A test bed case illustrating the effectiveness of the conceptual and computational approaches (proof of concept) is presented and successfully solved both analytically and numerically.",
-		"URL": "http://www.sciencedirect.com/science/article/pii/S0959652615018739",
-		"DOI": "10.1016/j.jclepro.2015.12.049",
-		"ISSN": "0959-6526",
-		"shortTitle": "Framework and computational tool for the consideration of time dependency in Life Cycle Inventory",
-		"journalAbbreviation": "Journal of Cleaner Production",
-		"author": [
-			{
-				"family": "Tiruta-Barna",
-				"given": "Ligia"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			},
-			{
-				"family": "Navarrete Gutiérrez",
-				"given": "Tomás"
-			},
-			{
-				"family": "Benetto",
-				"given": "Enrico"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2016",
-					3,
-					10
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/D66HZ8KX",
-		"type": "article-journal",
-		"title": "On the Complexity of Life Cycle Inventory Networks: Role of Life Cycle Processes with Network Analysis",
-		"container-title": "Journal of Industrial Ecology",
-		"page": "1094-1107",
-		"volume": "20",
-		"issue": "5",
-		"source": "Wiley Online Library",
-		"abstract": "Determining the relevance and importance of a technosphere process or a cluster of processes in relation to the rest of the industrial network can provide insights into the sustainability of supply chains: those that need to be optimized or controlled/safeguarded. Network analysis (NA) can offer a broad framework of indicators to tackle this problem. In this article, we present a detailed analysis of a life cycle inventory (LCI) model from an NA perspective. Specifically, the network is represented as a directed graph and the “emergy” numeraire is used as the weight associated with the arcs of the network. The case study of a technological system for drinking water production is presented. We investigate the topological and structural characteristics of the network representation of this system and compare properties of its weighted and unweighted network, as well as the importance of nodes (i.e., life cycle unit processes). By identifying a number of advantages and limitations linked to the modeling complexity of such emergy-LCI networks, we classify the LCI technosphere network of our case study as a complex network belonging to the scale-free network family. The salient feature of this network family is represented by the presence of “hubs”: nodes that connect with many other nodes. Hub failures may imply relevant changes, decreases, or even breaks in the connectedness with other smaller hubs and nodes of the network. Hence, by identifying node centralities, we can rank and interpret the relevance of each node for its special role in the life cycle network.",
-		"URL": "http://onlinelibrary.wiley.com/doi/10.1111/jiec.12338/abstract",
-		"DOI": "10.1111/jiec.12338",
-		"ISSN": "1530-9290",
-		"shortTitle": "On the Complexity of Life Cycle Inventory Networks",
-		"journalAbbreviation": "Journal of Industrial Ecology",
-		"language": "en",
-		"author": [
-			{
-				"family": "Navarrete-Gutiérrez",
-				"given": "Tomás"
-			},
-			{
-				"family": "Rugani",
-				"given": "Benedetto"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			},
-			{
-				"family": "Marvuglia",
-				"given": "Antonino"
-			},
-			{
-				"family": "Benetto",
-				"given": "Enrico"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2016",
-					10,
-					1
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/JFQ2UFG3",
-		"type": "book",
-		"title": "Evolutionary Algorithms for Mobile Ad Hoc Networks",
-		"publisher": "John Wiley & Sons",
-		"number-of-pages": "249",
-		"source": "Google Books",
-		"abstract": "Describes how evolutionary algorithms (EAs) can be used to identify, model, and minimize day-to-day problems that arise for researchers in optimization and mobile networking Mobile ad hoc networks (MANETs), vehicular networks (VANETs), sensor networks (SNs), and hybrid networks—each of these require a designer’s keen sense and knowledge of evolutionary algorithms in order to help with the common issues that plague professionals involved in optimization and mobile networking. This book introduces readers to both mobile ad hoc networks and evolutionary algorithms, presenting basic concepts as well as detailed descriptions of each. It demonstrates how metaheuristics and evolutionary algorithms (EAs) can be used to help provide low-cost operations in the optimization process—allowing designers to put some “intelligence” or sophistication into the design. It also offers efficient and accurate information on dissemination algorithms, topology management, and mobility models to address challenges in the field. Evolutionary Algorithms for Mobile Ad Hoc Networks:  Instructs on how to identify, model, and optimize solutions to problems that arise in daily research Presents complete and up-to-date surveys on topics like network and mobility simulators Provides sample problems along with solutions/descriptions used to solve each, with performance comparisons Covers current, relevant issues in mobile networks, like energy use, broadcasting performance, device mobility, and more  Evolutionary Algorithms for Mobile Ad Hoc Networks is an ideal book for researchers and students involved in mobile networks, optimization, advanced search techniques, and multi-objective optimization.",
-		"ISBN": "978-1-118-83202-8",
-		"note": "Google-Books-ID: NpBUAwAAQBAJ",
-		"language": "en",
-		"author": [
-			{
-				"family": "Dorronsoro",
-				"given": "Bernabé"
-			},
-			{
-				"family": "Ruiz",
-				"given": "Patricia"
-			},
-			{
-				"family": "Danoy",
-				"given": "Grégoire"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			},
-			{
-				"family": "Bouvry",
-				"given": "Pascal"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2014",
-					4,
-					8
 				]
 			]
 		}
