@@ -1,38 +1,5 @@
 [
 	{
-		"id": "http://zotero.org/users/809971/items/3VM5ZZFC",
-		"type": "article-journal",
-		"title": "New Selection Strategies of Actor’s Substitute in DARA for Connectivity Restoration in WSANs",
-		"container-title": "SpringerLink",
-		"page": "38-49",
-		"source": "link.springer.com",
-		"abstract": "Wireless Sensor and Actor Networks are used in many dangerous applications. When performing their tasks, actors may fail due to harsh environments in which they are deployed. Some actors are cut-verti",
-		"URL": "https://link.springer.com/chapter/10.1007/978-3-319-51204-4_4",
-		"DOI": "10.1007/978-3-319-51204-4_4",
-		"language": "en",
-		"author": [
-			{
-				"family": "Saada",
-				"given": "Riadh"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			},
-			{
-				"family": "Olivier",
-				"given": "Damien"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2017"
-				]
-			]
-		}
-	},
-	{
 		"id": "http://zotero.org/users/809971/items/69GD86IU",
 		"type": "article-journal",
 		"title": "Environmental assessment of bioenergy production from microalgae based systems",
@@ -1019,6 +986,265 @@
 					"2013",
 					1,
 					10
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/2RZTS9MD",
+		"type": "paper-conference",
+		"title": "Successive Shortest Path Algorithm for Flows in Dynamic Graphs",
+		"container-title": "16th Cologne-Twente Workshop on Graphs and Combinatorial Optimization",
+		"page": "51--54",
+		"event": "Cologne-Twente Workshop on Graphs and Combinatorial Optimization",
+		"abstract": "This work focuses on the minimum cost flow problem in dynamic graphs. We use a model in which there are no travel time on arcs, and storage on vertices is not al- lowed. Every other graph parameter is time-dependent. We propose a method using the successive shortest path algorithm that avoids using the time-expanded graph that significantly increases the complexity of the problem. Our method is implemented using the GraphStream library.",
+		"author": [
+			{
+				"family": "Vernet",
+				"given": "Mathilde"
+			},
+			{
+				"family": "Drozdowski",
+				"given": "Maciej"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Sanlaville",
+				"given": "Eric"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018",
+					6,
+					18
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/2VS8AMEY",
+		"type": "paper-conference",
+		"title": "Moving Average control chart for the detection and isolation of temporal faults in stochastic Petri nets",
+		"container-title": "23rd IEEE International Conference on Emerging Technologies and Factory Automation, ETFA 2018, Torino, Italy, September 4-7, 2018",
+		"publisher": "IEEE",
+		"page": "493–498",
+		"source": "DBLP Computer Science Bibliography",
+		"DOI": "10.1109/ETFA.2018.8502633",
+		"author": [
+			{
+				"family": "Rachidi",
+				"given": "Sara"
+			},
+			{
+				"family": "Leclercq",
+				"given": "Edouard"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Lefebvre",
+				"given": "Dimitri"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/7M9TMWRS",
+		"type": "paper-conference",
+		"title": "Temporal fault diagnosis for k-bounded non-Markovian SPN",
+		"container-title": "5th International Conference on Control, Decision and Information Technologies, CoDIT 2018, Thessaloniki, Greece, April 10-13, 2018",
+		"publisher": "IEEE",
+		"page": "271–276",
+		"source": "DBLP Computer Science Bibliography",
+		"DOI": "10.1109/CoDIT.2018.8394843",
+		"ISBN": "978-1-5386-5065-3",
+		"author": [
+			{
+				"family": "Lefebvre",
+				"given": "Dimitri"
+			},
+			{
+				"family": "Rachidi",
+				"given": "Sara"
+			},
+			{
+				"family": "Leclercq",
+				"given": "Edouard"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/BJMCV8P2",
+		"type": "article-journal",
+		"title": "Diagnosis of Structural and Temporal Faults for k-Bounded Non-Markovian Stochastic Petri Nets",
+		"container-title": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+		"page": "1-13",
+		"volume": "PP",
+		"source": "ResearchGate",
+		"abstract": "This paper concerns the diagnosis of faults for stochastic discrete event systems that behave according to non-Markovian dynamics. k-bounded partially observed Petri nets are used to model the system structure and the sensors. Stochastic processes with probability density functions (pdf) of finite support define the dynamics. Structural and temporal faults are considered. Structural faults correspond to specific sequences of events that should satisfy precedence conditions defined with patterns. Temporal faults are defined with time constraints that must be fulfilled by the firing durations. The probabilities of consistent trajectories are computed with a numerical scheme from the collected timed measurements. The advantage of the proposed scheme is that it can be used for a large variety of pdf that may be defined either with an analytical or a numerical description. It works also for various time semantics. Diagnosis in terms of probability for faulty patterns and temporal constraints is established as a consequence.",
+		"DOI": "10.1109/TSMC.2018.2875726",
+		"journalAbbreviation": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+		"author": [
+			{
+				"family": "Lefebvre",
+				"given": "Dimitri"
+			},
+			{
+				"family": "Rachidi",
+				"given": "Sara"
+			},
+			{
+				"family": "Leclercq",
+				"given": "E"
+			},
+			{
+				"family": "Pigne",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018",
+					11,
+					9
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/TBWG82TV",
+		"type": "paper-conference",
+		"title": "Algorithmique dans les graphes dynamiques : le cas des flots",
+		"event": "ROADEF 2018",
+		"author": [
+			{
+				"family": "Vernet",
+				"given": "Mathilde"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Sanlaville",
+				"given": "Eric"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018",
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/D76RJQTI",
+		"type": "paper-conference",
+		"title": "New Selection Strategies of Actor’s Substitute in DARA for Connectivity Restoration in WSANs",
+		"container-title": "Ad Hoc Networks",
+		"collection-title": "Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
+		"publisher": "Springer International Publishing",
+		"page": "38-49",
+		"source": "Springer Link",
+		"abstract": "Wireless Sensor and Actor Networks are used in many dangerous applications. When performing their tasks, actors may fail due to harsh environments in which they are deployed. Some actors are cut-vertices within network. Their loss breaks its connectivity and disrupts its operation accordingly. Therefore, restoring network connectivity is crucial. DARA is among the most popular connectivity restoration schemes. It performs multi-actor relocations in order to replace a failed cut-vertex by one of its neighbors, based on the lowest degree. In this paper, we propose new selection strategies of actor’s substitute in DARA, in which the substitute selection is based on the nature of the links with neighbors rather than on the degree. Our approaches improve the performance of DARA by reducing the number of relocated actors in the recovery process by 24% on average compared to its original selection strategy. The proposed strategies are validated through simulation experiments.",
+		"DOI": "10.1007/978-3-319-51204-4_4",
+		"ISBN": "978-3-319-51204-4",
+		"language": "en",
+		"author": [
+			{
+				"family": "Saada",
+				"given": "Riadh"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Olivier",
+				"given": "Damien"
+			}
+		],
+		"editor": [
+			{
+				"family": "Zhou",
+				"given": "Yifeng"
+			},
+			{
+				"family": "Kunz",
+				"given": "Thomas"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2017"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/8736L66T",
+		"type": "article-journal",
+		"title": "Bayesian Dynamic Linear Model with Adaptive Parameter Estimation for Short-Term Travel Speed Prediction",
+		"container-title": "Journal of Advanced Transportation",
+		"page": "10",
+		"volume": "2019",
+		"abstract": "Bayesian dynamic linear model is a promising method for time series data analysis and short-term forecasting. One research issue concerns how the predictive model adapts to changes in the system, especially when shocks impact system behavior. In this study, we propose an adaptive dynamic linear model to adaptively update model parameters for online system state prediction. The proposed method is an automatic approach based on the feedback of prediction errors at each time slot without the needs of external intervention. The experimental study on short-term travel speed prediction shows that the proposed method can significantly reduce the prediction errors of the traditional dynamic linear model and outperform two state-of-the-art methods in the case of major system behavior changes.",
+		"URL": "https://www.hindawi.com/journals/jat/2019/5314520/",
+		"DOI": "10.1155/2019/5314520",
+		"note": "DOI: 10.1155/2019/5314520",
+		"journalAbbreviation": "JAT",
+		"language": "en",
+		"author": [
+			{
+				"family": "Ma",
+				"given": "Tai-Yu"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2019"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2019",
+					6,
+					24
 				]
 			]
 		}
