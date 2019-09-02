@@ -221,35 +221,6 @@
 		}
 	},
 	{
-		"id": "http://zotero.org/users/809971/items/GVPU4EB4",
-		"type": "paper-conference",
-		"title": "Reachability in maritime transportation networks",
-		"container-title": "Complex Networks: from theory to interdisciplinary applications",
-		"publisher-place": "Marseille",
-		"event": "Complex Networks: from theory to interdisciplinary applications",
-		"event-place": "Marseille",
-		"abstract": "In temporal network a node v is reachable from a node u iff there exists a time-respecting path from u to v. The set of reachable nodes from node u is called the reachability set of u. \nIn this work we describe a simple extension of this metric considering the round-trip reachability. The round-trip reachability set of a node u contains all vertices for which there exists a time-respecting path from u to v temporally followed by a time-respecting path from v to u. Client/Server systems as well as question/answer relations motivate this extension. A container shipping network illustrates the use of such a metric.",
-		"author": [
-			{
-				"family": "Guinand",
-				"given": "Frédéric"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2016",
-					7,
-					11
-				]
-			]
-		}
-	},
-	{
 		"id": "http://zotero.org/users/809971/items/TDFG7DDG",
 		"type": "chapter",
 		"title": "Time considerations for the study of complex maritime networks",
@@ -276,47 +247,6 @@
 			"date-parts": [
 				[
 					"2015"
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/PJV5XV87",
-		"type": "paper-conference",
-		"title": "Generation of realistic mobility for VANETs using genetic algorithms",
-		"container-title": "2012 IEEE Congress on Evolutionary Computation (CEC)",
-		"page": "1 -8",
-		"source": "IEEE Xplore",
-		"event": "2012 IEEE Congress on Evolutionary Computation (CEC)",
-		"abstract": "The first step in the evaluation of vehicular ad hoc networks (VANETs) applications is based on simulations. The quality of those simulations not only depends on the accuracy of the network model but also on the degree of reality of the underlying mobility model. VehILux-a recently proposed vehicular mobility model, allows generating realistic mobility traces using traffic volume count data. It is based on the concept of probabilistic attraction points. However, this model does not address the question of how to select the best values of the probabilities associated with the points. Moreover, these values depend on the problem instance (i.e. geographical region). In this article we demonstrate how genetic algorithms (GAs) can be used to discover these probabilities. Our approach combined together with VehILux and a traffic simulator allows to generate realistic vehicular mobility traces for any region, for which traffic volume counts are available. The process of the discovery of the probabilities is represented as an optimisation problem. Three GAs-generational GA, steady-state GA, and cellular GA-are compared. Computational experiments demonstrate that using basic evolutionary heuristics for optimising VehILux parameters on a given problem instance permits to improve the model realism. However, in some cases, the results significantly deviate from real traffic count data. This is due to the route generation method of the VehILux model, which does not take into account specific behaviour of drivers in rush hours.",
-		"DOI": "10.1109/CEC.2012.6252987",
-		"author": [
-			{
-				"family": "Seredynski",
-				"given": "M."
-			},
-			{
-				"family": "Danoy",
-				"given": "G."
-			},
-			{
-				"family": "Tabatabaei",
-				"given": "M."
-			},
-			{
-				"family": "Bouvry",
-				"given": "P."
-			},
-			{
-				"family": "Pigné",
-				"given": "Y."
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2012",
-					6
 				]
 			]
 		}
@@ -991,42 +921,6 @@
 		}
 	},
 	{
-		"id": "http://zotero.org/users/809971/items/2RZTS9MD",
-		"type": "paper-conference",
-		"title": "Successive Shortest Path Algorithm for Flows in Dynamic Graphs",
-		"container-title": "16th Cologne-Twente Workshop on Graphs and Combinatorial Optimization",
-		"page": "51--54",
-		"event": "Cologne-Twente Workshop on Graphs and Combinatorial Optimization",
-		"abstract": "This work focuses on the minimum cost flow problem in dynamic graphs. We use a model in which there are no travel time on arcs, and storage on vertices is not al- lowed. Every other graph parameter is time-dependent. We propose a method using the successive shortest path algorithm that avoids using the time-expanded graph that significantly increases the complexity of the problem. Our method is implemented using the GraphStream library.",
-		"author": [
-			{
-				"family": "Vernet",
-				"given": "Mathilde"
-			},
-			{
-				"family": "Drozdowski",
-				"given": "Maciej"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			},
-			{
-				"family": "Sanlaville",
-				"given": "Eric"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2018",
-					6,
-					18
-				]
-			]
-		}
-	},
-	{
 		"id": "http://zotero.org/users/809971/items/2VS8AMEY",
 		"type": "paper-conference",
 		"title": "Moving Average control chart for the detection and isolation of temporal faults in stochastic Petri nets",
@@ -1132,34 +1026,6 @@
 					"2018",
 					11,
 					9
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/809971/items/TBWG82TV",
-		"type": "paper-conference",
-		"title": "Algorithmique dans les graphes dynamiques : le cas des flots",
-		"event": "ROADEF 2018",
-		"author": [
-			{
-				"family": "Vernet",
-				"given": "Mathilde"
-			},
-			{
-				"family": "Pigné",
-				"given": "Yoann"
-			},
-			{
-				"family": "Sanlaville",
-				"given": "Eric"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2018",
-					2
 				]
 			]
 		}
