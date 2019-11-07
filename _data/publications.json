@@ -1,4 +1,73 @@
 [
+
+
+	{
+		"id": "http://zotero.org/users/809971/items/JGLD7TWL",
+		"type": "article-journal",
+		"title": "A tool to operationalize dynamic LCA, including time differentiation on the complete background database",
+		"container-title": "The International Journal of Life Cycle Assessment",
+		"source": "Springer Link",
+		"abstract": "PurposeThe objective is to demonstrate an operational tool for dynamic LCA, based on the model by Tiruta-Barna et al. (J Clean Prod 116:198-206, Tiruta-Barna et al. 2016). The main innovation lies in the combination of full temporalization of the background inventory and a graph search algorithm leading to full dynamic LCI, further coupled to dynamic LCIA. The following objectives were addressed: (1) development of a database with temporal parameters for all processes of ecoinvent 3.2, (2) implementation of the model and the database in integrated software, and (3) demonstration on a case study comparing a conventional internal combustion engine car to an electric one.MethodsCalculation of dynamic LCA (including temporalization of background and foreground system) implies (i) a dynamic LCI model, (ii) a temporal database including temporal characterization of ecoinvent 3.2, (iii) a graph search algorithm, and (iv) dynamic LCIA models, in this specific case for climate change. The dynamic LCI model relies on a supply chain modeling perspective, instead of an accounting one. Unit processes are operations showing a specific functioning over time. Mass and energy exchanges depend on specific supply models. Production and supply are described by temporal parameters and functions. The graph search algorithm implements the dynamic LCI model, using the temporal database, to derive the life cycle environmental interventions scaled to the functional unit and distributed over time. The interventions are further combined with the dynamic LCIA models to obtain the temporally differentiated LCA results.Results and discussionA web-based tool for dynamic LCA calculations (DyPLCA) implementing the dynamic LCI model and temporal database was developed. The tool is operational and available for testing (http://dyplca.univ-lehavre.fr/). The case study showed that temporal characterization of background LCI can change significantly the LCA results. It is fair to say that temporally differentiated LCI in the background offers little interest for activities with high downstream emissions. It can provide insightful results when applied to life cycle systems where significant environmental interventions occur upstream. Those systems concern, for example, renewable electricity generation, for which most emissions are embodied in an infrastructure upstream. It is also observed that a higher degree of infrastructure contribution leads to higher spreading of impacts over time. Finally, a potential impact of the time window choice and discounting was observed in the case study, for comparison and decision-making. Time differentiation as a whole may thus influence the conclusions of a study.ConclusionsThe feasibility of dynamic LCA, including full temporalization of background system, was demonstrated through the development of a web-based tool and temporal database. It was showed that considering temporal differentiation across the complete life cycle, especially in the background system, can significantly change the LCA results. This is particularly relevant for product systems showing significant environmental interventions and material exchanges over long time periods upstream to the functional unit. A number of inherent limitations were discussed and shall be considered as opportunities for further research. This requires a collegial effort, involving industrial experts from different sectors.",
+		"URL": "https://doi.org/10.1007/s11367-019-01696-6",
+		"DOI": "10.1007/s11367-019-01696-6",
+		"ISSN": "1614-7502",
+		"journalAbbreviation": "Int J Life Cycle Assess",
+		"language": "en",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Gutiérrez",
+				"given": "Tomás Navarrete"
+			},
+			{
+				"family": "Gibon",
+				"given": "Thomas"
+			},
+			{
+				"family": "Schaubroeck",
+				"given": "Thomas"
+			},
+			{
+				"family": "Popovici",
+				"given": "Emil"
+			},
+			{
+				"family": "Shimako",
+				"given": "Allan Hayato"
+			},
+			{
+				"family": "Benetto",
+				"given": "Enrico"
+			},
+			{
+				"family": "Tiruta-Barna",
+				"given": "Ligia"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2019",
+					11,
+					5
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2019",
+					11,
+					7
+				]
+			]
+		}
+	},
+
+
 	{
 		"id": "http://zotero.org/users/809971/items/69GD86IU",
 		"type": "article-journal",
