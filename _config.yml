@@ -7,7 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://pigne.org" # the base hostname & protocol for your site, e.g. http://example.com
 
 ## remote theme 
-remote_theme: chesterhow/tale
+remote_theme: pigne/tale
 permalink:    /:year-:month-:day/:title
 paginate:     5
 plugins:

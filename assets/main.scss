@@ -1,9 +1,13 @@
 ---
 ---
 
+$blue: #295b8d;
 
 // this site mostly relies on the {{ site.theme }} Jekyll theme
 @import "{{ site.theme }}";
+
+
+
 
 .tag {
     background-color: $blue;
