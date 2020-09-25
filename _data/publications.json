@@ -1183,5 +1183,54 @@
 				]
 			]
 		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/2XLSNXI7",
+		"type": "article-journal",
+		"abstract": "This work focuses on the minimum cost flow problem in dynamic graphs. The model here proposed does not have travel time nor storage but all other parameters are time-dependent. The most popular method to solve this kind of problem uses the time-expanded graph but due to the large size of this graph, this solution technique is not manageable on a long time horizon. We propose a new approach that does not use the time-expanded graph. Our algorithm is based on the computation of successive shortest paths on static graphs, which are much smaller compared to the time-expanded graph. It has a significantly better computational complexity. Our method was implemented using the GraphStream library and experiments showed that it is also much faster than the classical method in practice.",
+		"container-title": "Discrete Applied Mathematics",
+		"DOI": "10.1016/j.dam.2019.12.012",
+		"ISSN": "0166-218X",
+		"journalAbbreviation": "Discrete Applied Mathematics",
+		"language": "en",
+		"source": "ScienceDirect",
+		"title": "A theoretical and experimental study of a new algorithm for minimum cost flow in dynamic graphs",
+		"URL": "http://www.sciencedirect.com/science/article/pii/S0166218X19305554",
+		"author": [
+			{
+				"family": "Vernet",
+				"given": "Mathilde"
+			},
+			{
+				"family": "Drozdowski",
+				"given": "Maciej"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Sanlaville",
+				"given": "Eric"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2020",
+					9,
+					25
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					1,
+					7
+				]
+			]
+		}
 	}
 ]
