@@ -1,5 +1,57 @@
 [
   {
+    "id": "http://zotero.org/users/809971/items/USJVF8AK",
+    "type": "paper-conference",
+    "abstract": "We examine the classic game of Cops and Robbers played on models of dynamic graphs, that is, graphs evolving over discrete time steps. At each time step, a graph instance is generated as a subgraph of the underlying graph of the model. The cops and the robber take their turns on the current graph instance. The cops win if they can capture the robber at some point in time. Otherwise, the robber wins.In the offline case, the players are fully aware of the evolution sequence, up to some finite time horizon T. We provide a (𝑛2𝑘+1𝑇)O(n2k+1T)\\mathcal {O}(n^{2k+1}T) algorithm to decide whether a given evolution sequence for an underlying graph with n vertices is k-cop-win via a reduction to a reachability game.In the online case, there is no knowledge of the evolution sequence, and the game might go on forever. Also, each generated instance is required to be connected. We provide a nearly tight characterization for sparse underlying graphs, i.e., with at most linear number of edges. We prove 𝜆+1λ+1\\lambda +1 cops suffice to capture the robber in any underlying graph with 𝑛−1+𝜆n−1+λn-1+\\lambda edges. Further, we define a family of underlying graphs with 𝑛−1+𝜆n−1+λn-1+\\lambda edges where 𝜆−1λ−1\\lambda -1 cops are necessary (and sufficient) for capture.",
+    "collection-title": "Lecture Notes in Computer Science",
+    "container-title": "Structural Information and Communication Complexity",
+    "DOI": "10.1007/978-3-030-54921-3_12",
+    "event-place": "Cham",
+    "ISBN": "978-3-030-54921-3",
+    "language": "en",
+    "page": "203-219",
+    "publisher": "Springer International Publishing",
+    "publisher-place": "Cham",
+    "source": "Springer Link",
+    "title": "Cops and Robbers on Dynamic Graphs: Offline and Online Case",
+    "title-short": "Cops and Robbers on Dynamic Graphs",
+    "author": [
+      {
+        "family": "Balev",
+        "given": "Stefan"
+      },
+      {
+        "family": "Laredo Jiménez",
+        "given": "Juan Luis"
+      },
+      {
+        "family": "Lamprou",
+        "given": "Ioannis"
+      },
+      {
+        "family": "Pigné",
+        "given": "Yoann"
+      },
+      {
+        "family": "Sanlaville",
+        "given": "Eric"
+      }
+    ],
+    "editor": [
+      {
+        "family": "Richa",
+        "given": "Andrea Werneck"
+      },
+      {
+        "family": "Scheideler",
+        "given": "Christian"
+      }
+    ],
+    "issued": {
+      "date-parts": [["2020"]]
+    }
+  },
+  {
     "id": "http://zotero.org/users/809971/items/69GD86IU",
     "type": "article-journal",
     "title": "Environmental assessment of bioenergy production from microalgae based systems",
