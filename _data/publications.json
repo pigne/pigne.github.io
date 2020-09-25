@@ -1232,5 +1232,73 @@
 				]
 			]
 		}
+	},
+	{
+		"id": "http://zotero.org/users/809971/items/ZBJI88NN",
+		"type": "article-journal",
+		"abstract": "The objective is to demonstrate an operational tool for dynamic LCA, based on the model by Tiruta-Barna et al. (J Clean Prod 116:198-206, Tiruta-Barna et al. 2016). The main innovation lies in the combination of full temporalization of the background inventory and a graph search algorithm leading to full dynamic LCI, further coupled to dynamic LCIA. The following objectives were addressed: (1) development of a database with temporal parameters for all processes of ecoinvent 3.2, (2) implementation of the model and the database in integrated software, and (3) demonstration on a case study comparing a conventional internal combustion engine car to an electric one.",
+		"container-title": "The International Journal of Life Cycle Assessment",
+		"DOI": "10.1007/s11367-019-01696-6",
+		"ISSN": "1614-7502",
+		"issue": "2",
+		"journalAbbreviation": "Int J Life Cycle Assess",
+		"language": "en",
+		"page": "267-279",
+		"source": "Springer Link",
+		"title": "A tool to operationalize dynamic LCA, including time differentiation on the complete background database",
+		"URL": "https://doi.org/10.1007/s11367-019-01696-6",
+		"volume": "25",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Gutiérrez",
+				"given": "Tomás Navarrete"
+			},
+			{
+				"family": "Gibon",
+				"given": "Thomas"
+			},
+			{
+				"family": "Schaubroeck",
+				"given": "Thomas"
+			},
+			{
+				"family": "Popovici",
+				"given": "Emil"
+			},
+			{
+				"family": "Shimako",
+				"given": "Allan Hayato"
+			},
+			{
+				"family": "Benetto",
+				"given": "Enrico"
+			},
+			{
+				"family": "Tiruta-Barna",
+				"given": "Ligia"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2020",
+					9,
+					25
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					2,
+					1
+				]
+			]
+		}
 	}
 ]
