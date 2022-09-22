@@ -1,2739 +1,1245 @@
-{
-  "collections": {
-    "JSEIGS63": {
-      "collections": [],
-      "items": [
-        128,
-        129,
-        130,
-        153,
-        174,
-        477,
-        479,
-        480,
-        481,
-        483,
-        488,
-        492,
-        501
-      ],
-      "key": "JSEIGS63",
-      "name": "15-19",
-      "parent": ""
-    },
-    "PJPD9486": {
-      "collections": [],
-      "items": [
-        128,
-        129,
-        130,
-        131,
-        132,
-        153,
-        174,
-        199,
-        305
-      ],
-      "key": "PJPD9486",
-      "name": "13-17",
-      "parent": ""
-    }
-  },
-  "config": {
-    "id": "36a3b0b5-bad0-4a04-b79b-441c7cef77db",
-    "label": "BetterBibTeX JSON",
-    "options": {
-      "exportFileData": false,
-      "exportNotes": false,
-      "keepUpdated": false,
-      "worker": true
-    },
-    "preferences": {
-      "DOIandURL": "both",
-      "ascii": "",
-      "asciiBibLaTeX": false,
-      "asciiBibTeX": true,
-      "autoAbbrev": false,
-      "autoAbbrevStyle": "",
-      "autoExport": "immediate",
-      "autoExportDelay": 5,
-      "autoExportIdleWait": 10,
-      "autoExportPathReplaceDiacritics": false,
-      "autoExportPathReplaceDirSep": "-",
-      "autoExportPathReplaceSpace": " ",
-      "autoPinDelay": 0,
-      "automaticTags": true,
-      "auxImport": false,
-      "baseAttachmentPath": "",
-      "biblatexExtendedDateFormat": true,
-      "biblatexExtendedNameFormat": false,
-      "biblatexExtractEprint": true,
-      "bibtexParticleNoOp": false,
-      "bibtexURL": "off",
-      "cache": true,
-      "cacheFlushInterval": 5,
-      "charmap": "",
-      "citeCommand": "cite",
-      "citekeyFold": true,
-      "citekeyFormat": "auth.lower + shorttitle(3,3) + year",
-      "citekeyFormatBackup": "",
-      "citekeySearch": true,
-      "csquotes": "",
-      "exportBibTeXStrings": "off",
-      "exportBraceProtection": true,
-      "exportTitleCase": true,
-      "extraMergeCSL": false,
-      "extraMergeCitekeys": false,
-      "extraMergeTeX": false,
-      "git": "config",
-      "import": true,
-      "importBibTeXStrings": true,
-      "importCaseProtection": "as-needed",
-      "importCitationKey": true,
-      "importExtra": true,
-      "importJabRefAbbreviations": true,
-      "importJabRefStrings": true,
-      "importNoteToExtra": "",
-      "importSentenceCase": "on+guess",
-      "importUnknownTexCommand": "ignore",
-      "itemObserverDelay": 5,
-      "jabrefFormat": 0,
-      "jieba": false,
-      "keyConflictPolicy": "keep",
-      "keyScope": "library",
-      "kuroshiro": false,
-      "language": "langid",
-      "mapMath": "",
-      "mapText": "",
-      "mapUnicode": "conservative",
-      "parseParticles": true,
-      "patchDates": "",
-      "platform": "mac",
-      "postscript": "",
-      "postscriptOverride": "",
-      "preferencesOverride": "",
-      "qualityReport": false,
-      "quickCopyEta": "",
-      "quickCopyMode": "latex",
-      "quickCopyOrgMode": "zotero",
-      "quickCopyPandocBrackets": false,
-      "quickCopySelectLink": "zotero",
-      "rawImports": false,
-      "rawLaTag": "#LaTeX",
-      "relativeFilePaths": false,
-      "retainCache": false,
-      "scrubDatabase": false,
-      "separatorList": "and",
-      "separatorNames": "and",
-      "skipFields": "",
-      "skipWords": "a,ab,aboard,about,above,across,after,against,al,along,amid,among,an,and,anti,around,as,at,before,behind,below,beneath,beside,besides,between,beyond,but,by,d,da,das,de,del,dell,dello,dei,degli,della,dell,delle,dem,den,der,des,despite,die,do,down,du,during,ein,eine,einem,einen,einer,eines,el,en,et,except,for,from,gli,i,il,in,inside,into,is,l,la,las,le,les,like,lo,los,near,nor,of,off,on,onto,or,over,past,per,plus,round,save,since,so,some,sur,than,the,through,to,toward,towards,un,una,unas,under,underneath,une,unlike,uno,unos,until,up,upon,versus,via,von,while,with,within,without,yet,zu,zum",
-      "startupProgress": "popup",
-      "strings": "",
-      "stringsOverride": "",
-      "testing": false,
-      "verbatimFields": "url,doi,file,ids,eprint,/^verb[a-z]$/,groups,/^citeulike-linkout-[0-9]+$/, /^bdsk-url-[0-9]+$/",
-      "warnBulkModify": 10,
-      "warnTitleCased": false
-    }
-  },
-  "items": [
-    {
-      "DOI": "10.1016/j.jclepro.2016.08.003",
-      "ISSN": "0959-6526",
-      "abstractNote": "Microalgae have been studied as a potential alternative raw material and various technologies have been proposed to transform the algal biomass into energy products. In this study, two bioenergy production systems of very different complexities were modelled to assess their environmental efficiencies: a biodiesel system and a biogas system. Biodiesel system used supercritical extraction and transesterification as key processes; to the best of authors' knowledge, there is no previous work analysing the environmental performances of such production system. Cumulative energy demand, Life Cycle Assessment (LCA) and dynamic LCA for climate change were used to evaluate the environmental footprint of the production systems. Conventional systems for electricity, heat and diesel production were considered for comparison. Energy balance showed that the supercritical extraction and drying steps were the most energy consuming unit operations in biodiesel production and further developments of technologies might be envisaged. LCA showed that climate change was the main contributor to impacts on human health and ecosystem quality due to energy consumed in production steps. Also, heat from biogas was the only product that proved to have a satisfactory environmental performance with regard to other conventional production systems. Finally, dynamic climate change evaluation (used for the first time for bio-chemical processes) revealed no carbon sequestration in microalgae system.",
-      "attachments": [
-        {
-          "dateAdded": "2016-11-10T09:04:36Z",
-          "dateModified": "2016-11-10T09:04:38Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/WPQASTIA/Shimako et al. - 2016 - Environmental assessment of bioenergy production f.pdf",
-          "relations": [],
-          "tags": [],
-          "title": "ScienceDirect Full Text PDF",
-          "uri": "http://zotero.org/users/809971/items/WPQASTIA"
-        },
-        {
-          "dateAdded": "2016-11-10T09:04:39Z",
-          "dateModified": "2016-11-10T09:04:39Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/5TDGFZVB/S0959652616311283.html",
-          "relations": [],
-          "tags": [],
-          "title": "ScienceDirect Snapshot",
-          "uri": "http://zotero.org/users/809971/items/5TDGFZVB"
-        }
-      ],
-      "citationKey": "shimakoEnvironmentalAssessmentBioenergy2016",
-      "citekey": "shimakoEnvironmentalAssessmentBioenergy2016",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Allan Hayato",
-          "lastName": "Shimako"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Ligia",
-          "lastName": "Tiruta-Barna"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Enrico",
-          "lastName": "Benetto"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Tomás",
-          "lastName": "Navarrete Gutiérrez"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Pascal",
-          "lastName": "Guiraud"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Aras",
-          "lastName": "Ahmadi"
-        }
-      ],
-      "date": "2016-12-15",
-      "dateAdded": "2016-11-10T09:04:36Z",
-      "dateModified": "2022-09-06T15:10:10Z",
-      "itemID": 128,
-      "itemKey": "69GD86IU",
-      "itemType": "journalArticle",
-      "journalAbbreviation": "Journal of Cleaner Production",
-      "key": "69GD86IU",
-      "libraryCatalog": "ScienceDirect",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:49:00Z",
-          "dateModified": "2022-08-08T22:50:04Z",
-          "itemType": "note",
-          "key": "VB6ZDWL4",
-          "note": "<div data-schema-version=\"8\"><p>Impact Factor: 11.072; SJR: 1.92; H-Index: 232: Scimago: Q1</p>\n</div>",
-          "parentItem": "69GD86IU",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/VB6ZDWL4",
-          "version": 638
-        }
-      ],
-      "pages": "51-60",
-      "publicationTitle": "Journal of Cleaner Production",
-      "relations": [],
-      "select": "zotero://select/library/items/69GD86IU",
-      "tags": [
-        {
-          "tag": "Bioenergy",
-          "type": 1
-        },
-        {
-          "tag": "Dynamic climate change model",
-          "type": 1
-        },
-        {
-          "tag": "life cycle assessment",
-          "type": 1
-        },
-        {
-          "tag": "Microalgae",
-          "type": 1
-        },
-        {
-          "tag": "Renewable resource",
-          "type": 1
-        }
-      ],
-      "title": "Environmental assessment of bioenergy production from microalgae based systems",
-      "uri": "http://zotero.org/users/809971/items/69GD86IU",
-      "url": "http://www.sciencedirect.com/science/article/pii/S0959652616311283",
-      "version": 735,
-      "volume": "139"
-    },
-    {
-      "DOI": "10.1111/jiec.12338",
-      "ISSN": "1530-9290",
-      "abstractNote": "Determining the relevance and importance of a technosphere process or a cluster of processes in relation to the rest of the industrial network can provide insights into the sustainability of supply chains: those that need to be optimized or controlled/safeguarded. Network analysis (NA) can offer a broad framework of indicators to tackle this problem. In this article, we present a detailed analysis of a life cycle inventory (LCI) model from an NA perspective. Specifically, the network is represented as a directed graph and the “emergy” numeraire is used as the weight associated with the arcs of the network. The case study of a technological system for drinking water production is presented. We investigate the topological and structural characteristics of the network representation of this system and compare properties of its weighted and unweighted network, as well as the importance of nodes (i.e., life cycle unit processes). By identifying a number of advantages and limitations linked to the modeling complexity of such emergy-LCI networks, we classify the LCI technosphere network of our case study as a complex network belonging to the scale-free network family. The salient feature of this network family is represented by the presence of “hubs”: nodes that connect with many other nodes. Hub failures may imply relevant changes, decreases, or even breaks in the connectedness with other smaller hubs and nodes of the network. Hence, by identifying node centralities, we can rank and interpret the relevance of each node for its special role in the life cycle network.",
-      "attachments": [
-        {
-          "dateAdded": "2016-11-10T09:17:59Z",
-          "dateModified": "2016-11-10T09:17:59Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/6348CG5F/abstract.html",
-          "relations": [],
-          "tags": [],
-          "title": "Snapshot",
-          "uri": "http://zotero.org/users/809971/items/6348CG5F"
-        }
-      ],
-      "citationKey": "navarretegutierrezComplexityLifeCycle2016",
-      "citekey": "navarretegutierrezComplexityLifeCycle2016",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Tomás",
-          "lastName": "Navarrete Gutiérrez"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Benedetto",
-          "lastName": "Rugani"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Antonino",
-          "lastName": "Marvuglia"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Enrico",
-          "lastName": "Benetto"
-        }
-      ],
-      "date": "October 1, 2016",
-      "dateAdded": "2016-11-10T09:17:57Z",
-      "dateModified": "2022-09-06T15:10:05Z",
-      "issue": "5",
-      "itemID": 129,
-      "itemKey": "D66HZ8KX",
-      "itemType": "journalArticle",
-      "journalAbbreviation": "Journal of Industrial Ecology",
-      "key": "D66HZ8KX",
-      "language": "en",
-      "libraryCatalog": "Wiley Online Library",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:50:37Z",
-          "dateModified": "2022-08-24T16:11:31Z",
-          "itemType": "note",
-          "key": "FYZNUC6U",
-          "note": "<div data-schema-version=\"8\"><p>Impact Factor: 7.202: SJR: 1.73; H-Index: 112; Scimago: Q1</p>\n</div>",
-          "parentItem": "D66HZ8KX",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/FYZNUC6U",
-          "version": 711
-        }
-      ],
-      "pages": "1094-1107",
-      "publicationTitle": "Journal of Industrial Ecology",
-      "relations": [],
-      "select": "zotero://select/library/items/D66HZ8KX",
-      "shortTitle": "On the Complexity of Life Cycle Inventory Networks",
-      "tags": [
-        {
-          "tag": "complexity",
-          "type": 1
-        },
-        {
-          "tag": "drinking water",
-          "type": 1
-        },
-        {
-          "tag": "emergy",
-          "type": 1
-        },
-        {
-          "tag": "industrial ecology",
-          "type": 1
-        },
-        {
-          "tag": "life cycle assessment (LCA)",
-          "type": 1
-        },
-        {
-          "tag": "network analysis",
-          "type": 1
-        }
-      ],
-      "title": "On the Complexity of Life Cycle Inventory Networks: Role of Life Cycle Processes with Network Analysis",
-      "uri": "http://zotero.org/users/809971/items/D66HZ8KX",
-      "url": "http://onlinelibrary.wiley.com/doi/10.1111/jiec.12338/abstract",
-      "version": 739,
-      "volume": "20"
-    },
-    {
-      "DOI": "10.1016/j.jclepro.2015.12.049",
-      "ISSN": "0959-6526",
-      "abstractNote": "Conventional Life Cycle Inventories (LCIs) are static models of product systems without time dependent functioning of plants and time lags between supply and demand of products. The aggregation of environmental interventions without consideration of the time dimension represents an acknowledged limitation of the Life Cycle Assessment (LCA) method. In this paper we present a novel conceptual and computational framework for the consideration of time dependency in LCIs. Process modeling is used to describe the production flows and environmental interventions of each unit process and supply modeling is used to include time lags on the raw materials exchanged by unit processes of the product system. The combination of production and supply models in life cycle networks, based on a set of specific temporal parameters (representative functioning period, production time, supply delay, supply frequency), allows the characterization of time dependency in each node. For the computation of time dependent LCI, i.e. of the time resolved environmental interventions, graph search algorithm is proposed and implemented in a prototype Web application. In terms of results, the new approach provides time dependent LCI expressed as: i) time as a function of individual emission (or resource consumption) for individual processes, ii) aggregated time as a function of a given environmental intervention. A test bed case illustrating the effectiveness of the conceptual and computational approaches (proof of concept) is presented and successfully solved both analytically and numerically.",
-      "attachments": [
-        {
-          "dateAdded": "2016-11-10T09:06:09Z",
-          "dateModified": "2016-11-10T09:06:12Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/4X6EDKA5/Tiruta-Barna et al. - 2016 - Framework and computational tool for the considera.pdf",
-          "relations": [],
-          "tags": [],
-          "title": "ScienceDirect Full Text PDF",
-          "uri": "http://zotero.org/users/809971/items/4X6EDKA5"
-        },
-        {
-          "dateAdded": "2016-11-10T09:06:11Z",
-          "dateModified": "2016-11-10T09:06:11Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/53ZAWNJX/S0959652615018739.html",
-          "relations": [],
-          "tags": [],
-          "title": "ScienceDirect Snapshot",
-          "uri": "http://zotero.org/users/809971/items/53ZAWNJX"
-        }
-      ],
-      "citationKey": "tiruta-barnaFrameworkComputationalTool2016a",
-      "citekey": "tiruta-barnaFrameworkComputationalTool2016a",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Ligia",
-          "lastName": "Tiruta-Barna"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Tomás",
-          "lastName": "Navarrete Gutiérrez"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Enrico",
-          "lastName": "Benetto"
-        }
-      ],
-      "date": "March 10, 2016",
-      "dateAdded": "2016-11-10T09:06:09Z",
-      "dateModified": "2022-09-06T15:09:55Z",
-      "itemID": 130,
-      "itemKey": "FRVP64MF",
-      "itemType": "journalArticle",
-      "journalAbbreviation": "Journal of Cleaner Production",
-      "key": "FRVP64MF",
-      "libraryCatalog": "ScienceDirect",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:53:21Z",
-          "dateModified": "2022-08-08T22:53:23Z",
-          "itemType": "note",
-          "key": "6PLB4ZTE",
-          "note": "<div data-schema-version=\"8\"><p>Impact Factor: 11.072; SJR: 1.92; H-Index: 232: Scimago: Q1</p>\n</div>",
-          "parentItem": "FRVP64MF",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/6PLB4ZTE",
-          "version": 642
-        }
-      ],
-      "pages": "198-206",
-      "publicationTitle": "Journal of Cleaner Production",
-      "relations": [],
-      "select": "zotero://select/library/items/FRVP64MF",
-      "shortTitle": "Framework and computational tool for the consideration of time dependency in Life Cycle Inventory",
-      "tags": [
-        {
-          "tag": "Dynamic",
-          "type": 1
-        },
-        {
-          "tag": "graph search",
-          "type": 1
-        },
-        {
-          "tag": "life cycle assessment",
-          "type": 1
-        },
-        {
-          "tag": "Process modeling",
-          "type": 1
-        },
-        {
-          "tag": "Supply chain modeling",
-          "type": 1
-        },
-        {
-          "tag": "Temporal",
-          "type": 1
-        }
-      ],
-      "title": "Framework and computational tool for the consideration of time dependency in Life Cycle Inventory: proof of concept",
-      "uri": "http://zotero.org/users/809971/items/FRVP64MF",
-      "url": "http://www.sciencedirect.com/science/article/pii/S0959652615018739",
-      "version": 738,
-      "volume": "116"
-    },
-    {
-      "DOI": "10.1016/j.jtbi.2012.11.008",
-      "ISSN": "0022-5193",
-      "abstractNote": "In this paper we study the influence of populations mobility on the spread of a vector-borne disease. We focus on the chikungunya epidemic event that occurred in 2005–2006 on the Réunion Island, Indian Ocean, France, and validate our models with real epidemic data from the event. We propose a metapopulation model to represent both a high-resolution patch model of the island with realistic population densities and also mobility models for humans (based on real-motion data) and mosquitoes. In this metapopulation network, two models are coupled: one for the dynamics of the mosquito population and one for the transmission of the disease. A high-resolution numerical model is created from real geographical, demographical and mobility data. The Island is modeled with an 18,000-nodes metapopulation network. Numerical results show the impact of the geographical environment and populations’ mobility on the spread of the disease. The model is finally validated against real epidemic data from the Réunion event.",
-      "attachments": [
-        {
-          "dateAdded": "2013-11-27T15:08:10Z",
-          "dateModified": "2013-11-27T15:08:14Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/X5X45Q6D/Moulay and Pigné - 2013 - A metapopulation model for chikungunya including p.pdf",
-          "relations": [],
-          "tags": [],
-          "title": "ScienceDirect Full Text PDF",
-          "uri": "http://zotero.org/users/809971/items/X5X45Q6D"
-        },
-        {
-          "dateAdded": "2013-11-27T15:08:12Z",
-          "dateModified": "2013-11-27T15:08:12Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/TM5JX693/S0022519312005838.html",
-          "relations": [],
-          "tags": [],
-          "title": "ScienceDirect Snapshot",
-          "uri": "http://zotero.org/users/809971/items/TM5JX693"
-        }
-      ],
-      "citationKey": "moulayMetapopulationModelChikungunya2013",
-      "citekey": "moulayMetapopulationModelChikungunya2013",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Djamila",
-          "lastName": "Moulay"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        }
-      ],
-      "date": "February 7, 2013",
-      "dateAdded": "2013-11-27T15:08:10Z",
-      "dateModified": "2022-08-24T17:07:11Z",
-      "itemID": 131,
-      "itemKey": "UMIGGF8E",
-      "itemType": "journalArticle",
-      "journalAbbreviation": "Journal of Theoretical Biology",
-      "key": "UMIGGF8E",
-      "libraryCatalog": "ScienceDirect",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:54:29Z",
-          "dateModified": "2022-08-08T22:55:25Z",
-          "itemType": "note",
-          "key": "CZJYX8HV",
-          "note": "<div data-schema-version=\"8\"><p>Impact Factor: 2.405; SJR: 0.6; H-index: 162; Scimago: Q1</p>\n</div>",
-          "parentItem": "UMIGGF8E",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/CZJYX8HV",
-          "version": 645
-        }
-      ],
-      "pages": "129-139",
-      "publicationTitle": "Journal of Theoretical Biology",
-      "relations": [],
-      "select": "zotero://select/library/items/UMIGGF8E",
-      "tags": [
-        {
-          "tag": "Complex networks",
-          "type": 1
-        },
-        {
-          "tag": "Epidemiological models",
-          "type": 1
-        },
-        {
-          "tag": "Human mobility models",
-          "type": 1
-        },
-        {
-          "tag": "Metapopulation",
-          "type": 1
-        }
-      ],
-      "title": "A metapopulation model for chikungunya including populations mobility on a large-scale network",
-      "uri": "http://zotero.org/users/809971/items/UMIGGF8E",
-      "version": 731,
-      "volume": "318"
-    },
-    {
-      "ISBN": "978-1-118-83320-9 978-1-118-34113-1",
-      "attachments": [],
-      "citationKey": "dorronsoroEvolutionaryAlgorithmsMobile2014",
-      "citekey": "dorronsoroEvolutionaryAlgorithmsMobile2014",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Bernabé",
-          "lastName": "Dorronsoro"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Patricia",
-          "lastName": "Ruiz"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Grégoire",
-          "lastName": "Danoy"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Pascal",
-          "lastName": "Bouvry"
-        }
-      ],
-      "date": "2014-04-30",
-      "dateAdded": "2017-03-04T10:22:11Z",
-      "dateModified": "2017-03-04T11:32:18Z",
-      "extra": "DOI: 10.1002/9781118833209",
-      "itemID": 132,
-      "itemKey": "UA6F8PGZ",
-      "itemType": "book",
-      "key": "UA6F8PGZ",
-      "language": "en",
-      "libraryCatalog": "CrossRef",
-      "libraryID": 1,
-      "notes": [],
-      "place": "Hoboken, NJ",
-      "publisher": "John Wiley & Sons, Inc.",
-      "relations": [],
-      "select": "zotero://select/library/items/UA6F8PGZ",
-      "shortTitle": "Evolutionary Algorithms for Mobile Ad Hoc Networks",
-      "tags": [],
-      "title": "Evolutionary Algorithms for Mobile Ad Hoc Networks: Bouvry/Evolutionary Algorithms for Mobile Ad Hoc Networks",
-      "uri": "http://zotero.org/users/809971/items/UA6F8PGZ",
-      "url": "http://doi.wiley.com/10.1002/9781118833209",
-      "version": 599
-    },
-    {
-      "abstractNote": "In temporal network a node v is reachable from a node u iff there exists a time-respecting path from u to v. The set of reachable nodes from node u is called the reachability set of u. \nIn this work we describe a simple extension of this metric considering the round-trip reachability. The round-trip reachability set of a node u contains all vertices for which there exists a time-respecting path from u to v temporally followed by a time-respecting path from v to u. Client/Server systems as well as question/answer relations motivate this extension. A container shipping network illustrates the use of such a metric.",
-      "attachments": [],
-      "citationKey": "guinandReachabilityMaritimeTransportation2016",
-      "citekey": "guinandReachabilityMaritimeTransportation2016",
-      "conferenceName": "Complex Networks: from theory to interdisciplinary applications",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Frédéric",
-          "lastName": "Guinand"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        }
-      ],
-      "date": "July 11, 2016",
-      "dateAdded": "2016-10-17T08:32:08Z",
-      "dateModified": "2022-08-24T16:39:15Z",
-      "itemID": 153,
-      "itemKey": "GVPU4EB4",
-      "itemType": "conferencePaper",
-      "key": "GVPU4EB4",
-      "libraryID": 1,
-      "notes": [],
-      "place": "Marseille",
-      "publicationTitle": "Complex Networks: from theory to interdisciplinary applications",
-      "relations": [],
-      "select": "zotero://select/library/items/GVPU4EB4",
-      "tags": [],
-      "title": "Reachability in maritime transportation networks",
-      "uri": "http://zotero.org/users/809971/items/GVPU4EB4",
-      "url": "https://www.cpt.univ-mrs.fr/~barrat/COMPLEXNETS2016/complexnets2016.org/program.html",
-      "version": 719
-    },
-    {
-      "ISBN": "978-1-138-59930-7",
-      "abstractNote": "This work proposes two new methodological approaches for the analysis of global shipping networks stemmed from containerships movements reported in Lloyds’ List Periodicals.  After a complex network analysis, the first approach proposes the analysis of sets of networks, called TG-Graphs, built from events occurring in constant-size sliding time windows. Time series represent the evolution of network measures, and the simultaneous analysis of these series for several measures highlights some phenomenons arising in the shipping network. In the second model, networks are modeled with temporal networks where each event is associated with a timestamp. In this model, distance-related measures take a new meaning since paths must obey time constraints. This approach reveals that although the global port network is highly connected, ports who are not directly connected to the main hubs are actually isolated from the rest of the network.",
-      "attachments": [],
-      "citationKey": "guinandTimeConsiderationsStudy2015",
-      "citekey": "guinandTimeConsiderationsStudy2015",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Frédéric",
-          "lastName": "Guinand"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        }
-      ],
-      "date": "2015",
-      "dateAdded": "2015-10-23T07:35:17Z",
-      "dateModified": "2022-08-24T17:06:45Z",
-      "edition": "César Ducruet",
-      "itemID": 174,
-      "itemKey": "TDFG7DDG",
-      "itemType": "bookSection",
-      "key": "TDFG7DDG",
-      "language": "English",
-      "libraryID": 1,
-      "notes": [],
-      "pages": "163--189",
-      "publicationTitle": "Maritime Networks Spatial structures and time dynamics",
-      "publisher": "Routledge",
-      "relations": [],
-      "select": "zotero://select/library/items/TDFG7DDG",
-      "series": "Routledge Studies in Transport Analysis",
-      "tags": [],
-      "title": "Time considerations for the study of complex maritime networks",
-      "uri": "http://zotero.org/users/809971/items/TDFG7DDG",
-      "url": "https://www.routledge.com/products/9781138911253",
-      "version": 730
-    },
-    {
-      "DOI": "10.1109/CEC.2012.6252987",
-      "attachments": [
-        {
-          "dateAdded": "2012-12-12T10:38:54Z",
-          "dateModified": "2012-12-12T10:38:54Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/AZ3FHC7P/login.html",
-          "relations": [],
-          "tags": [],
-          "title": "IEEE Xplore Abstract Record",
-          "uri": "http://zotero.org/users/809971/items/AZ3FHC7P"
-        },
-        {
-          "dateAdded": "2013-11-27T15:09:10Z",
-          "dateModified": "2014-06-25T12:19:33Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/ABGUSHR8/login.html",
-          "relations": [],
-          "tags": [],
-          "title": "IEEE Xplore Abstract Record",
-          "uri": "http://zotero.org/users/809971/items/ABGUSHR8"
-        },
-        {
-          "dateAdded": "2013-03-29T22:14:55Z",
-          "dateModified": "2013-06-20T07:20:54Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/U55EZFW8/Seredynski et al. - 2012 - Generation of realistic mobility for VANETs using .html",
-          "relations": [],
-          "tags": [],
-          "title": "IEEE Xplore Abstract Record",
-          "uri": "http://zotero.org/users/809971/items/U55EZFW8"
-        }
-      ],
-      "citationKey": "seredynskiGenerationRealisticMobility2012",
-      "citekey": "seredynskiGenerationRealisticMobility2012",
-      "conferenceName": "2012 IEEE Congress on Evolutionary Computation (CEC)",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "M.",
-          "lastName": "Seredynski"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "G.",
-          "lastName": "Danoy"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "M.",
-          "lastName": "Tabatabaei"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "P.",
-          "lastName": "Bouvry"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Y.",
-          "lastName": "Pigné"
-        }
-      ],
-      "date": "june 2012",
-      "dateAdded": "2012-12-12T10:38:49Z",
-      "dateModified": "2022-08-24T16:20:15Z",
-      "itemID": 193,
-      "itemKey": "PJV5XV87",
-      "itemType": "conferencePaper",
-      "key": "PJV5XV87",
-      "libraryCatalog": "IEEE Xplore",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:58:51Z",
-          "dateModified": "2022-08-08T22:58:58Z",
-          "itemType": "note",
-          "key": "V5FHIVLD",
-          "note": "<div data-schema-version=\"8\"><p>Conference Rank: A</p>\n</div>",
-          "parentItem": "PJV5XV87",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/V5FHIVLD",
-          "version": 651
-        }
-      ],
-      "pages": "1 -8",
-      "place": "Brisbane, QLD, Australia",
-      "publicationTitle": "2012 IEEE Congress on Evolutionary Computation (CEC)",
-      "relations": [],
-      "select": "zotero://select/library/items/PJV5XV87",
-      "tags": [
-        {
-          "tag": "ad hoc networks",
-          "type": 1
-        },
-        {
-          "tag": "road vehicles",
-          "type": 1
-        },
-        {
-          "tag": "Roads",
-          "type": 1
-        },
-        {
-          "tag": "VANET",
-          "type": 1
-        },
-        {
-          "tag": "Vehicles",
-          "type": 1
-        },
-        {
-          "tag": "cellular GA",
-          "type": 1
-        },
-        {
-          "tag": "driver behaviour",
-          "type": 1
-        },
-        {
-          "tag": "evolutionary computation",
-          "type": 1
-        },
-        {
-          "tag": "evolutionary heuristics",
-          "type": 1
-        },
-        {
-          "tag": "generational GA",
-          "type": 1
-        },
-        {
-          "tag": "genetic algorithms",
-          "type": 1
-        },
-        {
-          "tag": "geographical region",
-          "type": 1
-        },
-        {
-          "tag": "intelligent transportation systems",
-          "type": 1
-        },
-        {
-          "tag": "Microscopy",
-          "type": 1
-        },
-        {
-          "tag": "mobility traces",
-          "type": 1
-        },
-        {
-          "tag": "optimisation problem",
-          "type": 1
-        },
-        {
-          "tag": "Optimization",
-          "type": 1
-        },
-        {
-          "tag": "probabilistic attraction points",
-          "type": 1
-        },
-        {
-          "tag": "probability",
-          "type": 1
-        },
-        {
-          "tag": "realistic vehicular mobility models",
-          "type": 1
-        },
-        {
-          "tag": "realistic vehicular mobility traces",
-          "type": 1
-        },
-        {
-          "tag": "route generation method",
-          "type": 1
-        },
-        {
-          "tag": "Solid modeling",
-          "type": 1
-        },
-        {
-          "tag": "steady-state GA",
-          "type": 1
-        },
-        {
-          "tag": "traffic engineering computing",
-          "type": 1
-        },
-        {
-          "tag": "traffic simulation",
-          "type": 1
-        },
-        {
-          "tag": "traffic simulator",
-          "type": 1
-        },
-        {
-          "tag": "traffic volume count data",
-          "type": 1
-        },
-        {
-          "tag": "vehicular ad hoc networks",
-          "type": 1
-        },
-        {
-          "tag": "VehILux parameter optimisation",
-          "type": 1
-        }
-      ],
-      "title": "Generation of realistic mobility for VANETs using genetic algorithms",
-      "uri": "http://zotero.org/users/809971/items/PJV5XV87",
-      "version": 714
-    },
-    {
-      "abstractNote": "This paper aims at studying some connectivity properties for random geometric graphs when they are constrained by the topological space in which they are embedded. More precisely, we focus our attention on limited square and rectangular environments. In order to analyse the impact of such environments on related graphs, we observe the evolution of mean degree. We propose an approach aiming at estimating the impact of the environment borders on the connectivity and we provide an analytical formula for computing the mean degree value depending on borders effects.",
-      "attachments": [
-        {
-          "dateAdded": "2015-03-02T10:56:17Z",
-          "dateModified": "2015-03-02T10:56:17Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/N23GPZIE/login.html",
-          "relations": [],
-          "tags": [],
-          "title": "IEEE Xplore Abstract Record",
-          "uri": "http://zotero.org/users/809971/items/N23GPZIE"
-        }
-      ],
-      "citationKey": "abouenzeImpactSquareEnvironment2011b",
-      "citekey": "abouenzeImpactSquareEnvironment2011b",
-      "conferenceName": "2011 14th International Symposium on Wireless Personal Multimedia Communications (WPMC)",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "G.-C.",
-          "lastName": "Aboue Nze"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "F.",
-          "lastName": "Guinand"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Y.",
-          "lastName": "Pigné"
-        }
-      ],
-      "date": "October 2011",
-      "dateAdded": "2015-03-02T10:56:15Z",
-      "dateModified": "2015-03-02T13:32:39Z",
-      "itemID": 194,
-      "itemKey": "XCXIJGS8",
-      "itemType": "conferencePaper",
-      "key": "XCXIJGS8",
-      "libraryCatalog": "IEEE Xplore",
-      "libraryID": 1,
-      "notes": [],
-      "pages": "1-5",
-      "place": "Brest, France",
-      "publicationTitle": "2011 14th International Symposium on Wireless Personal Multimedia Communications (WPMC)",
-      "relations": [],
-      "select": "zotero://select/library/items/XCXIJGS8",
-      "tags": [
-        {
-          "tag": "ad hoc networks",
-          "type": 1
-        },
-        {
-          "tag": "graph theory",
-          "type": 1
-        },
-        {
-          "tag": "Computational modeling",
-          "type": 1
-        },
-        {
-          "tag": "Educational institutions",
-          "type": 1
-        },
-        {
-          "tag": "finite ad hoc network connectivity",
-          "type": 1
-        },
-        {
-          "tag": "Focusing",
-          "type": 1
-        },
-        {
-          "tag": "geometry",
-          "type": 1
-        },
-        {
-          "tag": "mean degree evolution",
-          "type": 1
-        },
-        {
-          "tag": "random geometric graph",
-          "type": 1
-        },
-        {
-          "tag": "rectangular environment",
-          "type": 1
-        },
-        {
-          "tag": "Shape",
-          "type": 1
-        },
-        {
-          "tag": "Silicon",
-          "type": 1
-        },
-        {
-          "tag": "Size measurement",
-          "type": 1
-        },
-        {
-          "tag": "square environment impact",
-          "type": 1
-        },
-        {
-          "tag": "topological space",
-          "type": 1
-        }
-      ],
-      "title": "Impact of square environment on the connectivity in finite ad hoc networks",
-      "uri": "http://zotero.org/users/809971/items/XCXIJGS8",
-      "version": 668
-    },
-    {
-      "DOI": "10.1007/978-3-642-19786-4_12",
-      "ISBN": "978-3-642-19785-7",
-      "abstractNote": "This paper proposes VehILux, a new vehicular mobility model based on real traffic counting data. It relies on two freely available sources of real information for the country of Luxembourg. The first source is traffic data collected by counting devices located on the Luxembourgian road network, while the second is geographical information about different types of areas: residential, industrial, commercial and other services. VehILux models vehicles commuting around the city of Luxembourg by considering two types of traffic, outer traffic with vehicles entering in the defined geographical area and inner traffic starting from residential zones located inside the geographical area. One part of the collected traffic data is used as input traffic, while another part is used to control the produced traffic and to fine-tune the model. VehILux is coupled with the microscopic road traffic simulator SUMO to produce realistic vehicular traces.",
-      "accessDate": "2015-03-02T13:19:11Z",
-      "attachments": [],
-      "citationKey": "pigneVehicularMobilityModel2011a",
-      "citekey": "pigneVehicularMobilityModel2011a",
-      "conferenceName": "Nets4Cars/Nets4Trains 2011",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Grégoire",
-          "lastName": "Danoy"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Pascal",
-          "lastName": "Bouvry"
-        }
-      ],
-      "date": "2011",
-      "dateAdded": "2015-03-02T13:19:11Z",
-      "dateModified": "2022-08-24T17:02:30Z",
-      "itemID": 195,
-      "itemKey": "TXWE973H",
-      "itemType": "conferencePaper",
-      "key": "TXWE973H",
-      "libraryCatalog": "ACM Digital Library",
-      "libraryID": 1,
-      "notes": [],
-      "pages": "131–142",
-      "place": "Berlin, Heidelberg",
-      "publicationTitle": "Proceedings of the Third International Conference on Communication Technologies for Vehicles",
-      "publisher": "Springer-Verlag",
-      "relations": [],
-      "select": "zotero://select/library/items/TXWE973H",
-      "series": "Nets4Cars/Nets4Trains'11",
-      "tags": [
-        {
-          "tag": "intelligent transportation systems",
-          "type": 1
-        },
-        {
-          "tag": "vehicular ad hoc networks",
-          "type": 1
-        },
-        {
-          "tag": "mobility models",
-          "type": 1
-        },
-        {
-          "tag": "simulations",
-          "type": 1
-        },
-        {
-          "tag": "traffic management",
-          "type": 1
-        }
-      ],
-      "title": "A Vehicular Mobility Model Based on Real Traffic Counting Data",
-      "uri": "http://zotero.org/users/809971/items/TXWE973H",
-      "version": 725
-    },
-    {
-      "DOI": "10.1051/metal/2013050",
-      "attachments": [
-        {
-          "dateAdded": "2015-03-02T10:38:58Z",
-          "dateModified": "2015-03-02T10:38:58Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/ZNTBCNSW/metal130006.html",
-          "relations": [],
-          "tags": [],
-          "title": "Using graph search algorithms for a rigorous application of emergy algebra rules | Metallurgical Research & Technology",
-          "uri": "http://zotero.org/users/809971/items/ZNTBCNSW"
-        }
-      ],
-      "citationKey": "marvugliaUsingGraphSearch2013a",
-      "citekey": "marvugliaUsingGraphSearch2013a",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "A.",
-          "lastName": "Marvuglia"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "B.",
-          "lastName": "Rugani"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "G.",
-          "lastName": "Rios"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Y.",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "E.",
-          "lastName": "Benetto"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "L.",
-          "lastName": "Tiruta-Barna"
-        }
-      ],
-      "date": "2013",
-      "dateAdded": "2015-03-02T10:38:55Z",
-      "dateModified": "2015-03-02T10:38:55Z",
-      "issue": "1",
-      "itemID": 199,
-      "itemKey": "8XJ3NBQ2",
-      "itemType": "journalArticle",
-      "key": "8XJ3NBQ2",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:56:00Z",
-          "dateModified": "2022-08-08T22:56:53Z",
-          "itemType": "note",
-          "key": "TUIRLT5S",
-          "note": "<div data-schema-version=\"8\"><p>Impact Factor: 0.946; SJR: 0.31; H-index: 24; Scimago: Q3</p>\n</div>",
-          "parentItem": "8XJ3NBQ2",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/TUIRLT5S",
-          "version": 647
-        }
-      ],
-      "pages": "8",
-      "publicationTitle": "Metallurgical Research & Technology",
-      "relations": [],
-      "select": "zotero://select/library/items/8XJ3NBQ2",
-      "tags": [],
-      "title": "Using graph search algorithms for a rigorous application of emergy algebra rules",
-      "uri": "http://zotero.org/users/809971/items/8XJ3NBQ2",
-      "version": 600,
-      "volume": "110"
-    },
-    {
-      "DOI": "10.1109/GLOCOMW.2010.5700389",
-      "ISBN": "978-1-4244-8863-6",
-      "abstractNote": "This paper introduces a platform for realistic and computationally efficient online vehicular networks simulation. It permits decentralized traffic management applications simulation as nodes mobility is modifiable at runtime thanks to the integration of two state-of-the-art network and traffic simulators. The platform embeds a tool that generates vehicular traces based on traffic counting data and ensures performance through a geographical decomposition of the network. Evidence of its performance is given on a Luxembougian traffic management scenario, using real road network and traffic data.",
-      "attachments": [
-        {
-          "dateAdded": "2013-11-27T15:14:13Z",
-          "dateModified": "2014-06-25T12:19:56Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/ZDWM876K/login.html",
-          "relations": [],
-          "tags": [],
-          "title": "IEEE Xplore Abstract Record",
-          "uri": "http://zotero.org/users/809971/items/ZDWM876K"
-        },
-        {
-          "dateAdded": "2012-12-12T10:41:42Z",
-          "dateModified": "2014-06-25T12:19:56Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/Q4CG4GTF/login.html",
-          "relations": [],
-          "tags": [],
-          "title": "IEEE Xplore Abstract Record",
-          "uri": "http://zotero.org/users/809971/items/Q4CG4GTF"
-        }
-      ],
-      "citationKey": "pignePlatformRealisticOnline2010",
-      "citekey": "pignePlatformRealisticOnline2010",
-      "conferenceName": "IEEE Globecom Workshops",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Grégoire",
-          "lastName": "Danoy"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Pascal",
-          "lastName": "Bouvry"
-        }
-      ],
-      "date": "2010",
-      "dateAdded": "2014-02-17T12:24:03Z",
-      "dateModified": "2022-08-24T15:56:02Z",
-      "itemID": 223,
-      "itemKey": "X4HISZW4",
-      "itemType": "conferencePaper",
-      "key": "X4HISZW4",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T23:02:04Z",
-          "dateModified": "2022-08-08T23:02:11Z",
-          "itemType": "note",
-          "key": "F24JEPI9",
-          "note": "<div data-schema-version=\"8\"><p>Conference Rank: A1</p>\n</div>",
-          "parentItem": "X4HISZW4",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/F24JEPI9",
-          "version": 655
-        }
-      ],
-      "pages": "615–619",
-      "place": "Miami, FL, USA",
-      "publicationTitle": "IEEE International Workshop on Management of Emerging Networks and Services",
-      "publisher": "IEEE Computer Society",
-      "relations": [],
-      "select": "zotero://select/library/items/X4HISZW4",
-      "tags": [
-        {
-          "tag": "mobility management (mobile radio)",
-          "type": 1
-        },
-        {
-          "tag": "decentralized traffic management application simulation",
-          "type": 1
-        },
-        {
-          "tag": "geographical decomposition",
-          "type": 1
-        },
-        {
-          "tag": "Luxembougian traffic management scenario",
-          "type": 1
-        },
-        {
-          "tag": "mobile computing",
-          "type": 1
-        },
-        {
-          "tag": "online vehicular network management",
-          "type": 1
-        },
-        {
-          "tag": "online vehicular network simulation",
-          "type": 1
-        },
-        {
-          "tag": "road network",
-          "type": 1
-        },
-        {
-          "tag": "state-of-the-art network",
-          "type": 1
-        },
-        {
-          "tag": "traffic data",
-          "type": 1
-        }
-      ],
-      "title": "A Platform for Realistic Online Vehicular Network Management",
-      "uri": "http://zotero.org/users/809971/items/X4HISZW4",
-      "version": 697
-    },
-    {
-      "DOI": "10.1007/978-3-642-15461-4_52",
-      "abstractNote": "We consider the problem of finding and maintaining communication paths in wireless mobile ad hoc networks (MANET). We consider this problem as a bi-objective problem when trying to minimize both the length of the constructed paths and the number link reconnections. We propose two centralized algorithms that help analyse the problem from a dynamic graph point of view. These algorithms give lower bounds for our proposed decentralized ant-based algorithm that constructs and maintains such paths in a MANET.",
-      "accessDate": "2013-11-27T15:12:24Z",
-      "attachments": [
-        {
-          "dateAdded": "2013-11-27T15:12:26Z",
-          "dateModified": "2013-11-27T15:12:26Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/NBMZIPHV/10.html",
-          "relations": [],
-          "tags": [],
-          "title": "Snapshot",
-          "uri": "http://zotero.org/users/809971/items/NBMZIPHV"
-        }
-      ],
-      "citationKey": "pigneShortRobustCommunication2010a",
-      "citekey": "pigneShortRobustCommunication2010a",
-      "conferenceName": "7th International Conference, ANTS 2010",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Frédéric",
-          "lastName": "Guinand"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Marco",
-          "lastName": "Dorigo"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Mauro",
-          "lastName": "Birattari"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Gianni A. Di",
-          "lastName": "Caro"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "René",
-          "lastName": "Doursat"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Andries P.",
-          "lastName": "Engelbrecht"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Dario",
-          "lastName": "Floreano"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Luca Maria",
-          "lastName": "Gambardella"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Roderich",
-          "lastName": "Groß"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Erol",
-          "lastName": "Şahin"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Hiroki",
-          "lastName": "Sayama"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Thomas",
-          "lastName": "Stützle"
-        }
-      ],
-      "date": "2010/01/01",
-      "dateAdded": "2013-11-27T15:12:24Z",
-      "dateModified": "2022-08-24T16:51:51Z",
-      "itemID": 300,
-      "itemKey": "CB7IK787",
-      "itemType": "conferencePaper",
-      "key": "CB7IK787",
-      "libraryCatalog": "link.springer.com",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T23:00:47Z",
-          "dateModified": "2022-08-24T16:11:04Z",
-          "itemType": "note",
-          "key": "G7TBMWUW",
-          "note": "<div data-schema-version=\"8\"><p></p>\n<p>Conference Rank: B</p>\n</div>",
-          "parentItem": "CB7IK787",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/G7TBMWUW",
-          "version": 710
-        }
-      ],
-      "pages": "520-527",
-      "place": "Brussels, Belgium",
-      "publicationTitle": "Swarm Intelligence",
-      "publisher": "Springer Berlin Heidelberg",
-      "relations": [],
-      "rights": "©2010 Springer-Verlag Berlin Heidelberg",
-      "select": "zotero://select/library/items/CB7IK787",
-      "series": "Lecture Notes in Computer Science",
-      "tags": [
-        {
-          "tag": "Computer Communication Networks",
-          "type": 1
-        },
-        {
-          "tag": "Information Systems Applications (incl.Internet)",
-          "type": 1
-        },
-        {
-          "tag": "Algorithm Analysis and Problem Complexity",
-          "type": 1
-        },
-        {
-          "tag": "Numeric Computing",
-          "type": 1
-        },
-        {
-          "tag": "Artificial Intelligence (incl. Robotics)",
-          "type": 1
-        },
-        {
-          "tag": "Computation by Abstract Devices",
-          "type": 1
-        }
-      ],
-      "title": "Short and Robust Communication Paths in Dynamic Wireless Networks",
-      "uri": "http://zotero.org/users/809971/items/CB7IK787",
-      "version": 723
-    },
-    {
-      "DOI": "10.1007/978-3-642-39247-4_9",
-      "ISBN": "978-3-642-39246-7",
-      "attachments": [],
-      "citationKey": "casteigtsDistributedMaintenanceAnytime2013",
-      "citekey": "casteigtsDistributedMaintenanceAnytime2013",
-      "conferenceName": "12th International Conference, ADHOC-NOW 2013",
-      "creators": [
-        {
-          "creatorType": "editor",
-          "firstName": "Jacek",
-          "lastName": "Cichoń"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Maciej",
-          "lastName": "Gȩbala"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Marek",
-          "lastName": "Klonowski"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Arnaud",
-          "lastName": "Casteigts"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Serge",
-          "lastName": "Chaumette"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Frédéric",
-          "lastName": "Guinand"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        }
-      ],
-      "date": "2013",
-      "dateAdded": "2013-09-06T13:32:55Z",
-      "dateModified": "2022-08-24T16:31:37Z",
-      "itemID": 305,
-      "itemKey": "H4SQS5UX",
-      "itemType": "conferencePaper",
-      "key": "H4SQS5UX",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:57:56Z",
-          "dateModified": "2022-08-24T16:10:41Z",
-          "itemType": "note",
-          "key": "7L4SM7W3",
-          "note": "<div data-schema-version=\"8\"><p>Conference Rank: B</p>\n</div>",
-          "parentItem": "H4SQS5UX",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/7L4SM7W3",
-          "version": 709
-        }
-      ],
-      "pages": "99-110",
-      "place": "Wroclaw, Poland",
-      "publicationTitle": "Ad-hoc, Mobile, and Wireless Network",
-      "publisher": "Springer Berlin Heidelberg",
-      "relations": [],
-      "select": "zotero://select/library/items/H4SQS5UX",
-      "series": "Lecture Notes in Computer Science",
-      "tags": [],
-      "title": "Distributed Maintenance of Anytime Available Spanning Trees in Dynamic Networks",
-      "uri": "http://zotero.org/users/809971/items/H4SQS5UX",
-      "version": 716,
-      "volume": "7960"
-    },
-    {
-      "DOI": "10.1109/ICNS.2009.36",
-      "ISBN": "978-0-7695-3586-9",
-      "abstractNote": "What is the impact of obstacles on the graphs of connections between stations in Mobile Ad hoc Networks? In order to answer, at least partially, this question, the first step is to define both an environment with obstacles and a mobility model for the stations in such an environment. The present paper focuses on a new way of considering the mobility within environments with obstacles, while keeping the core ideas of the well-known Random WayPoint mobility model (a.k.a RWP). Based on a mesh-partitioning of the space, we propose a new model called RSP-O-G for which we compute the spatial distribution of stations and analyse how the presence of obstacles impacts this distribution compared to the distribution when no obstacles are present. Coupled with a simple model of radio propagation, and according to the density of stations in the environment, we study the mean degree of the connection graphs corresponding to such mobile ad hoc networks.",
-      "accessDate": "2012-12-12T10:44:51Z",
-      "attachments": [],
-      "citationKey": "aboue-nzeImpactObstaclesDegree2009",
-      "citekey": "aboue-nzeImpactObstaclesDegree2009",
-      "conferenceName": "2009 Fifth International Conference on Networking and Services",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Cédric Gaël",
-          "lastName": "Aboue-Nze"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Frédéric",
-          "lastName": "Guinand"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        }
-      ],
-      "date": "2009",
-      "dateAdded": "2012-12-12T10:44:51Z",
-      "dateModified": "2022-08-24T16:14:03Z",
-      "itemID": 306,
-      "itemKey": "TTFMS973",
-      "itemType": "conferencePaper",
-      "key": "TTFMS973",
-      "libraryCatalog": "ACM Digital Library",
-      "libraryID": 1,
-      "notes": [],
-      "pages": "332–337",
-      "place": "Valencia, Spain",
-      "publicationTitle": "Proceedings of the 2009 Fifth International Conference on Networking and Services",
-      "publisher": "IEEE Computer Society",
-      "relations": [],
-      "select": "zotero://select/library/items/TTFMS973",
-      "series": "ICNS '09",
-      "tags": [
-        {
-          "tag": "Delay-Tolerant Mobile Ad Hoc Networks (DT-MANET)",
-          "type": 1
-        },
-        {
-          "tag": "GraphStream",
-          "type": 1
-        },
-        {
-          "tag": "Mobile Ad Hoc Networks (MANET)",
-          "type": 1
-        },
-        {
-          "tag": "Obstacle",
-          "type": 1
-        },
-        {
-          "tag": "Probabilistic Analysis",
-          "type": 1
-        },
-        {
-          "tag": "Random Waypoint Mobility Model (RWP)",
-          "type": 1
-        },
-        {
-          "tag": "Spatial Node Distribution",
-          "type": 1
-        }
-      ],
-      "title": "Impact of Obstacles on the Degree of Mobile Ad Hoc Connection Graphs",
-      "uri": "http://zotero.org/users/809971/items/TTFMS973",
-      "version": 712
-    },
-    {
-      "DOI": "10.1145/2069000.2069007",
-      "ISBN": "978-1-4503-0904-2",
-      "abstractNote": "In this article, we consider a realistic vehicular mobility model, VehILux, and use a sensitivity analysis method to quantitatively study the influence and interdependencies of its parameters. The analysis reveals several properties in the set of parameters. Some are identified as irrelevant to the output while some have stronger impact than expected. This analysis is proposed as a preliminary step to the mobility model optimization, as it permits to significantly reduce the parameters search space.",
-      "accessDate": "2012-12-12T10:39:32Z",
-      "attachments": [],
-      "citationKey": "pigneSensitivityAnalysisRealistic2011",
-      "citekey": "pigneSensitivityAnalysisRealistic2011",
-      "conferenceName": "DIVANet '11",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Grégoire",
-          "lastName": "Danoy"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Pascal",
-          "lastName": "Bouvry"
-        }
-      ],
-      "date": "2011",
-      "dateAdded": "2012-12-12T10:39:32Z",
-      "dateModified": "2022-08-24T16:19:12Z",
-      "itemID": 311,
-      "itemKey": "GBMWDS8M",
-      "itemType": "conferencePaper",
-      "key": "GBMWDS8M",
-      "libraryCatalog": "ACM Digital Library",
-      "libraryID": 1,
-      "notes": [],
-      "pages": "31–38",
-      "place": "Miami, FL, USA",
-      "publicationTitle": "Proceedings of the first ACM international symposium on Design and analysis of intelligent vehicular networks and applications",
-      "publisher": "ACM",
-      "relations": [],
-      "select": "zotero://select/library/items/GBMWDS8M",
-      "series": "DIVANet '11",
-      "tags": [
-        {
-          "tag": "intelligent transportation systems",
-          "type": 1
-        },
-        {
-          "tag": "vehicular ad hoc networks",
-          "type": 1
-        },
-        {
-          "tag": "mobility models",
-          "type": 1
-        },
-        {
-          "tag": "simulations",
-          "type": 1
-        },
-        {
-          "tag": "traffic management",
-          "type": 1
-        },
-        {
-          "tag": "sensibility analysis",
-          "type": 1
-        }
-      ],
-      "title": "Sensitivity analysis for a realistic vehicular mobility model",
-      "uri": "http://zotero.org/users/809971/items/GBMWDS8M",
-      "version": 713
-    },
-    {
-      "abstractNote": "Les graphes dynamiques sont un outil de plus en plus utilisé dans des contextes variés où il s'avère nécessaire de modéliser des environnements changeants ou incertains. Les modèles aujourd'hui proposés sont dédiés à ces applications précises. Il n'existe pas de modèle général reprenant, hors de tout contexte applicatif, ces caractéristiques. D'autre part la résolution de problèmes liés à ces environnements dynamiques et incertains est problématique. Nous proposons, ici, la formalisation d'un modèle général de graphe dynamique.   Nous étudions la résolution de problèmes dans ces graphes à l'aide de méthodes inspirées de mécanismes d'intelligence collective.   Les modèles proposés sont validés dans le contexte applicatif des réseaux mobiles ad hoc. Une approche originale de construction et de maintien de chemins de communication sous plusieurs contraintes est proposée. Le problème de la construction et du maintien d'une forêt couvrante dans un réseau mobile ad hoc est également étudié.",
-      "accessDate": "2013-01-10T09:25:25Z",
-      "attachments": [
-        {
-          "dateAdded": "2013-01-10T09:25:25Z",
-          "dateModified": "2013-01-10T09:25:27Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/D9TSRFIU/Pigné - 2008 - Modélisation et traitement décentralisé des graphe.pdf",
-          "relations": [],
-          "tags": [],
-          "title": "Full Text PDF",
-          "uri": "http://zotero.org/users/809971/items/D9TSRFIU"
-        },
-        {
-          "dateAdded": "2013-01-10T09:25:28Z",
-          "dateModified": "2013-01-10T09:25:28Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/VITF8P2X/index.html",
-          "relations": [],
-          "tags": [],
-          "title": "Snapshot",
-          "uri": "http://zotero.org/users/809971/items/VITF8P2X"
-        }
-      ],
-      "citationKey": "pigneModelisationTraitementDecentralise2008",
-      "citekey": "pigneModelisationTraitementDecentralise2008",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        }
-      ],
-      "date": "2008/12/04",
-      "dateAdded": "2013-01-10T09:25:25Z",
-      "dateModified": "2013-01-10T09:25:25Z",
-      "itemID": 315,
-      "itemKey": "WPU6RT9Q",
-      "itemType": "thesis",
-      "key": "WPU6RT9Q",
-      "libraryCatalog": "tel.archives-ouvertes.fr",
-      "libraryID": 1,
-      "notes": [],
-      "publisher": "Université du Havre",
-      "relations": [],
-      "select": "zotero://select/library/items/WPU6RT9Q",
-      "tags": [
-        {
-          "tag": "algorithmique distribuée",
-          "type": 1
-        },
-        {
-          "tag": "graphes dynamiques",
-          "type": 1
-        },
-        {
-          "tag": "intelligence collective",
-          "type": 1
-        },
-        {
-          "tag": "réseaux mobiles ad hoc",
-          "type": 1
-        }
-      ],
-      "title": "Modélisation et traitement décentralisé des graphes dynamiques Application aux réseaux mobiles ad hoc",
-      "uri": "http://zotero.org/users/809971/items/WPU6RT9Q",
-      "url": "http://tel.archives-ouvertes.fr/tel-00371962",
-      "version": 665
-    },
-    {
-      "abstractNote": "This work focuses on the minimum cost flow problem in dynamic graphs. We use a model in which there are no travel time on arcs, and storage on vertices is not al- lowed. Every other graph parameter is time-dependent. We propose a method using the successive shortest path algorithm that avoids using the time-expanded graph that significantly increases the complexity of the problem. Our method is implemented using the GraphStream library.",
-      "attachments": [],
-      "citationKey": "vernetSuccessiveShortestPath2018",
-      "citekey": "vernetSuccessiveShortestPath2018",
-      "conferenceName": "Cologne-Twente Workshop on Graphs and Combinatorial Optimization",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Mathilde",
-          "lastName": "Vernet"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Maciej",
-          "lastName": "Drozdowski"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Eric",
-          "lastName": "Sanlaville"
-        }
-      ],
-      "date": "2018-06-18",
-      "dateAdded": "2019-01-06T10:10:44Z",
-      "dateModified": "2022-08-24T16:34:14Z",
-      "itemID": 477,
-      "itemKey": "2RZTS9MD",
-      "itemType": "conferencePaper",
-      "key": "2RZTS9MD",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:41:04Z",
-          "dateModified": "2022-08-08T22:41:18Z",
-          "itemType": "note",
-          "key": "5F8LMZY5",
-          "note": "<div data-schema-version=\"8\"><p>Conference Rank: C</p>\n</div>",
-          "parentItem": "2RZTS9MD",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/5F8LMZY5",
-          "version": 629
-        }
-      ],
-      "pages": "51--54",
-      "place": "Paris, France",
-      "publicationTitle": "16th Cologne-Twente Workshop on Graphs and Combinatorial Optimization",
-      "relations": [],
-      "select": "zotero://select/library/items/2RZTS9MD",
-      "tags": [],
-      "title": "Successive Shortest Path Algorithm for Flows in Dynamic Graphs",
-      "uri": "http://zotero.org/users/809971/items/2RZTS9MD",
-      "url": "http://ctw18.lipn.univ-paris13.fr/CTW18_Proceedings.pdf",
-      "version": 718
-    },
-    {
-      "DOI": "10.1109/ETFA.2018.8502633",
-      "attachments": [],
-      "citationKey": "rachidiMovingAverageControl2018",
-      "citekey": "rachidiMovingAverageControl2018",
-      "conferenceName": "2018 IEEE 23rd International Conference on Emerging Technologies and Factory Automation (ETFA)",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Sara",
-          "lastName": "Rachidi"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Edouard",
-          "lastName": "Leclercq"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Dimitri",
-          "lastName": "Lefebvre"
-        }
-      ],
-      "date": "2018",
-      "dateAdded": "2019-01-06T13:49:07Z",
-      "dateModified": "2022-08-24T15:58:21Z",
-      "itemID": 479,
-      "itemKey": "2VS8AMEY",
-      "itemType": "conferencePaper",
-      "key": "2VS8AMEY",
-      "libraryCatalog": "DBLP Computer Science Bibliography",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:44:12Z",
-          "dateModified": "2022-08-08T22:44:19Z",
-          "itemType": "note",
-          "key": "44SQCAGQ",
-          "note": "<div data-schema-version=\"8\"><p>Conference Rank: B1</p>\n</div>",
-          "parentItem": "2VS8AMEY",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/44SQCAGQ",
-          "version": 633
-        }
-      ],
-      "pages": "493–498",
-      "place": "Torino, Italy",
-      "publicationTitle": "23rd IEEE International Conference on Emerging Technologies and Factory Automation, ETFA 2018, Torino, Italy, September 4-7, 2018",
-      "publisher": "IEEE",
-      "relations": [],
-      "select": "zotero://select/library/items/2VS8AMEY",
-      "tags": [],
-      "title": "Moving Average control chart for the detection and isolation of temporal faults in stochastic Petri nets",
-      "uri": "http://zotero.org/users/809971/items/2VS8AMEY",
-      "version": 700
-    },
-    {
-      "DOI": "10.1109/CoDIT.2018.8394843",
-      "ISBN": "978-1-5386-5065-3",
-      "attachments": [],
-      "citationKey": "lefebvreTemporalFaultDiagnosis2018",
-      "citekey": "lefebvreTemporalFaultDiagnosis2018",
-      "conferenceName": "5th International Conference on Control, Decision and Information Technologies (CoDIT)",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Dimitri",
-          "lastName": "Lefebvre"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Sara",
-          "lastName": "Rachidi"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Edouard",
-          "lastName": "Leclercq"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        }
-      ],
-      "date": "2018",
-      "dateAdded": "2019-01-06T13:49:46Z",
-      "dateModified": "2022-08-24T15:50:43Z",
-      "itemID": 480,
-      "itemKey": "7M9TMWRS",
-      "itemType": "conferencePaper",
-      "key": "7M9TMWRS",
-      "libraryCatalog": "DBLP Computer Science Bibliography",
-      "libraryID": 1,
-      "notes": [],
-      "pages": "271–276",
-      "place": "Thessaloniki, Greece",
-      "publicationTitle": "5th International Conference on Control, Decision and Information Technologies, CoDIT 2018, Thessaloniki, Greece, April 10-13, 2018",
-      "publisher": "IEEE",
-      "relations": [],
-      "select": "zotero://select/library/items/7M9TMWRS",
-      "tags": [],
-      "title": "Temporal fault diagnosis for k-bounded non-Markovian SPN",
-      "uri": "http://zotero.org/users/809971/items/7M9TMWRS",
-      "version": 689
-    },
-    {
-      "DOI": "10.1109/TSMC.2018.2875726",
-      "abstractNote": "This paper concerns the diagnosis of faults for stochastic discrete event systems that behave according to non-Markovian dynamics. k-bounded partially observed Petri nets are used to model the system structure and the sensors. Stochastic processes with probability density functions (pdf) of finite support define the dynamics. Structural and temporal faults are considered. Structural faults correspond to specific sequences of events that should satisfy precedence conditions defined with patterns. Temporal faults are defined with time constraints that must be fulfilled by the firing durations. The probabilities of consistent trajectories are computed with a numerical scheme from the collected timed measurements. The advantage of the proposed scheme is that it can be used for a large variety of pdf that may be defined either with an analytical or a numerical description. It works also for various time semantics. Diagnosis in terms of probability for faulty patterns and temporal constraints is established as a consequence.",
-      "attachments": [
-        {
-          "accessDate": "2019-01-06T13:52:25Z",
-          "charset": "",
-          "contentType": "",
-          "dateAdded": "2019-01-06T13:52:25Z",
-          "dateModified": "2019-01-06T13:52:25Z",
-          "itemType": "attachment",
-          "key": "L2EFEGYB",
-          "linkMode": "linked_url",
-          "parentItem": "BJMCV8P2",
-          "relations": {},
-          "select": "zotero://select/library/items/L2EFEGYB",
-          "tags": [],
-          "title": "ResearchGate Link",
-          "uri": "http://zotero.org/users/809971/items/L2EFEGYB",
-          "url": "https://www.researchgate.net/publication/328845827_Diagnosis_of_Structural_and_Temporal_Faults_for_k-Bounded_Non-Markovian_Stochastic_Petri_Nets",
-          "version": 548
-        }
-      ],
-      "citationKey": "lefebvreDiagnosisStructuralTemporal2018",
-      "citekey": "lefebvreDiagnosisStructuralTemporal2018",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Dimitri",
-          "lastName": "Lefebvre"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Sara",
-          "lastName": "Rachidi"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Edouard",
-          "lastName": "Leclercq"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        }
-      ],
-      "date": "November 9, 2018",
-      "dateAdded": "2019-01-06T13:52:24Z",
-      "dateModified": "2022-08-10T15:46:07Z",
-      "itemID": 481,
-      "itemKey": "BJMCV8P2",
-      "itemType": "journalArticle",
-      "journalAbbreviation": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
-      "key": "BJMCV8P2",
-      "libraryCatalog": "ResearchGate",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:35:22Z",
-          "dateModified": "2022-08-08T22:38:45Z",
-          "itemType": "note",
-          "key": "UA7WV89S",
-          "note": "<div data-schema-version=\"8\"><p>Impact Factor: 11.471; SJR: 3.45; H-Index: 97; Scimago: Q1</p>\n</div>",
-          "parentItem": "BJMCV8P2",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/UA7WV89S",
-          "version": 627
-        }
-      ],
-      "pages": "1-13",
-      "publicationTitle": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
-      "relations": [],
-      "select": "zotero://select/library/items/BJMCV8P2",
-      "tags": [],
-      "title": "Diagnosis of Structural and Temporal Faults for k-Bounded Non-Markovian Stochastic Petri Nets",
-      "uri": "http://zotero.org/users/809971/items/BJMCV8P2",
-      "version": 664,
-      "volume": "PP"
-    },
-    {
-      "attachments": [],
-      "citationKey": "vernetAlgorithmiqueDansGraphes2018",
-      "citekey": "vernetAlgorithmiqueDansGraphes2018",
-      "conferenceName": "ROADEF 2018",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Mathilde",
-          "lastName": "Vernet"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Eric",
-          "lastName": "Sanlaville"
-        }
-      ],
-      "date": "2018-02",
-      "dateAdded": "2019-01-06T15:09:11Z",
-      "dateModified": "2022-08-24T17:03:22Z",
-      "itemID": 483,
-      "itemKey": "TBWG82TV",
-      "itemType": "conferencePaper",
-      "key": "TBWG82TV",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:41:58Z",
-          "dateModified": "2022-08-08T23:22:08Z",
-          "itemType": "note",
-          "key": "NJIE97XL",
-          "note": "<div data-schema-version=\"8\"><p>Audience nationale. Congrès francophone de référence en recherche opérationnelle.</p>\n<p></p>\n</div>",
-          "parentItem": "TBWG82TV",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/NJIE97XL",
-          "version": 657
-        }
-      ],
-      "place": "Lorient, France",
-      "relations": [],
-      "select": "zotero://select/library/items/TBWG82TV",
-      "tags": [],
-      "title": "Algorithmique dans les graphes dynamiques : le cas des flots",
-      "uri": "http://zotero.org/users/809971/items/TBWG82TV",
-      "url": "https://hal.archives-ouvertes.fr/hal-02115413",
-      "version": 726
-    },
-    {
-      "DOI": "10.1007/978-3-319-51204-4_4",
-      "ISBN": "978-3-319-51204-4",
-      "abstractNote": "Wireless Sensor and Actor Networks are used in many dangerous applications. When performing their tasks, actors may fail due to harsh environments in which they are deployed. Some actors are cut-vertices within network. Their loss breaks its connectivity and disrupts its operation accordingly. Therefore, restoring network connectivity is crucial. DARA is among the most popular connectivity restoration schemes. It performs multi-actor relocations in order to replace a failed cut-vertex by one of its neighbors, based on the lowest degree. In this paper, we propose new selection strategies of actor’s substitute in DARA, in which the substitute selection is based on the nature of the links with neighbors rather than on the degree. Our approaches improve the performance of DARA by reducing the number of relocated actors in the recovery process by 24% on average compared to its original selection strategy. The proposed strategies are validated through simulation experiments.",
-      "attachments": [],
-      "citationKey": "saadaNewSelectionStrategies2017a",
-      "citekey": "saadaNewSelectionStrategies2017a",
-      "conferenceName": "8th International Conference, ADHOCNETS 2016",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Riadh",
-          "lastName": "Saada"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Damien",
-          "lastName": "Olivier"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Yifeng",
-          "lastName": "Zhou"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Thomas",
-          "lastName": "Kunz"
-        }
-      ],
-      "date": "2017",
-      "dateAdded": "2019-06-24T08:17:58Z",
-      "dateModified": "2022-08-24T15:59:00Z",
-      "itemID": 488,
-      "itemKey": "D76RJQTI",
-      "itemType": "conferencePaper",
-      "key": "D76RJQTI",
-      "language": "en",
-      "libraryCatalog": "Springer Link",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:48:20Z",
-          "dateModified": "2022-08-08T22:48:28Z",
-          "itemType": "note",
-          "key": "SXMJ9GDQ",
-          "note": "<div data-schema-version=\"8\"><p>Conference Rank: B5</p>\n</div>",
-          "parentItem": "D76RJQTI",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/SXMJ9GDQ",
-          "version": 635
-        }
-      ],
-      "pages": "38-49",
-      "place": "Ottawa, Canada",
-      "publicationTitle": "Ad Hoc Networks",
-      "publisher": "Springer International Publishing",
-      "relations": [],
-      "select": "zotero://select/library/items/D76RJQTI",
-      "series": "Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
-      "tags": [
-        {
-          "tag": "Connectivity restoration",
-          "type": 1
-        },
-        {
-          "tag": "Fault tolerance",
-          "type": 1
-        },
-        {
-          "tag": "Topology management",
-          "type": 1
-        },
-        {
-          "tag": "Wireless sensor and actor networks",
-          "type": 1
-        }
-      ],
-      "title": "New Selection Strategies of Actor’s Substitute in DARA for Connectivity Restoration in WSANs",
-      "uri": "http://zotero.org/users/809971/items/D76RJQTI",
-      "version": 702
-    },
-    {
-      "DOI": "10.1155/2019/5314520",
-      "abstractNote": "Bayesian dynamic linear model is a promising method for time series data analysis and short-term forecasting. One research issue concerns how the predictive model adapts to changes in the system, especially when shocks impact system behavior. In this study, we propose an adaptive dynamic linear model to adaptively update model parameters for online system state prediction. The proposed method is an automatic approach based on the feedback of prediction errors at each time slot without the needs of external intervention. The experimental study on short-term travel speed prediction shows that the proposed method can significantly reduce the prediction errors of the traditional dynamic linear model and outperform two state-of-the-art methods in the case of major system behavior changes.",
-      "accessDate": "2019-06-24T08:20:48Z",
-      "attachments": [
-        {
-          "dateAdded": "2019-06-24T08:20:51Z",
-          "dateModified": "2019-06-24T08:20:51Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/NM7THKNF/Ma and Pigné - 2019 - Bayesian Dynamic Linear Model with Adaptive Parame.pdf",
-          "relations": [],
-          "tags": [],
-          "title": "Full Text PDF",
-          "uri": "http://zotero.org/users/809971/items/NM7THKNF"
-        },
-        {
-          "dateAdded": "2019-06-24T08:20:52Z",
-          "dateModified": "2019-06-24T08:20:52Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/5EM3Z8TS/5314520.html",
-          "relations": [],
-          "tags": [],
-          "title": "Snapshot",
-          "uri": "http://zotero.org/users/809971/items/5EM3Z8TS"
-        }
-      ],
-      "citationKey": "maBayesianDynamicLinear2019",
-      "citekey": "maBayesianDynamicLinear2019",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Tai-Yu",
-          "lastName": "Ma"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        }
-      ],
-      "date": "2019",
-      "dateAdded": "2019-06-24T08:20:48Z",
-      "dateModified": "2022-08-24T16:05:41Z",
-      "extra": "DOI: 10.1155/2019/5314520",
-      "itemID": 492,
-      "itemKey": "8736L66T",
-      "itemType": "journalArticle",
-      "key": "8736L66T",
-      "language": "en",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:33:50Z",
-          "dateModified": "2022-08-08T22:34:51Z",
-          "itemType": "note",
-          "key": "36QEZV2R",
-          "note": "<div data-schema-version=\"8\"><p>Impact Factor: 2.249; SJR: 0.57; H-Index: 51; Scimago: Q2</p>\n</div>",
-          "parentItem": "8736L66T",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/36QEZV2R",
-          "version": 623
-        }
-      ],
-      "pages": "10",
-      "publicationTitle": "Journal of Advanced Transportation",
-      "relations": [],
-      "select": "zotero://select/library/items/8736L66T",
-      "tags": [],
-      "title": "Bayesian Dynamic Linear Model with Adaptive Parameter Estimation for Short-Term Travel Speed Prediction",
-      "uri": "http://zotero.org/users/809971/items/8736L66T",
-      "url": "https://www.hindawi.com/journals/jat/2019/5314520/",
-      "version": 705,
-      "volume": "2019"
-    },
-    {
-      "DOI": "10.1016/j.dam.2019.12.012",
-      "ISSN": "0166-218X",
-      "abstractNote": "This work focuses on the minimum cost flow problem in dynamic graphs. The model here proposed does not have travel time nor storage but all other parameters are time-dependent. The most popular method to solve this kind of problem uses the time-expanded graph but due to the large size of this graph, this solution technique is not manageable on a long time horizon. We propose a new approach that does not use the time-expanded graph. Our algorithm is based on the computation of successive shortest paths on static graphs, which are much smaller compared to the time-expanded graph. It has a significantly better computational complexity. Our method was implemented using the GraphStream library and experiments showed that it is also much faster than the classical method in practice.",
-      "accessDate": "2020-09-25T12:59:05Z",
-      "attachments": [
-        {
-          "dateAdded": "2020-09-25T12:59:08Z",
-          "dateModified": "2020-09-25T12:59:08Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/9TDLPTZD/S0166218X19305554.html",
-          "relations": [],
-          "tags": [],
-          "title": "ScienceDirect Snapshot",
-          "uri": "http://zotero.org/users/809971/items/9TDLPTZD"
-        }
-      ],
-      "citationKey": "vernetTheoreticalExperimentalStudy2020",
-      "citekey": "vernetTheoreticalExperimentalStudy2020",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Mathilde",
-          "lastName": "Vernet"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Maciej",
-          "lastName": "Drozdowski"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Eric",
-          "lastName": "Sanlaville"
-        }
-      ],
-      "date": "January 7, 2020",
-      "dateAdded": "2020-09-25T12:59:05Z",
-      "dateModified": "2020-09-25T12:59:05Z",
-      "itemID": 503,
-      "itemKey": "2XLSNXI7",
-      "itemType": "journalArticle",
-      "journalAbbreviation": "Discrete Applied Mathematics",
-      "key": "2XLSNXI7",
-      "language": "en",
-      "libraryCatalog": "ScienceDirect",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:28:10Z",
-          "dateModified": "2022-08-08T22:29:12Z",
-          "itemType": "note",
-          "key": "J7YLLE42",
-          "note": "<div data-schema-version=\"8\"><p>Impact Factor: 1.254; SJR: 0.73; H-Index: 87; Scimago: Q2</p>\n</div>",
-          "parentItem": "2XLSNXI7",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/J7YLLE42",
-          "version": 619
-        }
-      ],
-      "publicationTitle": "Discrete Applied Mathematics",
-      "relations": [],
-      "select": "zotero://select/library/items/2XLSNXI7",
-      "tags": [
-        {
-          "tag": "Dynamic graph",
-          "type": 1
-        },
-        {
-          "tag": "Minimum cost flow",
-          "type": 1
-        },
-        {
-          "tag": "Successive shortest path algorithm",
-          "type": 1
-        }
-      ],
-      "title": "A theoretical and experimental study of a new algorithm for minimum cost flow in dynamic graphs",
-      "uri": "http://zotero.org/users/809971/items/2XLSNXI7",
-      "url": "http://www.sciencedirect.com/science/article/pii/S0166218X19305554",
-      "version": 602
-    },
-    {
-      "DOI": "10.1007/s11367-019-01696-6",
-      "ISSN": "1614-7502",
-      "abstractNote": "The objective is to demonstrate an operational tool for dynamic LCA, based on the model by Tiruta-Barna et al. (J Clean Prod 116:198-206, Tiruta-Barna et al. 2016). The main innovation lies in the combination of full temporalization of the background inventory and a graph search algorithm leading to full dynamic LCI, further coupled to dynamic LCIA. The following objectives were addressed: (1) development of a database with temporal parameters for all processes of ecoinvent 3.2, (2) implementation of the model and the database in integrated software, and (3) demonstration on a case study comparing a conventional internal combustion engine car to an electric one.",
-      "accessDate": "2020-09-25T13:05:47Z",
-      "attachments": [
-        {
-          "dateAdded": "2020-09-25T13:05:48Z",
-          "dateModified": "2020-09-25T13:05:48Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/HQKLUQ9K/Pigné et al. - 2020 - A tool to operationalize dynamic LCA, including ti.pdf",
-          "relations": [],
-          "tags": [],
-          "title": "Springer Full Text PDF",
-          "uri": "http://zotero.org/users/809971/items/HQKLUQ9K"
-        }
-      ],
-      "citationKey": "pigneToolOperationalizeDynamic2020",
-      "citekey": "pigneToolOperationalizeDynamic2020",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Tomás Navarrete",
-          "lastName": "Navarrete Gutiérrez"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Thomas",
-          "lastName": "Gibon"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Thomas",
-          "lastName": "Schaubroeck"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Emil",
-          "lastName": "Popovici"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Allan Hayato",
-          "lastName": "Shimako"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Enrico",
-          "lastName": "Benetto"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Ligia",
-          "lastName": "Tiruta-Barna"
-        }
-      ],
-      "date": "2020-02-01",
-      "dateAdded": "2020-09-25T13:05:47Z",
-      "dateModified": "2022-09-06T15:10:15Z",
-      "issue": "2",
-      "itemID": 505,
-      "itemKey": "ZBJI88NN",
-      "itemType": "journalArticle",
-      "journalAbbreviation": "Int J Life Cycle Assess",
-      "key": "ZBJI88NN",
-      "language": "en",
-      "libraryCatalog": "Springer Link",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:25:15Z",
-          "dateModified": "2022-08-08T23:07:00Z",
-          "itemType": "note",
-          "key": "LJFMKFI2",
-          "note": "<div data-schema-version=\"8\"><p>Impact Factor: 5.257; SJR: 1.12; H-Index: 113; Scimago: Q1</p>\n</div>",
-          "parentItem": "ZBJI88NN",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/LJFMKFI2",
-          "version": 656
-        }
-      ],
-      "pages": "267-279",
-      "publicationTitle": "The International Journal of Life Cycle Assessment",
-      "relations": [],
-      "select": "zotero://select/library/items/ZBJI88NN",
-      "tags": [],
-      "title": "A tool to operationalize dynamic LCA, including time differentiation on the complete background database",
-      "uri": "http://zotero.org/users/809971/items/ZBJI88NN",
-      "url": "https://doi.org/10.1007/s11367-019-01696-6",
-      "version": 736,
-      "volume": "25"
-    },
-    {
-      "DOI": "10.1007/978-3-030-54921-3_12",
-      "ISBN": "978-3-030-54921-3",
-      "abstractNote": "We examine the classic game of Cops and Robbers played on models of dynamic graphs, that is, graphs evolving over discrete time steps. At each time step, a graph instance is generated as a subgraph of the underlying graph of the model. The cops and the robber take their turns on the current graph instance. The cops win if they can capture the robber at some point in time. Otherwise, the robber wins.In the offline case, the players are fully aware of the evolution sequence, up to some finite time horizon T. We provide a (𝑛2𝑘+1𝑇)O(n2k+1T)\\mathcal {O}(n^{2k+1}T) algorithm to decide whether a given evolution sequence for an underlying graph with n vertices is k-cop-win via a reduction to a reachability game.In the online case, there is no knowledge of the evolution sequence, and the game might go on forever. Also, each generated instance is required to be connected. We provide a nearly tight characterization for sparse underlying graphs, i.e., with at most linear number of edges. We prove 𝜆+1λ+1\\lambda +1 cops suffice to capture the robber in any underlying graph with 𝑛−1+𝜆n−1+λn-1+\\lambda edges. Further, we define a family of underlying graphs with 𝑛−1+𝜆n−1+λn-1+\\lambda edges where 𝜆−1λ−1\\lambda -1 cops are necessary (and sufficient) for capture.",
-      "attachments": [
-        {
-          "dateAdded": "2020-09-25T13:13:00Z",
-          "dateModified": "2020-09-25T13:13:00Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/B2JIM2PM/Balev et al. - 2020 - Cops and Robbers on Dynamic Graphs Offline and On.pdf",
-          "relations": [],
-          "tags": [],
-          "title": "Version soumise",
-          "uri": "http://zotero.org/users/809971/items/B2JIM2PM"
-        }
-      ],
-      "citationKey": "balevCopsRobbersDynamic2020",
-      "citekey": "balevCopsRobbersDynamic2020",
-      "conferenceName": "SIROCCO 2020: Structural Information and Communication Complexity",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Stefan",
-          "lastName": "Balev"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Juan Luis",
-          "lastName": "Laredo Jiménez"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Ioannis",
-          "lastName": "Lamprou"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Eric",
-          "lastName": "Sanlaville"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Andrea Werneck",
-          "lastName": "Richa"
-        },
-        {
-          "creatorType": "editor",
-          "firstName": "Christian",
-          "lastName": "Scheideler"
-        }
-      ],
-      "date": "2020",
-      "dateAdded": "2020-09-25T13:12:53Z",
-      "dateModified": "2022-08-24T15:45:06Z",
-      "itemID": 507,
-      "itemKey": "USJVF8AK",
-      "itemType": "conferencePaper",
-      "key": "USJVF8AK",
-      "language": "en",
-      "libraryCatalog": "Springer Link",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-08-08T22:32:28Z",
-          "dateModified": "2022-08-08T22:32:46Z",
-          "itemType": "note",
-          "key": "YT9Q5ELQ",
-          "note": "<div data-schema-version=\"8\"><p>Conference Rank: B</p>\n</div>",
-          "parentItem": "USJVF8AK",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/YT9Q5ELQ",
-          "version": 621
-        }
-      ],
-      "pages": "203-219",
-      "place": "Paderborn, Germany",
-      "publicationTitle": "Structural Information and Communication Complexity",
-      "publisher": "Springer International Publishing",
-      "relations": [],
-      "select": "zotero://select/library/items/USJVF8AK",
-      "series": "Lecture Notes in Computer Science",
-      "shortTitle": "Cops and Robbers on Dynamic Graphs",
-      "tags": [
-        {
-          "tag": "Cops and robbers",
-          "type": 1
-        },
-        {
-          "tag": "Dynamic graphs",
-          "type": 1
-        },
-        {
-          "tag": "Offline",
-          "type": 1
-        },
-        {
-          "tag": "Online",
-          "type": 1
-        }
-      ],
-      "title": "Cops and Robbers on Dynamic Graphs: Offline and Online Case",
-      "uri": "http://zotero.org/users/809971/items/USJVF8AK",
-      "version": 683
-    },
-    {
-      "DOI": "10.1007/s10288-022-00507-3",
-      "ISSN": "1614-2411",
-      "abstractNote": "This work focuses on connectivity in a dynamic graph. An undirected graph is defined on a finite and discrete time interval. Edges can appear and disappear over time. The first objective of this work is to extend the notion of connected component to dynamic graphs in a new way. Persistent connected components are defined by their size, corresponding to the number of vertices, and their length, corresponding to the number of consecutive time steps they are present on. The second objective of this work is to develop an algorithm computing the largest, in terms of size and length, persistent connected components in a dynamic graph. PICCNIC algorithm (PersIstent Connected CompoNent InCremental Algorithm) is a polynomial time algorithm of minimal complexity. Another advantage of this algorithm is that it works online: knowing the evolution of the dynamic graph is not necessary to execute it. PICCNIC algorithm is implemented using the GraphStream library and experimented in order to carefully study the outcome of the algorithm according to different input graph types, as well as real data networks, to verify the theoretical complexity, and to confirm its feasibility for graphs of large size.",
-      "accessDate": "2022-07-05T13:26:26Z",
-      "attachments": [
-        {
-          "dateAdded": "2022-07-05T13:26:27Z",
-          "dateModified": "2022-07-05T13:26:27Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/XX3SVRQZ/Vernet et al. - 2022 - A study of connectivity on dynamic graphs computi.pdf",
-          "relations": [],
-          "tags": [],
-          "title": "Full Text PDF",
-          "uri": "http://zotero.org/users/809971/items/XX3SVRQZ"
-        }
-      ],
-      "citationKey": "vernetStudyConnectivityDynamic2022",
-      "citekey": "vernetStudyConnectivityDynamic2022",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Mathilde",
-          "lastName": "Vernet"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Éric",
-          "lastName": "Sanlaville"
-        }
-      ],
-      "date": "2022-04-19",
-      "dateAdded": "2022-07-05T13:26:26Z",
-      "dateModified": "2022-07-05T13:26:26Z",
-      "itemID": 522,
-      "itemKey": "BLXUX65Y",
-      "itemType": "journalArticle",
-      "journalAbbreviation": "4OR-Q J Oper Res",
-      "key": "BLXUX65Y",
-      "language": "en",
-      "libraryCatalog": "Springer Link",
-      "libraryID": 1,
-      "notes": [
-        {
-          "dateAdded": "2022-07-30T15:06:42Z",
-          "dateModified": "2022-08-08T22:22:54Z",
-          "itemType": "note",
-          "key": "YT3TN4PH",
-          "note": "<div data-schema-version=\"8\"><p>Impact Factor: 1.763; SJR: 0.58; H-Index: 43; Scimago: Q2</p>\n</div>",
-          "parentItem": "BLXUX65Y",
-          "relations": {},
-          "tags": [],
-          "uri": "http://zotero.org/users/809971/items/YT3TN4PH",
-          "version": 612
-        }
-      ],
-      "publicationTitle": "4OR",
-      "relations": [],
-      "select": "zotero://select/library/items/BLXUX65Y",
-      "shortTitle": "A study of connectivity on dynamic graphs",
-      "tags": [
-        {
-          "tag": "Dynamic graphs",
-          "type": 1
-        },
-        {
-          "tag": "05C85",
-          "type": 1
-        },
-        {
-          "tag": "68R10",
-          "type": 1
-        },
-        {
-          "tag": "90B10",
-          "type": 1
-        },
-        {
-          "tag": "90C27",
-          "type": 1
-        },
-        {
-          "tag": "Connectivity",
-          "type": 1
-        },
-        {
-          "tag": "Online algorithm",
-          "type": 1
-        },
-        {
-          "tag": "Persistent connected component",
-          "type": 1
-        }
-      ],
-      "title": "A study of connectivity on dynamic graphs: computing persistent connected components",
-      "uri": "http://zotero.org/users/809971/items/BLXUX65Y",
-      "url": "https://doi.org/10.1007/s10288-022-00507-3",
-      "version": 602
-    },
-    {
-      "DOI": "10.1007/s11367-019-01696-6",
-      "ISSN": "1614-7502",
-      "abstractNote": "PurposeThe objective is to demonstrate an operational tool for dynamic LCA, based on the model by Tiruta-Barna et al. (J Clean Prod 116:198-206, Tiruta-Barna et al. 2016). The main innovation lies in the combination of full temporalization of the background inventory and a graph search algorithm leading to full dynamic LCI, further coupled to dynamic LCIA. The following objectives were addressed: (1) development of a database with temporal parameters for all processes of ecoinvent 3.2, (2) implementation of the model and the database in integrated software, and (3) demonstration on a case study comparing a conventional internal combustion engine car to an electric one.MethodsCalculation of dynamic LCA (including temporalization of background and foreground system) implies (i) a dynamic LCI model, (ii) a temporal database including temporal characterization of ecoinvent 3.2, (iii) a graph search algorithm, and (iv) dynamic LCIA models, in this specific case for climate change. The dynamic LCI model relies on a supply chain modeling perspective, instead of an accounting one. Unit processes are operations showing a specific functioning over time. Mass and energy exchanges depend on specific supply models. Production and supply are described by temporal parameters and functions. The graph search algorithm implements the dynamic LCI model, using the temporal database, to derive the life cycle environmental interventions scaled to the functional unit and distributed over time. The interventions are further combined with the dynamic LCIA models to obtain the temporally differentiated LCA results.Results and discussionA web-based tool for dynamic LCA calculations (DyPLCA) implementing the dynamic LCI model and temporal database was developed. The tool is operational and available for testing (http://dyplca.univ-lehavre.fr/). The case study showed that temporal characterization of background LCI can change significantly the LCA results. It is fair to say that temporally differentiated LCI in the background offers little interest for activities with high downstream emissions. It can provide insightful results when applied to life cycle systems where significant environmental interventions occur upstream. Those systems concern, for example, renewable electricity generation, for which most emissions are embodied in an infrastructure upstream. It is also observed that a higher degree of infrastructure contribution leads to higher spreading of impacts over time. Finally, a potential impact of the time window choice and discounting was observed in the case study, for comparison and decision-making. Time differentiation as a whole may thus influence the conclusions of a study.ConclusionsThe feasibility of dynamic LCA, including full temporalization of background system, was demonstrated through the development of a web-based tool and temporal database. It was showed that considering temporal differentiation across the complete life cycle, especially in the background system, can significantly change the LCA results. This is particularly relevant for product systems showing significant environmental interventions and material exchanges over long time periods upstream to the functional unit. A number of inherent limitations were discussed and shall be considered as opportunities for further research. This requires a collegial effort, involving industrial experts from different sectors.",
-      "accessDate": "2019-11-07T13:45:25Z",
-      "attachments": [
-        {
-          "dateAdded": "2019-11-07T13:45:26Z",
-          "dateModified": "2019-11-07T13:45:26Z",
-          "itemType": "attachment",
-          "path": "/Users/pigne/Zotero/storage/NTCWM6V7/Pigné et al. - 2019 - A tool to operationalize dynamic LCA, including ti.pdf",
-          "relations": [],
-          "tags": [],
-          "title": "Springer Full Text PDF",
-          "uri": "http://zotero.org/users/809971/items/NTCWM6V7"
-        }
-      ],
-      "citationKey": "pigneToolOperationalizeDynamic2019",
-      "citekey": "pigneToolOperationalizeDynamic2019",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Yoann",
-          "lastName": "Pigné"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Tomás Navarrete",
-          "lastName": "Gutiérrez"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Thomas",
-          "lastName": "Gibon"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Thomas",
-          "lastName": "Schaubroeck"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Emil",
-          "lastName": "Popovici"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Allan Hayato",
-          "lastName": "Shimako"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Enrico",
-          "lastName": "Benetto"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Ligia",
-          "lastName": "Tiruta-Barna"
-        }
-      ],
-      "date": "2019-11-05",
-      "dateAdded": "2019-11-07T13:45:25Z",
-      "dateModified": "2019-11-07T13:45:25Z",
-      "itemID": 501,
-      "itemKey": "JGLD7TWL",
-      "itemType": "journalArticle",
-      "journalAbbreviation": "Int J Life Cycle Assess",
-      "key": "JGLD7TWL",
-      "language": "en",
-      "libraryCatalog": "Springer Link",
-      "libraryID": 1,
-      "notes": [],
-      "publicationTitle": "The International Journal of Life Cycle Assessment",
-      "relations": [],
-      "select": "zotero://select/library/items/JGLD7TWL",
-      "tags": [
-        {
-          "tag": "Dynamic LCA",
-          "type": 1
-        },
-        {
-          "tag": "Dynamic modeling",
-          "type": 1
-        },
-        {
-          "tag": "Graph search",
-          "type": 1
-        },
-        {
-          "tag": "LCI",
-          "type": 1
-        },
-        {
-          "tag": "LCIA",
-          "type": 1
-        },
-        {
-          "tag": "Temporal database",
-          "type": 1
-        },
-        {
-          "tag": "Temporally differentiated",
-          "type": 1
-        }
-      ],
-      "title": "A tool to operationalize dynamic LCA, including time differentiation on the complete background database",
-      "uri": "http://zotero.org/users/809971/items/JGLD7TWL",
-      "url": "https://doi.org/10.1007/s11367-019-01696-6",
-      "version": 575
-    }
-  ],
-  "version": {
-    "bbt": "6.7.22",
-    "zotero": "6.0.13"
-  }
-}
+[
+	{
+		"id": "shimakoEnvironmentalAssessmentBioenergy2016",
+		"type": "article-journal",
+		"abstract": "Microalgae have been studied as a potential alternative raw material and various technologies have been proposed to transform the algal biomass into energy products. In this study, two bioenergy production systems of very different complexities were modelled to assess their environmental efficiencies: a biodiesel system and a biogas system. Biodiesel system used supercritical extraction and transesterification as key processes; to the best of authors' knowledge, there is no previous work analysing the environmental performances of such production system. Cumulative energy demand, Life Cycle Assessment (LCA) and dynamic LCA for climate change were used to evaluate the environmental footprint of the production systems. Conventional systems for electricity, heat and diesel production were considered for comparison. Energy balance showed that the supercritical extraction and drying steps were the most energy consuming unit operations in biodiesel production and further developments of technologies might be envisaged. LCA showed that climate change was the main contributor to impacts on human health and ecosystem quality due to energy consumed in production steps. Also, heat from biogas was the only product that proved to have a satisfactory environmental performance with regard to other conventional production systems. Finally, dynamic climate change evaluation (used for the first time for bio-chemical processes) revealed no carbon sequestration in microalgae system.",
+		"container-title": "Journal of Cleaner Production",
+		"DOI": "10.1016/j.jclepro.2016.08.003",
+		"ISSN": "0959-6526",
+		"journalAbbreviation": "Journal of Cleaner Production",
+		"page": "51-60",
+		"source": "ScienceDirect",
+		"title": "Environmental assessment of bioenergy production from microalgae based systems",
+		"URL": "http://www.sciencedirect.com/science/article/pii/S0959652616311283",
+		"volume": "139",
+		"author": [
+			{
+				"family": "Shimako",
+				"given": "Allan Hayato"
+			},
+			{
+				"family": "Tiruta-Barna",
+				"given": "Ligia"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Benetto",
+				"given": "Enrico"
+			},
+			{
+				"family": "Navarrete Gutiérrez",
+				"given": "Tomás"
+			},
+			{
+				"family": "Guiraud",
+				"given": "Pascal"
+			},
+			{
+				"family": "Ahmadi",
+				"given": "Aras"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					12,
+					15
+				]
+			]
+		}
+	},
+	{
+		"id": "navarretegutierrezComplexityLifeCycle2016",
+		"type": "article-journal",
+		"abstract": "Determining the relevance and importance of a technosphere process or a cluster of processes in relation to the rest of the industrial network can provide insights into the sustainability of supply chains: those that need to be optimized or controlled/safeguarded. Network analysis (NA) can offer a broad framework of indicators to tackle this problem. In this article, we present a detailed analysis of a life cycle inventory (LCI) model from an NA perspective. Specifically, the network is represented as a directed graph and the “emergy” numeraire is used as the weight associated with the arcs of the network. The case study of a technological system for drinking water production is presented. We investigate the topological and structural characteristics of the network representation of this system and compare properties of its weighted and unweighted network, as well as the importance of nodes (i.e., life cycle unit processes). By identifying a number of advantages and limitations linked to the modeling complexity of such emergy-LCI networks, we classify the LCI technosphere network of our case study as a complex network belonging to the scale-free network family. The salient feature of this network family is represented by the presence of “hubs”: nodes that connect with many other nodes. Hub failures may imply relevant changes, decreases, or even breaks in the connectedness with other smaller hubs and nodes of the network. Hence, by identifying node centralities, we can rank and interpret the relevance of each node for its special role in the life cycle network.",
+		"container-title": "Journal of Industrial Ecology",
+		"DOI": "10.1111/jiec.12338",
+		"ISSN": "1530-9290",
+		"issue": "5",
+		"journalAbbreviation": "Journal of Industrial Ecology",
+		"language": "en",
+		"page": "1094-1107",
+		"source": "Wiley Online Library",
+		"title": "On the Complexity of Life Cycle Inventory Networks: Role of Life Cycle Processes with Network Analysis",
+		"title-short": "On the Complexity of Life Cycle Inventory Networks",
+		"URL": "http://onlinelibrary.wiley.com/doi/10.1111/jiec.12338/abstract",
+		"volume": "20",
+		"author": [
+			{
+				"family": "Navarrete Gutiérrez",
+				"given": "Tomás"
+			},
+			{
+				"family": "Rugani",
+				"given": "Benedetto"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Marvuglia",
+				"given": "Antonino"
+			},
+			{
+				"family": "Benetto",
+				"given": "Enrico"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					10,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "tiruta-barnaFrameworkComputationalTool2016a",
+		"type": "article-journal",
+		"abstract": "Conventional Life Cycle Inventories (LCIs) are static models of product systems without time dependent functioning of plants and time lags between supply and demand of products. The aggregation of environmental interventions without consideration of the time dimension represents an acknowledged limitation of the Life Cycle Assessment (LCA) method. In this paper we present a novel conceptual and computational framework for the consideration of time dependency in LCIs. Process modeling is used to describe the production flows and environmental interventions of each unit process and supply modeling is used to include time lags on the raw materials exchanged by unit processes of the product system. The combination of production and supply models in life cycle networks, based on a set of specific temporal parameters (representative functioning period, production time, supply delay, supply frequency), allows the characterization of time dependency in each node. For the computation of time dependent LCI, i.e. of the time resolved environmental interventions, graph search algorithm is proposed and implemented in a prototype Web application. In terms of results, the new approach provides time dependent LCI expressed as: i) time as a function of individual emission (or resource consumption) for individual processes, ii) aggregated time as a function of a given environmental intervention. A test bed case illustrating the effectiveness of the conceptual and computational approaches (proof of concept) is presented and successfully solved both analytically and numerically.",
+		"container-title": "Journal of Cleaner Production",
+		"DOI": "10.1016/j.jclepro.2015.12.049",
+		"ISSN": "0959-6526",
+		"journalAbbreviation": "Journal of Cleaner Production",
+		"page": "198-206",
+		"source": "ScienceDirect",
+		"title": "Framework and computational tool for the consideration of time dependency in Life Cycle Inventory: proof of concept",
+		"title-short": "Framework and computational tool for the consideration of time dependency in Life Cycle Inventory",
+		"URL": "http://www.sciencedirect.com/science/article/pii/S0959652615018739",
+		"volume": "116",
+		"author": [
+			{
+				"family": "Tiruta-Barna",
+				"given": "Ligia"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Navarrete Gutiérrez",
+				"given": "Tomás"
+			},
+			{
+				"family": "Benetto",
+				"given": "Enrico"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					10
+				]
+			]
+		}
+	},
+	{
+		"id": "moulayMetapopulationModelChikungunya2013",
+		"type": "article-journal",
+		"abstract": "In this paper we study the influence of populations mobility on the spread of a vector-borne disease. We focus on the chikungunya epidemic event that occurred in 2005–2006 on the Réunion Island, Indian Ocean, France, and validate our models with real epidemic data from the event. We propose a metapopulation model to represent both a high-resolution patch model of the island with realistic population densities and also mobility models for humans (based on real-motion data) and mosquitoes. In this metapopulation network, two models are coupled: one for the dynamics of the mosquito population and one for the transmission of the disease. A high-resolution numerical model is created from real geographical, demographical and mobility data. The Island is modeled with an 18,000-nodes metapopulation network. Numerical results show the impact of the geographical environment and populations’ mobility on the spread of the disease. The model is finally validated against real epidemic data from the Réunion event.",
+		"container-title": "Journal of Theoretical Biology",
+		"DOI": "10.1016/j.jtbi.2012.11.008",
+		"ISSN": "0022-5193",
+		"journalAbbreviation": "Journal of Theoretical Biology",
+		"page": "129-139",
+		"source": "ScienceDirect",
+		"title": "A metapopulation model for chikungunya including populations mobility on a large-scale network",
+		"volume": "318",
+		"author": [
+			{
+				"family": "Moulay",
+				"given": "Djamila"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2013",
+					2,
+					7
+				]
+			]
+		}
+	},
+	{
+		"id": "dorronsoroEvolutionaryAlgorithmsMobile2014",
+		"type": "book",
+		"event-place": "Hoboken, NJ",
+		"ISBN": "978-1-118-83320-9",
+		"language": "en",
+		"note": "DOI: 10.1002/9781118833209",
+		"publisher": "John Wiley & Sons, Inc.",
+		"publisher-place": "Hoboken, NJ",
+		"source": "CrossRef",
+		"title": "Evolutionary Algorithms for Mobile Ad Hoc Networks: Bouvry/Evolutionary Algorithms for Mobile Ad Hoc Networks",
+		"title-short": "Evolutionary Algorithms for Mobile Ad Hoc Networks",
+		"URL": "http://doi.wiley.com/10.1002/9781118833209",
+		"author": [
+			{
+				"family": "Dorronsoro",
+				"given": "Bernabé"
+			},
+			{
+				"family": "Ruiz",
+				"given": "Patricia"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2014",
+					4,
+					30
+				]
+			]
+		}
+	},
+	{
+		"id": "guinandReachabilityMaritimeTransportation2016",
+		"type": "paper-conference",
+		"abstract": "In temporal network a node v is reachable from a node u iff there exists a time-respecting path from u to v. The set of reachable nodes from node u is called the reachability set of u. \nIn this work we describe a simple extension of this metric considering the round-trip reachability. The round-trip reachability set of a node u contains all vertices for which there exists a time-respecting path from u to v temporally followed by a time-respecting path from v to u. Client/Server systems as well as question/answer relations motivate this extension. A container shipping network illustrates the use of such a metric.",
+		"container-title": "Complex Networks: from theory to interdisciplinary applications",
+		"event-place": "Marseille",
+		"event-title": "Complex Networks: from theory to interdisciplinary applications",
+		"publisher-place": "Marseille",
+		"title": "Reachability in maritime transportation networks",
+		"URL": "https://www.cpt.univ-mrs.fr/~barrat/COMPLEXNETS2016/complexnets2016.org/program.html",
+		"author": [
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					7,
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "guinandTimeConsiderationsStudy2015",
+		"type": "chapter",
+		"abstract": "This work proposes two new methodological approaches for the analysis of global shipping networks stemmed from containerships movements reported in Lloyds’ List Periodicals.  After a complex network analysis, the first approach proposes the analysis of sets of networks, called TG-Graphs, built from events occurring in constant-size sliding time windows. Time series represent the evolution of network measures, and the simultaneous analysis of these series for several measures highlights some phenomenons arising in the shipping network. In the second model, networks are modeled with temporal networks where each event is associated with a timestamp. In this model, distance-related measures take a new meaning since paths must obey time constraints. This approach reveals that although the global port network is highly connected, ports who are not directly connected to the main hubs are actually isolated from the rest of the network.",
+		"collection-title": "Routledge Studies in Transport Analysis",
+		"container-title": "Maritime Networks Spatial structures and time dynamics",
+		"edition": "César Ducruet",
+		"ISBN": "978-1-138-59930-7",
+		"language": "English",
+		"page": "163--189",
+		"publisher": "Routledge",
+		"title": "Time considerations for the study of complex maritime networks",
+		"URL": "https://www.routledge.com/products/9781138911253",
+		"author": [
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		}
+	},
+	{
+		"id": "seredynskiGenerationRealisticMobility2012",
+		"type": "paper-conference",
+		"container-title": "2012 IEEE Congress on Evolutionary Computation (CEC)",
+		"DOI": "10.1109/CEC.2012.6252987",
+		"event-place": "Brisbane, QLD, Australia",
+		"event-title": "2012 IEEE Congress on Evolutionary Computation (CEC)",
+		"page": "1 -8",
+		"publisher-place": "Brisbane, QLD, Australia",
+		"source": "IEEE Xplore",
+		"title": "Generation of realistic mobility for VANETs using genetic algorithms",
+		"author": [
+			{
+				"family": "Seredynski",
+				"given": "M."
+			},
+			{
+				"family": "Danoy",
+				"given": "G."
+			},
+			{
+				"family": "Tabatabaei",
+				"given": "M."
+			},
+			{
+				"family": "Bouvry",
+				"given": "P."
+			},
+			{
+				"family": "Pigné",
+				"given": "Y."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2012",
+					6
+				]
+			]
+		}
+	},
+	{
+		"id": "abouenzeImpactSquareEnvironment2011b",
+		"type": "paper-conference",
+		"abstract": "This paper aims at studying some connectivity properties for random geometric graphs when they are constrained by the topological space in which they are embedded. More precisely, we focus our attention on limited square and rectangular environments. In order to analyse the impact of such environments on related graphs, we observe the evolution of mean degree. We propose an approach aiming at estimating the impact of the environment borders on the connectivity and we provide an analytical formula for computing the mean degree value depending on borders effects.",
+		"container-title": "2011 14th International Symposium on Wireless Personal Multimedia Communications (WPMC)",
+		"event-place": "Brest, France",
+		"event-title": "2011 14th International Symposium on Wireless Personal Multimedia Communications (WPMC)",
+		"page": "1-5",
+		"publisher-place": "Brest, France",
+		"source": "IEEE Xplore",
+		"title": "Impact of square environment on the connectivity in finite ad hoc networks",
+		"author": [
+			{
+				"family": "Aboue Nze",
+				"given": "G.-C."
+			},
+			{
+				"family": "Guinand",
+				"given": "F."
+			},
+			{
+				"family": "Pigné",
+				"given": "Y."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2011",
+					10
+				]
+			]
+		}
+	},
+	{
+		"id": "pigneVehicularMobilityModel2011a",
+		"type": "paper-conference",
+		"abstract": "This paper proposes VehILux, a new vehicular mobility model based on real traffic counting data. It relies on two freely available sources of real information for the country of Luxembourg. The first source is traffic data collected by counting devices located on the Luxembourgian road network, while the second is geographical information about different types of areas: residential, industrial, commercial and other services. VehILux models vehicles commuting around the city of Luxembourg by considering two types of traffic, outer traffic with vehicles entering in the defined geographical area and inner traffic starting from residential zones located inside the geographical area. One part of the collected traffic data is used as input traffic, while another part is used to control the produced traffic and to fine-tune the model. VehILux is coupled with the microscopic road traffic simulator SUMO to produce realistic vehicular traces.",
+		"collection-title": "Nets4Cars/Nets4Trains'11",
+		"container-title": "Proceedings of the Third International Conference on Communication Technologies for Vehicles",
+		"DOI": "10.1007/978-3-642-19786-4_12",
+		"event-place": "Berlin, Heidelberg",
+		"event-title": "Nets4Cars/Nets4Trains 2011",
+		"ISBN": "978-3-642-19785-7",
+		"page": "131–142",
+		"publisher": "Springer-Verlag",
+		"publisher-place": "Berlin, Heidelberg",
+		"source": "ACM Digital Library",
+		"title": "A Vehicular Mobility Model Based on Real Traffic Counting Data",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2015",
+					3,
+					2
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2011"
+				]
+			]
+		}
+	},
+	{
+		"id": "marvugliaUsingGraphSearch2013a",
+		"type": "article-journal",
+		"container-title": "Metallurgical Research & Technology",
+		"DOI": "10.1051/metal/2013050",
+		"issue": "1",
+		"page": "8",
+		"title": "Using graph search algorithms for a rigorous application of emergy algebra rules",
+		"volume": "110",
+		"author": [
+			{
+				"family": "Marvuglia",
+				"given": "A."
+			},
+			{
+				"family": "Rugani",
+				"given": "B."
+			},
+			{
+				"family": "Rios",
+				"given": "G."
+			},
+			{
+				"family": "Pigné",
+				"given": "Y."
+			},
+			{
+				"family": "Benetto",
+				"given": "E."
+			},
+			{
+				"family": "Tiruta-Barna",
+				"given": "L."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2013"
+				]
+			]
+		}
+	},
+	{
+		"id": "pignePlatformRealisticOnline2010",
+		"type": "paper-conference",
+		"abstract": "This paper introduces a platform for realistic and computationally efficient online vehicular networks simulation. It permits decentralized traffic management applications simulation as nodes mobility is modifiable at runtime thanks to the integration of two state-of-the-art network and traffic simulators. The platform embeds a tool that generates vehicular traces based on traffic counting data and ensures performance through a geographical decomposition of the network. Evidence of its performance is given on a Luxembougian traffic management scenario, using real road network and traffic data.",
+		"container-title": "IEEE International Workshop on Management of Emerging Networks and Services",
+		"DOI": "10.1109/GLOCOMW.2010.5700389",
+		"event-place": "Miami, FL, USA",
+		"event-title": "IEEE Globecom Workshops",
+		"ISBN": "978-1-4244-8863-6",
+		"page": "615–619",
+		"publisher": "IEEE Computer Society",
+		"publisher-place": "Miami, FL, USA",
+		"title": "A Platform for Realistic Online Vehicular Network Management",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2010"
+				]
+			]
+		}
+	},
+	{
+		"id": "pigneShortRobustCommunication2010a",
+		"type": "paper-conference",
+		"abstract": "We consider the problem of finding and maintaining communication paths in wireless mobile ad hoc networks (MANET). We consider this problem as a bi-objective problem when trying to minimize both the length of the constructed paths and the number link reconnections. We propose two centralized algorithms that help analyse the problem from a dynamic graph point of view. These algorithms give lower bounds for our proposed decentralized ant-based algorithm that constructs and maintains such paths in a MANET.",
+		"collection-title": "Lecture Notes in Computer Science",
+		"container-title": "Swarm Intelligence",
+		"DOI": "10.1007/978-3-642-15461-4_52",
+		"event-place": "Brussels, Belgium",
+		"event-title": "7th International Conference, ANTS 2010",
+		"license": "©2010 Springer-Verlag Berlin Heidelberg",
+		"page": "520-527",
+		"publisher": "Springer Berlin Heidelberg",
+		"publisher-place": "Brussels, Belgium",
+		"source": "link.springer.com",
+		"title": "Short and Robust Communication Paths in Dynamic Wireless Networks",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			}
+		],
+		"editor": [
+			{
+				"family": "Dorigo",
+				"given": "Marco"
+			},
+			{
+				"family": "Birattari",
+				"given": "Mauro"
+			},
+			{
+				"family": "Caro",
+				"given": "Gianni A. Di"
+			},
+			{
+				"family": "Doursat",
+				"given": "René"
+			},
+			{
+				"family": "Engelbrecht",
+				"given": "Andries P."
+			},
+			{
+				"family": "Floreano",
+				"given": "Dario"
+			},
+			{
+				"family": "Gambardella",
+				"given": "Luca Maria"
+			},
+			{
+				"family": "Groß",
+				"given": "Roderich"
+			},
+			{
+				"family": "Şahin",
+				"given": "Erol"
+			},
+			{
+				"family": "Sayama",
+				"given": "Hiroki"
+			},
+			{
+				"family": "Stützle",
+				"given": "Thomas"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2013",
+					11,
+					27
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2010",
+					1,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "casteigtsDistributedMaintenanceAnytime2013",
+		"type": "paper-conference",
+		"collection-title": "Lecture Notes in Computer Science",
+		"container-title": "Ad-hoc, Mobile, and Wireless Network",
+		"DOI": "10.1007/978-3-642-39247-4_9",
+		"event-place": "Wroclaw, Poland",
+		"event-title": "12th International Conference, ADHOC-NOW 2013",
+		"ISBN": "978-3-642-39246-7",
+		"page": "99-110",
+		"publisher": "Springer Berlin Heidelberg",
+		"publisher-place": "Wroclaw, Poland",
+		"title": "Distributed Maintenance of Anytime Available Spanning Trees in Dynamic Networks",
+		"volume": "7960",
+		"editor": [
+			{
+				"family": "Cichoń",
+				"given": "Jacek"
+			},
+			{
+				"family": "Gȩbala",
+				"given": "Maciej"
+			},
+			{
+				"family": "Klonowski",
+				"given": "Marek"
+			}
+		],
+		"author": [
+			{
+				"family": "Casteigts",
+				"given": "Arnaud"
+			},
+			{
+				"family": "Chaumette",
+				"given": "Serge"
+			},
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2013"
+				]
+			]
+		}
+	},
+	{
+		"id": "aboue-nzeImpactObstaclesDegree2009",
+		"type": "paper-conference",
+		"abstract": "What is the impact of obstacles on the graphs of connections between stations in Mobile Ad hoc Networks? In order to answer, at least partially, this question, the first step is to define both an environment with obstacles and a mobility model for the stations in such an environment. The present paper focuses on a new way of considering the mobility within environments with obstacles, while keeping the core ideas of the well-known Random WayPoint mobility model (a.k.a RWP). Based on a mesh-partitioning of the space, we propose a new model called RSP-O-G for which we compute the spatial distribution of stations and analyse how the presence of obstacles impacts this distribution compared to the distribution when no obstacles are present. Coupled with a simple model of radio propagation, and according to the density of stations in the environment, we study the mean degree of the connection graphs corresponding to such mobile ad hoc networks.",
+		"collection-title": "ICNS '09",
+		"container-title": "Proceedings of the 2009 Fifth International Conference on Networking and Services",
+		"DOI": "10.1109/ICNS.2009.36",
+		"event-place": "Valencia, Spain",
+		"event-title": "2009 Fifth International Conference on Networking and Services",
+		"ISBN": "978-0-7695-3586-9",
+		"page": "332–337",
+		"publisher": "IEEE Computer Society",
+		"publisher-place": "Valencia, Spain",
+		"source": "ACM Digital Library",
+		"title": "Impact of Obstacles on the Degree of Mobile Ad Hoc Connection Graphs",
+		"author": [
+			{
+				"family": "Aboue-Nze",
+				"given": "Cédric Gaël"
+			},
+			{
+				"family": "Guinand",
+				"given": "Frédéric"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2012",
+					12,
+					12
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2009"
+				]
+			]
+		}
+	},
+	{
+		"id": "pigneSensitivityAnalysisRealistic2011",
+		"type": "paper-conference",
+		"abstract": "In this article, we consider a realistic vehicular mobility model, VehILux, and use a sensitivity analysis method to quantitatively study the influence and interdependencies of its parameters. The analysis reveals several properties in the set of parameters. Some are identified as irrelevant to the output while some have stronger impact than expected. This analysis is proposed as a preliminary step to the mobility model optimization, as it permits to significantly reduce the parameters search space.",
+		"collection-title": "DIVANet '11",
+		"container-title": "Proceedings of the first ACM international symposium on Design and analysis of intelligent vehicular networks and applications",
+		"DOI": "10.1145/2069000.2069007",
+		"event-place": "Miami, FL, USA",
+		"event-title": "DIVANet '11",
+		"ISBN": "978-1-4503-0904-2",
+		"page": "31–38",
+		"publisher": "ACM",
+		"publisher-place": "Miami, FL, USA",
+		"source": "ACM Digital Library",
+		"title": "Sensitivity analysis for a realistic vehicular mobility model",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Danoy",
+				"given": "Grégoire"
+			},
+			{
+				"family": "Bouvry",
+				"given": "Pascal"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2012",
+					12,
+					12
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2011"
+				]
+			]
+		}
+	},
+	{
+		"id": "pigneModelisationTraitementDecentralise2008",
+		"type": "thesis",
+		"abstract": "Les graphes dynamiques sont un outil de plus en plus utilisé dans des contextes variés où il s'avère nécessaire de modéliser des environnements changeants ou incertains. Les modèles aujourd'hui proposés sont dédiés à ces applications précises. Il n'existe pas de modèle général reprenant, hors de tout contexte applicatif, ces caractéristiques. D'autre part la résolution de problèmes liés à ces environnements dynamiques et incertains est problématique. Nous proposons, ici, la formalisation d'un modèle général de graphe dynamique.   Nous étudions la résolution de problèmes dans ces graphes à l'aide de méthodes inspirées de mécanismes d'intelligence collective.   Les modèles proposés sont validés dans le contexte applicatif des réseaux mobiles ad hoc. Une approche originale de construction et de maintien de chemins de communication sous plusieurs contraintes est proposée. Le problème de la construction et du maintien d'une forêt couvrante dans un réseau mobile ad hoc est également étudié.",
+		"publisher": "Université du Havre",
+		"source": "tel.archives-ouvertes.fr",
+		"title": "Modélisation et traitement décentralisé des graphes dynamiques Application aux réseaux mobiles ad hoc",
+		"URL": "http://tel.archives-ouvertes.fr/tel-00371962",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2013",
+					1,
+					10
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2008",
+					12,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "vernetSuccessiveShortestPath2018",
+		"type": "paper-conference",
+		"abstract": "This work focuses on the minimum cost flow problem in dynamic graphs. We use a model in which there are no travel time on arcs, and storage on vertices is not al- lowed. Every other graph parameter is time-dependent. We propose a method using the successive shortest path algorithm that avoids using the time-expanded graph that significantly increases the complexity of the problem. Our method is implemented using the GraphStream library.",
+		"container-title": "16th Cologne-Twente Workshop on Graphs and Combinatorial Optimization",
+		"event-place": "Paris, France",
+		"event-title": "Cologne-Twente Workshop on Graphs and Combinatorial Optimization",
+		"page": "51--54",
+		"publisher-place": "Paris, France",
+		"title": "Successive Shortest Path Algorithm for Flows in Dynamic Graphs",
+		"URL": "http://ctw18.lipn.univ-paris13.fr/CTW18_Proceedings.pdf",
+		"author": [
+			{
+				"family": "Vernet",
+				"given": "Mathilde"
+			},
+			{
+				"family": "Drozdowski",
+				"given": "Maciej"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Sanlaville",
+				"given": "Eric"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018",
+					6,
+					18
+				]
+			]
+		}
+	},
+	{
+		"id": "rachidiMovingAverageControl2018",
+		"type": "paper-conference",
+		"container-title": "23rd IEEE International Conference on Emerging Technologies and Factory Automation, ETFA 2018, Torino, Italy, September 4-7, 2018",
+		"DOI": "10.1109/ETFA.2018.8502633",
+		"event-place": "Torino, Italy",
+		"event-title": "2018 IEEE 23rd International Conference on Emerging Technologies and Factory Automation (ETFA)",
+		"page": "493–498",
+		"publisher": "IEEE",
+		"publisher-place": "Torino, Italy",
+		"source": "DBLP Computer Science Bibliography",
+		"title": "Moving Average control chart for the detection and isolation of temporal faults in stochastic Petri nets",
+		"author": [
+			{
+				"family": "Rachidi",
+				"given": "Sara"
+			},
+			{
+				"family": "Leclercq",
+				"given": "Edouard"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Lefebvre",
+				"given": "Dimitri"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	},
+	{
+		"id": "lefebvreTemporalFaultDiagnosis2018",
+		"type": "paper-conference",
+		"container-title": "5th International Conference on Control, Decision and Information Technologies, CoDIT 2018, Thessaloniki, Greece, April 10-13, 2018",
+		"DOI": "10.1109/CoDIT.2018.8394843",
+		"event-place": "Thessaloniki, Greece",
+		"event-title": "5th International Conference on Control, Decision and Information Technologies (CoDIT)",
+		"ISBN": "978-1-5386-5065-3",
+		"page": "271–276",
+		"publisher": "IEEE",
+		"publisher-place": "Thessaloniki, Greece",
+		"source": "DBLP Computer Science Bibliography",
+		"title": "Temporal fault diagnosis for k-bounded non-Markovian SPN",
+		"author": [
+			{
+				"family": "Lefebvre",
+				"given": "Dimitri"
+			},
+			{
+				"family": "Rachidi",
+				"given": "Sara"
+			},
+			{
+				"family": "Leclercq",
+				"given": "Edouard"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	},
+	{
+		"id": "lefebvreDiagnosisStructuralTemporal2018",
+		"type": "article-journal",
+		"abstract": "This paper concerns the diagnosis of faults for stochastic discrete event systems that behave according to non-Markovian dynamics. k-bounded partially observed Petri nets are used to model the system structure and the sensors. Stochastic processes with probability density functions (pdf) of finite support define the dynamics. Structural and temporal faults are considered. Structural faults correspond to specific sequences of events that should satisfy precedence conditions defined with patterns. Temporal faults are defined with time constraints that must be fulfilled by the firing durations. The probabilities of consistent trajectories are computed with a numerical scheme from the collected timed measurements. The advantage of the proposed scheme is that it can be used for a large variety of pdf that may be defined either with an analytical or a numerical description. It works also for various time semantics. Diagnosis in terms of probability for faulty patterns and temporal constraints is established as a consequence.",
+		"container-title": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+		"DOI": "10.1109/TSMC.2018.2875726",
+		"journalAbbreviation": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+		"page": "1-13",
+		"source": "ResearchGate",
+		"title": "Diagnosis of Structural and Temporal Faults for k-Bounded Non-Markovian Stochastic Petri Nets",
+		"volume": "PP",
+		"author": [
+			{
+				"family": "Lefebvre",
+				"given": "Dimitri"
+			},
+			{
+				"family": "Rachidi",
+				"given": "Sara"
+			},
+			{
+				"family": "Leclercq",
+				"given": "Edouard"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018",
+					11,
+					9
+				]
+			]
+		}
+	},
+	{
+		"id": "vernetAlgorithmiqueDansGraphes2018",
+		"type": "paper-conference",
+		"event-place": "Lorient, France",
+		"event-title": "ROADEF 2018",
+		"publisher-place": "Lorient, France",
+		"title": "Algorithmique dans les graphes dynamiques : le cas des flots",
+		"URL": "https://hal.archives-ouvertes.fr/hal-02115413",
+		"author": [
+			{
+				"family": "Vernet",
+				"given": "Mathilde"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Sanlaville",
+				"given": "Eric"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018",
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "saadaNewSelectionStrategies2017a",
+		"type": "paper-conference",
+		"abstract": "Wireless Sensor and Actor Networks are used in many dangerous applications. When performing their tasks, actors may fail due to harsh environments in which they are deployed. Some actors are cut-vertices within network. Their loss breaks its connectivity and disrupts its operation accordingly. Therefore, restoring network connectivity is crucial. DARA is among the most popular connectivity restoration schemes. It performs multi-actor relocations in order to replace a failed cut-vertex by one of its neighbors, based on the lowest degree. In this paper, we propose new selection strategies of actor’s substitute in DARA, in which the substitute selection is based on the nature of the links with neighbors rather than on the degree. Our approaches improve the performance of DARA by reducing the number of relocated actors in the recovery process by 24% on average compared to its original selection strategy. The proposed strategies are validated through simulation experiments.",
+		"collection-title": "Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
+		"container-title": "Ad Hoc Networks",
+		"DOI": "10.1007/978-3-319-51204-4_4",
+		"event-place": "Ottawa, Canada",
+		"event-title": "8th International Conference, ADHOCNETS 2016",
+		"ISBN": "978-3-319-51204-4",
+		"language": "en",
+		"page": "38-49",
+		"publisher": "Springer International Publishing",
+		"publisher-place": "Ottawa, Canada",
+		"source": "Springer Link",
+		"title": "New Selection Strategies of Actor’s Substitute in DARA for Connectivity Restoration in WSANs",
+		"author": [
+			{
+				"family": "Saada",
+				"given": "Riadh"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Olivier",
+				"given": "Damien"
+			}
+		],
+		"editor": [
+			{
+				"family": "Zhou",
+				"given": "Yifeng"
+			},
+			{
+				"family": "Kunz",
+				"given": "Thomas"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2017"
+				]
+			]
+		}
+	},
+	{
+		"id": "maBayesianDynamicLinear2019",
+		"type": "article-journal",
+		"abstract": "Bayesian dynamic linear model is a promising method for time series data analysis and short-term forecasting. One research issue concerns how the predictive model adapts to changes in the system, especially when shocks impact system behavior. In this study, we propose an adaptive dynamic linear model to adaptively update model parameters for online system state prediction. The proposed method is an automatic approach based on the feedback of prediction errors at each time slot without the needs of external intervention. The experimental study on short-term travel speed prediction shows that the proposed method can significantly reduce the prediction errors of the traditional dynamic linear model and outperform two state-of-the-art methods in the case of major system behavior changes.",
+		"container-title": "Journal of Advanced Transportation",
+		"DOI": "10.1155/2019/5314520",
+		"language": "en",
+		"note": "DOI: 10.1155/2019/5314520",
+		"page": "10",
+		"title": "Bayesian Dynamic Linear Model with Adaptive Parameter Estimation for Short-Term Travel Speed Prediction",
+		"URL": "https://www.hindawi.com/journals/jat/2019/5314520/",
+		"volume": "2019",
+		"author": [
+			{
+				"family": "Ma",
+				"given": "Tai-Yu"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2019",
+					6,
+					24
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2019"
+				]
+			]
+		}
+	},
+	{
+		"id": "vernetTheoreticalExperimentalStudy2020",
+		"type": "article-journal",
+		"abstract": "This work focuses on the minimum cost flow problem in dynamic graphs. The model here proposed does not have travel time nor storage but all other parameters are time-dependent. The most popular method to solve this kind of problem uses the time-expanded graph but due to the large size of this graph, this solution technique is not manageable on a long time horizon. We propose a new approach that does not use the time-expanded graph. Our algorithm is based on the computation of successive shortest paths on static graphs, which are much smaller compared to the time-expanded graph. It has a significantly better computational complexity. Our method was implemented using the GraphStream library and experiments showed that it is also much faster than the classical method in practice.",
+		"container-title": "Discrete Applied Mathematics",
+		"DOI": "10.1016/j.dam.2019.12.012",
+		"ISSN": "0166-218X",
+		"journalAbbreviation": "Discrete Applied Mathematics",
+		"language": "en",
+		"source": "ScienceDirect",
+		"title": "A theoretical and experimental study of a new algorithm for minimum cost flow in dynamic graphs",
+		"URL": "http://www.sciencedirect.com/science/article/pii/S0166218X19305554",
+		"author": [
+			{
+				"family": "Vernet",
+				"given": "Mathilde"
+			},
+			{
+				"family": "Drozdowski",
+				"given": "Maciej"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Sanlaville",
+				"given": "Eric"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2020",
+					9,
+					25
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					1,
+					7
+				]
+			]
+		}
+	},
+	{
+		"id": "pigneToolOperationalizeDynamic2020",
+		"type": "article-journal",
+		"abstract": "The objective is to demonstrate an operational tool for dynamic LCA, based on the model by Tiruta-Barna et al. (J Clean Prod 116:198-206, Tiruta-Barna et al. 2016). The main innovation lies in the combination of full temporalization of the background inventory and a graph search algorithm leading to full dynamic LCI, further coupled to dynamic LCIA. The following objectives were addressed: (1) development of a database with temporal parameters for all processes of ecoinvent 3.2, (2) implementation of the model and the database in integrated software, and (3) demonstration on a case study comparing a conventional internal combustion engine car to an electric one.",
+		"container-title": "The International Journal of Life Cycle Assessment",
+		"DOI": "10.1007/s11367-019-01696-6",
+		"ISSN": "1614-7502",
+		"issue": "2",
+		"journalAbbreviation": "Int J Life Cycle Assess",
+		"language": "en",
+		"page": "267-279",
+		"source": "Springer Link",
+		"title": "A tool to operationalize dynamic LCA, including time differentiation on the complete background database",
+		"URL": "https://doi.org/10.1007/s11367-019-01696-6",
+		"volume": "25",
+		"author": [
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Navarrete Gutiérrez",
+				"given": "Tomás Navarrete"
+			},
+			{
+				"family": "Gibon",
+				"given": "Thomas"
+			},
+			{
+				"family": "Schaubroeck",
+				"given": "Thomas"
+			},
+			{
+				"family": "Popovici",
+				"given": "Emil"
+			},
+			{
+				"family": "Shimako",
+				"given": "Allan Hayato"
+			},
+			{
+				"family": "Benetto",
+				"given": "Enrico"
+			},
+			{
+				"family": "Tiruta-Barna",
+				"given": "Ligia"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2020",
+					9,
+					25
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					2,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "balevCopsRobbersDynamic2020",
+		"type": "paper-conference",
+		"abstract": "We examine the classic game of Cops and Robbers played on models of dynamic graphs, that is, graphs evolving over discrete time steps. At each time step, a graph instance is generated as a subgraph of the underlying graph of the model. The cops and the robber take their turns on the current graph instance. The cops win if they can capture the robber at some point in time. Otherwise, the robber wins.In the offline case, the players are fully aware of the evolution sequence, up to some finite time horizon T. We provide a (𝑛2𝑘+1𝑇)O(n2k+1T)\\mathcal {O}(n^{2k+1}T) algorithm to decide whether a given evolution sequence for an underlying graph with n vertices is k-cop-win via a reduction to a reachability game.In the online case, there is no knowledge of the evolution sequence, and the game might go on forever. Also, each generated instance is required to be connected. We provide a nearly tight characterization for sparse underlying graphs, i.e., with at most linear number of edges. We prove 𝜆+1λ+1\\lambda +1 cops suffice to capture the robber in any underlying graph with 𝑛−1+𝜆n−1+λn-1+\\lambda edges. Further, we define a family of underlying graphs with 𝑛−1+𝜆n−1+λn-1+\\lambda edges where 𝜆−1λ−1\\lambda -1 cops are necessary (and sufficient) for capture.",
+		"collection-title": "Lecture Notes in Computer Science",
+		"container-title": "Structural Information and Communication Complexity",
+		"DOI": "10.1007/978-3-030-54921-3_12",
+		"event-place": "Paderborn, Germany",
+		"event-title": "SIROCCO 2020: Structural Information and Communication Complexity",
+		"ISBN": "978-3-030-54921-3",
+		"language": "en",
+		"page": "203-219",
+		"publisher": "Springer International Publishing",
+		"publisher-place": "Paderborn, Germany",
+		"source": "Springer Link",
+		"title": "Cops and Robbers on Dynamic Graphs: Offline and Online Case",
+		"title-short": "Cops and Robbers on Dynamic Graphs",
+		"author": [
+			{
+				"family": "Balev",
+				"given": "Stefan"
+			},
+			{
+				"family": "Laredo Jiménez",
+				"given": "Juan Luis"
+			},
+			{
+				"family": "Lamprou",
+				"given": "Ioannis"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Sanlaville",
+				"given": "Eric"
+			}
+		],
+		"editor": [
+			{
+				"family": "Richa",
+				"given": "Andrea Werneck"
+			},
+			{
+				"family": "Scheideler",
+				"given": "Christian"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2020"
+				]
+			]
+		}
+	},
+	{
+		"id": "vernetStudyConnectivityDynamic2022",
+		"type": "article-journal",
+		"abstract": "This work focuses on connectivity in a dynamic graph. An undirected graph is defined on a finite and discrete time interval. Edges can appear and disappear over time. The first objective of this work is to extend the notion of connected component to dynamic graphs in a new way. Persistent connected components are defined by their size, corresponding to the number of vertices, and their length, corresponding to the number of consecutive time steps they are present on. The second objective of this work is to develop an algorithm computing the largest, in terms of size and length, persistent connected components in a dynamic graph. PICCNIC algorithm (PersIstent Connected CompoNent InCremental Algorithm) is a polynomial time algorithm of minimal complexity. Another advantage of this algorithm is that it works online: knowing the evolution of the dynamic graph is not necessary to execute it. PICCNIC algorithm is implemented using the GraphStream library and experimented in order to carefully study the outcome of the algorithm according to different input graph types, as well as real data networks, to verify the theoretical complexity, and to confirm its feasibility for graphs of large size.",
+		"container-title": "4OR",
+		"DOI": "10.1007/s10288-022-00507-3",
+		"ISSN": "1614-2411",
+		"journalAbbreviation": "4OR-Q J Oper Res",
+		"language": "en",
+		"source": "Springer Link",
+		"title": "A study of connectivity on dynamic graphs: computing persistent connected components",
+		"title-short": "A study of connectivity on dynamic graphs",
+		"URL": "https://doi.org/10.1007/s10288-022-00507-3",
+		"author": [
+			{
+				"family": "Vernet",
+				"given": "Mathilde"
+			},
+			{
+				"family": "Pigné",
+				"given": "Yoann"
+			},
+			{
+				"family": "Sanlaville",
+				"given": "Éric"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2022",
+					7,
+					5
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2022",
+					4,
+					19
+				]
+			]
+		}
+	}
+]
